@@ -9,4 +9,66 @@ return [
     'bootstrap' => [
         'log',
     ],
+    'aliases' => [
+        'backend' => '@vendor/dmstr/yii2-backend-module/src',
+    ],
+    'params' => [
+        'adminEmail' => getenv('APP_ADMIN_EMAIL'),
+        'yii.migrations' => [
+            getenv('APP_MIGRATION_LOOKUP'),
+            '@yii/rbac/migrations',
+            '@dektrium/user/migrations',
+            '@vendor/lajax/yii2-translate-manager/migrations',
+            '@vendor/pheme/yii2-settings/migrations',
+            '@vendor/dmstr/yii2-prototype-module/src/migrations',
+        ],
+    ],
+    'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => getenv('DATABASE_DSN'),
+            'username' => getenv('DATABASE_USER'),
+            'password' => getenv('DATABASE_PASSWORD'),
+            'charset' => 'utf8',
+            'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
+            'enableSchemaCache' => YII_ENV_PROD ? true : false,
+        ],
+        'user' => [
+            'class' => 'dmstr\web\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['/user/security/login'],
+            'identityClass' => 'dektrium\user\models\User',
+            'rootUsers' => ['admin'],
+        ],
+        'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'enablePrettyUrl' => getenv('APP_PRETTY_URLS') ? true : false,
+            'showScriptName' => getenv('YII_ENV_TEST') ? true : false,
+            'enableDefaultLanguageUrlCode' => true,
+            'baseUrl' => '/',
+            'rules' => [],
+            'languages' => explode(',', getenv('APP_LANGUAGES')),
+        ],
+    ],
+    'modules' => [
+        'backend' => [
+            'class' => 'dmstr\modules\backend\Module',
+            'layout' => '@backend/views/layouts/main',
+        ],
+        'rbac' => [
+            'class' => 'dektrium\rbac\Module',
+            'layout' => '@backend/views/layouts/main',
+            'enableFlashMessages' => false,
+        ],
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'layout' => '@backend/views/layouts/main',
+            'defaultRoute' => 'profile',
+            'adminPermission' => 'user-module',
+            'enableFlashMessages' => false,
+        ],
+    ]
 ];
