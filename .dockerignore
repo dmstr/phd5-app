@@ -1,0 +1,11 @@
+.git
+.vagrant
+.env
+
+data
+vendor
+
+runtime
+web/assets
+
+config/local.php

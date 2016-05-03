@@ -1,0 +1,6 @@
+version: '2'
+services:
+  php:
+    volumes:
+      - ./tests:/app/tests
+      - ./codeception.yml:/app/codeception.yml

@@ -1,0 +1,64 @@
+stages:
+  - build
+  - test
+  - report
+  - deploy
+  - cleanup
+
+before_script:
+  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+  - export COMPOSE_PROJECT_NAME=${ISOLATION}
+  - export APP_VERSION=$(git describe --always --dirty)
+  - export IMAGE_TAG=":${APP_VERSION}"
+  - pwd
+  - docker version
+  - docker-compose version
+  - echo ${ISOLATION}
+  - echo ${APP_VERSION}
+  - cp .env-dist .env
+
+
+build:
+  stage: build
+  script:
+    - make build
+
+lint:
+  stage: test
+  script:
+    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - make lint
+    - cp -r _artifacts /tmp/artifacts-${ISOLATION}
+    - exit ${ERROR}
+
+test:
+  stage: test
+  script:
+    - cd tests && cp .env-dist .env
+    - ls -la
+    - docker-compose config
+    - docker images
+    - make test
+
+report:
+  stage: report
+  when: always
+  script:
+    - cp -r /tmp/artifacts-${ISOLATION} artifacts
+  artifacts:
+    paths:
+      - artifacts
+
+release:
+  stage: deploy
+  script:
+    - docker push registry-v2.hrzg.de/dmstr/yii2-app${IMAGE_TAG}
+  only:
+    - release
+
+cleanup:
+  stage: cleanup
+  when: always
+  script:
+    - make clean
+

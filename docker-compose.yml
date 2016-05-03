@@ -1,0 +1,18 @@
+version: '2'
+services:
+    web:
+        image: phundament/nginx-one:1.9-5.0.2
+        environment:
+          - FASTCGI_PASS_HOST=php
+        depends_on:
+          - php
+        volumes_from:
+          - php
+        ports:
+          - 80
+    php:
+        image: registry-v2.hrzg.de/dmstr/yii2-app${IMAGE_TAG}
+        environment:
+          - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+        volumes:
+            - /app/web

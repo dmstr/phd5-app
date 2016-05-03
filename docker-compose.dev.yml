@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    volumes:
+      - ./web:/app/web
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+    env_file:
+      - db.env
+    environment:
+      - PHP_USER_ID=1000
+    volumes:
+      - ./composer.json:/app/composer.json
+      - ./composer.lock:/app/composer.lock
+      - ./vendor:/app/vendor
+      - ./src:/app/src
+      - ./web:/app/web
+      - ./tests:/app/tests
+      - ./codeception.yml:/app/codeception.yml
