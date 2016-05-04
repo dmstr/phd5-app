@@ -21,3 +21,6 @@ services:
       - ./web:/app/web
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
+  db:
+      ports:
+        - '3306'

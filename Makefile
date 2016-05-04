@@ -11,7 +11,7 @@ else
 	DOCKER_HOST_IP  ?= 127.0.0.1
 endif
 
-all: build init up open
+all: build init up setup open
 
 build:
 	$(DOCKER_COMPOSE) build --pull
@@ -45,6 +45,7 @@ bash:	 ##@docker open application development bash
 setup:	 ##@docker open application development bash
 	$(DOCKER_COMPOSE) run php yii migrate
 	$(DOCKER_COMPOSE) run php yii user/create admin@example.com admin secret
+	$(DOCKER_COMPOSE) run php yii user/create u.ser@example.com u.ser secret
 
 lint:
 	mkdir -p _artifacts/lint && chmod -R 777 _artifacts/lint

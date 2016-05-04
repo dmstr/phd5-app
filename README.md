@@ -18,6 +18,7 @@ Run setup in container
     $ composer install
     $ yii migrate
     $ yii user/create admin@example.com admin secret
+    $ yii user/create user@example.com u.ser secret
 
 ### Develop
 
