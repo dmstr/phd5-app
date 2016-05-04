@@ -36,6 +36,19 @@ return [
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => YII_ENV_PROD ? true : false,
         ],
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en',
+                    'sourceMessageTable' => '{{%language_source}}',
+                    'messageTable' => '{{%language_translate}}',
+                    'cachingDuration' => 86400,
+                    'enableCaching' => YII_DEBUG ? false : true,
+                ],
+            ],
+        ],
         'user' => [
             'class' => 'dmstr\web\User',
             'enableAutoLogin' => true,
@@ -58,15 +71,26 @@ return [
             'class' => 'dmstr\modules\backend\Module',
             'layout' => '@backend/views/layouts/main',
         ],
+        'pages' => [
+            'class' => 'dmstr\modules\pages\Module',
+            'layout' => '@backend/views/layouts/main',
+        ],
         'rbac' => [
             'class' => 'dektrium\rbac\Module',
-            'layout' => '@backend/views/layouts/main',
+            'layout' => '@backend/views/layouts/box',
             'enableFlashMessages' => false,
+        ],
+        'translatemanager' => [
+            'class' => 'lajax\translatemanager\Module',
+            'root' => '@app/views',
+            'layout' => '@backend/views/layouts/main',
+            'allowedIPs' => ['*'],
+            'roles' => ['translate-module'],
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
-            'layout' => '@backend/views/layouts/main',
-            'defaultRoute' => 'profile',
+            'layout' => '@backend/views/layouts/box',
+            'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
             'enableFlashMessages' => false,
         ],
