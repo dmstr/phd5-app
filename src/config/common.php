@@ -75,6 +75,10 @@ return [
             'class' => 'dmstr\modules\pages\Module',
             'layout' => '@backend/views/layouts/main',
         ],
+        'prototype' => [
+            'class' => 'dmstr\modules\prototype\Module',
+            'layout' => '@backend/views/layouts/box',
+        ],
         'rbac' => [
             'class' => 'dektrium\rbac\Module',
             'layout' => '@backend/views/layouts/box',

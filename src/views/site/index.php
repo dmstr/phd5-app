@@ -11,25 +11,7 @@ $this->title .= 'Home';
         </div>
     </div>
     <div class="container">
-        <h2>Start development bash</h2>
-        <p class="well">
-            <code>
-                make bash
-            </code>
-        </p>
-        <h2>Install packages</h2>
-        <p class="well">
-            <code>
-                $ composer require "dmstr/yii2-cms-metapackage" "dmstr/yii2-cms-dev-metapackage"
-            </code>
-        </p>
-        <p>
-            <?= \yii\helpers\Html::a(
-                'Online Documentation',
-                'https://github.com/dmstr/solid-ground',
-                ['target' => '_blank']) ?>
-
-        </p>
+        <?= \dmstr\modules\prototype\widgets\HtmlWidget::widget(['enableFlash' => true]) ?>
     </div>
 
 </div>
