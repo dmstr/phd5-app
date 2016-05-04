@@ -24,6 +24,9 @@ $this->title = $this->title;
 <body>
 <?php $this->beginBody() ?>
 
+<?= $this->render('_navbar') ?>
+<?= \dmstr\widgets\Alert::widget() ?>
+
 <div class="wrap">
     <?= $content ?>
 </div>
