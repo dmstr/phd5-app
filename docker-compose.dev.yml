@@ -22,5 +22,7 @@ services:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
   db:
+      env_file:
+        - db.env
       ports:
         - '3306'

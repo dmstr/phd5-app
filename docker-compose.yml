@@ -12,13 +12,9 @@ services:
           - 80
     php:
         image: registry-v2.hrzg.de/dmstr/yii2-app${IMAGE_TAG}
-        env_file:
-          - db.env
         environment:
           - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
         volumes:
             - /app/web
     db:
         image: percona:5.6
-        env_file:
-          - db.env
