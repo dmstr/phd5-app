@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * @link http://www.diemeisterei.de/
+ * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
@@ -7,6 +15,7 @@ use yii\helpers\Html;
 
 $this->title = $this->title;
 
+// Register asset bundle
 \yii\bootstrap\BootstrapAsset::register($this);
 
 ?>
@@ -34,11 +43,15 @@ $this->title = $this->title;
 <footer class="footer">
     <div class="container">
         <hr/>
-        <p>
-            <span class="label label-info"><?= getenv('HOSTNAME') ?></span>
-            <span class="label label-info"><?= getenv('APP_NAME') ?></span>
-            <span class="label label-default"><?= YII_ENV ?></span>
-            <span class="label label-warning"><?= YII_DEBUG ?></span>
+        <p class="pull-left">
+            <span class="label label-primary">dmstr</span>
+        </p>
+        <p class="pull-right">
+            <span class="label label-default"><?= getenv('HOSTNAME') ?></span>
+            <span class="label label-default"><?= getenv('APP_NAME') ?></span>
+            <span class="label label-default"></span>
+            <span class="label label-warning <?= YII_ENV_PROD ? 'label-success' : 'label-danger' ?>"><?= YII_ENV ?></span>
+            <span class="label label-warning <?= YII_DEBUG ? '' : 'hidden' ?>">debug</span>
         </p>
     </div>
 </footer>

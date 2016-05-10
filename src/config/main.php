@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.diemeisterei.de/
  *
@@ -7,12 +8,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+// Define application aliases
 Yii::setAlias('@app', dirname(__DIR__).'/..');
 Yii::setAlias('@root', '@app/..');
 Yii::setAlias('@runtime', dirname(__DIR__).'/../../runtime');
 Yii::setAlias('@web', dirname(__DIR__).'/../web');
 Yii::setAlias('@webroot', dirname(__DIR__).'/web');
 
+// Load $merge configuration files
 $applicationType = php_sapi_name() == 'cli' ? 'console' : 'web';
 $env = YII_ENV;
 $configDir = __DIR__;
