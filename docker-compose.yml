@@ -11,7 +11,9 @@ services:
         ports:
           - 80
     php:
-        image: registry-v2.hrzg.de/dmstr/yii2-app${IMAGE_TAG}
+        image: ${IMAGE_NAME}${IMAGE_TAG}
+        depends_on:
+          - db
         environment:
           - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
         volumes:

@@ -30,12 +30,12 @@ if (\Yii::$app->hasModule('user')) {
             ],
         ];
         $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-cog"></i>',
+            'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
             'items' => Tree::getMenuItems('backend',true, Tree::GLOBAL_ACCESS_DOMAIN)
         ];
         $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
+            'label' => '<i class="glyphicon glyphicon-cog"></i>',
             'url' => ['/backend'],
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
         ];

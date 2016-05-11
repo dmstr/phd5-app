@@ -52,7 +52,8 @@ report:
 release:
   stage: deploy
   script:
-    - docker push registry-v2.hrzg.de/dmstr/yii2-app${IMAGE_TAG}
+    - export $(cat .env | xargs)
+    - docker push ${IMAGE_NAME}${IMAGE_TAG}
   only:
     - release
 
