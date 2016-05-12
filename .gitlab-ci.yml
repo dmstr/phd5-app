@@ -9,7 +9,7 @@ before_script:
   - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
   - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - export APP_VERSION=$(git describe --always --dirty)
-  - export IMAGE_TAG=":${APP_VERSION}"
+  - export STACK_PHP_IMAGE=registry-v2.hrzg.de/dmstr/phd_php:${APP_VERSION}
   - pwd
   - docker version
   - docker-compose version
@@ -52,8 +52,7 @@ report:
 release:
   stage: deploy
   script:
-    - export $(cat .env | xargs)
-    - docker push ${IMAGE_NAME}${IMAGE_TAG}
+    - docker push ${STACK_PHP_IMAGE}
   only:
     - release
 

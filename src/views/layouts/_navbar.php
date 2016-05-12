@@ -2,7 +2,7 @@
 
 namespace app\views\layouts;
 
-use \dmstr\modules\pages\models\Tree;
+use dmstr\modules\pages\models\Tree;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
@@ -32,7 +32,7 @@ if (\Yii::$app->hasModule('user')) {
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
-            'items' => Tree::getMenuItems('backend',true, Tree::GLOBAL_ACCESS_DOMAIN)
+            'items' => Tree::getMenuItems('backend', true, Tree::GLOBAL_ACCESS_DOMAIN),
         ];
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-cog"></i>',
@@ -67,8 +67,5 @@ echo Nav::widget(
         'items' => $menuItems,
     ]
 );
-
-
-
 
 NavBar::end();

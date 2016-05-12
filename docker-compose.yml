@@ -3,6 +3,7 @@ services:
     web:
         image: phundament/nginx-one:1.9-5.0.2
         environment:
+          - VIRTUAL_HOST=${VIRTUAL_HOST}
           - FASTCGI_PASS_HOST=php
         depends_on:
           - php
@@ -11,12 +12,8 @@ services:
         ports:
           - 80
     php:
-        image: ${IMAGE_NAME}${IMAGE_TAG}
-        depends_on:
-          - db
+        image: ${STACK_PHP_IMAGE}
         environment:
           - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
         volumes:
             - /app/web
-    db:
-        image: percona:5.6

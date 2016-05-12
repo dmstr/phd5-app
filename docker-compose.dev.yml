@@ -9,8 +9,10 @@ services:
       context: .
       args:
         - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+    depends_on:
+      - db
     env_file:
-      - db.env
+      - docker-compose.dev-db.env
     environment:
       - PHP_USER_ID=1000
     volumes:
@@ -22,7 +24,8 @@ services:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
   db:
-      env_file:
-        - db.env
-      ports:
-        - '3306'
+    image: percona:5.6
+    env_file:
+      - docker-compose.dev-db.env
+    ports:
+      - '3306'

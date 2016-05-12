@@ -19,7 +19,7 @@ build:
 init:
 	cp -n .env-dist .env &2>/dev/null
 	cp -n src/app.env-dist src/app.env &2>/dev/null
-	$(DOCKER_COMPOSE) run php composer install
+	$(DOCKER_COMPOSE) run --rm php composer install
 	mkdir -p web/assets runtime
 
 up:
@@ -28,7 +28,7 @@ up:
 clean:
 	$(DOCKER_COMPOSE) kill
 	$(DOCKER_COMPOSE) rm -fv --all
-	$(DOCKER_COMPOSE) down
+	$(DOCKER_COMPOSE) down --rmi local --remove-orphans
 
 open:	 ##@docker open application web service in browser
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')
@@ -40,12 +40,13 @@ test:	 ##@docker open application web service in browser
 	$(DOCKER_COMPOSE) run -e YII_ENV=test php codecept run
 
 bash:	 ##@docker open application development bash
-	$(DOCKER_COMPOSE) run php bash
+	$(DOCKER_COMPOSE) run --rm php bash
 
 setup:	 ##@docker open application development bash
-	$(DOCKER_COMPOSE) run php yii migrate
-	$(DOCKER_COMPOSE) run php yii user/create admin@example.com admin secret
-	$(DOCKER_COMPOSE) run php yii user/create u.ser@example.com u.ser secret
+	$(DOCKER_COMPOSE) run --rm php yii db/create
+	$(DOCKER_COMPOSE) run --rm php yii migrate
+	$(DOCKER_COMPOSE) run --rm php yii user/create admin@example.com admin secret
+	$(DOCKER_COMPOSE) run --rm php yii user/create u.ser@example.com u.ser secret
 
 lint:
 	mkdir -p _artifacts/lint && chmod -R 777 _artifacts/lint

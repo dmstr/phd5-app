@@ -1,6 +1,14 @@
 version: '2'
 services:
   php:
+    env_file:
+      - docker-compose.dev-db.env
     volumes:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
+  db:
+    image: percona:5.6
+    env_file:
+      - docker-compose.dev-db.env
+    ports:
+      - '3306'

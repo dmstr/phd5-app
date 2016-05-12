@@ -1,5 +1,5 @@
 {
-    "name": "dmstr/solid-ground",
+    "name": "dmstr/phd",
     "minimum-stability": "beta",
     "require": {
         "vlucas/phpdotenv": "2.*",
