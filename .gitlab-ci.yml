@@ -35,9 +35,6 @@ test:
   stage: test
   script:
     - cd tests && cp .env-dist .env
-    - ls -la
-    - docker-compose config
-    - docker images
     - make test
 
 report:
