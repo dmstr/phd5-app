@@ -1,4 +1,4 @@
-FROM dmstr/php
+FROM dmstr/php-yii2
 
 WORKDIR /app
 
