@@ -36,9 +36,6 @@ open:	 ##@docker open application web service in browser
 open-db:	 ##@docker open application web service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')
 
-test:	 ##@docker open application web service in browser
-	$(DOCKER_COMPOSE) run -e YII_ENV=test php codecept run
-
 bash:	 ##@docker open application development bash
 	$(DOCKER_COMPOSE) run --rm php bash
 
