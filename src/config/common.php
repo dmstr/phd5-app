@@ -38,6 +38,10 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+        'cache' => [
+            'class' => 'yii\caching\ApcCache',
+            'useApcu' => true, // required for PHP 7
+        ],
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => getenv('DATABASE_DSN'),
