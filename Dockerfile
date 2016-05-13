@@ -1,4 +1,4 @@
-FROM registry-v2.hrzg.de/dmstr/php
+FROM dmstr/php
 
 WORKDIR /app
 
