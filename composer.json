@@ -5,8 +5,8 @@
         "vlucas/phpdotenv": "2.*",
         "yiisoft/yii2": "^2.0.8",
         "yiisoft/yii2-bootstrap": "2.*",
-        "dmstr/yii2-cms-metapackage": "^4.2",
-        "dmstr/yii2-pages-module": "0.15.0-beta3 as 0.14.99"
+        "dmstr/yii2-cms-metapackage": "^4.3",
+        "dmstr/yii2-pages-module": "^0.15.1"
     },
     "extra": {
         "asset-installer-paths": {
