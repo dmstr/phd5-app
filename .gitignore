@@ -6,3 +6,4 @@ web/assets
 docker-compose.override.yml
 app.env
 _artifacts
+version
