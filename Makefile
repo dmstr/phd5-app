@@ -13,6 +13,8 @@ endif
 
 all: build init up setup open
 
+dev: up setup open
+
 build:
 	$(shell echo $(shell git describe --long --tags --dirty --always) > src/version)
 	@echo $(shell cat src/version)

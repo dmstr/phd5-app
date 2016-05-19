@@ -25,6 +25,7 @@ return [
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
+        'context.menuItems' => [],
         'yii.migrations' => [
             getenv('APP_MIGRATION_LOOKUP'),
             '@yii/rbac/migrations',
