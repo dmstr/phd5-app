@@ -45,7 +45,7 @@ bash:	 ##@docker open application development bash
 
 setup:	 ##@docker open application development bash
 	$(DOCKER_COMPOSE) run --rm php yii db/create
-	$(DOCKER_COMPOSE) run --rm php yii migrate
+	$(DOCKER_COMPOSE) run --rm php yii migrate --interactive=0
 	$(DOCKER_COMPOSE) run --rm php yii user/create admin@example.com admin secret
 	$(DOCKER_COMPOSE) run --rm php yii user/create u.ser@example.com u.ser secret
 
