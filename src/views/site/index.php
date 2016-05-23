@@ -11,7 +11,7 @@ $this->title .= 'Home';
         </div>
     </div>
     <div class="container">
-        <?= \dmstr\modules\prototype\widgets\HtmlWidget::widget(['enableFlash' => true]) ?>
+        <?= \dmstr\modules\prototype\widgets\HtmlWidget::widget(['enableBackendMenuItem' => true]) ?>
     </div>
 
 </div>

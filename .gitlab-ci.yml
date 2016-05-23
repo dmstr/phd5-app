@@ -2,6 +2,7 @@ stages:
   - build
   - test
   - report
+  - release
   - deploy
   - cleanup
 
@@ -9,7 +10,9 @@ before_script:
   - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
   - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - export APP_VERSION=$(git describe --always --dirty)
-  - export STACK_PHP_IMAGE=dmstr/phd:${APP_VERSION}
+  - export PHP_IMAGE_NAME=dmstr/phd
+  - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
+  - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
   - pwd
   - docker version
   - docker-compose version
@@ -23,7 +26,7 @@ build:
   script:
     - make build
 
-lint:
+test:lint:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
@@ -31,7 +34,7 @@ lint:
     - cp -r _artifacts /tmp/artifacts-${ISOLATION}
     - exit ${ERROR}
 
-test:
+test:codeception:
   stage: test
   script:
     - cd tests && cp .env-dist .env
@@ -47,11 +50,13 @@ report:
       - artifacts
 
 release:
-  stage: deploy
+  stage: release
   script:
-    - docker push ${STACK_PHP_IMAGE}
+    - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
+    - docker push ${REGISTRY_PHP_IMAGE}
   only:
-    - release
+    - latest
+    - tags
 
 cleanup:
   stage: cleanup

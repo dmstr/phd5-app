@@ -12,8 +12,14 @@
 return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
-        'db' => 'dmstr\console\controllers\MysqlController',
         'migrate' => 'dmstr\console\controllers\MigrateController',
         'translate' => '\lajax\translatemanager\commands\TranslatemanagerController',
+        'resque' => 'hrzg\resque\commands\ResqueController',
+        'db' => [
+            'class' => 'dmstr\console\controllers\MysqlController',
+            'noDataTables' => [
+                'app_migration',
+            ],
+        ],
     ],
 ];

@@ -11,9 +11,34 @@
 
 // Settings for web-application only
 return [
+    'on registerMenuItems' => function ($event) {
+        Yii::$app->params['context.menuItems'] = \yii\helpers\ArrayHelper::merge(
+            Yii::$app->params['context.menuItems'],
+            $event->sender->getMenuItems()
+        );
+        $event->handled = true;
+    },
     'components' => [
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'log' => [
+            'targets' => [
+                // writes to php-fpm output stream
+                [
+                    'class' => 'codemix\streamlog\Target',
+                    'url' => 'php://stdout',
+                    'levels' => ['info', 'trace'],
+                    'logVars' => [],
+                    'enabled' => YII_DEBUG,
+                ],
+                [
+                    'class' => 'codemix\streamlog\Target',
+                    'url' => 'php://stderr',
+                    'levels' => ['error', 'warning'],
+                    'logVars' => [],
+                ],
+            ],
         ],
         'request' => [
             'cookieValidationKey' => getenv('APP_COOKIE_VALIDATION_KEY'),
@@ -28,5 +53,5 @@ return [
             'layout' => '@backend/views/layouts/box',
             'accessRoles' => ['settings-module'],
         ],
-    ]
+    ],
 ];

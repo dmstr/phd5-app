@@ -5,8 +5,7 @@
         "vlucas/phpdotenv": "2.*",
         "yiisoft/yii2": "^2.0.8",
         "yiisoft/yii2-bootstrap": "2.*",
-        "dmstr/yii2-cms-metapackage": "^5.0.0",
-        "dmstr/yii2-pages-module": "^0.15.1"
+        "dmstr/yii2-cms-metapackage": "^5.0"
     },
     "require-dev": {
         "dmstr/yii2-cms-dev-metapackage": "^1.1.0"
