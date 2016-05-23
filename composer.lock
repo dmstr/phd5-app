@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b51b54517d765c153d25917ef9e3ccfd",
-    "content-hash": "a21810d5b11d5b370aee869fb865dab9",
+    "hash": "3d37b2e28c42c5bd8c270255491e9601",
+    "content-hash": "369bf2e19c0eb06c227f486113ded206",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -223,16 +223,16 @@
         },
         {
             "name": "bower-asset/fontawesome",
-            "version": "v4.6.2",
+            "version": "v4.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "e7cc59d666ed0826656f695afad7c56e95eb6513"
+                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/e7cc59d666ed0826656f695afad7c56e95eb6513",
-                "reference": "e7cc59d666ed0826656f695afad7c56e95eb6513",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/8e241f209faa1dd2182c9fdc9c352d8806504a4e",
+                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -978,21 +978,22 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.3.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "1e5da9b3fda21141dcfd905055a0d137f95b2d0a"
+                "reference": "ac19b3ea8497e8cce74dfc14a6d6a447af36bfbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/1e5da9b3fda21141dcfd905055a0d137f95b2d0a",
-                "reference": "1e5da9b3fda21141dcfd905055a0d137f95b2d0a",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/ac19b3ea8497e8cce74dfc14a6d6a447af36bfbe",
+                "reference": "ac19b3ea8497e8cce74dfc14a6d6a447af36bfbe",
                 "shasum": ""
             },
             "require": {
                 "dmstr/yii2-helpers": "^0.4",
-                "dmstr/yii2-pages-module": "^0.15.0",
+                "dmstr/yii2-pages-module": "^0.15.2",
+                "dmstr/yii2-prototype-module": "^0.2.3",
                 "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
@@ -1016,7 +1017,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-05-11 14:38:51"
+            "time": "2016-05-18 09:32:48"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -1061,23 +1062,23 @@
         },
         {
             "name": "dmstr/yii2-cms-metapackage",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cms-metapackage.git",
-                "reference": "caf5a00729248c5e415ce30a753d91a71d323d73"
+                "reference": "8e97f26bb63df3edbf15f681fc340f45af282725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/caf5a00729248c5e415ce30a753d91a71d323d73",
-                "reference": "caf5a00729248c5e415ce30a753d91a71d323d73",
+                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/8e97f26bb63df3edbf15f681fc340f45af282725",
+                "reference": "8e97f26bb63df3edbf15f681fc340f45af282725",
                 "shasum": ""
             },
             "require": {
                 "dektrium/yii2-rbac": "~0.2",
                 "dektrium/yii2-user": "^0.9.6",
                 "dmstr/yii2-adminlte-asset": "^2.2.4",
-                "dmstr/yii2-backend-module": "^0.3",
+                "dmstr/yii2-backend-module": "^0.4",
                 "dmstr/yii2-libs-metapackage": "~0.3",
                 "dmstr/yii2-pages-module": "0.15.*",
                 "dmstr/yii2-prototype-module": "^0.2",
@@ -1098,7 +1099,7 @@
                 }
             ],
             "description": "Content Management Extensions for Phundament 4 (Yii 2.0 Framework)",
-            "time": "2016-05-11 14:54:25"
+            "time": "2016-05-18 08:55:15"
         },
         {
             "name": "dmstr/yii2-db",
@@ -1270,16 +1271,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.15.1",
+            "version": "0.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "2604267a11ea359a4d51e743afbe572e2a4e90d2"
+                "reference": "34c55441bbfb2ea4c45c619f51e47c790d9e0ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/2604267a11ea359a4d51e743afbe572e2a4e90d2",
-                "reference": "2604267a11ea359a4d51e743afbe572e2a4e90d2",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/34c55441bbfb2ea4c45c619f51e47c790d9e0ea7",
+                "reference": "34c55441bbfb2ea4c45c619f51e47c790d9e0ea7",
                 "shasum": ""
             },
             "require": {
@@ -1320,20 +1321,20 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2016-05-13 10:30:23"
+            "time": "2016-05-15 19:10:59"
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.2.1",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "af861803a06994e04de83c6c7e29dfcb9f03e5bf"
+                "reference": "813098f447694b40b858749f370190ea7aa7b784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/af861803a06994e04de83c6c7e29dfcb9f03e5bf",
-                "reference": "af861803a06994e04de83c6c7e29dfcb9f03e5bf",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/813098f447694b40b858749f370190ea7aa7b784",
+                "reference": "813098f447694b40b858749f370190ea7aa7b784",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1364,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-05-11 15:48:02"
+            "time": "2016-05-19 05:41:57"
         },
         {
             "name": "dmstr/yii2-web",
@@ -1453,20 +1454,20 @@
         },
         {
             "name": "insolita/yii2-adminlte-widgets",
-            "version": "v1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Insolita/yii2-adminlte-widgets.git",
-                "reference": "70a62bd50b4cad3a0f077f29e1458add061b192e"
+                "reference": "cece3bc51164bd3b88056cb324410a725a9c8a7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Insolita/yii2-adminlte-widgets/zipball/70a62bd50b4cad3a0f077f29e1458add061b192e",
-                "reference": "70a62bd50b4cad3a0f077f29e1458add061b192e",
+                "url": "https://api.github.com/repos/Insolita/yii2-adminlte-widgets/zipball/cece3bc51164bd3b88056cb324410a725a9c8a7e",
+                "reference": "cece3bc51164bd3b88056cb324410a725a9c8a7e",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/jquery-cookie": "*",
+                "bower-asset/jquery-cookie": "~1.4.1",
                 "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
@@ -1491,7 +1492,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-03-24 05:01:55"
+            "time": "2016-05-19 06:08:05"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
