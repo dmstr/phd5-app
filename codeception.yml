@@ -19,3 +19,5 @@ modules:
             user: ''
             password: ''
             dump: tests/codeception/_data/dump.sql
+config:
+    test_entry_url: http://web:80/index.php

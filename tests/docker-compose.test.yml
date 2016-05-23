@@ -3,6 +3,8 @@ services:
   php:
     env_file:
       - docker-compose.dev-db.env
+    environment:
+      - APP_NAME=test-phd
     volumes:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
@@ -12,3 +14,8 @@ services:
       - docker-compose.dev-db.env
     ports:
       - '3306'
+  firefox:
+    image: selenium/standalone-firefox-debug:2.53.0
+    ports:
+      - '4444'
+      - '5900'

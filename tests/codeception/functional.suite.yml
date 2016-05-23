@@ -9,3 +9,7 @@ modules:
     enabled:
         # add framework module here
         - \Helper\Functional
+        - Yii2
+    config:
+        Yii2:
+            configFile: 'tests/codeception/_config/test.php'

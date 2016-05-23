@@ -10,8 +10,10 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
     {
     }
 
-    // tests
-    public function testMe()
+    /**
+     * @group mandatory
+     */
+    public function testApp()
     {
         Yii::$app;
     }
