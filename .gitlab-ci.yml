@@ -38,7 +38,9 @@ test:codeception:
   stage: test
   script:
     - cd tests && cp .env-dist .env
+    - make up setup
     - make test
+    - make clean
 
 report:
   stage: report
@@ -62,5 +64,7 @@ cleanup:
   stage: cleanup
   when: always
   script:
+    - make clean
+    - cd tests
     - make clean
 
