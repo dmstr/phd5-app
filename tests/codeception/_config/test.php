@@ -9,5 +9,11 @@
 
 return yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/../../../src/config/main.php'),
-    []
+    [
+        'components' => [
+            'request' => [
+                'cookieValidationKey' => '_TESTING_'
+            ]
+        ]
+    ]
 );
