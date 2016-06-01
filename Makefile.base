@@ -1,0 +1,72 @@
+.PHONY: build test
+
+DOCKER_COMPOSE  ?= docker-compose
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S), Darwin)
+	OPEN_CMD        ?= open
+	DOCKER_HOST_IP  ?= $(shell echo $(DOCKER_HOST) | sed 's/tcp:\/\///' | sed 's/:[0-9.]*//')
+else
+	OPEN_CMD        ?= xdg-open
+	DOCKER_HOST_IP  ?= 127.0.0.1
+endif
+
+# Targets
+# -------
+
+default: help
+
+build:   ##@development build images in stack
+	$(shell echo $(shell git describe --long --tags --dirty --always) > src/version)
+	@echo $(shell cat src/version)
+	$(DOCKER_COMPOSE) build --pull
+
+up:      ##@development start stack
+	$(DOCKER_COMPOSE) up -d
+
+clean:   ##@development remove all containers in stack
+	$(DOCKER_COMPOSE) kill
+	$(DOCKER_COMPOSE) rm -fv --all
+	$(DOCKER_COMPOSE) down --rmi local --remove-orphans
+
+open:	 ##@development open application web service in browser
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')
+
+open-db:	 ##@development open application database service in browser
+	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')
+
+bash:	 ##@development open application development bash
+	$(DOCKER_COMPOSE) exec php bash
+
+setup:	 ##@development run application setup
+	$(DOCKER_COMPOSE) run --rm php yii app/setup
+
+lint:	 ##@development run file checks
+	mkdir -p _artifacts/lint && chmod -R 777 _artifacts/lint
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit php-cs-fixer fix --format=txt -v --dry-run src || export ERROR=1; \
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmetrics --report-html=_artifacts/lint/metrics.html src/ || ERROR=1; \
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html cleancode,codesize,controversial,design,unusedcode,tests/phpmd/naming.xml > _artifacts/lint/mess.html || ERROR=1; \
+	exit ${ERROR}
+
+
+# Help based on https://gist.github.com/prwhite/8168133 thanks to @nowox and @prwhite
+# And add help text after each target name starting with '\#\#'
+# A category can be added with @category
+
+HELP_FUN = \
+		%help; \
+		while(<>) { push @{$$help{$$2 // 'options'}}, [$$1, $$3] if /^([\w-]+)\s*:.*\#\#(?:@([\w-]+))?\s(.*)$$/ }; \
+		print "\nusage: make [target ...]\n\n"; \
+	for (keys %help) { \
+		print "$$_:\n"; \
+		for (@{$$help{$$_}}) { \
+			$$sep = "." x (25 - length $$_->[0]); \
+			print "  $$_->[0]$$sep$$_->[1]\n"; \
+		} \
+		print "\n"; }
+
+help:				##@system show this help
+	#
+	# General targets
+	#
+	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
