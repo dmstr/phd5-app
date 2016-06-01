@@ -16,8 +16,11 @@ use yii\helpers\Html;
 $this->title = $this->title;
 
 // Register asset bundle
-\yii\bootstrap\BootstrapAsset::register($this);
-
+if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false)) {
+    \dmstr\modules\prototype\assets\DbAsset::register($this);
+} else {
+    \app\assets\AppAsset::register($this);
+}
 ?>
 
 <?php $this->beginPage() ?>

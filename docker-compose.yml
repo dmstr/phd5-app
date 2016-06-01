@@ -13,7 +13,5 @@ services:
           - 80
     php:
         image: ${STACK_PHP_IMAGE}
-        environment:
-          - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
         volumes:
             - /app/web

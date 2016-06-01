@@ -4,10 +4,15 @@ services:
     env_file:
       - docker-compose.dev-db.env
     environment:
-      - APP_NAME=test-phd
+      - APP_NAME=test-ee
+      - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
+      - APP_ADMIN_PASSWORD=admin1
+      - APP_INTERACTIVE=0
     volumes:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
+      # Local development settings
+      #- ./src:/app/src
   db:
     image: percona:5.6
     env_file:

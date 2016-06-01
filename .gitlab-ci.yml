@@ -37,10 +37,13 @@ test:lint:
 test:codeception:
   stage: test
   script:
+    - EXIT_CODE=0
     - cd tests && cp .env-dist .env
     - make up setup
-    - make test
+    - make run-tests || EXIT_CODE=1
+    - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
     - make clean
+    - exit ${EXIT_CODE}
 
 report:
   stage: report

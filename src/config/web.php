@@ -20,7 +20,7 @@ return [
     },
     'components' => [
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'error/index',
         ],
         'log' => [
             'targets' => [

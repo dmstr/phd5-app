@@ -12,22 +12,23 @@ namespace app\controllers;
 
 use dmstr\web\traits\AccessBehaviorTrait;
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
 /**
  * Site controller.
  */
-class SiteController extends Controller
+class ErrorController extends Controller
 {
-    use AccessBehaviorTrait;
-    
     /**
-     * Renders the start page.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function actionIndex()
+    public function actions()
     {
-        return $this->render('index');
+        return [
+            'index' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
     }
 }

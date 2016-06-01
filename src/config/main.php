@@ -10,14 +10,14 @@
  */
 
 // Define application aliases
-Yii::setAlias('@app', dirname(__DIR__).'/..');
+Yii::setAlias('@app', __DIR__.'/..');
 Yii::setAlias('@root', '@app/..');
-Yii::setAlias('@runtime', dirname(__DIR__).'/../../runtime');
-Yii::setAlias('@web', dirname(__DIR__).'/../web');
-Yii::setAlias('@webroot', dirname(__DIR__).'/web');
+Yii::setAlias('@runtime', '@root/runtime');
+Yii::setAlias('@web', '@root/web');
+Yii::setAlias('@webroot', '@root//web');
 
 // Load $merge configuration files
-$applicationType = php_sapi_name() == 'cli' ? 'console' : 'web';
+$applicationType = (empty($applicationType) && php_sapi_name() == 'cli') ? 'console' : 'web';
 $env = YII_ENV;
 $configDir = __DIR__;
 

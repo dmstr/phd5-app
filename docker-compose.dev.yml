@@ -15,6 +15,7 @@ services:
       - docker-compose.dev-db.env
     environment:
       - PHP_USER_ID=1000
+      - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
     volumes:
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
