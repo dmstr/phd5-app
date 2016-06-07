@@ -9,6 +9,13 @@
  * file that was distributed with this source code.
  */
 
+Yii::$container->set(
+    'dektrium\user\controllers\AdminController',
+    [
+        'layout' => '@backend/views/layouts/box'
+    ]
+);
+
 // Basic configuration, used in web and console applications
 return [
     'id' => 'app',
@@ -125,7 +132,6 @@ return [
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
-            'layout' => '@backend/views/layouts/box',
             'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
             'enableFlashMessages' => false,
