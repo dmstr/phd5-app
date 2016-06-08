@@ -43,9 +43,6 @@ return [
         'request' => [
             'cookieValidationKey' => getenv('APP_COOKIE_VALIDATION_KEY'),
         ],
-        'settings' => [
-            'class' => 'pheme\settings\components\Settings',
-        ],
     ],
     'modules' => [
         'settings' => [

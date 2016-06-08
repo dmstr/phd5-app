@@ -72,6 +72,9 @@ return [
                 ],
             ],
         ],
+        'settings' => [
+            'class' => 'pheme\settings\components\Settings',
+        ],
         'user' => [
             'class' => 'dmstr\web\User',
             'enableAutoLogin' => true,
@@ -132,6 +135,7 @@ return [
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
+            #'layout' => 'SEE_DEPENDENCY_INJECTION',
             'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
             'enableFlashMessages' => false,
