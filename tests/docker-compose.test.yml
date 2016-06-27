@@ -21,6 +21,10 @@ services:
       - '3306'
   firefox:
     image: selenium/standalone-firefox-debug:2.53.0
+    # workaround for Docker Beta, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
+    environment:
+      - no_proxy=localhost
+      - HUB_ENV_no_proxy=localhost
     ports:
       - '4444'
       - '5900'

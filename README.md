@@ -1,9 +1,9 @@
 phd
-============
+===
 
 ### TL;dr
 
-    cp .env-dist .env
+    make all
 
 Start stack
 
@@ -23,3 +23,11 @@ Run setup in container
 ### Develop
 
     yii gii/giiant-module --moduleID=crud --moduleClass=app\\modules\\crud\\Module
+    
+### Release
+
+    docker-compose build
+    
+#### GitLab    
+    
+    git push origin master:release
