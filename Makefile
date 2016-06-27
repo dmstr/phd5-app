@@ -15,5 +15,5 @@ init:   ##@development initialize development environment
 	$(DOCKER_COMPOSE) run --rm php composer install
 	mkdir -p web/assets runtime
 
-deploy: ##@development push to latest/release branch
+release: ##@development push to latest/release branch
 	git push origin master:latest
