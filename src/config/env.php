@@ -27,7 +27,7 @@ $dotenv->required([
 ]);
 
 // Additional Validations
-if (!preg_match('/^[a-z0-9_-]{3,16}$/', getenv('APP_NAME'))) {
+if (!preg_match('/^[a-z0-9_-]{2,16}$/', getenv('APP_NAME'))) {
     throw new \Dotenv\Exception\ValidationException(
         'APP_NAME must only be lowercase, dash or underscore and 3-16 characters long.'
     );

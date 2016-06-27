@@ -7,12 +7,12 @@ stages:
   - cleanup
 
 before_script:
-  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
-  - export COMPOSE_PROJECT_NAME=${ISOLATION}
+  # Setup as project variables: PHP_IMAGE_NAME=project/php
   - export APP_VERSION=$(git describe --always --dirty)
-  - export PHP_IMAGE_NAME=dmstr/phd
   - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
   - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
+  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+  - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - pwd
   - docker version
   - docker-compose version

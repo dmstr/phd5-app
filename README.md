@@ -1,33 +1,56 @@
-phd
-===
+phd5
+====
 
-### TL;dr
+A universal web application template
+
+Documentation
+-------------
+ 
+See [docs](https://git.hrzg.de/dmstr/docs-phd5)
+
+TL;dr
+-----
+
+### Requirements
+
+- docker
+
+### Development
 
     make all
 
-Start stack
+Show help
 
-    docker-compose up -d
+    make help
 
 Create bash    
     
-    docker-compose run php bash
+    make bash
 
 Run setup in container    
     
-    $ composer install
-    $ yii migrate
-    $ yii user/create admin@example.com admin secret
-    $ yii user/create user@example.com u.ser secret
+    $ yii app/setup
 
-### Develop
+See [configuration](https://git.hrzg.de/dmstr/phd-docs/blob/master/developer/configuration.md)...
 
-    yii gii/giiant-module --moduleID=crud --moduleClass=app\\modules\\crud\\Module
-    
-### Release
 
-    docker-compose build
+### Testing
+
+Run command from `tests` folder
+
+    cd tests
+
+Setup test application stack    
     
-#### GitLab    
+    make up setup bash
     
-    git push origin master:release
+Run tests inside the container    
+      
+    $ codecept run      
+
+See [testing](https://git.hrzg.de/dmstr/phd-docs/blob/master/developer/testing.md)...   
+
+
+---
+
+#### ![dmstr logo](http://t.phundament.com/dmstr-16-cropped.png) Built by [dmstr](http://diemeisterei.de)        
