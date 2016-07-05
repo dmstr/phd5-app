@@ -15,5 +15,12 @@ init:   ##@development initialize development environment
 	$(DOCKER_COMPOSE) run --rm php composer install
 	mkdir -p web/assets runtime
 
-release: ##@development push to latest/release branch
+bash:	 ##@development open application development bash
+	$(DOCKER_COMPOSE) run php bash
+
+upgrade: ##@development update application package, pull, rebuild
+	$(DOCKER_COMPOSE) run --rm php composer update -v
+	$(DOCKER_COMPOSE) build --pull
+
+latest: ##@development push to latest/release branch
 	git push origin master:latest

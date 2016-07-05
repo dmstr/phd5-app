@@ -11,7 +11,11 @@ $menuItems = [];
 if (\Yii::$app->hasModule('user')) {
     if (\Yii::$app->user->isGuest) {
         #$menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
+        $menuItems[] = [
+            'label' => 'Login',
+            'url' => ['/user/security/login'],
+            'linkOptions' => ['id' => 'link-login']
+        ];
     } else {
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-user"></i> '.\Yii::$app->user->identity->username,

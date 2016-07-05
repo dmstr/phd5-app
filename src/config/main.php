@@ -26,5 +26,5 @@ return \yii\helpers\ArrayHelper::merge(
     require("{$configDir}/{$applicationType}.php"),
     (file_exists("{$configDir}/common-{$env}.php")) ? require("{$configDir}/common-{$env}.php") : [],
     (file_exists("{$configDir}/{$applicationType}-{$env}.php")) ? require("{$configDir}/{$applicationType}-{$env}.php") : [],
-    (file_exists(getenv('APP_CONFIG_FILE'))) ? getenv('APP_CONFIG_FILE') : []
+    (file_exists(getenv('APP_CONFIG_FILE'))) ? require(getenv('APP_CONFIG_FILE')) : []
 );

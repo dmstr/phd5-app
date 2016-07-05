@@ -4,6 +4,9 @@ all:	 ##@test [TEST] shorthand for
 	$(MAKE) -C .. build
 	$(MAKE) clean up setup run-tests
 
+bash:	 ##@development open application development bash
+	$(DOCKER_COMPOSE) run -e YII_ENV=test php bash
+
 run-tests:	 ##@test run tests
 	$(DOCKER_COMPOSE) run -e YII_ENV=test php codecept run -g mandatory --html=_report_mandatory.html
 

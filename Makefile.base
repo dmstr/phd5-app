@@ -1,6 +1,7 @@
 .PHONY: build test
 
 DOCKER_COMPOSE  ?= docker-compose
+DOCKER_HOST     ?= localhost
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), Darwin)
@@ -34,9 +35,6 @@ open:	 ##@development open application web service in browser
 
 open-db:	 ##@development open application database service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')
-
-bash:	 ##@development open application development bash
-	$(DOCKER_COMPOSE) exec php bash
 
 setup:	 ##@development run application setup
 	$(DOCKER_COMPOSE) run --rm php yii app/setup

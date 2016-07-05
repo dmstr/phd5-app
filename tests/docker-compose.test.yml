@@ -3,16 +3,20 @@ services:
   php:
     env_file:
       - docker-compose.dev-db.env
+    depends_on:
+      - firefox
     environment:
       - APP_NAME=test-ee
+      - APP_TITLE=TEST phd5
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
       - APP_INTERACTIVE=0
     volumes:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
-      # Local development settings
+      # Settings for local development
       #- ./src:/app/src
+      #- ./vendor:/app/vendor
   db:
     image: percona:5.6
     env_file:
@@ -22,9 +26,9 @@ services:
   firefox:
     image: selenium/standalone-firefox-debug:2.53.0
     # workaround for Docker Beta, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
+    dns: 8.8.4.4
     environment:
       - no_proxy=localhost
-      - HUB_ENV_no_proxy=localhost
     ports:
       - '4444'
       - '5900'
