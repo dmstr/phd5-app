@@ -17,7 +17,7 @@ foreach (\Yii::$app->urlManager->languages as $language) {
 }
 
 $menuItems[] = [
-    'label' => '<i class="fa fa-language"></i> ',
+    'label' => '<i class="glyphicon glyphicon-globe"></i> ',
     'options' => ['id' => 'link-languages-menu'],
     'items' => $languageItems,
 ];
