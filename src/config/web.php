@@ -30,7 +30,7 @@ return [
                     'url' => 'php://stdout',
                     'levels' => ['info', 'trace'],
                     'logVars' => [],
-                    'enabled' => YII_DEBUG,
+                    'enabled' => YII_DEBUG && !YII_ENV_TEST,
                 ],
                 [
                     'class' => 'codemix\streamlog\Target',

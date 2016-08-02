@@ -13,7 +13,7 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->title = $this->title;
+$this->title .= ' - '.getenv('APP_TITLE');
 
 // Register asset bundle
 if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false)) {
