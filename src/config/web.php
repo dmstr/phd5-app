@@ -45,6 +45,10 @@ return [
         ],
     ],
     'modules' => [
+        'docs' => [
+            'class' => 'schmunk42\markdocs\Module',
+            'layout' => '@backend/views/layouts/box',
+        ],
         'settings' => [
             'class' => 'pheme\settings\Module',
             'layout' => '@backend/views/layouts/box',
