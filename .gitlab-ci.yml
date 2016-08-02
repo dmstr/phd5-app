@@ -32,6 +32,7 @@ test:lint:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
     - make lint
     - cp -r _artifacts /tmp/artifacts-${ISOLATION}
+    - make clean
     - exit ${ERROR}
 
 test:codeception:
@@ -44,6 +45,22 @@ test:codeception:
     - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
     - make clean
     - exit ${EXIT_CODE}
+  except:
+    - coverage
+
+test:coverage:
+  stage: test
+  script:
+    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - EXIT_CODE=0
+    - cd tests && cp .env-dist .env
+    - make PHP_ENABLE_XDEBUG=1 up setup
+    - make run-coverage || EXIT_CODE=1
+    - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
+    - make clean
+    - exit ${EXIT_CODE}
+  only:
+    - coverage
 
 report:
   stage: report
@@ -68,6 +85,7 @@ cleanup:
   when: always
   script:
     - make clean
+    - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:lint
     - cd tests
     - make clean
 

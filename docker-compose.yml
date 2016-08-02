@@ -3,7 +3,6 @@ services:
     web:
         image: phundament/nginx-one:1.9-5.0.4
         environment:
-          - VIRTUAL_HOST=${VIRTUAL_HOST}
           - FASTCGI_PASS_HOST=php
         depends_on:
           - php
