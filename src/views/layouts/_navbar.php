@@ -7,6 +7,20 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
 $menuItems = [];
+$languageItems = [];
+
+foreach (\Yii::$app->urlManager->languages as $language) {
+    $languageItems[] = [
+        'url' => ['/', \Yii::$app->urlManager->languageParam => $language],
+        'label' => $language
+    ];
+}
+
+$menuItems[] = [
+    'label' => '<i class="fa fa-language"></i> ',
+    'options' => ['id' => 'link-languages-menu'],
+    'items' => $languageItems,
+];
 
 if (\Yii::$app->hasModule('user')) {
     if (\Yii::$app->user->isGuest) {
