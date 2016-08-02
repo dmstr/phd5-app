@@ -1,8 +1,9 @@
+# Test stack overrides
+#
+# Paths in this file are relative to the project root
 version: '2'
 services:
   php:
-    env_file:
-      - docker-compose.dev-db.env
     depends_on:
       - firefox
     environment:
@@ -11,16 +12,20 @@ services:
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
       - APP_INTERACTIVE=0
+      - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
+      - MYSQL_ROOT_PASSWORD=secret
     volumes:
       - ./tests:/app/tests
       - ./codeception.yml:/app/codeception.yml
-      # Settings for local development
+      # Settings for local test-development
+      #- ./runtime:/app/runtime
       #- ./src:/app/src
+      #- ./web:/app/web
       #- ./vendor:/app/vendor
   db:
     image: percona:5.6
-    env_file:
-      - docker-compose.dev-db.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
     ports:
       - '3306'
   firefox:

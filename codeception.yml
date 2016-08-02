@@ -21,3 +21,15 @@ modules:
             dump: tests/codeception/_data/dump.sql
 config:
     test_entry_url: http://web:80/index.php
+coverage:
+    enabled: true
+    c3_url: http://web/
+    remote: false
+    whitelist:
+        include:
+            - src/*.php
+            - vendor/dmstr/*.php
+            - vendor/hrzg/*.php
+        exclude:
+            - src/commands/*
+            - src/migrations/*

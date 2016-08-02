@@ -10,6 +10,7 @@
 $_SERVER['SCRIPT_FILENAME'] = YII_TEST_ENTRY_FILE;
 $_SERVER['SCRIPT_NAME'] = YII_TEST_ENTRY_URL;
 $_SERVER['HOST_NAME'] = 'web';
+$_SERVER['REQUEST_TIME'] = time();
 
 // TODO: Functional tests load CLI config by default, these are "web-overrides"
 $applicationType = 'web';

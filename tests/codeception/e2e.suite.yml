@@ -3,10 +3,11 @@ modules:
     enabled:
         - \Helper\E2e
         - WebDriver
+        - Asserts
     config:
         WebDriver:
             host: firefox
-            url: http://WEB:80/
+            url: http://web:80/
             browser: firefox
             port: 4444
             window_size: 1024x768

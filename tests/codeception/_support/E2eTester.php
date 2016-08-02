@@ -28,10 +28,6 @@ class E2eTester extends \Codeception\Actor
         $this->fillField('input[name="login-form[login]"]', $username);
         $this->fillField('input[name="login-form[password]"]', $password);
         $this->click('#login-form button');
-        if (method_exists($this,'waitForElement')) {
-            // TODO: improve login stability and speed
-            #$this->actor->waitForElement('#link-logout', 5);
-            $this->wait(2);
-        }
+        $this->waitForElementNotVisible('#login-form', 5);
     }
 }
