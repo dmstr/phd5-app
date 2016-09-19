@@ -45,9 +45,15 @@ return [
         ],
     ],
     'modules' => [
-        'docs' => [
+        'help' => [
             'class' => 'schmunk42\markdocs\Module',
             'layout' => '@backend/views/layouts/box',
+            'enableEmojis' => true,
+        ],
+        'guide' => [
+            'class' => 'schmunk42\markdocs\Module',
+            'layout' => '@backend/views/layouts/box',
+            'enableEmojis' => true,
         ],
         'settings' => [
             'class' => 'pheme\settings\Module',

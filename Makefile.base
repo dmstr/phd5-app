@@ -28,10 +28,10 @@ up:      ##@development start stack
 clean:   ##@development remove all containers in stack
 	$(DOCKER_COMPOSE) kill
 	$(DOCKER_COMPOSE) rm -fv --all
-	$(DOCKER_COMPOSE) down --rmi local --remove-orphans
+	$(DOCKER_COMPOSE) down --remove-orphans
 
 open:	 ##@development open application web service in browser
-	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://')
 
 open-db:	 ##@development open application database service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')

@@ -1,5 +1,5 @@
 {
-    "name": "dmstr/phd",
+    "name": "dmstr/phd5-app",
     "minimum-stability": "beta",
     "require": {
         "vlucas/phpdotenv": "2.*",

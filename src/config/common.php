@@ -8,19 +8,20 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+$languages = explode(',', getenv('APP_LANGUAGES'));
 
 Yii::$container->set(
     'dektrium\user\controllers\AdminController',
     [
-        'layout' => '@backend/views/layouts/box'
+        'layout' => '@backend/views/layouts/box',
     ]
 );
 
 // Basic configuration, used in web and console applications
 return [
     'id' => 'app',
-    'language' => 'en',
-    'basePath' => dirname(__DIR__),
+    'language' => $languages[0],
+    'basePath' => realpath(__DIR__.'/..'),
     'vendorPath' => '@app/../vendor',
     'runtimePath' => '@app/../runtime',
     // Bootstrapped modules are loaded in every request
@@ -43,12 +44,31 @@ return [
         ],
     ],
     'components' => [
+        'assetManager' => [
+            // Note: For using mounted volumes or shared folders
+            'dirMode' => YII_ENV_PROD ? 0777 : null,
+            // Hashing for distributed systems
+            'hashCallback' => YII_ENV_DEV ? null : function ($path) {
+                return hash('sha1', getenv('APP_VERSION').':'.$path);
+            },
+            // Note: You need to bundle asset with `yii asset`
+            'bundles' => getenv('APP_ASSET_USE_BUNDLED') ?
+                require Yii::getAlias('@web/bundles/config.php') :
+                (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE') ?
+                    [
+                        'yii\bootstrap\BootstrapAsset' => [
+                            'css' => [],
+                        ],
+                    ] :
+                    []),
+            'basePath' => '@app/../web/assets',
+        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
         'cache' => [
             'class' => 'yii\caching\ApcCache',
-            'useApcu' => true, // required for PHP 7
+            'useApcu' => true,
         ],
         'db' => [
             'class' => 'yii\db\Connection',
@@ -89,7 +109,7 @@ return [
             'enableDefaultLanguageUrlCode' => true,
             'baseUrl' => '/',
             'rules' => [],
-            'languages' => explode(',', getenv('APP_LANGUAGES')),
+            'languages' => $languages,
         ],
         'view' => [
             'class' => 'yii\web\View',
@@ -129,7 +149,7 @@ return [
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Module',
             'root' => '@app/views',
-            'layout' => '@backend/views/layouts/main',
+            'layout' => '@backend/views/layouts/box',
             'allowedIPs' => ['*'],
             'roles' => ['translate-module'],
         ],

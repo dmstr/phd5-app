@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.0-fpm-1.2
+FROM dmstr/php-yii2:7.0-fpm-1.4-nginx
 
 WORKDIR /app
 
@@ -11,6 +11,7 @@ ADD ./web /app/web/
 ADD ./src /app/src/
 RUN cp src/app.env-dist src/app.env
 
-RUN mkdir -p runtime web/assets && \
+RUN mkdir -p runtime web/assets web/bundles && \
+    yii asset/compress src/config/assets.php web/bundles/config.php && \
     chmod -R 775 runtime web/assets && \
     chown -R 1000:33 runtime web/assets

@@ -4,6 +4,8 @@
 version: '2'
 services:
   php:
+    ports:
+      - 80
     depends_on:
       - firefox
     environment:
@@ -12,6 +14,7 @@ services:
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
       - APP_INTERACTIVE=0
+      - APP_ASSET_USE_BUNDLED=1
       - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
       - MYSQL_ROOT_PASSWORD=secret
     volumes:
@@ -22,6 +25,10 @@ services:
       #- ./src:/app/src
       #- ./web:/app/web
       #- ./vendor:/app/vendor
+    networks:
+      default:
+        aliases:
+          - web
   db:
     image: percona:5.6
     environment:

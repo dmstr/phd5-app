@@ -10,9 +10,7 @@ namespace app\controllers;
  * file that was distributed with this source code.
  */
 
-use dmstr\web\traits\AccessBehaviorTrait;
 use Yii;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
 /**

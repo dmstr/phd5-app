@@ -1,14 +1,17 @@
+# Development stack overrides
+#
+# Variables are populated with values from `.env`
+#
 version: '2'
 services:
-  web:
-    volumes:
-      - ./web:/app/web
   php:
     build:
       dockerfile: Dockerfile
       context: .
       args:
         - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+    ports:
+      - 80
     depends_on:
       - db
     environment:
@@ -23,7 +26,7 @@ services:
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
       - ./src:/app/src
-      - ./web:/app/web
+      - ./web/assets:/app/web/assets
       - ./vendor:/app/vendor
       #- ./runtime:/app/runtime
   db:

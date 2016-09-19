@@ -11,7 +11,6 @@ namespace app\controllers;
  */
 
 use dmstr\web\traits\AccessBehaviorTrait;
-use Yii;
 use yii\web\Controller;
 
 /**

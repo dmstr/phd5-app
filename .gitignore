@@ -8,3 +8,4 @@ app.env
 _artifacts
 version
 tests/codeception/_output
+web/bundles

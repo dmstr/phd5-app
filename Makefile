@@ -22,6 +22,9 @@ upgrade: ##@development update application package, pull, rebuild
 	$(DOCKER_COMPOSE) run --rm php composer update -v
 	$(DOCKER_COMPOSE) build --pull
 
+assets:	 ##@development open application development bash
+	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress src/config/assets.php web/bundles/config.php
+
 latest: ##@development push to latest/release branch
 	git push origin master:latest
 

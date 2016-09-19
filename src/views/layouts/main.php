@@ -59,6 +59,11 @@ if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false))
     </div>
 </footer>
 
+<!-- Info Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <?= $this->render('_modal') ?>
+</div>
+
 <?php $this->endBody() ?>
 </body>
 </html>

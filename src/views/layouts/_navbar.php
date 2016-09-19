@@ -12,7 +12,7 @@ $languageItems = [];
 foreach (\Yii::$app->urlManager->languages as $language) {
     $languageItems[] = [
         'url' => ['/', \Yii::$app->urlManager->languageParam => $language],
-        'label' => $language
+        'label' => $language,
     ];
 }
 
@@ -24,11 +24,11 @@ $menuItems[] = [
 
 if (\Yii::$app->hasModule('user')) {
     if (\Yii::$app->user->isGuest) {
-        #$menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
+        //$menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
         $menuItems[] = [
             'label' => 'Login',
             'url' => ['/user/security/login'],
-            'linkOptions' => ['id' => 'link-login']
+            'linkOptions' => ['id' => 'link-login'],
         ];
     } else {
         $menuItems[] = [
@@ -48,12 +48,12 @@ if (\Yii::$app->hasModule('user')) {
             ],
         ];
         $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
+            'label' => '<i class="glyphicon glyphicon-cog"></i>',
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
             'items' => \Yii::$app->params['context.menuItems'],
         ];
         $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-cog"></i>',
+            'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
             'url' => ['/backend'],
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
             'items' => Tree::getMenuItems('backend', true, Tree::GLOBAL_ACCESS_DOMAIN),
@@ -70,6 +70,7 @@ NavBar::begin(
         ],
     ]
 );
+
 echo Nav::widget(
     [
         'options' => ['class' => 'navbar-nav'],
@@ -77,8 +78,7 @@ echo Nav::widget(
         'items' => \dmstr\modules\pages\models\Tree::getMenuItems('root'),
     ]
 );
-?>
-<?php
+
 echo Nav::widget(
     [
         'options' => ['class' => 'navbar-nav navbar-right'],

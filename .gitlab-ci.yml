@@ -7,7 +7,7 @@ stages:
   - cleanup
 
 before_script:
-  # Setup as project variables: PHP_IMAGE_NAME=project/php
+  # Setup as GitLab project variables: PHP_IMAGE_NAME=project/php
   - export APP_VERSION=$(git describe --always --dirty)
   - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
   - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
@@ -39,7 +39,8 @@ test:codeception:
   stage: test
   script:
     - EXIT_CODE=0
-    - cd tests && cp .env-dist .env
+    - cd tests
+    - cp .env-dist .env
     - make up setup
     - make run-tests || EXIT_CODE=1
     - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
@@ -53,7 +54,8 @@ test:coverage:
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
     - EXIT_CODE=0
-    - cd tests && cp .env-dist .env
+    - cd tests
+    - cp .env-dist .env
     - make PHP_ENABLE_XDEBUG=1 up setup
     - make run-coverage || EXIT_CODE=1
     - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
@@ -74,10 +76,12 @@ report:
 release:
   stage: release
   script:
+    - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
     - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
     - docker push ${REGISTRY_PHP_IMAGE}
   only:
     - latest
+    - experimental
     - tags
 
 cleanup:
@@ -88,4 +92,5 @@ cleanup:
     - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:lint
     - cd tests
     - make clean
+    - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:coverage
 

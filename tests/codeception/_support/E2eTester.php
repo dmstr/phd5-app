@@ -30,4 +30,11 @@ class E2eTester extends \Codeception\Actor
         $this->click('#login-form button');
         $this->waitForElementNotVisible('#login-form', 5);
     }
+
+    public function dontSeeHorizontalScrollbars(){
+        $this->assertFalse(
+            $this->executeJS("return document.getElementsByTagName(\"html\")[0].scrollWidth > document.getElementsByTagName(\"html\")[0].clientWidth"),
+            'Horizontal scrollbar'
+        );
+    }
 }
