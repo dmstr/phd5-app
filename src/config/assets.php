@@ -12,12 +12,10 @@ $commonBundles = [
     \lajax\translatemanager\bundles\LanguagePluginAsset::className(),
     \yii\bootstrap\BootstrapPluginAsset::className(),
     \yii\grid\GridViewAsset::className(),
-    \yii\widgets\PjaxAsset::className(),
-    \yii\widgets\ActiveFormAsset::className(),
-    \yii\web\AssetBundle::className(),
+    #\yii\widgets\PjaxAsset::className(),
+    #\yii\widgets\ActiveFormAsset::className(),
     \yii\web\JqueryAsset::className(),
-    \yii\validators\ValidationAsset::className(),
-    \trntv\aceeditor\AceEditorAsset::className(),
+    #\yii\validators\ValidationAsset::className(),
 ];
 
 $frontendBundles = [
@@ -29,6 +27,7 @@ $backendBundles = [
     \dmstr\web\AdminLteAsset::className(),
     \kartik\tree\TreeViewAsset::className(),
     \lajax\translatemanager\bundles\LanguageAsset::className(),
+    \trntv\aceeditor\AceEditorAsset::className(),
 ];
 
 return [
