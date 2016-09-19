@@ -1,7 +1,7 @@
 phd5
 ====
 
-A universal web application template
+A universal web application template built upon Docker, PHP and Yii 2.0 Framework
 
 Documentation
 -------------
