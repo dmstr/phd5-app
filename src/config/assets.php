@@ -4,6 +4,9 @@
  * Note that in the console environment, some path aliases like '@webroot' and '@web' may not exist.
  * Please define these missing path aliases.
  */
+
+namespace _;
+
 $bashPath = '@app/../web/bundles';
 $baseUrl = '@web/bundles';
 
@@ -37,9 +40,9 @@ return [
     'cssCompressor' => 'yui-compressor --type css {from} -o {to}',
     // The list of asset bundles to compress:
     'bundles' => \yii\helpers\ArrayHelper::merge(
-        $commonBundles,
         $frontendBundles,
-        $backendBundles
+        $backendBundles,
+        $commonBundles
     ),
     // Asset bundle for compression output:
     'targets' => [
