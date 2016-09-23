@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f0bc69c3f599c7aca85c94dd8416ab78",
-    "content-hash": "8e4d798a10c33014ed6b3e7f2397bc47",
+    "hash": "3668d420cdcf0b47dfc2e30badd0eebd",
+    "content-hash": "d9b492d18e80eb0914a857b11b36eec5",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -640,16 +640,16 @@
         },
         {
             "name": "cebe/markdown",
-            "version": "1.1.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166"
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
-                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/f681fee8303310415b746f3758eeda0a7ad08bda",
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda",
                 "shasum": ""
             },
             "require": {
@@ -659,7 +659,7 @@
             "require-dev": {
                 "cebe/indent": "*",
                 "facebook/xhprof": "*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "3.7.*"
             },
             "bin": [
                 "bin/markdown"
@@ -667,7 +667,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -696,7 +696,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2016-09-14 20:40:20"
+            "time": "2015-03-06 05:21:16"
         },
         {
             "name": "cebe/yii2-gravatar",
@@ -1170,25 +1170,25 @@
         },
         {
             "name": "dmstr/yii2-cms-metapackage",
-            "version": "6.0.0-beta1",
+            "version": "6.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cms-metapackage.git",
-                "reference": "c4b350aa04c687a5c6042449efd24e140cca148a"
+                "reference": "7ad46e9aa8510de47c93b8179d69ae23a7489928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/c4b350aa04c687a5c6042449efd24e140cca148a",
-                "reference": "c4b350aa04c687a5c6042449efd24e140cca148a",
+                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/7ad46e9aa8510de47c93b8179d69ae23a7489928",
+                "reference": "7ad46e9aa8510de47c93b8179d69ae23a7489928",
                 "shasum": ""
             },
             "require": {
                 "dektrium/yii2-rbac": "^0.3",
-                "dektrium/yii2-user": "^0.9.6",
+                "dektrium/yii2-user": "~0.9.9",
                 "dmstr/yii2-adminlte-asset": "^2.3.3",
-                "dmstr/yii2-backend-module": "^0.4.11",
+                "dmstr/yii2-backend-module": "~0.4.11",
                 "dmstr/yii2-pages-module": "^0.18.0",
-                "dmstr/yii2-prototype-module": "^0.4.0",
+                "dmstr/yii2-prototype-module": "~0.4.2",
                 "insolita/yii2-adminlte-widgets": "~1.1",
                 "lajax/yii2-translate-manager": "^1.5.4",
                 "pheme/yii2-settings": "^0.4",
@@ -1216,7 +1216,7 @@
                 }
             ],
             "description": "Content-management extensions for Yii 2.0 Framework",
-            "time": "2016-08-01 21:20:01"
+            "time": "2016-09-23 00:27:07"
         },
         {
             "name": "dmstr/yii2-db",
@@ -2185,16 +2185,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.2",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7"
+                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
-                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
+                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
                 "shasum": ""
             },
             "require": {
@@ -2207,7 +2207,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.24-dev"
+                    "dev-master": "1.25-dev"
                 }
             },
             "autoload": {
@@ -2242,7 +2242,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-01 17:50:53"
+            "time": "2016-09-21 23:05:12"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2734,6 +2734,38 @@
     ],
     "packages-dev": [
         {
+            "name": "bower-asset/emojify.js",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hassankhan/emojify.js.git",
+                "reference": "230b992b2754000b52da2542fa7a4fa730dc9a24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hassankhan/emojify.js/zipball/230b992b2754000b52da2542fa7a4fa730dc9a24",
+                "reference": "230b992b2754000b52da2542fa7a4fa730dc9a24",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/js/emojify.js",
+                "bower-asset-ignore": [
+                    "src",
+                    "**/.*",
+                    "node_modules",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Javascript module to convert Emoji keywords to images http://hassankhan.github.io/emojify.js/",
+            "keywords": [
+                "emoji"
+            ]
+        },
+        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.11.1",
             "source": {
@@ -2759,6 +2791,105 @@
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
             }
+        },
+        {
+            "name": "cebe/js-search",
+            "version": "0.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/js-search.git",
+                "reference": "db807790032146beb2e5624fc38799d126720200"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/js-search/zipball/db807790032146beb2e5624fc38799d126720200",
+                "reference": "db807790032146beb2e5624fc38799d126720200",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "bin": [
+                "bin/jsindex"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "cebe\\jssearch\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
+                }
+            ],
+            "description": "A client side search engine for use on static pages.",
+            "time": "2015-05-06 22:41:18"
+        },
+        {
+            "name": "cebe/markdown-latex",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/markdown-latex.git",
+                "reference": "9ba3e0d629aa3a3e61cc159a999209ab54e3ef43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/markdown-latex/zipball/9ba3e0d629aa3a3e61cc159a999209ab54e3ef43",
+                "reference": "9ba3e0d629aa3a3e61cc159a999209ab54e3ef43",
+                "shasum": ""
+            },
+            "require": {
+                "cebe/markdown": "~1.0.0",
+                "mikevanriel/text-to-latex": "~1.0.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "bin/markdown-latex"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\markdown\\latex\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A super fast highly extensible markdown parser for PHP that converts markdown files into latex",
+            "homepage": "https://github.com/cebe/markdown-latex#readme",
+            "keywords": [
+                "extensible",
+                "fast",
+                "gfm",
+                "latex",
+                "markdown",
+                "markdown-extra"
+            ],
+            "time": "2014-10-20 23:24:21"
         },
         {
             "name": "cmrcx/phptidy",
@@ -2803,23 +2934,23 @@
         },
         {
             "name": "dmstr/yii2-cms-dev-metapackage",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cms-dev-metapackage.git",
-                "reference": "6188d7ab96b1db193d4aaad53410c07bb08abce7"
+                "reference": "ed0010d1cee09f2a5253c80a72d3ccc1fe173930"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-cms-dev-metapackage/zipball/6188d7ab96b1db193d4aaad53410c07bb08abce7",
-                "reference": "6188d7ab96b1db193d4aaad53410c07bb08abce7",
+                "url": "https://api.github.com/repos/dmstr/yii2-cms-dev-metapackage/zipball/ed0010d1cee09f2a5253c80a72d3ccc1fe173930",
+                "reference": "ed0010d1cee09f2a5253c80a72d3ccc1fe173930",
                 "shasum": ""
             },
             "require": {
                 "friendsofphp/php-cs-fixer": "1.* | 2.*",
                 "schmunk42/yii2-giiant": "~0.6.2 | ~0.7",
                 "schmunk42/yii2-markdocs-module": "~0.3",
-                "yiisoft/yii2-apidoc": "2.*",
+                "yiisoft/yii2-apidoc": "^2.0.5",
                 "yiisoft/yii2-codeception": "2.*",
                 "yiisoft/yii2-coding-standards": "2.*",
                 "yiisoft/yii2-debug": "2.*",
@@ -2848,7 +2979,48 @@
                 }
             ],
             "description": "Content Management Development Extensions for Phundament 4 (Yii 2.0 Framework)",
-            "time": "2016-08-02 18:08:46"
+            "time": "2016-09-23 22:47:52"
+        },
+        {
+            "name": "dmstr/yii2-emojifyjs-asset",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-emojifyjs-asset.git",
+                "reference": "a76e3793036239b0f3e26fda7ccee34f55cdb5e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-emojifyjs-asset/zipball/a76e3793036239b0f3e26fda7ccee34f55cdb5e6",
+                "reference": "a76e3793036239b0f3e26fda7ccee34f55cdb5e6",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/emojify.js": "^1.1.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\web\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Munk",
+                    "email": "tobias@diemeisterei.de"
+                }
+            ],
+            "description": "Extension/Package",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2016-09-23 18:47:47"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -2955,6 +3127,45 @@
                 "fixtures"
             ],
             "time": "2016-04-29 12:21:54"
+        },
+        {
+            "name": "mikevanriel/text-to-latex",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mvriel/TextToLatex.git",
+                "reference": "c9f3a4d6b89f9449782455c848d5fa3dd0e216ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mvriel/TextToLatex/zipball/c9f3a4d6b89f9449782455c848d5fa3dd0e216ba",
+                "reference": "c9f3a4d6b89f9449782455c848d5fa3dd0e216ba",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MikeVanRiel": [
+                        "src/",
+                        "tests/unit/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "description": "A converter class that converts normal ASCII text to valid LaTeX",
+            "time": "2015-12-13 07:33:35"
         },
         {
             "name": "nikic/php-parser",
@@ -3191,16 +3402,16 @@
         },
         {
             "name": "schmunk42/yii2-giiant",
-            "version": "0.9.0-beta2",
+            "version": "0.9.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-giiant.git",
-                "reference": "e7d6c81c2c22bbc897c778c2d00874740e7aa0c8"
+                "reference": "47d79512739fa9c6bbdfcd8eaceab6d601f498fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/e7d6c81c2c22bbc897c778c2d00874740e7aa0c8",
-                "reference": "e7d6c81c2c22bbc897c778c2d00874740e7aa0c8",
+                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/47d79512739fa9c6bbdfcd8eaceab6d601f498fa",
+                "reference": "47d79512739fa9c6bbdfcd8eaceab6d601f498fa",
                 "shasum": ""
             },
             "require": {
@@ -3243,30 +3454,31 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-09-15 13:29:41"
+            "time": "2016-09-22 19:52:58"
         },
         {
             "name": "schmunk42/yii2-markdocs-module",
-            "version": "0.3.0",
+            "version": "0.4.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-markdocs-module.git",
-                "reference": "db4105721679c585426aaba21aaa6e5d04f35be1"
+                "reference": "cb438ece0e91160491fcf0887276b58a8244d6f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-markdocs-module/zipball/db4105721679c585426aaba21aaa6e5d04f35be1",
-                "reference": "db4105721679c585426aaba21aaa6e5d04f35be1",
+                "url": "https://api.github.com/repos/schmunk42/yii2-markdocs-module/zipball/cb438ece0e91160491fcf0887276b58a8244d6f0",
+                "reference": "cb438ece0e91160491fcf0887276b58a8244d6f0",
                 "shasum": ""
             },
             "require": {
+                "dmstr/yii2-emojifyjs-asset": "~0.1",
                 "pheme/yii2-settings": "~0.3",
-                "yiisoft/yii2": "*"
+                "yiisoft/yii2": "2.*"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "schmunk42\\markdocs\\": ""
+                    "schmunk42\\markdocs\\": "./src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3284,7 +3496,41 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2015-12-22 20:50:40"
+            "time": "2016-09-23 22:57:50"
+        },
+        {
+            "name": "scrivo/highlight.php",
+            "version": "v8.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/scrivo/highlight.php.git",
+                "reference": "d861aee53999963aed4b742cfe21181bec178f35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/d861aee53999963aed4b742cfe21181bec178f35",
+                "reference": "d861aee53999963aed4b742cfe21181bec178f35",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Highlight\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Server side syntax highlighter that supports over 90 languages. It's a PHP port of highlight.js",
+            "keywords": [
+                "code",
+                "highlight",
+                "highlight.js",
+                "highlight.php",
+                "syntax"
+            ],
+            "time": "2015-12-31 20:33:22"
         },
         {
             "name": "sebastian/diff",
@@ -3775,29 +4021,42 @@
         },
         {
             "name": "yiisoft/yii2-apidoc",
-            "version": "2.0.0-beta",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-apidoc.git",
-                "reference": "bb8cc0543f3d624d4e3d5985a72453dcebe67070"
+                "reference": "79d9575c241d54065fd5c489039ba30c0319608e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-apidoc/zipball/bb8cc0543f3d624d4e3d5985a72453dcebe67070",
-                "reference": "bb8cc0543f3d624d4e3d5985a72453dcebe67070",
+                "url": "https://api.github.com/repos/yiisoft/yii2-apidoc/zipball/79d9575c241d54065fd5c489039ba30c0319608e",
+                "reference": "79d9575c241d54065fd5c489039ba30c0319608e",
                 "shasum": ""
             },
             "require": {
+                "cebe/js-search": "*",
+                "cebe/markdown": "~1.0.0 | ~1.1.0",
+                "cebe/markdown-latex": "~1.0.0",
                 "nikic/php-parser": "0.9.*",
-                "phpdocumentor/reflection": ">=1.0.3",
-                "phpdocumentor/reflection-docblock": ">2.0.1",
-                "yiisoft/yii2": "*",
+                "phpdocumentor/reflection": "^1.0.3",
+                "phpdocumentor/reflection-docblock": "^2.0.1",
+                "scrivo/highlight.php": "~8.0",
+                "yiisoft/yii2": ">=2.0.4",
                 "yiisoft/yii2-bootstrap": "*"
             },
             "bin": [
                 "apidoc"
             ],
             "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "yii\\apidoc\\": ""
@@ -3810,9 +4069,7 @@
             "authors": [
                 {
                     "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc",
-                    "homepage": "http://cebe.cc/",
-                    "role": "Core framework development"
+                    "email": "mail@cebe.cc"
                 }
             ],
             "description": "API Documentation generator for the Yii framework 2.0",
@@ -3823,7 +4080,7 @@
                 "phpdoc",
                 "yii2"
             ],
-            "time": "2014-04-13 21:58:59"
+            "time": "2016-03-17 04:25:50"
         },
         {
             "name": "yiisoft/yii2-codeception",
