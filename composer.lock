@@ -1085,16 +1085,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.4.14",
+            "version": "0.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "5315aab521c8959cffd566d11a8cb6051f8eb870"
+                "reference": "9cd151040fb886bd06c0e419e59250c8f645a6d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/5315aab521c8959cffd566d11a8cb6051f8eb870",
-                "reference": "5315aab521c8959cffd566d11a8cb6051f8eb870",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/9cd151040fb886bd06c0e419e59250c8f645a6d3",
+                "reference": "9cd151040fb886bd06c0e419e59250c8f645a6d3",
                 "shasum": ""
             },
             "require": {
@@ -1125,7 +1125,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-07-29 10:55:17"
+            "time": "2016-09-26 16:49:31"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -1220,16 +1220,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.7.5",
+            "version": "0.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "ac428df1492b3a97de09c352c29d545830b55c55"
+                "reference": "dafbe2b21469427ff448e320a67419c560a55f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/ac428df1492b3a97de09c352c29d545830b55c55",
-                "reference": "ac428df1492b3a97de09c352c29d545830b55c55",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/dafbe2b21469427ff448e320a67419c560a55f27",
+                "reference": "dafbe2b21469427ff448e320a67419c560a55f27",
                 "shasum": ""
             },
             "require": {
@@ -1262,20 +1262,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-08-25 22:13:36"
+            "time": "2016-09-27 11:41:10"
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "5ca0584e6be20e2539cdd511636347a6b84eef60"
+                "reference": "e8259dd4972f244cd3c278b33843ad8a63dab2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/5ca0584e6be20e2539cdd511636347a6b84eef60",
-                "reference": "5ca0584e6be20e2539cdd511636347a6b84eef60",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/e8259dd4972f244cd3c278b33843ad8a63dab2b6",
+                "reference": "e8259dd4972f244cd3c278b33843ad8a63dab2b6",
                 "shasum": ""
             },
             "require": {
@@ -1306,7 +1306,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-05-10 17:16:40"
+            "time": "2016-09-26 16:52:23"
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
@@ -3024,16 +3024,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v1.12.1",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "d33ee60f3d3e6152888b7f3a385f49e5c43bf1bf"
+                "reference": "baa7112bef3b86c65fcfaae9a7a50436e3902b41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d33ee60f3d3e6152888b7f3a385f49e5c43bf1bf",
-                "reference": "d33ee60f3d3e6152888b7f3a385f49e5c43bf1bf",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/baa7112bef3b86c65fcfaae9a7a50436e3902b41",
+                "reference": "baa7112bef3b86c65fcfaae9a7a50436e3902b41",
                 "shasum": ""
             },
             "require": {
@@ -3078,7 +3078,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-09-07 06:48:24"
+            "time": "2016-09-27 07:57:59"
         },
         {
             "name": "fzaninotto/faker",
