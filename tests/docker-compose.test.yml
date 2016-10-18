@@ -4,6 +4,9 @@
 version: '2'
 services:
   php:
+    build:
+      dockerfile: Dockerfile
+      context: .
     working_dir: /app/tests
     ports:
       - 80
@@ -37,7 +40,7 @@ services:
     ports:
       - '3306'
   firefox:
-    image: selenium/standalone-firefox-debug:2.53.0
+    image: selenium/standalone-firefox-debug:2.53.1
     # workaround for Docker Beta, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
     dns: 8.8.4.4
     environment:
