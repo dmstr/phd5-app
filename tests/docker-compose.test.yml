@@ -4,6 +4,7 @@
 version: '2'
 services:
   php:
+    working_dir: /app/tests
     ports:
       - 80
     depends_on:

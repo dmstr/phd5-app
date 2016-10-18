@@ -1,10 +1,10 @@
 actor: Tester
 paths:
-    tests: tests/codeception
-    log: tests/codeception/_output
-    data: tests/codeception/_data
-    support: tests/codeception/_support
-    envs: tests/codeception/_envs
+    tests: codeception
+    log: codeception/_output
+    data: codeception/_data
+    support: codeception/_support
+    envs: codeception/_envs
 settings:
     bootstrap: _bootstrap.php
     colors: true
@@ -18,7 +18,7 @@ modules:
             dsn: ''
             user: ''
             password: ''
-            dump: tests/codeception/_data/dump.sql
+            dump: codeception/_data/dump.sql
 config:
     test_entry_url: http://web:80/index.php
 coverage:
