@@ -3,6 +3,8 @@ phd5
 
 A universal web application template built upon Docker, PHP and Yii 2.0 Framework
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dmstr/phd5-app/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dmstr/phd5-app/?branch=master)
+
 Documentation
 -------------
  
