@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.0-fpm-1.4-nginx
+FROM dmstr/php-yii2:7.0-fpm-1.6-rc3-nginx
 
 WORKDIR /app
 
