@@ -40,15 +40,19 @@
         },
         "temp-dmstr/yii2-filefly-module": {
             "type": "vcs",
-            "url": "https://git.hrzg.de/dmstr/yii2-filefly-module"
+            "url": "https://git.hrzg.de/dmstr/yii2-filefly-module.git"
         },
         "temp-dmstr/yii2-filemanager-widgets": {
             "type": "vcs",
-            "url": "https://git.hrzg.de/dmstr/yii2-filemanager-widgets"
+            "url": "https://git.hrzg.de/dmstr/yii2-filemanager-widgets.git"
         },
         "temp-dmstr/yii2-widgets2-module": {
             "type": "vcs",
-            "url": "https://git.hrzg.de/dmstr/yii2-widgets2-module"
+            "url": "https://git.hrzg.de/dmstr/yii2-widgets2-module.git"
+        },
+        "temp-dmstr/yii2-redirect-module": {
+            "type": "vcs",
+            "url": "https://github.com/dmstr/yii2-redirect-module"
         }
     }
 }
