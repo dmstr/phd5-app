@@ -1,5 +1,6 @@
 <?php
 
+use rmrevin\yii\fontawesome\FA;
 use yii\helpers\Html;
 
 ?>
