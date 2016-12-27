@@ -28,7 +28,7 @@ class E2eTester extends \Codeception\Actor
         $this->fillField('input[name="login-form[login]"]', $username);
         $this->fillField('input[name="login-form[password]"]', $password);
         $this->click('#login-form button');
-        $this->waitForElementNotVisible('#login-form', 5);
+        $this->waitForElementNotVisible('#login-form', 10);
     }
 
     public function dontSeeHorizontalScrollbars(){

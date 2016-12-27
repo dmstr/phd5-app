@@ -1,20 +1,18 @@
 <?php
 
-class ControllerTest extends \PHPUnit_Framework_TestCase
+class ControllerTest extends \Codeception\Test\Unit
 {
-    protected function setUp()
-    {
-    }
-
-    protected function tearDown()
-    {
-    }
-
     /**
      * @group mandatory
      */
     public function testApp()
     {
-        Yii::$app;
+
+        $this->assertNotNull(Yii::$app);
+    }
+
+    public function testController()
+    {
+        $this->assertNotFalse(Yii::$app->createController('site/index'));
     }
 }

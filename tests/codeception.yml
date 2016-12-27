@@ -6,6 +6,7 @@ paths:
     support: codeception/_support
     envs: codeception/_envs
 settings:
+    #shuffle: true
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
@@ -14,11 +15,9 @@ extensions:
         - Codeception\Extension\RunFailed
 modules:
     config:
-        Db:
-            dsn: ''
-            user: ''
-            password: ''
-            dump: codeception/_data/dump.sql
+        Yii2:
+            configFile: 'codeception/_config/codeception-module.php'
+cleanup: false
 config:
     test_entry_url: http://web:80/index.php
 coverage:
@@ -27,9 +26,9 @@ coverage:
     remote: false
     whitelist:
         include:
-            - src/*.php
-            - vendor/dmstr/*.php
-            - vendor/hrzg/*.php
+            - ../src/*.php
+            - ../vendor/dmstr/*.php
+            - ../vendor/hrzg/*.php
         exclude:
-            - src/commands/*
-            - src/migrations/*
+            - ../src/commands/*
+            - ../src/migrations/*

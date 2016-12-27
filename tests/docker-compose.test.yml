@@ -1,38 +1,52 @@
 # Test stack overrides
+# ====================
 #
 # Paths in this file are relative to the project root
+
 version: '2'
 services:
   php:
     build:
-      dockerfile: Dockerfile
       context: .
+      args:
+        - APP_VERSION
+    image: ${STACK_PHP_IMAGE}
     working_dir: /app/tests
     ports:
       - 80
     depends_on:
+      - db
       - firefox
+      - mailcatcher
     environment:
+      - YII_ENV=test
       - APP_NAME=test-ee
-      - APP_TITLE=TEST phd5
+      - APP_LANGUAGES=de,en,ru
+      - APP_TITLE=Doro TEST
+
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
+
       - APP_INTERACTIVE=0
       - APP_ASSET_USE_BUNDLED=1
       - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
       - MYSQL_ROOT_PASSWORD=secret
+      - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
+      - APP_ASSET_FORCE_PUBLISH=0
     volumes:
       - ./tests:/app/tests
-      - ./codeception.yml:/app/codeception.yml
       # Settings for local test-development
-      #- ./runtime:/app/runtime
       #- ./src:/app/src
       #- ./web:/app/web
       #- ./vendor:/app/vendor
+      # Debug settings
+      #- ./runtime:/app/runtime
     networks:
       default:
         aliases:
           - web
+  worker:
+    image: ${STACK_PHP_IMAGE}
   db:
     image: percona:5.6
     environment:
@@ -48,3 +62,7 @@ services:
     ports:
       - '4444'
       - '5900'
+  mailcatcher:
+    image: nisenabe/mailcatcher
+    ports:
+      - '1080'
