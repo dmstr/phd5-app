@@ -8,8 +8,6 @@ services:
   php:
     build:
       context: .
-      args:
-        - APP_VERSION
     image: ${STACK_PHP_IMAGE}
     working_dir: /app/tests
     ports:

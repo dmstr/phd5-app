@@ -16,5 +16,4 @@ RUN mkdir -p runtime web/assets web/bundles && \
     chmod -R 775 runtime web/assets && \
     chown -R 1000:82 runtime web/assets /root/.composer/vendor
 
-
 RUN crontab src/config/crontab
