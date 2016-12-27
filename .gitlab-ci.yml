@@ -28,51 +28,54 @@ build:
   script:
     - make build
 
-test:lint:
-  stage: test
-  script:
-    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - make lint
-    - cp -r _artifacts /tmp/artifacts-${ISOLATION}
-    - make clean
-
 test:codeception:
   stage: test
   script:
-    - EXIT_CODE=0
-    - cd tests
-    - cp .env-dist .env
     - make up setup
-    - make run-tests || EXIT_CODE=1
-    - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
+    - make run-tests
     - make clean
-    - exit ${EXIT_CODE}
   except:
     - coverage
+  artifacts:
+    name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-codeception
+    when: always
+    expire_in: 4 weeks
+    paths:
+      - tests/codeception/_output
+
 
 test:coverage:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - EXIT_CODE=0
-    - cd tests
-    - cp .env-dist .env
     - make PHP_ENABLE_XDEBUG=1 up setup
-    - make run-coverage || EXIT_CODE=1
-    - cp -r codeception/_output /tmp/artifacts-${ISOLATION}
+    - make run-coverage
     - make clean
-    - exit ${EXIT_CODE}
   only:
     - coverage
-
-report:
-  stage: report
-  when: always
-  script:
-    - cp -r /tmp/artifacts-${ISOLATION} artifacts
   artifacts:
+    name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-coverage
+    when: always
+    expire_in: 4 weeks
     paths:
-      - artifacts
+      - tests/codeception/_output
+
+test:lint:
+  stage: test
+  script:
+    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - cd ..
+    - cp .env-dist .env
+    - make help
+    - make lint
+    - make lint-composer
+    - make clean
+  artifacts:
+    name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-lint
+    when: always
+    expire_in: 4 weeks
+    paths:
+      - _artifacts
 
 release:
   stage: release
@@ -91,7 +94,6 @@ cleanup:
   script:
     - make clean
     - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:lint
-    - cd tests
-    - make clean
     - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:coverage
+    - docker ps -f name=${ISOLATION}
 
