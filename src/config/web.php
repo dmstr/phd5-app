@@ -32,12 +32,7 @@ return [
                     'logVars' => [],
                     'enabled' => YII_DEBUG && !YII_ENV_TEST,
                 ],
-                [
-                    'class' => 'codemix\streamlog\Target',
-                    'url' => 'php://stderr',
-                    'levels' => ['error', 'warning'],
-                    'logVars' => [],
-                ],
+
             ],
         ],
         'request' => [

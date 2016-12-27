@@ -2,13 +2,30 @@
 
 namespace app\views\layouts;
 
-use dmstr\modules\pages\models\Tree;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
+// initialize local variables
 $menuItems = [];
 $languageItems = [];
 
+// create label for dev and test environment
+switch (YII_ENV) {
+    case 'dev':
+    case 'test':
+        $envLabel = "<span class='label label-warning'>".YII_ENV.'</span>';
+        break;
+    default:
+        $envLabel = '';
+}
+$debugLabel = YII_DEBUG ? "<span class='label label-danger'>DEBUG</span>" : '';
+
+// add env & debug label to menu
+$menuItems[] = [
+    'label' => $envLabel.' '.$debugLabel,
+];
+
+// prepare languages
 foreach (\Yii::$app->urlManager->languages as $language) {
     $languageItems[] = [
         'url' => ['/', \Yii::$app->urlManager->languageParam => $language],
@@ -16,14 +33,17 @@ foreach (\Yii::$app->urlManager->languages as $language) {
     ];
 }
 
+// add language items to menu
 $menuItems[] = [
-    'label' => '<i class="glyphicon glyphicon-globe"></i> ',
+    'label' => '<i class="glyphicon glyphicon-globe"></i> '.\Yii::$app->language,
     'options' => ['id' => 'link-languages-menu'],
     'items' => $languageItems,
 ];
 
+// build user menu
 if (\Yii::$app->hasModule('user')) {
     if (\Yii::$app->user->isGuest) {
+        // unauthorized users
         //$menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
         $menuItems[] = [
             'label' => 'Login',
@@ -31,6 +51,7 @@ if (\Yii::$app->hasModule('user')) {
             'linkOptions' => ['id' => 'link-login'],
         ];
     } else {
+        // logged in users
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-user"></i> '.\Yii::$app->user->identity->username,
             'options' => ['id' => 'link-user-menu'],
@@ -38,6 +59,10 @@ if (\Yii::$app->hasModule('user')) {
                 [
                     'label' => '<i class="glyphicon glyphicon-user"></i> Profile',
                     'url' => ['/user/profile/show', 'id' => \Yii::$app->user->id],
+                ],
+                [
+                    'label' => '<i class="glyphicon glyphicon-cog"></i> Settings',
+                    'url' => ['/user/settings/profile'],
                 ],
                 '<li class="divider"></li>',
                 [
@@ -47,20 +72,33 @@ if (\Yii::$app->hasModule('user')) {
                 ],
             ],
         ];
+
+        // context menu
         $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-cog"></i>',
+            'label' => '<i class="glyphicon glyphicon-pencil"></i>',
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
             'items' => \Yii::$app->params['context.menuItems'],
         ];
+
+        $backendMenu = \dmstr\widgets\Menu::widget(
+            [
+                'options' => ['class' => 'dropdown-menu'],
+                'encodeLabels' => false,
+                'items' => \dmstr\modules\pages\models\Tree::getMenuItems(
+                    'backend', true, \dmstr\modules\pages\models\Tree::GLOBAL_ACCESS_DOMAIN
+                ),
+            ]
+        );
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
             'url' => ['/backend'],
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
-            'items' => Tree::getMenuItems('backend', true, Tree::GLOBAL_ACCESS_DOMAIN),
+            'items' => $backendMenu,
         ];
     }
 }
 
+// render navigation
 NavBar::begin(
     [
         'brandLabel' => getenv('APP_TITLE'),
@@ -71,6 +109,7 @@ NavBar::begin(
     ]
 );
 
+// render root pages
 echo Nav::widget(
     [
         'options' => ['class' => 'navbar-nav'],
@@ -79,6 +118,7 @@ echo Nav::widget(
     ]
 );
 
+// render additional menu items (languages, user)
 echo Nav::widget(
     [
         'options' => ['class' => 'navbar-nav navbar-right'],

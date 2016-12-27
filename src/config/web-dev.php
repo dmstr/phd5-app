@@ -6,10 +6,10 @@
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
  * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * file that was distributed with this source code
  */
 
-// Settings for web-application only
+// Settings for web-application in development environment only
 return [
     'bootstrap' => [
         'debug',
@@ -17,6 +17,7 @@ return [
     'modules' => [
         'debug' => [
             'class' => 'yii\debug\Module',
+            // allow all private IPs by default
             'allowedIPs' => [
                 '127.0.0.1',
                 '::1',

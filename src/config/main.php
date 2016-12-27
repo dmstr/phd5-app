@@ -6,25 +6,65 @@
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
  * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * file that was distributed with this source code
  */
 
+namespace app\config;
+
+use Yii;
+
+// PHP Constants
+$version = is_file(__DIR__.'/../version') ? trim(file_get_contents(__DIR__.'/../version')) : 'dev';
+defined('APP_VERSION') or define('APP_VERSION', $version);
+defined('APP_TYPE') or define('APP_TYPE', (php_sapi_name() == 'cli') ? 'console' : 'web');
+
 // Define application aliases
-Yii::setAlias('@app', __DIR__.'/..');
+Yii::setAlias('@app', realpath(__DIR__.'/..'));
 Yii::setAlias('@root', '@app/..');
 Yii::setAlias('@runtime', '@root/runtime');
 Yii::setAlias('@web', '@root/web');
-Yii::setAlias('@webroot', '@root//web');
+Yii::setAlias('@webroot', '@root/web');
 
-// Load $merge configuration files
-$applicationType = (empty($applicationType) && php_sapi_name() == 'cli') ? 'console' : 'web';
-$env = YII_ENV;
-$configDir = __DIR__;
+// Use a closure to not pollute the global namespace
+return call_user_func(function () {
 
-return \yii\helpers\ArrayHelper::merge(
-    require("{$configDir}/common.php"),
-    require("{$configDir}/{$applicationType}.php"),
-    (file_exists("{$configDir}/common-{$env}.php")) ? require("{$configDir}/common-{$env}.php") : [],
-    (file_exists("{$configDir}/{$applicationType}-{$env}.php")) ? require("{$configDir}/{$applicationType}-{$env}.php") : [],
-    (file_exists(getenv('APP_CONFIG_FILE'))) ? require(getenv('APP_CONFIG_FILE')) : []
-);
+    /*function checkFile(){
+        if (file_exists($file)) {
+            return $file;
+        }
+    }*/
+    // Load $merge configuration files
+    $configDir = __DIR__;
+    $configFiles = [
+        "{$configDir}/common.php" => true,
+        "{$configDir}/".APP_TYPE.'.php' => true,
+        "{$configDir}/common-".YII_ENV.'.php' => false,
+        "{$configDir}/".APP_TYPE.'-'.YII_ENV.'.php' => false,
+    ];
+
+    if (!empty(getenv('APP_CONFIG_FILE'))) {
+        $additionalConfigFiles = explode(',', getenv('APP_CONFIG_FILE'));
+        // Merge additional configurations
+        foreach ($additionalConfigFiles as $alias) {
+            $file = Yii::getAlias($alias);
+            $configFiles[$file] = true;
+        }
+    }
+
+    // Merge configurations
+    $config = [];
+    //var_dump($configFiles);exit;
+    Yii::trace($configFiles, __METHOD__);
+    foreach ($configFiles as $file => $isRequired) {
+        if (!is_file($file)) {
+            if (!$isRequired) {
+                continue;
+            }
+        }
+        $config = \yii\helpers\ArrayHelper::merge(
+            $config,
+            require $file);
+    }
+
+    return $config;
+});

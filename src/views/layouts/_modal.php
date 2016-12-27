@@ -30,14 +30,14 @@ use yii\helpers\Html;
             </p>
 
             <p class="small">
-                Built with <?= Html::a('phd5', 'http://phd.dmstr.io') ?> from <?= Html::a('dmstr.io',
+                Built with <?= Html::a('phd5', 'http://phd.dmstr.io') ?> from <?= Html::a('dmstr',
                     'http://www.diemeisterei.de') ?>
             </p>
 
             <hr/>
 
             <div class="pull-right">
-                <?= Html::a('Backend', ['/backend'], ['class' => 'btn btn-default btn-xs']) ?>
+                <?= Html::a(FA::icon(FA::_COG), ['/backend'], ['class' => 'btn btn-default btn-xs']) ?>
             </div>
             <div class="clearfix"></div>
 

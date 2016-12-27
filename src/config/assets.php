@@ -4,21 +4,18 @@
  * Note that in the console environment, some path aliases like '@webroot' and '@web' may not exist.
  * Please define these missing path aliases.
  */
-
-namespace _;
-
 $bashPath = '@app/../web/bundles';
 $baseUrl = '@web/bundles';
 
 $commonBundles = [
     \rmrevin\yii\fontawesome\AssetBundle::className(),
-    \lajax\translatemanager\bundles\LanguagePluginAsset::className(),
     \yii\bootstrap\BootstrapPluginAsset::className(),
     \yii\grid\GridViewAsset::className(),
-    #\yii\widgets\PjaxAsset::className(),
-    #\yii\widgets\ActiveFormAsset::className(),
+    \yii\widgets\PjaxAsset::className(),
+    \yii\widgets\ActiveFormAsset::className(),
+    \yii\web\AssetBundle::className(),
     \yii\web\JqueryAsset::className(),
-    #\yii\validators\ValidationAsset::className(),
+    \yii\validators\ValidationAsset::className(),
 ];
 
 $frontendBundles = [
@@ -29,20 +26,18 @@ $backendBundles = [
     \dmstr\modules\backend\assets\BackendAsset::className(),
     \dmstr\web\AdminLteAsset::className(),
     \kartik\tree\TreeViewAsset::className(),
-    \lajax\translatemanager\bundles\LanguageAsset::className(),
-    \trntv\aceeditor\AceEditorAsset::className(),
 ];
 
 return [
     // Adjust command/callback for JavaScript files compressing:
-    'jsCompressor' => 'java -jar /usr/lib/node_modules/google-closure-compiler/compiler.jar --js {from} --js_output_file {to}',
+    'jsCompressor' => 'uglifyjs {from} --output {to}',
     // Adjust command/callback for CSS files compressing:
-    'cssCompressor' => 'yui-compressor --type css {from} -o {to}',
+    'cssCompressor' => 'uglifycss {from} > {to}',
     // The list of asset bundles to compress:
     'bundles' => \yii\helpers\ArrayHelper::merge(
+        $commonBundles,
         $frontendBundles,
-        $backendBundles,
-        $commonBundles
+        $backendBundles
     ),
     // Asset bundle for compression output:
     'targets' => [
