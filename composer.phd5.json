@@ -1,0 +1,54 @@
+{
+    "require": {
+        "bedezign/yii2-audit": "^1.0.7",
+        "dmstr/yii2-cms-metapackage": "^7.0.0",
+        "dmstr/yii2-libs-metapackage": "^0.3",
+        "franciscomaya/yii2-sceditor": "dev-master",
+        "2amigos/yii2-ckeditor-widget": "1.*|2.*",
+        "2amigos/yii2-selectize-widget": "^1.0",
+        "2amigos/yii2-translateable-behavior": "^0.1.2",
+        "cinghie/yii2-cookie-consent": "^1.4",
+        "dmstr/yii2-redirect-module": "^0.3.1",
+        "dmstr/yii2-filefly-module": "^0.5.5-rc4",
+        "dmstr/yii2-filemanager-widgets": "^0.6.0-beta3",
+        "dmstr/yii2-resque-module": "^0.3",
+        "dmstr/yii2-widgets2-module": "^0.4.0-alpha1",
+        "edgardmessias/yii2-nprogress": "^0.3.0",
+        "fedemotta/yii2-gridster": "^2.0",
+        "knplabs/github-api": "^1.7",
+        "loveorigami/yii2-notification-wrapper": "^6.1",
+        "mexitek/phpcolors": "^0.4.0",
+        "phpoffice/phpexcel": "^1.8",
+        "romdim/yii2-bootstrap-material": "^1.0",
+        "romka-chev/yii2-swiper": "^2.0",
+        "uran1980/yii2-jquery-essential": "^0.0.6",
+        "zhuravljov/yii2-datetime-widgets": "^1.0",
+        "thomaspark/bootswatch": "^3.3",
+        "vlucas/phpdotenv": "2.*",
+        "wikimedia/composer-merge-plugin": "^1.3",
+        "yiisoft/yii2": "^2.0.8",
+        "yiisoft/yii2-bootstrap": "2.*",
+        "yiisoft/yii2-redis": "^2.0.5"
+    },
+    "require-dev": {
+        "dmstr/yii2-cms-dev-metapackage": "^1.1.2"
+    },
+    "repositories": {
+        "temp-resque": {
+            "type": "vcs",
+            "url": "https://git.hrzg.de/dmstr/yii2-resque-module.git"
+        },
+        "temp-dmstr/yii2-filefly-module": {
+            "type": "vcs",
+            "url": "https://git.hrzg.de/dmstr/yii2-filefly-module"
+        },
+        "temp-dmstr/yii2-filemanager-widgets": {
+            "type": "vcs",
+            "url": "https://git.hrzg.de/dmstr/yii2-filemanager-widgets"
+        },
+        "temp-dmstr/yii2-widgets2-module": {
+            "type": "vcs",
+            "url": "https://git.hrzg.de/dmstr/yii2-widgets2-module"
+        }
+    }
+}

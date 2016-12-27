@@ -2,14 +2,6 @@
     "name": "dmstr/phd5-app",
     "minimum-stability": "beta",
     "require": {
-        "vlucas/phpdotenv": "2.*",
-        "yiisoft/yii2": "^2.0.9",
-        "yiisoft/yii2-bootstrap": "2.*",
-        "dmstr/yii2-cms-metapackage": "^6.0",
-        "dmstr/yii2-libs-metapackage": "^0.3.1"
-    },
-    "require-dev": {
-        "dmstr/yii2-cms-dev-metapackage": "^1.1.2"
     },
     "extra": {
         "asset-installer-paths": {
@@ -19,6 +11,19 @@
         "asset-vcs-driver-options": {
             "github-no-api": true
         },
-        "asset-pattern-skip-version": "(-build|-patch)"
+        "asset-pattern-skip-version": "(-build|-patch)",
+        "merge-plugin": {
+            "require": [
+                "composer.phd5.json"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "dmstr/*": "source",
+            "hrzg/*": "source",
+            "schmunk42/*": "source",
+            "*": "auto"
+        }
     }
 }

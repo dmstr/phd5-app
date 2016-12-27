@@ -1,6 +1,12 @@
 version: '2'
 services:
     php:
-        image: ${STACK_PHP_IMAGE}
-        volumes:
-            - /app/web
+    worker:
+      command: 'yii resque/work "*"'
+      volumes_from:
+        - php
+      depends_on:
+        - db
+        - redis
+    redis:
+        image: redis:3

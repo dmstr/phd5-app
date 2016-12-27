@@ -17,26 +17,26 @@ endif
 
 default: help
 
-build:   ##@development build images in stack
-	$(shell echo $(shell git describe --long --tags --dirty --always) > src/version)
-	@echo $(shell cat src/version)
+build:   ##@base build images in test-stack
+	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
+	@echo $(shell cat ../src/version)
 	$(DOCKER_COMPOSE) build --pull
 
-up:      ##@development start stack
+up:      ##@base start stack
 	$(DOCKER_COMPOSE) up -d
 
-clean:   ##@development remove all containers in stack
+clean:   ##@base remove all containers in stack
 	$(DOCKER_COMPOSE) kill
 	$(DOCKER_COMPOSE) rm -fv --all
 	$(DOCKER_COMPOSE) down --remove-orphans
 
-open:	 ##@development open application web service in browser
+open:	 ##@base open application web service in browser
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://')
 
-open-db:	 ##@development open application database service in browser
+open-db:	 ##@base open application database service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')
 
-setup:	 ##@development run application setup
+setup:	 ##@base run application setup
 	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
 # Help based on https://gist.github.com/prwhite/8168133 thanks to @nowox and @prwhite

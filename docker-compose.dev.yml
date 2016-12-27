@@ -14,10 +14,12 @@ services:
       - 80
     depends_on:
       - db
+      - mailcatcher
     environment:
-      # For host-volume development (permissions)
       - MYSQL_ROOT_PASSWORD=secret
+      # For host-volume development (permissions)
       - PHP_USER_ID=1000
+      # For composer usage in container
       - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
       # For usage with https://github.com/jwilder/nginx-proxy
       # - VIRTUAL_HOST=${VIRTUAL_HOST}
@@ -29,6 +31,10 @@ services:
       - ./web/assets:/app/web/assets
       - ./vendor:/app/vendor
       #- ./runtime:/app/runtime
+  worker:
+    build: .
+    depends_on:
+      - db
   db:
     command: --character-set-server=utf8 --collation-server=utf8_general_ci
     image: percona:5.7
@@ -36,3 +42,7 @@ services:
       - MYSQL_ROOT_PASSWORD=secret
     ports:
       - '3306'
+  mailcatcher:
+    image: nisenabe/mailcatcher
+    ports:
+      - '1080'

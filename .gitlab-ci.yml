@@ -7,17 +7,19 @@ stages:
   - cleanup
 
 before_script:
-  # Setup as GitLab project variables: PHP_IMAGE_NAME=project/php
   - export APP_VERSION=$(git describe --always --dirty)
   - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
   - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
-  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+  - export ISOLATION=buildpipeline${CI_PIPELINE_ID}
   - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - pwd
   - docker version
   - docker-compose version
   - echo ${ISOLATION}
   - echo ${APP_VERSION}
+
+  # run all commands from test directory
+  - cd tests
   - cp .env-dist .env
 
 
@@ -33,7 +35,6 @@ test:lint:
     - make lint
     - cp -r _artifacts /tmp/artifacts-${ISOLATION}
     - make clean
-    - exit ${ERROR}
 
 test:codeception:
   stage: test
