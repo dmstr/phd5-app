@@ -18,9 +18,9 @@ services:
       - mailcatcher
     environment:
       - YII_ENV=test
-      - APP_NAME=test-ee
+      - APP_NAME=test-phd5
       - APP_LANGUAGES=de,en,ru
-      - APP_TITLE=Doro TEST
+      - APP_TITLE=NoName TEST
 
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1

@@ -5,7 +5,7 @@ include ./Makefile.base
 all:    ##@development shorthand for 'build init up setup open'
 all: init build dev up setup open
 
-dev:    ##@development shorthand for 'up setup open'
+dev:    ##@development install composer package (enable host-volume in docker-compose config)
 dev:
 	$(DOCKER_COMPOSE) run --rm php composer install
 
