@@ -58,13 +58,13 @@ return [
         'yii.migrations' => [
             getenv('APP_MIGRATION_LOOKUP'),
             '@yii/rbac/migrations',
+            '@yii/web/migrations',
             '@dektrium/user/migrations',
             '@vendor/lajax/yii2-translate-manager/migrations',
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
             '@hrzg/widget/migrations',
             '@bedezign/yii2/audit/migrations',
-            '@app/migrations/session',
         ],
     ],
     'components' => [
