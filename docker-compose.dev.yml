@@ -11,7 +11,7 @@ services:
       args:
         - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
     ports:
-      - 80
+      - 29680:80
     depends_on:
       - db
       - mailcatcher

@@ -30,7 +30,7 @@ $backendBundles = [
 
 return [
     // Adjust command/callback for JavaScript files compressing:
-    'jsCompressor' => 'uglifyjs {from} --output {to}',
+    'jsCompressor' => 'uglifyjs {from} --mangle --compress --output {to}',
     // Adjust command/callback for CSS files compressing:
     'cssCompressor' => 'uglifycss {from} > {to}',
     // The list of asset bundles to compress:
