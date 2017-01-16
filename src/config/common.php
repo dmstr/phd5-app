@@ -186,6 +186,22 @@ return [
         'audit' => [
             'class' => 'bedezign\yii2\audit\Audit',
             'layout' => '@backend/views/layouts/box',
+            'panels' => [
+                'audit/request',
+                //'audit/db',
+                //'audit/log',
+                'audit/mail',
+                //'audit/profiling',
+                'audit/trail',
+                //'audit/javascript', # also enable JSLoggingAsset
+                // 'audit/asset',
+                // 'audit/config',
+
+                // These provide special functionality and get loaded to activate it
+                'audit/error',      // Links the extra error reporting functions (`exception()` and `errorMessage()`)
+                'audit/extra',      // Links the data functions (`data()`)
+                'audit/curl',       // Links the curl tracking function (`curlBegin()`, `curlEnd()` and `curlExec()`)
+            ],
             'ignoreActions' => [
                 'audit/*',
                 'help/*',
