@@ -40,6 +40,7 @@ return call_user_func(function () {
         "{$configDir}/".APP_TYPE.'.php' => true,
         "{$configDir}/common-".YII_ENV.'.php' => false,
         "{$configDir}/".APP_TYPE.'-'.YII_ENV.'.php' => false,
+        "{$configDir}/".APP_TYPE.'-'.((YII_DEBUG)?'debug':'release').'.php' => false,
     ];
 
     if (!empty(getenv('APP_CONFIG_FILE'))) {
