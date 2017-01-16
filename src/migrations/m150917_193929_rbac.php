@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use yii\rbac\DbManager;
 
 class m150917_193929_rbac extends Migration
 {
@@ -8,7 +9,7 @@ class m150917_193929_rbac extends Migration
     {
         $auth = Yii::$app->authManager;
 
-        if ($auth instanceof \yii\rbac\DbManager) {
+        if ($auth instanceof DbManager) {
             $guest = $auth->createRole('Public');
             $guest->description = 'Unauthenticated User';
             $auth->add($guest);
@@ -38,7 +39,7 @@ class m150917_193929_rbac extends Migration
     {
         $auth = Yii::$app->authManager;
 
-        if ($auth instanceof \yii\rbac\DbManager) {
+        if ($auth instanceof DbManager) {
             $auth->remove($auth->getPermission('backend_default'));
             $auth->remove($auth->getPermission('app_site'));
             $auth->remove($auth->getRole('Editor'));
