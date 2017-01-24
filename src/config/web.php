@@ -20,6 +20,7 @@ return [
     },
     'components' => [
         'errorHandler' => [
+            'class' => '\bedezign\yii2\audit\components\web\ErrorHandler',
             'errorAction' => 'error/index',
         ],
         'log' => [
