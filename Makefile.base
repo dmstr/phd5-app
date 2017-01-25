@@ -27,7 +27,7 @@ up:      ##@base start stack
 
 clean:   ##@base remove all containers in stack
 	$(DOCKER_COMPOSE) kill
-	$(DOCKER_COMPOSE) rm -fv --all
+	$(DOCKER_COMPOSE) rm -fv
 	$(DOCKER_COMPOSE) down --remove-orphans
 
 open:	 ##@base open application web service in browser
