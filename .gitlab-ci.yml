@@ -8,12 +8,12 @@ stages:
 
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
+  APP_VERSION: "$(git describe --always --dirty)"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${APP_VERSION}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
   COMPOSE_PROJECT_NAME: "${ISOLATION}"
 
 before_script:
-  - export APP_VERSION=$(git describe --always --dirty)
   - pwd
   - docker version
   - docker-compose version
