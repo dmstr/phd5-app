@@ -20,9 +20,10 @@ before_script:
   - echo ${ISOLATION}
   - echo ${APP_VERSION}
 
+  # initialize environments
+  - make init
   # run all commands from test directory
   - cd tests
-  - cp .env-dist .env
 
 after_script:
   # run all commands from test directory
