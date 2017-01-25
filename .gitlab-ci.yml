@@ -6,11 +6,13 @@ stages:
   - deploy
   - cleanup
 
+variables:
+  ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
+
 before_script:
   - export APP_VERSION=$(git describe --always --dirty)
   - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
   - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
-  - export ISOLATION=buildpipeline${CI_PIPELINE_ID}
   - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - pwd
   - docker version
@@ -22,16 +24,16 @@ before_script:
   - cd tests
   - cp .env-dist .env
 
+after_script:
+  # run all commands from test directory
+  - cd tests
+  - cp .env-dist .env
+  - make clean
 
-build:
-  stage: build
-  script:
-    - make build
-
-test:codeception:
+codeception:
   stage: test
   script:
-    - make up setup
+    - make all
     - make run-tests
     - make clean
   except:
@@ -43,8 +45,7 @@ test:codeception:
     paths:
       - tests/codeception/_output
 
-
-test:coverage:
+coverage:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
@@ -60,7 +61,7 @@ test:coverage:
     paths:
       - tests/codeception/_output
 
-test:lint:
+lint:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
