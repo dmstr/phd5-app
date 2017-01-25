@@ -1,6 +1,8 @@
-.PHONY: build test
+.PHONY: build test up clean open open-db setup
 
+# Define the docker-compose binary via ENV variable
 DOCKER_COMPOSE  ?= docker-compose
+# Default for Linux & Docker for Mac, set ENV variable when running i.e. docker-machine under macOS
 DOCKER_HOST     ?= localhost
 
 UNAME_S := $(shell uname -s)
@@ -17,26 +19,39 @@ endif
 
 default: help
 
-build:   ##@base build images in test-stack
-	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
-	@echo $(shell cat ../src/version)
+build: ##@base build images in test-stack
+	#
+	# Building images from docker-compose definitions
+	#
 	$(DOCKER_COMPOSE) build --pull
 
-up:      ##@base start stack
+up: ##@base start stack
+	#
+	# Starting application stack
+	#
 	$(DOCKER_COMPOSE) up -d
 
-clean:   ##@base remove all containers in stack
+clean: ##@base remove all containers in stack
+	#
+	# Cleaning Docker environment
+	#
 	$(DOCKER_COMPOSE) kill
 	$(DOCKER_COMPOSE) rm -fv
 	$(DOCKER_COMPOSE) down --remove-orphans
 
-open:	 ##@base open application web service in browser
+open: ##@base open application web service in browser
+	#
+	# Opening application on mapped web-service port
+	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://')
 
-open-db:	 ##@base open application database service in browser
+open-db: ##@base open application database service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://')
 
-setup:	 ##@base run application setup
+setup: ##@base run application setup
+	#
+	# Running application setup command (database, user)
+	#
 	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
 # Help based on https://gist.github.com/prwhite/8168133 thanks to @nowox and @prwhite
@@ -55,7 +70,7 @@ HELP_FUN = \
 		} \
 		print "\n"; }
 
-help:				##@system show this help
+help: ##@system show this help
 	#
 	# General targets
 	#

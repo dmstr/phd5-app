@@ -1,8 +1,12 @@
 include ../Makefile.base
 
 all: ##@test [TEST] shorthand for
-	$(MAKE) build
+	$(MAKE) version build
 	$(MAKE) clean up setup
+
+version:
+	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
+	@echo $(shell cat ../src/version)
 
 bash: ##@development open application development bash
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php bash

@@ -8,12 +8,12 @@ stages:
 
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
+  STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${APP_VERSION}"
+  REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
+  COMPOSE_PROJECT_NAME: "${ISOLATION}"
 
 before_script:
   - export APP_VERSION=$(git describe --always --dirty)
-  - export STACK_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
-  - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}
-  - export COMPOSE_PROJECT_NAME=${ISOLATION}
   - pwd
   - docker version
   - docker-compose version
@@ -89,13 +89,4 @@ release:
     - latest
     - experimental
     - tags
-
-cleanup:
-  stage: cleanup
-  when: always
-  script:
-    - make clean
-    - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:lint
-    - make clean COMPOSE_PROJECT_NAME=${ISOLATION}test:coverage
-    - docker ps -f name=${ISOLATION}
 
