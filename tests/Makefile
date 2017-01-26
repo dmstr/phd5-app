@@ -16,7 +16,7 @@ bash-xdebug: ##@development open application development bash with xdebug enable
 
 run-tests: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'codecept clean'
-	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --steps --html=_report.html'
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --steps --html --xml --tap --json'
 
 run-coverage: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --coverage-html --html=_report-coverage.html'

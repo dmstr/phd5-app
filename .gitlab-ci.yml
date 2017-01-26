@@ -58,7 +58,7 @@ coverage:
     when: always
     expire_in: 4 weeks
     paths:
-      - tests/codeception/_output
+      - tests/_log
 
 lint:
   stage: test

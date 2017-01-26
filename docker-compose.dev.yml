@@ -15,6 +15,7 @@ services:
     depends_on:
       - db
       - mailcatcher
+      - redis
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       # For host-volume development (permissions)
@@ -24,17 +25,22 @@ services:
       # For usage with https://github.com/jwilder/nginx-proxy
       # - VIRTUAL_HOST=${VIRTUAL_HOST}
     volumes:
+      # Re-use local composer cache via host-volume
       - ~/.composer/cache:/root/.composer/cache
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
       - ./src:/app/src
       - ./web/assets:/app/web/assets
       - ./vendor:/app/vendor
+      # Note: Enabling runtime may cause performance issues on NFS
       #- ./runtime:/app/runtime
+
   worker:
     build: .
     depends_on:
       - db
+      - redis
+
   db:
     command: --character-set-server=utf8 --collation-server=utf8_general_ci
     image: percona:5.7

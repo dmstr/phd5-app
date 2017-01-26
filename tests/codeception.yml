@@ -1,7 +1,7 @@
 actor: Tester
 paths:
     tests: codeception
-    log: codeception/_output
+    log: _log
     data: codeception/_data
     support: codeception/_support
     envs: codeception/_envs
