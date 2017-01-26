@@ -44,6 +44,8 @@ services:
         aliases:
           - web
   worker:
+    build:
+      context: .
     image: ${STACK_PHP_IMAGE}
   db:
     image: percona:5.6
