@@ -92,6 +92,8 @@ release:
 
 deploy:staging:
   stage: deploy
+  environment: staging
+  allow_failure: true
   script:
     - echo "Auto-deployment trigger not implemented."
     - exit 1
