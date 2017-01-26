@@ -89,3 +89,10 @@ release:
     - experimental
     - tags
 
+deploy:staging:
+  stage: deploy
+  script:
+    - echo "Auto-deployment trigger not implemented."
+    - exit 1
+  only:
+    - latest
