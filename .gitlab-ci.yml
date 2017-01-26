@@ -8,11 +8,12 @@ stages:
 
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
-  COMPOSE_PROJECT_NAME: "${ISOLATION}${CI_BUILD_NAME}"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
 
 before_script:
+  # set docker-compose isolation
+  - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
   - pwd
   - docker version
   - docker-compose version
