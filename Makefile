@@ -27,11 +27,18 @@ init:   ##@development initialize development environment
 	mkdir -p web/assets runtime
 
 
-bash:	 ##@development open application development bash
+bash:	 ##@development run application bash in one-off container
 	#
 	# Starting application bash
 	#
 	$(DOCKER_COMPOSE) run --rm php bash
+
+exec:	 ##@development execute command (c='yii help') in running container
+	#
+	# Running command
+	# Note: Make sure the application container is running
+	#
+	$(DOCKER_COMPOSE) exec php $(c)
 
 upgrade: ##@development update application package, pull, rebuild
 	#
@@ -57,10 +64,10 @@ lint:	 ##@development run source-code linting
 	#
 	# Liniting source-code with cs-fixer, phpmetrics & phpmd
 	#
-	mkdir -p _artifacts/lint && chmod -R 777 _artifacts/lint
+	mkdir -p tests/_lint/lint && chmod -R 777 tests/_lint/lint
 	docker run --rm -v "${PWD}:/project" jolicode/phaudit php-cs-fixer fix --format=txt -v --dry-run src || export ERROR=1; \
-	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmetrics --report-html=_artifacts/lint/metrics.html --excluded-dirs=migrations src/ || ERROR=1; \
-	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html cleancode,codesize,controversial,design,unusedcode,tests/phpmd/naming.xml --exclude src/migrations > _artifacts/lint/mess.html || ERROR=1; \
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmetrics --report-html=tests/_lint/lint/metrics.html --excluded-dirs=migrations src/ || ERROR=1; \
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html cleancode,codesize,controversial,design,unusedcode,tests/phpmd/naming.xml --exclude src/migrations > tests/_lint/lint/mess.html || ERROR=1; \
 	exit ${ERROR}
 
 lint-composer: ##@development run composer linting

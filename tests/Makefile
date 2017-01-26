@@ -18,8 +18,9 @@ run-tests: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'codecept clean'
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --steps --html --xml --tap --json'
 
-run-coverage: ##@test run tests
-	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --coverage-html --html=_report-coverage.html'
+run-coverage: ##@test run tests with code coverage
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'codecept clean'
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --coverage-html --coverage-xml --html --xml'
 
 open-vnc: ##@test open application database service in browser
 	$(OPEN_CMD) vnc://x:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port firefox 5900 | sed 's/[0-9.]*://')
