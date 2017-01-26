@@ -14,6 +14,9 @@ bash: ##@development open application development bash
 bash-xdebug: ##@development open application development bash with xdebug enabled
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 php bash
 
+up-xdebug: ##@development open application development bash with xdebug enabled
+	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
+
 run-tests: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'codecept clean'
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test php sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --steps --html --xml --tap --json'
