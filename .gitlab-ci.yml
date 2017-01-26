@@ -25,6 +25,8 @@ before_script:
   - cd tests
 
 after_script:
+  # set docker-compose isolation
+  - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
   # run all commands from test directory
   - cd tests
   - cp .env-dist .env
@@ -35,7 +37,6 @@ codeception:
   script:
     - make all
     - make run-tests
-    - make clean
   except:
     - coverage
   artifacts:
@@ -49,9 +50,9 @@ coverage:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - make PHP_ENABLE_XDEBUG=1 up setup
+    - export PHP_ENABLE_XDEBUG=1
+    - make all
     - make run-coverage
-    - make clean
   only:
     - coverage
   artifacts:
@@ -70,7 +71,6 @@ lint:
     - make help
     - make lint
     - make lint-composer
-    - make clean
   artifacts:
     name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-lint
     when: always
