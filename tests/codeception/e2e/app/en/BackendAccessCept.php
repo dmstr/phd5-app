@@ -1,6 +1,7 @@
 <?php
 
 // @group mandatory
+// @group long-running
 
 $I = new E2eTester($scenario);
 
