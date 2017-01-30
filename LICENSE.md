@@ -1,4 +1,4 @@
-Phundament is free software. It is released under the terms of
+phd is free software. It is released under the terms of
 the following BSD License.
 
 Copyright © 2016-2017 by diemeisterei GmbH
