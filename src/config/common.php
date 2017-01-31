@@ -165,6 +165,10 @@ return [
             'enableDefaultLanguageUrlCode' => true,
             'baseUrl' => '/',
             'rules' => [],
+            'ignoreLanguageUrlPatterns' => [
+                // route pattern => url pattern
+                '#^filefly/api#' => '#^filefly/api#',
+            ],
             'languages' => $languages,
         ],
         'view' => [

@@ -21,7 +21,6 @@ use yii\helpers\Url;
 /* @var $content string */
 
 $this->title .= ' - '.getenv('APP_TITLE');
-
 // Register app asset or database asset bundle
 if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false)) {
     DbAsset::register($this);
@@ -48,6 +47,10 @@ if ($keywords = \Yii::$app->settings->get($route, 'app.seo.keywords', null)) {
 }
 if ($description = \Yii::$app->settings->get($route, 'app.seo.descriptions', null)) {
     $this->registerMetaTag(['name' => 'description', 'content' => $description]);
+}
+
+if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
+    $this->registerLinkTag(['rel' => 'shortcut icon', 'type'=>'image/png', 'href' => $favicon]);
 }
 
 ?>
