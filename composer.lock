@@ -1729,16 +1729,16 @@
         },
         {
             "name": "codemix/yii2-streamlog",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-streamlog.git",
-                "reference": "8a0f03900887651e00a4f26cf7c3a12043bc2784"
+                "reference": "ba21038819d2c5190caa30f62f9c2408eb1b06d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-streamlog/zipball/8a0f03900887651e00a4f26cf7c3a12043bc2784",
-                "reference": "8a0f03900887651e00a4f26cf7c3a12043bc2784",
+                "url": "https://api.github.com/repos/codemix/yii2-streamlog/zipball/ba21038819d2c5190caa30f62f9c2408eb1b06d0",
+                "reference": "ba21038819d2c5190caa30f62f9c2408eb1b06d0",
                 "shasum": ""
             },
             "type": "library",
@@ -1764,7 +1764,7 @@
                 "stream",
                 "yii2"
             ],
-            "time": "2015-04-28T08:24:33+00:00"
+            "time": "2017-01-28T08:01:44+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -2263,16 +2263,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.7.7",
+            "version": "0.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "4ee3bcc3b59d1e00c999c9eb0907a07e78309ae1"
+                "reference": "1b2275ee0a6660ab80d597273ad768c18b5c8bd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/4ee3bcc3b59d1e00c999c9eb0907a07e78309ae1",
-                "reference": "4ee3bcc3b59d1e00c999c9eb0907a07e78309ae1",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/1b2275ee0a6660ab80d597273ad768c18b5c8bd9",
+                "reference": "1b2275ee0a6660ab80d597273ad768c18b5c8bd9",
                 "shasum": ""
             },
             "require": {
@@ -2305,7 +2305,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-11-29T13:50:36+00:00"
+            "time": "2017-01-30T13:46:11+00:00"
         },
         {
             "name": "dmstr/yii2-filefly-module",
@@ -2445,16 +2445,16 @@
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-libs-metapackage.git",
-                "reference": "b5268d5cd8e85794d7ab58609922ed4d36733237"
+                "reference": "6c027dc9b8f056d19d43a1e6a5804b01e651074e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/b5268d5cd8e85794d7ab58609922ed4d36733237",
-                "reference": "b5268d5cd8e85794d7ab58609922ed4d36733237",
+                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/6c027dc9b8f056d19d43a1e6a5804b01e651074e",
+                "reference": "6c027dc9b8f056d19d43a1e6a5804b01e651074e",
                 "shasum": ""
             },
             "require": {
@@ -2465,7 +2465,7 @@
                 "dmstr/yii2-helpers": "~0.1",
                 "dmstr/yii2-migrate-command": "~0.3",
                 "dmstr/yii2-web": "~0.2",
-                "mikehaertl/php-shellcommand": "^1.2",
+                "mikehaertl/php-shellcommand": "1.2.2",
                 "schmunk42/retry": "~0.0",
                 "yiisoft/yii2-swiftmailer": "2.*"
             },
@@ -2481,7 +2481,7 @@
                 }
             ],
             "description": "Core Library Extensions for Phundament 4 (Yii 2.0 Framework)",
-            "time": "2016-10-22T15:38:49+00:00"
+            "time": "2017-01-29T08:44:00+00:00"
         },
         {
             "name": "dmstr/yii2-migrate-command",
@@ -2751,11 +2751,11 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.0-alpha3",
+            "version": "0.4.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/dmstr/yii2-widgets2-module.git",
-                "reference": "db307073d7baae7e1eed216afc6f1484ee41aa6a"
+                "reference": "f399f309209a176c9e3c45e96ba6e5f26b08469f"
             },
             "require": {
                 "bedezign/yii2-audit": "^1.0",
@@ -2784,7 +2784,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-12-22T22:20:27+00:00"
+            "time": "2017-01-31T20:32:07+00:00"
         },
         {
             "name": "dropbox/dropbox-sdk",
@@ -3636,16 +3636,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.33",
+            "version": "1.0.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c"
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5c7f98498b12d47f9de90ec9186a90000125777c",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3715,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-01-23T10:32:09+00:00"
+            "time": "2017-01-30T17:41:17+00:00"
         },
         {
             "name": "league/flysystem-aws-s3-v2",
@@ -4648,16 +4648,16 @@
         },
         {
             "name": "sabre/dav",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruux/sabre-dav.git",
-                "reference": "5b9737cc2f0182e368d14c80df7f6b2d77dc1457"
+                "reference": "11ba8e9400d9c3aad8541c6dc19f5f888d9f0804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruux/sabre-dav/zipball/5b9737cc2f0182e368d14c80df7f6b2d77dc1457",
-                "reference": "5b9737cc2f0182e368d14c80df7f6b2d77dc1457",
+                "url": "https://api.github.com/repos/fruux/sabre-dav/zipball/11ba8e9400d9c3aad8541c6dc19f5f888d9f0804",
+                "reference": "11ba8e9400d9c3aad8541c6dc19f5f888d9f0804",
                 "shasum": ""
             },
             "require": {
@@ -4682,7 +4682,7 @@
                 "evert/phpdoc-md": "~0.1.0",
                 "monolog/monolog": "^1.18",
                 "phpunit/phpunit": "> 4.8, <=6.0.0",
-                "sabre/cs": "~0.0.5"
+                "sabre/cs": "^1.0.0"
             },
             "suggest": {
                 "ext-curl": "*",
@@ -4727,7 +4727,7 @@
                 "framework",
                 "iCalendar"
             ],
-            "time": "2016-06-28T02:44:05+00:00"
+            "time": "2017-01-28T17:45:56+00:00"
         },
         {
             "name": "sabre/event",
