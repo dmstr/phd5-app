@@ -2485,17 +2485,20 @@
         },
         {
             "name": "dmstr/yii2-migrate-command",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-migrate-command.git",
-                "reference": "dcfe52c088b8039ce7e08e0b0fa5cff0002f2d79"
+                "reference": "81fecdf73aa6a6a2be95f2cea7fa707199da82c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/dcfe52c088b8039ce7e08e0b0fa5cff0002f2d79",
-                "reference": "dcfe52c088b8039ce7e08e0b0fa5cff0002f2d79",
+                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/81fecdf73aa6a6a2be95f2cea7fa707199da82c9",
+                "reference": "81fecdf73aa6a6a2be95f2cea7fa707199da82c9",
                 "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "<2.0.10"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2521,7 +2524,7 @@
                 "migration",
                 "yii2"
             ],
-            "time": "2016-01-19T17:31:24+00:00"
+            "time": "2017-01-09T18:32:51+00:00"
         },
         {
             "name": "dmstr/yii2-pages-module",
@@ -2751,11 +2754,11 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.0-beta1",
+            "version": "0.4.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/dmstr/yii2-widgets2-module.git",
-                "reference": "f399f309209a176c9e3c45e96ba6e5f26b08469f"
+                "reference": "99b40b69b20a9ee19684140afc25e5f37b963064"
             },
             "require": {
                 "bedezign/yii2-audit": "^1.0",
@@ -2784,7 +2787,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-01-31T20:32:07+00:00"
+            "time": "2017-02-01T00:33:53+00:00"
         },
         {
             "name": "dropbox/dropbox-sdk",
@@ -5628,16 +5631,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.10",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff"
+                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
-                "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2b75151ea60e1fd820046416eee2e89c3dda1133",
+                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133",
                 "shasum": ""
             },
             "require": {
@@ -5718,7 +5721,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-10-20T12:02:50+00:00"
+            "time": "2016-07-11T13:36:42+00:00"
         },
         {
             "name": "yiisoft/yii2-authclient",
