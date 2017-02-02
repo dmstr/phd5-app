@@ -80,6 +80,8 @@ lint:
 
 release:
   stage: release
+  environment:
+    name: image
   script:
     - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
     - make version build
