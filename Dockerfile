@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.0-fpm-1.9-beta2-alpine-nginx-xdebug
+FROM dmstr/php-yii2:7.0-fpm-1.9-rc1-alpine-nginx-xdebug
 
 WORKDIR /app
 
