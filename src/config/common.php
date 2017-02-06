@@ -192,21 +192,19 @@ return [
             'layout' => '@backend/views/layouts/box',
             'panels' => [
                 'audit/request',
-                //'audit/db',
-                //'audit/log',
                 'audit/mail',
-                //'audit/profiling',
                 'audit/trail',
-                //'audit/javascript', # also enable JSLoggingAsset
-                // 'audit/asset',
-                // 'audit/config',
-
+                'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
                 // These provide special functionality and get loaded to activate it
                 'audit/error',      // Links the extra error reporting functions (`exception()` and `errorMessage()`)
                 'audit/extra',      // Links the data functions (`data()`)
                 'audit/curl',       // Links the curl tracking function (`curlBegin()`, `curlEnd()` and `curlExec()`)
+                //'audit/db',
+                //'audit/log',
+                //'audit/profiling',
             ],
             'ignoreActions' => [
+                (getenv('APP_AUDIT_DISABLE_ALL_ACTIONS') ? '*':'_'),
                 'audit/*',
                 'help/*',
                 'gii/*',

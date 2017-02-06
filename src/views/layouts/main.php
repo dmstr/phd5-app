@@ -10,6 +10,7 @@ namespace _;
  * file that was distributed with this source code.
  */
 
+use bedezign\yii2\audit\web\JSLoggingAsset;
 use dmstr\modules\prototype\assets\DbAsset;
 use hrzg\widget\widgets\Cell;
 use rmrevin\yii\fontawesome\AssetBundle;
@@ -39,6 +40,12 @@ if (\Yii::$app->settings->get('registerPatchAssetKey', 'app.assets', false)) {
 if (\Yii::$app->settings->get('registerFontAwesomeAsset', 'app.assets', true)) {
     AssetBundle::register($this);
 }
+
+
+if (\Yii::$app->settings->get('registerJsLoggingAsset', 'app.assets', false)) {
+    JSLoggingAsset::register($this);
+}
+
 
 // SEO
 $route = Url::toRoute(Yii::$app->controller->action->uniqueId);
