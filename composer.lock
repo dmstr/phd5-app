@@ -2528,16 +2528,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.20.3",
+            "version": "0.20.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "7894930cfbabbb3e14357ccb0b3f56b68d3bc325"
+                "reference": "a39a6f90a9a39a386e153e1c6804b28760cc1f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/7894930cfbabbb3e14357ccb0b3f56b68d3bc325",
-                "reference": "7894930cfbabbb3e14357ccb0b3f56b68d3bc325",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/a39a6f90a9a39a386e153e1c6804b28760cc1f43",
+                "reference": "a39a6f90a9a39a386e153e1c6804b28760cc1f43",
                 "shasum": ""
             },
             "require": {
@@ -2580,20 +2580,20 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2017-01-25T09:47:30+00:00"
+            "time": "2017-02-01T09:00:46+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.5.0-rc3",
+            "version": "0.5.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "1be7cdc617f75fe5a5f44e1359af1fb097dc87da"
+                "reference": "292153eb82763c71c297b0320bbcd10ee557e134"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/1be7cdc617f75fe5a5f44e1359af1fb097dc87da",
-                "reference": "1be7cdc617f75fe5a5f44e1359af1fb097dc87da",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/292153eb82763c71c297b0320bbcd10ee557e134",
+                "reference": "292153eb82763c71c297b0320bbcd10ee557e134",
                 "shasum": ""
             },
             "require": {
@@ -2628,7 +2628,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-12-14T03:15:03+00:00"
+            "time": "2017-02-06T05:58:03+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -6989,16 +6989,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.0.0RC2",
+            "version": "3.0.0RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "88509472ad27b168e1b551552df2c30bd6048471"
+                "reference": "2c1ba4635457a793238982d3ea21a20b87863330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/88509472ad27b168e1b551552df2c30bd6048471",
-                "reference": "88509472ad27b168e1b551552df2c30bd6048471",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/2c1ba4635457a793238982d3ea21a20b87863330",
+                "reference": "2c1ba4635457a793238982d3ea21a20b87863330",
                 "shasum": ""
             },
             "require": {
@@ -7045,7 +7045,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30T04:23:58+00:00"
+            "time": "2017-02-02T03:53:25+00:00"
         },
         {
             "name": "symfony/console",
