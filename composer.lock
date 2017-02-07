@@ -2309,11 +2309,11 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.5.5-rc5",
+            "version": "0.5.5",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/dmstr/yii2-filefly-module.git",
-                "reference": "f5c4bb1b4d611f2c9740d92a65f6c7eb4204e179"
+                "reference": "2195288b14a8334de5b099b7e982d0c4e5823cc9"
             },
             "require": {
                 "creocoder/yii2-flysystem": "^0.8.1",
@@ -2351,7 +2351,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-02-07T11:44:04+00:00"
+            "time": "2017-02-07T15:10:10+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
