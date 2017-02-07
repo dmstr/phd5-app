@@ -29,7 +29,6 @@ return [
                 'app_session',
                 'moxman_cache',
                 'moxman_hashmap',
-                'filefly_hashmap',
                 'app_audit_data',
                 'app_audit_entry',
                 'app_audit_error',
