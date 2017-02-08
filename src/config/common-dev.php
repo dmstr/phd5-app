@@ -12,6 +12,18 @@ return [
     'bootstrap' => [
         'gii',
     ],
+    'components' => [
+        'view' => [
+            'renderers' => [
+                'twig' => [
+                    'extensions' => (getenv('TWIG_DEBUG_MODE')) ? [new Twig_Extension_Debug()] : null,
+                    'options' => [
+                        'debug' => (getenv('TWIG_DEBUG_MODE')) ? true : false,
+                    ],
+                ],
+            ],
+        ],
+    ],
     'modules' => [
         'gii' => [
             'class' => 'yii\gii\Module',
