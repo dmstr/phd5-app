@@ -19,6 +19,7 @@ $I->moveMouseOver('.hrzg-widget-widget-container');
 $I->makeScreenshot('widgets-frontend-container');
 
 $I->amGoingTo('create a widget from a container');
+$I->moveMouseOver('.hrzg-widget-widget-container');
 $I->click('.hrzg-widget-container-controls .btn-success');
 $I->waitForElementVisible('.hrzg-widget-container-controls ul', 10);
 $I->click('Content', '.hrzg-widget-container-controls ul');
