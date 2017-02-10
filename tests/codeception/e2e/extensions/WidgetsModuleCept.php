@@ -20,6 +20,8 @@ $I->makeScreenshot('widgets-frontend-container');
 
 $I->amGoingTo('create a widget from a container');
 $I->click('.hrzg-widget-container-controls .btn-success');
+$I->waitForElementVisible('.hrzg-widget-container-controls ul', 10);
+$I->click('Content', '.hrzg-widget-container-controls ul');
 $I->waitForElementVisible('.widget-create', 10);
 
 $I->amGoingTo('select a widget');
