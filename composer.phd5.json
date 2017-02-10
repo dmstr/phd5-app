@@ -2,15 +2,16 @@
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "dmstr/yii2-cms-metapackage": "^7.0.0",
-        "dmstr/yii2-libs-metapackage": "^0.3",
+        "dmstr/yii2-libs-metapackage": "^0.4.0-rc1",
         "franciscomaya/yii2-sceditor": "dev-master",
-        "2amigos/yii2-ckeditor-widget": "1.*|2.*",
+        "2amigos/yii2-ckeditor-widget": "^2.0.2.1",
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "cinghie/yii2-cookie-consent": "^1.4",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filefly-module": "^0.5.5-rc4",
         "dmstr/yii2-filemanager-widgets": "^0.6.0-beta3",
+        "dmstr/yii2-prototype-module": "^0.5.0-rc5",
         "dmstr/yii2-resque-module": "^0.3",
         "dmstr/yii2-widgets2-module": "^0.4.0-alpha1",
         "edgardmessias/yii2-nprogress": "^0.3.0",
@@ -55,6 +56,10 @@
         "temp-dmstr/yii2-redirect-module": {
             "type": "vcs",
             "url": "https://github.com/dmstr/yii2-redirect-module"
+        },
+        "temp-2amigos/yii2-ckeditor-widget": {
+            "type": "vcs",
+            "url": "https://github.com/schmunk42/yii2-ckeditor-widget"
         }
     }
 }
