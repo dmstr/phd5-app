@@ -29,7 +29,9 @@ $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
 $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success', 2);
 $I->click('#cell-header .hrzg-widget-container-controls .btn-success');
 // TODO: fixme
-//$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul', 2);
+$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul', 2);
+$I->click('#cell-header .hrzg-widget-container-controls .btn-success');
+$I->waitForElementNotVisible('#cell-header .hrzg-widget-container-controls ul', 2);
 
 $I->comment('Mouse-over second container');
 $I->moveMouseOver('#cell-container.hrzg-widget-widget-container');
