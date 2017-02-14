@@ -105,6 +105,7 @@ return [
             'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
             'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
             'prefix' => getenv('APP_NAME').'/public',
+            'region' => getenv('AMAZON_S3_BUCKET_REGION'),
         ],
         'i18n' => [
             'translations' => [
