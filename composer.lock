@@ -2412,7 +2412,7 @@
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
-            "version": "dev-master",
+            "version": "0.6.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/dmstr/yii2-filemanager-widgets.git",
@@ -2454,7 +2454,7 @@
                 "filemanager",
                 "yii2"
             ],
-            "time": "2017-02-13 22:01:57"
+            "time": "2017-02-13T22:01:57+00:00"
         },
         {
             "name": "dmstr/yii2-helpers",
@@ -7976,8 +7976,6 @@
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": {
-        "dmstr/yii2-filemanager-widgets": 20,
-        "dmstr/yii2-widgets2-module": 15,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

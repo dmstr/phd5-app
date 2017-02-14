@@ -59,10 +59,6 @@
         "temp-2amigos/yii2-ckeditor-widget": {
             "type": "vcs",
             "url": "https://github.com/schmunk42/yii2-ckeditor-widget"
-        },
-        "temp-schmunk42/yii2-flysystem": {
-            "type": "vcs",
-            "url": "https://github.com/schmunk42/yii2-flysystem.git"
         }
     }
 }
