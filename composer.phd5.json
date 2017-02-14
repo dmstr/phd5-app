@@ -7,6 +7,7 @@
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "cinghie/yii2-cookie-consent": "^1.4",
+        "creocoder/yii2-flysystem": "0.8.999",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filemanager-widgets": "^0.6.0-rc2",
         "dmstr/yii2-prototype-module": "^0.5.0-rc5",
@@ -59,6 +60,10 @@
         "temp-2amigos/yii2-ckeditor-widget": {
             "type": "vcs",
             "url": "https://github.com/schmunk42/yii2-ckeditor-widget"
+        },
+        "temp-schmunk42/yii2-flysystem": {
+            "type": "vcs",
+            "url": "https://github.com/schmunk42/yii2-flysystem.git"
         }
     }
 }
