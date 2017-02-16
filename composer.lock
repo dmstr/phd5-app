@@ -893,6 +893,56 @@
             }
         },
         {
+            "name": "bower-asset/jquery-growl",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ksylvest/jquery-growl.git",
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/eb8a8d4308b024510a6f168179986df6b46ed423",
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": "dev-default|*"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./javascripts/jquery.growl.js",
+                    "./stylesheets/jquery.growl.css"
+                ],
+                "bower-asset-ignore": [
+                    "README*",
+                    "LICENSE*",
+                    "**/*.sass",
+                    "**/*.coffee",
+                    "**/sample.*",
+                    "**/rainbow.js",
+                    "**/rainbow.css",
+                    "**/jquery.js",
+                    "**/jquery.css",
+                    "samples",
+                    "spec",
+                    "bourbon",
+                    "neat",
+                    "packages",
+                    "images",
+                    "Cakefile*",
+                    "Rakefile*",
+                    "Gemfile*",
+                    ".git*",
+                    ".travis*",
+                    "*bower.json",
+                    "*jquery.json",
+                    "index*"
+                ]
+            }
+        },
+        {
             "name": "bower-asset/jquery-mousewheel",
             "version": "3.1.13",
             "source": {
@@ -1257,6 +1307,27 @@
                 "MIT"
             ],
             "description": "Lightweight Angular JS directive to upload files. Support drag&drop, paste image, progress and abort"
+        },
+        {
+            "name": "bower-asset/noty",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/needim/noty.git",
+                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/needim/noty/zipball/ebb543ef0a3c039cdb7cdae887197ffa43433d52",
+                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "js/noty/packaged/jquery.noty.packaged.js",
+                "bower-asset-ignore": []
+            },
+            "description": "noty - a jQuery notification plugin"
         },
         {
             "name": "bower-asset/nprogress",
@@ -2188,19 +2259,21 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.5.0-rc4",
+            "version": "0.5.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "eb84150ded29b441129ccc0a96af50ef8cd1a651"
+                "reference": "575b31e12ad35482dc059e15611fbf4cd02c6f9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/eb84150ded29b441129ccc0a96af50ef8cd1a651",
-                "reference": "eb84150ded29b441129ccc0a96af50ef8cd1a651",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/575b31e12ad35482dc059e15611fbf4cd02c6f9b",
+                "reference": "575b31e12ad35482dc059e15611fbf4cd02c6f9b",
                 "shasum": ""
             },
             "require": {
+                "bower-asset/jquery-growl": "^1.3",
+                "bower-asset/noty": "^2.3",
                 "dmstr/yii2-adminlte-asset": "^2.3.4",
                 "dmstr/yii2-helpers": "~0.4",
                 "dmstr/yii2-pages-module": "~0.16",
@@ -2230,7 +2303,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-02-16T12:39:11+00:00"
+            "time": "2017-02-16T16:46:16+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
