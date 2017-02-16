@@ -2,6 +2,8 @@
 
 // @group mandatory
 
+$uniqId = uniqid('Test-');
+
 $I = new E2eTester($scenario);
 $I->wantTo('ensure that Pages works');
 
@@ -20,7 +22,7 @@ $I->makeScreenshot('success-pages-root-node');
 $I->amGoingTo("Add a node");
 $I->click('.kv-toolbar-container .kv-create');
 $I->waitForElementVisible('#tree-name', 5);
-$I->fillField('#tree-name', uniqid('Test-'));
+$I->fillField('#tree-name', $uniqId);
 $I->click('Save');
-$I->waitForElementVisible('.alert-success', 5);
+$I->waitForText($uniqId, 5, '.kv-tree');
 $I->makeScreenshot('success-pages-add-node');
