@@ -227,7 +227,9 @@ return [
             'layout' => '@backend/views/layouts/main',
             'filesystem' => 'fsS3',
         ],
-
+        'noty' => [
+            'class' => 'lo\modules\noty\Module',
+        ],
         'pages' => [
             'class' => 'dmstr\modules\pages\Module',
             'layout' => '@backend/views/layouts/main',
