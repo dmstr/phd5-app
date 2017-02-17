@@ -81,7 +81,7 @@ return [
             'basePath' => '@app/../web/assets',
         ],
         'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+            'class' => 'dektrium\rbac\components\DbManager',
         ],
         'cache' => [
             'class' => 'yii\redis\Cache',
@@ -239,9 +239,9 @@ return [
             'layout' => '@backend/views/layouts/box',
         ],
         'rbac' => [
-            'class' => 'dektrium\rbac\Module',
+            'class' => 'dektrium\rbac\RbacWebModule',
             'layout' => '@backend/views/layouts/box',
-            'enableFlashMessages' => false,
+            #'enableFlashMessages' => false,
         ],
         'redirects' => [
             'class' => 'dmstr\modules\redirect\Module',
