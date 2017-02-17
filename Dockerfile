@@ -1,9 +1,7 @@
-FROM dmstr/php-yii2:7.0-fpm-1.9-rc2-alpine-nginx-xdebug
-
-WORKDIR /app
+FROM dmstr/php-yii2:7.1-fpm-2.0-beta2-alpine-nginx-xdebug
 
 # Application packages
-ARG GITHUB_API_TOKEN
+WORKDIR /app
 COPY composer.* /app/
 RUN composer install --prefer-dist --optimize-autoloader
 

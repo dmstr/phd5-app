@@ -105,6 +105,7 @@ return [
             'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
             'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
             'prefix' => getenv('APP_NAME').'/public',
+            'region' => getenv('AMAZON_S3_BUCKET_REGION'),
         ],
         'i18n' => [
             'translations' => [
@@ -226,7 +227,9 @@ return [
             'layout' => '@backend/views/layouts/main',
             'filesystem' => 'fsS3',
         ],
-
+        'noty' => [
+            'class' => 'lo\modules\noty\Module',
+        ],
         'pages' => [
             'class' => 'dmstr\modules\pages\Module',
             'layout' => '@backend/views/layouts/main',
