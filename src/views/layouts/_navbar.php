@@ -73,6 +73,13 @@ if (\Yii::$app->hasModule('user')) {
             ],
         ];
 
+        // extra buttons
+        $extraButtons = \dmstr\modules\prototype\widgets\TwigWidget::widget([
+            'key' => 'frontend.extra.menuItems',
+            'renderEmpty' => false,
+        ]);
+        $menuItems[] = '<li>'.$extraButtons.'</li>';
+
         // context menu
         $menuItems[] = [
             'label' => '<i class="glyphicon glyphicon-pencil"></i>',
@@ -85,7 +92,9 @@ if (\Yii::$app->hasModule('user')) {
                 'options' => ['class' => 'dropdown-menu'],
                 'encodeLabels' => false,
                 'items' => \dmstr\modules\pages\models\Tree::getMenuItems(
-                    'backend', true, \dmstr\modules\pages\models\Tree::GLOBAL_ACCESS_DOMAIN
+                    'backend',
+                    true,
+                    \dmstr\modules\pages\models\Tree::GLOBAL_ACCESS_DOMAIN
                 ),
             ]
         );

@@ -280,16 +280,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.22.5",
+            "version": "3.22.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "081d565ba5c20af78fcde6dcf7fdbfc48739f39f"
+                "reference": "011cabd6e7755a8671fb338951d53abc5d24deef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/081d565ba5c20af78fcde6dcf7fdbfc48739f39f",
-                "reference": "081d565ba5c20af78fcde6dcf7fdbfc48739f39f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/011cabd6e7755a8671fb338951d53abc5d24deef",
+                "reference": "011cabd6e7755a8671fb338951d53abc5d24deef",
                 "shasum": ""
             },
             "require": {
@@ -356,7 +356,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-02-15T22:39:19+00:00"
+            "time": "2017-02-17T00:07:30+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -1859,16 +1859,16 @@
         },
         {
             "name": "codemix/yii2-streamlog",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-streamlog.git",
-                "reference": "ecfeeef221ff270022fd1428dd504aaf8d0cd095"
+                "reference": "46717733b46a91dd323888349b323fb0bd989e2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-streamlog/zipball/ecfeeef221ff270022fd1428dd504aaf8d0cd095",
-                "reference": "ecfeeef221ff270022fd1428dd504aaf8d0cd095",
+                "url": "https://api.github.com/repos/codemix/yii2-streamlog/zipball/46717733b46a91dd323888349b323fb0bd989e2e",
+                "reference": "46717733b46a91dd323888349b323fb0bd989e2e",
                 "shasum": ""
             },
             "type": "library",
@@ -1894,7 +1894,7 @@
                 "stream",
                 "yii2"
             ],
-            "time": "2017-02-16T12:25:14+00:00"
+            "time": "2017-02-16T14:50:01+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -2401,6 +2401,49 @@
             "time": "2016-12-08T21:30:50+00:00"
         },
         {
+            "name": "dmstr/yii2-cookie-button",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-cookie-button.git",
+                "reference": "0ee34e4ec898d5b11750632cabe4d9a662529050"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-cookie-button/zipball/0ee34e4ec898d5b11750632cabe4d9a662529050",
+                "reference": "0ee34e4ec898d5b11750632cabe4d9a662529050",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\cookiebutton\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Mautz",
+                    "email": "marc@diemeisterei.de"
+                }
+            ],
+            "description": "Widget to store 0/1 in a cookie for Yii2 Framework",
+            "homepage": "https://github.com/dmstr/yii2-cookie-button",
+            "keywords": [
+                "cms",
+                "extension",
+                "yii2"
+            ],
+            "time": "2017-02-17T09:53:52+00:00"
+        },
+        {
             "name": "dmstr/yii2-db",
             "version": "0.7.8",
             "source": {
@@ -2582,22 +2625,23 @@
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
-            "version": "0.4.0",
+            "version": "0.5.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-libs-metapackage.git",
-                "reference": "6df7dbb3d3fa1ddd2020347d80ca1c2fcbba1c63"
+                "reference": "613b848a025f396300d70a29aafad83ba8c8cd0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/6df7dbb3d3fa1ddd2020347d80ca1c2fcbba1c63",
-                "reference": "6df7dbb3d3fa1ddd2020347d80ca1c2fcbba1c63",
+                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/613b848a025f396300d70a29aafad83ba8c8cd0b",
+                "reference": "613b848a025f396300d70a29aafad83ba8c8cd0b",
                 "shasum": ""
             },
             "require": {
                 "codemix/yii2-localeurls": "^1.4.5",
                 "codemix/yii2-streamlog": "^1.0",
                 "dmstr/yii2-bootstrap": "~0.0",
+                "dmstr/yii2-cookie-button": "^0.2.0",
                 "dmstr/yii2-db": "~0.7",
                 "dmstr/yii2-helpers": "~0.1",
                 "dmstr/yii2-migrate-command": "^0.3.2",
@@ -2628,7 +2672,7 @@
                 }
             ],
             "description": "Core Library Extensions for Phundament 4 (Yii 2.0 Framework)",
-            "time": "2017-02-10T03:33:20+00:00"
+            "time": "2017-02-17T16:53:47+00:00"
         },
         {
             "name": "dmstr/yii2-migrate-command",
@@ -3808,24 +3852,25 @@
         },
         {
             "name": "league/container",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/container.git",
-                "reference": "c0e7d947b690891f700dc4967ead7bdb3d6708c1"
+                "reference": "25f0d476177f3dafb8a8760f1cd88830baf8f35d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/container/zipball/c0e7d947b690891f700dc4967ead7bdb3d6708c1",
-                "reference": "c0e7d947b690891f700dc4967ead7bdb3d6708c1",
+                "url": "https://api.github.com/repos/thephpleague/container/zipball/25f0d476177f3dafb8a8760f1cd88830baf8f35d",
+                "reference": "25f0d476177f3dafb8a8760f1cd88830baf8f35d",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "^1.1",
-                "php": ">=5.4.0"
+                "container-interop/container-interop": "^1.2",
+                "php": "^5.4.0 || ^7.0"
             },
             "provide": {
-                "container-interop/container-interop-implementation": "^1.1"
+                "container-interop/container-interop-implementation": "^1.2",
+                "psr/container-implementation": "^1.0"
             },
             "replace": {
                 "orno/di": "~2.0"
@@ -3868,7 +3913,7 @@
                 "provider",
                 "service"
             ],
-            "time": "2016-03-17T11:07:59+00:00"
+            "time": "2017-02-17T12:44:18+00:00"
         },
         {
             "name": "league/flysystem",
@@ -5612,7 +5657,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -7431,16 +7476,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "7a8405a9fc175f87fed8a3c40856b0d866d61936"
+                "reference": "0e5e6899f82230fcb1153bcaf0e106ffaa44b870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/7a8405a9fc175f87fed8a3c40856b0d866d61936",
-                "reference": "7a8405a9fc175f87fed8a3c40856b0d866d61936",
+                "url": "https://api.github.com/repos/symfony/console/zipball/0e5e6899f82230fcb1153bcaf0e106ffaa44b870",
+                "reference": "0e5e6899f82230fcb1153bcaf0e106ffaa44b870",
                 "shasum": ""
             },
             "require": {
@@ -7490,20 +7535,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-06T12:04:21+00:00"
+            "time": "2017-02-16T14:07:22+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "b4d9818f127c60ce21ed62c395da7df868dc8477"
+                "reference": "9b98854cb45bc59d100b7d4cc4cf9e05f21026b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/b4d9818f127c60ce21ed62c395da7df868dc8477",
-                "reference": "b4d9818f127c60ce21ed62c395da7df868dc8477",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/9b98854cb45bc59d100b7d4cc4cf9e05f21026b9",
+                "reference": "9b98854cb45bc59d100b7d4cc4cf9e05f21026b9",
                 "shasum": ""
             },
             "require": {
@@ -7547,11 +7592,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-28T02:37:08+00:00"
+            "time": "2017-02-16T16:34:18+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -7773,16 +7818,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "32646a7cf53f3956c76dcb5c82555224ae321858"
+                "reference": "0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/32646a7cf53f3956c76dcb5c82555224ae321858",
-                "reference": "32646a7cf53f3956c76dcb5c82555224ae321858",
+                "url": "https://api.github.com/repos/symfony/process/zipball/0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856",
+                "reference": "0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856",
                 "shasum": ""
             },
             "require": {
@@ -7818,11 +7863,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-03T12:11:38+00:00"
+            "time": "2017-02-16T14:07:22+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
