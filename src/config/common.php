@@ -181,8 +181,13 @@ return [
                     'options' => [
                         'auto_reload' => true,
                     ],
-                    'globals' => ['html' => '\yii\helpers\Html'],
-                    'uses' => ['yii\bootstrap'],
+                    'globals' => [
+                        'html' => '\yii\helpers\Html',
+                        'Tree' => '\dmstr\modules\pages\models\Tree',
+                    ],
+                    'uses' => [
+                        'yii\bootstrap',
+                    ],
                 ],
             ],
         ],
