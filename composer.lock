@@ -277,16 +277,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.22.7",
+            "version": "3.22.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "eea83aaac2b6c86f72a5c85c54d1839b70d4fd21"
+                "reference": "b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eea83aaac2b6c86f72a5c85c54d1839b70d4fd21",
-                "reference": "eea83aaac2b6c86f72a5c85c54d1839b70d4fd21",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18",
+                "reference": "b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-02-17T20:09:40+00:00"
+            "time": "2017-02-21T21:11:29+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -863,20 +863,20 @@
         },
         {
             "name": "bower-asset/jquery-form",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malsup/form.git",
-                "reference": "14fa0c804c3d7c26661d95ab2357e1bf340e7d71"
+                "reference": "9e49330b8912bd7706309dbef355454f371d3432"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malsup/form/zipball/14fa0c804c3d7c26661d95ab2357e1bf340e7d71",
-                "reference": "14fa0c804c3d7c26661d95ab2357e1bf340e7d71",
+                "url": "https://api.github.com/repos/malsup/form/zipball/9e49330b8912bd7706309dbef355454f371d3432",
+                "reference": "9e49330b8912bd7706309dbef355454f371d3432",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/jquery": ">=1.7"
+                "bower-asset/jquery": ">=1.7,<3"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -884,10 +884,23 @@
                 "bower-asset-ignore": [
                     "README.md",
                     "composer.json",
-                    "form.jquery.json",
                     "package.json"
                 ]
-            }
+            },
+            "license": [
+                "(MIT OR LGPL-3.0)"
+            ],
+            "description": "The jQuery Form Plugin allows you to easily and unobtrusively upgrade HTML forms to use AJAX.",
+            "keywords": [
+                "ajax",
+                "form",
+                "html-form",
+                "jquery",
+                "jquery-form",
+                "jquery-plugin",
+                "json",
+                "json-form"
+            ]
         },
         {
             "name": "bower-asset/jquery-growl",
@@ -1032,16 +1045,16 @@
         },
         {
             "name": "bower-asset/jquery.inputmask",
-            "version": "3.2.7",
+            "version": "3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-                "reference": "ec7726993217ee7b01023ad4f7f1b6a51446a39d"
+                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/ec7726993217ee7b01023ad4f7f1b6a51446a39d",
-                "reference": "ec7726993217ee7b01023ad4f7f1b6a51446a39d",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
+                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
                 "shasum": ""
             },
             "require": {
@@ -1050,7 +1063,14 @@
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": [
-                    "./dist/inputmask/inputmask.js"
+                    "./dist/inputmask/inputmask.dependencyLib",
+                    "./dist/inputmask/inputmask",
+                    "./dist/inputmask/inputmask.extensions",
+                    "./dist/inputmask/inputmask.date.extensions",
+                    "./dist/inputmask/inputmask.numeric.extensions",
+                    "./dist/inputmask/inputmask.phone.extensions",
+                    "./dist/inputmask/inputmask.regex.extensions",
+                    "./dist/inputmask/jquery.inputmask"
                 ],
                 "bower-asset-ignore": [
                     "**/*",
@@ -2623,16 +2643,16 @@
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
-            "version": "0.5.0-rc1",
+            "version": "0.6.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-libs-metapackage.git",
-                "reference": "613b848a025f396300d70a29aafad83ba8c8cd0b"
+                "reference": "2d83cd194829f2608b7c46ee12e804f47d9015e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/613b848a025f396300d70a29aafad83ba8c8cd0b",
-                "reference": "613b848a025f396300d70a29aafad83ba8c8cd0b",
+                "url": "https://api.github.com/repos/dmstr/yii2-libs-metapackage/zipball/2d83cd194829f2608b7c46ee12e804f47d9015e5",
+                "reference": "2d83cd194829f2608b7c46ee12e804f47d9015e5",
                 "shasum": ""
             },
             "require": {
@@ -2642,7 +2662,7 @@
                 "dmstr/yii2-cookie-button": "^0.2.0",
                 "dmstr/yii2-db": "~0.7",
                 "dmstr/yii2-helpers": "~0.1",
-                "dmstr/yii2-migrate-command": "^0.3.2",
+                "dmstr/yii2-migrate-command": "^0.4.0-beta1",
                 "dmstr/yii2-web": "~0.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
                 "schmunk42/retry": "~0.0",
@@ -2670,24 +2690,24 @@
                 }
             ],
             "description": "Core Library Extensions for Phundament 4 (Yii 2.0 Framework)",
-            "time": "2017-02-17T16:53:47+00:00"
+            "time": "2017-02-21T23:35:30+00:00"
         },
         {
             "name": "dmstr/yii2-migrate-command",
-            "version": "0.3.2",
+            "version": "0.4.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-migrate-command.git",
-                "reference": "81fecdf73aa6a6a2be95f2cea7fa707199da82c9"
+                "reference": "7e4da97e90dcb4343d5b8ed211c3da89ff49bc50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/81fecdf73aa6a6a2be95f2cea7fa707199da82c9",
-                "reference": "81fecdf73aa6a6a2be95f2cea7fa707199da82c9",
+                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/7e4da97e90dcb4343d5b8ed211c3da89ff49bc50",
+                "reference": "7e4da97e90dcb4343d5b8ed211c3da89ff49bc50",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "<2.0.10"
+                "yiisoft/yii2": "~2.0.10"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2713,7 +2733,7 @@
                 "migration",
                 "yii2"
             ],
-            "time": "2017-01-09T18:32:51+00:00"
+            "time": "2017-02-21T23:25:38+00:00"
         },
         {
             "name": "dmstr/yii2-pages-module",
@@ -6021,21 +6041,21 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.9",
+            "version": "2.0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133"
+                "reference": "ee996adec1dfd7babb67bd0c604f5bd6425fe5ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2b75151ea60e1fd820046416eee2e89c3dda1133",
-                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ee996adec1dfd7babb67bd0c604f5bd6425fe5ab",
+                "reference": "ee996adec1dfd7babb67bd0c604f5bd6425fe5ab",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
-                "bower-asset/jquery.inputmask": "~3.2.2",
+                "bower-asset/jquery.inputmask": "~3.2.2 | ~3.3.3",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "cebe/markdown": "~1.0.0 | ~1.1.0",
@@ -6103,6 +6123,12 @@
                     "name": "Dmitry Naumenko",
                     "email": "d.naumenko.a@gmail.com",
                     "role": "Core framework development"
+                },
+                {
+                    "name": "Boudewijn Vahrmeijer",
+                    "email": "info@dynasource.eu",
+                    "homepage": "http://dynasource.eu",
+                    "role": "Core framework development"
                 }
             ],
             "description": "Yii PHP Framework Version 2",
@@ -6111,7 +6137,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-07-11T13:36:42+00:00"
+            "time": "2017-02-08T09:04:32+00:00"
         },
         {
             "name": "yiisoft/yii2-authclient",
@@ -6263,20 +6289,20 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.0.7",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "a74a2433ad1dfda30a253a92f6db52c131807432"
+                "reference": "647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/a74a2433ad1dfda30a253a92f6db52c131807432",
-                "reference": "a74a2433ad1dfda30a253a92f6db52c131807432",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9",
+                "reference": "647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0.4",
+                "yiisoft/yii2": "~2.0.11",
                 "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
@@ -6306,7 +6332,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-11-24T09:42:29+00:00"
+            "time": "2017-02-21T10:30:50+00:00"
         },
         {
             "name": "yiisoft/yii2-httpclient",
@@ -8166,6 +8192,7 @@
     "stability-flags": {
         "dektrium/yii2-rbac": 20,
         "creocoder/yii2-flysystem": 20,
+        "dmstr/yii2-libs-metapackage": 10,
         "ckeditor/ckeditor": 20,
         "roave/security-advisories": 20
     },

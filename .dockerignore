@@ -1,13 +1,16 @@
 .git
 .vagrant
+.idea
+ **/.DS_Store
 
 .env
 src/app.env
 
 data
 vendor
+tests
 
-runtime
+**/runtime/
 web/assets
 
 config/local.php
