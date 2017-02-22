@@ -184,6 +184,7 @@ return [
                     'globals' => [
                         'html' => '\yii\helpers\Html',
                         'Tree' => '\dmstr\modules\pages\models\Tree',
+                        'FA' => '\rmrevin\yii\fontawesome\FA'
                     ],
                     'uses' => [
                         'yii\bootstrap',
