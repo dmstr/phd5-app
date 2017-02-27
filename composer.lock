@@ -277,16 +277,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.22.8",
+            "version": "3.22.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18"
+                "reference": "b6b5fa3c8c1b34db822e95fa764de01869493ebe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18",
-                "reference": "b69d6ef0eb99ca1996d2b2e7ebf7e573415d0a18",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b6b5fa3c8c1b34db822e95fa764de01869493ebe",
+                "reference": "b6b5fa3c8c1b34db822e95fa764de01869493ebe",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-02-21T21:11:29+00:00"
+            "time": "2017-02-24T00:41:00+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -623,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FezVrasta/bootstrap-material-design.git",
-                "reference": "caca207c88de8f819a27f5f36ba90f083761f0b4"
+                "reference": "6625d42cc2f591ea7bc05ea0f95a2d091c3a1865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FezVrasta/bootstrap-material-design/zipball/caca207c88de8f819a27f5f36ba90f083761f0b4",
-                "reference": "caca207c88de8f819a27f5f36ba90f083761f0b4",
+                "url": "https://api.github.com/repos/FezVrasta/bootstrap-material-design/zipball/6625d42cc2f591ea7bc05ea0f95a2d091c3a1865",
+                "reference": "6625d42cc2f591ea7bc05ea0f95a2d091c3a1865",
                 "shasum": ""
             },
             "require": {
@@ -681,12 +681,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap-sass.git",
-                "reference": "6620202b137a877dc614dd87bf7f81f895af8024"
+                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/6620202b137a877dc614dd87bf7f81f895af8024",
-                "reference": "6620202b137a877dc614dd87bf7f81f895af8024",
+                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
+                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
                 "shasum": ""
             },
             "require": {
@@ -788,12 +788,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ducksboard/gridster.js.git",
-                "reference": "20497c7a1797fcb4049c77718e04dbfce321f6f7"
+                "reference": "314037471fac083626f5140845a9d471a54e0bee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ducksboard/gridster.js/zipball/20497c7a1797fcb4049c77718e04dbfce321f6f7",
-                "reference": "20497c7a1797fcb4049c77718e04dbfce321f6f7",
+                "url": "https://api.github.com/repos/ducksboard/gridster.js/zipball/314037471fac083626f5140845a9d471a54e0bee",
+                "reference": "314037471fac083626f5140845a9d471a54e0bee",
                 "shasum": ""
             },
             "type": "bower-asset-library"
@@ -835,12 +835,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/carhartl/jquery-cookie.git",
-                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66"
+                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
-                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
+                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
+                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
                 "shasum": ""
             },
             "require": {
@@ -908,12 +908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ksylvest/jquery-growl.git",
-                "reference": "88e3d86c109ed28cec6a53253c002783759180f8"
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/88e3d86c109ed28cec6a53253c002783759180f8",
-                "reference": "88e3d86c109ed28cec6a53253c002783759180f8",
+                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/eb8a8d4308b024510a6f168179986df6b46ed423",
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423",
                 "shasum": ""
             },
             "require": {
@@ -1014,12 +1014,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jozefizso/bower-jquery-easing.git",
-                "reference": "72fec3d9126601939239cb85364dbdb771884380"
+                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/72fec3d9126601939239cb85364dbdb771884380",
-                "reference": "72fec3d9126601939239cb85364dbdb771884380",
+                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
+                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
                 "shasum": ""
             },
             "require": {
@@ -1262,12 +1262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/moment/moment.git",
-                "reference": "c83c4058b4c88d0a2ab10aac28ac787e31993c39"
+                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/c83c4058b4c88d0a2ab10aac28ac787e31993c39",
-                "reference": "c83c4058b4c88d0a2ab10aac28ac787e31993c39",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
+                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -1352,12 +1352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rstacruz/nprogress.git",
-                "reference": "d3699f2104f80b4bbb8e2500f7ab939755b2b66b"
+                "reference": "254266ea50c220f6507fa3f2978fc530147c7f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rstacruz/nprogress/zipball/d3699f2104f80b4bbb8e2500f7ab939755b2b66b",
-                "reference": "d3699f2104f80b4bbb8e2500f7ab939755b2b66b",
+                "url": "https://api.github.com/repos/rstacruz/nprogress/zipball/254266ea50c220f6507fa3f2978fc530147c7f06",
+                "reference": "254266ea50c220f6507fa3f2978fc530147c7f06",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -1515,55 +1515,6 @@
                 "search",
                 "sift",
                 "sort"
-            ]
-        },
-        {
-            "name": "bower-asset/swiper",
-            "version": "v3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nolimits4web/Swiper.git",
-                "reference": "0475133480ed98940128e3a39671ec6ac0441516"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nolimits4web/Swiper/zipball/0475133480ed98940128e3a39671ec6ac0441516",
-                "reference": "0475133480ed98940128e3a39671ec6ac0441516",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/js/swiper.js",
-                    "dist/css/swiper.css"
-                ],
-                "bower-asset-ignore": [
-                    ".*",
-                    "demos",
-                    "gulpfile",
-                    "build",
-                    "node_modules",
-                    "playground",
-                    "package.json"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Most modern mobile touch slider and framework with hardware accelerated transitions",
-            "keywords": [
-                "app",
-                "carousel",
-                "cordova",
-                "framework",
-                "gallery",
-                "ios",
-                "mobile",
-                "phonegap",
-                "slider",
-                "swipe",
-                "swiper",
-                "touch"
             ]
         },
         {
@@ -1835,16 +1786,16 @@
         },
         {
             "name": "codemix/yii2-localeurls",
-            "version": "1.4.6",
+            "version": "1.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-localeurls.git",
-                "reference": "f080c39eec2e989173f3c10f3fba36f3043bdd2f"
+                "reference": "eb6ca1b64612346feb257aa86f0d82e9b5ed1a4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/f080c39eec2e989173f3c10f3fba36f3043bdd2f",
-                "reference": "f080c39eec2e989173f3c10f3fba36f3043bdd2f",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/eb6ca1b64612346feb257aa86f0d82e9b5ed1a4d",
+                "reference": "eb6ca1b64612346feb257aa86f0d82e9b5ed1a4d",
                 "shasum": ""
             },
             "require": {
@@ -1872,7 +1823,7 @@
                 "locale",
                 "yii2"
             ],
-            "time": "2017-01-09T12:26:05+00:00"
+            "time": "2017-02-22T15:51:39+00:00"
         },
         {
             "name": "codemix/yii2-streamlog",
@@ -3193,62 +3144,6 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
-            "name": "fxp/composer-asset-plugin",
-            "version": "v1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fxpio/composer-asset-plugin.git",
-                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/60bc94db574103dfc73acb907fa79c6dfc86c96e",
-                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
-                "branch-alias": {
-                    "dev-master": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Fxp\\Composer\\AssetPlugin\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Pluchino",
-                    "email": "francois.pluchino@gmail.com"
-                }
-            ],
-            "description": "NPM/Bower Dependency Manager for Composer",
-            "homepage": "https://github.com/fxpio/composer-asset-plugin",
-            "keywords": [
-                "asset",
-                "bower",
-                "composer",
-                "dependency manager",
-                "nodejs",
-                "npm",
-                "package"
-            ],
-            "time": "2016-10-12T08:03:45+00:00"
-        },
-        {
             "name": "guzzle/guzzle",
             "version": "v3.9.3",
             "source": {
@@ -3559,16 +3454,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.8.7",
+            "version": "v1.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60"
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/8f558809e6093c8f4f4599b7b9fd64b366b22a60",
-                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/2479241c03c87995cfc528ae7b297f5ae9e733cb",
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb",
                 "shasum": ""
             },
             "require": {
@@ -3606,7 +3501,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-09-04T09:25:29+00:00"
+            "time": "2017-02-22T05:58:53+00:00"
         },
         {
             "name": "kartik-v/yii2-tree-manager",
@@ -5002,62 +4897,6 @@
                 "yii2"
             ],
             "time": "2015-04-03T08:32:18+00:00"
-        },
-        {
-            "name": "romka-chev/yii2-swiper",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/romka-chev/yii2-swiper.git",
-                "reference": "f9ab7cda07d4c5113799b0ea5587b6d46114ee5d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/romka-chev/yii2-swiper/zipball/f9ab7cda07d4c5113799b0ea5587b6d46114ee5d",
-                "reference": "f9ab7cda07d4c5113799b0ea5587b6d46114ee5d",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/swiper": ">=v3.0.4",
-                "fxp/composer-asset-plugin": ">=1.0.0",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "2.0.*@dev"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.8.x-dev"
-            },
-            "type": "library",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "romkaChev\\yii2\\swiper\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kulikov Roman",
-                    "email": "flinnraider@yandex.ru"
-                }
-            ],
-            "description": "Yii2 extension for Swiper slider",
-            "keywords": [
-                "extension",
-                "slider",
-                "swiper",
-                "widget",
-                "yii",
-                "yii2"
-            ],
-            "time": "2015-06-25T17:23:06+00:00"
         },
         {
             "name": "sabre/dav",
@@ -6666,12 +6505,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/typeahead.js.git",
-                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f"
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/87de059a7820b1e223f1c704fa12a624dbce3a4f",
-                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f",
+                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/588440f66559714280628a4f9799f0c4eb880a4a",
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a",
                 "shasum": ""
             },
             "require": {

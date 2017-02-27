@@ -22,7 +22,6 @@
         "phpoffice/phpexcel": "^1.8",
         "roave/security-advisories": "dev-master",
         "romdim/yii2-bootstrap-material": "^1.0",
-        "romka-chev/yii2-swiper": "^2.0",
         "sidekit/config": "^1.0.0",
         "thomaspark/bootswatch": "^3.3",
         "uran1980/yii2-jquery-essential": "^0.0.6",
