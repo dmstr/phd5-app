@@ -5,6 +5,7 @@
 
 version: '2'
 services:
+
   php:
     build:
       context: .
@@ -19,7 +20,7 @@ services:
     environment:
       - YII_ENV=test
       - APP_NAME=test-phd5
-      - APP_LANGUAGES=de,en-US,en-GB,en,ru,fr-FR,fr-CH
+      - APP_LANGUAGES=de,en,ru,fr-FR,fr-CH,fr,es-ES,pt-PT,pt-BR
       - APP_TITLE=docker-compose.test.yml
 
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
@@ -43,16 +44,19 @@ services:
       default:
         aliases:
           - web
+
   worker:
     build:
       context: .
     image: ${STACK_PHP_IMAGE}
+
   db:
     image: percona:5.6
     environment:
       - MYSQL_ROOT_PASSWORD=secret
     ports:
       - '3306'
+
   firefox:
     image: selenium/standalone-firefox-debug:2.53.1
     # workaround for Docker Beta, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
@@ -62,6 +66,10 @@ services:
     ports:
       - '4444'
       - '5900'
+    volumes:
+      # Mount shm also for firefox, see https://github.com/SeleniumHQ/docker-selenium#running-the-images
+      - /dev/shm:/dev/shm
+
   mailcatcher:
     image: nisenabe/mailcatcher
     ports:
