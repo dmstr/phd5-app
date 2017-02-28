@@ -19,8 +19,8 @@ services:
     environment:
       - YII_ENV=test
       - APP_NAME=test-phd5
-      - APP_LANGUAGES=de,en,ru
-      - APP_TITLE=NoName TEST
+      - APP_LANGUAGES=de,en-US,en-GB,en,ru,fr-FR,fr-CH
+      - APP_TITLE=docker-compose.test.yml
 
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1

@@ -82,6 +82,7 @@ return [
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+            'defaultRoles' => ['Default'],
         ],
         'cache' => [
             'class' => 'yii\redis\Cache',
