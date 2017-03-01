@@ -2228,22 +2228,23 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.5.0-rc5",
+            "version": "0.5.0-rc7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "575b31e12ad35482dc059e15611fbf4cd02c6f9b"
+                "reference": "3a13fce6f3ced6df3c5e31df63943c74d1db5fac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/575b31e12ad35482dc059e15611fbf4cd02c6f9b",
-                "reference": "575b31e12ad35482dc059e15611fbf4cd02c6f9b",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/3a13fce6f3ced6df3c5e31df63943c74d1db5fac",
+                "reference": "3a13fce6f3ced6df3c5e31df63943c74d1db5fac",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery-growl": "^1.3",
                 "bower-asset/noty": "^2.3",
                 "dmstr/yii2-adminlte-asset": "^2.3.4",
+                "dmstr/yii2-cookie-button": "~0.2",
                 "dmstr/yii2-helpers": "~0.4",
                 "dmstr/yii2-pages-module": "~0.16",
                 "dmstr/yii2-prototype-module": "~0.4",
@@ -2272,7 +2273,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-02-16T16:46:16+00:00"
+            "time": "2017-03-01T00:47:50+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2557,16 +2558,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "e8259dd4972f244cd3c278b33843ad8a63dab2b6"
+                "reference": "cd9d6f55907c7c58968dd23b0b5b33b1397a4d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/e8259dd4972f244cd3c278b33843ad8a63dab2b6",
-                "reference": "e8259dd4972f244cd3c278b33843ad8a63dab2b6",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/cd9d6f55907c7c58968dd23b0b5b33b1397a4d88",
+                "reference": "cd9d6f55907c7c58968dd23b0b5b33b1397a4d88",
                 "shasum": ""
             },
             "require": {
@@ -2597,7 +2598,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-09-26T16:52:23+00:00"
+            "time": "2017-02-28T23:13:59+00:00"
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
