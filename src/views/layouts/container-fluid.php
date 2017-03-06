@@ -10,7 +10,7 @@
             ) ?>
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             <?= $content ?>
         </div>
     </div>
