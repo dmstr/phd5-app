@@ -1,0 +1,4 @@
+nginx: nginx -g 'daemon off;'
+phpfpm: docker-run.sh
+cron: crond -f
+worker: yii resque/work internal
