@@ -128,6 +128,7 @@ return [
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],
                     'logVars' => [],
+                    'replaceNewline' => ''
                 ],
             ],
         ],
