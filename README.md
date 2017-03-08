@@ -10,7 +10,7 @@ A universal web application template built upon Docker, PHP and Yii 2.0 Framewor
 Documentation
 -------------
  
-See [docs](https://git.hrzg.de/dmstr/docs-phd5)
+See [docs](https://github.com/dmstr/phd5-docs)
 
 TL;dr
 -----
@@ -37,7 +37,7 @@ Run setup in container
     
     $ yii app/setup
 
-See [configuration](https://git.hrzg.de/dmstr/phd-docs/blob/master/developer/configuration.md)...
+See [configuration](https://github.com/dmstr/phd5-docs/blob/master/guide/development/configuration.md)...
 
 
 ### Testing
@@ -54,7 +54,7 @@ Run tests inside the container
       
     $ codecept run      
 
-See [testing](https://git.hrzg.de/dmstr/phd-docs/blob/master/developer/testing.md)...   
+See [testing](https://github.com/dmstr/phd5-docs/blob/master/guide/development/testing.md)...   
 
 
 ---
