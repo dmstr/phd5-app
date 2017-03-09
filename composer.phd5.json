@@ -1,4 +1,14 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/yii2-rbac.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/yii2-flysystem.git"
+        }
+    ],
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "dmstr/yii2-cms-metapackage": "^7.0.0-rc1",
@@ -7,7 +17,9 @@
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "cinghie/yii2-cookie-consent": "^1.4",
-        "ckeditor/ckeditor":"dev-full/stable",
+        "ckeditor/ckeditor": "dev-full/stable",
+        "dektrium/yii2-rbac": "0.3.999.*",
+        "creocoder/yii2-flysystem": "0.8.999.*",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filemanager-widgets": "^0.6.0-rc2",
         "dmstr/yii2-prototype-module": "^0.5.0-rc5",
