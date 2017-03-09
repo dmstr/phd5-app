@@ -12,8 +12,9 @@ $I->makeScreenshot('debug-preview-access-login');
 $I->amGoingTo('try to login as preview');
 $I->login('preview', 'preview1');
 
-$I->amOnPage('/en');
-#$I->see('Application installed successfully', 'h2');
+$I->expect('not to see an inactive widget');
+$I->amOnPage('/ru');
+$I->dontSeeElement('#cell-main .hrzg-widget-widget');
 $I->dontSeeHorizontalScrollbars();
 
 $I->amOnPage('/de');
