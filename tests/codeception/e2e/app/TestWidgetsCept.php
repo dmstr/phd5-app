@@ -1,6 +1,6 @@
 <?php
 
-// @group essential
+// @group optional
 
 $I = new E2eTester($scenario);
 
