@@ -24,7 +24,7 @@ class AppController extends Controller
      *
      * @param null $key configuration section
      */
-    public function actionShowConfig($key = null)
+    public function actionConfig($key = null)
     {
         // get config from global variable (TODO)
         $data = $GLOBALS['config'];
@@ -43,7 +43,7 @@ class AppController extends Controller
     /**
      * Shows application environment variables.
      */
-    public function actionShowEnv()
+    public function actionEnv()
     {
         $env = $_ENV;
         ksort($env);

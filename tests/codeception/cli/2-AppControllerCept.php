@@ -5,10 +5,10 @@
 
 $I = new CliTester($scenario);
 
-$I->runShellCommand('yii app/show-config');
+$I->runShellCommand('yii app/config');
 $I->seeInShellOutput('id');
 
-$I->runShellCommand('yii app/show-env');
+$I->runShellCommand('yii app/env');
 $I->seeInShellOutput('APP_NAME');
 
 $I->runShellCommand('yii app/version');
