@@ -277,16 +277,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.24.2",
+            "version": "3.24.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2b252f300de442cdb5cde18ddc118c2477972e30"
+                "reference": "2823e0a0742505f655b0cb3bcdb10844f60e6078"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2b252f300de442cdb5cde18ddc118c2477972e30",
-                "reference": "2b252f300de442cdb5cde18ddc118c2477972e30",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2823e0a0742505f655b0cb3bcdb10844f60e6078",
+                "reference": "2823e0a0742505f655b0cb3bcdb10844f60e6078",
                 "shasum": ""
             },
             "require": {
@@ -353,7 +353,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-03-10T21:09:41+00:00"
+            "time": "2017-03-14T00:56:44+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -746,6 +746,44 @@
                 "MIT"
             ],
             "description": "Simple HTML5 Charts using the canvas element"
+        },
+        {
+            "name": "bower-asset/clipboard",
+            "version": "v1.5.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zenorocha/clipboard.js.git",
+                "reference": "402c9ee17bed6f273bcbc7efa81874fd9a50b84c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zenorocha/clipboard.js/zipball/402c9ee17bed6f273bcbc7efa81874fd9a50b84c",
+                "reference": "402c9ee17bed6f273bcbc7efa81874fd9a50b84c",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/clipboard.js",
+                "bower-asset-ignore": [
+                    "/.*/",
+                    "/demo/",
+                    "/test/",
+                    "/.*",
+                    "/bower.json",
+                    "/karma.conf.js",
+                    "/src",
+                    "/lib"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Modern copy to clipboard. No Flash. Just 2kb",
+            "keywords": [
+                "clipboard",
+                "copy",
+                "cut"
+            ]
         },
         {
             "name": "bower-asset/cookieconsent2",
@@ -1324,6 +1362,41 @@
                 "MIT"
             ],
             "description": "Lightweight Angular JS directive to upload files. Support drag&drop, paste image, progress and abort"
+        },
+        {
+            "name": "bower-asset/ngclipboard",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sachinchoolur/ngclipboard.git",
+                "reference": "4870a07486c42be7cb0976a9a64005ef1f4dee60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sachinchoolur/ngclipboard/zipball/4870a07486c42be7cb0976a9a64005ef1f4dee60",
+                "reference": "4870a07486c42be7cb0976a9a64005ef1f4dee60",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.2.0",
+                "bower-asset/clipboard": "~1.5.5"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/ngclipboard.js",
+                "bower-asset-ignore": [
+                    "README.md",
+                    "demo"
+                ]
+            },
+            "description": "Angularjs directive for clipboard.js",
+            "keywords": [
+                "angularjs",
+                "clipboard",
+                "copy",
+                "cut",
+                "ngclipboard"
+            ]
         },
         {
             "name": "bower-asset/noty",
@@ -2420,16 +2493,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.8.2",
+            "version": "0.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "72175eab9ea4f92b2f57d06127d451553b17105a"
+                "reference": "fd8a84648435165d464af45e631c7bb4a9c5ba1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/72175eab9ea4f92b2f57d06127d451553b17105a",
-                "reference": "72175eab9ea4f92b2f57d06127d451553b17105a",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/fd8a84648435165d464af45e631c7bb4a9c5ba1f",
+                "reference": "fd8a84648435165d464af45e631c7bb4a9c5ba1f",
                 "shasum": ""
             },
             "require": {
@@ -2462,7 +2535,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-09T12:21:06+00:00"
+            "time": "2017-03-14T06:12:52+00:00"
         },
         {
             "name": "dmstr/yii2-filefly-module",
@@ -2517,16 +2590,16 @@
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
-            "version": "0.6.4",
+            "version": "0.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filemanager-widgets.git",
-                "reference": "c13144f0849a492ae092d9307b1f9480057ee44f"
+                "reference": "cb354882b32b84e1b11d4ceeeb08797761ef46b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/c13144f0849a492ae092d9307b1f9480057ee44f",
-                "reference": "c13144f0849a492ae092d9307b1f9480057ee44f",
+                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/cb354882b32b84e1b11d4ceeeb08797761ef46b9",
+                "reference": "cb354882b32b84e1b11d4ceeeb08797761ef46b9",
                 "shasum": ""
             },
             "require": {
@@ -2535,6 +2608,7 @@
                 "bower-asset/angular-translate": "~2.9.1",
                 "bower-asset/bootstrap": "^3.3.0",
                 "bower-asset/ng-file-upload": "^12.0.1",
+                "bower-asset/ngclipboard": "^1.1.1",
                 "dmstr/yii2-filefly-module": "^0.6.0",
                 "kartik-v/yii2-widget-select2": "^2.0.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
@@ -2568,7 +2642,7 @@
                 "filemanager",
                 "yii2"
             ],
-            "time": "2017-03-12T01:03:01+00:00"
+            "time": "2017-03-13T16:02:56+00:00"
         },
         {
             "name": "dmstr/yii2-helpers",
@@ -2710,16 +2784,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.20.9.3",
+            "version": "0.20.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "9dbfbd95429e1e08e502741ccf442d9ade7afb7b"
+                "reference": "8c7aa4b00c80bead267a82781fada80bc17ae15c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/9dbfbd95429e1e08e502741ccf442d9ade7afb7b",
-                "reference": "9dbfbd95429e1e08e502741ccf442d9ade7afb7b",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/8c7aa4b00c80bead267a82781fada80bc17ae15c",
+                "reference": "8c7aa4b00c80bead267a82781fada80bc17ae15c",
                 "shasum": ""
             },
             "require": {
@@ -2764,20 +2838,20 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2017-03-09T11:15:25+00:00"
+            "time": "2017-03-14T06:53:43+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.5.0-rc7",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "b822e00c50cbd98b5f46601b307b6536cd0d965f"
+                "reference": "aee3446de3c8000b3ee4bad2a54c49a264259254"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/b822e00c50cbd98b5f46601b307b6536cd0d965f",
-                "reference": "b822e00c50cbd98b5f46601b307b6536cd0d965f",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/aee3446de3c8000b3ee4bad2a54c49a264259254",
+                "reference": "aee3446de3c8000b3ee4bad2a54c49a264259254",
                 "shasum": ""
             },
             "require": {
@@ -2812,7 +2886,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-02-27T15:32:56+00:00"
+            "time": "2017-03-14T05:46:38+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -5911,16 +5985,16 @@
         },
         {
             "name": "wikimedia/composer-merge-plugin",
-            "version": "v1.3.1",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-                "reference": "0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4"
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4",
-                "reference": "0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/ca453f9f13d8b05f86f20ea10be992a782e6f78c",
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c",
                 "shasum": ""
             },
             "require": {
@@ -5928,7 +6002,7 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev",
+                "composer/composer": "~1.0.0",
                 "jakub-onderka/php-parallel-lint": "~0.8",
                 "phpunit/phpunit": "~4.8|~5.0",
                 "squizlabs/php_codesniffer": "~2.1.0"
@@ -5956,7 +6030,7 @@
                 }
             ],
             "description": "Composer plugin to merge multiple composer.json files",
-            "time": "2016-03-08T17:11:37+00:00"
+            "time": "2017-03-13T16:52:55+00:00"
         },
         {
             "name": "yiisoft/yii2",
