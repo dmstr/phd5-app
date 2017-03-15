@@ -40,6 +40,7 @@ Yii::$container->set(
 // Basic configuration, used in web and console applications
 return [
     'id' => 'app',
+    'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
     'basePath' => realpath(__DIR__.'/..'),
     'vendorPath' => '@app/../vendor',
