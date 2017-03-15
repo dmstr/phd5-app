@@ -35,7 +35,7 @@ if (!preg_match('/^[a-z0-9_-]{2,16}$/', getenv('APP_NAME'))) {
         'APP_NAME must only be lowercase, dash or underscore and 2-16 characters long.'
     );
 }
-if (!preg_match('/^[a-z\-,]+$/', getenv('APP_LANGUAGES'))) {
+if (!preg_match('/([a-z]{2}(-[A-Z]{2})?),?/', getenv('APP_LANGUAGES'))) {
     throw new \Dotenv\Exception\ValidationException(
         'APP_LANGUAGES must be comma separated list of language identifiers.'
     );

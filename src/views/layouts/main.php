@@ -13,6 +13,7 @@ namespace _;
 use bedezign\yii2\audit\web\JSLoggingAsset;
 use dmstr\modules\prototype\assets\DbAsset;
 use hrzg\widget\widgets\Cell;
+use lo\modules\noty\Wrapper;
 use rmrevin\yii\fontawesome\AssetBundle;
 use Yii;
 use yii\helpers\Html;
@@ -75,8 +76,10 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 </head>
 
 <body>
+
 <?php $this->beginBody() ?>
 
+<!-- Navbar -->
 <?php
 if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
     echo \dmstr\modules\prototype\widgets\TwigWidget::widget(['key' => '_navbar']);
@@ -85,16 +88,28 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 }
 
 ?>
-<?= \dmstr\widgets\Alert::widget() ?>
 
+<!-- User flash messages -->
+<?= Wrapper::widget([
+    'layerClass' => 'lo\modules\noty\layers\Growl',
+    'options' => [
+        'dismissQueue' => true,
+        'location' => 'br',
+        'timeout' => 4000,
+    ],
+]) ?>
+
+<!-- Content -->
 <div class="wrap">
     <?= $content ?>
 </div>
 
+<!-- Footer -->
 <footer class="footer">
     <?= Cell::widget(['id' => '_footer', 'requestParam' => '_global']) ?>
 </footer>
 
+<!-- Info Modal -->
 <div class="phd-info" style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
     <p>
     <?= Html::a(
@@ -104,13 +119,12 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
     ) ?>
     </p>
 </div>
-
-<!-- Info Modal -->
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
     <?= $this->render('_modal') ?>
 </div>
 
 <?php $this->endBody() ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>

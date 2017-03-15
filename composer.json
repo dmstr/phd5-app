@@ -2,8 +2,7 @@
     "name": "dmstr/phd5-app",
     "minimum-stability": "beta",
     "require": {
-        "dektrium/yii2-rbac": "dev-master#0943e66c450132b306584a37caefc2aa04258372 as 0.3.999",
-        "creocoder/yii2-flysystem": "dev-master#0209d17a68027889a10a9133e4eb11f8dd6333cf as 0.8.999"
+        "wikimedia/composer-merge-plugin": "~1.3.1"
     },
     "extra": {
         "asset-installer-paths": {

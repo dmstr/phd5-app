@@ -40,6 +40,7 @@ Yii::$container->set(
 // Basic configuration, used in web and console applications
 return [
     'id' => 'app',
+    'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
     'basePath' => realpath(__DIR__.'/..'),
     'vendorPath' => '@app/../vendor',
@@ -82,6 +83,7 @@ return [
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+            'defaultRoles' => ['Default'],
         ],
         'cache' => [
             'class' => 'yii\redis\Cache',
@@ -127,6 +129,7 @@ return [
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],
                     'logVars' => [],
+                    'replaceNewline' => ''
                 ],
             ],
         ],
@@ -181,8 +184,14 @@ return [
                     'options' => [
                         'auto_reload' => true,
                     ],
-                    'globals' => ['html' => '\yii\helpers\Html'],
-                    'uses' => ['yii\bootstrap'],
+                    'globals' => [
+                        'html' => '\yii\helpers\Html',
+                        'Tree' => '\dmstr\modules\pages\models\Tree',
+                        'FA' => '\rmrevin\yii\fontawesome\FA'
+                    ],
+                    'uses' => [
+                        'yii\bootstrap',
+                    ],
                 ],
             ],
         ],
