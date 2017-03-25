@@ -12,6 +12,7 @@ namespace _;
 
 use bedezign\yii2\audit\web\JSLoggingAsset;
 use dmstr\modules\prototype\assets\DbAsset;
+use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
 use lo\modules\noty\Wrapper;
 use rmrevin\yii\fontawesome\AssetBundle;
@@ -72,6 +73,7 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <?= TwigWidget::widget(['key' => '_head']) ?>
     <?php $this->head() ?>
 </head>
 
