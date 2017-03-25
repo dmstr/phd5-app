@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "18d3fec19f2999e2ccbf10bb67ce9575",
+    "hash": "530f66c652ee17c8275c75e02f403d00",
     "content-hash": "c62f7423829fa7c5333ac0ea346e1c44",
     "packages": [
         {
@@ -278,22 +278,22 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.24.4",
+            "version": "3.24.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2823e0a0742505f655b0cb3bcdb10844f60e6078"
+                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2823e0a0742505f655b0cb3bcdb10844f60e6078",
-                "reference": "2823e0a0742505f655b0cb3bcdb10844f60e6078",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
+                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
                 "guzzlehttp/promises": "~1.0",
-                "guzzlehttp/psr7": "^1.3.1, !=1.4.0",
+                "guzzlehttp/psr7": "^1.4.1",
                 "mtdowling/jmespath.php": "~2.2",
                 "php": ">=5.5"
             },
@@ -354,7 +354,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-03-14 00:56:44"
+            "time": "2017-03-23 22:17:20"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -902,20 +902,20 @@
         },
         {
             "name": "bower-asset/jquery-form",
-            "version": "v4.1.0",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malsup/form.git",
-                "reference": "d502de812c90d39aa79a35ac4668cedad2f850f6"
+                "reference": "4d9319ff18415c105a0ab6cf473110d576f835f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malsup/form/zipball/d502de812c90d39aa79a35ac4668cedad2f850f6",
-                "reference": "d502de812c90d39aa79a35ac4668cedad2f850f6",
+                "url": "https://api.github.com/repos/malsup/form/zipball/4d9319ff18415c105a0ab6cf473110d576f835f0",
+                "reference": "4d9319ff18415c105a0ab6cf473110d576f835f0",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/jquery": ">=1.7,<3"
+                "bower-asset/jquery": ">=1.7"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -1297,16 +1297,16 @@
         },
         {
             "name": "bower-asset/moment",
-            "version": "2.17.1",
+            "version": "2.18.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/moment/moment.git",
-                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6"
+                "url": "/Users/tobias/.composer/cache/vcs/https---github.com-moment-moment.git/",
+                "reference": "0af7d4f5f25f911c2eaab2a7ccb534c17e65c536"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
-                "reference": "b8a297c1f99b3918f44dd9e3d7bd59379a876ba6",
+                "url": "https://api.github.com/repos/moment/moment/zipball/0af7d4f5f25f911c2eaab2a7ccb534c17e65c536",
+                "reference": "0af7d4f5f25f911c2eaab2a7ccb534c17e65c536",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -1860,16 +1860,16 @@
         },
         {
             "name": "codemix/yii2-localeurls",
-            "version": "1.4.8",
+            "version": "1.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-localeurls.git",
-                "reference": "785769af625d69430a11ec167b56eef47f933baf"
+                "reference": "84c08d6ba1bc499c2d54ce066add9a8362f8efbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/785769af625d69430a11ec167b56eef47f933baf",
-                "reference": "785769af625d69430a11ec167b56eef47f933baf",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/84c08d6ba1bc499c2d54ce066add9a8362f8efbe",
+                "reference": "84c08d6ba1bc499c2d54ce066add9a8362f8efbe",
                 "shasum": ""
             },
             "require": {
@@ -1897,7 +1897,7 @@
                 "locale",
                 "yii2"
             ],
-            "time": "2017-02-24 10:38:34"
+            "time": "2017-03-07 18:41:22"
         },
         {
             "name": "codemix/yii2-streamlog",
@@ -2247,16 +2247,16 @@
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.4.0-rc1",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "047ff94267e4d12e599147da1b63b1c863e111c1"
+                "reference": "b34bdc251df6ceeecab6eebf129e5cc58d233944"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/047ff94267e4d12e599147da1b63b1c863e111c1",
-                "reference": "047ff94267e4d12e599147da1b63b1c863e111c1",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/b34bdc251df6ceeecab6eebf129e5cc58d233944",
+                "reference": "b34bdc251df6ceeecab6eebf129e5cc58d233944",
                 "shasum": ""
             },
             "require": {
@@ -2303,26 +2303,26 @@
                 "theme",
                 "yii2"
             ],
-            "time": "2017-02-17 18:13:44"
+            "time": "2017-03-24 11:36:51"
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.5.0-rc7",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "3a13fce6f3ced6df3c5e31df63943c74d1db5fac"
+                "reference": "4b8d745c8f87af4156ed53836bf8234876aea7c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/3a13fce6f3ced6df3c5e31df63943c74d1db5fac",
-                "reference": "3a13fce6f3ced6df3c5e31df63943c74d1db5fac",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/4b8d745c8f87af4156ed53836bf8234876aea7c6",
+                "reference": "4b8d745c8f87af4156ed53836bf8234876aea7c6",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery-growl": "^1.3",
                 "bower-asset/noty": "^2.3",
-                "dmstr/yii2-adminlte-asset": "^2.3.4",
+                "dmstr/yii2-adminlte-asset": "^2.4.0",
                 "dmstr/yii2-cookie-button": "~0.2",
                 "dmstr/yii2-helpers": "~0.4",
                 "dmstr/yii2-pages-module": "~0.16",
@@ -2352,7 +2352,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-01 00:47:50"
+            "time": "2017-03-24 11:48:10"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2494,16 +2494,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.8.3",
+            "version": "0.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "fd8a84648435165d464af45e631c7bb4a9c5ba1f"
+                "reference": "33bd507856146034f034380f5b11b68549ed1296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/fd8a84648435165d464af45e631c7bb4a9c5ba1f",
-                "reference": "fd8a84648435165d464af45e631c7bb4a9c5ba1f",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/33bd507856146034f034380f5b11b68549ed1296",
+                "reference": "33bd507856146034f034380f5b11b68549ed1296",
                 "shasum": ""
             },
             "require": {
@@ -2536,20 +2536,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-14 06:12:52"
+            "time": "2017-03-21 14:09:57"
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.9",
+            "version": "0.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "98eff137ed9eabe854aa005fe10d2ec553d16419"
+                "reference": "a613ae4e29c440d07bb0142e12c872250ba4964f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/98eff137ed9eabe854aa005fe10d2ec553d16419",
-                "reference": "98eff137ed9eabe854aa005fe10d2ec553d16419",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/a613ae4e29c440d07bb0142e12c872250ba4964f",
+                "reference": "a613ae4e29c440d07bb0142e12c872250ba4964f",
                 "shasum": ""
             },
             "require": {
@@ -2587,20 +2587,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-12 01:07:46"
+            "time": "2017-03-23 10:45:42"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
-            "version": "0.6.5",
+            "version": "0.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filemanager-widgets.git",
-                "reference": "cb354882b32b84e1b11d4ceeeb08797761ef46b9"
+                "reference": "2e80dd5912781a40f12f17c84de6291cb87fb897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/cb354882b32b84e1b11d4ceeeb08797761ef46b9",
-                "reference": "cb354882b32b84e1b11d4ceeeb08797761ef46b9",
+                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/2e80dd5912781a40f12f17c84de6291cb87fb897",
+                "reference": "2e80dd5912781a40f12f17c84de6291cb87fb897",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2643,7 @@
                 "filemanager",
                 "yii2"
             ],
-            "time": "2017-03-13 16:02:56"
+            "time": "2017-03-21 16:13:26"
         },
         {
             "name": "dmstr/yii2-helpers",
@@ -2785,16 +2785,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.20.10",
+            "version": "0.20.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "8c7aa4b00c80bead267a82781fada80bc17ae15c"
+                "reference": "21431ed2d0cea8bf94472aef86b123254996f52e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/8c7aa4b00c80bead267a82781fada80bc17ae15c",
-                "reference": "8c7aa4b00c80bead267a82781fada80bc17ae15c",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/21431ed2d0cea8bf94472aef86b123254996f52e",
+                "reference": "21431ed2d0cea8bf94472aef86b123254996f52e",
                 "shasum": ""
             },
             "require": {
@@ -2839,7 +2839,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2017-03-14 06:53:43"
+            "time": "2017-03-14 15:03:47"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -3013,16 +3013,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.5",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "0101fc6870ac28dd55aec9b44c9f6676a965cfc7"
+                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/0101fc6870ac28dd55aec9b44c9f6676a965cfc7",
-                "reference": "0101fc6870ac28dd55aec9b44c9f6676a965cfc7",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
+                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3060,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-12 01:06:57"
+            "time": "2017-03-21 15:07:31"
         },
         {
             "name": "edgardmessias/yii2-nprogress",
@@ -3466,16 +3466,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
                 "shasum": ""
             },
             "require": {
@@ -3527,7 +3527,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-27 10:51:17"
+            "time": "2017-03-20 17:10:46"
         },
         {
             "name": "insolita/yii2-adminlte-widgets",
@@ -3952,16 +3952,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.35",
+            "version": "1.0.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "dda7f3ab94158a002d9846a97dc18ebfb7acc062"
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/dda7f3ab94158a002d9846a97dc18ebfb7acc062",
-                "reference": "dda7f3ab94158a002d9846a97dc18ebfb7acc062",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
                 "shasum": ""
             },
             "require": {
@@ -4031,7 +4031,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-02-09 11:33:58"
+            "time": "2017-03-22 15:43:14"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -4844,12 +4844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "73603e2e613ddc14e2e11ec6da4e837bf0a2149a"
+                "reference": "66f7b04100fb2a7bdeaaddf02579189e15835056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/73603e2e613ddc14e2e11ec6da4e837bf0a2149a",
-                "reference": "73603e2e613ddc14e2e11ec6da4e837bf0a2149a",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/66f7b04100fb2a7bdeaaddf02579189e15835056",
+                "reference": "66f7b04100fb2a7bdeaaddf02579189e15835056",
                 "shasum": ""
             },
             "conflict": {
@@ -4874,8 +4874,8 @@
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=8,<8.2.3",
-                "drupal/drupal": ">=8,<8.2.3",
+                "drupal/core": ">=8,<8.2.7",
+                "drupal/drupal": ">=8,<8.2.7",
                 "firebase/php-jwt": "<2",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
@@ -4971,7 +4971,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-03-02 15:23:30"
+            "time": "2017-03-16 14:24:35"
         },
         {
             "name": "romdim/yii2-bootstrap-material",
@@ -5820,16 +5820,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "9935b662e24d6e634da88901ab534cc12e8c728f"
+                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9935b662e24d6e634da88901ab534cc12e8c728f",
-                "reference": "9935b662e24d6e634da88901ab534cc12e8c728f",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
                 "shasum": ""
             },
             "require": {
@@ -5838,12 +5838,12 @@
             "require-dev": {
                 "psr/container": "^1.0",
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2"
+                "symfony/phpunit-bridge": "~3.3@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.32-dev"
+                    "dev-master": "1.33-dev"
                 }
             },
             "autoload": {
@@ -5878,7 +5878,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-02-27 00:07:03"
+            "time": "2017-03-22 15:40:09"
         },
         {
             "name": "uran1980/yii2-jquery-essential",
@@ -6879,16 +6879,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "e0e33ce4eaf59ba77ead9ce45256692aa29ecb38"
+                "reference": "c7de769d7b44f2c9de68e1f678b65efd8126f60b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/e0e33ce4eaf59ba77ead9ce45256692aa29ecb38",
-                "reference": "e0e33ce4eaf59ba77ead9ce45256692aa29ecb38",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/c7de769d7b44f2c9de68e1f678b65efd8126f60b",
+                "reference": "c7de769d7b44f2c9de68e1f678b65efd8126f60b",
                 "shasum": ""
             },
             "require": {
@@ -6911,7 +6911,7 @@
             "require-dev": {
                 "gecko-packages/gecko-php-unit": "^2.0",
                 "justinrainbow/json-schema": "^5.0",
-                "phpunit/phpunit": "^4.5|^5",
+                "phpunit/phpunit": "^4.5 || ^5.0",
                 "satooshi/php-coveralls": "^1.0",
                 "symfony/phpunit-bridge": "^3.2"
             },
@@ -6942,7 +6942,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2017-03-03 08:03:57"
+            "time": "2017-03-15 17:13:07"
         },
         {
             "name": "fzaninotto/faker",
