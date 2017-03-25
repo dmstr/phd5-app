@@ -25,6 +25,9 @@
             "hrzg/*": "source",
             "schmunk42/*": "source",
             "*": "auto"
+        },
+        "fxp-asset": {
+            "git-skip-update": "2 days"
         }
     }
 }
