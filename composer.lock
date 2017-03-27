@@ -3013,16 +3013,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.10",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd"
+                "reference": "a3414e607832cf15b681dc3abd2bddc116d11f5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
-                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/a3414e607832cf15b681dc3abd2bddc116d11f5d",
+                "reference": "a3414e607832cf15b681dc3abd2bddc116d11f5d",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3060,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-21 15:07:31"
+            "time": "2017-03-27 08:53:28"
         },
         {
             "name": "edgardmessias/yii2-nprogress",
