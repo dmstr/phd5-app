@@ -202,7 +202,9 @@ return [
             'layout' => '@backend/views/layouts/box',
             'panels' => [
                 'audit/request',
-                'audit/mail',
+                'audit/mail' => [
+                    'storeData' => false
+                ],
                 'audit/trail',
                 'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
                 // These provide special functionality and get loaded to activate it

@@ -11,7 +11,7 @@
     ],
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
-        "dmstr/yii2-cms-metapackage": "^7.0.0-rc1",
+        "dmstr/yii2-cms-metapackage": "^7.0.0-rc2",
         "dmstr/yii2-libs-metapackage": "^0.6.0-beta1",
         "2amigos/yii2-ckeditor-widget": "^2.0.2",
         "2amigos/yii2-selectize-widget": "^1.0",
