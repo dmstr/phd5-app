@@ -12,12 +12,13 @@ $I->login('admin', 'admin1');
 $I->amGoingTo('try to view and create widgets');
 
 $I->amOnPage('/widgets');
-$I->see('Widget contents', '.small-box');
+$I->see('Widget contents', '.info-box');
 $I->makeScreenshot('widgets');
 
 
 $I->expect('to see widget container(s)');
-$I->click('Test page index');
+$I->seeElement('//a[@href="/en/widgets/test/index"]');
+$I->amOnPage('/widgets/test/index');
 $I->moveMouseOver('.hrzg-widget-widget-container');
 $I->makeScreenshot('widgets-frontend-container');
 
