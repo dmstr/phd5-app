@@ -624,12 +624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FezVrasta/bootstrap-material-design.git",
-                "reference": "6625d42cc2f591ea7bc05ea0f95a2d091c3a1865"
+                "reference": "caca207c88de8f819a27f5f36ba90f083761f0b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FezVrasta/bootstrap-material-design/zipball/6625d42cc2f591ea7bc05ea0f95a2d091c3a1865",
-                "reference": "6625d42cc2f591ea7bc05ea0f95a2d091c3a1865",
+                "url": "https://api.github.com/repos/FezVrasta/bootstrap-material-design/zipball/caca207c88de8f819a27f5f36ba90f083761f0b4",
+                "reference": "caca207c88de8f819a27f5f36ba90f083761f0b4",
                 "shasum": ""
             },
             "require": {
@@ -682,12 +682,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap-sass.git",
-                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47"
+                "reference": "6620202b137a877dc614dd87bf7f81f895af8024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
-                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
+                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/6620202b137a877dc614dd87bf7f81f895af8024",
+                "reference": "6620202b137a877dc614dd87bf7f81f895af8024",
                 "shasum": ""
             },
             "require": {
@@ -822,22 +822,6 @@
             ]
         },
         {
-            "name": "bower-asset/gridster.js",
-            "version": "v0.5.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ducksboard/gridster.js.git",
-                "reference": "314037471fac083626f5140845a9d471a54e0bee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ducksboard/gridster.js/zipball/314037471fac083626f5140845a9d471a54e0bee",
-                "reference": "314037471fac083626f5140845a9d471a54e0bee",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
             "name": "bower-asset/jquery",
             "version": "2.2.4",
             "source": {
@@ -874,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/carhartl/jquery-cookie.git",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
+                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
+                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
+                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
                 "shasum": ""
             },
             "require": {
@@ -902,16 +886,16 @@
         },
         {
             "name": "bower-asset/jquery-form",
-            "version": "v4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/malsup/form.git",
-                "reference": "4d9319ff18415c105a0ab6cf473110d576f835f0"
+                "url": "https://github.com/jquery-form/form.git",
+                "reference": "c15a69251b36544cda48892c23e0dcec21fff838"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malsup/form/zipball/4d9319ff18415c105a0ab6cf473110d576f835f0",
-                "reference": "4d9319ff18415c105a0ab6cf473110d576f835f0",
+                "url": "https://api.github.com/repos/jquery-form/form/zipball/c15a69251b36544cda48892c23e0dcec21fff838",
+                "reference": "c15a69251b36544cda48892c23e0dcec21fff838",
                 "shasum": ""
             },
             "require": {
@@ -947,12 +931,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ksylvest/jquery-growl.git",
-                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423"
+                "reference": "88e3d86c109ed28cec6a53253c002783759180f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/eb8a8d4308b024510a6f168179986df6b46ed423",
-                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423",
+                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/88e3d86c109ed28cec6a53253c002783759180f8",
+                "reference": "88e3d86c109ed28cec6a53253c002783759180f8",
                 "shasum": ""
             },
             "require": {
@@ -1053,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jozefizso/bower-jquery-easing.git",
-                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5"
+                "reference": "72fec3d9126601939239cb85364dbdb771884380"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
-                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
+                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/72fec3d9126601939239cb85364dbdb771884380",
+                "reference": "72fec3d9126601939239cb85364dbdb771884380",
                 "shasum": ""
             },
             "require": {
@@ -1088,12 +1072,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2"
+                "reference": "a55007d1e535d3a734972dbfc1969d98f8449e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
-                "reference": "8a882bc471ba4077c4f8ecbe3d9d61c7558f3ef2",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/a55007d1e535d3a734972dbfc1969d98f8449e94",
+                "reference": "a55007d1e535d3a734972dbfc1969d98f8449e94",
                 "shasum": ""
             },
             "require": {
@@ -1300,7 +1284,7 @@
             "version": "2.18.1",
             "source": {
                 "type": "git",
-                "url": "/Users/tobias/.composer/cache/vcs/https---github.com-moment-moment.git/",
+                "url": "https://github.com/moment/moment.git",
                 "reference": "0af7d4f5f25f911c2eaab2a7ccb534c17e65c536"
             },
             "dist": {
@@ -1419,45 +1403,6 @@
                 "bower-asset-ignore": []
             },
             "description": "noty - a jQuery notification plugin"
-        },
-        {
-            "name": "bower-asset/nprogress",
-            "version": "v0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rstacruz/nprogress.git",
-                "reference": "254266ea50c220f6507fa3f2978fc530147c7f06"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rstacruz/nprogress/zipball/254266ea50c220f6507fa3f2978fc530147c7f06",
-                "reference": "254266ea50c220f6507fa3f2978fc530147c7f06",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "nprogress.js",
-                    "nprogress.css"
-                ],
-                "bower-asset-ignore": [
-                    "**/.*",
-                    "node_modules",
-                    "components",
-                    "package.json",
-                    "test",
-                    "vendor"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "slim progress bar",
-            "keywords": [
-                "bar",
-                "progress",
-                "spinner"
-            ]
         },
         {
             "name": "bower-asset/punycode",
@@ -2033,7 +1978,7 @@
                 "yii2"
             ],
             "support": {
-                "source": "https://github.com/dmstr-forks/yii2-flysystem/tree/master"
+                "source": "https://github.com/dmstr-forks/yii2-flysystem/tree/0.8.999"
             },
             "time": "2017-02-08 10:23:22"
         },
@@ -2397,7 +2342,7 @@
         },
         {
             "name": "dmstr/yii2-cms-metapackage",
-            "version": "7.0.0-rc2",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cms-metapackage.git",
@@ -2843,16 +2788,16 @@
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.5.0",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "aee3446de3c8000b3ee4bad2a54c49a264259254"
+                "reference": "b928b7c94bb35b930b7ff76a4852f1a7b8da2b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/aee3446de3c8000b3ee4bad2a54c49a264259254",
-                "reference": "aee3446de3c8000b3ee4bad2a54c49a264259254",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/b928b7c94bb35b930b7ff76a4852f1a7b8da2b93",
+                "reference": "b928b7c94bb35b930b7ff76a4852f1a7b8da2b93",
                 "shasum": ""
             },
             "require": {
@@ -2860,7 +2805,7 @@
                 "bedezign/yii2-audit": "^1.0",
                 "beowulfenator/yii2-json-editor": "^1.1.2",
                 "yiisoft/yii2": "2.*",
-                "yiisoft/yii2-twig": "~2.0.4"
+                "yiisoft/yii2-twig": "^2.1.0"
             },
             "conflict": {
                 "dmstr/yii2-pages-module": "<0.18.0",
@@ -2887,7 +2832,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-14 05:46:38"
+            "time": "2017-03-29 20:50:53"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -2915,6 +2860,7 @@
                     "dmstr\\modules\\redirect\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary (diemeisterei GmbH)"
             ],
@@ -2929,10 +2875,6 @@
                 "extension",
                 "yii2"
             ],
-            "support": {
-                "source": "https://github.com/dmstr/yii2-redirect-module/tree/0.3.4-rc2",
-                "issues": "https://github.com/dmstr/yii2-redirect-module/issues"
-            },
             "time": "2016-11-10 03:41:06"
         },
         {
@@ -2942,6 +2884,12 @@
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-resque-module.git",
                 "reference": "562c9dd91e26e907e9954bba5b88e4319c737961"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-resque-module/zipball/562c9dd91e26e907e9954bba5b88e4319c737961",
+                "reference": "562c9dd91e26e907e9954bba5b88e4319c737961",
+                "shasum": ""
             },
             "require": {
                 "chrisboulton/php-resque": "1.2.x",
@@ -2953,6 +2901,7 @@
                     "hrzg\\resque\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3063,50 +3012,6 @@
             "time": "2017-03-29 07:51:47"
         },
         {
-            "name": "edgardmessias/yii2-nprogress",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/edgardmessias/yii2-nprogress.git",
-                "reference": "fdff230f40e3ee0299db506895106e0a121e1e37"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/edgardmessias/yii2-nprogress/zipball/fdff230f40e3ee0299db506895106e0a121e1e37",
-                "reference": "fdff230f40e3ee0299db506895106e0a121e1e37",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/nprogress": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "edgardmessias\\assets\\nprogress\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Edgard Messias",
-                    "email": "edgardmessias@gmail.com"
-                }
-            ],
-            "description": "Slim progress bars for Ajax'y applications. Inspired by Google, YouTube, and Medium for Yii2 Framework.",
-            "keywords": [
-                "assets",
-                "extension",
-                "nprogress",
-                "pjax",
-                "yii2"
-            ],
-            "time": "2015-08-19 20:01:09"
-        },
-        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.9.2",
             "source": {
@@ -3152,60 +3057,6 @@
                 "html"
             ],
             "time": "2017-03-13 06:30:53"
-        },
-        {
-            "name": "fedemotta/yii2-gridster",
-            "version": "v2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fedemotta/yii2-gridster.git",
-                "reference": "6f69dbb8ebb4255b39f285d8f7463b0f8f9cd77a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fedemotta/yii2-gridster/zipball/6f69dbb8ebb4255b39f285d8f7463b0f8f9cd77a",
-                "reference": "6f69dbb8ebb4255b39f285d8f7463b0f8f9cd77a",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/gridster.js": "*",
-                "bower-asset/jquery": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "fedemotta\\gridster\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Federico Nicolás Motta",
-                    "email": "fedemotta@gmail.com"
-                }
-            ],
-            "description": "Gridster.js widget for Yii2",
-            "keywords": [
-                "drag-and-drop",
-                "extension",
-                "grid",
-                "gridster",
-                "gridster.js",
-                "jquery",
-                "multi-column",
-                "plugin",
-                "yii2"
-            ],
-            "time": "2015-04-28 02:51:54"
         },
         {
             "name": "fortawesome/font-awesome",
@@ -6525,16 +6376,16 @@
         },
         {
             "name": "yiisoft/yii2-twig",
-            "version": "dev-master",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-twig.git",
-                "reference": "7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6"
+                "reference": "788e0039ce5da9853353dc43357cf174e7032b0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6",
-                "reference": "7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/788e0039ce5da9853353dc43357cf174e7032b0d",
+                "reference": "788e0039ce5da9853353dc43357cf174e7032b0d",
                 "shasum": ""
             },
             "require": {
@@ -6572,7 +6423,7 @@
                 "twig",
                 "yii2"
             ],
-            "time": "2017-03-25 16:02:58"
+            "time": "2017-03-25 16:01:44"
         },
         {
             "name": "zhuravljov/yii2-datetime-widgets",
@@ -6628,12 +6479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/typeahead.js.git",
-                "reference": "588440f66559714280628a4f9799f0c4eb880a4a"
+                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/588440f66559714280628a4f9799f0c4eb880a4a",
-                "reference": "588440f66559714280628a4f9799f0c4eb880a4a",
+                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/87de059a7820b1e223f1c704fa12a624dbce3a4f",
+                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f",
                 "shasum": ""
             },
             "require": {
@@ -8161,8 +8012,7 @@
     "stability-flags": {
         "dmstr/yii2-libs-metapackage": 10,
         "ckeditor/ckeditor": 20,
-        "roave/security-advisories": 20,
-        "yiisoft/yii2-twig": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
