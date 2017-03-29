@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "530f66c652ee17c8275c75e02f403d00",
-    "content-hash": "c62f7423829fa7c5333ac0ea346e1c44",
+    "hash": "9b3aa33c558bd57d23af9c6bcdcefc30",
+    "content-hash": "8685ff82446011a01cc505f8a52f486b",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -278,16 +278,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.24.7",
+            "version": "3.24.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c"
+                "reference": "26212252dcd0f9b9b7b19702577d0b0b364888df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
-                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/26212252dcd0f9b9b7b19702577d0b0b364888df",
+                "reference": "26212252dcd0f9b9b7b19702577d0b0b364888df",
                 "shasum": ""
             },
             "require": {
@@ -354,20 +354,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-03-23 22:17:20"
+            "time": "2017-03-28 20:19:24"
         },
         {
             "name": "bedezign/yii2-audit",
-            "version": "1.0.8",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bedezign/yii2-audit.git",
-                "reference": "15175d34970d290d50000139137446e31b80ebf3"
+                "reference": "2ae3510e0f20476e3cded9e5fdbb871f743c75f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/15175d34970d290d50000139137446e31b80ebf3",
-                "reference": "15175d34970d290d50000139137446e31b80ebf3",
+                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/2ae3510e0f20476e3cded9e5fdbb871f743c75f2",
+                "reference": "2ae3510e0f20476e3cded9e5fdbb871f743c75f2",
                 "shasum": ""
             },
             "require": {
@@ -415,7 +415,7 @@
                 "trail",
                 "yii2"
             ],
-            "time": "2016-11-24 22:34:10"
+            "time": "2017-03-26 08:52:03"
         },
         {
             "name": "beowulfenator/yii2-json-editor",
@@ -1860,16 +1860,16 @@
         },
         {
             "name": "codemix/yii2-localeurls",
-            "version": "1.4.9",
+            "version": "1.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-localeurls.git",
-                "reference": "84c08d6ba1bc499c2d54ce066add9a8362f8efbe"
+                "reference": "9afafc5a660f10a4e9f7d7254a0779222c71323e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/84c08d6ba1bc499c2d54ce066add9a8362f8efbe",
-                "reference": "84c08d6ba1bc499c2d54ce066add9a8362f8efbe",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/9afafc5a660f10a4e9f7d7254a0779222c71323e",
+                "reference": "9afafc5a660f10a4e9f7d7254a0779222c71323e",
                 "shasum": ""
             },
             "require": {
@@ -1897,7 +1897,7 @@
                 "locale",
                 "yii2"
             ],
-            "time": "2017-03-07 18:41:22"
+            "time": "2017-03-23 18:56:49"
         },
         {
             "name": "codemix/yii2-streamlog",
@@ -2307,16 +2307,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.5.1",
+            "version": "0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "4b8d745c8f87af4156ed53836bf8234876aea7c6"
+                "reference": "b27a11d851ba9fb4fdad8e3aee97257b98b1b764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/4b8d745c8f87af4156ed53836bf8234876aea7c6",
-                "reference": "4b8d745c8f87af4156ed53836bf8234876aea7c6",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/b27a11d851ba9fb4fdad8e3aee97257b98b1b764",
+                "reference": "b27a11d851ba9fb4fdad8e3aee97257b98b1b764",
                 "shasum": ""
             },
             "require": {
@@ -2352,7 +2352,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-24 11:48:10"
+            "time": "2017-03-27 15:14:20"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2397,16 +2397,16 @@
         },
         {
             "name": "dmstr/yii2-cms-metapackage",
-            "version": "7.0.0-rc1",
+            "version": "7.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cms-metapackage.git",
-                "reference": "fba5e7195ce72e0b16399d0e52fdb485b2548403"
+                "reference": "6013d7b916f5592fce6079403bc0324ba284d8c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/fba5e7195ce72e0b16399d0e52fdb485b2548403",
-                "reference": "fba5e7195ce72e0b16399d0e52fdb485b2548403",
+                "url": "https://api.github.com/repos/dmstr/yii2-cms-metapackage/zipball/6013d7b916f5592fce6079403bc0324ba284d8c3",
+                "reference": "6013d7b916f5592fce6079403bc0324ba284d8c3",
                 "shasum": ""
             },
             "require": {
@@ -2414,7 +2414,7 @@
                 "dektrium/yii2-user": "~0.9.9",
                 "dmstr/yii2-adminlte-asset": "^2.3.3",
                 "dmstr/yii2-backend-module": "~0.5.0",
-                "dmstr/yii2-pages-module": "^0.20.0",
+                "dmstr/yii2-pages-module": "^0.21.0",
                 "dmstr/yii2-prototype-module": "~0.5.0",
                 "insolita/yii2-adminlte-widgets": "~1.1",
                 "lajax/yii2-translate-manager": "^1.5.4",
@@ -2447,7 +2447,7 @@
                 }
             ],
             "description": "Content-management extensions for Yii 2.0 Framework",
-            "time": "2016-12-08 21:30:50"
+            "time": "2017-03-27 09:26:51"
         },
         {
             "name": "dmstr/yii2-cookie-button",
@@ -2785,16 +2785,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.20.14",
+            "version": "0.21.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "21431ed2d0cea8bf94472aef86b123254996f52e"
+                "reference": "6d5ff67f8d6375721ead0edd8adb424cd19583a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/21431ed2d0cea8bf94472aef86b123254996f52e",
-                "reference": "21431ed2d0cea8bf94472aef86b123254996f52e",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/6d5ff67f8d6375721ead0edd8adb424cd19583a1",
+                "reference": "6d5ff67f8d6375721ead0edd8adb424cd19583a1",
                 "shasum": ""
             },
             "require": {
@@ -2839,7 +2839,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2017-03-14 15:03:47"
+            "time": "2017-03-28 15:27:09"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -3013,16 +3013,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.10",
+            "version": "0.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd"
+                "reference": "baabc8f7a15de3c10f534cc88f09d193a80b4959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
-                "reference": "54c94d0339ae22dea73c7cbc51e26b7517a1edfd",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/baabc8f7a15de3c10f534cc88f09d193a80b4959",
+                "reference": "baabc8f7a15de3c10f534cc88f09d193a80b4959",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3060,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-21 15:07:31"
+            "time": "2017-03-29 07:51:47"
         },
         {
             "name": "edgardmessias/yii2-nprogress",
@@ -6525,16 +6525,16 @@
         },
         {
             "name": "yiisoft/yii2-twig",
-            "version": "2.0.6",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-twig.git",
-                "reference": "36f21120ebb7d481344ff850fcca032a13ffb7a3"
+                "reference": "7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/36f21120ebb7d481344ff850fcca032a13ffb7a3",
-                "reference": "36f21120ebb7d481344ff850fcca032a13ffb7a3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6",
+                "reference": "7f13ae657b0de6ce40c31ef9ff98a362e11c1ed6",
                 "shasum": ""
             },
             "require": {
@@ -6572,7 +6572,7 @@
                 "twig",
                 "yii2"
             ],
-            "time": "2016-10-05 15:08:20"
+            "time": "2017-03-25 16:02:58"
         },
         {
             "name": "zhuravljov/yii2-datetime-widgets",
@@ -8161,7 +8161,8 @@
     "stability-flags": {
         "dmstr/yii2-libs-metapackage": 10,
         "ckeditor/ckeditor": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "yiisoft/yii2-twig": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
