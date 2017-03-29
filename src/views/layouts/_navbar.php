@@ -78,10 +78,11 @@ if (\Yii::$app->hasModule('user')) {
             'key' => 'frontend.extra.menuItems',
             'renderEmpty' => false,
         ]);
-        $menuItems[] = '<li>'.$extraButtons.'</li>';
+        $menuItems[] = '<li class="nav-extra">'.$extraButtons.'</li>';
 
         // context menu
         $menuItems[] = [
+            'options' => ['class' => 'nav-backend'],
             'label' => '<i class="glyphicon glyphicon-pencil"></i>',
             'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
             'items' => \Yii::$app->params['context.menuItems'],
