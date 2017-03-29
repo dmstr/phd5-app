@@ -60,12 +60,12 @@ return [
             getenv('APP_MIGRATION_LOOKUP'),
             '@yii/rbac/migrations',
             '@yii/web/migrations',
+            '@bedezign/yii2/audit/migrations',
             '@dektrium/user/migrations',
+            '@hrzg/widget/migrations',
             '@vendor/lajax/yii2-translate-manager/migrations',
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
-            '@hrzg/widget/migrations',
-            '@bedezign/yii2/audit/migrations',
         ],
     ],
     'components' => [
@@ -215,6 +215,7 @@ return [
             ],
             'ignoreActions' => [
                 (getenv('APP_AUDIT_DISABLE_ALL_ACTIONS') ? '*':'_'),
+                'app/*',
                 'audit/*',
                 'help/*',
                 'gii/*',
