@@ -1,0 +1,13 @@
+version: '2'
+services:
+  php:
+    environment:
+      - DATABASE_DSN_BASE=pgsql:host=postgres
+      - DATABASE_DSN_DB=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=mysecretpassword
+      - DATABASE_TABLE_PREFIX=app_
+      - APP_MIGRATION_LOOKUP=@app/migrations
+      - DB_ENV_MYSQL_ROOT_USER=
+  postgres:
+    image: postgres:9.2

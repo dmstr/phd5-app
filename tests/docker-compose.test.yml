@@ -18,19 +18,18 @@ services:
       - firefox
       - mailcatcher
     environment:
+      - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
+
       - YII_ENV=test
+
       - APP_NAME=test-phd5
       - APP_LANGUAGES=de,en,ru,fr-FR,fr-CH,fr,es-ES,pt-PT,pt-BR
       - APP_TITLE=docker-compose.test.yml
-
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
       - APP_ADMIN_EMAIL=admin@example.local
-
       - APP_INTERACTIVE=0
       - APP_ASSET_USE_BUNDLED=1
-      - PHP_ENABLE_XDEBUG=${PHP_ENABLE_XDEBUG}
-      - MYSQL_ROOT_PASSWORD=secret
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
     volumes:
