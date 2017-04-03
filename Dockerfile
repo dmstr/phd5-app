@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.1-fpm-2.0-beta7-alpine-nginx-xdebug
+FROM dmstr/php-yii2:7.1-fpm-3.0-beta2-alpine-nginx-xdebug
 
 COPY ./image-files /
 

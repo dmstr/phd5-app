@@ -43,6 +43,7 @@
         "zhuravljov/yii2-datetime-widgets": "^1.0"
     },
     "require-dev": {
-        "dmstr/yii2-cms-dev-metapackage": "^1.1.2"
+        "dmstr/yii2-cms-dev-metapackage": "^1.1.2",
+        "codeception/codeception": "^2.2.8"
     }
 }
