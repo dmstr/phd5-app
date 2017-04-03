@@ -17,13 +17,11 @@ services:
       - mailcatcher
       - redis
     environment:
-      - MYSQL_ROOT_PASSWORD=secret
+      - DB_ENV_MYSQL_ROOT_PASSWORD=secret
       # For host-volume development (permissions)
       - PHP_USER_ID=1000
       # For composer usage in container
       - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
-      # For usage with https://github.com/jwilder/nginx-proxy
-      # - VIRTUAL_HOST=${VIRTUAL_HOST}
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer/cache:/root/.composer/cache
