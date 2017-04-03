@@ -25,6 +25,7 @@ services:
 
       - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
       - APP_ADMIN_PASSWORD=admin1
+      - APP_ADMIN_EMAIL=admin@example.local
 
       - APP_INTERACTIVE=0
       - APP_ASSET_USE_BUNDLED=1

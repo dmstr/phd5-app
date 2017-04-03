@@ -23,6 +23,7 @@ up-xdebug: ##@development open application development bash with xdebug enabled
 run-tests: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) sh -c 'codecept clean'
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) sh -c 'chmod -R 777 /root/.composer && codecept run -x optional --steps --html --xml --tap --json'
+	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > _log/docker.log
 
 run-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) sh -c 'codecept clean'
