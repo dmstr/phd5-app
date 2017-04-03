@@ -27,11 +27,6 @@ services:
       - ~/.composer/cache:/root/.composer/cache
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
-      - ./src:/app/src
-      - ./web/assets:/app/web/assets
-      - ./vendor:/app/vendor
-      # Note: Enabling runtime may cause performance issues on NFS
-      #- ./runtime:/app/runtime
 
   worker:
     build: .
