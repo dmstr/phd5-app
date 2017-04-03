@@ -27,7 +27,7 @@ $I->dontSee('.alert');
 $I->dontSeeHorizontalScrollbars();
 
 $I->expect('not to see admin/editor elements');
-$I->dontSeeElement('.nav-extra');
+$I->dontSeeElement('.nav-extra *');
 $I->dontSeeElement('.nav-backend');
 
 $I->makeScreenshot('success-preview-access');

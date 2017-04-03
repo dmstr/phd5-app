@@ -2192,16 +2192,16 @@
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.4.0",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "b34bdc251df6ceeecab6eebf129e5cc58d233944"
+                "reference": "b339611f9f34621d731d3feca3a83b42720c7d5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/b34bdc251df6ceeecab6eebf129e5cc58d233944",
-                "reference": "b34bdc251df6ceeecab6eebf129e5cc58d233944",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/b339611f9f34621d731d3feca3a83b42720c7d5c",
+                "reference": "b339611f9f34621d731d3feca3a83b42720c7d5c",
                 "shasum": ""
             },
             "require": {
@@ -2248,20 +2248,20 @@
                 "theme",
                 "yii2"
             ],
-            "time": "2017-03-24 11:36:51"
+            "time": "2017-03-30 09:04:16"
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "b27a11d851ba9fb4fdad8e3aee97257b98b1b764"
+                "reference": "2df4a866399e2d2705d963c1aa8cb1fa1c04b82b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/b27a11d851ba9fb4fdad8e3aee97257b98b1b764",
-                "reference": "b27a11d851ba9fb4fdad8e3aee97257b98b1b764",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/2df4a866399e2d2705d963c1aa8cb1fa1c04b82b",
+                "reference": "2df4a866399e2d2705d963c1aa8cb1fa1c04b82b",
                 "shasum": ""
             },
             "require": {
@@ -2297,7 +2297,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-27 15:14:20"
+            "time": "2017-03-30 22:44:38"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2439,16 +2439,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.8.7",
+            "version": "0.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "33bd507856146034f034380f5b11b68549ed1296"
+                "reference": "b252c1864ea7d42a35c614e7797a82ff93c7109f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/33bd507856146034f034380f5b11b68549ed1296",
-                "reference": "33bd507856146034f034380f5b11b68549ed1296",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/b252c1864ea7d42a35c614e7797a82ff93c7109f",
+                "reference": "b252c1864ea7d42a35c614e7797a82ff93c7109f",
                 "shasum": ""
             },
             "require": {
@@ -2481,7 +2481,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-03-21 14:09:57"
+            "time": "2017-03-30 23:15:26"
         },
         {
             "name": "dmstr/yii2-filefly-module",
