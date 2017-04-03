@@ -48,10 +48,9 @@ services:
   worker:
     build:
       context: .
-    image: ${STACK_PHP_IMAGE}
 
   db:
-    image: percona:5.6
+    image: percona:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=secret
     ports:
