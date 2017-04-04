@@ -185,10 +185,10 @@ return [
                         'auto_reload' => true,
                     ],
                     'globals' => [
-                        'html' => '\yii\helpers\Html',
-                        'Tree' => '\dmstr\modules\pages\models\Tree',
-                        'FA' => '\rmrevin\yii\fontawesome\FA',
-                        'Url' => '\hrzg\filemanager\helpers\Url'
+                        'html' => ['class'=>'\yii\helpers\Html'],
+                        'Tree' => ['class'=>'\dmstr\modules\pages\models\Tree'],
+                        'FA' => ['class'=>'\rmrevin\yii\fontawesome\FA'],
+                        'Url' => ['class'=>'\hrzg\filemanager\helpers\Url'],
                     ],
                     'uses' => [
                         'yii\bootstrap',
