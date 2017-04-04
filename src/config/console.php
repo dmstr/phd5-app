@@ -19,8 +19,6 @@ return [
         'db' => [
             'class' => 'dmstr\console\controllers\MysqlController',
             'noDataTables' => [
-                'moxman_cache',
-                'moxman_hashmap',
                 getenv('DATABASE_TABLE_PREFIX').'auth_assignment',
                 getenv('DATABASE_TABLE_PREFIX').'migration',
                 getenv('DATABASE_TABLE_PREFIX').'user',
