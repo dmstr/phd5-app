@@ -8,8 +8,6 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-      args:
-        - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
     ports:
       - 29680:80
     depends_on:
