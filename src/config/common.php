@@ -52,6 +52,7 @@ return [
     ],
     'aliases' => [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
+        'storage' => '/mnt/storage'
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
@@ -99,7 +100,7 @@ return [
         ],
         'fs' => [
             'class' => 'creocoder\flysystem\LocalFilesystem',
-            'path' => '@app/runtime',
+            'path' => '@storage',
         ],
         'fsS3' => [
             'class' => 'creocoder\flysystem\AwsS3Filesystem',
@@ -238,7 +239,7 @@ return [
         'filefly' => [
             'class' => 'hrzg\filefly\Module',
             'layout' => '@backend/views/layouts/main',
-            'filesystem' => 'fsS3',
+            'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
         ],
         'noty' => [
             'class' => 'lo\modules\noty\Module',

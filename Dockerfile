@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.1-fpm-3.0-beta2-alpine-nginx-xdebug
+FROM dmstr/php-yii2:7.1-fpm-3.0-beta3-alpine-nginx-xdebug
 
 COPY ./image-files /
 
@@ -15,10 +15,11 @@ COPY ./src /app/src/
 RUN cp src/app.env-dist src/app.env
 
 # Permissions
-RUN mkdir -p runtime web/assets web/bundles && \
-    chmod -R 775 runtime web/assets && \
+RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
+    chmod -R 775 runtime web/assets /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
     chown -R 1000:82 runtime web/assets /root/.composer/vendor && \
+    ls -la  /app/src/../vendor && \
     APP_NAME=build APP_LANGUAGES=en yii asset/compress src/config/assets.php web/bundles/config.php
 
 # Install crontab from application config (
