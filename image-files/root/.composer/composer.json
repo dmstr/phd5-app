@@ -1,0 +1,13 @@
+{
+    "require": {
+        "fxp/composer-asset-plugin": "dev-issue251",
+        "wikimedia/composer-merge-plugin": "^1.3",
+        "hirak/prestissimo": "^0.3.5"
+    },
+    "repositories": {
+        "schmunk42": {
+            "type": "vcs",
+            "url": "https://github.com/schmunk42/composer-asset-plugin"
+        }
+    }
+}

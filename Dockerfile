@@ -2,6 +2,9 @@ FROM dmstr/php-yii2:7.1-fpm-3.0-beta3-alpine-nginx-xdebug
 
 COPY ./image-files /
 
+# TODO: Remove when Patched plugin with skip-update
+RUN rm -rf ~/.composer/vendor && composer global install
+
 # Application packages
 WORKDIR /app
 COPY composer.* /app/
@@ -19,7 +22,6 @@ RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
     chown -R 1000:82 runtime web/assets /root/.composer/vendor && \
-    ls -la  /app/src/../vendor && \
     APP_NAME=build APP_LANGUAGES=en yii asset/compress src/config/assets.php web/bundles/config.php
 
 # Install crontab from application config (
