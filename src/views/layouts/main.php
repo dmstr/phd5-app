@@ -73,13 +73,14 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <?= TwigWidget::widget(['key' => '_head']) ?>
     <?php $this->head() ?>
 </head>
 
 <body>
 
 <?php $this->beginBody() ?>
+
+<?= TwigWidget::widget(['key' => '_top', 'renderEmpty'=>false]) ?>
 
 <!-- Navbar -->
 <?php
