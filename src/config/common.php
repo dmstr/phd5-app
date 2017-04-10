@@ -64,6 +64,7 @@ return [
             '@bedezign/yii2/audit/migrations',
             '@dektrium/user/migrations',
             '@hrzg/widget/migrations',
+            '@dmstr/modules/contact/migrations',
             '@vendor/lajax/yii2-translate-manager/migrations',
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',

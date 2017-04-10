@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eb4dba21d1bb276bb52887c0b048c11",
+    "content-hash": "db6508b570525c2d1a7ef5a7853c63ae",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -2395,21 +2395,22 @@
         },
         {
             "name": "dmstr/yii2-contact-module",
-            "version": "0.1.2",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-contact-module.git",
-                "reference": "85df61726e55107c048db1460ebbeb5f9484b4db"
+                "reference": "283bffd08866f97736490ad4e54776384cd90d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/85df61726e55107c048db1460ebbeb5f9484b4db",
-                "reference": "85df61726e55107c048db1460ebbeb5f9484b4db",
+                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/283bffd08866f97736490ad4e54776384cd90d33",
+                "reference": "283bffd08866f97736490ad4e54776384cd90d33",
                 "shasum": ""
             },
             "require": {
                 "beowulfenator/yii2-json-editor": "^1.1.3",
                 "justinrainbow/json-schema": "^5.2.0",
+                "pheme/yii2-settings": "^0.4",
                 "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
@@ -2433,7 +2434,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-09T06:27:53+00:00"
+            "time": "2017-04-10T12:29:19+00:00"
         },
         {
             "name": "dmstr/yii2-cookie-button",
