@@ -52,7 +52,7 @@ return [
     ],
     'aliases' => [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
-        'storage' => '/mnt/storage'
+        'storage' => '/mnt/storage',
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
@@ -234,6 +234,10 @@ return [
         ],
         'backend' => [
             'class' => 'dmstr\modules\backend\Module',
+            'layout' => '@backend/views/layouts/main',
+        ],
+        'contact' => [
+            'class' => 'dmstr\modules\contact\Module',
             'layout' => '@backend/views/layouts/main',
         ],
         'filefly' => [
