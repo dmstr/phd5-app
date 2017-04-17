@@ -277,16 +277,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.25.6",
+            "version": "3.25.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "fe98140a4811abbe9104477b167dc3c7f9a8391b"
+                "reference": "d4f1104f5ac9c755875c5e6e9bade2c70708219a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fe98140a4811abbe9104477b167dc3c7f9a8391b",
-                "reference": "fe98140a4811abbe9104477b167dc3c7f9a8391b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d4f1104f5ac9c755875c5e6e9bade2c70708219a",
+                "reference": "d4f1104f5ac9c755875c5e6e9bade2c70708219a",
                 "shasum": ""
             },
             "require": {
@@ -353,20 +353,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-04-07T20:21:45+00:00"
+            "time": "2017-04-11T22:31:27+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bedezign/yii2-audit.git",
-                "reference": "2ae3510e0f20476e3cded9e5fdbb871f743c75f2"
+                "reference": "4482324795c14fea9e07b0fb0cb045edfce1b48c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/2ae3510e0f20476e3cded9e5fdbb871f743c75f2",
-                "reference": "2ae3510e0f20476e3cded9e5fdbb871f743c75f2",
+                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/4482324795c14fea9e07b0fb0cb045edfce1b48c",
+                "reference": "4482324795c14fea9e07b0fb0cb045edfce1b48c",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +414,7 @@
                 "trail",
                 "yii2"
             ],
-            "time": "2017-03-26T08:52:03+00:00"
+            "time": "2017-04-15T01:38:46+00:00"
         },
         {
             "name": "beowulfenator/yii2-json-editor",
@@ -1067,16 +1067,16 @@
         },
         {
             "name": "bower-asset/jquery.inputmask",
-            "version": "3.3.4",
+            "version": "3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-                "reference": "a55007d1e535d3a734972dbfc1969d98f8449e94"
+                "reference": "ed27356d1b22366be48c4e7b8d038b9649bd4ab0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/a55007d1e535d3a734972dbfc1969d98f8449e94",
-                "reference": "a55007d1e535d3a734972dbfc1969d98f8449e94",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/ed27356d1b22366be48c4e7b8d038b9649bd4ab0",
+                "reference": "ed27356d1b22366be48c4e7b8d038b9649bd4ab0",
                 "shasum": ""
             },
             "require": {
@@ -1085,24 +1085,31 @@
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": [
-                    "./dist/inputmask/inputmask.dependencyLib",
-                    "./dist/inputmask/inputmask",
-                    "./dist/inputmask/inputmask.extensions",
-                    "./dist/inputmask/inputmask.date.extensions",
-                    "./dist/inputmask/inputmask.numeric.extensions",
-                    "./dist/inputmask/inputmask.phone.extensions",
-                    "./dist/inputmask/inputmask.regex.extensions",
-                    "./dist/inputmask/jquery.inputmask"
+                    "./dist/inputmask/inputmask.js",
+                    "./dist/inputmask/inputmask.extensions.js",
+                    "./dist/inputmask/inputmask.date.extensions.js",
+                    "./dist/inputmask/inputmask.numeric.extensions.js",
+                    "./dist/inputmask/inputmask.phone.extensions.js",
+                    "./dist/inputmask/inputmask.regex.extensions.js",
+                    "./dist/inputmask/jquery.inputmask.js",
+                    "./dist/inputmask/global/document.js",
+                    "./dist/inputmask/global/window.js",
+                    "./dist/inputmask/phone-codes/phone.js",
+                    "./dist/inputmask/phone-codes/phone-be.js",
+                    "./dist/inputmask/phone-codes/phone-nl.js",
+                    "./dist/inputmask/phone-codes/phone-ru.js",
+                    "./dist/inputmask/phone-codes/phone-uk.js",
+                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.jqlite.js",
+                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.js",
+                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.js",
+                    "./dist/inputmask/bindings/inputmask.binding.js"
                 ],
                 "bower-asset-ignore": [
                     "**/*",
                     "!dist/*",
                     "!dist/inputmask/*",
                     "!dist/min/*",
-                    "!dist/min/inputmask/*",
-                    "!extra/bindings/*",
-                    "!extra/dependencyLibs/*",
-                    "!extra/phone-codes/*"
+                    "!dist/min/inputmask/*"
                 ]
             },
             "license": [
@@ -2481,16 +2488,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.8.10-rc1",
+            "version": "0.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "5ab7540e47265d3303d5002b8cadaebc881ebc46"
+                "reference": "5eed0fbb0c713ed651fedc0b827b40fb7414134c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/5ab7540e47265d3303d5002b8cadaebc881ebc46",
-                "reference": "5ab7540e47265d3303d5002b8cadaebc881ebc46",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/5eed0fbb0c713ed651fedc0b827b40fb7414134c",
+                "reference": "5eed0fbb0c713ed651fedc0b827b40fb7414134c",
                 "shasum": ""
             },
             "require": {
@@ -2523,7 +2530,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-03T14:11:46+00:00"
+            "time": "2017-04-17T22:33:01+00:00"
         },
         {
             "name": "dmstr/yii2-filefly-module",
@@ -3687,16 +3694,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-select2",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69"
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/03f202e9e2415f4c84e93a64074d85677fd0cc51",
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51",
                 "shasum": ""
             },
             "require": {
@@ -3736,7 +3743,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-17T11:49:30+00:00"
+            "time": "2017-04-12T09:00:24+00:00"
         },
         {
             "name": "knplabs/github-api",
@@ -6769,16 +6776,16 @@
         },
         {
             "name": "cmrcx/phptidy",
-            "version": "v2.17",
+            "version": "v3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cmrcx/phptidy.git",
-                "reference": "759c6bb5dc5cc3f515207aca5daae17d71e4e676"
+                "reference": "e36e3d0941841806c5cb479c3ad169eefc3c4e85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cmrcx/phptidy/zipball/759c6bb5dc5cc3f515207aca5daae17d71e4e676",
-                "reference": "759c6bb5dc5cc3f515207aca5daae17d71e4e676",
+                "url": "https://api.github.com/repos/cmrcx/phptidy/zipball/e36e3d0941841806c5cb479c3ad169eefc3c4e85",
+                "reference": "e36e3d0941841806c5cb479c3ad169eefc3c4e85",
                 "shasum": ""
             },
             "require": {
@@ -6806,7 +6813,7 @@
             ],
             "description": "PHP code formatter",
             "homepage": "https://github.com/cmrcx/phptidy",
-            "time": "2016-11-29T21:31:02+00:00"
+            "time": "2017-03-09T21:38:08+00:00"
         },
         {
             "name": "codeception/codeception",
@@ -7425,16 +7432,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
+                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/5a5a9fc8025a08d8919be87d6884d5a92520cefe",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
                 "shasum": ""
             },
             "require": {
@@ -7463,7 +7470,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-01-26T22:05:40+00:00"
+            "time": "2017-04-12T18:52:22+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -8116,20 +8123,20 @@
         },
         {
             "name": "schmunk42/yii2-giiant",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-giiant.git",
-                "reference": "c786aff4a6bfe6003f0aef0b601c3491e33f5f94"
+                "reference": "2d20dc96b3ed88a3620613399dec5059c72b0b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/c786aff4a6bfe6003f0aef0b601c3491e33f5f94",
-                "reference": "c786aff4a6bfe6003f0aef0b601c3491e33f5f94",
+                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/2d20dc96b3ed88a3620613399dec5059c72b0b03",
+                "reference": "2d20dc96b3ed88a3620613399dec5059c72b0b03",
                 "shasum": ""
             },
             "require": {
-                "cmrcx/phptidy": "2.*",
+                "cmrcx/phptidy": "^3.0",
                 "dmstr/yii2-bootstrap": "^0.1.2 || ~0.2",
                 "dmstr/yii2-db": "*",
                 "dmstr/yii2-helpers": "*",
@@ -8168,7 +8175,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2017-02-26T21:22:21+00:00"
+            "time": "2017-04-10T22:05:32+00:00"
         },
         {
             "name": "schmunk42/yii2-markdocs-module",

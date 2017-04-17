@@ -206,6 +206,7 @@ return [
             'panels' => [
                 'audit/request',
                 'audit/mail' => [
+                    'class' => 'bedezign\yii2\audit\panels\MailPanel',
                     'storeData' => false
                 ],
                 'audit/trail',
