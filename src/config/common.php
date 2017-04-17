@@ -205,10 +205,7 @@ return [
             'layout' => '@backend/views/layouts/box',
             'panels' => [
                 'audit/request',
-                'audit/mail' => [
-                    'class' => 'bedezign\yii2\audit\panels\MailPanel',
-                    'storeData' => false
-                ],
+                'audit/mail',
                 'audit/trail',
                 'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
                 // These provide special functionality and get loaded to activate it
