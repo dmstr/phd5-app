@@ -78,12 +78,6 @@ class AppController extends Controller
         $this->run('db/create');
         $this->run('migrate/up', ['interactive' => (bool) getenv('APP_INTERACTIVE')]);
 
-        $this->stdout("\nCleanup\n");
-        $this->stdout("-------\n");
-        $this->run('cache/flush-all');
-        $this->run('audit/cleanup', ['age' => 30, 'interactive' => (bool) getenv('APP_INTERACTIVE')]);
-        $this->run('app/clear-assets', ['interactive' => (bool) getenv('APP_INTERACTIVE')]);
-
         $this->stdout("\nUser\n");
         $this->stdout("----\n");
         $adminPassword = $this->prompt(
@@ -95,6 +89,17 @@ class AppController extends Controller
         $this->run('user/create', [getenv('APP_ADMIN_EMAIL'), 'admin', $adminPassword]);
 
         $this->stdout("\n\nDone.\n");
+    }
+
+    /**
+     * Clean cache, assets and audit tables
+     */
+    public function actionCleanup(){
+        $this->stdout("\nCleanup\n");
+        $this->stdout("-------\n");
+        $this->run('cache/flush-all');
+        $this->run('audit/cleanup', ['age' => 30, 'interactive' => (bool) getenv('APP_INTERACTIVE')]);
+        $this->run('app/clear-assets', ['interactive' => (bool) getenv('APP_INTERACTIVE')]);
     }
 
     /**
