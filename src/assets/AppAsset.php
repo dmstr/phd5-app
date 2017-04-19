@@ -14,7 +14,7 @@ namespace app\assets;
  *
  * @since 4.0
  */
-class AppAsset extends \dmstr\web\AssetBundle
+class AppAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@app/assets/web';
 
