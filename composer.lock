@@ -2402,16 +2402,16 @@
         },
         {
             "name": "dmstr/yii2-contact-module",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-contact-module.git",
-                "reference": "283bffd08866f97736490ad4e54776384cd90d33"
+                "reference": "434262ad5ace642eab0192fa0ea6b56ddcc97f02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/283bffd08866f97736490ad4e54776384cd90d33",
-                "reference": "283bffd08866f97736490ad4e54776384cd90d33",
+                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/434262ad5ace642eab0192fa0ea6b56ddcc97f02",
+                "reference": "434262ad5ace642eab0192fa0ea6b56ddcc97f02",
                 "shasum": ""
             },
             "require": {
@@ -2441,7 +2441,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-10T12:29:19+00:00"
+            "time": "2017-04-18T09:31:15+00:00"
         },
         {
             "name": "dmstr/yii2-cookie-button",
@@ -2736,16 +2736,16 @@
         },
         {
             "name": "dmstr/yii2-migrate-command",
-            "version": "0.4.0-beta1",
+            "version": "0.4.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-migrate-command.git",
-                "reference": "7e4da97e90dcb4343d5b8ed211c3da89ff49bc50"
+                "reference": "d0f716dc713732f4b9211a42d3ea183b9a07a21f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/7e4da97e90dcb4343d5b8ed211c3da89ff49bc50",
-                "reference": "7e4da97e90dcb4343d5b8ed211c3da89ff49bc50",
+                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/d0f716dc713732f4b9211a42d3ea183b9a07a21f",
+                "reference": "d0f716dc713732f4b9211a42d3ea183b9a07a21f",
                 "shasum": ""
             },
             "require": {
@@ -2775,7 +2775,7 @@
                 "migration",
                 "yii2"
             ],
-            "time": "2017-02-21T23:25:38+00:00"
+            "time": "2017-04-18T09:22:05+00:00"
         },
         {
             "name": "dmstr/yii2-pages-module",
@@ -2837,16 +2837,16 @@
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "a49a5e7b618f5d8fd2e47d2bfe420e53460bc82b"
+                "reference": "3d41b43331bd883f364276d2c7b607f0db79a3b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/a49a5e7b618f5d8fd2e47d2bfe420e53460bc82b",
-                "reference": "a49a5e7b618f5d8fd2e47d2bfe420e53460bc82b",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/3d41b43331bd883f364276d2c7b607f0db79a3b9",
+                "reference": "3d41b43331bd883f364276d2c7b607f0db79a3b9",
                 "shasum": ""
             },
             "require": {
@@ -2881,7 +2881,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-04T11:29:24+00:00"
+            "time": "2017-04-18T13:51:36+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
