@@ -281,6 +281,7 @@ return [
             'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
             'enableFlashMessages' => false,
+            'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
         ],
         'widgets' => [
             'class' => 'hrzg\widget\Module',
