@@ -9,14 +9,16 @@
  * file that was distributed with this source code
  */
 
+$srcPath = __DIR__.'/..';
+
 // Load default settings via dotenv from file, load local environment first, if available
-if (is_file(__DIR__.'/../local.env')) {
-    $dotenvLocal = new Dotenv\Dotenv(__DIR__.'/..', 'local.env');
+if (is_file($srcPath.'/'.getenv('ENV_LOCAL_FILE'))) {
+    $dotenvLocal = new Dotenv\Dotenv($srcPath, getenv('ENV_LOCAL_FILE'));
     $dotenvLocal->load();
 }
 
 // Load application environment configuration
-$dotenv = new Dotenv\Dotenv(__DIR__.'/..', 'app.env');
+$dotenv = new Dotenv\Dotenv($srcPath, 'app.env');
 $dotenv->load();
 
 // Basic checks & validation
