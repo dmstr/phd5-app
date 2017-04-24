@@ -69,7 +69,7 @@ return [
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
         ],
-        'backend.iframe.name' => 'backend-'.$_SERVER['HOSTNAME'],
+        'backend.iframe.name' => 'backend-'.getenv('HOSTNAME'),
     ],
     'components' => [
         'assetManager' => [
