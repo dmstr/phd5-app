@@ -2,6 +2,7 @@
 
 namespace app\commands;
 
+use dektrium\user\models\User;
 use mikehaertl\shellcommand\Command;
 use yii\console\Controller;
 use yii\helpers\VarDumper;
@@ -71,12 +72,12 @@ class AppController extends Controller
         $this->stdout("=====================\n");
         $this->stdout("Initializing application\n");
 
-        $this->interactive = (bool) getenv('APP_INTERACTIVE');
+        $this->interactive = (bool)getenv('APP_INTERACTIVE');
 
         $this->stdout("\nDatabase\n");
         $this->stdout("--------\n");
         $this->run('db/create');
-        $this->run('migrate/up', ['interactive' => (bool) getenv('APP_INTERACTIVE')]);
+        $this->run('migrate/up', ['interactive' => (bool)getenv('APP_INTERACTIVE')]);
 
         $this->stdout("\nUser\n");
         $this->stdout("----\n");
@@ -94,12 +95,13 @@ class AppController extends Controller
     /**
      * Clean cache, assets and audit tables
      */
-    public function actionCleanup(){
+    public function actionCleanup()
+    {
         $this->stdout("\nCleanup\n");
         $this->stdout("-------\n");
         $this->run('cache/flush-all');
-        $this->run('audit/cleanup', ['age' => 30, 'interactive' => (bool) getenv('APP_INTERACTIVE')]);
-        $this->run('app/clear-assets', ['interactive' => (bool) getenv('APP_INTERACTIVE')]);
+        $this->run('audit/cleanup', ['age' => 30, 'interactive' => (bool)getenv('APP_INTERACTIVE')]);
+        $this->run('app/clear-assets', ['interactive' => (bool)getenv('APP_INTERACTIVE')]);
     }
 
     /**
@@ -130,5 +132,37 @@ class AppController extends Controller
                 echo $command->getStdErr();
             }
         }
+    }
+
+    /**
+     * Assign role to user
+     *
+     * @param $roleName
+     * @param $userName
+     */
+    public function actionAssign($roleName, $userName)
+    {
+        $userModel = new User();
+        $user = $userModel->finder->findUserByUsername($userName);
+        $manager = \Yii::$app->authManager;
+        $role = $manager->getRole($roleName);
+        $manager->assign($role, $user->id);
+        $this->stdout("\n\nDone.\n");
+    }
+
+    /**
+     * Revoke role from user
+     *
+     * @param $roleName
+     * @param $userName
+     */
+    public function actionRevoke($roleName, $userName)
+    {
+        $userModel = new User();
+        $user = $userModel->finder->findUserByUsername($userName);
+        $manager = \Yii::$app->authManager;
+        $role = $manager->getRole($roleName);
+        $manager->revoke($role, $user->id);
+        $this->stdout("\n\nDone.\n");
     }
 }
