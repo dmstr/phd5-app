@@ -27,3 +27,4 @@ $_SERVER['SERVER_PORT'] =  parse_url(\Codeception\Configuration::config()['confi
 
 Yii::setAlias('@tests', dirname(__DIR__));
 
+\Codeception\Util\Fixtures::add('uniqid', uniqid('test'));

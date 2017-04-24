@@ -15,6 +15,7 @@ services:
       - 80
     depends_on:
       - db
+      - redis
       - firefox
       - mailcatcher
     environment:

@@ -147,6 +147,7 @@ class AppController extends Controller
         $manager = \Yii::$app->authManager;
         $role = $manager->getRole($roleName);
         $manager->assign($role, $user->id);
+        $this->stdout('Role has been assigned');
         $this->stdout("\n\nDone.\n");
     }
 
@@ -163,6 +164,7 @@ class AppController extends Controller
         $manager = \Yii::$app->authManager;
         $role = $manager->getRole($roleName);
         $manager->revoke($role, $user->id);
+        $this->stdout('Role has been revoked');
         $this->stdout("\n\nDone.\n");
     }
 }
