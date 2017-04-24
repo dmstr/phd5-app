@@ -40,12 +40,14 @@ exec:	 ##@development execute command (c='yii help') in running container
 	#
 	$(DOCKER_COMPOSE) exec php $(c)
 
+upgrade: build update
 upgrade: ##@development update application package, pull, rebuild
+
+update: ##@development update application package, pull, rebuild
 	#
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
-	$(DOCKER_COMPOSE) build --pull
 	$(DOCKER_COMPOSE) run --rm php composer update -v
 
 assets:	 ##@development open application development bash

@@ -9,21 +9,6 @@ use yii\bootstrap\NavBar;
 $menuItems = [];
 $languageItems = [];
 
-// create label for dev and test environment
-switch (YII_ENV) {
-    case 'dev':
-    case 'test':
-        $envLabel = "<span class='label label-warning'>".YII_ENV.'</span>';
-        break;
-    default:
-        $envLabel = '';
-}
-$debugLabel = YII_DEBUG ? "<span class='label label-danger'>DEBUG</span>" : '';
-
-// add env & debug label to menu
-$menuItems[] = [
-    'label' => $envLabel.' '.$debugLabel,
-];
 
 // prepare languages
 foreach (\Yii::$app->urlManager->languages as $language) {
@@ -73,38 +58,6 @@ if (\Yii::$app->hasModule('user')) {
             ],
         ];
 
-        // extra buttons
-        $extraButtons = \dmstr\modules\prototype\widgets\TwigWidget::widget([
-            'key' => 'frontend.extra.menuItems',
-            'renderEmpty' => false,
-        ]);
-        $menuItems[] = '<li class="nav-extra">'.$extraButtons.'</li>';
-
-        // context menu
-        $menuItems[] = [
-            'options' => ['class' => 'nav-backend'],
-            'label' => '<i class="glyphicon glyphicon-pencil"></i>',
-            'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
-            'items' => \Yii::$app->params['context.menuItems'],
-        ];
-
-        $backendMenu = \dmstr\widgets\Menu::widget(
-            [
-                'options' => ['class' => 'dropdown-menu'],
-                'encodeLabels' => false,
-                'items' => \dmstr\modules\pages\models\Tree::getMenuItems(
-                    'backend',
-                    true,
-                    \dmstr\modules\pages\models\Tree::GLOBAL_ACCESS_DOMAIN
-                ),
-            ]
-        );
-        $menuItems[] = [
-            'label' => '<i class="glyphicon glyphicon-dashboard"></i>',
-            'url' => ['/backend'],
-            'visible' => \Yii::$app->user->can('backend_default_index', ['route' => true]),
-            'items' => $backendMenu,
-        ];
     }
 }
 

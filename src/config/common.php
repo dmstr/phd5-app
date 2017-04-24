@@ -69,16 +69,12 @@ return [
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
         ],
+        'backend.iframe.name' => 'backend-'.$_SERVER['HOSTNAME'],
     ],
     'components' => [
         'assetManager' => [
             'dirMode' => 0775,
-            // Hashing for distributed systems
-            'hashCallback' => YII_ENV_DEV ?
-                null :
-                function ($path) {
-                    return YII_ENV.'-'.substr(hash('sha256', $path), 0, 8).'-'.APP_VERSION.'-'.\Yii::$app->cache->get('prototype.less.changed_at');
-                },
+            'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ? \dmstr\helpers\AssetHash::byFileTimeAndLess() : null,
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
             'basePath' => '@app/../web/assets',

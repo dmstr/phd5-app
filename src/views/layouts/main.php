@@ -11,6 +11,7 @@ namespace _;
  */
 
 use bedezign\yii2\audit\web\JSLoggingAsset;
+use dmstr\modules\backend\widgets\Toolbar;
 use dmstr\modules\prototype\assets\DbAsset;
 use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
@@ -19,6 +20,7 @@ use rmrevin\yii\fontawesome\AssetBundle;
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -30,6 +32,7 @@ if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false))
 } else {
     \app\assets\AppAsset::register($this);
 }
+\app\assets\AppJsAsset::register($this);
 
 // Register patch asset
 if (\Yii::$app->settings->get('registerPatchAssetKey', 'app.assets', false)) {
@@ -59,7 +62,7 @@ if ($description = \Yii::$app->settings->get($route, 'app.seo.descriptions', nul
 }
 
 if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
-    $this->registerLinkTag(['rel' => 'shortcut icon', 'type'=>'image/png', 'href' => $favicon]);
+    $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $favicon]);
 }
 
 ?>
@@ -80,7 +83,13 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 
 <?php $this->beginBody() ?>
 
-<?= TwigWidget::widget(['key' => '_top', 'renderEmpty'=>false]) ?>
+<?php Pjax::begin([
+    'id' => 'main-content',
+    'timeout' => 5000,
+    'linkSelector' => '.frontend-reload',
+]) ?>
+
+<?= TwigWidget::widget(['key' => '_top', 'renderEmpty' => false]) ?>
 
 <!-- Navbar -->
 <?php
@@ -92,19 +101,11 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 
 ?>
 
-<!-- User flash messages -->
-<?= Wrapper::widget([
-    'layerClass' => 'lo\modules\noty\layers\Growl',
-    'options' => [
-        'dismissQueue' => true,
-        'location' => 'br',
-        'timeout' => 4000,
-    ],
-]) ?>
-
 <!-- Content -->
 <div class="wrap">
+
     <?= $content ?>
+
 </div>
 
 <!-- Footer -->
@@ -115,16 +116,32 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 <!-- Info Modal -->
 <div class="phd-info" style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
     <p>
-    <?= Html::a(
-        '<i class="fa fa-heartbeat"></i>',
-        '#',
-        ['class' => 'text-muted', 'data-toggle' => 'modal', 'data-target' => '#infoModal']
-    ) ?>
+        <?= Html::a(
+            '<i class="fa fa-heartbeat"></i>',
+            '#',
+            ['class' => 'text-muted', 'data-toggle' => 'modal', 'data-target' => '#infoModal']
+        ) ?>
     </p>
 </div>
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
     <?= $this->render('_modal') ?>
 </div>
+
+<?php Pjax::end() ?>
+
+<!-- User flash messages -->
+<?= Wrapper::widget([
+    'layerClass' => 'lo\modules\noty\layers\Growl',
+    'options' => [
+        'dismissQueue' => true,
+        'location' => 'br',
+        'timeout' => 4000,
+    ],
+]) ?>
+
+<?php if (Yii::$app->user->can('backend_default_index')): ?>
+    <?= Toolbar::widget() ?>
+<?php endif; ?>
 
 <?php $this->endBody() ?>
 

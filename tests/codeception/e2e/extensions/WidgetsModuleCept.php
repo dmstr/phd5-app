@@ -41,6 +41,7 @@ $I->click('#cell-container .hrzg-widget-container-controls .btn-success');
 $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls ul', 2);
 $I->click('Content', '#cell-container .hrzg-widget-container-controls ul');
 
+$I->switchToIFrame('backend');
 $I->waitForElementVisible('.widget-create', 10);
 
 
@@ -56,6 +57,8 @@ $I->makeScreenshot('widgets-backend-create-1');
 
 $I->click('Create');
 
-$I->wait(2);
+$I->wait(4);
+
+$I->switchToIFrame();
 
 $I->see('This is a test.', 'h2');
