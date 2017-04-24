@@ -41,7 +41,7 @@ $I->click('#cell-container .hrzg-widget-container-controls .btn-success');
 $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls ul', 2);
 $I->click('Content', '#cell-container .hrzg-widget-container-controls ul');
 
-$I->switchToIFrame('backend');
+$I->switchToIFrame('backend-test');
 $I->waitForElementVisible('.widget-create', 10);
 
 

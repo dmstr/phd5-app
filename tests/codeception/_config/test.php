@@ -13,4 +13,7 @@ $_SERVER['REQUEST_TIME'] = time();
 
 return [
     'language' => 'en',
+    'params' => [
+        'backend.iframe.name' => 'backend-test',
+    ]
 ];
