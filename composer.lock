@@ -2587,16 +2587,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "59a3835a1285a16b0034757da6731e6a6d7a3ae7"
+                "reference": "8503aea23d1e6829353f9b03197305968df9f8e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/59a3835a1285a16b0034757da6731e6a6d7a3ae7",
-                "reference": "59a3835a1285a16b0034757da6731e6a6d7a3ae7",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/8503aea23d1e6829353f9b03197305968df9f8e6",
+                "reference": "8503aea23d1e6829353f9b03197305968df9f8e6",
                 "shasum": ""
             },
             "require": {
@@ -2627,7 +2627,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-20T12:56:26+00:00"
+            "time": "2017-05-04T01:26:45+00:00"
         },
         {
             "name": "dmstr/yii2-libs-metapackage",
@@ -8686,16 +8686,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.0.0RC4",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "2d2bad4d946bf4a5a5399e1b1d1433212ee60035"
+                "reference": "b95ff2c3b122a3ee4b57d149a57d2afce65522c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/2d2bad4d946bf4a5a5399e1b1d1433212ee60035",
-                "reference": "2d2bad4d946bf4a5a5399e1b1d1433212ee60035",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b95ff2c3b122a3ee4b57d149a57d2afce65522c3",
+                "reference": "b95ff2c3b122a3ee4b57d149a57d2afce65522c3",
                 "shasum": ""
             },
             "require": {
@@ -8733,7 +8733,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-03-01T22:32:23+00:00"
+            "time": "2017-05-04T00:33:04+00:00"
         },
         {
             "name": "stecman/symfony-console-completion",
