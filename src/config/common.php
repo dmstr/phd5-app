@@ -17,11 +17,6 @@ $bundles = [];
 if (getenv('APP_ASSET_USE_BUNDLED')) {
     $bundles = include Yii::getAlias('@web/bundles').'/config.php';
 }
-if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
-    $bundles['yii\bootstrap\BootstrapAsset'] = [
-        'css' => [],
-    ];
-}
 
 // set redis connection
 \Resque::setBackend(

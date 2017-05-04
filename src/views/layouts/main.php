@@ -10,13 +10,11 @@ namespace _;
  * file that was distributed with this source code.
  */
 
-use bedezign\yii2\audit\web\JSLoggingAsset;
+use dmstr\helpers\SettingsAsset;
 use dmstr\modules\backend\widgets\Toolbar;
-use dmstr\modules\prototype\assets\DbAsset;
 use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
 use lo\modules\noty\Wrapper;
-use rmrevin\yii\fontawesome\AssetBundle;
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -26,31 +24,17 @@ use yii\widgets\Pjax;
 /* @var $content string */
 
 $this->title .= ' - '.getenv('APP_TITLE');
-// Register app asset or database asset bundle
-if (\Yii::$app->settings->get('registerPrototypeAssetKey', 'app.assets', false)) {
-    DbAsset::register($this);
-} else {
-    \app\assets\AppAsset::register($this);
+
+SettingsAsset::register($this);
+
+if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
+    \yii\base\Event::on(
+        \yii\web\View::className(),
+        \yii\web\View::EVENT_AFTER_RENDER,
+        function ($e) {
+            $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
+        });
 }
-\app\assets\AppJsAsset::register($this);
-
-// Register patch asset
-if (\Yii::$app->settings->get('registerPatchAssetKey', 'app.assets', false)) {
-    $patchAsset = new DbAsset();
-    $patchAsset->settingsKey = \Yii::$app->settings->get('registerPatchAssetKey', 'app.assets');
-    $patchAsset->register($this);
-}
-
-// Register font-awesome asset
-if (\Yii::$app->settings->get('registerFontAwesomeAsset', 'app.assets', true)) {
-    AssetBundle::register($this);
-}
-
-
-if (\Yii::$app->settings->get('registerJsLoggingAsset', 'app.assets', false)) {
-    JSLoggingAsset::register($this);
-}
-
 
 // SEO
 $route = Url::toRoute(Yii::$app->controller->action->uniqueId);
@@ -123,7 +107,7 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
         ) ?>
     </p>
 </div>
-<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="phd-info-button" tabindex="-1" role="dialog" aria-hidden="true">
     <?= $this->render('_modal') ?>
 </div>
 
