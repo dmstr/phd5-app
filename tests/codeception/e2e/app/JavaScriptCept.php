@@ -9,12 +9,12 @@ $I->wantTo('ensure that JavaScript works');
 $I->amGoingTo('check javascript with a modal');
 
 $I->amOnPage('/en');
-$I->dontSee('#infoModal');
+$I->dontSee('#phd-info-panel');
 
-$I->click('.phd-info a');
-$I->waitForElementVisible('#infoModal',3);
-$I->seeElement('#infoModal');
+$I->click('#phd-info-button a');
+$I->waitForElementVisible('#phd-info-modal',3);
+$I->seeElement('#phd-info-modal');
 $I->makeScreenshot('modal');
 
-$I->click('#infoModal .close');
-$I->dontSee('#infoModal');
+$I->click('#phd-info-modal .close');
+$I->dontSee('#phd-info-modal');

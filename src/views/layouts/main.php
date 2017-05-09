@@ -98,16 +98,16 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 </footer>
 
 <!-- Info Modal -->
-<div class="phd-info" style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
+<div id="phd-info-button" style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
     <p>
         <?= Html::a(
             '<i class="fa fa-heartbeat"></i>',
             '#',
-            ['class' => 'text-muted', 'data-toggle' => 'modal', 'data-target' => '#infoModal']
+            ['class' => 'text-muted', 'data-toggle' => 'modal', 'data-target' => '#phd-info-modal']
         ) ?>
     </p>
 </div>
-<div class="modal fade" id="phd-info-button" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="phd-info-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <?= $this->render('_modal') ?>
 </div>
 
