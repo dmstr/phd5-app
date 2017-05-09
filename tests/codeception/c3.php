@@ -8,8 +8,6 @@
  * @author tiger
  */
 
-require_once ('/root/.composer/vendor/autoload.php');
-
 // $_SERVER['HTTP_X_CODECEPTION_CODECOVERAGE_DEBUG'] = 1;
 if (isset($_COOKIE['CODECEPTION_CODECOVERAGE'])) {
     $cookie = json_decode($_COOKIE['CODECEPTION_CODECOVERAGE'], true);
