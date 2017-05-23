@@ -31,7 +31,7 @@ return [
                     'url' => 'php://stdout',
                     'levels' => ['info', 'trace'],
                     'logVars' => [],
-                    'replaceNewline' => '',
+                    'replaceNewline' => YII_DEBUG ? null : '',
                     'enabled' => YII_DEBUG && !YII_ENV_TEST,
                 ],
 
