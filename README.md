@@ -42,8 +42,9 @@ See [configuration](https://github.com/dmstr/phd5-docs/blob/master/guide/develop
 
 ### Testing
 
-Run command from `tests` folder
+Initialize application and run command from `tests` folder
 
+    make init
     cd tests
 
 Setup test application stack    
