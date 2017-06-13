@@ -53,11 +53,14 @@ $I->wantTo('ensure pre-filled values still exist');
 $I->seeInField('#widgetcontent-route','widgets/test/index');
 $I->fillField('root[title]', 'This is a test.');
 
+$I->wantTo('ensure ckeditor works inside json editor');
+$I->click('Add Paragraph', 'form#widget-create');
+$I->seeElement('form .cke_toolbar');
+
 $I->makeScreenshot('widgets-backend-create-1');
 
 $I->click('Create');
-
-$I->wait(4);
+$I->wait(3);
 
 $I->switchToIFrame();
 

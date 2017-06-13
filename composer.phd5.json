@@ -12,11 +12,10 @@
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "dmstr/yii2-libs-metapackage": "^0.6.0-beta1",
-        "2amigos/yii2-ckeditor-widget": "^2.0.2",
+        "2amigos/yii2-ckeditor-widget": "^2.1.0",
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "cinghie/yii2-cookie-consent": "^1.4",
-        "ckeditor/ckeditor": "dev-full/stable",
         "dektrium/yii2-rbac": "0.3.999.*",
         "dektrium/yii2-user": "^0.9.12",
         "lajax/yii2-translate-manager": "^1.6.0",
