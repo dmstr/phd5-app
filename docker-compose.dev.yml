@@ -22,7 +22,7 @@ services:
       - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
     volumes:
       # Re-use local composer cache via host-volume
-      - ~/.composer/cache:/root/.composer/cache
+      - ~/.composer-docker/cache:/root/.composer/cache
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
 
