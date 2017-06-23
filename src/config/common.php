@@ -193,6 +193,7 @@ return [
     'modules' => [
         'audit' => [
             'class' => 'bedezign\yii2\audit\Audit',
+            'accessRoles' => ['audit-module'],
             'layout' => '@backend/views/layouts/box',
             'panels' => [
                 'audit/request',
