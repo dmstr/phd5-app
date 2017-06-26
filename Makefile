@@ -62,14 +62,14 @@ latest: ##@development push to latest (release) branch
 	#
 	git push origin master:latest
 
-lint:	 ##@development run source-code linting
+lint-source:	 ##@development run source-code linting
 	#
 	# Liniting source-code with cs-fixer, phpmetrics & phpmd
 	#
 	mkdir -p tests/_lint/lint && chmod -R 777 tests/_lint/lint
-	docker run --rm -v "${PWD}:/project" jolicode/phaudit php-cs-fixer fix --format=txt -v --dry-run src || export ERROR=1; \
+	docker-compose run --rm php php-cs-fixer fix --format=txt -v --dry-run src || export ERROR=1; \
 	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmetrics --report-html=tests/_lint/lint/metrics.html --excluded-dirs=migrations src/ || ERROR=1; \
-	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html cleancode,codesize,controversial,design,unusedcode,tests/phpmd/naming.xml --exclude src/migrations > tests/_lint/lint/mess.html || ERROR=1; \
+	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html tests/phpmd/rulesets.xml --exclude src/migrations > tests/_lint/lint/mess.html || ERROR=1; \
 	exit ${ERROR}
 
 lint-composer: ##@development run composer linting
@@ -80,3 +80,5 @@ lint-composer: ##@development run composer linting
 	docker-compose run --rm php composer --no-ansi show || ERROR=1; \
 	docker-compose run --rm php composer --no-ansi show -o || ERROR=1; \
 	exit ${ERROR}
+
+lint: lint-source lint-composer
