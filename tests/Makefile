@@ -4,7 +4,7 @@ TESTER_SERVICE=php
 BROWSER_SERVICE=firefox
 
 all: ##@test [TEST] shorthand for
-	$(MAKE) version build
+	$(MAKE) init-tests version build
 	$(MAKE) clean up setup
 
 version:
