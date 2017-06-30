@@ -7,6 +7,10 @@ all: ##@test [TEST] shorthand for
 	$(MAKE) init-tests version build
 	$(MAKE) clean up setup
 
+init-tests:
+	mkdir -p _log/codeception && chmod -R 777 _log/codeception
+	mkdir -p _log/lint && chmod -R 777 _log/lint
+
 version:
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
 	@echo $(shell cat ../src/version)
