@@ -1,6 +1,7 @@
 FROM dmstr/php-yii2:7.1-fpm-3.0-beta3-alpine-nginx-xdebug
 
 COPY ./image-files /
+RUN chmod u+x /usr/local/bin/*
 
 # TODO: Remove when Patched plugin with skip-update
 RUN rm -rf ~/.composer/vendor && composer global install
