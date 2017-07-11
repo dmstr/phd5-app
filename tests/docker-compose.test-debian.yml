@@ -1,0 +1,18 @@
+# Test stack overrides
+# ====================
+#
+# Paths in this file are relative to the project root
+
+version: '2'
+services:
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile-debian
+    image: ${STACK_PHP_IMAGE}-debian
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile-debian
