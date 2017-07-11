@@ -20,9 +20,9 @@ RUN cp src/app.env-dist src/app.env
 
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
-    chmod -R 775 runtime web/assets /mnt/storage && \
+    chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
-    chown -R www-data:www-data runtime web/assets /root/.composer/vendor /mnt/storage && \
+    chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage && \
     APP_NAME=build APP_LANGUAGES=en yii asset/compress src/config/assets.php web/bundles/config.php
 
 # Install crontab from application config (
