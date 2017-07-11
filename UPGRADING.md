@@ -6,7 +6,8 @@
 
 ### 5.0.0 to 5.1.0
 
-TBD
+- local filesystem `fs` has been renamed to `fsLocal`
+- added host-volume for `src/` in test stack 
 
 ### 5.0.0-beta to 5.0.0
 

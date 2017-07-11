@@ -37,8 +37,8 @@ services:
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
     volumes:
       - ./tests:/app/tests
+      - ./src:/app/src
       # Settings for local test-development
-      #- ./src:/app/src
       #- ./web:/app/web
       #- ./vendor:/app/vendor
       # Debug settings

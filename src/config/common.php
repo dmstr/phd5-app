@@ -90,7 +90,7 @@ return [
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => !YII_ENV_DEV,
         ],
-        'fs' => [
+        'fsLocal' => [
             'class' => 'creocoder\flysystem\LocalFilesystem',
             'path' => '@storage',
         ],
