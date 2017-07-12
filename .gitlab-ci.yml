@@ -109,7 +109,7 @@ after_script:
     - latest
     - experimental
     - tags
-    - 5.0.x-debian
+    - release/5.0.x-debian
 
 
 # ----------------------------------------------------------
