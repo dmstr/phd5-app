@@ -6,8 +6,11 @@ version: '2'
 services:
   php:
     build:
-      dockerfile: Dockerfile
       context: .
+      # FLAVOUR can be undefinied OR -debian
+      # undefined == alpine base image
+      # -dabien   == debian base image
+      dockerfile: Dockerfile${FLAVOUR}
     ports:
       - 29680:80
     depends_on:
@@ -27,7 +30,12 @@ services:
       - ./composer.lock:/app/composer.lock
 
   worker:
-    build: .
+    build:
+      context: .
+      # FLAVOUR can be undefinied OR -debian
+      # undefined == alpine base image
+      # -dabien   == debian base image
+      dockerfile: Dockerfile${FLAVOUR}
     depends_on:
       - db
       - redis

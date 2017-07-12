@@ -9,7 +9,11 @@ services:
   php:
     build:
       context: .
-    image: ${STACK_PHP_IMAGE}
+      # FLAVOUR can be undefinied OR -debian
+      # undefined == alpine base image
+      # -dabien   == debian base image
+      dockerfile: Dockerfile${FLAVOUR}
+    image: ${STACK_PHP_IMAGE}${FLAVOUR}
     working_dir: /app/tests
     ports:
       - 80
@@ -50,6 +54,11 @@ services:
   worker:
     build:
       context: .
+      # FLAVOUR can be undefinied OR -debian
+      # undefined == alpine base image
+      # -dabien   == debian base image
+      dockerfile: Dockerfile${FLAVOUR}
+    image: ${STACK_PHP_IMAGE}${FLAVOUR}
 
   db:
     image: percona:5.7
