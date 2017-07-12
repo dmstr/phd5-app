@@ -10,7 +10,11 @@ variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
+  FLAVOUR: ""
 
+# ----------------------------------------------------------
+# before/after scripts, these will be used in every job within the job-scope
+# ----------------------------------------------------------
 before_script:
   # set docker-compose isolation
   - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
@@ -19,6 +23,7 @@ before_script:
   - docker-compose version
   - echo ${ISOLATION}
   - echo $(git describe --always --dirty)
+  - ([[ $FLAVOUR ]] && echo "build flavour is $FLAVOUR" || echo "build flavour is default/undefinied")
   # initialize environments
   - make init
   # run all commands from test directory
@@ -32,7 +37,16 @@ after_script:
   - cp .env-dist .env
   - make clean
 
-codeception:
+# ----------------------------------------------------------
+# TEMPLATES
+# ----------------------------------------------------------
+# templates for flavour definitions used in jobs
+.build_flavour_debian_tmpl: &build_flavour_debian_tmpl_ref
+  variables:
+    FLAVOUR: "-debian"
+# ----------------------------------------------------------
+# templates which can be used in jobs with different flavours
+.codeception_tmpl: &codeception_tmpl_ref
   stage: test
   script:
     - make all
@@ -46,23 +60,8 @@ codeception:
     paths:
       - tests/_log
 
-coverage:
-  stage: test
-  script:
-    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - export PHP_ENABLE_XDEBUG=1
-    - make all
-    - make run-coverage
-  only:
-    - coverage
-  artifacts:
-    name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-coverage
-    when: always
-    expire_in: 4 weeks
-    paths:
-      - tests/_log
 
-lint:
+.lint_tmpl: &lint_tmpl_ref
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
@@ -78,20 +77,76 @@ lint:
     paths:
       - tests/_lint
 
-release:
+
+.coverage_tmpl: &coverage_tmpl_ref
+  stage: test
+  script:
+    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - export PHP_ENABLE_XDEBUG=1
+    - make all
+    - make run-coverage
+  only:
+    - coverage
+    - 5.0.x-debian
+  artifacts:
+    name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-coverage
+    when: always
+    expire_in: 4 weeks
+    paths:
+      - tests/_log
+
+
+.release_tmpl: &release_tmpl_ref
   stage: release
   environment:
     name: image
   script:
     - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
     - make version build
-    - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
-    - docker push ${REGISTRY_PHP_IMAGE}
+    - echo "docker tag ${STACK_PHP_IMAGE}${FLAVOUR} ${REGISTRY_PHP_IMAGE}${FLAVOUR}"
+    - echo "docker push ${REGISTRY_PHP_IMAGE}${FLAVOUR}"
   only:
     - latest
     - experimental
     - tags
+    - 5.0.x-debian
 
+
+# ----------------------------------------------------------
+# job definitions, they should use the defined job and flavour templates
+# ----------------------------------------------------------
+codeception:
+  <<: *codeception_tmpl_ref
+
+codeception-debian:
+  <<: *build_flavour_debian_tmpl_ref
+  <<: *codeception_tmpl_ref
+
+# ----------------------------------------------------------
+coverage:
+  <<: *coverage_tmpl_ref
+
+coverage-debian:
+  <<: *build_flavour_debian_tmpl_ref
+  <<: *coverage_tmpl_ref
+
+# ----------------------------------------------------------
+lint:
+  <<: *lint_tmpl_ref
+
+lint-debian:
+  <<: *build_flavour_debian_tmpl_ref
+  <<: *lint_tmpl_ref
+
+# ----------------------------------------------------------
+release:
+  <<: *release_tmpl_ref
+
+release-debian:
+  <<: *build_flavour_debian_tmpl_ref
+  <<: *release_tmpl_ref
+
+# ----------------------------------------------------------
 deploy:staging:
   stage: deploy
   environment: staging
