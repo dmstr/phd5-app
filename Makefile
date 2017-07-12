@@ -26,11 +26,6 @@ init:   ##@development initialize development environment
 	cp -n src/app.env-dist src/app.env &2>/dev/null
 	mkdir -p web/assets runtime
 
-init-debian: ##@development initialize development environment for debian builds
-init-debian: init
-init-debian:
-	cp tests/.env-dist-debian tests/.env &2>/dev/null
-
 bash:	 ##@development run application bash in one-off container
 	#
 	# Starting application bash
