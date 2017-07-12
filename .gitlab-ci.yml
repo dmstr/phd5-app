@@ -87,7 +87,6 @@ after_script:
     - make run-coverage
   only:
     - coverage
-    - 5.0.x-debian
   artifacts:
     name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-coverage
     when: always
@@ -103,13 +102,12 @@ after_script:
   script:
     - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
     - make version build
-    - echo "docker tag ${STACK_PHP_IMAGE}${FLAVOUR} ${REGISTRY_PHP_IMAGE}${FLAVOUR}"
-    - echo "docker push ${REGISTRY_PHP_IMAGE}${FLAVOUR}"
+    - docker tag ${STACK_PHP_IMAGE}${FLAVOUR} ${REGISTRY_PHP_IMAGE}${FLAVOUR}
+    - docker push ${REGISTRY_PHP_IMAGE}${FLAVOUR}
   only:
     - latest
     - experimental
     - tags
-    - release/5.0.x-debian
 
 
 # ----------------------------------------------------------
