@@ -39,7 +39,7 @@ services:
       context: .
       # FLAVOUR can be undefinied OR -debian
       # undefined == alpine base image
-      # -dabien   == debian base image
+      # -debian   == debian base image
       dockerfile: Dockerfile${FLAVOUR}
     depends_on:
       - db
