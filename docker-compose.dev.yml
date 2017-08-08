@@ -9,7 +9,7 @@ services:
       context: .
       # FLAVOUR can be undefinied OR -debian
       # undefined == alpine base image
-      # -dabien   == debian base image
+      # -debian   == debian base image
       dockerfile: Dockerfile${FLAVOUR}
     ports:
       - 29680:80
@@ -23,11 +23,16 @@ services:
       - PHP_USER_ID=82
       # For composer usage in container
       - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
+      # local dev mail setup
+      - APP_ADMIN_EMAIL=${APP_ADMIN_EMAIL}
+      - APP_MAILER_HOST=mailcatcher
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
+      # dev: mount local dir as app
+      #- ./:/app
 
   worker:
     build:
