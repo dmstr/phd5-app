@@ -15,5 +15,4 @@ class m160313_153425_session_move extends Migration
 
         return false;
     }
-
 }

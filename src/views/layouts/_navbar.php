@@ -57,7 +57,6 @@ if (\Yii::$app->hasModule('user')) {
                 ],
             ],
         ];
-
     }
 }
 
