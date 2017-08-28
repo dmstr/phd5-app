@@ -65,7 +65,6 @@ after_script:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - cd ..
     - cp .env-dist .env
     - make help
     - make lint
