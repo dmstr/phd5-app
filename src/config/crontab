@@ -7,4 +7,4 @@
 0       5       1       *       *       run-parts /etc/periodic/monthly
 
 # daily cleanup
-0       0       *       *       *       sleep $(unique-number.sh 30) && /app/yii audit/cleanup --interactive=0 --entry --age=7
+0       0       *       *       *       sleep $(unique-number.sh 600) && /app/yii audit/cleanup --interactive=0 --entry --age=7

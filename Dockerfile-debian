@@ -1,7 +1,9 @@
-FROM dmstr/php-yii2:7.1-fpm-3.0-rc1-alpine-nginx-xdebug
+FROM dmstr/php-yii2:7.1-fpm-2.0-beta7-nginx
 
 COPY ./image-files /
-RUN chmod u+x /usr/local/bin/*
+
+# move to php-yii2:7.1-fpm ?
+RUN npm install -g uglify-js uglifycss
 
 # TODO: Remove when Patched plugin with skip-update
 RUN rm -rf ~/.composer/vendor && composer global install

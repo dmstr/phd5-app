@@ -26,7 +26,6 @@ init:   ##@development initialize development environment
 	cp -n src/app.env-dist src/app.env &2>/dev/null
 	mkdir -p web/assets runtime
 
-
 bash:	 ##@development run application bash in one-off container
 	#
 	# Starting application bash
@@ -40,15 +39,16 @@ exec:	 ##@development execute command (c='yii help') in running container
 	#
 	$(DOCKER_COMPOSE) exec php $(c)
 
-dist-upgrade: build update
-dist-upgrade: ##@development update application package, pull, rebuild
-
 upgrade: ##@development update application package, pull, rebuild
 	#
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
 	$(DOCKER_COMPOSE) run --rm php composer update -v
+	$(DOCKER_COMPOSE) build --pull
+
+dist-upgrade: build update
+dist-upgrade: ##@development update application package, pull, rebuild
 
 assets:	 ##@development open application development bash
 	#
