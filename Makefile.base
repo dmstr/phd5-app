@@ -1,4 +1,4 @@
-.PHONY: build test up clean open open-db setup
+.PHONY: default build up clean open open-db setup help
 
 # Define the docker-compose binary via ENV variable
 DOCKER_COMPOSE  ?= docker-compose

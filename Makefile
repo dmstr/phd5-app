@@ -1,4 +1,4 @@
-.PHONY: build test
+.PHONY: all dev init bash exec upgrade update assets latest
 
 include ./Makefile.base
 
@@ -40,10 +40,10 @@ exec:	 ##@development execute command (c='yii help') in running container
 	#
 	$(DOCKER_COMPOSE) exec php $(c)
 
-upgrade: build update
-upgrade: ##@development update application package, pull, rebuild
+dist-upgrade: build update
+dist-upgrade: ##@development update application package, pull, rebuild
 
-update: ##@development update application package, pull, rebuild
+upgrade: ##@development update application package, pull, rebuild
 	#
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
