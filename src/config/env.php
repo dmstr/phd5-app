@@ -31,6 +31,7 @@ $dotenv->required('YII_ENV', ['dev', 'prod', 'test']);
 $dotenv->required([
     'YII_TRACE_LEVEL',
     'APP_NAME',
+    'APP_TITLE',
     'APP_ADMIN_EMAIL',
     'APP_LANGUAGES',
     'APP_COOKIE_VALIDATION_KEY',
