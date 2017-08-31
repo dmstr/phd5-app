@@ -51,7 +51,7 @@ lint-source:	 ##@development run source-code linting
 	#
 	# Liniting source-code with cs-fixer, phpmetrics & phpmd
 	#
-	docker-compose run --rm php php-cs-fixer fix --format=txt -v --dry-run ../src
+	$(DOCKER_COMPOSE) run --rm php php-cs-fixer fix --format=txt -v --dry-run ../src
 	docker run --rm -v "${PWD}/..:/app" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --excluded-dirs=migrations src/
 	docker run --rm -v "${PWD}/..:/project" jolicode/phaudit phpmd src html tests/phpmd/rulesets.xml --exclude src/migrations > _log/lint/mess.html
 	exit ${ERROR}
@@ -60,9 +60,15 @@ lint-composer: ##@development run composer linting
 	#
 	# Liniting composer configuration
 	#
-	docker-compose run --rm php composer --no-ansi validate || ERROR=1; \
-	docker-compose run --rm php composer --no-ansi show || ERROR=1; \
-	docker-compose run --rm php composer --no-ansi show -o || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi validate || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o || ERROR=1; \
 	exit ${ERROR}
+
+lint-html:
+	$(DOCKER_COMPOSE) run --rm  validator http://web
+
+lint-links:
+	$(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 3
 
 lint: lint-source lint-composer

@@ -1,0 +1,18 @@
+# example configuration file demonstrating the login URL feature
+[authentication]
+entry=
+# Note that the password has been left out.
+# It will be entered at the commandline.
+  http://web/en/user/login admin admin1
+loginurl=http://web/en/user/login
+loginuserfield=login-form[login]
+loginpasswordfield=login-form[password]
+
+[filtering]
+ignore=
+  /logout
+  /debug
+  /guide
+  /help
+  /filefly
+  /treemanager
