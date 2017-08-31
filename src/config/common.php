@@ -10,12 +10,22 @@
  */
 
 // prepare application languages
+use dmstr\web\AdminLteAsset;
+
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
 // prepare asset bundle config
 $bundles = [];
 if (getenv('APP_ASSET_USE_BUNDLED')) {
+    // include generated asset-bundle configuration
     $bundles = include Yii::getAlias('@web/bundles').'/config.php';
+    // disable loading of bundles skin file, when using bundled assets
+    Yii::$container->set(
+        AdminLteAsset::className(),
+        [
+            'skin' => false,
+        ]
+    );
 }
 
 // set redis connection
