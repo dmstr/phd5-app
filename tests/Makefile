@@ -38,10 +38,10 @@ open-vnc: ##@test open application database service in browser
 	$(OPEN_CMD) vnc://x:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(BROWSER_SERVICE) 5900 | sed 's/[0-9.]*://')
 
 open-report: ##@test open HTML reports
-	$(OPEN_CMD) codeception/_output/_report.html
+	$(OPEN_CMD) _log/codeception/_report.html
 
 open-coverage: ##@test open HTML reports
-	$(OPEN_CMD) codeception/_output/coverage/index.html
+	$(OPEN_CMD) _log/coverage/index.html
 
 open-c3:
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')/c3/report/clear
