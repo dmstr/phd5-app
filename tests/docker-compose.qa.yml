@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  linkchecker:
+    image: mesosphere/linkchecker
+    volumes:
+      - ./tests:/tmp/tests
+
+  validator:
+    image: magnetikonline/html5validator
+    entrypoint: ["java", "-jar", "/root/build/validator.nu/vnu.jar"]

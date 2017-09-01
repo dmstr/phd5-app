@@ -66,9 +66,9 @@ lint-composer: ##@development run composer linting
 	exit ${ERROR}
 
 lint-html:
-	$(DOCKER_COMPOSE) run --rm  validator http://web
+	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  validator http://web
 
 lint-links:
-	$(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 3
+	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 3
 
 lint: lint-source lint-composer

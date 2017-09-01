@@ -12,7 +12,18 @@ loginpasswordfield=login-form[password]
 ignore=
   /logout
   /debug
+# exclude POST requests, see also, https://github.com/linkcheck/linkchecker/issues/83
+  /delete
+  /settings/default/toggle
+  /user/admin/block
+  /user/admin/switch
+# TODO: remove external calls from application
   /guide
   /help
+# TODO: fixme in app
   /filefly
+# TODO: blacklist in app
   /treemanager
+
+nofollow=
+  /backend/default/view-config
