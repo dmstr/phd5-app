@@ -236,6 +236,10 @@ return [
         'backend' => [
             'class' => 'dmstr\modules\backend\Module',
             'layout' => '@backend/views/layouts/main',
+            'modulesDashboardBlacklist' => [
+                'noty',
+                'treemanager'
+            ]
         ],
         'contact' => [
             'class' => 'dmstr\modules\contact\Module',

@@ -20,10 +20,6 @@ ignore=
 # TODO: remove external calls from application
   /guide
   /help
-# TODO: fixme in app
-  /filefly
-# TODO: blacklist in app
-  /treemanager
 
 nofollow=
   /backend/default/view-config
