@@ -1,7 +1,8 @@
 include ../Makefile.base
 
-TESTER_SERVICE=php
-BROWSER_SERVICE=firefox
+TESTER_SERVICE  ?= php
+BROWSER_SERVICE ?= firefox
+COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
 
 all: ##@test [TEST] shorthand for
 	$(MAKE) init-tests version build
