@@ -42,12 +42,7 @@ return [
         ],
     ],
     'modules' => [
-        'help' => [
-            'class' => 'schmunk42\markdocs\Module',
-            'layout' => '@backend/views/layouts/box',
-            'enableEmojis' => true,
-        ],
-        'guide' => [
+        'docs' => [
             'class' => 'schmunk42\markdocs\Module',
             'layout' => '@backend/views/layouts/box',
             'enableEmojis' => true,
