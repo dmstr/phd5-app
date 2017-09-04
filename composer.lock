@@ -265,16 +265,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.35.3",
+            "version": "3.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "47856d436ad8eb172c43c88b1861cd645882de56"
+                "reference": "69321675769dd3e3d00a94bfdc747bd3a5b75b3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/47856d436ad8eb172c43c88b1861cd645882de56",
-                "reference": "47856d436ad8eb172c43c88b1861cd645882de56",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/69321675769dd3e3d00a94bfdc747bd3a5b75b3b",
+                "reference": "69321675769dd3e3d00a94bfdc747bd3a5b75b3b",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +341,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-08-31T21:23:59+00:00"
+            "time": "2017-09-01T22:52:38+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -6456,16 +6456,16 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.0.9",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9"
+                "reference": "ad1d1780d59dc3417b4a32bab8cadac4908359eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9",
-                "reference": "647be6c9d48dc2f3c2e2f33b9eba0a4ca78abde9",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/ad1d1780d59dc3417b4a32bab8cadac4908359eb",
+                "reference": "ad1d1780d59dc3417b4a32bab8cadac4908359eb",
                 "shasum": ""
             },
             "require": {
@@ -6499,7 +6499,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2017-02-21T10:30:50+00:00"
+            "time": "2017-09-04T09:42:28+00:00"
         },
         {
             "name": "yiisoft/yii2-httpclient",
@@ -8101,22 +8101,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.7.0",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073"
+                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/93d39f1f7f9326d746203c7c056f300f7f126073",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
+                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
                 "sebastian/comparator": "^1.1|^2.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
@@ -8127,7 +8127,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -8160,7 +8160,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-03-02T20:05:34+00:00"
+            "time": "2017-09-04T11:05:03+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
