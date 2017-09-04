@@ -2138,16 +2138,16 @@
         },
         {
             "name": "dektrium/yii2-rbac",
-            "version": "0.3.999",
+            "version": "0.3.999.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr-forks/yii2-rbac.git",
-                "reference": "da10323955b440b0a70b22f364e93025bde97307"
+                "reference": "560043470e92f5f34d04d449384cae0f27ba17b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/yii2-rbac/zipball/da10323955b440b0a70b22f364e93025bde97307",
-                "reference": "da10323955b440b0a70b22f364e93025bde97307",
+                "url": "https://api.github.com/repos/dmstr-forks/yii2-rbac/zipball/560043470e92f5f34d04d449384cae0f27ba17b5",
+                "reference": "560043470e92f5f34d04d449384cae0f27ba17b5",
                 "shasum": ""
             },
             "require": {
@@ -2190,7 +2190,7 @@
                 "issues": "https://github.com/dektrium/yii2-rbac/issues?state=open",
                 "source": "https://github.com/dektrium/yii2-rbac"
             },
-            "time": "2017-01-28T11:59:48+00:00"
+            "time": "2017-09-04T13:25:09+00:00"
         },
         {
             "name": "dektrium/yii2-user",

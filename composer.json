@@ -16,6 +16,7 @@
             "dmstr/*": "source",
             "hrzg/*": "source",
             "schmunk42/*": "source",
+            "dektrium/yii2-rbac": "source",
             "*": "auto"
         },
         "fxp-asset": {
