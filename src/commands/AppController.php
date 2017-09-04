@@ -54,7 +54,7 @@ class AppController extends Controller
     /**
      * Displays application version from APP_VERSION constant.
      */
-    public function actionVersion($alias = '@app/version')
+    public function actionVersion()
     {
         $this->stdout('Application Version: ');
         $this->stdout(getenv('APP_NAME').' ');
@@ -132,39 +132,5 @@ class AppController extends Controller
                 echo $command->getStdErr();
             }
         }
-    }
-
-    /**
-     * Assign role to user
-     *
-     * @param $roleName
-     * @param $userName
-     */
-    public function actionAssign($roleName, $userName)
-    {
-        $userModel = new User();
-        $user = $userModel->finder->findUserByUsername($userName);
-        $manager = \Yii::$app->authManager;
-        $role = $manager->getRole($roleName);
-        $manager->assign($role, $user->id);
-        $this->stdout('Role has been assigned');
-        $this->stdout("\n\nDone.\n");
-    }
-
-    /**
-     * Revoke role from user
-     *
-     * @param $roleName
-     * @param $userName
-     */
-    public function actionRevoke($roleName, $userName)
-    {
-        $userModel = new User();
-        $user = $userModel->finder->findUserByUsername($userName);
-        $manager = \Yii::$app->authManager;
-        $role = $manager->getRole($roleName);
-        $manager->revoke($role, $user->id);
-        $this->stdout('Role has been revoked');
-        $this->stdout("\n\nDone.\n");
     }
 }

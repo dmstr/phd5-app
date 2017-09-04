@@ -9,6 +9,8 @@
  * file that was distributed with this source code
  */
 
+use dektrium\rbac\commands\RbacController;
+
 return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
@@ -16,6 +18,7 @@ return [
         'migrate' => 'dmstr\console\controllers\MigrateController',
         'translate' => 'lajax\translatemanager\commands\TranslatemanagerController',
         'resque' => 'hrzg\resque\commands\ResqueController',
+        'rbac' => RbacController::className(),
         'db' => [
             'class' => 'dmstr\console\controllers\MysqlController',
             'noDataTables' => [
