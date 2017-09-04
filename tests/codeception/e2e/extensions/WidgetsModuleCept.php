@@ -55,7 +55,8 @@ $I->fillField('root[title]', 'This is a test.');
 
 $I->wantTo('ensure ckeditor works inside json editor');
 $I->click('Add Paragraph', 'form#widget-create');
-$I->seeElement('form .cke_toolbar');
+$I->seeElement('form .cke');
+$I->seeElement('form .cke_contents');
 
 $I->makeScreenshot('widgets-backend-create-1');
 

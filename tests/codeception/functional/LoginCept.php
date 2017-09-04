@@ -32,7 +32,7 @@ $I->see('admin');
 $I->see('Widget Content','h4');
 $I->see('Page Tree','h4');
 $I->see('Settings','h4');
-$I->see('Help','h4');
+$I->see('Audit','h4');
 $I->see('Jobs','h4');
 $I->see('Auto-detected modules', 'h3');
 $I->see('filefly','a.btn-app');
