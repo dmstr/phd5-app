@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.1-fpm-3.0-rc1-alpine-nginx-xdebug
+FROM dmstr/php-yii2:7.1-fpm-3.0-rc1-alpine-nginx
 
 COPY ./image-files /
 RUN chmod u+x /usr/local/bin/*
