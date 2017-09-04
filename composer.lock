@@ -607,6 +607,70 @@
             ]
         },
         {
+            "name": "bower-asset/bootstrap-datepicker",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "reference": "4c12834aae54782ca41d9409d6334193f200124d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/4c12834aae54782ca41d9409d6334193f200124d",
+                "reference": "4c12834aae54782ca41d9409d6334193f200124d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1,<4.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-datepicker3.css",
+                    "dist/js/bootstrap-datepicker.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "Apache-2.0"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-daterangepicker",
+            "version": "v2.1.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dangrossman/bootstrap-daterangepicker.git",
+                "reference": "29bbf5a04df69fda363cedb534272ac344524e57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dangrossman/bootstrap-daterangepicker/zipball/29bbf5a04df69fda363cedb534272ac344524e57",
+                "reference": "29bbf5a04df69fda363cedb534272ac344524e57",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1,<4.0",
+                "bower-asset/moment": ">=2.9.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "daterangepicker.js",
+                    "daterangepicker.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "moment.js",
+                    "moment.min.js"
+                ]
+            }
+        },
+        {
             "name": "bower-asset/bootstrap-material-design",
             "version": "v0.5.10",
             "source": {
@@ -1552,6 +1616,39 @@
                 "sift",
                 "sort"
             ]
+        },
+        {
+            "name": "bower-asset/smalot-bootstrap-datetimepicker",
+            "version": "2.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smalot/bootstrap-datetimepicker.git",
+                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smalot/bootstrap-datetimepicker/zipball/32143c8b45575e51c92a8e29997cbe556d1bbba3",
+                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "js/bootstrap-datetimepicker.min.js",
+                    "css/bootstrap-datetimepicker.min.css"
+                ],
+                "bower-asset-ignore": [
+                    "build",
+                    "sample in bootstrap v2",
+                    "sample in bootstrap v3",
+                    "screenshot",
+                    "tests",
+                    ".gitattributes",
+                    ".gitignore",
+                    ".travis.yml",
+                    "minify.sh"
+                ]
+            }
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -2904,16 +3001,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.5.0",
+            "version": "0.6.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "9745031aa25156e0b50baed201b88f2304b35686"
+                "reference": "54be24dde93c569d2fd326507c25c1f5d828aac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/9745031aa25156e0b50baed201b88f2304b35686",
-                "reference": "9745031aa25156e0b50baed201b88f2304b35686",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/54be24dde93c569d2fd326507c25c1f5d828aac6",
+                "reference": "54be24dde93c569d2fd326507c25c1f5d828aac6",
                 "shasum": ""
             },
             "require": {
@@ -2929,7 +3026,7 @@
                 "uran1980/yii2-jquery-essential": "^0.0.6",
                 "yiisoft/yii2": "2.0.*",
                 "yiisoft/yii2-twig": "^2.0.4",
-                "zhuravljov/yii2-datetime-widgets": "~1.0.2"
+                "zhuravljov/yii2-datetime-widgets": "^1.1.0"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2952,7 +3049,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-31T07:00:34+00:00"
+            "time": "2017-09-04T08:28:08+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -6749,26 +6846,31 @@
         },
         {
             "name": "zhuravljov/yii2-datetime-widgets",
-            "version": "1.0.2",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zhuravljov/yii2-datetime-widgets.git",
-                "reference": "36a08908ec0bc3aac9b2273632ce413908b5e9cc"
+                "reference": "cfad2d1a18da4f81f393b4a7468d799e29bd6feb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zhuravljov/yii2-datetime-widgets/zipball/36a08908ec0bc3aac9b2273632ce413908b5e9cc",
-                "reference": "36a08908ec0bc3aac9b2273632ce413908b5e9cc",
+                "url": "https://api.github.com/repos/zhuravljov/yii2-datetime-widgets/zipball/cfad2d1a18da4f81f393b4a7468d799e29bd6feb",
+                "reference": "cfad2d1a18da4f81f393b4a7468d799e29bd6feb",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/moment": "2.*",
-                "yiisoft/yii2": "*"
+                "bower-asset/bootstrap-datepicker": "*",
+                "bower-asset/bootstrap-daterangepicker": "*",
+                "bower-asset/moment": "*",
+                "bower-asset/smalot-bootstrap-datetimepicker": "*",
+                "php": ">=5.5.0",
+                "yiisoft/yii2": "~2.0.0",
+                "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "zhuravljov\\widgets\\": ""
+                    "zhuravljov\\yii\\widgets\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6782,16 +6884,14 @@
                 }
             ],
             "description": "Datetime widgets for Yii2.",
-            "homepage": "https://github.com/zhuravljov/yii2-datetime-widgets",
             "keywords": [
                 "DateTimePicker",
                 "datepicker",
                 "daterangepicker",
-                "extension",
                 "widget",
                 "yii"
             ],
-            "time": "2015-08-10T10:05:33+00:00"
+            "time": "2017-08-09T23:01:37+00:00"
         }
     ],
     "packages-dev": [
@@ -10268,7 +10368,7 @@
         "dmstr/phd5-docs": 10,
         "dmstr/yii2-backend-module": 10,
         "dmstr/yii2-migrate-command": 10,
-        "dmstr/yii2-widgets2-module": 10,
+        "dmstr/yii2-widgets2-module": 5,
         "pheme/yii2-settings": 10,
         "roave/security-advisories": 20
     },
