@@ -45,10 +45,12 @@ upgrade: ##@development update application package, pull, rebuild
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
 	$(DOCKER_COMPOSE) run --rm php composer update -v
-	$(DOCKER_COMPOSE) build --pull
 
 dist-upgrade: build update
 dist-upgrade: ##@development update application package, pull, rebuild
+	$(MAKE) build
+	$(MAKE) upgrade
+	$(MAKE) build
 
 assets:	 ##@development open application development bash
 	#
