@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title .= 'Home';
+$this->title .= Yii::t('app', '__TITLE_HOME__');
 ?>
 
 <div class="site-index">
