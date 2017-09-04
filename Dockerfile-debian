@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.1-fpm-3.0-rc1-nginx
+FROM dmstr/php-yii2:7.1-fpm-3.1-rc1-nginx
 
 COPY ./image-files /
 
