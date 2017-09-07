@@ -140,7 +140,7 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'fileTransportPath' => '@runtime/mail',
             'enableSwiftMailerLogging' => true,
-            'useFileTransport' => YII_ENV_TEST,
+            'useFileTransport' => getenv('APP_MAILER_USE_FILE_TRANSPORT'),
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => getenv('APP_MAILER_HOST'),
