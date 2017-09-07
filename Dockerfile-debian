@@ -1,9 +1,6 @@
-FROM dmstr/php-yii2:7.1-fpm-3.1-rc1-nginx
+FROM dmstr/php-yii2:7.1-fpm-3.1-rc3-nginx
 
 COPY ./image-files /
-
-# TODO: Remove when Patched plugin with skip-update
-RUN rm -rf ~/.composer/vendor && composer global install
 
 # Application packages
 WORKDIR /app
