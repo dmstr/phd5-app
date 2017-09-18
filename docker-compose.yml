@@ -1,10 +1,5 @@
 version: '2'
 services:
     php:
-    worker:
-      command: 'yii resque/work "*"'
-      depends_on:
-        - db
-        - redis
     redis:
         image: redis:3
