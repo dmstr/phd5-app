@@ -125,16 +125,16 @@
         },
         {
             "name": "2amigos/yii2-selectize-widget",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/yii2-selectize-widget.git",
-                "reference": "9a276016e34817fb8be80cdfabfa3a77ef927408"
+                "reference": "9762a34d1095f15b60f46b876dad245011755bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-selectize-widget/zipball/9a276016e34817fb8be80cdfabfa3a77ef927408",
-                "reference": "9a276016e34817fb8be80cdfabfa3a77ef927408",
+                "url": "https://api.github.com/repos/2amigos/yii2-selectize-widget/zipball/9762a34d1095f15b60f46b876dad245011755bfc",
+                "reference": "9762a34d1095f15b60f46b876dad245011755bfc",
                 "shasum": ""
             },
             "require": {
@@ -178,7 +178,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2017-08-04T15:30:03+00:00"
+            "time": "2017-09-19T22:02:33+00:00"
         },
         {
             "name": "2amigos/yii2-translateable-behavior",
@@ -265,16 +265,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.9",
+            "version": "3.36.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7b89fa65cccb966da1599b715dcea8c09eafc175"
+                "reference": "8dfd5056007909cffaa6a344a20b88716deba753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7b89fa65cccb966da1599b715dcea8c09eafc175",
-                "reference": "7b89fa65cccb966da1599b715dcea8c09eafc175",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8dfd5056007909cffaa6a344a20b88716deba753",
+                "reference": "8dfd5056007909cffaa6a344a20b88716deba753",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +341,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-09-15T19:12:04+00:00"
+            "time": "2017-09-20T22:14:51+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2394,16 +2394,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.6.0-rc2",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "d269717d0e48100a87339eb148bf5c3f3cea19c6"
+                "reference": "046182fe631ff7f0cd0f605c9fed174d352fb0a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/d269717d0e48100a87339eb148bf5c3f3cea19c6",
-                "reference": "d269717d0e48100a87339eb148bf5c3f3cea19c6",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/046182fe631ff7f0cd0f605c9fed174d352fb0a9",
+                "reference": "046182fe631ff7f0cd0f605c9fed174d352fb0a9",
                 "shasum": ""
             },
             "require": {
@@ -2439,7 +2439,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-09-01T14:16:43+00:00"
+            "time": "2017-09-21T06:35:16+00:00"
         },
         {
             "name": "dmstr/yii2-contact-module",
@@ -2575,16 +2575,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.11-rc6",
+            "version": "0.6.11-rc7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "20f3865a2054ed071f2073057caa4f84c111689f"
+                "reference": "ed3e224d407673285a388f95afac2b373fc53c0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/20f3865a2054ed071f2073057caa4f84c111689f",
-                "reference": "20f3865a2054ed071f2073057caa4f84c111689f",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/ed3e224d407673285a388f95afac2b373fc53c0e",
+                "reference": "ed3e224d407673285a388f95afac2b373fc53c0e",
                 "shasum": ""
             },
             "require": {
@@ -2622,7 +2622,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-15T10:16:47+00:00"
+            "time": "2017-08-21T14:57:34+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
@@ -4251,16 +4251,16 @@
         },
         {
             "name": "loveorigami/yii2-notification-wrapper",
-            "version": "6.4",
+            "version": "6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/loveorigami/yii2-notification-wrapper.git",
-                "reference": "b16059e46dae703408bf9cf4903e04c4a9f4da3a"
+                "reference": "e4fca256172b76e644f247b29d964e0085954702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loveorigami/yii2-notification-wrapper/zipball/b16059e46dae703408bf9cf4903e04c4a9f4da3a",
-                "reference": "b16059e46dae703408bf9cf4903e04c4a9f4da3a",
+                "url": "https://api.github.com/repos/loveorigami/yii2-notification-wrapper/zipball/e4fca256172b76e644f247b29d964e0085954702",
+                "reference": "e4fca256172b76e644f247b29d964e0085954702",
                 "shasum": ""
             },
             "require": {
@@ -10433,7 +10433,6 @@
         "dmstr/yii2-backend-module": 10,
         "dmstr/yii2-migrate-command": 10,
         "dmstr/yii2-widgets2-module": 5,
-        "pheme/yii2-settings": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

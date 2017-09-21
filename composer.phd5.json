@@ -34,7 +34,7 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.1",
         "mexitek/phpcolors": "^0.4.0",
-        "pheme/yii2-settings": "^0.5.0-beta",
+        "pheme/yii2-settings": "^0.5.0",
         "phpoffice/phpexcel": "^1.8",
         "roave/security-advisories": "dev-master",
         "romdim/yii2-bootstrap-material": "^1.0",
