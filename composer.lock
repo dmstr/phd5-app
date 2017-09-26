@@ -2309,34 +2309,6 @@
             "time": "2014-12-16T14:27:06+00:00"
         },
         {
-            "name": "dmstr/phd5-docs",
-            "version": "5.0.0-beta40",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmstr/phd5-docs.git",
-                "reference": "8f82f132083c89c806f9affee490451c7445d5cd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/phd5-docs/zipball/8f82f132083c89c806f9affee490451c7445d5cd",
-                "reference": "8f82f132083c89c806f9affee490451c7445d5cd",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Munk",
-                    "email": "tobias@diemeisterei.de"
-                }
-            ],
-            "description": "Documentation for phd5",
-            "time": "2017-07-14T07:34:00+00:00"
-        },
-        {
             "name": "dmstr/yii2-adminlte-asset",
             "version": "2.5.0-rc1",
             "source": {
@@ -10433,7 +10405,6 @@
     "aliases": [],
     "minimum-stability": "RC",
     "stability-flags": {
-        "dmstr/phd5-docs": 10,
         "dmstr/yii2-backend-module": 10,
         "dmstr/yii2-migrate-command": 10,
         "dmstr/yii2-widgets2-module": 5,

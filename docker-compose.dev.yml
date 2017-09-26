@@ -23,8 +23,6 @@ services:
       - PHP_USER_ID=82
       # For composer usage in container
       - GITHUB_API_TOKEN
-      #- APP_NAME=${APP_NAME}
-      - APP_ADMIN_EMAIL=${APP_ADMIN_EMAIL}
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache
