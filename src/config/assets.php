@@ -4,7 +4,7 @@
  * Note that in the console environment, some path aliases like '@webroot' and '@web' may not exist.
  * Please define these missing path aliases.
  */
-$bashPath = '@app/../web/bundles';
+$basePath = '@app/../web/bundles';
 $baseUrl = '@web/bundles';
 
 $commonBundles = [
@@ -43,7 +43,7 @@ return [
     'targets' => [
         'frontend' => [
             'class' => 'yii\web\AssetBundle',
-            'basePath' => $bashPath,
+            'basePath' => $basePath,
             'baseUrl' => $baseUrl,
             'js' => 'frontend-{hash}.js',
             'css' => 'frontend-{hash}.css',
@@ -51,7 +51,7 @@ return [
         ],
         'backend' => [
             'class' => 'yii\web\AssetBundle',
-            'basePath' => $bashPath,
+            'basePath' => $basePath,
             'baseUrl' => $baseUrl,
             'js' => 'backend-{hash}.js',
             'css' => 'backend-{hash}.css',
@@ -59,7 +59,7 @@ return [
         ],
         'all' => [
             'class' => 'yii\web\AssetBundle',
-            'basePath' => $bashPath,
+            'basePath' => $basePath,
             'baseUrl' => $baseUrl,
             'js' => 'common-{hash}.js',
             'css' => 'common-{hash}.css',
