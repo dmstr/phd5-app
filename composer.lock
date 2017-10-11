@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c83767d1a33dbed103bf229b649fa3b",
+    "content-hash": "37efa908b0111623e9b4fa8f6bf4ea60",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -225,16 +225,16 @@
         },
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v2.4.2",
+            "version": "v2.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "156f56c3c183a3b8486c47b122c7fa8819510a90"
+                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/156f56c3c183a3b8486c47b122c7fa8819510a90",
-                "reference": "156f56c3c183a3b8486c47b122c7fa8819510a90",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/2be703222af2edcb87e562d3da2299e4352bff8a",
+                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a",
                 "shasum": ""
             },
             "type": "library",
@@ -249,7 +249,7 @@
                 }
             ],
             "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "https://adminlte.io/",
+            "homepage": "http://almsaeedstudio.com/",
             "keywords": [
                 "JS",
                 "admin",
@@ -261,7 +261,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2017-10-09T16:32:18+00:00"
+            "time": "2017-01-08T21:03:57+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -2344,20 +2344,20 @@
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.5.0-rc1",
+            "version": "2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "2dd0e2b38bf57b76fdcf65c5363a1fafe8e0bc7c"
+                "reference": "7195b4c7833af6774ac0e5958de4a5d56f3251ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/2dd0e2b38bf57b76fdcf65c5363a1fafe8e0bc7c",
-                "reference": "2dd0e2b38bf57b76fdcf65c5363a1fafe8e0bc7c",
+                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/7195b4c7833af6774ac0e5958de4a5d56f3251ba",
+                "reference": "7195b4c7833af6774ac0e5958de4a5d56f3251ba",
                 "shasum": ""
             },
             "require": {
-                "almasaeed2010/adminlte": "^2.4.0",
+                "almasaeed2010/adminlte": "~2.0 <2.4.0",
                 "cebe/yii2-gravatar": "1.*",
                 "rmrevin/yii2-fontawesome": "~2.9",
                 "yiisoft/yii2": "2.*",
@@ -2400,7 +2400,7 @@
                 "theme",
                 "yii2"
             ],
-            "time": "2017-09-25T11:49:16+00:00"
+            "time": "2017-09-25T11:47:24+00:00"
         },
         {
             "name": "dmstr/yii2-backend-module",
@@ -2539,7 +2539,7 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.9.1-rc1",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
@@ -2585,7 +2585,7 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.11-rc7",
+            "version": "0.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
@@ -2779,7 +2779,7 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.21.10-rc1",
+            "version": "0.21.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
@@ -8779,7 +8779,7 @@
         },
         {
             "name": "schmunk42/yii2-markdocs-module",
-            "version": "0.4.0-rc2",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-markdocs-module.git",
@@ -10429,7 +10429,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "stability-flags": {
         "dmstr/yii2-backend-module": 10,
         "dmstr/yii2-migrate-command": 10,
