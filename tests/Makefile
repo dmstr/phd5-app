@@ -63,8 +63,8 @@ lint-composer: ##@development run composer linting
 	#
 	cd ..; \
 	$(DOCKER_COMPOSE) run --rm php composer --no-ansi validate || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show | tee tests/_log/composer-packages.txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o | tee tests/_log/composer-outdated-packages.txt || ERROR=1; \
 	exit ${ERROR}
 
 lint-html:
