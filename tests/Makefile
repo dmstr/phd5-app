@@ -61,6 +61,7 @@ lint-composer: ##@development run composer linting
 	#
 	# Liniting composer configuration
 	#
+	cd ..; \
 	$(DOCKER_COMPOSE) run --rm php composer --no-ansi validate || ERROR=1; \
 	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show || ERROR=1; \
 	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o || ERROR=1; \
