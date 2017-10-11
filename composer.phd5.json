@@ -12,6 +12,7 @@
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "2amigos/yii2-ckeditor-widget": "^2.1.0",
+        "2amigos/yii2-config-kit": "^1.0.0",
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "cinghie/yii2-cookie-consent": "^1.4",
@@ -37,7 +38,6 @@
         "phpoffice/phpexcel": "^1.8",
         "roave/security-advisories": "dev-master",
         "romdim/yii2-bootstrap-material": "^1.0",
-        "sidekit/config": "^1.0.0",
         "thomaspark/bootswatch": "^3.3",
         "trntv/yii2-aceeditor": "^2.0.2",
         "uran1980/yii2-jquery-essential": "^0.0.6",
@@ -51,5 +51,8 @@
     "require-dev": {
         "dmstr/yii2-cms-dev-metapackage": "^1.1.2",
         "codeception/codeception": "^2.2.8"
+    },
+    "conflict": {
+        "bower-asset/yii2-pjax": "2.0.7"
     }
 }
