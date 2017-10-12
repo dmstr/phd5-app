@@ -49,6 +49,7 @@ open-c3:
 
 
 lint-source:	 ##@development run source-code linting
+	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Liniting source-code with cs-fixer, phpmetrics & phpmd
 	#
@@ -58,13 +59,14 @@ lint-source:	 ##@development run source-code linting
 	exit ${ERROR}
 
 lint-composer: ##@development run composer linting
+	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Liniting composer configuration
 	#
 	cd ..; \
 	$(DOCKER_COMPOSE) run --rm php composer --no-ansi validate || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show | tee tests/_log/composer-packages.txt || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o | tee tests/_log/composer-outdated-packages.txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show | tee tests/_log/composer-packages-$(shell cat ../src/version).txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm php composer --no-ansi show -o | tee tests/_log/composer-outdated-packages-$(shell cat ../src/version).txt || ERROR=1; \
 	exit ${ERROR}
 
 lint-html:
