@@ -315,16 +315,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.25",
+            "version": "3.36.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c7a93ab8a4aff2915f4dd1545c99f9f59e13bafd"
+                "reference": "96f2c1525d3fd17a0802329c309c76c01a78aa51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c7a93ab8a4aff2915f4dd1545c99f9f59e13bafd",
-                "reference": "c7a93ab8a4aff2915f4dd1545c99f9f59e13bafd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/96f2c1525d3fd17a0802329c309c76c01a78aa51",
+                "reference": "96f2c1525d3fd17a0802329c309c76c01a78aa51",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-10-11T19:12:01+00:00"
+            "time": "2017-10-12T19:45:50+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2454,16 +2454,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.7.0-beta1",
+            "version": "0.7.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "69849b27a573f88c4a49080ea5bc198b84bdd889"
+                "reference": "f44862a60c7bf0adcd409828b7ffc11671db8ea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/69849b27a573f88c4a49080ea5bc198b84bdd889",
-                "reference": "69849b27a573f88c4a49080ea5bc198b84bdd889",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/f44862a60c7bf0adcd409828b7ffc11671db8ea2",
+                "reference": "f44862a60c7bf0adcd409828b7ffc11671db8ea2",
                 "shasum": ""
             },
             "require": {
@@ -2499,7 +2499,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-10-12T07:02:36+00:00"
+            "time": "2017-10-12T09:46:25+00:00"
         },
         {
             "name": "dmstr/yii2-contact-module",
@@ -2589,16 +2589,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "15e17fc060a4c5654eb9956970aec13ae18a5ce1"
+                "reference": "66e27bc3f8da1fe0ceaa1225253cf3230078131b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/15e17fc060a4c5654eb9956970aec13ae18a5ce1",
-                "reference": "15e17fc060a4c5654eb9956970aec13ae18a5ce1",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/66e27bc3f8da1fe0ceaa1225253cf3230078131b",
+                "reference": "66e27bc3f8da1fe0ceaa1225253cf3230078131b",
                 "shasum": ""
             },
             "require": {
@@ -2631,7 +2631,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-14T06:03:04+00:00"
+            "time": "2017-10-13T09:34:55+00:00"
         },
         {
             "name": "dmstr/yii2-filefly-module",
