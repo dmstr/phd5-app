@@ -359,7 +359,7 @@ INSERT INTO `app_settings` VALUES (20,'string','contact','contact.confirmMail','
 INSERT INTO `app_settings` VALUES (21,'string','contact','contact.fromEmail','example@h17n.de',1,'2017-06-19 12:18:28',NULL);
 INSERT INTO `app_settings` VALUES (22,'string','contact','contact.subject','Contact to our Company',1,'2017-06-19 12:19:06',NULL);
 INSERT INTO `app_settings` VALUES (23,'string','contact','contact.toEmail','example@h17n.de',1,'2017-06-19 12:20:02',NULL);
-INSERT INTO `app_settings` VALUES (24,'string','app.assets','settingsAssetList','app\\assets\\AppAsset',1,'2017-10-16 08:15:02',NULL);
+INSERT INTO `app_settings` VALUES (24,'string','app.assets','settingsAssetList','dmstr\\modules\\prototype\\assets\\DbAsset',1,'2017-10-16 08:15:02','2017-10-16 10:13:44');
 /*!40000 ALTER TABLE `app_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -495,6 +495,7 @@ INSERT INTO `filefly_hashmap` VALUES (38,'fs','root','/',NULL,1,'*','*','*','201
 INSERT INTO `filefly_hashmap` VALUES (39,'fsS3','file','/brand/logo.svg',687,1,NULL,NULL,NULL,'2017-06-19 13:54:34','2017-06-19 13:54:34');
 INSERT INTO `filefly_hashmap` VALUES (40,'fsS3',NULL,'/brand/hrzg',NULL,1,NULL,NULL,NULL,'2017-06-19 13:58:09','2017-06-19 13:58:09');
 INSERT INTO `filefly_hashmap` VALUES (41,'fsS3','file','/brand/hrzg/hrzg-logo.svg',687,1,NULL,NULL,NULL,'2017-06-19 13:58:18','2017-06-19 13:58:28');
+INSERT INTO `filefly_hashmap` VALUES (42,'fsLocal','root','/',NULL,1,'*','*','*','2017-10-16 10:13:17','2017-10-16 10:13:17');
 /*!40000 ALTER TABLE `filefly_hashmap` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -507,4 +508,4 @@ commit;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-16  8:17:05
+-- Dump completed on 2017-10-16 10:16:36
