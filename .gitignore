@@ -17,3 +17,4 @@ local.php
 tests/codeception/_support/_generated
 tests/_log
 .php_cs.cache
+_tmp
