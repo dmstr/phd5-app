@@ -15,10 +15,6 @@ return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
         'audit' => 'bedezign\yii2\audit\commands\AuditController',
-        'migrate' => 'dmstr\console\controllers\MigrateController',
-        'translate' => 'lajax\translatemanager\commands\TranslatemanagerController',
-        'resque' => 'hrzg\resque\commands\ResqueController',
-        'rbac' => RbacController::className(),
         'db' => [
             'class' => 'dmstr\console\controllers\MysqlController',
             'noDataTables' => [
@@ -38,6 +34,19 @@ return [
                 getenv('DATABASE_TABLE_PREFIX').'audit_trail',
             ],
         ],
+        'fs' => [
+            'class' => '\hrzg\filefly\commands\FsController',
+            'filesystemComponents' => [
+                's3' => 'fsS3',
+                'local' => 'fsLocal',
+                'runtime' => 'fsRuntime',
+            ],
+
+        ],
+        'migrate' => 'dmstr\console\controllers\MigrateController',
+        'resque' => 'hrzg\resque\commands\ResqueController',
+        'rbac' => RbacController::className(),
+        'translate' => 'lajax\translatemanager\commands\TranslatemanagerController',
     ],
     'components' => [
         'log' => [

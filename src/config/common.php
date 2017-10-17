@@ -112,6 +112,10 @@ return [
             'prefix' => getenv('APP_NAME').'/public',
             'region' => getenv('AMAZON_S3_BUCKET_REGION'),
         ],
+        'fsRuntime' => [
+            'class' => 'creocoder\flysystem\LocalFilesystem',
+            'path' => '@runtime',
+        ],
         'i18n' => [
             'translations' => [
                 '*' => [
