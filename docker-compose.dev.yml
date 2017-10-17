@@ -20,7 +20,6 @@ services:
     environment:
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
       # For host-volume development (permissions)
-      - PHP_USER_ID=82
       # For composer usage in container
       - GITHUB_API_TOKEN
     volumes:
