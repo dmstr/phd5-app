@@ -315,16 +315,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.27",
+            "version": "3.36.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6a4c2643cd0883987da815f292f07d00ee098622"
+                "reference": "356d36a46e5cfd2f061fa33a5604fa8ab7acf4f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6a4c2643cd0883987da815f292f07d00ee098622",
-                "reference": "6a4c2643cd0883987da815f292f07d00ee098622",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/356d36a46e5cfd2f061fa33a5604fa8ab7acf4f2",
+                "reference": "356d36a46e5cfd2f061fa33a5604fa8ab7acf4f2",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-10-16T18:49:51+00:00"
+            "time": "2017-10-19T17:42:39+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2454,16 +2454,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.7.0-beta2",
+            "version": "0.7.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "f44862a60c7bf0adcd409828b7ffc11671db8ea2"
+                "reference": "23ca6502e7d9394d5626ea3f52130bff964b768b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/f44862a60c7bf0adcd409828b7ffc11671db8ea2",
-                "reference": "f44862a60c7bf0adcd409828b7ffc11671db8ea2",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/23ca6502e7d9394d5626ea3f52130bff964b768b",
+                "reference": "23ca6502e7d9394d5626ea3f52130bff964b768b",
                 "shasum": ""
             },
             "require": {
@@ -2499,7 +2499,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-10-12T09:46:25+00:00"
+            "time": "2017-10-20T10:45:52+00:00"
         },
         {
             "name": "dmstr/yii2-contact-module",
@@ -3061,16 +3061,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.6.0-rc2",
+            "version": "0.6.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "54be24dde93c569d2fd326507c25c1f5d828aac6"
+                "reference": "9e6d1b05f61c5c06eb381ba124cb0eb22e28734f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/54be24dde93c569d2fd326507c25c1f5d828aac6",
-                "reference": "54be24dde93c569d2fd326507c25c1f5d828aac6",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/9e6d1b05f61c5c06eb381ba124cb0eb22e28734f",
+                "reference": "9e6d1b05f61c5c06eb381ba124cb0eb22e28734f",
                 "shasum": ""
             },
             "require": {
@@ -3109,7 +3109,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-09-04T08:28:08+00:00"
+            "time": "2017-10-20T10:48:31+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -4310,16 +4310,16 @@
         },
         {
             "name": "loveorigami/yii2-notification-wrapper",
-            "version": "6.5",
+            "version": "6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/loveorigami/yii2-notification-wrapper.git",
-                "reference": "e4fca256172b76e644f247b29d964e0085954702"
+                "reference": "64c9f7efa6c2a5c09f5386245e681e4bcf5746d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loveorigami/yii2-notification-wrapper/zipball/e4fca256172b76e644f247b29d964e0085954702",
-                "reference": "e4fca256172b76e644f247b29d964e0085954702",
+                "url": "https://api.github.com/repos/loveorigami/yii2-notification-wrapper/zipball/64c9f7efa6c2a5c09f5386245e681e4bcf5746d9",
+                "reference": "64c9f7efa6c2a5c09f5386245e681e4bcf5746d9",
                 "shasum": ""
             },
             "require": {
@@ -5404,16 +5404,16 @@
         },
         {
             "name": "sabre/vobject",
-            "version": "4.1.2",
+            "version": "4.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sabre-io/vobject.git",
-                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c"
+                "reference": "df9916813d1d83e4f761c4cba13361ee74196fac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/vobject/zipball/d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
-                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
+                "url": "https://api.github.com/repos/sabre-io/vobject/zipball/df9916813d1d83e4f761c4cba13361ee74196fac",
+                "reference": "df9916813d1d83e4f761c4cba13361ee74196fac",
                 "shasum": ""
             },
             "require": {
@@ -5422,7 +5422,7 @@
                 "sabre/xml": ">=1.5 <3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*",
+                "phpunit/phpunit": "> 4.8, <6.0.0",
                 "sabre/cs": "^1.0.0"
             },
             "suggest": {
@@ -5497,7 +5497,7 @@
                 "xCal",
                 "xCard"
             ],
-            "time": "2016-12-06T04:14:09+00:00"
+            "time": "2017-10-18T08:29:40+00:00"
         },
         {
             "name": "sabre/xml",
@@ -7926,37 +7926,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -7964,7 +7967,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "nikic/php-parser",
