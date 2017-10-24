@@ -32,6 +32,8 @@ return [
                 getenv('DATABASE_TABLE_PREFIX').'audit_javascript',
                 getenv('DATABASE_TABLE_PREFIX').'audit_mail',
                 getenv('DATABASE_TABLE_PREFIX').'audit_trail',
+                getenv('DATABASE_TABLE_PREFIX').'dmstr_contact_log',
+                'filefly_hashmap', # TODO: fix prefix in module
             ],
         ],
         'fs' => [

@@ -6,10 +6,11 @@
 
 ### 5.0.0 to 5.1.0
 
-- local filesystem `fs` has been renamed to `fsLocal`
 - added host-volume for `src/` in test stack
-- added setting `app.assets` > `settingsAssetList`
+- added _setting_ `app.assets` > `settingsAssetList`
   - use `dmstr\modules\prototype\assets\DbAsset` for **LESS Themes**
+- added application configuration parameter `backend.iframe.name` for **Backend** toolbar  
+- local filesystem `fs` has been renamed to `fsLocal`
 
 ### 5.0.0-beta to 5.0.0
 
