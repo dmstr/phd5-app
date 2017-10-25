@@ -25,6 +25,6 @@ RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
     chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage && \
-    yii asset/compress src/config/assets.php web/bundles/config.php
+    APP_NO_CACHE=1 APP_LANGUAGES=en yii asset/compress src/config/assets.php web/bundles/config.php
 
 VOLUME /mnt/storage
