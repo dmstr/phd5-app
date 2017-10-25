@@ -175,9 +175,12 @@ return [
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
             'baseUrl' => '/',
-            'rules' => [],
+            'rules' => [
+                'img/<path>,<action:stream>' => 'filefly/api'
+            ],
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
+                '#^img/#' => '#^img/#',
                 '#^filefly/api#' => '#^filefly/api#',
             ],
             'languages' => $languages,
