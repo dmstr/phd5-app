@@ -88,7 +88,7 @@ return [
             'class' => 'dektrium\rbac\components\DbManager',
             'defaultRoles' => ['Default'],
         ],
-        'cache' => [
+        'cache' => getenv('APP_NO_CACHE') ? null : [
             'class' => 'yii\redis\Cache',
         ],
         'db' => [
