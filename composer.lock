@@ -1575,16 +1575,16 @@
         },
         {
             "name": "bower-asset/select2",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivaynberg/select2.git",
-                "reference": "16f6b10628f9000918708cef9b3da615119cf6d6"
+                "reference": "ebf10c93db7d6d7a0d1330119d4c6f32cbd231d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivaynberg/select2/zipball/16f6b10628f9000918708cef9b3da615119cf6d6",
-                "reference": "16f6b10628f9000918708cef9b3da615119cf6d6",
+                "url": "https://api.github.com/repos/ivaynberg/select2/zipball/ebf10c93db7d6d7a0d1330119d4c6f32cbd231d7",
+                "reference": "ebf10c93db7d6d7a0d1330119d4c6f32cbd231d7",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -1598,7 +1598,7 @@
                 "MIT"
             ],
             "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
-            "time": "2017-09-24T16:09:35+00:00"
+            "time": "2017-10-25T22:08:18+00:00"
         },
         {
             "name": "bower-asset/selectize",
@@ -2638,16 +2638,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.11",
+            "version": "0.6.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "ed3e224d407673285a388f95afac2b373fc53c0e"
+                "reference": "55e91760c3ba0901d4fc46bbb44ff60b835b168d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/ed3e224d407673285a388f95afac2b373fc53c0e",
-                "reference": "ed3e224d407673285a388f95afac2b373fc53c0e",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/55e91760c3ba0901d4fc46bbb44ff60b835b168d",
+                "reference": "55e91760c3ba0901d4fc46bbb44ff60b835b168d",
                 "shasum": ""
             },
             "require": {
@@ -2685,7 +2685,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-21T14:57:34+00:00"
+            "time": "2017-10-26T09:12:41+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",

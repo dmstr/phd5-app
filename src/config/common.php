@@ -11,6 +11,7 @@
 
 // prepare application languages
 use dmstr\web\AdminLteAsset;
+use hrzg\filefly\components\ImageUrlRule;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -176,11 +177,14 @@ return [
             'enableDefaultLanguageUrlCode' => true,
             'baseUrl' => '/',
             'rules' => [
-                'img/<path>,<action:stream>' => 'filefly/api'
+                [
+                    'class' => ImageUrlRule::class,
+                    'suffix' => ',p'
+                ],
             ],
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
-                '#^img/#' => '#^img/#',
+                '#^img/stream#' => '#^img/stream#',
                 '#^filefly/api#' => '#^filefly/api#',
             ],
             'languages' => $languages,
