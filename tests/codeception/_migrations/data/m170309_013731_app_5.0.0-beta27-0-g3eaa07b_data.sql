@@ -314,6 +314,7 @@ INSERT INTO `app_settings` VALUES (15,'boolean','app.layout','enableTwigNavbar',
 INSERT INTO `app_settings` VALUES (18,'string','app.seo.descriptions','/de/site/index','hallo dies ist ein test',1,'2017-03-07 14:25:21','2017-03-07 14:46:21');
 /*!40000 ALTER TABLE `app_settings` ENABLE KEYS */;
 UNLOCK TABLES;
+INSERT INTO `app_settings` VALUES (27,'boolean','backend.toolbar','useIframe','1',1,'2017-10-27 19:16:34','2017-10-27 19:17:27');
 
 --
 -- Dumping data for table `app_twig`
