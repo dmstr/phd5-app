@@ -11,6 +11,7 @@
   - use `dmstr\modules\prototype\assets\DbAsset` for **LESS Themes**
 - added application configuration parameter `backend.iframe.name` for **Backend** toolbar  
 - local filesystem `fs` has been renamed to `fsLocal`
+- removed default configuration for `guide` and `help` (update backend tests)
 
 ### 5.0.0-beta to 5.0.0
 
