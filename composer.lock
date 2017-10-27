@@ -2229,16 +2229,16 @@
         },
         {
             "name": "dektrium/yii2-rbac",
-            "version": "0.3.999.2",
+            "version": "0.3.999.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr-forks/yii2-rbac.git",
-                "reference": "84bc51875ad0ceaf796d283a9646a5d1da49c6f0"
+                "reference": "092cab1d76a4be5a79825e7ff6e98e724c9cd494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/yii2-rbac/zipball/84bc51875ad0ceaf796d283a9646a5d1da49c6f0",
-                "reference": "84bc51875ad0ceaf796d283a9646a5d1da49c6f0",
+                "url": "https://api.github.com/repos/dmstr-forks/yii2-rbac/zipball/092cab1d76a4be5a79825e7ff6e98e724c9cd494",
+                "reference": "092cab1d76a4be5a79825e7ff6e98e724c9cd494",
                 "shasum": ""
             },
             "require": {
@@ -2281,7 +2281,7 @@
                 "issues": "https://github.com/dektrium/yii2-rbac/issues?state=open",
                 "source": "https://github.com/dektrium/yii2-rbac"
             },
-            "time": "2017-10-27T16:52:13+00:00"
+            "time": "2017-10-27T17:42:18+00:00"
         },
         {
             "name": "dektrium/yii2-user",
@@ -2457,16 +2457,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.7.0-rc3",
+            "version": "0.7.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "34ae66ac903bc86fb278f5500d348aed7afe7c2e"
+                "reference": "39500f86d366555633c2824257e3202f742b7aca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/34ae66ac903bc86fb278f5500d348aed7afe7c2e",
-                "reference": "34ae66ac903bc86fb278f5500d348aed7afe7c2e",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/39500f86d366555633c2824257e3202f742b7aca",
+                "reference": "39500f86d366555633c2824257e3202f742b7aca",
                 "shasum": ""
             },
             "require": {
@@ -2475,7 +2475,7 @@
                 "dmstr/yii2-adminlte-asset": "^2.5.0",
                 "dmstr/yii2-cookie-button": "~0.2",
                 "dmstr/yii2-helpers": "~0.4",
-                "dmstr/yii2-pages-module": "~0.16",
+                "dmstr/yii2-pages-module": "~0.22",
                 "dmstr/yii2-prototype-module": "~0.4",
                 "dmstr/yii2-web": "~0.3",
                 "loveorigami/yii2-notification-wrapper": "^6.3",
@@ -2502,7 +2502,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-10-25T08:59:47+00:00"
+            "time": "2017-10-27T19:29:39+00:00"
         },
         {
             "name": "dmstr/yii2-contact-module",
@@ -2832,16 +2832,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.21.10",
+            "version": "0.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "e9cca31a3ef5ba7c4c9937b9fdd45536eb823768"
+                "reference": "484efcd9ab9c854ebbb8b1000e5d18723c89f254"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/e9cca31a3ef5ba7c4c9937b9fdd45536eb823768",
-                "reference": "e9cca31a3ef5ba7c4c9937b9fdd45536eb823768",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/484efcd9ab9c854ebbb8b1000e5d18723c89f254",
+                "reference": "484efcd9ab9c854ebbb8b1000e5d18723c89f254",
                 "shasum": ""
             },
             "require": {
@@ -2886,7 +2886,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2017-08-14T06:49:07+00:00"
+            "time": "2017-10-27T19:25:39+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -10438,7 +10438,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dmstr/yii2-backend-module": 10,
+        "dmstr/yii2-backend-module": 5,
         "dmstr/yii2-migrate-command": 10,
         "dmstr/yii2-widgets2-module": 5,
         "roave/security-advisories": 20

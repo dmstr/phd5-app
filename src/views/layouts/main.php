@@ -126,7 +126,7 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 ]) ?>
 
 <?php if (Yii::$app->user->can('backend_default_index')): ?>
-    <?= Toolbar::widget() ?>
+    <?= Toolbar::widget(['useIframe'=>Yii::$app->settings->get('useIframe', 'backend.toolbar')]) ?>
 <?php endif; ?>
 
 <?php $this->endBody() ?>
