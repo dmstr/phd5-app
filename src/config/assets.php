@@ -4,6 +4,10 @@
  * Note that in the console environment, some path aliases like '@webroot' and '@web' may not exist.
  * Please define these missing path aliases.
  */
+
+use lo\modules\noty\assets\GrowlAsset;
+use yii\authclient\widgets\AuthChoiceAsset;
+
 $basePath = '@app/../web/bundles';
 $baseUrl = '@web/bundles';
 
@@ -16,6 +20,8 @@ $commonBundles = [
     \yii\web\AssetBundle::className(),
     \yii\web\JqueryAsset::className(),
     \yii\validators\ValidationAsset::className(),
+    AuthChoiceAsset::className(),
+    GrowlAsset::className()
 ];
 
 $frontendBundles = [
