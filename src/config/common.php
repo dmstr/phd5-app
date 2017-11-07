@@ -208,7 +208,7 @@ return [
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
                             // preset example, when using imageproxy, https://github.com/willnorris/imageproxy#examples
-                            return Yii::$app->settings->get('imgBaseUrl','app.frontend').
+                            return Yii::$app->settings->get('imgBaseUrl', 'app.frontend').
                                 $preset.
                                 Yii::$app->settings->get('imgHostPrefix', 'app.frontend').
                                 $imageSource.
