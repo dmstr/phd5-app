@@ -199,10 +199,20 @@ return [
                         'auto_reload' => true,
                     ],
                     'globals' => [
-                        'html' => ['class'=>'\yii\helpers\Html'],
+                        'Html' => ['class'=>'\yii\helpers\Html'],
+                        'Json' => ['class'=>'\yii\helpers\Json'],
                         'Tree' => ['class'=>'\dmstr\modules\pages\models\Tree'],
                         'FA' => ['class'=>'\rmrevin\yii\fontawesome\FA'],
                         'Url' => ['class'=>'\hrzg\filemanager\helpers\Url'],
+                    ],
+                    'functions' => [
+                        'image' => function ($imageSource, $preset = null) {
+                            return Yii::$app->settings->get('imgBaseUrl','app.frontend').
+                                $preset.
+                                Yii::$app->settings->get('imgHostPrefix', 'app.frontend').
+                                $imageSource.
+                                Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
+                        }
                     ],
                     'uses' => [
                         'yii\bootstrap',
