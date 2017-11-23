@@ -59,6 +59,8 @@ return [
     'aliases' => [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
         'storage' => '/mnt/storage',
+        'bower' => '@vendor/bower',
+        'npm' => '@vendor/npm',
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),

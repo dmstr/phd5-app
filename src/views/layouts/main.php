@@ -100,7 +100,8 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 </footer>
 
 <!-- Info Modal -->
-<div id="phd-info-button" style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
+<div id="phd-info-button"
+     style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
     <p>
         <?= Html::a(
             '<i class="fa fa-heartbeat"></i>',
@@ -126,7 +127,13 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 ]) ?>
 
 <?php if (Yii::$app->user->can('backend_default_index')): ?>
-    <?= Toolbar::widget(['useIframe'=>Yii::$app->settings->get('useIframe', 'backend.toolbar')]) ?>
+    <?= Toolbar::widget([
+        'useIframe' => \Yii::$app->settings->getOrSet(
+            'useIframe',
+            false,
+            'backend.toolbar',
+            'boolean'),
+    ]) ?>
 <?php endif; ?>
 
 <?php $this->endBody() ?>
