@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.1-fpm-3.1-alpine-nginx
+FROM dmstr/php-yii2:7.1-fpm-3.2-alpine-nginx
 
 # System files
 COPY ./image-files /
