@@ -57,7 +57,7 @@ services:
       context: .
       # FLAVOUR can be undefinied OR -debian
       # undefined == alpine base image
-      # -dabien   == debian base image
+      # -debian   == debian base image
       dockerfile: Dockerfile${FLAVOUR}
     image: ${STACK_PHP_IMAGE}${FLAVOUR}
 
