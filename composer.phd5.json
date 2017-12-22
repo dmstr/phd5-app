@@ -7,6 +7,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/yii2-flysystem.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/cmrcx-phptidy"
         }
     ],
     "require": {
@@ -54,6 +58,8 @@
         "codeception/codeception": "^2.2.8"
     },
     "conflict": {
-        "bower-asset/yii2-pjax": "2.0.7"
+        "bower-asset/yii2-pjax": "2.0.7",
+        "bower-asset/jquery-growl": "1.3.3",
+        "bedezign/yii2-audit": "^1.0.12"
     }
 }

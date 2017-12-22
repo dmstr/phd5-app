@@ -1,5 +1,10 @@
 FROM dmstr/php-yii2:7.1-fpm-3.2-alpine-nginx
 
+RUN apk add --update $PHPIZE_DEPS \
+ && pecl install mailparse \
+ && docker-php-ext-enable mailparse \
+ && apk del $PHPIZE_DEPS
+
 # System files
 COPY ./image-files /
 RUN chmod u+x /usr/local/bin/*

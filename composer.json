@@ -29,7 +29,7 @@
             },
             "git-skip-update": "2 days",
             "pattern-skip-version": "(-build|-patch)",
-            "optimize-with-installed-packages": true
+            "optimize-with-installed-packages": false
         }
     }
 }
