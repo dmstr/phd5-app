@@ -10,6 +10,7 @@
  */
 
 use dektrium\rbac\commands\RbacController;
+use hrzg\widget\commands\CopyController;
 
 return [
     'controllerNamespace' => 'app\commands',
@@ -49,6 +50,7 @@ return [
         'resque' => 'hrzg\resque\commands\ResqueController',
         'rbac' => RbacController::className(),
         'translate' => 'lajax\translatemanager\commands\TranslatemanagerController',
+        'widgets-copy' => CopyController::class
     ],
     'components' => [
         'log' => [
