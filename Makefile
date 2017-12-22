@@ -57,8 +57,14 @@ assets:	 ##@development open application development bash
 	#
 	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress src/config/assets.php web/bundles/config.php
 
-latest: ##@development push to latest (release) branch
+latest: ##@development push to latest branch
 	#
 	# Pushing to latest branch
 	#
 	git push origin master:latest
+
+release: ##@development push to release branch
+	#
+	# Pushing to latest branch
+	#
+	git push origin master:release
