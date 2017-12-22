@@ -19,7 +19,9 @@ use yii\web\Controller;
 class SiteController extends Controller
 {
     use AccessBehaviorTrait;
-    
+
+    public $defaultAction = 'node';
+
     /**
      * Renders the start page.
      *
@@ -28,5 +30,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionNode()
+    {
+        $rootNodeQuery = \dmstr\modules\pages\models\Tree::find()->where(['domain_id' => 'root']);
+        $rootNode = $rootNodeQuery->one();
+        return $this->run('/pages/default/page', ['pageId' => $rootNode->id]);
     }
 }
