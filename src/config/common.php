@@ -139,7 +139,7 @@ return [
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],
                     'logVars' => [],
-                    'replaceNewline' => ''
+                    'replaceNewline' => (APP_TYPE == 'console') ? null : '',
                 ],
             ],
         ],
