@@ -15,13 +15,13 @@ services:
       - 80
     depends_on:
       - db
-      - mailcatcher
       - redis
     environment:
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
       # For host-volume development (permissions)
       # For composer usage in container
       - GITHUB_API_TOKEN
+      - APP_MAILER_USE_FILE_TRANSPORT=1
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
@@ -36,8 +36,3 @@ services:
       - MYSQL_ROOT_PASSWORD=secret
     ports:
       - '3306'
-
-  mailcatcher:
-    image: nisenabe/mailcatcher
-    ports:
-      - '1080'
