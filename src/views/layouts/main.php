@@ -33,7 +33,8 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
         \yii\web\View::EVENT_AFTER_RENDER,
         function ($e) {
             $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
-        });
+        }
+    );
 }
 
 // SEO
@@ -132,7 +133,8 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
             'useIframe',
             false,
             'backend.toolbar',
-            'boolean'),
+            'boolean'
+        ),
     ]) ?>
 <?php endif; ?>
 

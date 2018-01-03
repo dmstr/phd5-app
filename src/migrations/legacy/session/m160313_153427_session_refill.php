@@ -6,7 +6,8 @@ class m160313_153427_session_refill extends Migration
 {
     public function up()
     {
-        $this->execute(<<<SQL
+        $this->execute(
+            <<<SQL
 INSERT INTO {{%session}} (id, expire, data)
 SELECT id, expire, data FROM __tmp_session
 SQL
