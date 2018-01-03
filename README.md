@@ -17,8 +17,8 @@ TL;dr
 
 ### Requirements
 
-- docker `>=1.11`
-- docker-compose `>=1.10.0`
+- docker `>=17.05`
+- docker-compose `>=1.16.0`
 - make (optional)
 
 ### Development
