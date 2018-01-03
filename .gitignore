@@ -1,20 +1,21 @@
 .idea
-_artifacts
+_host-volumes
 
 .env
 src/app.env
 src/version
 
 vendor
-web/bundles
-
 runtime
+web/bundles
 web/assets
+tests/codeception/_output
 
 docker-compose.override.yml
-tests/codeception/_output
+
 local.php
 tests/codeception/_support/_generated
 tests/_log
+
 .php_cs.cache
-_tmp
+
