@@ -20,8 +20,6 @@ class SiteController extends Controller
 {
     use AccessBehaviorTrait;
 
-    public $defaultAction = 'node';
-
     /**
      * Renders the start page.
      *
@@ -32,7 +30,7 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionNode()
+    public function actionRootNode()
     {
         $rootNodeQuery = \dmstr\modules\pages\models\Tree::find()->where(['domain_id' => 'root']);
         $rootNode = $rootNodeQuery->one();
