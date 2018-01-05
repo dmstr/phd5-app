@@ -15,6 +15,7 @@
         "2amigos/yii2-config-kit": "^1.0.0",
         "2amigos/yii2-selectize-widget": "^1.0",
         "2amigos/yii2-translateable-behavior": "^0.1.2",
+        "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
         "dektrium/yii2-rbac": "^0.3.999.3",
         "dektrium/yii2-user": "^0.9.12",
