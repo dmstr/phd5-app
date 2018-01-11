@@ -25,7 +25,7 @@
         "dmstr/yii2-filemanager-widgets": "^0.6.0",
         "dmstr/yii2-prototype-module": "^0.5.1",
         "dmstr/yii2-resque-module": "^0.3",
-        "dmstr/yii2-widgets2-module": "^0.4.1",
+        "dmstr/yii2-widgets2-module": "^0.6",
         "knplabs/github-api": "^1.7",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.1",

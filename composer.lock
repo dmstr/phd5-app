@@ -504,7 +504,8 @@
             },
             "license": [
                 "MIT"
-            ]
+            ],
+            "time": "2017-01-12T23:44:31+00:00"
         },
         {
             "name": "bower-asset/angular-sanitize",
@@ -530,7 +531,8 @@
             },
             "license": [
                 "MIT"
-            ]
+            ],
+            "time": "2017-01-12T23:44:32+00:00"
         },
         {
             "name": "bower-asset/angular-translate",
@@ -557,7 +559,8 @@
             "license": [
                 "MIT"
             ],
-            "description": "A translation module for AngularJS"
+            "description": "A translation module for AngularJS",
+            "time": "2016-02-21T12:31:55+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -606,7 +609,74 @@
                 "mobile-first",
                 "responsive",
                 "web"
-            ]
+            ],
+            "time": "2016-07-25T15:51:54+00:00"
+        },
+        {
+            "name": "bower-asset/bootstrap-datepicker",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "reference": "4c12834aae54782ca41d9409d6334193f200124d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/4c12834aae54782ca41d9409d6334193f200124d",
+                "reference": "4c12834aae54782ca41d9409d6334193f200124d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1,<4.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/css/bootstrap-datepicker3.css",
+                    "dist/js/bootstrap-datepicker.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "time": "2017-07-06T12:14:29+00:00"
+        },
+        {
+            "name": "bower-asset/bootstrap-daterangepicker",
+            "version": "v2.1.27",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dangrossman/bootstrap-daterangepicker.git",
+                "reference": "d4aabfbceaf57117e1af33f3f82e92162719eee9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dangrossman/bootstrap-daterangepicker/zipball/d4aabfbceaf57117e1af33f3f82e92162719eee9",
+                "reference": "d4aabfbceaf57117e1af33f3f82e92162719eee9",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1,<4.0",
+                "bower-asset/moment": ">=2.9.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "daterangepicker.js",
+                    "daterangepicker.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "moment.js",
+                    "moment.min.js"
+                ]
+            },
+            "time": "2017-12-12T08:45:02+00:00"
         },
         {
             "name": "bower-asset/bootstrap-material-design",
@@ -736,7 +806,8 @@
             "license": [
                 "MIT"
             ],
-            "description": "Simple HTML5 Charts using the canvas element"
+            "description": "Simple HTML5 Charts using the canvas element",
+            "time": "2016-06-14T23:32:24+00:00"
         },
         {
             "name": "bower-asset/clipboard",
@@ -774,7 +845,8 @@
                 "clipboard",
                 "copy",
                 "cut"
-            ]
+            ],
+            "time": "2016-12-12T13:54:35+00:00"
         },
         {
             "name": "bower-asset/cookieconsent2",
@@ -809,7 +881,8 @@
                 "cookie",
                 "cookieconsent",
                 "law"
-            ]
+            ],
+            "time": "2016-08-31T16:20:45+00:00"
         },
         {
             "name": "bower-asset/jquery",
@@ -848,12 +921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/carhartl/jquery-cookie.git",
-                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66"
+                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
-                "reference": "92b7715518f2e6e90f4cfc7a07f9726a614ebe66",
+                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
+                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
                 "shasum": ""
             },
             "require": {
@@ -872,7 +945,8 @@
                     "*.txt",
                     "Gruntfile.js"
                 ]
-            }
+            },
+            "time": "2014-04-27T20:07:15+00:00"
         },
         {
             "name": "bower-asset/jquery-form",
@@ -921,12 +995,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ksylvest/jquery-growl.git",
-                "reference": "88e3d86c109ed28cec6a53253c002783759180f8"
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/88e3d86c109ed28cec6a53253c002783759180f8",
-                "reference": "88e3d86c109ed28cec6a53253c002783759180f8",
+                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/eb8a8d4308b024510a6f168179986df6b46ed423",
+                "reference": "eb8a8d4308b024510a6f168179986df6b46ed423",
                 "shasum": ""
             },
             "require": {
@@ -963,7 +1037,8 @@
                     "*jquery.json",
                     "index*"
                 ]
-            }
+            },
+            "time": "2016-08-02T15:31:24+00:00"
         },
         {
             "name": "bower-asset/jquery-mousewheel",
@@ -994,7 +1069,8 @@
                     "Gruntfile.js",
                     "test"
                 ]
-            }
+            },
+            "time": "2015-06-19T19:45:38+00:00"
         },
         {
             "name": "bower-asset/jquery-ui",
@@ -1019,7 +1095,8 @@
                     "jquery-ui.js"
                 ],
                 "bower-asset-ignore": []
-            }
+            },
+            "time": "2015-03-13T14:48:12+00:00"
         },
         {
             "name": "bower-asset/jquery.easing",
@@ -1027,12 +1104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jozefizso/bower-jquery-easing.git",
-                "reference": "72fec3d9126601939239cb85364dbdb771884380"
+                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/72fec3d9126601939239cb85364dbdb771884380",
-                "reference": "72fec3d9126601939239cb85364dbdb771884380",
+                "url": "https://api.github.com/repos/jozefizso/bower-jquery-easing/zipball/7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
+                "reference": "7ddc8b25d24c78bbae8d00a3ae43bf3f274ec8b5",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1131,8 @@
                 "easing",
                 "jquery",
                 "jquery plugin"
-            ]
+            ],
+            "time": "2014-10-06T09:09:59+00:00"
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -1116,7 +1194,7 @@
             ]
         },
         {
-            "name": "bower-asset/jquery.scrollTo",
+            "name": "bower-asset/jquery.scrollto",
             "version": "2.1.2",
             "source": {
                 "type": "git",
@@ -1157,7 +1235,8 @@
                 "links",
                 "scroll",
                 "scrolling"
-            ]
+            ],
+            "time": "2015-09-24T17:46:31+00:00"
         },
         {
             "name": "bower-asset/json-editor",
@@ -1197,7 +1276,8 @@
                 "json",
                 "jsonschema",
                 "schema"
-            ]
+            ],
+            "time": "2016-08-07T16:07:24+00:00"
         },
         {
             "name": "bower-asset/jsoneditor",
@@ -1235,7 +1315,8 @@
                     ".gitignore"
                 ]
             },
-            "description": "A web-based tool to view, edit and format JSON"
+            "description": "A web-based tool to view, edit and format JSON",
+            "time": "2015-01-25T14:12:20+00:00"
         },
         {
             "name": "bower-asset/microplugin",
@@ -1273,7 +1354,8 @@
                 "extensibility",
                 "plugins",
                 "require"
-            ]
+            ],
+            "time": "2013-09-15T07:31:22+00:00"
         },
         {
             "name": "bower-asset/moment",
@@ -1342,7 +1424,8 @@
             "license": [
                 "MIT"
             ],
-            "description": "Lightweight Angular JS directive to upload files. Support drag&drop, paste image, progress and abort"
+            "description": "Lightweight Angular JS directive to upload files. Support drag&drop, paste image, progress and abort",
+            "time": "2016-11-05T04:30:52+00:00"
         },
         {
             "name": "bower-asset/ngclipboard",
@@ -1398,7 +1481,8 @@
                 "bower-asset-main": "js/noty/packaged/jquery.noty.packaged.js",
                 "bower-asset-ignore": []
             },
-            "description": "noty - a jQuery notification plugin"
+            "description": "noty - a jQuery notification plugin",
+            "time": "2017-02-16T04:28:54+00:00"
         },
         {
             "name": "bower-asset/punycode",
@@ -1426,7 +1510,8 @@
                     "node_modules",
                     "package.json"
                 ]
-            }
+            },
+            "time": "2014-10-22T12:02:42+00:00"
         },
         {
             "name": "bower-asset/selectize",
@@ -1486,7 +1571,8 @@
                 "tag",
                 "tagging",
                 "ui"
-            ]
+            ],
+            "time": "2016-10-12T20:22:59+00:00"
         },
         {
             "name": "bower-asset/sifter",
@@ -1530,7 +1616,42 @@
                 "search",
                 "sift",
                 "sort"
-            ]
+            ],
+            "time": "2016-09-15T20:20:24+00:00"
+        },
+        {
+            "name": "bower-asset/smalot-bootstrap-datetimepicker",
+            "version": "2.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smalot/bootstrap-datetimepicker.git",
+                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smalot/bootstrap-datetimepicker/zipball/32143c8b45575e51c92a8e29997cbe556d1bbba3",
+                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "js/bootstrap-datetimepicker.min.js",
+                    "css/bootstrap-datetimepicker.min.css"
+                ],
+                "bower-asset-ignore": [
+                    "build",
+                    "sample in bootstrap v2",
+                    "sample in bootstrap v3",
+                    "screenshot",
+                    "tests",
+                    ".gitattributes",
+                    ".gitignore",
+                    ".travis.yml",
+                    "minify.sh"
+                ]
+            },
+            "time": "2017-03-03T10:00:24+00:00"
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -2479,16 +2600,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.8.11",
+            "version": "0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "5eed0fbb0c713ed651fedc0b827b40fb7414134c"
+                "reference": "b368a85dc70c2feff9cf7ab0670d01d097706ee7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/5eed0fbb0c713ed651fedc0b827b40fb7414134c",
-                "reference": "5eed0fbb0c713ed651fedc0b827b40fb7414134c",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/b368a85dc70c2feff9cf7ab0670d01d097706ee7",
+                "reference": "b368a85dc70c2feff9cf7ab0670d01d097706ee7",
                 "shasum": ""
             },
             "require": {
@@ -2521,7 +2642,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-17T22:33:01+00:00"
+            "time": "2017-10-16T08:11:34+00:00"
         },
         {
             "name": "dmstr/yii2-filefly-module",
@@ -3002,31 +3123,32 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.4.19",
+            "version": "0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "393a05e6005c3101961a0142b558b3f1ab3c1fd9"
+                "reference": "cb3d14f66cc915822f3946472a2b14bae38d9b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/393a05e6005c3101961a0142b558b3f1ab3c1fd9",
-                "reference": "393a05e6005c3101961a0142b558b3f1ab3c1fd9",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/cb3d14f66cc915822f3946472a2b14bae38d9b35",
+                "reference": "cb3d14f66cc915822f3946472a2b14bae38d9b35",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-ckeditor-widget": "^2.0.2",
                 "bedezign/yii2-audit": "^1.0",
                 "beowulfenator/yii2-json-editor": "^1.1",
-                "dmstr/yii2-db": "^0.8.0",
-                "dmstr/yii2-web": ">=0.3.1",
+                "dmstr/yii2-db": "^0.8.0 || ^0.9.0",
+                "dmstr/yii2-web": "^0.3.1 || ^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
                 "rmrevin/yii2-fontawesome": "~2.9",
                 "scrivo/highlight.php": "~8.0",
                 "uran1980/yii2-jquery-essential": "^0.0.6",
                 "yiisoft/yii2": "2.0.*",
-                "yiisoft/yii2-twig": "^2.0.4"
+                "yiisoft/yii2-twig": "^2.0.4",
+                "zhuravljov/yii2-datetime-widgets": "^1.1.0"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -3049,7 +3171,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-04-26T08:54:56+00:00"
+            "time": "2017-12-12T07:45:41+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -6734,26 +6856,31 @@
         },
         {
             "name": "zhuravljov/yii2-datetime-widgets",
-            "version": "1.0.2",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zhuravljov/yii2-datetime-widgets.git",
-                "reference": "36a08908ec0bc3aac9b2273632ce413908b5e9cc"
+                "reference": "cfad2d1a18da4f81f393b4a7468d799e29bd6feb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zhuravljov/yii2-datetime-widgets/zipball/36a08908ec0bc3aac9b2273632ce413908b5e9cc",
-                "reference": "36a08908ec0bc3aac9b2273632ce413908b5e9cc",
+                "url": "https://api.github.com/repos/zhuravljov/yii2-datetime-widgets/zipball/cfad2d1a18da4f81f393b4a7468d799e29bd6feb",
+                "reference": "cfad2d1a18da4f81f393b4a7468d799e29bd6feb",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/moment": "2.*",
-                "yiisoft/yii2": "*"
+                "bower-asset/bootstrap-datepicker": "*",
+                "bower-asset/bootstrap-daterangepicker": "*",
+                "bower-asset/moment": "*",
+                "bower-asset/smalot-bootstrap-datetimepicker": "*",
+                "php": ">=5.5.0",
+                "yiisoft/yii2": "~2.0.0",
+                "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "zhuravljov\\widgets\\": ""
+                    "zhuravljov\\yii\\widgets\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6767,16 +6894,14 @@
                 }
             ],
             "description": "Datetime widgets for Yii2.",
-            "homepage": "https://github.com/zhuravljov/yii2-datetime-widgets",
             "keywords": [
                 "DateTimePicker",
                 "datepicker",
                 "daterangepicker",
-                "extension",
                 "widget",
                 "yii"
             ],
-            "time": "2015-08-10T10:05:33+00:00"
+            "time": "2017-08-09T23:01:37+00:00"
         }
     ],
     "packages-dev": [
@@ -6845,12 +6970,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/typeahead.js.git",
-                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f"
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/87de059a7820b1e223f1c704fa12a624dbce3a4f",
-                "reference": "87de059a7820b1e223f1c704fa12a624dbce3a4f",
+                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/588440f66559714280628a4f9799f0c4eb880a4a",
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a",
                 "shasum": ""
             },
             "require": {
@@ -6864,7 +6989,8 @@
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
-            }
+            },
+            "time": "2015-04-27T04:02:14+00:00"
         },
         {
             "name": "cebe/js-search",
@@ -7146,6 +7272,7 @@
                 }
             ],
             "description": "Content Management Development Extensions for Phundament 4 (Yii 2.0 Framework)",
+            "abandoned": true,
             "time": "2016-11-18T12:47:07+00:00"
         },
         {
