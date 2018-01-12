@@ -205,7 +205,8 @@ return [
                         'Json' => ['class' => '\yii\helpers\Json'],
                         'Tree' => ['class' => '\dmstr\modules\pages\models\Tree'],
                         'FA' => ['class' => '\rmrevin\yii\fontawesome\FA'],
-                        'Url' => ['class' => '\hrzg\filemanager\helpers\Url'],
+                        'FileUrl' => ['class' => '\hrzg\filemanager\helpers\Url'],
+                        'Url' => ['class' => '\yii\helpers\Url'],
                     ],
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
