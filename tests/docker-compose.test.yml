@@ -42,6 +42,8 @@ services:
     volumes:
       - ./tests:/app/tests
       - ./src:/app/src
+      # Host-volume for MySQL dumps
+      - ./_host-volumes/test-runtime/mysql:/app/runtime/mysql:delegated
       # Settings for local test-development
       #- ./web:/app/web
       #- ./vendor:/app/vendor

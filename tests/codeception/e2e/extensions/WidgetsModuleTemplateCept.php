@@ -12,5 +12,6 @@ $I->login('admin', 'admin1');
 $I->amGoingTo('check widget-templates');
 
 $I->amOnPage('/widgets/crud/widget-template/create');
+$I->waitForElement('form');
 $I->see('Create', 'button');
 $I->makeScreenshot('widget-templates');
