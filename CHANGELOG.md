@@ -3,6 +3,7 @@
 ### dev
 
 - changed global Twig class `Url` to `FileUrl`, added standard Yii helper `Url`
+- changed global layout `TwigWidget` from `_top` to `_beginBody`, added `_endBody`
 
 ### 5.1.0-rc5
 
