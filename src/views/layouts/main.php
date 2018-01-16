@@ -76,7 +76,7 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
     'linkSelector' => '.frontend-reload',
 ]) ?>
 
-<?= TwigWidget::widget(['key' => '_top', 'renderEmpty' => false]) ?>
+<?= TwigWidget::widget(['key' => '_beginBody', 'renderEmpty' => false]) ?>
 
 <!-- Navbar -->
 <?php
@@ -126,6 +126,8 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
         'timeout' => 4000,
     ],
 ]) ?>
+
+<?= TwigWidget::widget(['key' => '_endBody', 'renderEmpty' => false]) ?>
 
 <?php if (Yii::$app->user->can('backend_default_index')): ?>
     <?= Toolbar::widget([
