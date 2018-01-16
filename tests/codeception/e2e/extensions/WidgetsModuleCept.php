@@ -27,17 +27,17 @@ $I->amGoingTo('create a widget from a container');
 
 $I->comment('Mouse-over first container');
 $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
-$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success', 2);
-$I->click('#cell-header .hrzg-widget-container-controls .btn-success');
+$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-primary', 2);
+$I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
 // TODO: fixme
 $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul', 2);
-$I->click('#cell-header .hrzg-widget-container-controls .btn-success');
+$I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
 $I->waitForElementNotVisible('#cell-header .hrzg-widget-container-controls ul', 2);
 
 $I->comment('Mouse-over second container');
 $I->moveMouseOver('#cell-container.hrzg-widget-widget-container');
-$I->waitForElementVisible('#cell-container .hrzg-widget-container-controls .btn-success', 2);
-$I->click('#cell-container .hrzg-widget-container-controls .btn-success');
+$I->waitForElementVisible('#cell-container .hrzg-widget-container-controls .btn-primary', 2);
+$I->click('#cell-container .hrzg-widget-container-controls .btn-primary');
 $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls ul', 2);
 $I->click('Content', '#cell-container .hrzg-widget-container-controls ul');
 
@@ -57,5 +57,5 @@ $I->makeScreenshot('widgets-backend-create-1');
 $I->click('Create');
 
 $I->wait(2);
-
+$I->amOnPage('/widgets/test/index');
 $I->see('This is a test.', 'h2');
