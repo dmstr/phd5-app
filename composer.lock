@@ -8,32 +8,30 @@
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
-            "version": "2.0.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/yii2-chartjs-widget.git",
-                "reference": "9e9c55212f80870820739a3b6e5deea88789876a"
+                "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-chartjs-widget/zipball/9e9c55212f80870820739a3b6e5deea88789876a",
-                "reference": "9e9c55212f80870820739a3b6e5deea88789876a",
+                "url": "https://api.github.com/repos/2amigos/yii2-chartjs-widget/zipball/a5246d9bb491ef4ff82915dccc6980ed17ed0873",
+                "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/chartjs": "2.1.6",
-                "yiisoft/yii2": "*"
+                "bower-asset/chartjs": "~2.6",
+                "yiisoft/yii2": "~2.0.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "~4.4"
             },
             "type": "yii2-extension",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
-                },
-                "asset-installer-paths": {
-                    "bower-asset-library": "vendor/bower"
                 }
             },
             "autoload": {
@@ -64,7 +62,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2016-07-09T19:09:35+00:00"
+            "time": "2017-07-26T09:24:16+00:00"
         },
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -345,25 +343,28 @@
         },
         {
             "name": "bedezign/yii2-audit",
-            "version": "1.0.11",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bedezign/yii2-audit.git",
-                "reference": "4482324795c14fea9e07b0fb0cb045edfce1b48c"
+                "reference": "b41dff53a3a0e723328e785412eb0ad6399fde7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/4482324795c14fea9e07b0fb0cb045edfce1b48c",
-                "reference": "4482324795c14fea9e07b0fb0cb045edfce1b48c",
+                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/b41dff53a3a0e723328e785412eb0ad6399fde7d",
+                "reference": "b41dff53a3a0e723328e785412eb0ad6399fde7d",
                 "shasum": ""
             },
             "require": {
-                "2amigos/yii2-chartjs-widget": "2.0.1 || 3.*",
+                "2amigos/yii2-chartjs-widget": "^2.0.1",
                 "ext-bcmath": "*",
                 "php": ">=5.4.0",
                 "phpspec/php-diff": "1.*",
-                "yiisoft/yii2": "2.*",
-                "yiisoft/yii2-debug": "2.*"
+                "yiisoft/yii2": "^2.0.13",
+                "yiisoft/yii2-debug": "^2.0.7"
+            },
+            "suggest": {
+                "php-mime-mail-parser/php-mime-mail-parser": "Allows better displaying of logged emails."
             },
             "type": "yii2-extension",
             "extra": {
@@ -376,7 +377,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD 3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
@@ -402,7 +403,7 @@
                 "trail",
                 "yii2"
             ],
-            "time": "2017-04-15T01:38:46+00:00"
+            "time": "2018-01-20T20:17:54+00:00"
         },
         {
             "name": "beowulfenator/yii2-json-editor",
@@ -679,32 +680,35 @@
         },
         {
             "name": "bower-asset/chartjs",
-            "version": "v2.1.6",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nnnick/Chart.js.git",
-                "reference": "07662b158d829f395b2c97d732e60599b8b5c4e4"
+                "reference": "0fead21939b92c15093c1b7d5ee2627fb5900fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nnnick/Chart.js/zipball/07662b158d829f395b2c97d732e60599b8b5c4e4",
-                "reference": "07662b158d829f395b2c97d732e60599b8b5c4e4",
+                "url": "https://api.github.com/repos/nnnick/Chart.js/zipball/0fead21939b92c15093c1b7d5ee2627fb5900fff",
+                "reference": "0fead21939b92c15093c1b7d5ee2627fb5900fff",
                 "shasum": ""
-            },
-            "require-dev": {
-                "bower-asset/jquery": "~2.1.4"
             },
             "type": "bower-asset-library",
             "extra": {
-                "bower-asset-main": [
-                    "dist/Chart.js"
+                "bower-asset-main": "./dist/Chart.js",
+                "bower-asset-ignore": [
+                    ".github",
+                    ".codeclimate.yml",
+                    ".gitignore",
+                    ".npmignore",
+                    ".travis.yml",
+                    "scripts"
                 ]
             },
             "license": [
                 "MIT"
             ],
-            "description": "Simple HTML5 Charts using the canvas element",
-            "time": "2016-06-14T23:32:24+00:00"
+            "description": "Simple HTML5 charts using the canvas element.",
+            "time": "2017-10-28T15:01:52+00:00"
         },
         {
             "name": "bower-asset/clipboard",
@@ -2816,20 +2820,20 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.22.3",
+            "version": "0.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "0e25804f178745033d7c662712a7882f2d55fbbf"
+                "reference": "ff11f5bb1eb0ec5fc551d8057cb644844d4e3884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/0e25804f178745033d7c662712a7882f2d55fbbf",
-                "reference": "0e25804f178745033d7c662712a7882f2d55fbbf",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/ff11f5bb1eb0ec5fc551d8057cb644844d4e3884",
+                "reference": "ff11f5bb1eb0ec5fc551d8057cb644844d4e3884",
                 "shasum": ""
             },
             "require": {
-                "bedezign/yii2-audit": "^1.0",
+                "bedezign/yii2-audit": "^1.1",
                 "devgroup/yii2-jsoneditor": "1.0.*",
                 "dmstr/yii2-db": "^0.8.0 || ^0.9.0",
                 "dmstr/yii2-web": "^0.4.0",
@@ -2837,8 +2841,12 @@
                 "kartik-v/yii2-tree-manager": ">=1.0.3 <=1.0.5",
                 "kartik-v/yii2-widget-select2": "^2.0.1",
                 "mikehaertl/php-shellcommand": "^1.2.4",
+                "pheme/yii2-settings": "^0.5.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
-                "yiisoft/yii2": "^2.0.6"
+                "yiisoft/yii2": "^2.0.13"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.2"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2870,7 +2878,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2018-01-12T16:09:15+00:00"
+            "time": "2018-01-29T11:06:21+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
