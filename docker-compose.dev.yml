@@ -21,7 +21,11 @@ services:
       # For host-volume development (permissions)
       # For composer usage in container
       - GITHUB_API_TOKEN
+      - YII_ENV=dev
+      - YII_DEBUG=1
       - APP_MAILER_USE_FILE_TRANSPORT=1
+      - APP_ADMIN_PASSWORD=admin1
+      - APP_ADMIN_EMAIL=admin@local.develop
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
