@@ -1,9 +1,5 @@
 # Upgrading
 
-### 5.1.0 to 5.2.0
-
-- update `composer.json` settings
-
 ### 5.0.0 to 5.1.0
 
 - added host-volume for `src/` in test stack
