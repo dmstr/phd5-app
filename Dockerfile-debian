@@ -18,7 +18,6 @@ RUN composer install --prefer-dist --optimize-autoloader && \
 COPY yii /app/
 COPY ./web /app/web/
 COPY ./src /app/src/
-RUN cp src/app.env-dist src/app.env
 
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \

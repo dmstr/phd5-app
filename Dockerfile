@@ -19,7 +19,6 @@ RUN composer install --prefer-dist --optimize-autoloader && \
 COPY yii /app/
 COPY ./web /app/web/
 COPY ./src /app/src/
-RUN cp src/app.env-dist src/app.env
 
 # Permissions; run yii commands as webserver user
 ENV PHP_USER_ID=82

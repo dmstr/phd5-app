@@ -23,7 +23,6 @@ init:   ##@development initialize development environment
 	#
 	cp -n .env-dist .env &2>/dev/null
 	cp -n tests/.env-dist tests/.env &2>/dev/null
-	cp -n src/app.env-dist src/app.env &2>/dev/null
 	mkdir -p web/assets runtime
 
 bash:	 ##@development run application bash in one-off container

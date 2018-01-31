@@ -22,7 +22,7 @@ if (getenv('ENV_LOCAL_FILE')) {
 }
 
 // Load application environment configuration
-$dotenv = new Dotenv\Dotenv($srcPath, 'app.env');
+$dotenv = new Dotenv\Dotenv($srcPath, '/config/env-defaults');
 $dotenv->load();
 
 // Basic checks & validation
