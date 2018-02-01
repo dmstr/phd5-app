@@ -9,6 +9,8 @@
  * file that was distributed with this source code
  */
 
+use yii\helpers\ArrayHelper;
+
 // prepare application languages
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -57,8 +59,8 @@ return [
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
-        'yii.migrations' => [
-            getenv('APP_MIGRATION_LOOKUP'),
+        'yii.migrations' => ArrayHelper::merge(explode(',', getenv('APP_MIGRATION_LOOKUP')),
+        [
             '@yii/rbac/migrations',
             '@yii/web/migrations',
             '@bedezign/yii2/audit/migrations',
@@ -68,7 +70,7 @@ return [
             '@vendor/lajax/yii2-translate-manager/migrations',
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
-        ],
+        ]),
     ],
     'components' => [
         'assetManager' => [
