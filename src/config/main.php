@@ -64,7 +64,8 @@ return call_user_func(function () {
         }
         $config = \yii\helpers\ArrayHelper::merge(
             $config,
-            require $file);
+            require $file
+        );
     }
 
     return $config;
