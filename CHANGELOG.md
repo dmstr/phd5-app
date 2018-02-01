@@ -2,7 +2,8 @@
 
 ### dev
 
-- disabled user registration
+- disabled user registration by default
+- `APP_MIGRATION_LOOKUP` accepts a comma separated list of path-aliases
 - refactored ENV variables
 
 ### 5.1.0-rc6
