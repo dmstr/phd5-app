@@ -12,6 +12,7 @@
 // prepare application languages
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
+use yii\helpers\ArrayHelper;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -65,8 +66,8 @@ return [
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
-        'yii.migrations' => [
-            getenv('APP_MIGRATION_LOOKUP'),
+        'yii.migrations' => ArrayHelper::merge(explode(',', getenv('APP_MIGRATION_LOOKUP')),
+       [
             '@yii/rbac/migrations',
             '@yii/web/migrations',
             '@bedezign/yii2/audit/migrations',
@@ -76,7 +77,7 @@ return [
             '@vendor/lajax/yii2-translate-manager/migrations',
             '@vendor/pheme/yii2-settings/migrations',
             '@vendor/dmstr/yii2-prototype-module/src/migrations',
-        ],
+        ]),
         'backend.iframe.name' => 'backend-'.getenv('HOSTNAME'),
     ],
     'components' => [
