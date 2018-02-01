@@ -31,6 +31,8 @@ services:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./composer.json:/app/composer.json:delegated
       - ./composer.lock:/app/composer.lock:delegated
+      - ./src:/app/src
+      - ./vendor:/app/vendor
       - ./_host-volumes/runtime/mysql:/app/runtime/mysql:delegated
 
   db:
