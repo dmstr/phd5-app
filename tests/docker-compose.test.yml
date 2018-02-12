@@ -84,6 +84,6 @@ services:
       - /dev/shm:/dev/shm
 
   mailcatcher:
-    image: nisenabe/mailcatcher
+    image: tophfr/mailcatcher
     ports:
       - '1080'
