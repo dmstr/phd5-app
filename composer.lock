@@ -3059,16 +3059,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.6.2",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "77256cd9a7792fd45cd357bb001ade1ed5822472"
+                "reference": "11add81a9992db8358a9b7da78f0ca2f9221c295"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/77256cd9a7792fd45cd357bb001ade1ed5822472",
-                "reference": "77256cd9a7792fd45cd357bb001ade1ed5822472",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/11add81a9992db8358a9b7da78f0ca2f9221c295",
+                "reference": "11add81a9992db8358a9b7da78f0ca2f9221c295",
                 "shasum": ""
             },
             "require": {
@@ -3107,7 +3107,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-01-12T16:05:06+00:00"
+            "time": "2018-02-23T09:14:12+00:00"
         },
         {
             "name": "doctrine/lexer",
