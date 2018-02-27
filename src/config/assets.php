@@ -24,6 +24,10 @@ $commonBundles = [
     GrowlAsset::className()
 ];
 
+$bootstrapBundles = [
+    \yii\bootstrap\BootstrapAsset::class
+];
+
 $frontendBundles = [
     \app\assets\AppAsset::className(),
 ];
@@ -43,7 +47,8 @@ return [
     'bundles' => \yii\helpers\ArrayHelper::merge(
         $commonBundles,
         $frontendBundles,
-        $backendBundles
+        $backendBundles,
+        $bootstrapBundles
     ),
     // Asset bundle for compression output:
     'targets' => [
@@ -62,6 +67,14 @@ return [
             'js' => 'backend-{hash}.js',
             'css' => 'backend-{hash}.css',
             'depends' => $backendBundles,
+        ],
+        'bootstrap' => [
+            'class' => 'yii\web\AssetBundle',
+            'basePath' => $basePath,
+            'baseUrl' => $baseUrl,
+            'js' => 'bootstrap-{hash}.js',
+            'css' => 'bootstrap-{hash}.css',
+            'depends' => $bootstrapBundles,
         ],
         'all' => [
             'class' => 'yii\web\AssetBundle',

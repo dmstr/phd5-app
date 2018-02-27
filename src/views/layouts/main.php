@@ -33,6 +33,7 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
         \yii\web\View::EVENT_AFTER_RENDER,
         function ($e) {
             $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
+            $e->sender->assetBundles['bootstrap'] = null;
         }
     );
 }
