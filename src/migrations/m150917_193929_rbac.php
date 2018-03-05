@@ -15,7 +15,7 @@ class m150917_193929_rbac extends Migration
             $auth->add($guest);
 
             $editor = $auth->createRole('Editor');
-            $editor->description = 'prototype editor';
+            $editor->description = 'Prototype editor';
             $auth->add($editor);
 
             $permission = $auth->createPermission('backend_default');
