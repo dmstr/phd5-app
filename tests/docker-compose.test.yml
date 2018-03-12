@@ -3,7 +3,7 @@
 #
 # Paths in this file are relative to the project root
 
-version: '2'
+version: '3.2'
 services:
 
   php:
@@ -40,8 +40,14 @@ services:
 
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
     volumes:
-      - ./tests:/app/tests
-      - ./src:/app/src
+      - type: bind
+        source: ./tests
+        target: /app/tests
+        consistency: delegated
+      - type: bind
+        source: ./src
+        target: /app/src
+        consistency: cached
       # Host-volume for MySQL dumps
       #- ./_host-volumes/test-runtime/mysql:/app/runtime/mysql:delegated
       # Settings for local test-development

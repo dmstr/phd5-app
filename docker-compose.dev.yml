@@ -2,7 +2,7 @@
 #
 # Variables are populated with values from `.env`
 #
-version: '2'
+version: '3.2'
 services:
   php:
     build:
@@ -28,12 +28,30 @@ services:
       - APP_ADMIN_EMAIL=admin@local.develop
     volumes:
       # Re-use local composer cache via host-volume
-      - ~/.composer-docker/cache:/root/.composer/cache:delegated
-      - ./composer.json:/app/composer.json:delegated
-      - ./composer.lock:/app/composer.lock:delegated
-      - ./src:/app/src
-      - ./vendor:/app/vendor
-      - ./_host-volumes/runtime/mysql:/app/runtime/mysql:delegated
+      - type: bind
+        source: $HOME/.composer-docker/cache
+        target: /root/.composer/cache
+        consistency: delegated
+      - type: bind
+        source: ./composer.json
+        target: /app/composer.json
+        consistency: cached
+      - type: bind
+        source: ./composer.lock
+        target: /app/composer.lock
+        consistency: cached
+      - type: bind
+        source: ./src
+        target: /app/src
+        consistency: cached
+      - type: bind
+        source: ./vendor
+        target: /app/vendor
+        consistency: delegated
+      - type: bind
+        source: ./_host-volumes/runtime/mysql
+        target: /app/runtime/mysql
+        consistency: delegated
 
   db:
     command: --character-set-server=utf8 --collation-server=utf8_general_ci
