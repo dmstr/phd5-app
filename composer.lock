@@ -2275,16 +2275,16 @@
         },
         {
             "name": "dektrium/yii2-user",
-            "version": "0.9.13",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dektrium/yii2-user.git",
-                "reference": "120ab9eeadfbfbb9e594509b5ad1c98a128fbd9a"
+                "reference": "6e841f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dektrium/yii2-user/zipball/120ab9eeadfbfbb9e594509b5ad1c98a128fbd9a",
-                "reference": "120ab9eeadfbfbb9e594509b5ad1c98a128fbd9a",
+                "url": "https://api.github.com/repos/dektrium/yii2-user/zipball/6e841f9",
+                "reference": "6e841f9",
                 "shasum": ""
             },
             "require": {
@@ -2330,7 +2330,7 @@
                 "yii2",
                 "yii2-user"
             ],
-            "time": "2017-12-28T17:35:06+00:00"
+            "time": "2018-01-31T15:54:35+00:00"
         },
         {
             "name": "devgroup/yii2-jsoneditor",
@@ -9821,6 +9821,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "dektrium/yii2-user": 20,
         "dmstr/yii2-migrate-command": 10,
         "roave/security-advisories": 20
     },

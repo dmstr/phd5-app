@@ -314,6 +314,7 @@ return [
             'layout' => '@app/views/layouts/container',
             'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
+            'admins' => ['admin'], // TODO: see https://github.com/dektrium/yii2-user/issues/1016
             'enableFlashMessages' => false,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
         ],

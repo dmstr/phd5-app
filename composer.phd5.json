@@ -17,7 +17,7 @@
         "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
         "dektrium/yii2-rbac": "^0.3.999.4",
-        "dektrium/yii2-user": "^0.9.12",
+        "dektrium/yii2-user": "dev-master#6e841f9",
         "lajax/yii2-translate-manager": "^1.6.0",
         "codemix/yii2-localeurls": "^1.4.12",
         "codemix/yii2-streamlog": "^1.2.1",
