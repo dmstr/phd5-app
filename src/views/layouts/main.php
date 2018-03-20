@@ -32,7 +32,9 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
         \yii\web\View::className(),
         \yii\web\View::EVENT_AFTER_RENDER,
         function ($e) {
+            // disable unbundled asset
             $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
+            // disable bundled asset
             $e->sender->assetBundles['bootstrap'] = null;
         }
     );
