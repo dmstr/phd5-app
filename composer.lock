@@ -2712,16 +2712,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.13",
+            "version": "0.6.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "443c00f381ac9ebf6a0b07006c6e73c105c60485"
+                "reference": "d807397878ed8e6e90595627c2e0c2033458e076"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/443c00f381ac9ebf6a0b07006c6e73c105c60485",
-                "reference": "443c00f381ac9ebf6a0b07006c6e73c105c60485",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/d807397878ed8e6e90595627c2e0c2033458e076",
+                "reference": "d807397878ed8e6e90595627c2e0c2033458e076",
                 "shasum": ""
             },
             "require": {
@@ -2729,7 +2729,7 @@
                 "dmstr/yii2-db": "~0.7",
                 "league/flysystem-sftp": "~1.0",
                 "league/flysystem-webdav": "~1.0",
-                "yiisoft/yii2": "*"
+                "yiisoft/yii2": "~2.0.13"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2759,7 +2759,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-11-07T09:35:19+00:00"
+            "time": "2018-03-20T10:16:09+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
@@ -8146,26 +8146,34 @@
         },
         {
             "name": "schmunk42/yii2-giiant",
-            "version": "0.9.2",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-giiant.git",
-                "reference": "2d20dc96b3ed88a3620613399dec5059c72b0b03"
+                "reference": "b562494bb16012151ff1259f2c7a9c68b72e69d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/2d20dc96b3ed88a3620613399dec5059c72b0b03",
-                "reference": "2d20dc96b3ed88a3620613399dec5059c72b0b03",
+                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/b562494bb16012151ff1259f2c7a9c68b72e69d4",
+                "reference": "b562494bb16012151ff1259f2c7a9c68b72e69d4",
                 "shasum": ""
             },
             "require": {
-                "cmrcx/phptidy": "^3.0",
-                "dmstr/yii2-bootstrap": "^0.1.2 || ~0.2",
+                "cmrcx/phptidy": "^3.1",
+                "dmstr/yii2-bootstrap": "^0.1.2 || ^0.2.1",
                 "dmstr/yii2-db": "*",
                 "dmstr/yii2-helpers": "*",
                 "friendsofphp/php-cs-fixer": "1.* || 2.*",
-                "yiisoft/yii2": "~2.0.4",
-                "yiisoft/yii2-gii": "~2.0.4"
+                "yiisoft/yii2": "~2.0.13",
+                "yiisoft/yii2-codeception": "~2.0.0",
+                "yiisoft/yii2-gii": "~2.0.6"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.2",
+                "codeception/specify": "^0.4",
+                "dmstr/yii2-web": "^0.4.2",
+                "insolita/yii2-adminlte-widgets": "1.1.*",
+                "rmrevin/yii2-fontawesome": "2.*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -8198,7 +8206,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2017-04-10T22:05:32+00:00"
+            "time": "2018-03-15T16:48:19+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -9659,6 +9667,52 @@
                 "yii2"
             ],
             "time": "2016-11-22T15:29:55+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-codeception",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-codeception.git",
+                "reference": "086c8c2d28736e7a484a7a8611b5cc84024e9fb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/086c8c2d28736e7a484a7a8611b5cc84024e9fb3",
+                "reference": "086c8c2d28736e7a484a7a8611b5cc84024e9fb3",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\codeception\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Jebri",
+                    "email": "mark.github@yandex.ru"
+                }
+            ],
+            "description": "The Codeception integration for the Yii framework",
+            "keywords": [
+                "codeception",
+                "yii2"
+            ],
+            "abandoned": "codeception/codeception",
+            "time": "2017-05-22T12:08:21+00:00"
         },
         {
             "name": "yiisoft/yii2-coding-standards",
