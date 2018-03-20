@@ -2,6 +2,8 @@
 
 // @group mandatory
 
+$uniqid = \Codeception\Util\Fixtures::get('uniqid');
+
 $I = new E2eTester($scenario);
 $I->wantTo('ensure that widgets-module works');
 
@@ -51,7 +53,7 @@ $I->waitForElementVisible('#widgetcontent-default_properties_json-container .wel
 
 $I->wantTo('ensure pre-filled values still exist');
 $I->seeInField('#widgetcontent-route','widgets/test/index');
-$I->fillField('root[title]', 'This is a test.');
+$I->fillField('root[title]', 'Title: '.$uniqid);
 
 $I->wantTo('ensure ckeditor works inside json editor');
 $I->click('Add Paragraph', 'form#widget-create');
@@ -64,5 +66,5 @@ $I->click('Create');
 $I->wait(3);
 
 $I->switchToWindow();
-
-$I->see('This is a test.', 'h2');
+//$I->reloadPage();
+$I->see('Title: '.$uniqid, 'h2');
