@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  chrome:
+    image: selenium/standalone-chrome-debug:3.11
+    userns_mode: host
+    ports:
+      - '4444'
+      - '5900'

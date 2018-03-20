@@ -77,6 +77,7 @@ services:
       - '3306'
 
   firefox:
+    # update to version 3 blocked by https://github.com/facebook/php-webdriver/issues/469
     image: selenium/standalone-firefox-debug:2.53.1
     # workaround for Docker Beta, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
     dns: 8.8.4.4

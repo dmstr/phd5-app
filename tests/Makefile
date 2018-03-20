@@ -27,12 +27,12 @@ up-xdebug: ##@development open application development bash with xdebug enabled
 
 run-tests: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
-	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run -x optional --steps --html=_report.html --xml=_report.xml --tap=_report.tap --json=_report.json
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html=_report.html --xml=_report.xml --tap=_report.tap --json=_report.json
 	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > _log/docker.log
 
 run-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
-	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run -x optional --coverage-html --coverage-xml --html --xml
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 
 
 open-vnc: ##@test open application database service in browser
