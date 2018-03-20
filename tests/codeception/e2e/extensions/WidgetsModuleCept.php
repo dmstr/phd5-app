@@ -66,5 +66,5 @@ $I->click('Create');
 $I->wait(3);
 
 $I->switchToWindow();
-//$I->reloadPage();
+$I->reloadPage();
 $I->see('Title: '.$uniqid, 'h2');
