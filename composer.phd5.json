@@ -31,7 +31,7 @@
         "dmstr/yii2-pages-module": ">=0.23.0",
         "dmstr/yii2-prototype-module": "^0.6.0",
         "dmstr/yii2-resque-module": "^0.4.0",
-        "dmstr/yii2-widgets2-module": "^0.6.0",
+        "dmstr/yii2-widgets2-module": "^0.6.6",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
         "mexitek/phpcolors": "^0.4.0",
