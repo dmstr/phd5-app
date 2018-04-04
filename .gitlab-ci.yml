@@ -22,7 +22,7 @@ before_script:
   - docker version
   - docker-compose version
   - echo ${ISOLATION}
-  - echo $(git describe --always --dirty)
+  - echo $(git describe --always --dirty --tags)
   - ([[ $FLAVOUR ]] && echo "build flavour is $FLAVOUR" || echo "build flavour is default/undefinied")
   # initialize environments
   - make init
