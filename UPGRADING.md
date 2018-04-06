@@ -8,6 +8,9 @@
 - added application configuration parameter `backend.iframe.name` for **Backend** toolbar  
 - local filesystem `fs` has been renamed to `fsLocal`
 - removed default configuration for `guide` and `help` (update backend tests)
+- remove `RUN cp src/app.env-dist src/app.env` in `Dockerfile` [phd5-template]
+- remove manual setting of `PHP_USER_ID` (correct value is applied on the base-image according to the Docker image OS)
+- use environment variables with prefix i.e. `DB_ENV_...`
 
 ### 5.0.0-beta to 5.0.0
 

@@ -17,3 +17,4 @@ $I->openFile($rootPath.'/src/version');
 
 $I->dontSeeInThisFile('dev');
 $I->dontSeeInThisFile('dirty');
+$I->dontSeeInThisFile('\n');

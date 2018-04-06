@@ -1,10 +1,10 @@
 # Changelog
 
-### dev
+### 5.1.0
 
 - disabled user registration by default
 - `APP_MIGRATION_LOOKUP` accepts a comma separated list of path-aliases
-- refactored ENV variables
+- refactored ENV variables (moved `src/app.env` to `src/config/env-defaults`)
 
 ### 5.1.0-rc6
 

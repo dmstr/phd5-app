@@ -1,5 +1,8 @@
 version: '3.2'
 services:
+  php:
+    depends_on:
+      - chrome
   chrome:
     image: selenium/standalone-chrome-debug:3.11
     userns_mode: host

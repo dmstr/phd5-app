@@ -4,15 +4,15 @@ TESTER_SERVICE  ?= php
 BROWSER_SERVICE ?= firefox
 COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
 
-all: ##@test [TEST] shorthand for
+all: ##@test complete reinitialization of test-stack
 	$(MAKE) init-tests version build
 	$(MAKE) clean up setup
 
-init-tests:
+init-tests: ##@development initialize test-environment
 	mkdir -p _log/codeception && chmod -R 777 _log/codeception
 	mkdir -p _log/lint && chmod -R 777 _log/lint
 
-version:
+version: ##@development write current version string from git
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
 	@echo $(shell cat ../src/version)
 
