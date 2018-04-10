@@ -9,8 +9,8 @@ all: ##@test complete reinitialization of test-stack
 	$(MAKE) clean up setup
 
 init-tests: ##@development initialize test-environment
-	mkdir -p _log/codeception && chmod -R 777 _log/codeception
-	mkdir -p _log/lint && chmod -R 777 _log/lint
+	mkdir -p _log/codeception && chmod 777 _log/codeception
+	mkdir -p _log/lint && chmod 777 _log/lint
 
 version: ##@development write current version string from git
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
