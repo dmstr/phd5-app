@@ -25,7 +25,7 @@
         "dmstr/yii2-backend-module": "^0.7.1",
         "dmstr/yii2-contact-module": "^0.2.1",
         "dmstr/yii2-redirect-module": "^0.3.1",
-        "dmstr/yii2-filefly-module": "^0.6.14",
+        "dmstr/yii2-filefly-module": "^0.6.16",
         "dmstr/yii2-filemanager-widgets": "^0.6.0",
         "dmstr/yii2-migrate-command": "^0.4.0-beta1",
         "dmstr/yii2-pages-module": ">=0.23.0",
