@@ -12,6 +12,7 @@ web/assets
 tests/codeception/_output
 
 docker-compose.override.yml
+docker-compose.local.yml
 
 local.php
 tests/codeception/_support/_generated

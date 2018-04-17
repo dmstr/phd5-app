@@ -23,3 +23,7 @@
 ### 5.1.0-rc3
 
 - updated base images
+
+### 5.0.0-beta38
+
+- added `APP_USER_ENABLE_REGISTRATION`

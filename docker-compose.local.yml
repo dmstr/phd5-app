@@ -1,0 +1,5 @@
+version: '3.2'
+services:
+  php:
+    environment:
+      - APP_MIGRATION_LOOKUP=@app/migrations/demo-data
