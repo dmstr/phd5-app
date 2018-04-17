@@ -137,7 +137,7 @@ return [
         ],
         'log' => [
             'targets' => [
-                [
+                'common' => [
                     'class' => 'codemix\streamlog\Target',
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],

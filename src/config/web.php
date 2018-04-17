@@ -26,7 +26,7 @@ return [
         'log' => [
             'targets' => [
                 // writes to php-fpm output stream
-                [
+                'web' => [
                     'class' => 'codemix\streamlog\Target',
                     'url' => 'php://stdout',
                     'levels' => ['info', 'trace'],

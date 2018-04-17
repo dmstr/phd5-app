@@ -56,7 +56,7 @@ return [
         'log' => [
             'targets' => [
                 // writes to php-fpm output stream
-                [
+                'console' => [
                     'class' => 'yii\log\FileTarget',
                     'logFile' => '@runtime/logs/console.log',
                     //'levels' => ['info', 'trace'],
