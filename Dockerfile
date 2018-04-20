@@ -20,6 +20,9 @@ COPY yii /app/
 COPY ./web /app/web/
 COPY ./src /app/src/
 
+# Tests source-code for integration tests in derived images
+COPY ./tests /app/tests
+
 # Permissions; run yii commands as webserver user
 ENV PHP_USER_ID=82
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
