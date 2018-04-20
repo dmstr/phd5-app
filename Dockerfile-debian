@@ -2,6 +2,7 @@ FROM dmstr/php-yii2:7.2-fpm-4.2-nginx
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        procps # recommended for dmstr/yii2-resque-module \
  && pecl install mailparse \
  && docker-php-ext-enable mailparse \
  && apt-get remove -y $PHPIZE_DEPS
