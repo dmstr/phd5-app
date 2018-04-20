@@ -8,7 +8,6 @@ src/app.env
 
 data
 vendor
-tests
 
 **/runtime/
 web/assets
