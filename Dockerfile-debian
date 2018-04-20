@@ -20,6 +20,9 @@ COPY yii /app/
 COPY ./web /app/web/
 COPY ./src /app/src/
 
+# Tests source-code for integration tests in derived images
+COPY ./tests /app/tests
+
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
