@@ -26,7 +26,7 @@ return [
     ],
     'modules' => [
         'gii' => [
-            'class' => 'yii\gii\Module',
+            'class' => \yii\gii\Module::class,
             'allowedIPs' => [
                 '127.0.0.1',
                 '::1',

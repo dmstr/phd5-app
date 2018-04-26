@@ -15,9 +15,9 @@ use hrzg\widget\commands\CopyController;
 return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
-        'audit' => 'bedezign\yii2\audit\commands\AuditController',
+        'audit' => \bedezign\yii2\audit\commands\AuditController::class,
         'db' => [
-            'class' => 'dmstr\console\controllers\MysqlController',
+            'class' => \dmstr\console\controllers\MysqlController::class,
             'noDataTables' => [
                 getenv('DATABASE_TABLE_PREFIX').'auth_assignment',
                 getenv('DATABASE_TABLE_PREFIX').'migration',
@@ -38,7 +38,7 @@ return [
             ],
         ],
         'fs' => [
-            'class' => '\hrzg\filefly\commands\FsController',
+            'class' => \hrzg\filefly\commands\FsController::class,
             'filesystemComponents' => [
                 's3' => 'fsS3',
                 'local' => 'fsLocal',
@@ -46,10 +46,10 @@ return [
             ],
 
         ],
-        'migrate' => 'dmstr\console\controllers\MigrateController',
-        'resque' => 'hrzg\resque\commands\ResqueController',
-        'rbac' => RbacController::className(),
-        'translate' => 'lajax\translatemanager\commands\TranslatemanagerController',
+        'migrate' => \dmstr\console\controllers\MigrateController::class,
+        'resque' => \hrzg\resque\commands\ResqueController::class,
+        'rbac' => RbacController::class,
+        'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class,
         'widgets-copy' => CopyController::class
     ],
     'components' => [
@@ -57,7 +57,7 @@ return [
             'targets' => [
                 // writes to php-fpm output stream
                 'console' => [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => \yii\log\FileTarget::class,
                     'logFile' => '@runtime/logs/console.log',
                     //'levels' => ['info', 'trace'],
                     'logVars' => [],

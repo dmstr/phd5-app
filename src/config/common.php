@@ -20,7 +20,7 @@ $languages = explode(',', getenv('APP_LANGUAGES'));
 $bundles = [];
 if (getenv('APP_ASSET_USE_BUNDLED')) {
     // include generated asset-bundle configuration
-    $bundles = include Yii::getAlias('@web/bundles').'/config.php';
+    $bundles = include Yii::getAlias('@web/bundles') . '/config.php';
     // disable loading of bundles skin file, when using bundled assets
     Yii::$container->set(
         AdminLteAsset::className(),
@@ -32,13 +32,13 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
 
 // set redis connection
 \Resque::setBackend(
-    getenv('REDIS_PORT_6379_TCP_ADDR').':'.
+    getenv('REDIS_PORT_6379_TCP_ADDR') . ':' .
     getenv('REDIS_PORT_6379_TCP_PORT')
 );
 
 // custom layout for user module (manage/admin)
 Yii::$container->set(
-    'dektrium\user\controllers\AdminController',
+    \dektrium\user\controllers\AdminController::class,
     [
         'layout' => '@backend/views/layouts/box',
     ]
@@ -49,7 +49,7 @@ return [
     'id' => 'app',
     'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
-    'basePath' => realpath(__DIR__.'/..'),
+    'basePath' => realpath(__DIR__ . '/..'),
     'vendorPath' => '@app/../vendor',
     'runtimePath' => '@app/../runtime',
     // Bootstrapped modules are loaded in every request
@@ -68,7 +68,7 @@ return [
         'context.menuItems' => [],
         'yii.migrations' => ArrayHelper::merge(
             explode(',', getenv('APP_MIGRATION_LOOKUP')),
-           [
+            [
                 '@yii/rbac/migrations',
                 '@yii/web/migrations',
                 '@bedezign/yii2/audit/migrations',
@@ -78,9 +78,10 @@ return [
                 '@vendor/lajax/yii2-translate-manager/migrations',
                 '@vendor/pheme/yii2-settings/migrations',
                 '@vendor/dmstr/yii2-prototype-module/src/migrations',
+                '@dmstr/modules/publication/migrations'
             ]
         ),
-        'backend.iframe.name' => 'backend-'.getenv('HOSTNAME'),
+        'backend.iframe.name' => 'backend-' . getenv('HOSTNAME'),
     ],
     'components' => [
         'assetManager' => [
@@ -91,14 +92,14 @@ return [
             'basePath' => '@app/../web/assets',
         ],
         'authManager' => [
-            'class' => 'dektrium\rbac\components\DbManager',
+            'class' => \dektrium\rbac\components\DbManager::class,
             'defaultRoles' => ['Default'],
         ],
         'cache' => getenv('APP_NO_CACHE') ? null : [
-            'class' => 'yii\redis\Cache',
+            'class' => \yii\redis\Cache::class,
         ],
         'db' => [
-            'class' => 'yii\db\Connection',
+            'class' => \yii\db\Connection::class,
             'dsn' => getenv('DATABASE_DSN'),
             'username' => getenv('DATABASE_USER'),
             'password' => getenv('DATABASE_PASSWORD'),
@@ -107,25 +108,25 @@ return [
             'enableSchemaCache' => !YII_ENV_DEV,
         ],
         'fsLocal' => [
-            'class' => 'creocoder\flysystem\LocalFilesystem',
+            'class' => \creocoder\flysystem\LocalFilesystem::class,
             'path' => '@storage',
         ],
         'fsS3' => [
-            'class' => 'creocoder\flysystem\AwsS3Filesystem',
+            'class' => \creocoder\flysystem\AwsS3Filesystem::class,
             'key' => getenv('AMAZON_S3_BUCKET_PUBLIC_KEY'),
             'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
             'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
-            'prefix' => getenv('APP_NAME').'/public',
+            'prefix' => getenv('APP_NAME') . '/public',
             'region' => getenv('AMAZON_S3_BUCKET_REGION'),
         ],
         'fsRuntime' => [
-            'class' => 'creocoder\flysystem\LocalFilesystem',
+            'class' => \creocoder\flysystem\LocalFilesystem::class,
             'path' => '@runtime',
         ],
         'i18n' => [
             'translations' => [
                 '*' => [
-                    'class' => 'yii\i18n\DbMessageSource',
+                    'class' => \yii\i18n\DbMessageSource::class,
                     'db' => 'db',
                     'sourceLanguage' => 'en',
                     'sourceMessageTable' => '{{%language_source}}',
@@ -138,7 +139,7 @@ return [
         'log' => [
             'targets' => [
                 'common' => [
-                    'class' => 'codemix\streamlog\Target',
+                    'class' => \codemix\streamlog\Target::class,
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],
                     'logVars' => [],
@@ -147,36 +148,36 @@ return [
             ],
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
+            'class' => \yii\swiftmailer\Mailer::class,
             'fileTransportPath' => '@runtime/mail',
             'enableSwiftMailerLogging' => true,
             'useFileTransport' => getenv('APP_MAILER_USE_FILE_TRANSPORT'),
             'transport' => [
-                'class' => 'Swift_SmtpTransport',
+                'class' => Swift_SmtpTransport::class,
                 'host' => getenv('APP_MAILER_HOST'),
                 'username' => getenv('APP_MAILER_USERNAME'),
                 'password' => getenv('APP_MAILER_PASSWORD'),
             ],
         ],
         'redis' => [
-            'class' => 'yii\redis\Connection',
+            'class' => \yii\redis\Connection::class,
             'hostname' => 'redis',
         ],
         'session' => [
-            'class' => 'yii\web\DbSession',
+            'class' => \yii\web\DbSession::class
         ],
         'settings' => [
-            'class' => 'pheme\settings\components\Settings',
+            'class' => \pheme\settings\components\Settings::class
         ],
         'user' => [
-            'class' => 'dmstr\web\User',
+            'class' => \dmstr\web\User::class,
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/security/login'],
-            'identityClass' => 'dektrium\user\models\User',
+            'identityClass' => \dektrium\user\models\User::class,
             'rootUsers' => ['admin'],
         ],
         'urlManager' => [
-            'class' => 'codemix\localeurls\UrlManager',
+            'class' => \codemix\localeurls\UrlManager::class,
             'enablePrettyUrl' => getenv('APP_PRETTY_URLS'),
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
@@ -198,26 +199,26 @@ return [
             'class' => 'yii\web\View',
             'renderers' => [
                 'twig' => [
-                    'class' => 'yii\twig\ViewRenderer',
+                    'class' => \yii\twig\ViewRenderer::class,
                     'cachePath' => '@runtime/Twig/cache',
                     'options' => [
                         'auto_reload' => true,
                     ],
                     'globals' => [
-                        'Html' => ['class' => '\yii\helpers\Html'],
-                        'Json' => ['class' => '\yii\helpers\Json'],
-                        'Tree' => ['class' => '\dmstr\modules\pages\models\Tree'],
-                        'FA' => ['class' => '\rmrevin\yii\fontawesome\FA'],
-                        'FileUrl' => ['class' => '\hrzg\filemanager\helpers\Url'],
-                        'Url' => ['class' => '\yii\helpers\Url'],
+                        'Html' => ['class' => \yii\helpers\Html::class],
+                        'Json' => ['class' => \yii\helpers\Json::class],
+                        'Tree' => ['class' => \dmstr\modules\pages\models\Tree::class],
+                        'FA' => ['class' => \rmrevin\yii\fontawesome\FA::class],
+                        'FileUrl' => ['class' => \hrzg\filemanager\helpers\Url::class],
+                        'Url' => ['class' => \yii\helpers\Url::class],
                     ],
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
                             // preset example, when using imageproxy, https://github.com/willnorris/imageproxy#examples
-                            return Yii::$app->settings->get('imgBaseUrl', 'app.frontend').
-                                $preset.
-                                Yii::$app->settings->get('imgHostPrefix', 'app.frontend').
-                                $imageSource.
+                            return Yii::$app->settings->get('imgBaseUrl', 'app.frontend') .
+                                $preset .
+                                Yii::$app->settings->get('imgHostPrefix', 'app.frontend') .
+                                $imageSource .
                                 Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
                         },
                     ],
@@ -230,7 +231,7 @@ return [
     ],
     'modules' => [
         'audit' => [
-            'class' => 'bedezign\yii2\audit\Audit',
+            'class' => \bedezign\yii2\audit\Audit::class,
             'accessRoles' => ['audit-module'],
             'layout' => '@backend/views/layouts/box',
             'panels' => [
@@ -262,7 +263,7 @@ return [
             'maxAge' => 7,
         ],
         'backend' => [
-            'class' => 'dmstr\modules\backend\Module',
+            'class' => \dmstr\modules\backend\Module::class,
             'layout' => '@backend/views/layouts/main',
             'modulesDashboardBlacklist' => [
                 'noty',
@@ -270,47 +271,50 @@ return [
             ],
         ],
         'contact' => [
-            'class' => 'dmstr\modules\contact\Module',
+            'class' => \dmstr\modules\contact\Module::class,
             'layout' => '@backend/views/layouts/main',
         ],
         'filefly' => [
-            'class' => 'hrzg\filefly\Module',
+            'class' => \hrzg\filefly\Module::class,
             'layout' => '@backend/views/layouts/main',
             'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
         ],
         'noty' => [
-            'class' => 'lo\modules\noty\Module',
+            'class' => \lo\modules\noty\Module::class,
         ],
         'pages' => [
-            'class' => 'dmstr\modules\pages\Module',
+            'class' => \dmstr\modules\pages\Module::class,
             'layout' => '@backend/views/layouts/main',
         ],
         'prototype' => [
-            'class' => 'dmstr\modules\prototype\Module',
+            'class' => \dmstr\modules\prototype\Module::class,
             'layout' => '@backend/views/layouts/box',
         ],
+        'publication' => [
+            'class' => dmstr\modules\publication\Module::class
+        ],
         'rbac' => [
-            'class' => 'dektrium\rbac\RbacWebModule',
+            'class' => \dektrium\rbac\RbacWebModule::class,
             'layout' => '@backend/views/layouts/box',
             #'enableFlashMessages' => false,
         ],
         'redirects' => [
-            'class' => 'dmstr\modules\redirect\Module',
+            'class' => \dmstr\modules\redirect\Module::class,
             'layout' => '@backend/views/layouts/main',
         ],
         'resque' => [
-            'class' => 'hrzg\resque\Module',
+            'class' => \hrzg\resque\Module::class,
             'layout' => '@backend/views/layouts/main',
         ],
         'translatemanager' => [
-            'class' => 'lajax\translatemanager\Module',
+            'class' => \lajax\translatemanager\Module::class,
             'root' => '@app/views',
             'layout' => '@backend/views/layouts/box',
             'allowedIPs' => ['*'],
             'roles' => ['translate-module'],
         ],
         'user' => [
-            'class' => 'dektrium\user\Module',
+            'class' => \dektrium\user\Module::class,
             'layout' => '@app/views/layouts/container',
             'defaultRoute' => 'admin',
             'adminPermission' => 'user-module',
@@ -319,7 +323,7 @@ return [
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
         ],
         'widgets' => [
-            'class' => 'hrzg\widget\Module',
+            'class' => \hrzg\widget\Module::class,
             'layout' => '@backend/views/layouts/main',
         ],
     ],
