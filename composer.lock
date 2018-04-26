@@ -3006,16 +3006,16 @@
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.6.4",
+            "version": "0.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "85f33dd97c886f33050342875d099fb71bc1e82a"
+                "reference": "f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/85f33dd97c886f33050342875d099fb71bc1e82a",
-                "reference": "85f33dd97c886f33050342875d099fb71bc1e82a",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716",
+                "reference": "f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716",
                 "shasum": ""
             },
             "require": {
@@ -3053,7 +3053,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-12-22T16:59:40+00:00"
+            "time": "2018-04-26T15:41:03+00:00"
         },
         {
             "name": "dmstr/yii2-publication-module",

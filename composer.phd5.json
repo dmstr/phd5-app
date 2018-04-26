@@ -29,7 +29,7 @@
         "dmstr/yii2-filemanager-widgets": "^0.6.0",
         "dmstr/yii2-migrate-command": "^0.4.0-beta1",
         "dmstr/yii2-pages-module": ">=0.23.0",
-        "dmstr/yii2-prototype-module": "^0.6.0",
+        "dmstr/yii2-prototype-module": "^0.6.5",
         "dmstr/yii2-publication-module": "^0.2.0",
         "dmstr/yii2-resque-module": "^0.4.0",
         "dmstr/yii2-widgets2-module": "^0.6.6",
