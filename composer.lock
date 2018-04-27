@@ -266,16 +266,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.55.2",
+            "version": "3.55.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3be3068a3a643f5029f18714b3fe26733a51e07c"
+                "reference": "28a1828814ce34d056492fa494f1e4bbaddaf33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3be3068a3a643f5029f18714b3fe26733a51e07c",
-                "reference": "3be3068a3a643f5029f18714b3fe26733a51e07c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/28a1828814ce34d056492fa494f1e4bbaddaf33e",
+                "reference": "28a1828814ce34d056492fa494f1e4bbaddaf33e",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-04-25T18:33:29+00:00"
+            "time": "2018-04-26T21:09:13+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2626,16 +2626,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.9.4",
+            "version": "0.10.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "6804c83f546aba2e0d1609655537f22c09b29b2d"
+                "reference": "7b45232be183fedfa1a1bc8f2a762bf7f73bb12c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/6804c83f546aba2e0d1609655537f22c09b29b2d",
-                "reference": "6804c83f546aba2e0d1609655537f22c09b29b2d",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/7b45232be183fedfa1a1bc8f2a762bf7f73bb12c",
+                "reference": "7b45232be183fedfa1a1bc8f2a762bf7f73bb12c",
                 "shasum": ""
             },
             "require": {
@@ -2668,7 +2668,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-01-29T11:38:03+00:00"
+            "time": "2018-04-27T12:42:07+00:00"
         },
         {
             "name": "dmstr/yii2-emojifyjs-asset",
@@ -2900,66 +2900,23 @@
             "time": "2017-07-10T10:16:54+00:00"
         },
         {
-            "name": "dmstr/yii2-migrate-command",
-            "version": "0.4.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmstr/yii2-migrate-command.git",
-                "reference": "d0f716dc713732f4b9211a42d3ea183b9a07a21f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-migrate-command/zipball/d0f716dc713732f4b9211a42d3ea183b9a07a21f",
-                "reference": "d0f716dc713732f4b9211a42d3ea183b9a07a21f",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "~2.0.10"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "dmstr\\console\\controllers\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Munk",
-                    "email": "tobias@diemeisterei.de"
-                }
-            ],
-            "description": "Console Migration Command with multiple paths/aliases support",
-            "keywords": [
-                "command",
-                "console",
-                "extension",
-                "migration",
-                "yii2"
-            ],
-            "time": "2017-04-18T09:22:05+00:00"
-        },
-        {
             "name": "dmstr/yii2-pages-module",
-            "version": "0.23.0",
+            "version": "0.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "ff11f5bb1eb0ec5fc551d8057cb644844d4e3884"
+                "reference": "31c98534bb4bd62591989b1a127fc415be92344f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/ff11f5bb1eb0ec5fc551d8057cb644844d4e3884",
-                "reference": "ff11f5bb1eb0ec5fc551d8057cb644844d4e3884",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/31c98534bb4bd62591989b1a127fc415be92344f",
+                "reference": "31c98534bb4bd62591989b1a127fc415be92344f",
                 "shasum": ""
             },
             "require": {
                 "bedezign/yii2-audit": "^1.1",
                 "devgroup/yii2-jsoneditor": "1.0.*",
-                "dmstr/yii2-db": "^0.8.0 || ^0.9.0",
+                "dmstr/yii2-db": "^0.8.0 || ^0.9.0 || ^0.10.0",
                 "dmstr/yii2-web": "^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "kartik-v/yii2-tree-manager": ">=1.0.3 <=1.0.5",
@@ -2970,7 +2927,8 @@
                 "yiisoft/yii2": "^2.0.13"
             },
             "require-dev": {
-                "codeception/codeception": "^2.2"
+                "codeception/codeception": "^2.2",
+                "dmstr/yii2-db": "^0.9.4"
             },
             "type": "yii2-extension",
             "extra": {
@@ -3002,7 +2960,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2018-01-29T11:06:21+00:00"
+            "time": "2018-04-27T13:23:56+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -3230,23 +3188,23 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "0.6.6",
+            "version": "0.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "8c5ad35ef379193567627e88af022b2134326439"
+                "reference": "8a5e82f4a591dce3ab39d175a59d6d9d6244650b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/8c5ad35ef379193567627e88af022b2134326439",
-                "reference": "8c5ad35ef379193567627e88af022b2134326439",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/8a5e82f4a591dce3ab39d175a59d6d9d6244650b",
+                "reference": "8a5e82f4a591dce3ab39d175a59d6d9d6244650b",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-ckeditor-widget": "^2.0.2",
                 "bedezign/yii2-audit": "^1.0",
                 "beowulfenator/yii2-json-editor": "^1.1",
-                "dmstr/yii2-db": "^0.8.0 || ^0.9.0",
+                "dmstr/yii2-db": "^0.8.0 || ^0.9.0 || ^0.10.0",
                 "dmstr/yii2-web": "^0.3.1 || ^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
@@ -3278,7 +3236,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-04-04T07:37:25+00:00"
+            "time": "2018-04-27T13:26:11+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -9922,7 +9880,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dmstr/yii2-migrate-command": 10,
+        "dmstr/yii2-db": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

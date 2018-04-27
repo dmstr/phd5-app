@@ -1,5 +1,9 @@
 # Upgrading
 
+### 5.1.0 to 5.2.0
+
+- Move *param* `yii.migrations` to `MigrateController` `migrationPath`
+
 ### 5.0.0 to 5.1.0
 
 - added host-volume for `src/` in test stack
