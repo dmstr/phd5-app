@@ -4,5 +4,5 @@
 
 $I = new CliTester($scenario);
 
-$I->runShellCommand('yii db/x-dump-data');
+$I->runShellCommand('yii db/export');
 $I->seeInShellOutput('success');

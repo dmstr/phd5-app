@@ -1,5 +1,9 @@
 # Changelog
 
+### 5.2.0
+
+- removed CLI alias `db/x-dump-data`
+
 ### 5.1.0
 
 - disabled user registration by default

@@ -2626,16 +2626,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.10.0-beta2",
+            "version": "0.10.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "7b45232be183fedfa1a1bc8f2a762bf7f73bb12c"
+                "reference": "82e99c135ef29119e683d0c34eeaf1909408bbc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/7b45232be183fedfa1a1bc8f2a762bf7f73bb12c",
-                "reference": "7b45232be183fedfa1a1bc8f2a762bf7f73bb12c",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/82e99c135ef29119e683d0c34eeaf1909408bbc7",
+                "reference": "82e99c135ef29119e683d0c34eeaf1909408bbc7",
                 "shasum": ""
             },
             "require": {
@@ -2668,7 +2668,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-04-27T12:42:07+00:00"
+            "time": "2018-05-02T08:39:42+00:00"
         },
         {
             "name": "dmstr/yii2-emojifyjs-asset",
