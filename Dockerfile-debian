@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.2-fpm-4.2-nginx
+FROM dmstr/php-yii2:7.2-fpm-4.3-nginx
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
