@@ -58,6 +58,12 @@ setup: ##@base run application setup
 	#
 	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
+logs: ##@base show logs
+	#
+	# Running application setup command (database, user)
+	#
+	$(DOCKER_COMPOSE) logs -f --tail 100 | cat -v
+
 # Help based on https://gist.github.com/prwhite/8168133 thanks to @nowox and @prwhite
 # And add help text after each target name starting with '\#\#'
 # A category can be added with @category
