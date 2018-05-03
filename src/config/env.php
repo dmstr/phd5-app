@@ -9,15 +9,18 @@
  * file that was distributed with this source code
  */
 
-$srcPath = __DIR__.'/..';
+use yii\helpers\FileHelper;
+
+$srcPath = __DIR__ . '/..';
 
 // Load default settings via dotenv from file, load local environment first, if available
 if (getenv('ENV_LOCAL_FILE')) {
-    if (is_file($srcPath.'/'.getenv('ENV_LOCAL_FILE'))) {
+    $localEnv = FileHelper::normalizePath($srcPath . '/' . getenv('ENV_LOCAL_FILE'));
+    if (is_file($localEnv)) {
         $dotenvLocal = new Dotenv\Dotenv($srcPath, getenv('ENV_LOCAL_FILE'));
         $dotenvLocal->load();
     } else {
-        exit('ENV_LOCAL_FILE not found');
+        exit("Error: ENV_LOCAL_FILE '{$localEnv}' not found" . PHP_EOL);
     }
 }
 
