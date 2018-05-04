@@ -1,6 +1,7 @@
 <?php
 
 // @group mandatory
+// @group base-test-setup
 
 $I = new E2eTester($scenario);
 
