@@ -81,7 +81,7 @@ return [
                     'logFile' => '@runtime/logs/console.log',
                     //'levels' => ['info', 'trace'],
                     'logVars' => [],
-                    'dirMode' => YII_ENV_DEV ? 0777 : null,
+                    'dirMode' => YII_ENV_DEV ? 0777 : 0775,
                     'fileMode' => YII_ENV_DEV ? 0666 : null,
                     'enabled' => YII_DEBUG && !YII_ENV_TEST,
                 ],
