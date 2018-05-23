@@ -6,7 +6,7 @@ BROWSER_SERVICE ?= chrome
 COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
 
 all: ##@test complete reinitialization of test-stack
-	$(MAKE) init-tests version build
+	$(MAKE) init-tests version build dev
 	$(MAKE) clean up setup
 
 init-tests: ##@development initialize test-environment

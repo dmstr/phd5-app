@@ -9,14 +9,6 @@ all:
 	# make all
 	# Done.
 
-dev:    ##@development install composer package (enable host-volume in docker-compose config)
-dev:
-	#
-	# Running composer installation in development environment
-	# This may take a while on your first install...
-	#
-	$(DOCKER_COMPOSE) run --rm php composer install
-
 init:   ##@development initialize development environment
 	#
 	# Initializing development environment
