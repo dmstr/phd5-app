@@ -45,7 +45,7 @@ services:
         target: /app/src
         consistency: cached
       - type: bind
-        source: ./vendor
+        source: ./vendor-dev
         target: /app/vendor
         consistency: delegated
       - type: bind

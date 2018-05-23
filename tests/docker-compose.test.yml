@@ -13,18 +13,10 @@ services:
       # undefined == alpine base image
       # -debian   == debian base image
       dockerfile: Dockerfile${FLAVOUR}
-    image: ${STACK_PHP_IMAGE}${FLAVOUR}
-    working_dir: /app/tests
     ports:
       - 80
-    depends_on:
-      - db
-      - redis
-      - firefox
-      - mailcatcher
     environment:
-      - PHP_ENABLE_XDEBUG
-
+      - DB_ENV_MYSQL_ROOT_PASSWORD=secret
       - YII_ENV=test
 
       - APP_NAME=test-phd5
@@ -37,8 +29,32 @@ services:
       - APP_ASSET_USE_BUNDLED=1
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
+    networks:
+      default:
+        aliases:
+          - web
 
+  tester:
+    build:
+      context: .
+      # FLAVOUR can be undefinied OR -debian
+      # undefined == alpine base image
+      # -debian   == debian base image
+      dockerfile: Dockerfile${FLAVOUR}
+    image: ${STACK_PHP_IMAGE}${FLAVOUR}
+    working_dir: /app/tests
+
+    depends_on:
+      - db
+      - redis
+      - firefox
+      - mailcatcher
+    environment:
+      - PHP_ENABLE_XDEBUG
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
+      - APP_ADMIN_PASSWORD=admin1
+      - APP_ADMIN_EMAIL=admin@example.local
+      - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
     volumes:
       - type: bind
         source: ./tests
@@ -52,13 +68,9 @@ services:
       #- ./_host-volumes/test-runtime/mysql:/app/runtime/mysql:delegated
       # Settings for local test-development
       #- ./web:/app/web
-      #- ./vendor:/app/vendor
+      - ./vendor-dev:/app/vendor
       # Debug settings
       #- ./runtime:/app/runtime
-    networks:
-      default:
-        aliases:
-          - web
 
   worker:
     build:

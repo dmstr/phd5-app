@@ -12,7 +12,7 @@ RUN chmod u+x /usr/local/bin/*
 # Application packages
 WORKDIR /app
 COPY composer.* /app/
-RUN composer install --prefer-dist --optimize-autoloader && \
+RUN composer install --no-dev --prefer-dist --optimize-autoloader && \
     composer clear-cache
 
 # Application source-code

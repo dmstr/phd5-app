@@ -8,6 +8,7 @@ src/app.env
 
 data
 vendor
+vendor-dev
 
 **/runtime/
 web/assets
