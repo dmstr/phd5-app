@@ -3,10 +3,11 @@
 ### 5.2.0
 
 - removed CLI alias `db/x-dump-data`
+- removed composer `dev` packages during image build
 
 ### 5.1.0
 
-- disabled user registration by default
+- disabled user registration by default (`APP_USER_ENABLE_REGISTRATION`)
 - `APP_MIGRATION_LOOKUP` accepts a comma separated list of path-aliases
 - refactored ENV variables (moved `src/app.env` to `src/config/env-defaults`)
 
