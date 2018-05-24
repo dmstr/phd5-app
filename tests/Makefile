@@ -12,6 +12,7 @@ all: ##@test complete reinitialization of test-stack
 init-tests: ##@development initialize test-environment
 	mkdir -p _log/codeception && chmod 777 _log/codeception
 	mkdir -p _log/lint && chmod 777 _log/lint
+	$(DOCKER_COMPOSE) run -w /app --rm $(TESTER_SERVICE) composer install
 
 version: ##@development write current version string from git
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
