@@ -3,10 +3,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/yii2-rbac.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/yii2-flysystem.git"
         }
     ],
     "require": {
@@ -21,12 +17,11 @@
         "lajax/yii2-translate-manager": "^1.6.0",
         "codemix/yii2-localeurls": "^1.4.12",
         "codemix/yii2-streamlog": "^1.2.1",
-        "creocoder/yii2-flysystem": "^0.8.999.1",
         "dmstr/yii2-backend-module": "^0.7.1",
         "dmstr/yii2-contact-module": "^0.2.1",
         "dmstr/yii2-db": "^0.10.0-beta3",
         "dmstr/yii2-redirect-module": "^0.3.1",
-        "dmstr/yii2-filefly-module": "^0.6.16",
+        "dmstr/yii2-filefly-module": "^0.6.18",
         "dmstr/yii2-filemanager-widgets": "^0.6.0",
         "dmstr/yii2-pages-module": ">=0.23.0",
         "dmstr/yii2-prototype-module": "^0.6.5",
