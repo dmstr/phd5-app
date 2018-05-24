@@ -65,7 +65,7 @@ after_script:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - make dev
+    - make init-tests
     - make help
     - make lint
     - make lint-composer
