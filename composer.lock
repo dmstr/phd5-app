@@ -2710,16 +2710,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.18",
+            "version": "0.6.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "5adb8a7a4afbe715bda73daf9ffa4461791839ca"
+                "reference": "6f316c36835c8a25747c2ab30267aa019c8860c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/5adb8a7a4afbe715bda73daf9ffa4461791839ca",
-                "reference": "5adb8a7a4afbe715bda73daf9ffa4461791839ca",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/6f316c36835c8a25747c2ab30267aa019c8860c1",
+                "reference": "6f316c36835c8a25747c2ab30267aa019c8860c1",
                 "shasum": ""
             },
             "require": {
@@ -2757,7 +2757,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-05-24T10:20:31+00:00"
+            "time": "2018-05-25T16:51:29+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",

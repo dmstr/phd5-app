@@ -14,5 +14,6 @@ $I->runShellCommand('yii fs/mkdir local://'.$dir);
 $I->runShellCommand('yii fs/ls local://');
 $I->seeInShellOutput($dir);
 
-$I->runShellCommand('yii fs/rmdir local://'.$dir);
+$I->runShellCommand('yii fs/rmdir --interactive=0 local://'.$dir);
+$I->runShellCommand('yii fs/ls local://');
 $I->dontSeeInShellOutput($dir);
