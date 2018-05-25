@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.2-fpm-4.3-alpine-nginx
+FROM dmstr/php-yii2:7.2-fpm-4.4-alpine-nginx
 
 RUN apk add --update $PHPIZE_DEPS \
  && pecl install mailparse \

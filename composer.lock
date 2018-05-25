@@ -266,16 +266,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.56.6",
+            "version": "3.57.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58"
+                "reference": "c31ae27de4587f8f926aa09bfce35728576f5a0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58",
-                "reference": "9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c31ae27de4587f8f926aa09bfce35728576f5a0b",
+                "reference": "c31ae27de4587f8f926aa09bfce35728576f5a0b",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-22T22:08:15+00:00"
+            "time": "2018-05-24T21:57:59+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -8845,7 +8845,7 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -8902,7 +8902,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -8970,7 +8970,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -9023,7 +9023,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -9080,7 +9080,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -9143,7 +9143,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -9193,7 +9193,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -9242,7 +9242,7 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
@@ -9465,7 +9465,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -9514,7 +9514,7 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -9563,7 +9563,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
