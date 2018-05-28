@@ -68,7 +68,7 @@ return [
             ),
         ],
         'resque' => \hrzg\resque\commands\ResqueController::class,
-        'rbac' => RbacController::class,
+        'rbac' => \dmstr\helpers\RbacController::class,
         'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class,
         'widgets-copy' => CopyController::class
     ],

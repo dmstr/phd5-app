@@ -266,16 +266,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.57.0",
+            "version": "3.57.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c31ae27de4587f8f926aa09bfce35728576f5a0b"
+                "reference": "795332f5f3a81474e85653e62d1d7b306bd4eeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c31ae27de4587f8f926aa09bfce35728576f5a0b",
-                "reference": "c31ae27de4587f8f926aa09bfce35728576f5a0b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/795332f5f3a81474e85653e62d1d7b306bd4eeae",
+                "reference": "795332f5f3a81474e85653e62d1d7b306bd4eeae",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-24T21:57:59+00:00"
+            "time": "2018-05-25T21:34:30+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2217,16 +2217,16 @@
         },
         {
             "name": "dektrium/yii2-rbac",
-            "version": "0.3.999.4",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr-forks/yii2-rbac.git",
-                "reference": "5e08e9618f93de1b140641aeb95c540eaf25aed4"
+                "url": "https://github.com/dektrium/yii2-rbac.git",
+                "reference": "2dac3918af17178f2ba944d4338c3fcfa732d08c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/yii2-rbac/zipball/5e08e9618f93de1b140641aeb95c540eaf25aed4",
-                "reference": "5e08e9618f93de1b140641aeb95c540eaf25aed4",
+                "url": "https://api.github.com/repos/dektrium/yii2-rbac/zipball/2dac3918af17178f2ba944d4338c3fcfa732d08c",
+                "reference": "2dac3918af17178f2ba944d4338c3fcfa732d08c",
                 "shasum": ""
             },
             "require": {
@@ -2245,6 +2245,7 @@
                     "dektrium\\rbac\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2265,11 +2266,7 @@
                 "yii2",
                 "yii2-rbac"
             ],
-            "support": {
-                "issues": "https://github.com/dektrium/yii2-rbac/issues?state=open",
-                "source": "https://github.com/dektrium/yii2-rbac"
-            },
-            "time": "2018-03-09T18:21:55+00:00"
+            "time": "2018-03-26T12:33:41+00:00"
         },
         {
             "name": "dektrium/yii2-user",
@@ -2624,16 +2621,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.10.0-beta3",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "82e99c135ef29119e683d0c34eeaf1909408bbc7"
+                "reference": "7fd88707b6af02f00c5ddccd47695d8e14c46ac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/82e99c135ef29119e683d0c34eeaf1909408bbc7",
-                "reference": "82e99c135ef29119e683d0c34eeaf1909408bbc7",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/7fd88707b6af02f00c5ddccd47695d8e14c46ac1",
+                "reference": "7fd88707b6af02f00c5ddccd47695d8e14c46ac1",
                 "shasum": ""
             },
             "require": {
@@ -2666,7 +2663,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-05-02T08:39:42+00:00"
+            "time": "2018-05-08T08:19:50+00:00"
         },
         {
             "name": "dmstr/yii2-emojifyjs-asset",
@@ -2817,16 +2814,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.6",
+            "version": "0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "7c0f0e18469957775d5aefc67fa993a4b4ffe1f6"
+                "reference": "901076b7d8e5b2a272184bb3bb89c63eb98d04a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/7c0f0e18469957775d5aefc67fa993a4b4ffe1f6",
-                "reference": "7c0f0e18469957775d5aefc67fa993a4b4ffe1f6",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/901076b7d8e5b2a272184bb3bb89c63eb98d04a4",
+                "reference": "901076b7d8e5b2a272184bb3bb89c63eb98d04a4",
                 "shasum": ""
             },
             "require": {
@@ -2858,7 +2855,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-02-27T20:10:30+00:00"
+            "time": "2018-05-28T08:49:49+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
@@ -9942,7 +9939,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dmstr/yii2-db": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

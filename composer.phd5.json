@@ -1,10 +1,4 @@
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/yii2-rbac.git"
-        }
-    ],
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "2amigos/yii2-ckeditor-widget": "^2.1.0",
@@ -12,14 +6,15 @@
         "2amigos/yii2-translateable-behavior": "^0.1.2",
         "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
-        "dektrium/yii2-rbac": "^0.3.999.4",
+        "dektrium/yii2-rbac": "~1.0.1",
         "dektrium/yii2-user": "^0.9.14",
         "lajax/yii2-translate-manager": "^1.6.0",
         "codemix/yii2-localeurls": "^1.4.12",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^0.7.1",
         "dmstr/yii2-contact-module": "^0.2.1",
-        "dmstr/yii2-db": "^0.10.0-beta3",
+        "dmstr/yii2-db": "^0.10.0",
+        "dmstr/yii2-helpers": ">=0.4.7",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filefly-module": "^0.6.19",
         "dmstr/yii2-filemanager-widgets": "^0.6.0",
