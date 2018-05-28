@@ -4,6 +4,8 @@
 
 - removed CLI alias `db/x-dump-data`
 - removed composer `dev` packages during image build
+- removed forked repositories
+  - `yii rbac` command moved to `dmstr/yii2-helpers`
 
 ### 5.1.0
 

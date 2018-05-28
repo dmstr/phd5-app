@@ -39,12 +39,6 @@ return [
         ],
         'fs' => [
             'class' => \hrzg\filefly\commands\FsController::class,
-            'filesystemComponents' => [
-                's3' => 'fsS3',
-                'local' => 'fsLocal',
-                'runtime' => 'fsRuntime',
-            ],
-
         ],
         'migrate' => [
             'class' => \yii\console\controllers\MigrateController::class,

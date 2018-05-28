@@ -2707,16 +2707,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.6.19",
+            "version": "0.7.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "6f316c36835c8a25747c2ab30267aa019c8860c1"
+                "reference": "2f8fa7516603b06355ecdb2beb4fa932b4ddaaaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/6f316c36835c8a25747c2ab30267aa019c8860c1",
-                "reference": "6f316c36835c8a25747c2ab30267aa019c8860c1",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/2f8fa7516603b06355ecdb2beb4fa932b4ddaaaf",
+                "reference": "2f8fa7516603b06355ecdb2beb4fa932b4ddaaaf",
                 "shasum": ""
             },
             "require": {
@@ -2754,20 +2754,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-05-25T16:51:29+00:00"
+            "time": "2018-05-28T12:25:56+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
-            "version": "0.6.11",
+            "version": "0.7.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filemanager-widgets.git",
-                "reference": "6ee092e9768ce7887d07169d86ab5fdf7078b5b8"
+                "reference": "7322d070ef91ebc0cda1105d45b97b64e0bce983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/6ee092e9768ce7887d07169d86ab5fdf7078b5b8",
-                "reference": "6ee092e9768ce7887d07169d86ab5fdf7078b5b8",
+                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/7322d070ef91ebc0cda1105d45b97b64e0bce983",
+                "reference": "7322d070ef91ebc0cda1105d45b97b64e0bce983",
                 "shasum": ""
             },
             "require": {
@@ -2777,7 +2777,7 @@
                 "bower-asset/bootstrap": "^3.3.0",
                 "bower-asset/ng-file-upload": "^12.0.1",
                 "bower-asset/ngclipboard": "^1.1.1",
-                "dmstr/yii2-filefly-module": "^0.6.0",
+                "dmstr/yii2-filefly-module": "^0.7.0",
                 "kartik-v/yii2-widget-select2": "^2.0.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
                 "yiisoft/yii2": "*"
@@ -2810,7 +2810,7 @@
                 "filemanager",
                 "yii2"
             ],
-            "time": "2017-04-20T22:32:29+00:00"
+            "time": "2018-05-28T12:41:01+00:00"
         },
         {
             "name": "dmstr/yii2-helpers",
@@ -9939,6 +9939,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "dmstr/yii2-filefly-module": 10,
+        "dmstr/yii2-filemanager-widgets": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

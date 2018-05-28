@@ -263,6 +263,11 @@ return [
             'class' => \hrzg\filefly\Module::class,
             'layout' => '@backend/views/layouts/main',
             'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
+            'filesystemComponents' => [
+                's3' => 'fsS3',
+                'local' => 'fsLocal',
+                'runtime' => 'fsRuntime',
+            ],
         ],
         'noty' => [
             'class' => \lo\modules\noty\Module::class,
