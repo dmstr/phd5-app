@@ -29,14 +29,6 @@ build: ##@base build images in test-stack
 	#
 	$(DOCKER_COMPOSE) build --pull
 
-dev:    ##@development install composer package (enable host-volume in docker-compose config)
-dev:
-	#
-	# Running composer installation in development environment
-	# This may take a while on your first install...
-	#
-	$(DOCKER_COMPOSE) run --rm php composer install
-
 up: ##@base start stack
 	#
 	# Starting application stack

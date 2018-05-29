@@ -9,13 +9,21 @@ all:
 	# make all
 	# Done.
 
-init:   ##@development initialize development environment
+init:   ##@development initialize all environments
+	$(MAKE) init-dev
+	cd tests && $(MAKE) init-tests
+
+
+
+init-dev:    ##@development install composer package (enable host-volume in docker-compose config)
+init-dev:
 	#
-	# Initializing development environment
+	# Running composer installation in development environment
+	# This may take a while on your first install...
 	#
 	cp -n .env-dist .env &2>/dev/null
-	cp -n tests/.env-dist tests/.env &2>/dev/null
 	mkdir -p web/assets runtime
+	$(DOCKER_COMPOSE) run --rm php composer install
 
 bash:	 ##@development run application bash in one-off container
 	#
