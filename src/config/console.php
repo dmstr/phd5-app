@@ -47,17 +47,18 @@ return [
                 [
                     '@yii/rbac/migrations',
                     '@yii/web/migrations',
+                    '@app/migrations/legacy/migration-command',
                     '@bedezign/yii2/audit/migrations',
                     '@dektrium/user/migrations',
-                    '@hrzg/widget/migrations',
                     '@dmstr/modules/contact/migrations',
                     '@dmstr/modules/pages/migrations',
+                    '@dmstr/modules/publication/migrations',
                     '@dmstr/modules/redirect/migrations',
                     '@hrzg/filefly/migrations',
+                    '@hrzg/widget/migrations',
                     '@vendor/lajax/yii2-translate-manager/migrations',
                     '@vendor/pheme/yii2-settings/migrations',
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
-                    '@dmstr/modules/publication/migrations'
                 ]
             ),
         ],
