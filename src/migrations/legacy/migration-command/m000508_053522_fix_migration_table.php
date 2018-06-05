@@ -13,7 +13,7 @@ class m000508_053522_fix_migration_table extends Migration
     public function safeUp()
     {
         $table = $this->db->schema->getTableSchema('{{%migration}}');
-        if(isset($table->columns['alias'])) {
+        if (isset($table->columns['alias'])) {
             // Column exists
             $this->alterColumn('{{%migration}}', 'alias', 'varchar(180) DEFAULT NULL');
         }
