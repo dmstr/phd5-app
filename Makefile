@@ -46,7 +46,7 @@ upgrade: ##@development update application package, pull, rebuild
 	$(DOCKER_COMPOSE) run --rm php composer update -v
 
 dist-upgrade: ##@development update application package, pull, rebuild
-	$(MAKE) build
+	$(DOCKER_COMPOSE) build --pull --build-arg BUILD_NO_INSTALL=1
 	$(MAKE) upgrade
 	$(MAKE) build
 

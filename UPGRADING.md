@@ -9,6 +9,7 @@
 - added host-volume for `src/` in test stack
 - added _setting_ `app.assets` > `settingsAssetList`
   - use `dmstr\modules\prototype\assets\DbAsset` for **LESS Themes**
+  - see https://github.com/thomaspark/bootswatch/issues/573 in case of `variable @path is undefined`
 - added application configuration parameter `backend.iframe.name` for **Backend** toolbar  
 - local filesystem `fs` has been renamed to `fsLocal`
 - removed default configuration for `guide` and `help` (update backend tests)
