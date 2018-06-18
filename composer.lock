@@ -266,16 +266,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.61.4",
+            "version": "3.61.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2c1ec9b0f39549eeb0fb37166e5b28a8f4392f1b"
+                "reference": "7df3b62d06da6512c752b2fd224a65fc0d8c0cbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2c1ec9b0f39549eeb0fb37166e5b28a8f4392f1b",
-                "reference": "2c1ec9b0f39549eeb0fb37166e5b28a8f4392f1b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7df3b62d06da6512c752b2fd224a65fc0d8c0cbe",
+                "reference": "7df3b62d06da6512c752b2fd224a65fc0d8c0cbe",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-06-11T21:08:37+00:00"
+            "time": "2018-06-15T21:48:00+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -1911,16 +1911,16 @@
         },
         {
             "name": "codemix/yii2-localeurls",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-localeurls.git",
-                "reference": "6f0c49e2bea65c373a6c60f306e96b512c97d436"
+                "reference": "f681040b9da5b35a8653041f98bd58c2dd84af07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/6f0c49e2bea65c373a6c60f306e96b512c97d436",
-                "reference": "6f0c49e2bea65c373a6c60f306e96b512c97d436",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/f681040b9da5b35a8653041f98bd58c2dd84af07",
+                "reference": "f681040b9da5b35a8653041f98bd58c2dd84af07",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1948,7 @@
                 "locale",
                 "yii2"
             ],
-            "time": "2018-02-13T09:07:17+00:00"
+            "time": "2018-06-18T12:11:10+00:00"
         },
         {
             "name": "codemix/yii2-streamlog",
@@ -2814,16 +2814,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.9",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "5cf107a4f0b9c35875aec1ab6bc370c5f11ebd07"
+                "reference": "340c5855569763fc7806c8fe7822409ffbce4000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/5cf107a4f0b9c35875aec1ab6bc370c5f11ebd07",
-                "reference": "5cf107a4f0b9c35875aec1ab6bc370c5f11ebd07",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/340c5855569763fc7806c8fe7822409ffbce4000",
+                "reference": "340c5855569763fc7806c8fe7822409ffbce4000",
                 "shasum": ""
             },
             "require": {
@@ -2855,7 +2855,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-07T11:27:01+00:00"
+            "time": "2018-06-14T05:33:44+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
@@ -2959,16 +2959,16 @@
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "0.6.5",
+            "version": "0.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716"
+                "reference": "c0b6c4a6c4ba7d406b0c73dadb3ca9eed69351c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716",
-                "reference": "f0d5be6bf08b334ba54a7707a5fb00bbd9ec7716",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/c0b6c4a6c4ba7d406b0c73dadb3ca9eed69351c6",
+                "reference": "c0b6c4a6c4ba7d406b0c73dadb3ca9eed69351c6",
                 "shasum": ""
             },
             "require": {
@@ -3006,7 +3006,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-04-26T15:41:03+00:00"
+            "time": "2018-06-14T11:33:35+00:00"
         },
         {
             "name": "dmstr/yii2-publication-module",
