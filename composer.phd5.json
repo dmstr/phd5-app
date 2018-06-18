@@ -9,7 +9,7 @@
         "dektrium/yii2-rbac": "~1.0.1",
         "dektrium/yii2-user": "^0.9.14",
         "lajax/yii2-translate-manager": "^1.6.0",
-        "codemix/yii2-localeurls": "^1.4.12",
+        "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^0.7.1",
         "dmstr/yii2-contact-module": "^0.2.1",
