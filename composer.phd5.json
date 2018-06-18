@@ -41,7 +41,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "2.*",
-        "schmunk42/yii2-giiant": "^0.10.0",
+        "schmunk42/yii2-giiant": "^0.10.4",
         "yiisoft/yii2-apidoc": "^2.0.5",
         "yiisoft/yii2-coding-standards": "2.*",
         "yiisoft/yii2-debug": "2.*",
