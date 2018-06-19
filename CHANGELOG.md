@@ -1,7 +1,9 @@
 # Changelog
 
-### 5.2.0
+### 5.2.0 (under development)
 
+- updated `dmstr/yii2-resque-module`
+  - uses `yiisoft/yii2-queue`
 - removed CLI alias `db/x-dump-data`
 - removed composer `dev` packages during image build
 - removed forked repositories
