@@ -30,12 +30,6 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     );
 }
 
-// set redis connection
-\Resque::setBackend(
-    getenv('REDIS_PORT_6379_TCP_ADDR') . ':' .
-    getenv('REDIS_PORT_6379_TCP_PORT')
-);
-
 // custom layout for user module (manage/admin)
 Yii::$container->set(
     \dektrium\user\controllers\AdminController::class,
@@ -56,6 +50,7 @@ return [
     'bootstrap' => [
         'log',
         'redirects',
+        'queue',
     ],
     'aliases' => [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
@@ -143,6 +138,12 @@ return [
                 'username' => getenv('APP_MAILER_USERNAME'),
                 'password' => getenv('APP_MAILER_PASSWORD'),
             ],
+        ],
+        'queue' => [
+            'class' => \yii\queue\redis\Queue::class,
+            'as log' => \yii\queue\LogBehavior::class,
+            #'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
+            // Other driver options
         ],
         'redis' => [
             'class' => \yii\redis\Connection::class,
