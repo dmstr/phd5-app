@@ -142,8 +142,7 @@ return [
         'queue' => [
             'class' => \yii\queue\redis\Queue::class,
             'as log' => \yii\queue\LogBehavior::class,
-            #'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
-            // Other driver options
+            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
         ],
         'redis' => [
             'class' => \yii\redis\Connection::class,
@@ -272,6 +271,10 @@ return [
         ],
         'noty' => [
             'class' => \lo\modules\noty\Module::class,
+        ],
+        'queuemanager' => [
+            'class' => \ignatenkovnikita\queuemanager\QueueManager::class,
+            'layout' => '@backend/views/layouts/box',
         ],
         'pages' => [
             'class' => \dmstr\modules\pages\Module::class,

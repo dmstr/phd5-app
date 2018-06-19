@@ -3057,16 +3057,16 @@
         },
         {
             "name": "dmstr/yii2-resque-module",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-resque-module.git",
-                "reference": "d7d5c65f4098c69a43eda38d98e72f46d0189f85"
+                "reference": "c181d86a1ab18d18f5603f147a26784e44bbe06d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-resque-module/zipball/d7d5c65f4098c69a43eda38d98e72f46d0189f85",
-                "reference": "d7d5c65f4098c69a43eda38d98e72f46d0189f85",
+                "url": "https://api.github.com/repos/dmstr/yii2-resque-module/zipball/c181d86a1ab18d18f5603f147a26784e44bbe06d",
+                "reference": "c181d86a1ab18d18f5603f147a26784e44bbe06d",
                 "shasum": ""
             },
             "require": {
@@ -3097,7 +3097,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-19T13:48:23+00:00"
+            "time": "2018-06-19T16:00:23+00:00"
         },
         {
             "name": "dmstr/yii2-web",
@@ -3579,6 +3579,51 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "ignatenkovnikita/yii2-queuemanager",
+            "version": "dev-feature/fixes",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr-forks/ignatenkovnikita-yii2-queuemanager.git",
+                "reference": "61e079e460a04bb104"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr-forks/ignatenkovnikita-yii2-queuemanager/zipball/61e079e460a04bb104",
+                "reference": "61e079e460a04bb104",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-chartjs-widget": "~2.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "ignatenkovnikita\\queuemanager\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ignatenkov Nikita",
+                    "email": "ignatenkov.n@gmail.com"
+                }
+            ],
+            "description": "Yii2 Queue Manager",
+            "keywords": [
+                "extension",
+                "manager",
+                "queue",
+                "yii2"
+            ],
+            "support": {
+                "source": "https://github.com/dmstr-forks/ignatenkovnikita-yii2-queuemanager/tree/feature/fixes"
+            },
+            "time": "2018-06-19T13:40:14+00:00"
         },
         {
             "name": "insolita/yii2-adminlte-widgets",
@@ -10034,6 +10079,7 @@
         "dmstr/yii2-filefly-module": 10,
         "dmstr/yii2-filemanager-widgets": 10,
         "dmstr/yii2-resque-module": 15,
+        "ignatenkovnikita/yii2-queuemanager": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

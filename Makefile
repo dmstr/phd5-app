@@ -11,9 +11,6 @@ all:
 
 init:   ##@development initialize all environments
 	$(MAKE) init-dev
-	cd tests && $(MAKE) init-tests
-
-
 
 init-dev:    ##@development install composer package (enable host-volume in docker-compose config)
 init-dev:

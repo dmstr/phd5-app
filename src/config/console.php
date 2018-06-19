@@ -56,6 +56,7 @@ return [
                     '@dmstr/modules/redirect/migrations',
                     '@hrzg/filefly/migrations',
                     '@hrzg/widget/migrations',
+                    '@ignatenkovnikita/queuemanager/migrations',
                     '@vendor/lajax/yii2-translate-manager/migrations',
                     '@vendor/pheme/yii2-settings/migrations',
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
