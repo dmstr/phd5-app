@@ -33,6 +33,7 @@ ENV PHP_USER_ID=82
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
+    chmod u+x /usr/local/bin/unique-number.sh && \
     chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
 
 # Build assets (skipped on first build in dist-upgrade)
