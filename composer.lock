@@ -1503,26 +1503,22 @@
         },
         {
             "name": "bower-asset/selectize",
-            "version": "v0.12.4",
+            "version": "v0.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/selectize/selectize.js.git",
-                "reference": "47e048662d865c4f1ea3b2337de5e06e92fd9530"
+                "reference": "5870b8a7ce8ecdfca66f54b5ea90d4241126601b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/47e048662d865c4f1ea3b2337de5e06e92fd9530",
-                "reference": "47e048662d865c4f1ea3b2337de5e06e92fd9530",
+                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/5870b8a7ce8ecdfca66f54b5ea90d4241126601b",
+                "reference": "5870b8a7ce8ecdfca66f54b5ea90d4241126601b",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/jquery": ">=1.7.0",
                 "bower-asset/microplugin": "dev-0.0.x|0.0.x",
                 "bower-asset/sifter": "dev-0.5.x|0.5.x"
-            },
-            "require-dev": {
-                "bower-asset/bootstrap-2": "~2",
-                "bower-asset/bootstrap-3.2": "3.2"
             },
             "type": "bower-asset-library",
             "extra": {
@@ -1560,7 +1556,7 @@
                 "tagging",
                 "ui"
             ],
-            "time": "2016-10-12T20:22:59+00:00"
+            "time": "2018-06-27T19:05:38+00:00"
         },
         {
             "name": "bower-asset/sifter",
@@ -3582,16 +3578,16 @@
         },
         {
             "name": "ignatenkovnikita/yii2-queuemanager",
-            "version": "dev-feature/fixes",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr-forks/ignatenkovnikita-yii2-queuemanager.git",
-                "reference": "61e079e460a04bb104"
+                "url": "https://github.com/ignatenkovnikita/yii2-queuemanager.git",
+                "reference": "c55b4258e6086f95855ee150c147b7cf19f095f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/ignatenkovnikita-yii2-queuemanager/zipball/61e079e460a04bb104",
-                "reference": "61e079e460a04bb104",
+                "url": "https://api.github.com/repos/ignatenkovnikita/yii2-queuemanager/zipball/c55b4258e6086f95855ee150c147b7cf19f095f2",
+                "reference": "c55b4258e6086f95855ee150c147b7cf19f095f2",
                 "shasum": ""
             },
             "require": {
@@ -3604,6 +3600,7 @@
                     "ignatenkovnikita\\queuemanager\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3620,10 +3617,7 @@
                 "queue",
                 "yii2"
             ],
-            "support": {
-                "source": "https://github.com/dmstr-forks/ignatenkovnikita-yii2-queuemanager/tree/feature/fixes"
-            },
-            "time": "2018-06-19T13:40:14+00:00"
+            "time": "2018-06-22T16:26:38+00:00"
         },
         {
             "name": "insolita/yii2-adminlte-widgets",
@@ -10079,7 +10073,6 @@
         "dmstr/yii2-filefly-module": 10,
         "dmstr/yii2-filemanager-widgets": 10,
         "dmstr/yii2-resque-module": 15,
-        "ignatenkovnikita/yii2-queuemanager": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

@@ -1,10 +1,4 @@
 {
-    "repositories": {
-        "dmstr-forks/ignatenkovnikita-yii2-queuemanager": {
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/ignatenkovnikita-yii2-queuemanager.git"
-        }
-    },
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
         "2amigos/yii2-ckeditor-widget": "^2.1.0",
@@ -29,7 +23,7 @@
         "dmstr/yii2-publication-module": "^0.3.0",
         "dmstr/yii2-resque-module": "^2.0.0-alpha2",
         "dmstr/yii2-widgets2-module": "^0.6.6",
-        "ignatenkovnikita/yii2-queuemanager": "dev-feature/fixes#61e079e460a04bb104",
+        "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
         "mexitek/phpcolors": "^0.4.0",
