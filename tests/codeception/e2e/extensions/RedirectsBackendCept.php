@@ -14,7 +14,7 @@ $I->login('admin', 'admin1');
 $I->amOnPage('/redirects');
 $I->click('New');
 
-$I->waitForElementVisible('.redirect-form', 5);
+$I->waitForElementVisible('.redirect-form', 10);
 $I->selectOption('Redirect[type]', 'Path redirect');
 $I->fillField('Redirect[from_path]', '/'.$redirectId);
 $I->fillField('Redirect[to_path]', '/user/profile');

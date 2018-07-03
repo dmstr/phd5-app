@@ -30,7 +30,7 @@ $I->amGoingTo('edit  a widget from a container');
 
 $I->comment('Mouse-over first container');
 $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
-$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success', 2);
+$I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success', 3);
 $I->click('#cell-header .hrzg-widget-container-controls .btn-success');
 $I->waitForElementVisible('.widget-create', 10);
 
@@ -47,5 +47,5 @@ $I->seeInField('#widgetcontent-route','widgets/test/index');
 $I->fillField('root[title]', 'This is a test.');
 $I->makeScreenshot('widgets-backend-create-1');
 $I->click('Create');
-$I->wait(2);
+$I->wait(3);
 $I->see('This is a test.', 'h2');

@@ -17,6 +17,6 @@ $I->fillField('#recovery-form-email', getenv('APP_ADMIN_EMAIL'));
 
 $I->click('button[type="submit"]');
 
-$I->waitForText('An email has been sent with instructions for resetting your password', 5);
+$I->waitForText('An email has been sent with instructions for resetting your password', 10);
 
 $I->pauseExecution();
