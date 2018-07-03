@@ -8,7 +8,6 @@ RUN apk add --update $PHPIZE_DEPS \
 
 # System files
 COPY ./image-files /
-RUN chmod u+x /usr/local/bin/*
 
 # Application packages
 WORKDIR /app
@@ -33,7 +32,8 @@ ENV PHP_USER_ID=82
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
     chmod -R ugo+r /root/.composer/vendor && \
-    chmod u+x /usr/local/bin/unique-number.sh && \
+    chmod u+x /usr/local/bin/unique-number.sh /usr/local/bin/export-env.sh && \
+    chmod -R u+x /etc/periodic && \
     chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
 
 # Build assets (skipped on first build in dist-upgrade)
@@ -45,3 +45,6 @@ RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
 RUN crontab src/config/crontab
 
 VOLUME /mnt/storage
+
+# export container environment for cronjobs on container start
+CMD /usr/local/bin/export-env.sh; forego start -r -f /root/Procfile
