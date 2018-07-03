@@ -200,8 +200,8 @@ return [
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
                             // preset example, when using imageproxy, https://github.com/willnorris/imageproxy#examples
-                            if (getenv('APP_IMAGEPROXY_KEY')) {
-                                $key = getenv('APP_IMAGEPROXY_KEY');
+                            if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
+                                $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
                                 $preset .= ',s' . strtr(base64_encode(hash_hmac('sha256', $imageSource, $key, 1)), '/+', '_-');
                             }
                             return Yii::$app->settings->get('imgBaseUrl', 'app.frontend') .
