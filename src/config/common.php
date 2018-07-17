@@ -85,7 +85,7 @@ return [
             'password' => getenv('DATABASE_PASSWORD'),
             'charset' => 'utf8',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
-            'enableSchemaCache' => !YII_ENV_DEV,
+            'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE'),
         ],
         'fsLocal' => [
             'class' => \creocoder\flysystem\LocalFilesystem::class,
@@ -117,6 +117,7 @@ return [
             ],
         ],
         'log' => [
+            'traceLevel' => getenv('YII_TRACE_LEVEL') ?: 0,
             'targets' => [
                 'common' => [
                     'class' => \codemix\streamlog\Target::class,
