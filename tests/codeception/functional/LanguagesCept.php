@@ -1,6 +1,7 @@
 <?php
 
 // @group mandatory
+// @group base-test-setup
 
 use tests\codeception\_pages\LoginPage;
 
