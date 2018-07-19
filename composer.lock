@@ -2546,16 +2546,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "0.7.3",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "c9ea7e7cd6f4091f7358139669b2208ef003a4bb"
+                "reference": "f50ee80f42c77c48bfb7b9c9818bb28366f8030e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/c9ea7e7cd6f4091f7358139669b2208ef003a4bb",
-                "reference": "c9ea7e7cd6f4091f7358139669b2208ef003a4bb",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/f50ee80f42c77c48bfb7b9c9818bb28366f8030e",
+                "reference": "f50ee80f42c77c48bfb7b9c9818bb28366f8030e",
                 "shasum": ""
             },
             "require": {
@@ -2592,7 +2592,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-04-10T07:25:06+00:00"
+            "time": "2018-07-19T08:23:47+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -3113,21 +3113,20 @@
         },
         {
             "name": "dmstr/yii2-publication-module",
-            "version": "0.3.0",
+            "version": "0.4.5-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-publication-module.git",
-                "reference": "9687d497123715f602fc510d310fe7cae149b249"
+                "reference": "98abd1194a0971bf2c21da07a66afacc158e70ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/9687d497123715f602fc510d310fe7cae149b249",
-                "reference": "9687d497123715f602fc510d310fe7cae149b249",
+                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/98abd1194a0971bf2c21da07a66afacc158e70ed",
+                "reference": "98abd1194a0971bf2c21da07a66afacc158e70ed",
                 "shasum": ""
             },
             "require": {
-                "2amigos/yii2-translateable-behavior": "^0.1",
-                "dmstr/yii2-backend-module": "^0.7.0",
+                "2amigos/yii2-translateable-behavior": "^0.1.2",
                 "dmstr/yii2-widgets2-module": "^0.6",
                 "insolita/yii2-adminlte-widgets": "~1.1",
                 "kartik-v/yii2-widget-select2": "^2",
@@ -3156,7 +3155,7 @@
                 "publication",
                 "yii2"
             ],
-            "time": "2018-06-29T09:21:57+00:00"
+            "time": "2018-07-19T08:53:41+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -10338,8 +10337,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "dmstr/yii2-backend-module": 10,
         "dmstr/yii2-filefly-module": 10,
         "dmstr/yii2-filemanager-widgets": 10,
+        "dmstr/yii2-publication-module": 10,
         "dmstr/yii2-resque-module": 15,
         "roave/security-advisories": 20
     },
