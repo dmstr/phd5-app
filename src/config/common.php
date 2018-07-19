@@ -12,7 +12,6 @@
 // prepare application languages
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
-use yii\helpers\ArrayHelper;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -41,6 +40,12 @@ Yii::$container->set(
 );
 Yii::$container->set(
     Da\User\Controller\PermissionController::class,
+    [
+        'layout' => $boxLayout,
+    ]
+);
+Yii::$container->set(
+    Da\User\Controller\RoleController::class,
     [
         'layout' => $boxLayout,
     ]
@@ -85,10 +90,10 @@ return [
             'bundles' => $bundles,
             'basePath' => '@app/../web/assets',
         ],
-//        'authManager' => [
-//            'class' => \dektrium\rbac\components\DbManager::class,
-//            'defaultRoles' => ['Default'],
-//        ],
+        'authManager' => [
+            'class' => Da\User\Component\AuthDbManagerComponent::class,
+            'defaultRoles' => ['Default'],
+        ],
         'cache' => getenv('APP_NO_CACHE') ? null : [
             'class' => \yii\redis\Cache::class,
         ],
@@ -305,11 +310,6 @@ return [
         'publication' => [
             'class' => dmstr\modules\publication\Module::class
         ],
-//        'rbac' => [
-//            'class' => \dektrium\rbac\RbacWebModule::class,
-//            'layout' => '@backend/views/layouts/box',
-//            #'enableFlashMessages' => false,
-//        ],
         'redirects' => [
             'class' => \dmstr\modules\redirect\Module::class,
             'layout' => '@backend/views/layouts/main',
