@@ -91,7 +91,7 @@ return [
             'basePath' => '@app/../web/assets',
         ],
         'authManager' => [
-            'class' => Da\User\Component\AuthDbManagerComponent::class,
+            'class' => \yii\rbac\DbManager::class,
             'defaultRoles' => ['Default'],
         ],
         'cache' => getenv('APP_NO_CACHE') ? null : [

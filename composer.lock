@@ -2917,16 +2917,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.11",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "711b4fcf171b68a8683ae1389bb99af005d5dfba"
+                "reference": "b766743648def8f4ecdc48d21e7a83277aa2b66e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/711b4fcf171b68a8683ae1389bb99af005d5dfba",
-                "reference": "711b4fcf171b68a8683ae1389bb99af005d5dfba",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/b766743648def8f4ecdc48d21e7a83277aa2b66e",
+                "reference": "b766743648def8f4ecdc48d21e7a83277aa2b66e",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +2958,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-07-19T10:45:08+00:00"
+            "time": "2018-07-19T11:33:28+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
