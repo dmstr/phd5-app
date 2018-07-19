@@ -9,7 +9,6 @@
  * file that was distributed with this source code
  */
 
-use dektrium\rbac\commands\RbacController;
 use hrzg\widget\commands\CopyController;
 
 return [
@@ -50,7 +49,6 @@ return [
                     '@yii/web/migrations',
                     '@app/migrations/legacy/migration-command',
                     '@bedezign/yii2/audit/migrations',
-                    '@dektrium/user/migrations',
                     '@dmstr/modules/contact/migrations',
                     '@dmstr/modules/pages/migrations',
                     '@dmstr/modules/publication/migrations',
@@ -63,6 +61,9 @@ return [
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
                 ]
             ),
+            'migrationNamespaces' => [
+                Da\User\Migration::class,
+            ],
         ],
         'rbac' => \dmstr\helpers\RbacController::class,
         'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class,
