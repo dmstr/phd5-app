@@ -2,7 +2,7 @@
 
 namespace tests\codeception\unit\models;
 
-use dektrium\user\models\User;
+use Da\User\Model\User;
 
 class UserTest extends \Codeception\Test\Unit
 {
