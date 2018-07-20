@@ -488,16 +488,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.63.3",
+            "version": "3.63.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c90015c87088eb93718d4e1cc418b0a13d9d3356"
+                "reference": "255574137faa6cb4204b6c58df329dafd297df0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c90015c87088eb93718d4e1cc418b0a13d9d3356",
-                "reference": "c90015c87088eb93718d4e1cc418b0a13d9d3356",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/255574137faa6cb4204b6c58df329dafd297df0a",
+                "reference": "255574137faa6cb4204b6c58df329dafd297df0a",
                 "shasum": ""
             },
             "require": {
@@ -564,7 +564,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-07-18T20:14:07+00:00"
+            "time": "2018-07-19T19:09:51+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2917,16 +2917,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.12",
+            "version": "0.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "b766743648def8f4ecdc48d21e7a83277aa2b66e"
+                "reference": "393522a29ca4e5c513cf23fe17d16424db2f34a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/b766743648def8f4ecdc48d21e7a83277aa2b66e",
-                "reference": "b766743648def8f4ecdc48d21e7a83277aa2b66e",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/393522a29ca4e5c513cf23fe17d16424db2f34a9",
+                "reference": "393522a29ca4e5c513cf23fe17d16424db2f34a9",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +2958,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-07-19T11:33:28+00:00"
+            "time": "2018-07-20T07:08:21+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
