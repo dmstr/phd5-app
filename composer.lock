@@ -491,16 +491,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.63.4",
+            "version": "3.63.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "255574137faa6cb4204b6c58df329dafd297df0a"
+                "reference": "e12a6fb9045720fd96bd75e801b23e2877aa1245"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/255574137faa6cb4204b6c58df329dafd297df0a",
-                "reference": "255574137faa6cb4204b6c58df329dafd297df0a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e12a6fb9045720fd96bd75e801b23e2877aa1245",
+                "reference": "e12a6fb9045720fd96bd75e801b23e2877aa1245",
                 "shasum": ""
             },
             "require": {
@@ -567,7 +567,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-07-19T19:09:51+00:00"
+            "time": "2018-07-20T21:01:32+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2733,16 +2733,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "0.10.1",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "48ddf43056b28b74e54993b16b3a614763a4a4d3"
+                "reference": "9fca9521bd9335a6848126441918ff6ac50c5197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/48ddf43056b28b74e54993b16b3a614763a4a4d3",
-                "reference": "48ddf43056b28b74e54993b16b3a614763a4a4d3",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/9fca9521bd9335a6848126441918ff6ac50c5197",
+                "reference": "9fca9521bd9335a6848126441918ff6ac50c5197",
                 "shasum": ""
             },
             "require": {
@@ -2755,7 +2755,8 @@
                 "psr-4": {
                     "dmstr\\db\\": "db/",
                     "dmstr\\db\\tests\\": "db/tests/",
-                    "dmstr\\console\\": "console/"
+                    "dmstr\\console\\": "console/",
+                    "dmstr\\widgets\\": "widgets/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2775,7 +2776,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-26T17:52:37+00:00"
+            "time": "2018-07-18T10:33:25+00:00"
         },
         {
             "name": "dmstr/yii2-emojifyjs-asset",
@@ -2819,21 +2820,21 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "0.7.0-beta2",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "18bd7fa722483819daddb8e004316beb49f245ea"
+                "reference": "527ea035de6fbbe721c762159513d7e3d10bc2e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/18bd7fa722483819daddb8e004316beb49f245ea",
-                "reference": "18bd7fa722483819daddb8e004316beb49f245ea",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/527ea035de6fbbe721c762159513d7e3d10bc2e4",
+                "reference": "527ea035de6fbbe721c762159513d7e3d10bc2e4",
                 "shasum": ""
             },
             "require": {
                 "creocoder/yii2-flysystem": "^0.9.1",
-                "dmstr/yii2-db": "~0.7",
+                "dmstr/yii2-db": "^1.0.0",
                 "league/flysystem-sftp": "~1.0",
                 "league/flysystem-webdav": "~1.0",
                 "yiisoft/yii2": "~2.0.13"
@@ -2866,20 +2867,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-05T09:23:33+00:00"
+            "time": "2018-07-20T21:21:20+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
-            "version": "0.7.0-beta1",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filemanager-widgets.git",
-                "reference": "7322d070ef91ebc0cda1105d45b97b64e0bce983"
+                "reference": "b5faab66f4c77b4e81379fe99ade0e8f67f8682d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/7322d070ef91ebc0cda1105d45b97b64e0bce983",
-                "reference": "7322d070ef91ebc0cda1105d45b97b64e0bce983",
+                "url": "https://api.github.com/repos/dmstr/yii2-filemanager-widgets/zipball/b5faab66f4c77b4e81379fe99ade0e8f67f8682d",
+                "reference": "b5faab66f4c77b4e81379fe99ade0e8f67f8682d",
                 "shasum": ""
             },
             "require": {
@@ -2889,7 +2890,7 @@
                 "bower-asset/bootstrap": "^3.3.0",
                 "bower-asset/ng-file-upload": "^12.0.1",
                 "bower-asset/ngclipboard": "^1.1.1",
-                "dmstr/yii2-filefly-module": "^0.7.0",
+                "dmstr/yii2-filefly-module": "^1.0.0",
                 "kartik-v/yii2-widget-select2": "^2.0.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
                 "yiisoft/yii2": "*"
@@ -2922,7 +2923,7 @@
                 "filemanager",
                 "yii2"
             ],
-            "time": "2018-05-28T12:41:01+00:00"
+            "time": "2018-07-20T21:24:41+00:00"
         },
         {
             "name": "dmstr/yii2-helpers",
@@ -3008,22 +3009,22 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "235457c34cd9272b430f73db8a2fb63ccb3e80ac"
+                "reference": "2311803d7683c50ff0e0c2e282291e4428b32fd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/235457c34cd9272b430f73db8a2fb63ccb3e80ac",
-                "reference": "235457c34cd9272b430f73db8a2fb63ccb3e80ac",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/2311803d7683c50ff0e0c2e282291e4428b32fd2",
+                "reference": "2311803d7683c50ff0e0c2e282291e4428b32fd2",
                 "shasum": ""
             },
             "require": {
                 "bedezign/yii2-audit": "^1.1",
                 "devgroup/yii2-jsoneditor": "1.0.*",
-                "dmstr/yii2-db": "^0.10.0",
+                "dmstr/yii2-db": "^1.0.0",
                 "dmstr/yii2-web": "^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "kartik-v/yii2-tree-manager": ">=1.0.3 <=1.0.5",
@@ -3067,7 +3068,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2018-07-11T21:26:08+00:00"
+            "time": "2018-07-20T21:30:00+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -3297,23 +3298,23 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "723cef8a79b4fe820103d8256637580137f745ea"
+                "reference": "b5499bdb3737f44f5ab935689fe47a7e7ea45272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/723cef8a79b4fe820103d8256637580137f745ea",
-                "reference": "723cef8a79b4fe820103d8256637580137f745ea",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/b5499bdb3737f44f5ab935689fe47a7e7ea45272",
+                "reference": "b5499bdb3737f44f5ab935689fe47a7e7ea45272",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-ckeditor-widget": "^2.0.2",
                 "bedezign/yii2-audit": "^1.0",
                 "beowulfenator/yii2-json-editor": "^1.1",
-                "dmstr/yii2-db": "^0.10.1",
+                "dmstr/yii2-db": "^1.0.0",
                 "dmstr/yii2-web": "^0.3.1 || ^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
@@ -3345,7 +3346,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-07-17T13:57:48+00:00"
+            "time": "2018-07-20T20:12:00+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -4468,51 +4469,6 @@
                 "yii2"
             ],
             "time": "2016-03-31T00:00:00+00:00"
-        },
-        {
-            "name": "mexitek/phpcolors",
-            "version": "v0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mexitek/phpColors.git",
-                "reference": "89bf30473a68dc8845e46e9db3e536b969e18c11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mexitek/phpColors/zipball/89bf30473a68dc8845e46e9db3e536b969e18c11",
-                "reference": "89bf30473a68dc8845e46e9db3e536b969e18c11",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Arlo Carreon",
-                    "homepage": "http://arlocarreon.com",
-                    "role": "creator"
-                }
-            ],
-            "description": "A series of methods that let you manipulate colors. Just incase you ever need different shades of one color on the fly.",
-            "homepage": "http://mexitek.github.com/phpColors/",
-            "keywords": [
-                "color",
-                "css",
-                "design",
-                "frontend",
-                "ui"
-            ],
-            "time": "2015-09-09T15:43:06+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -10352,8 +10308,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "dmstr/yii2-backend-module": 10,
-        "dmstr/yii2-filefly-module": 10,
-        "dmstr/yii2-filemanager-widgets": 10,
+        "dmstr/yii2-db": 15,
+        "dmstr/yii2-filefly-module": 15,
+        "dmstr/yii2-filemanager-widgets": 15,
         "dmstr/yii2-pages-module": 15,
         "dmstr/yii2-publication-module": 15,
         "dmstr/yii2-resque-module": 15,
