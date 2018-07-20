@@ -7,7 +7,7 @@ stages:
   - cleanup
 
 variables:
-  ISOLATION: "buildpipeline${CI_PIPELINE_ID}"
+  ISOLATION: "buildpipeline${CI_PIPELINE_ID}${CI_PROJECT_NAME}"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
   FLAVOUR: ""

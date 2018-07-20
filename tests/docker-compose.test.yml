@@ -16,6 +16,7 @@ services:
     ports:
       - 80
     environment:
+      - PHP_ENABLE_XDEBUG
       - DB_ENV_MYSQL_ROOT_PASSWORD=secret
       - YII_ENV=test
 
