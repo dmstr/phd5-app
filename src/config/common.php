@@ -95,9 +95,11 @@ return [
             'defaultRoles' => ['Default'],
             'cache' => 'cache'
         ],
-        'cache' => getenv('APP_NO_CACHE') ? null : [
-            'class' => \yii\redis\Cache::class,
-        ],
+        'cache' =>
+            [
+                'class' => getenv('APP_NO_CACHE') ?
+                    \yii\caching\DummyCache::class : \yii\redis\Cache::class,
+            ],
         'db' => [
             'class' => \yii\db\Connection::class,
             'dsn' => getenv('DATABASE_DSN'),
