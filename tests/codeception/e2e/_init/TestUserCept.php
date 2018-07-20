@@ -26,14 +26,15 @@ $I->makeScreenshot('success-preview-user');
 $I->amGoingTo('assign permission to preview user');
 $I->click('Assignments');
 
-$I->waitForElementVisible('.select2-selection__rendered', 5);
-$I->click('.select2-selection__rendered');
+$I->waitForElementVisible('.selectize-input', 5);
+$I->click('.selectize-input');
 
-$I->waitForElementVisible('[id$="-Preview"]', 10);
-$I->click('[id$="-Preview"]');
-$I->waitForElementNotVisible('[id$="-Preview"]', 10);
+$I->waitForElementVisible('[data-value="pages"]', 10);
+$I->click('[data-value="pages"]');
+$I->waitForElementVisible('.item[data-value="pages"]', 10);
 $I->makeScreenshot('success-preview-items');
-
+$I->click('Create'); // hide selectize drop-down
+$I->makeScreenshot('success-preview-items-remove');
 $I->click('Update assignments');
 $I->wait(2);
 $I->makeScreenshot('success-preview-items-update');

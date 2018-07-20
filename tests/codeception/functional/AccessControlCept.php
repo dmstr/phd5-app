@@ -15,7 +15,6 @@ $routesWithAccessControl = [
     '/settings',
     '/settings/default/create',
     '/translatemanager',
-    '/rbac',
     '/user',
     '/pages'
 ];

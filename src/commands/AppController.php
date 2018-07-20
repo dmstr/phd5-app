@@ -2,7 +2,6 @@
 
 namespace app\commands;
 
-use dektrium\user\models\User;
 use mikehaertl\shellcommand\Command;
 use yii\console\Controller;
 use yii\helpers\VarDumper;
@@ -57,7 +56,7 @@ class AppController extends Controller
     public function actionVersion()
     {
         $this->stdout('Application Version: ');
-        $this->stdout(getenv('APP_NAME').' ');
+        $this->stdout(getenv('APP_NAME') . ' ');
         $this->stdout(APP_VERSION);
         echo "\n";
     }
@@ -115,7 +114,7 @@ class AppController extends Controller
         $matchRegex = '"^[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]\?[a-z0-9]$"';
 
         // create $cmd command
-        $cmd = 'cd "'.$assets.'" && ls | grep -e '.$matchRegex.' | xargs rm -rf ';
+        $cmd = 'cd "' . $assets . '" && ls | grep -e ' . $matchRegex . ' | xargs rm -rf ';
 
         // Set command
         $command = new Command($cmd);
@@ -128,7 +127,7 @@ class AppController extends Controller
             if ($command->execute()) {
                 echo "Web assets have been deleted.\n\n";
             } else {
-                echo "\n".$command->getError()."\n";
+                echo "\n" . $command->getError() . "\n";
                 echo $command->getStdErr();
             }
         }
