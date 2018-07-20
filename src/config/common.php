@@ -12,7 +12,6 @@
 // prepare application languages
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
-use yii\helpers\ArrayHelper;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -30,11 +29,31 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     );
 }
 
+$boxLayout = '@backend/views/layouts/box';
+
 // custom layout for user module (manage/admin)
 Yii::$container->set(
-    \dektrium\user\controllers\AdminController::class,
+    Da\User\Controller\AdminController::class,
     [
-        'layout' => '@backend/views/layouts/box',
+        'layout' => $boxLayout,
+    ]
+);
+Yii::$container->set(
+    Da\User\Controller\PermissionController::class,
+    [
+        'layout' => $boxLayout,
+    ]
+);
+Yii::$container->set(
+    Da\User\Controller\RoleController::class,
+    [
+        'layout' => $boxLayout,
+    ]
+);
+Yii::$container->set(
+    Da\User\Controller\RuleController::class,
+    [
+        'layout' => $boxLayout,
     ]
 );
 
@@ -43,7 +62,7 @@ return [
     'id' => 'app',
     'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
-    'basePath' => realpath(__DIR__ . '/..'),
+    'basePath' => dirname(__DIR__),
     'vendorPath' => '@app/../vendor',
     'runtimePath' => '@app/../runtime',
     // Bootstrapped modules are loaded in every request
@@ -72,7 +91,7 @@ return [
             'basePath' => '@app/../web/assets',
         ],
         'authManager' => [
-            'class' => \dektrium\rbac\components\DbManager::class,
+            'class' => \yii\rbac\DbManager::class,
             'defaultRoles' => ['Default'],
         ],
         'cache' => getenv('APP_NO_CACHE') ? null : [
@@ -158,7 +177,7 @@ return [
             'class' => \dmstr\web\User::class,
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/security/login'],
-            'identityClass' => \dektrium\user\models\User::class,
+            'identityClass' => Da\User\Model\User::class,
             'rootUsers' => ['admin'],
         ],
         'urlManager' => [
@@ -222,7 +241,7 @@ return [
         'audit' => [
             'class' => \bedezign\yii2\audit\Audit::class,
             'accessRoles' => ['audit-module'],
-            'layout' => '@backend/views/layouts/box',
+            'layout' => $boxLayout,
             'panels' => [
                 'audit/request',
                 'audit/mail',
@@ -278,7 +297,7 @@ return [
         ],
         'queuemanager' => [
             'class' => \ignatenkovnikita\queuemanager\QueueManager::class,
-            'layout' => '@backend/views/layouts/box',
+            'layout' => $boxLayout,
         ],
         'pages' => [
             'class' => \dmstr\modules\pages\Module::class,
@@ -286,15 +305,10 @@ return [
         ],
         'prototype' => [
             'class' => \dmstr\modules\prototype\Module::class,
-            'layout' => '@backend/views/layouts/box',
+            'layout' => $boxLayout,
         ],
         'publication' => [
             'class' => dmstr\modules\publication\Module::class
-        ],
-        'rbac' => [
-            'class' => \dektrium\rbac\RbacWebModule::class,
-            'layout' => '@backend/views/layouts/box',
-            #'enableFlashMessages' => false,
         ],
         'redirects' => [
             'class' => \dmstr\modules\redirect\Module::class,
@@ -307,16 +321,15 @@ return [
         'translatemanager' => [
             'class' => \lajax\translatemanager\Module::class,
             'root' => '@app/views',
-            'layout' => '@backend/views/layouts/box',
+            'layout' => $boxLayout,
             'allowedIPs' => ['*'],
             'roles' => ['translate-module'],
         ],
         'user' => [
-            'class' => \dektrium\user\Module::class,
+            'class' => Da\User\Module::class,
             'layout' => '@app/views/layouts/container',
             'defaultRoute' => 'admin',
-            'adminPermission' => 'user-module',
-            'admins' => ['admin'], // TODO: see https://github.com/dektrium/yii2-user/issues/1016
+            'administrators' => ['admin'],
             'enableFlashMessages' => false,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
         ],

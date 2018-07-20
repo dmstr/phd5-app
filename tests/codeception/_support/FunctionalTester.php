@@ -25,8 +25,8 @@ class FunctionalTester extends \Codeception\Actor
     */
     public function login($username, $password){
         $this->amOnPage('/user/security/login');
-        $this->fillField('input[name="login-form[login]"]', $username);
-        $this->fillField('input[name="login-form[password]"]', $password);
-        $this->click('#login-form button');
+        $this->fillField('input[name="LoginForm[login]"]', $username);
+        $this->fillField('input[name="LoginForm[password]"]', $password);
+        $this->click('#LoginForm button');
     }
 }
