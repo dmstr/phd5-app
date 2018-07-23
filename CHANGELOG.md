@@ -1,6 +1,11 @@
 # Changelog
 
-### 5.2.0 (under development)
+### 5.3.0  (under development)
+
+- switched to `2amigos/yii2-usuario`
+- updated `dmstr/yii2-widgets2-module` and `dmstr/yii2-pages-module`
+
+### 5.2.0
 
 - updated `dmstr/yii2-resque-module`
   - uses `yiisoft/yii2-queue`
