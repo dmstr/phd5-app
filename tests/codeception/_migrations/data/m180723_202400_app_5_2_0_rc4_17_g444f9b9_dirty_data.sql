@@ -1,13 +1,13 @@
--- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: db    Database: db
+-- Host: db    Database: test-phd5
 -- ------------------------------------------------------
--- Server version	5.6.35-80.0
+-- Server version	5.7.20-19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
@@ -20,6 +20,7 @@
 
 LOCK TABLES `app_auth_item` WRITE; TRUNCATE TABLE `app_auth_item`;
 /*!40000 ALTER TABLE `app_auth_item` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_auth_item` VALUES ('app',2,'All Application Controllers (without modules) [route]',NULL,NULL,1467315829,1489020665);
 INSERT INTO `app_auth_item` VALUES ('app_site',2,'Main Application Controller [route]',NULL,NULL,1463048457,1489020650);
 INSERT INTO `app_auth_item` VALUES ('backend',2,'Backend Module [route]',NULL,NULL,1467315450,1489020634);
@@ -48,6 +49,7 @@ INSERT INTO `app_auth_item` VALUES ('settings',2,'[route]',NULL,NULL,1467315669,
 INSERT INTO `app_auth_item` VALUES ('settings-module',2,'Settings Module',NULL,NULL,1467315605,1489020455);
 INSERT INTO `app_auth_item` VALUES ('Test58e1d2ae92eb8',1,'Test Role',NULL,NULL,1491194543,1491194543);
 INSERT INTO `app_auth_item` VALUES ('Test58e1d3b9cc658',1,'Test Role',NULL,NULL,1491194810,1491194810);
+INSERT INTO `app_auth_item` VALUES ('Test5b5635eadaef2',1,'Test Role',NULL,NULL,1532376555,1532376555);
 INSERT INTO `app_auth_item` VALUES ('translate-module',2,'Translation Manager Module',NULL,NULL,1467318323,1489020467);
 INSERT INTO `app_auth_item` VALUES ('translatemanager',2,'[route]',NULL,NULL,1467318500,1489020477);
 INSERT INTO `app_auth_item` VALUES ('user',2,'[route]',NULL,NULL,1467318564,1489020489);
@@ -64,8 +66,10 @@ INSERT INTO `app_auth_item` VALUES ('widgets_crud_widget_update',2,'Widgets CRUD
 INSERT INTO `app_auth_item` VALUES ('widgets_crud_widget_view',2,'Widgets CRUD Content View',NULL,NULL,1491193845,1491193845);
 INSERT INTO `app_auth_item` VALUES ('widgets_default_index',2,'Widgets Manager',NULL,NULL,1491193845,1491193845);
 INSERT INTO `app_auth_item` VALUES ('widgets_test',2,'Widgets TEST Playground',NULL,NULL,1491193845,1491193845);
+INSERT INTO `app_auth_item` VALUES ('widgets-cell-edit',2,'Widgets frontend buttons',NULL,NULL,1532371751,1532371751);
 /*!40000 ALTER TABLE `app_auth_item` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_auth_item_child`
@@ -73,6 +77,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_auth_item_child` WRITE; TRUNCATE TABLE `app_auth_item_child`;
 /*!40000 ALTER TABLE `app_auth_item_child` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_auth_item_child` VALUES ('Master','app');
 INSERT INTO `app_auth_item_child` VALUES ('Editor','app_site');
 INSERT INTO `app_auth_item_child` VALUES ('Preview','app_site');
@@ -114,6 +119,7 @@ INSERT INTO `app_auth_item_child` VALUES ('Master','widgets');
 INSERT INTO `app_auth_item_child` VALUES ('Editor','widgets_crud_widget');
 /*!40000 ALTER TABLE `app_auth_item_child` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_auth_rule`
@@ -121,8 +127,221 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_auth_rule` WRITE; TRUNCATE TABLE `app_auth_rule`;
 /*!40000 ALTER TABLE `app_auth_rule` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `app_auth_rule` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_page`
+--
+
+LOCK TABLES `app_dmstr_page` WRITE; TRUNCATE TABLE `app_dmstr_page`;
+/*!40000 ALTER TABLE `app_dmstr_page` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_dmstr_page` VALUES (101,1000,6,7,1,'pages',NULL,'/pages/default','','{}',NULL,'*','*','*','*','pagelines',1,1,0,0,0,1,1,1,1,1,0,'2016-05-13 11:16:16','2017-01-30 09:45:52');
+INSERT INTO `app_dmstr_page` VALUES (102,1000,17,18,2,'prototype-less',NULL,'/prototype/less','','{}',NULL,'*','*','*','*','pencil-square',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 18:51:34','2016-09-30 03:18:36');
+INSERT INTO `app_dmstr_page` VALUES (103,1000,21,22,2,'prototype-html',NULL,'/prototype/html','','{}',NULL,'*','*','*','*','edit',1,1,0,0,0,1,1,1,1,1,0,'2016-05-13 11:16:19','2017-02-08 08:56:42');
+INSERT INTO `app_dmstr_page` VALUES (104,1000,11,12,2,'translatemanager',NULL,'/translatemanager/language','','{}',NULL,'*','*','*','*','globe',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 18:16:16','2016-05-16 09:44:40');
+INSERT INTO `app_dmstr_page` VALUES (105,1000,24,25,1,'user',NULL,'/user/admin','','{}',NULL,'*','*','*','*','user',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 18:16:16','2017-02-13 15:48:06');
+INSERT INTO `app_dmstr_page` VALUES (107,1000,19,20,2,'twig',NULL,'/prototype/twig','','{}',NULL,'*','*','*','*','newspaper-o',1,1,0,0,0,1,1,1,1,1,0,'2016-05-16 00:34:43','2016-09-30 03:18:27');
+INSERT INTO `app_dmstr_page` VALUES (108,1000,27,28,2,'settings',NULL,'/settings/default','','{\"sort\":\"section\"}',NULL,'*','*','*','*','cog',1,1,0,0,0,1,1,1,1,1,0,'2016-05-13 11:16:14','2017-02-08 11:16:07');
+INSERT INTO `app_dmstr_page` VALUES (110,1000,35,36,2,'jobs',NULL,'/resque','','{}',NULL,'*','*','*','*','play-circle',1,1,0,0,0,1,1,1,1,1,0,'2016-05-16 09:54:07','2016-12-23 00:17:01');
+INSERT INTO `app_dmstr_page` VALUES (111,1000,33,34,2,'redirects',NULL,'/redirects','','{}',NULL,'*','*','*','*','arrows-alt',1,1,0,0,0,1,1,1,1,1,0,'2016-05-16 09:52:36','2016-05-16 09:52:36');
+INSERT INTO `app_dmstr_page` VALUES (112,1000,9,10,2,'widgets-content',NULL,'/widgets/crud/widget','','{}',NULL,'*','*','*','*','file-text',1,1,0,0,0,1,1,1,1,1,0,'2016-05-25 20:34:20','2017-02-01 10:05:14');
+INSERT INTO `app_dmstr_page` VALUES (113,1000,15,16,2,'widget-templates',NULL,'/widgets/crud/widget-template','','{}',NULL,'*','*','*','*','file-code-o',1,1,0,0,0,1,1,1,1,1,0,'2016-05-25 20:35:04','2017-03-08 23:45:14');
+INSERT INTO `app_dmstr_page` VALUES (114,1000,37,38,2,'audit',NULL,'/audit','','{}',NULL,'*','*','*','*','search-plus',1,1,0,0,0,1,1,1,1,1,0,'2016-05-16 09:51:22','2016-05-16 09:51:22');
+INSERT INTO `app_dmstr_page` VALUES (115,1000,4,5,1,'moxiemanager',NULL,'/filefly','','{}',NULL,'*','*','*','*','image',1,1,0,0,0,1,1,1,1,1,0,'2016-05-25 22:29:42','2017-01-30 09:35:49');
+INSERT INTO `app_dmstr_page` VALUES (147,1000,8,13,1,'cms',NULL,'','','{}',NULL,'*','*','*','*','briefcase',1,1,0,0,0,1,1,1,1,1,0,'2016-12-22 23:22:25','2017-01-30 16:07:09');
+INSERT INTO `app_dmstr_page` VALUES (148,1000,26,39,1,'system',NULL,'','','{}',NULL,'*','*','*','*','cogs',1,1,0,0,0,1,1,1,1,1,0,'2016-12-22 23:34:27','2016-12-23 02:36:14');
+INSERT INTO `app_dmstr_page` VALUES (149,1000,29,30,2,'configuration',NULL,'/backend/default/view-config','','{}',NULL,'*','*','*','*','suitcase',1,1,0,0,0,1,1,1,1,1,0,'2016-12-22 23:45:18','2016-12-22 23:45:18');
+INSERT INTO `app_dmstr_page` VALUES (150,1000,14,23,1,'developer-tools',NULL,'','','{}',NULL,'*','*','*','*','code',1,1,0,0,0,1,1,1,1,1,0,'2017-01-30 09:34:08','2017-01-30 09:34:45');
+INSERT INTO `app_dmstr_page` VALUES (151,1000,2,3,1,'dashboard',NULL,'/backend/default/index','','{}',NULL,'*','*','*','*','dashboard',1,1,0,0,0,1,1,1,1,1,0,'2017-01-30 10:00:06','2017-01-30 16:22:35');
+INSERT INTO `app_dmstr_page` VALUES (1000,1000,1,44,0,'backend',NULL,'/backend','','{}',NULL,'*','*','*','*','',1,1,0,0,1,1,1,1,1,1,0,'2016-05-15 18:16:16','2016-05-13 11:09:59');
+INSERT INTO `app_dmstr_page` VALUES (1001,1001,1,8,0,'root',NULL,'/pages/default/page','@vendor/dmstr/yii2-prototype-module/src/views/render/twig.php','{}',NULL,'en','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 22:32:46','2017-01-30 17:01:47');
+INSERT INTO `app_dmstr_page` VALUES (1003,1003,1,4,0,'root',NULL,'','','{}',0,'de','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 22:54:23','2018-07-23 20:11:57');
+INSERT INTO `app_dmstr_page` VALUES (1004,1003,2,3,1,'test-a',NULL,'/pages/default/page','@vendor/dmstr/yii2-prototype-module/src/views/render/twig.php','{}',0,'de','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2016-05-15 22:54:36','2018-07-23 20:13:26');
+INSERT INTO `app_dmstr_page` VALUES (1035,1001,2,3,1,'folder-1',NULL,'/pages/default/page','@vendor/dmstr/yii2-widgets2-module/src/views/test/single.twig','{}',NULL,'en','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2016-08-01 23:18:32','2017-02-01 09:56:08');
+INSERT INTO `app_dmstr_page` VALUES (1044,1044,1,2,0,'root',NULL,'','','{}',NULL,'ru','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2016-11-08 15:09:28','2016-11-08 15:09:28');
+INSERT INTO `app_dmstr_page` VALUES (1054,1000,31,32,2,'58bd0aa4a8b58',NULL,'/backend/default/show-auth','','{}',NULL,'*','*','*','*','certificate',1,1,0,0,0,1,1,1,1,1,0,'2017-03-06 07:07:16','2017-03-09 00:51:35');
+INSERT INTO `app_dmstr_page` VALUES (1055,1001,4,5,1,'58e1d41112d56',NULL,'','','{}',1,'en','*','*','*','',1,1,0,0,0,1,1,1,1,1,0,'2017-04-03 04:48:17','2017-04-03 04:48:17');
+INSERT INTO `app_dmstr_page` VALUES (1056,1001,6,7,1,'5b563610a2c79',NULL,'','','{}',1,'en','*',NULL,NULL,'',1,1,0,0,0,1,1,1,1,1,0,'2018-07-23 20:09:52','2018-07-23 20:09:52');
+/*!40000 ALTER TABLE `app_dmstr_page` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_page_translation`
+--
+
+LOCK TABLES `app_dmstr_page_translation` WRITE; TRUNCATE TABLE `app_dmstr_page_translation`;
+/*!40000 ALTER TABLE `app_dmstr_page_translation` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_dmstr_page_translation` VALUES (1,101,'en','Page Tree','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (2,101,'de','Page Tree','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (3,101,'ru','Page Tree','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (4,102,'en','LESS Themes','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (5,102,'de','LESS Themes','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (6,102,'ru','LESS Themes','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (7,103,'en','Static HTML','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (8,103,'de','Static HTML','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (9,103,'ru','Static HTML','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (10,104,'en','Translations','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (11,104,'de','Translations','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (12,104,'ru','Translations','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (13,105,'en','Users and Roles','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (14,105,'de','Users and Roles','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (15,105,'ru','Users and Roles','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (16,107,'en','Twig Layouts','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (17,107,'de','Twig Layouts','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (18,107,'ru','Twig Layouts','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (19,108,'en','Settings','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (20,108,'de','Settings','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (21,108,'ru','Settings','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (22,110,'en','Jobs','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (23,110,'de','Jobs','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (24,110,'ru','Jobs','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (25,111,'en','Redirects','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (26,111,'de','Redirects','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (27,111,'ru','Redirects','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (28,112,'en','Widget Content','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (29,112,'de','Widget Content','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (30,112,'ru','Widget Content','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (31,113,'en','Widget Templates','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (32,113,'de','Widget Templates','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (33,113,'ru','Widget Templates','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (34,114,'en','Audit','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (35,114,'de','Audit','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (36,114,'ru','Audit','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (37,115,'en','Media Files','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (38,115,'de','Media Files','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (39,115,'ru','Media Files','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (40,147,'en','CMS','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (41,147,'de','CMS','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (42,147,'ru','CMS','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (43,148,'en','System','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (44,148,'de','System','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (45,148,'ru','System','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (46,149,'en','Configuration','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (47,149,'de','Configuration','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (48,149,'ru','Configuration','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (49,150,'en','Frontend Developer','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (50,150,'de','Frontend Developer','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (51,150,'ru','Frontend Developer','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (52,151,'en','Dashboard','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (53,151,'de','Dashboard','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (54,151,'ru','Dashboard','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (55,1000,'en','Backend','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (56,1000,'de','Backend','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (57,1000,'ru','Backend','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (58,1001,'en','Frontend','doros zuhause','doro, home, dorolein','das ist doro, doro ist eine ganz tolle webseite','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (59,1003,'de','Frontend','_ROOT_CONTAINER_','_FOLDER','This is not a real page, just a container for the navigation.','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (60,1004,'de','Beispielseite A','Titel \"A\"','beispielseite, eine, beispiel, seite','dies ist eine beispielseite','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (61,1035,'en','Example Page','Example Page','example, page','this i a example page','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (62,1044,'ru','root_ru','','','','2018-07-23 18:49:11','2018-07-23 18:49:11');
+INSERT INTO `app_dmstr_page_translation` VALUES (63,1054,'en','Authorizations','','','','2018-07-23 18:49:12','2018-07-23 18:49:12');
+INSERT INTO `app_dmstr_page_translation` VALUES (64,1054,'de','Authorizations','','','','2018-07-23 18:49:12','2018-07-23 18:49:12');
+INSERT INTO `app_dmstr_page_translation` VALUES (65,1054,'ru','Authorizations','','','','2018-07-23 18:49:12','2018-07-23 18:49:12');
+INSERT INTO `app_dmstr_page_translation` VALUES (66,1055,'en','Test-58e1d40c0273e','','','','2018-07-23 18:49:12','2018-07-23 18:49:12');
+INSERT INTO `app_dmstr_page_translation` VALUES (67,1056,'en','Test-5b56360dc366d',NULL,NULL,NULL,'2018-07-23 20:09:52','2018-07-23 20:09:52');
+/*!40000 ALTER TABLE `app_dmstr_page_translation` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_page_translation_meta`
+--
+
+LOCK TABLES `app_dmstr_page_translation_meta` WRITE; TRUNCATE TABLE `app_dmstr_page_translation_meta`;
+/*!40000 ALTER TABLE `app_dmstr_page_translation_meta` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (1,101,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (2,102,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (3,103,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (4,104,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (5,105,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (6,107,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (7,108,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (8,110,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (9,111,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (10,112,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (11,113,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (12,114,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (13,115,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (14,147,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (15,148,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (16,149,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (17,150,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (18,151,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (19,1000,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (20,1001,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (21,1003,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (22,1004,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (23,1035,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (24,1044,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (25,1054,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (26,1055,'en',0,1,NULL,NULL);
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (27,1056,'en',0,1,'2018-07-23 20:09:52','2018-07-23 20:09:52');
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (28,1003,'de',0,1,'2018-07-23 20:11:57','2018-07-23 20:11:57');
+INSERT INTO `app_dmstr_page_translation_meta` VALUES (29,1004,'de',0,1,'2018-07-23 20:12:01','2018-07-23 20:13:30');
+/*!40000 ALTER TABLE `app_dmstr_page_translation_meta` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_publication_category`
+--
+
+LOCK TABLES `app_dmstr_publication_category` WRITE; TRUNCATE TABLE `app_dmstr_publication_category`;
+/*!40000 ALTER TABLE `app_dmstr_publication_category` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `app_dmstr_publication_category` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_publication_category_translation`
+--
+
+LOCK TABLES `app_dmstr_publication_category_translation` WRITE; TRUNCATE TABLE `app_dmstr_publication_category_translation`;
+/*!40000 ALTER TABLE `app_dmstr_publication_category_translation` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `app_dmstr_publication_category_translation` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_publication_item`
+--
+
+LOCK TABLES `app_dmstr_publication_item` WRITE; TRUNCATE TABLE `app_dmstr_publication_item`;
+/*!40000 ALTER TABLE `app_dmstr_publication_item` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `app_dmstr_publication_item` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_publication_item_meta`
+--
+
+LOCK TABLES `app_dmstr_publication_item_meta` WRITE; TRUNCATE TABLE `app_dmstr_publication_item_meta`;
+/*!40000 ALTER TABLE `app_dmstr_publication_item_meta` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `app_dmstr_publication_item_meta` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_dmstr_publication_item_translation`
+--
+
+LOCK TABLES `app_dmstr_publication_item_translation` WRITE; TRUNCATE TABLE `app_dmstr_publication_item_translation`;
+/*!40000 ALTER TABLE `app_dmstr_publication_item_translation` DISABLE KEYS */;
+set autocommit=0;
+/*!40000 ALTER TABLE `app_dmstr_publication_item_translation` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_hrzg_widget_content`
@@ -130,22 +349,78 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_hrzg_widget_content` WRITE; TRUNCATE TABLE `app_hrzg_widget_content`;
 /*!40000 ALTER TABLE `app_hrzg_widget_content` DISABLE KEYS */;
-INSERT INTO `app_hrzg_widget_content` VALUES (131,'1','58bee1146d17d',19,'{\"skin\":\"inverse text-right\",\"logo\":\"\",\"blocks\":[{\"title\":\"privacy \",\"link\":\"\"},{\"title\":\"imprint\",\"link\":\"\"},{\"title\":\"contact\",\"link\":\"\"},{\"title\":\"mail\",\"link\":\"\"},{\"title\":\"adress\",\"link\":\"\"},{\"title\":\"number\",\"link\":\"\"}]}','*','','_footer','050','','de','*','*','*',NULL,NULL,'2017-02-21 02:10:07');
-INSERT INTO `app_hrzg_widget_content` VALUES (138,'1','58bee114722f9',17,'{\"headline\":\"Herzlich Willkommen\",\"subline\":\"bei uns\",\"youtube_id\":\"tNm_VYktQCo\",\"imageSource\":\"/_phd/test.png\"}','pages/default/page','1004','main','','','de','*','*','*',NULL,NULL,'2017-02-07 10:34:22');
-INSERT INTO `app_hrzg_widget_content` VALUES (140,'1','58bee11474530',9,'{\"skin\":\"default text-center\",\"ckbox\":true,\"blocks\":[{\"icon\":\"camera-retro\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"E-Mail\",\"button_url\":\"mailto:c.beck@herzogkommunikation.de\"},{\"icon\":\"fire-extinguisher\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"},{\"icon\":\"eraser\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"},{\"icon\":\"volume-down\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"}]}','pages/default/page','1004','main','050','','de','*','*','*',NULL,NULL,NULL);
-INSERT INTO `app_hrzg_widget_content` VALUES (141,'1','58bee11476a0c',4,'{\"skin\":\"default\",\"ckbox\":true,\"title\":\"Senectus et netus et malesuada fames ac turpis\",\"subline\":\"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\",\"blocks\":[{\"text_html\":\"<p><br></p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"fhtruru\",\"button_url\":\"\",\"link_target\":false}]}','pages/default/page','1004','main','080','','de','*','*','*',NULL,NULL,NULL);
-INSERT INTO `app_hrzg_widget_content` VALUES (143,'1','58bee11478996',22,'{\"skin\":\"default text-center\",\"ckbox\":true,\"blocks\":[{\"image_url\":\"/_phd/example_1.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_2.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_3.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_4.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false}]}','pages/default/page','1004','main','020','','de','*','*','*',NULL,NULL,'2017-02-07 10:32:42');
-INSERT INTO `app_hrzg_widget_content` VALUES (154,'1','58bee1147ade7',2,'{\"skin\":\"default\",\"ckbox\":false,\"slides\":[{\"content\":\"/_phd/example_2.jpg\",\"caption\":\"Quisque a lectus.\"},{\"content\":\"/_phd/example_3.jpg\",\"caption\":\"Test\"},{\"content\":\"/_phd/example_4.jpg\",\"caption\":\"lplplp\"},{\"content\":\"/_phd/example_5.jpg\",\"caption\":\"Quisque a lectus.\"}]}','pages/default/page','1004','main','060','','de','*','*','*',NULL,NULL,'2017-02-07 10:32:15');
-INSERT INTO `app_hrzg_widget_content` VALUES (167,'1','58bee1147d088',25,'{\"contained\":false,\"image_url\":\"/_phd/example_4.jpg\",\"description\":\"short description (Search Engine Optimization)\"}','pages/default/page','1004','main','030','','de','*','*','*',NULL,NULL,'2017-02-07 10:32:24');
-INSERT INTO `app_hrzg_widget_content` VALUES (168,'1','58bee114806cc',4,'{\"skin\":\"default text-center\",\"ckbox\":true,\"title\":\"Willkommen auf deiner neuen Website\",\"subline\":\"Viel Spaß damit\",\"blocks\":[{\"text_html\":\"<p>Du brauchst Hilfe? Gehe ins Backend zum Handbuch</p>\\n\",\"button_text\":\"zum Handbuch\",\"button_url\":\"http://doro.app-transporter.com.staging-1.oneba.se/de/help\",\"link_target\":false}]}','app/site/index','','top','010','','de','*','*','*',NULL,NULL,'2017-02-18 01:56:18');
-INSERT INTO `app_hrzg_widget_content` VALUES (178,'1','58bee114828dc',3,'{\"headline\":\"Demo\",\"subline\":\"\",\"imageSource\":\"/_phd/example_4.jpg\",\"skin\":\"default\"}','app/site/index','','top','000','','de','*','*','*',NULL,NULL,'2017-03-09 01:37:09');
-INSERT INTO `app_hrzg_widget_content` VALUES (182,'0','58bee1148a2ea',19,'{\"skin\":\"default\",\"logo\":\"\",\"blocks\":[{\"title\":\"new\",\"link\":\"http://www.duden.de/\",\"link_target\":true},{\"title\":\"same window\",\"link\":\"http://www.duden.de/\",\"link_target\":false}]}','pages/default/page','','_footer','100','','en','*','*','*',NULL,'2017-02-07 09:40:32','2017-02-07 09:54:39');
-INSERT INTO `app_hrzg_widget_content` VALUES (188,'0','58bee1148c61d',3,'{\"headline\":\"Aliquam tincidunt mauris\",\"subline\":\"mauris eu risus\",\"imageSource\":\"/_phd/test.png\"}','app/site/index','','main','a-58c09834','','ru','*','*','*',NULL,'2017-02-15 12:01:07','2017-04-03 04:59:22');
-INSERT INTO `app_hrzg_widget_content` VALUES (190,'1','58c0a2e1b4738',3,'{\"headline\":\"phd5\",\"subline\":\"Application installed successfully.\",\"imageSource\":\"/_phd/test.png\"}','pages/default/page','1001','top','a-58c0a2e1','','en','*','*','*',NULL,'2017-03-09 12:33:37','2017-03-09 01:28:23');
-INSERT INTO `app_hrzg_widget_content` VALUES (191,'0','58c0a339aa01d',9,'{\"skin\":\"default\",\"ckbox\":true,\"blocks\":[{\"icon\":\"500px\",\"title\":\"Quickstart\",\"text_html\":\"<p>First steps...<br />\\n&nbsp;</p>\\n\",\"button_text\":\"Backend\",\"button_url\":\"/backend\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"CMS Functionality\",\"text_html\":\"<p>For content editors and frontend developers</p>\\n\",\"button_text\":\"Help\",\"button_url\":\"/help\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"DevOps\",\"text_html\":\"<p>Developer guide for phd5 application.<br />\\n&nbsp;</p>\\n\",\"button_text\":\"Guide\",\"button_url\":\"/guide\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"Support\",\"text_html\":\"<p>Get help form the community and commerical support.</p>\\n\",\"button_text\":\"Support\",\"button_url\":\"\",\"link_target\":true}]}','pages/default/page','1001','main','a-58c0a339','','en','*','*','*',NULL,'2017-03-09 12:35:05','2017-03-09 12:40:41');
-INSERT INTO `app_hrzg_widget_content` VALUES (192,'0','58e1d441526c8',4,'{\"skin\":\"default\",\"ckbox\":true,\"title\":\"This is a test.\",\"subline\":\"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\",\"blocks\":[]}','widgets/test/index','','container','a-58e1d441','1','en','*','*','*',NULL,'2017-04-03 04:49:05','2017-04-03 04:49:05');
+set autocommit=0;
+INSERT INTO `app_hrzg_widget_content` VALUES (131,'58bee1146d17d',19,'*','','_footer','050','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-21 02:10:07');
+INSERT INTO `app_hrzg_widget_content` VALUES (138,'58bee114722f9',17,'pages/default/page','1004','main','','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-07 10:34:22');
+INSERT INTO `app_hrzg_widget_content` VALUES (140,'58bee11474530',9,'pages/default/page','1004','main','050','','de','*','*','*',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `app_hrzg_widget_content` VALUES (141,'58bee11476a0c',4,'pages/default/page','1004','main','080','','de','*','*','*',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `app_hrzg_widget_content` VALUES (143,'58bee11478996',22,'pages/default/page','1004','main','020','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-07 10:32:42');
+INSERT INTO `app_hrzg_widget_content` VALUES (154,'58bee1147ade7',2,'pages/default/page','1004','main','060','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-07 10:32:15');
+INSERT INTO `app_hrzg_widget_content` VALUES (167,'58bee1147d088',25,'pages/default/page','1004','main','030','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-07 10:32:24');
+INSERT INTO `app_hrzg_widget_content` VALUES (168,'58bee114806cc',4,'app/site/index','','top','010','','de','*','*','*',NULL,NULL,NULL,NULL,'2017-02-18 01:56:18');
+INSERT INTO `app_hrzg_widget_content` VALUES (178,'58bee114828dc',3,'app/site/index','','top','000','','de','*','*','*',NULL,NULL,NULL,NULL,'2018-07-23 20:20:56');
+INSERT INTO `app_hrzg_widget_content` VALUES (182,'58bee1148a2ea',19,'pages/default/page','','_footer','100','','en','*','*','*',NULL,NULL,NULL,'2017-02-07 09:40:32','2017-02-07 09:54:39');
+INSERT INTO `app_hrzg_widget_content` VALUES (188,'58bee1148c61d',3,'app/site/index','','main','a-58c09834','','ru','*','*','*',NULL,NULL,NULL,'2017-02-15 12:01:07','2017-04-03 04:59:22');
+INSERT INTO `app_hrzg_widget_content` VALUES (190,'58c0a2e1b4738',3,'pages/default/page','1001','top','a-58c0a2e1','','en','*','*','*',NULL,NULL,NULL,'2017-03-09 12:33:37','2017-03-09 01:28:23');
+INSERT INTO `app_hrzg_widget_content` VALUES (191,'58c0a339aa01d',9,'pages/default/page','1001','main','a-58c0a339','','en','*','*','*',NULL,NULL,NULL,'2017-03-09 12:35:05','2017-03-09 12:40:41');
+INSERT INTO `app_hrzg_widget_content` VALUES (192,'58e1d441526c8',4,'widgets/test/index','','container','a-58e1d441','1','en','*','*','*',NULL,NULL,NULL,'2017-04-03 04:49:05','2017-04-03 04:49:05');
+INSERT INTO `app_hrzg_widget_content` VALUES (193,'5b56362929438',4,'widgets/test/index','','container','a-5b56-629','1','en','*',NULL,NULL,NULL,NULL,NULL,'2018-07-23 20:10:17','2018-07-23 20:10:17');
 /*!40000 ALTER TABLE `app_hrzg_widget_content` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_hrzg_widget_content_translation`
+--
+
+LOCK TABLES `app_hrzg_widget_content_translation` WRITE; TRUNCATE TABLE `app_hrzg_widget_content_translation`;
+/*!40000 ALTER TABLE `app_hrzg_widget_content_translation` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (1,131,'de','{\"skin\":\"inverse text-right\",\"logo\":\"\",\"blocks\":[{\"title\":\"privacy \",\"link\":\"\"},{\"title\":\"imprint\",\"link\":\"\"},{\"title\":\"contact\",\"link\":\"\"},{\"title\":\"mail\",\"link\":\"\"},{\"title\":\"adress\",\"link\":\"\"},{\"title\":\"number\",\"link\":\"\"}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (2,138,'de','{\"headline\":\"Herzlich Willkommen\",\"subline\":\"bei uns\",\"youtube_id\":\"tNm_VYktQCo\",\"imageSource\":\"/_phd/test.png\"}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (3,140,'de','{\"skin\":\"default text-center\",\"ckbox\":true,\"blocks\":[{\"icon\":\"camera-retro\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"E-Mail\",\"button_url\":\"mailto:c.beck@herzogkommunikation.de\"},{\"icon\":\"fire-extinguisher\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"},{\"icon\":\"eraser\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"},{\"icon\":\"volume-down\",\"title\":\"Senectus et netus et malesuada fames ac turpis egestas.\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\"}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (4,141,'de','{\"skin\":\"default\",\"ckbox\":true,\"title\":\"Senectus et netus et malesuada fames ac turpis\",\"subline\":\"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\",\"blocks\":[{\"text_html\":\"<p><br></p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"fhtruru\",\"button_url\":\"\",\"link_target\":false}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (5,143,'de','{\"skin\":\"default text-center\",\"ckbox\":true,\"blocks\":[{\"image_url\":\"/_phd/example_1.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_2.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_3.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false},{\"image_url\":\"/_phd/example_4.jpg\",\"subline\":\"Fames ac turpis egestas\",\"headline\":\"Senectus et netus\",\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":false}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (6,154,'de','{\"skin\":\"default\",\"ckbox\":false,\"slides\":[{\"content\":\"/_phd/example_2.jpg\",\"caption\":\"Quisque a lectus.\"},{\"content\":\"/_phd/example_3.jpg\",\"caption\":\"Test\"},{\"content\":\"/_phd/example_4.jpg\",\"caption\":\"lplplp\"},{\"content\":\"/_phd/example_5.jpg\",\"caption\":\"Quisque a lectus.\"}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (7,167,'de','{\"contained\":false,\"image_url\":\"/_phd/example_4.jpg\",\"description\":\"short description (Search Engine Optimization)\"}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (8,168,'de','{\"skin\":\"default text-center\",\"ckbox\":true,\"title\":\"Willkommen auf deiner neuen Website\",\"subline\":\"Viel Spaß damit\",\"blocks\":[{\"text_html\":\"<p>Du brauchst Hilfe? Gehe ins Backend zum Handbuch</p>\\n\",\"button_text\":\"zum Handbuch\",\"button_url\":\"http://doro.app-transporter.com.staging-1.oneba.se/de/help\",\"link_target\":false}]}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (9,178,'de','{\"headline\":\"Demo\",\"subline\":\"\",\"imageSource\":\"/_phd/example_4.jpg\",\"skin\":\"default\"}','','de','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (10,182,'en','{\"skin\":\"default\",\"logo\":\"\",\"blocks\":[{\"title\":\"new\",\"link\":\"http://www.duden.de/\",\"link_target\":true},{\"title\":\"same window\",\"link\":\"http://www.duden.de/\",\"link_target\":false}]}','','en','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (11,188,'ru','{\"headline\":\"Aliquam tincidunt mauris\",\"subline\":\"mauris eu risus\",\"imageSource\":\"/_phd/test.png\"}','','ru','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (12,190,'en','{\"headline\":\"phd5\",\"subline\":\"Application installed successfully.\",\"imageSource\":\"/_phd/test.png\"}','','en','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (13,191,'en','{\"skin\":\"default\",\"ckbox\":true,\"blocks\":[{\"icon\":\"500px\",\"title\":\"Quickstart\",\"text_html\":\"<p>First steps...<br />\\n&nbsp;</p>\\n\",\"button_text\":\"Backend\",\"button_url\":\"/backend\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"CMS Functionality\",\"text_html\":\"<p>For content editors and frontend developers</p>\\n\",\"button_text\":\"Help\",\"button_url\":\"/help\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"DevOps\",\"text_html\":\"<p>Developer guide for phd5 application.<br />\\n&nbsp;</p>\\n\",\"button_text\":\"Guide\",\"button_url\":\"/guide\",\"link_target\":true},{\"icon\":\"500px\",\"title\":\"Support\",\"text_html\":\"<p>Get help form the community and commerical support.</p>\\n\",\"button_text\":\"Support\",\"button_url\":\"\",\"link_target\":true}]}','','en','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (14,192,'en','{\"skin\":\"default\",\"ckbox\":true,\"title\":\"This is a test.\",\"subline\":\"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\",\"blocks\":[]}','1','en','*','*','*',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation` VALUES (15,193,'en','{\"skin\":\"default\",\"ckbox\":true,\"title\":\"Title: test5b5635db21686\",\"subline\":\"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\",\"blocks\":[{\"text_html\":\"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>\",\"button_text\":\"Button\",\"button_url\":\"\",\"link_target\":true}]}','1','en','*',NULL,NULL,'2018-07-23 20:10:17','2018-07-23 20:10:17');
+/*!40000 ALTER TABLE `app_hrzg_widget_content_translation` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
+
+--
+-- Dumping data for table `app_hrzg_widget_content_translation_meta`
+--
+
+LOCK TABLES `app_hrzg_widget_content_translation_meta` WRITE; TRUNCATE TABLE `app_hrzg_widget_content_translation_meta`;
+/*!40000 ALTER TABLE `app_hrzg_widget_content_translation_meta` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (1,131,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (2,138,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (3,140,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (4,141,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (5,143,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (6,154,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (7,167,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (8,168,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (9,178,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (10,182,'en','0',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (11,188,'en','0',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (12,190,'en','1',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (13,191,'en','0',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (14,192,'en','0',NULL,NULL);
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (15,193,'en','0','2018-07-23 20:10:17','2018-07-23 20:10:17');
+INSERT INTO `app_hrzg_widget_content_translation_meta` VALUES (16,178,'de','1','2018-07-23 20:20:56','2018-07-23 20:20:56');
+/*!40000 ALTER TABLE `app_hrzg_widget_content_translation_meta` ENABLE KEYS */;
+UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_hrzg_widget_template`
@@ -153,6 +428,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_hrzg_widget_template` WRITE; TRUNCATE TABLE `app_hrzg_widget_template`;
 /*!40000 ALTER TABLE `app_hrzg_widget_template` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_hrzg_widget_template` VALUES (2,'Slider','hrzg\\widget\\widgets\\TwigTemplate','{\n    \"title\": \"Slider Widget\",\n    \"type\": \"object\",\n    \"required\": [\n        \"skin\"\n    ],\n    \"properties\": {\n        \"skin\": {\n            \"type\": \"string\",\n            \"enum\": [\n                \"default\",\n                \"inverse\"\n            ]\n        },\n        \"ckbox\": {\n            \"title\": \"Container on\\/off\",\n            \"type\": \"boolean\",\n            \"format\": \"checkbox\"\n        },\n        \"slides\": {\n            \"type\": \"array\",\n            \"format\": \"tabs\",\n            \"title\": \"Slides\",\n            \"items\": {\n                \"type\": \"object\",\n                \"title\": \"Slide\",\n                \"properties\": {\n                    \"content\": {\n                        \"type\": \"string\",\n                        \"title\": \"Image URL\",\n                        \"format\": \"filefly\"\n                    },\n                    \"caption\": {\n                        \"type\": \"string\",\n                        \"title\": \"Beschreibung\",\n                        \"default\": \"Quisque a lectus.\"\n                    }\n                }\n            }\n        }\n    }\n}','{{ use (\'yii/bootstrap\') }}\r\n\r\n{% set arr_slides = [] %}\r\n\r\n{% for slide in slides %}\r\n{% set arr_slide = {(loop.index0):  {\"content\":(\'<img src=\"/filefly/api?action=download&path=\'~slide.content~\'\">\'), \"caption\":(slide.caption)}} %}\r\n{% set arr_slides = arr_slides|merge(arr_slide) %}\r\n{% endfor %}\r\n\r\n<div class=\"slider-image bg-{{ skin }}\" >\r\n{% if ckbox == true %}\r\n    <div class=\"container\" style=\"background-size: cover;\">\r\n    {% else %}\r\n    <div>\r\n    {% endif %} \r\n    {{ carousel_widget(\r\n    {\r\n        id: \'header\',\r\n        items: arr_slides,\r\n        controls: [\'<span class=\"ionicons ion-ios-arrow-left\" aria-hidden=\"true\"></span>\', \'<span class=\"ionicons ion-ios-arrow-right\" aria-hidden=\"true\"></span>\']\r\n        \r\n    }\r\n) }}\r\n</div>\r\n\r\n\r\n\r\n    ',NULL,NULL);
 INSERT INTO `app_hrzg_widget_template` VALUES (3,'Header Image','hrzg\\widget\\widgets\\TwigTemplate','{\n    \"title\": \"Header Image Widget\",\n    \"type\": \"object\",\n    \"id\": \"jumbotron\",\n    \"required\": [\n        \"imageSource\"\n    ],\n    \"properties\": {\n        \"headline\": {\n            \"type\": \"string\",\n            \"title\": \"Headline\",\n            \"default\": \"Aliquam tincidunt mauris\"\n        },\n        \"subline\": {\n            \"type\": \"string\",\n            \"title\": \"Subline\",\n            \"default\": \"mauris eu risus\"\n        },\n        \"imageSource\": {\n            \"type\": \"string\",\n            \"format\": \"filefly\",\n            \"title\": \"Image URL\",\n            \"default\": \"\\/_phd\\/test.png\"\n        }\n    }\n}','<div class=\"header-image text-center text-on-picture\" style=\"background-image: url(/filefly/api?action=download&path={{ imageSource }});\">\r\n    <div class=\"container\">\r\n        <h1> {{ headline }} </h1>\r\n        <h2> {{ subline }} </h2>\r\n    </div>\r\n</div>',NULL,NULL);
 INSERT INTO `app_hrzg_widget_template` VALUES (4,'Content','hrzg\\widget\\widgets\\TwigTemplate','{\n    \"title\": \"Content with Button Widget\",\n    \"type\": \"object\",\n    \"id\": \"jumbotron\",\n    \"required\": [\n        \"skin\"\n    ],\n    \"properties\": {\n        \"skin\": {\n            \"type\": \"string\",\n            \"title\": \"Widget Style\",\n            \"enum\": [\n                \"default\",\n                \"inverse\",\n                \"default text-center\",\n                \"inverse text-center\"\n            ]\n        },\n        \"ckbox\": {\n            \"title\": \"Container on\\/off\",\n            \"type\": \"boolean\",\n            \"format\": \"checkbox\",\n            \"default\": true\n        },\n        \"title\": {\n            \"type\": \"string\",\n            \"title\": \"Headline\",\n            \"default\": \"Senectus et netus et malesuada fames ac turpis\"\n        },\n        \"subline\": {\n            \"type\": \"string\",\n            \"title\": \"Subline\",\n            \"default\": \"Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.\"\n        },\n        \"blocks\": {\n            \"type\": \"array\",\n            \"format\": \"tabs\",\n            \"title\": \"Text\",\n            \"items\": {\n                \"type\": \"object\",\n                \"title\": \"Paragraph\",\n                \"properties\": {\n                    \"text_html\": {\n                        \"type\": \"string\",\n                        \"title\": \"Text\",\n                        \"default\": \"<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<\\/p>\",\n                        \"format\": \"html\",\n                        \"options\": {\n                            \"wysiwyg\": true\n                        }\n                    },\n                    \"button_text\": {\n                        \"type\": \"string\",\n                        \"title\": \"Button Text\",\n                        \"default\": \"Button\"\n                    },\n                    \"button_url\": {\n                        \"type\": \"string\",\n                        \"title\": \"Link \\/ Mailto \\/ Anchor\",\n                        \"description\": \"Link: http:\\/\\/www.example.com \\/ Mailto: mailto:mail@info.com \\/ Anchor: #widget-NameID\"\n                    },\n                    \"link_target\": {\n                        \"type\": \"boolean\",\n                        \"format\": \"checkbox\",\n                        \"title\": \"Open in new window\",\n                        \"default\": true\n                    }\n                }\n            }\n        }\n    }\n}','<div class=\"widget-content call-to-action bg-{{ skin }}\">\r\n    {% if ckbox == true %}\r\n    <div class=\"container\">\r\n    {% else %}\r\n        <div class=\"no-container\">\r\n        {% endif %} \r\n            <h2>{{ title }}\r\n            <br>\r\n            <small>{{subline}}</small>\r\n            </h2>\r\n            {% for block in  blocks %}\r\n                {{ block.text_html|raw }}\r\n                {% if (block.button_text) != \"\" %}\r\n                <p>\r\n                    {% if block.link_target == true %}\r\n                        <a href=\"{{block.button_url}}\" target=\"_blank\" class=\"btn btn-primary\">{{block.button_text}}</a>\r\n                    {% else %}\r\n                        <a href=\"{{block.button_url}}\" target=\"_self\" class=\"btn btn-primary\">{{block.button_text}}</a>\r\n                    {% endif %} \r\n                </p>\r\n                {% endif %}\r\n            {% endfor %}\r\n        </div>\r\n</div>\r\n',NULL,NULL);
@@ -164,6 +440,7 @@ INSERT INTO `app_hrzg_widget_template` VALUES (24,'Content & Image','hrzg\\widge
 INSERT INTO `app_hrzg_widget_template` VALUES (25,'Separator','hrzg\\widget\\widgets\\TwigTemplate','{\n    \"title\": \"Separator\",\n    \"type\": \"object\",\n    \"properties\": {\n        \"contained\": {\n            \"title\": \"Container ON\",\n            \"description\": \"Check if container is needed, without container = parallax\",\n            \"type\": \"boolean\",\n            \"format\": \"checkbox\"\n        },\n        \"image_url\": {\n            \"type\": \"string\",\n            \"title\": \"Image URL\",\n            \"format\": \"filefly\",\n            \"default\": \"\\/_phd\\/test.png\"\n        },\n        \"description\": {\n            \"type\": \"string\",\n            \"title\": \"Image description (SEO)\",\n            \"default\": \"short description (Search Engine Optimization)\"\n        }\n    }\n}','<section class=\"separator-image\">\r\n    \r\n     {% if contained != \"true\" %}\r\n    \r\n        <figure>\r\n            <div id=\"parallax\" style=\"background-image:url(/filefly/api?action=download&path={{ image_url }})\"></div> \r\n        </figure>\r\n                \r\n    {% else %}\r\n    \r\n    \r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <figure class=\" col-xs-12 col-md-12\">\r\n    \r\n                        <img class=\"img-responsive\"\r\n                            src=\"/filefly/api?action=download&path={{ image_url }}\"\r\n                            alt=\"{{ description }}\">\r\n                </figure>\r\n            </div>\r\n        </div>\r\n\r\n    {% endif %}\r\n    \r\n</section>',NULL,NULL);
 /*!40000 ALTER TABLE `app_hrzg_widget_template` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_html`
@@ -171,8 +448,10 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_html` WRITE; TRUNCATE TABLE `app_html`;
 /*!40000 ALTER TABLE `app_html` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `app_html` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_language`
@@ -180,6 +459,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_language` WRITE; TRUNCATE TABLE `app_language`;
 /*!40000 ALTER TABLE `app_language` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_language` VALUES ('af-ZA','af','za','Afrikaans','Afrikaans',0);
 INSERT INTO `app_language` VALUES ('ar-AR','ar','ar','‚ÄèÿßŸÑÿπÿ±ÿ®Ÿäÿ©‚Äè','Arabic',0);
 INSERT INTO `app_language` VALUES ('az-AZ','az','az','Az…ôrbaycan dili','Azerbaijani',0);
@@ -260,6 +540,7 @@ INSERT INTO `app_language` VALUES ('zh-HK','zh','hk','‰∏≠Êñá(È¶ôÊ�
 INSERT INTO `app_language` VALUES ('zh-TW','zh','tw','‰∏≠Êñá(Âè∞ÁÅ£)','Traditional Chinese (Taiwan)',0);
 /*!40000 ALTER TABLE `app_language` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_language_source`
@@ -267,8 +548,11 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_language_source` WRITE; TRUNCATE TABLE `app_language_source`;
 /*!40000 ALTER TABLE `app_language_source` DISABLE KEYS */;
+set autocommit=0;
+INSERT INTO `app_language_source` VALUES (1,'app','Close');
 /*!40000 ALTER TABLE `app_language_source` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_language_translate`
@@ -276,8 +560,10 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_language_translate` WRITE; TRUNCATE TABLE `app_language_translate`;
 /*!40000 ALTER TABLE `app_language_translate` DISABLE KEYS */;
+set autocommit=0;
 /*!40000 ALTER TABLE `app_language_translate` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_less`
@@ -285,11 +571,13 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_less` WRITE; TRUNCATE TABLE `app_less`;
 /*!40000 ALTER TABLE `app_less` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_less` VALUES (14,'doro-main','// Main LESS file\r\n\r\n// Theme\r\n// see http://bootswatch.com\r\n//\r\n// available themes: \r\n// cerulean,cosmo,cyborg,darkly,flatly,journal,lumen,paper,readable,\r\n// sandstone,simplex,slate,spacelab,superhero,united,yeti\r\n@theme: \'cosmo\';\r\n\r\n// Framework and base theme\r\n@import \"/app/vendor/bower/bootstrap/less/bootstrap.less\";\r\n@import \"/app/vendor/thomaspark/bootswatch/@{theme}/variables.less\";\r\n@import \"/app/vendor/thomaspark/bootswatch/@{theme}/bootswatch.less\";\r\n@import \"//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\";\r\n\r\n// Workaround for missing font files, when using prototype LESS\r\n@icon-font-path: \'//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/\';\r\n\r\n// Theme customizations\r\n@navbar-border-radius: 0px;\r\n@navbar-margin-bottom: 0px;\r\n@import \"open-color\";\r\n//@body-bg: #ddd;\r\n@brand-primary: @oc-orange-4;\r\n\r\n// Style for widget templates\r\n@import \"doro-widgets\";\r\n\r\n.alert{\r\n    margin-bottom: 0px;\r\n}\r\n\r\n/*h1 {\r\n    font-size: 50px;\r\n    @media (max-width: @screen-xs-max) {\r\n        font-size: 30px;\r\n        }\r\n}*/\r\n');
 INSERT INTO `app_less` VALUES (18,'doro-widgets','.widget-content {\r\n    padding: 3em 0;\r\n        &.bg-inverse {\r\n            background: @well-bg;\r\n        }\r\n        &.content {\r\n            line-height: 1.5em;\r\n        }\r\n        &.blocks {\r\n            .icon {\r\n                font-size: 6em;\r\n            }\r\n            [class^=\"col-\"] {\r\n            margin-bottom: 3em;\r\n            }\r\n        }\r\n        .no-container {\r\n            padding: 0 2em;\r\n        }\r\n}\r\n\r\n.header-image {\r\n            padding: 300px 0;\r\n            @media (max-width: @screen-xs-max) {\r\n                padding: 90px 0;\r\n                }\r\n}\r\n    \r\n.text-on-picture {\r\n        background-size: cover;\r\n        color: white;\r\n        text-shadow: 0 0 1px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.3),\r\n}\r\n        \r\n.footer {\r\n    .footer-logo {\r\n        max-height: 30px;\r\n        margin-right: 50px;\r\n        }\r\n    .footer-logo-herzog {\r\n        height: 1.6em;    \r\n    }\r\n    .text-right-right {\r\n    float: left;    \r\n    }\r\n}\r\n\r\n.video-front{\r\n    text-align: center;\r\n    z-index: 2;\r\n    position: absolute;\r\n    top:40%;\r\n    width: 100%;\r\n}\r\n\r\n.video-overlay{\r\n    position: absolute;\r\n    top: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    z-index: 1;\r\n}\r\n\r\n.embed-responsive{\r\n    height: 100%;\r\n}\r\n\r\n.slider-image {\r\n    .carousel-control{\r\n       span{\r\n           position: absolute;\r\n           top: 50%;\r\n           transform: translateY(-50%);\r\n       } \r\n    }\r\n    .item {\r\n        max-height: 500px;\r\n        img{\r\n            width: 100%\r\n        }\r\n    }\r\n    .carousel-caption{\r\n        padding-bottom: 50px;\r\n    }\r\n    .carousel-indicators {\r\n        li {\r\n            background-color: rgba(255,255,255,0.3);\r\n            border: 0px;\r\n            height: 15px;\r\n            width: 15px;\r\n            margin: 0px;\r\n        }    \r\n        .active {\r\n            background-color: rgba(255,255,255,1);\r\n            height: 15px;\r\n            width: 15px;\r\n            }\r\n    }\r\n}\r\n\r\n.separator-image {\r\n  max-height: 80vh;\r\n  overflow: hidden;\r\n  img {\r\n    margin: 0 auto;\r\n  }\r\n  div#parallax {\r\n    height: 60vh;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    position: relative;\r\n    background-attachment: fixed;\r\n    }\r\n  }\r\n\r\n\r\n@media (max-width: 400px) {\r\n    .separator-image {\r\n        background-attachment: local;\r\n        height: 400px;\r\n    }   \r\n    .list-inline {\r\n            margin-bottom: 10px;\r\n    }\r\n}');
 INSERT INTO `app_less` VALUES (19,'open-color','// see https://github.com/yeun/open-color\r\n//\r\n//  ???? ???? ???? ???? ????\r\n//  v 1.4.0\r\n//\r\n//  ???????????????????????????????????\r\n\r\n\r\n//  General\r\n//  ???????????????????????????????????\r\n\r\n@oc-white:         #ffffff;\r\n@oc-black:         #000000;\r\n\r\n\r\n//  Gray\r\n//  ???????????????????????????????????\r\n\r\n@oc-gray-list: #f8f9fa, #f1f3f5, #e9ecef, #dee2e6, #ced4da, #adb5bd, #868e96, #495057, #343a40, #212529;\r\n\r\n@oc-gray-0: extract(@oc-gray-list, 1);\r\n@oc-gray-1: extract(@oc-gray-list, 2);\r\n@oc-gray-2: extract(@oc-gray-list, 3);\r\n@oc-gray-3: extract(@oc-gray-list, 4);\r\n@oc-gray-4: extract(@oc-gray-list, 5);\r\n@oc-gray-5: extract(@oc-gray-list, 6);\r\n@oc-gray-6: extract(@oc-gray-list, 7);\r\n@oc-gray-7: extract(@oc-gray-list, 8);\r\n@oc-gray-8: extract(@oc-gray-list, 9);\r\n@oc-gray-9: extract(@oc-gray-list, 10);\r\n\r\n\r\n//  Red\r\n//  ???????????????????????????????????\r\n\r\n@oc-red-list: #fff5f5, #ffe3e3, #ffc9c9, #ffa8a8, #ff8787, #ff6b6b, #fa5252, #f03e3e, #e03131, #c92a2a;\r\n\r\n@oc-red-0: extract(@oc-red-list, 1);\r\n@oc-red-1: extract(@oc-red-list, 2);\r\n@oc-red-2: extract(@oc-red-list, 3);\r\n@oc-red-3: extract(@oc-red-list, 4);\r\n@oc-red-4: extract(@oc-red-list, 5);\r\n@oc-red-5: extract(@oc-red-list, 6);\r\n@oc-red-6: extract(@oc-red-list, 7);\r\n@oc-red-7: extract(@oc-red-list, 8);\r\n@oc-red-8: extract(@oc-red-list, 9);\r\n@oc-red-9: extract(@oc-red-list, 10);\r\n\r\n\r\n//  Pink\r\n//  ???????????????????????????????????\r\n\r\n@oc-pink-list: #fff0f6, #ffdeeb, #fcc2d7, #faa2c1, #f783ac, #f06595, #e64980, #d6336c, #c2255c, #a61e4d;\r\n\r\n@oc-pink-0: extract(@oc-pink-list, 1);\r\n@oc-pink-1: extract(@oc-pink-list, 2);\r\n@oc-pink-2: extract(@oc-pink-list, 3);\r\n@oc-pink-3: extract(@oc-pink-list, 4);\r\n@oc-pink-4: extract(@oc-pink-list, 5);\r\n@oc-pink-5: extract(@oc-pink-list, 6);\r\n@oc-pink-6: extract(@oc-pink-list, 7);\r\n@oc-pink-7: extract(@oc-pink-list, 8);\r\n@oc-pink-8: extract(@oc-pink-list, 9);\r\n@oc-pink-9: extract(@oc-pink-list, 10);\r\n\r\n\r\n//  Grape\r\n//  ???????????????????????????????????\r\n\r\n@oc-grape-list: #f8f0fc, #f3d9fa, #eebefa, #e599f7, #da77f2, #cc5de8, #be4bdb, #ae3ec9, #9c36b5, #862e9c;\r\n\r\n@oc-grape-0: extract(@oc-grape-list, 1);\r\n@oc-grape-1: extract(@oc-grape-list, 2);\r\n@oc-grape-2: extract(@oc-grape-list, 3);\r\n@oc-grape-3: extract(@oc-grape-list, 4);\r\n@oc-grape-4: extract(@oc-grape-list, 5);\r\n@oc-grape-5: extract(@oc-grape-list, 6);\r\n@oc-grape-6: extract(@oc-grape-list, 7);\r\n@oc-grape-7: extract(@oc-grape-list, 8);\r\n@oc-grape-8: extract(@oc-grape-list, 9);\r\n@oc-grape-9: extract(@oc-grape-list, 10);\r\n\r\n\r\n//  Violet\r\n//  ???????????????????????????????????\r\n\r\n@oc-violet-list: #f3f0ff, #e5dbff, #d0bfff, #b197fc, #9775fa, #845ef7, #7950f2, #7048e8, #6741d9, #5f3dc4;\r\n\r\n@oc-violet-0: extract(@oc-violet-list, 1);\r\n@oc-violet-1: extract(@oc-violet-list, 2);\r\n@oc-violet-2: extract(@oc-violet-list, 3);\r\n@oc-violet-3: extract(@oc-violet-list, 4);\r\n@oc-violet-4: extract(@oc-violet-list, 5);\r\n@oc-violet-5: extract(@oc-violet-list, 6);\r\n@oc-violet-6: extract(@oc-violet-list, 7);\r\n@oc-violet-7: extract(@oc-violet-list, 8);\r\n@oc-violet-8: extract(@oc-violet-list, 9);\r\n@oc-violet-9: extract(@oc-violet-list, 10);\r\n\r\n\r\n//  Indigo\r\n//  ???????????????????????????????????\r\n\r\n@oc-indigo-list: #edf2ff, #dbe4ff, #bac8ff, #91a7ff, #748ffc, #5c7cfa, #4c6ef5, #4263eb, #3b5bdb, #364fc7;\r\n\r\n@oc-indigo-0: extract(@oc-indigo-list, 1);\r\n@oc-indigo-1: extract(@oc-indigo-list, 2);\r\n@oc-indigo-2: extract(@oc-indigo-list, 3);\r\n@oc-indigo-3: extract(@oc-indigo-list, 4);\r\n@oc-indigo-4: extract(@oc-indigo-list, 5);\r\n@oc-indigo-5: extract(@oc-indigo-list, 6);\r\n@oc-indigo-6: extract(@oc-indigo-list, 7);\r\n@oc-indigo-7: extract(@oc-indigo-list, 8);\r\n@oc-indigo-8: extract(@oc-indigo-list, 9);\r\n@oc-indigo-9: extract(@oc-indigo-list, 10);\r\n\r\n\r\n//  Blue\r\n//  ???????????????????????????????????\r\n\r\n@oc-blue-list: #e8f7ff, #ccedff, #a3daff, #72c3fc, #4dadf7, #329af0, #228ae6, #1c7cd6, #1b6ec2, #1862ab;\r\n\r\n@oc-blue-0: extract(@oc-blue-list, 1);\r\n@oc-blue-1: extract(@oc-blue-list, 2);\r\n@oc-blue-2: extract(@oc-blue-list, 3);\r\n@oc-blue-3: extract(@oc-blue-list, 4);\r\n@oc-blue-4: extract(@oc-blue-list, 5);\r\n@oc-blue-5: extract(@oc-blue-list, 6);\r\n@oc-blue-6: extract(@oc-blue-list, 7);\r\n@oc-blue-7: extract(@oc-blue-list, 8);\r\n@oc-blue-8: extract(@oc-blue-list, 9);\r\n@oc-blue-9: extract(@oc-blue-list, 10);\r\n\r\n\r\n//  Cyan\r\n//  ???????????????????????????????????\r\n\r\n@oc-cyan-list: #e3fafc, #c5f6fa, #99e9f2, #66d9e8, #3bc9db, #22b8cf, #15aabf, #1098ad, #0c8599, #0b7285;\r\n\r\n@oc-cyan-0: extract(@oc-cyan-list, 1);\r\n@oc-cyan-1: extract(@oc-cyan-list, 2);\r\n@oc-cyan-2: extract(@oc-cyan-list, 3);\r\n@oc-cyan-3: extract(@oc-cyan-list, 4);\r\n@oc-cyan-4: extract(@oc-cyan-list, 5);\r\n@oc-cyan-5: extract(@oc-cyan-list, 6);\r\n@oc-cyan-6: extract(@oc-cyan-list, 7);\r\n@oc-cyan-7: extract(@oc-cyan-list, 8);\r\n@oc-cyan-8: extract(@oc-cyan-list, 9);\r\n@oc-cyan-9: extract(@oc-cyan-list, 10);\r\n\r\n\r\n//  Teal\r\n//  ???????????????????????????????????\r\n\r\n@oc-teal-list: #e6fcf5, #c3fae8, #96f2d7, #63e6be, #38d9a9, #20c997, #12b886, #0ca678, #099268, #087f5b;\r\n\r\n@oc-teal-0: extract(@oc-teal-list, 1);\r\n@oc-teal-1: extract(@oc-teal-list, 2);\r\n@oc-teal-2: extract(@oc-teal-list, 3);\r\n@oc-teal-3: extract(@oc-teal-list, 4);\r\n@oc-teal-4: extract(@oc-teal-list, 5);\r\n@oc-teal-5: extract(@oc-teal-list, 6);\r\n@oc-teal-6: extract(@oc-teal-list, 7);\r\n@oc-teal-7: extract(@oc-teal-list, 8);\r\n@oc-teal-8: extract(@oc-teal-list, 9);\r\n@oc-teal-9: extract(@oc-teal-list, 10);\r\n\r\n\r\n//  Green\r\n//  ???????????????????????????????????\r\n\r\n@oc-green-list: #ebfbee, #d3f9d8, #b2f2bb, #8ce99a, #69db7c, #51cf66, #40c057, #37b24d, #2f9e44, #2b8a3e;\r\n\r\n@oc-green-0: extract(@oc-green-list, 1);\r\n@oc-green-1: extract(@oc-green-list, 2);\r\n@oc-green-2: extract(@oc-green-list, 3);\r\n@oc-green-3: extract(@oc-green-list, 4);\r\n@oc-green-4: extract(@oc-green-list, 5);\r\n@oc-green-5: extract(@oc-green-list, 6);\r\n@oc-green-6: extract(@oc-green-list, 7);\r\n@oc-green-7: extract(@oc-green-list, 8);\r\n@oc-green-8: extract(@oc-green-list, 9);\r\n@oc-green-9: extract(@oc-green-list, 10);\r\n\r\n\r\n//  Lime\r\n//  ???????????????????????????????????\r\n\r\n@oc-lime-list: #f4fce3, #e9fac8, #d8f5a2, #c0eb75, #a9e34b, #94d82d, #82c91e, #74b816, #66a80f, #5c940d;\r\n\r\n@oc-lime-0: extract(@oc-lime-list, 1);\r\n@oc-lime-1: extract(@oc-lime-list, 2);\r\n@oc-lime-2: extract(@oc-lime-list, 3);\r\n@oc-lime-3: extract(@oc-lime-list, 4);\r\n@oc-lime-4: extract(@oc-lime-list, 5);\r\n@oc-lime-5: extract(@oc-lime-list, 6);\r\n@oc-lime-6: extract(@oc-lime-list, 7);\r\n@oc-lime-7: extract(@oc-lime-list, 8);\r\n@oc-lime-8: extract(@oc-lime-list, 9);\r\n@oc-lime-9: extract(@oc-lime-list, 10);\r\n\r\n\r\n//  Yellow\r\n//  ???????????????????????????????????\r\n\r\n@oc-yellow-list: #fff9db, #fff3bf, #ffec99, #ffe066, #ffd43b, #fcc419, #fab005, #f59f00, #f08c00, #e67700;\r\n\r\n@oc-yellow-0: extract(@oc-yellow-list, 1);\r\n@oc-yellow-1: extract(@oc-yellow-list, 2);\r\n@oc-yellow-2: extract(@oc-yellow-list, 3);\r\n@oc-yellow-3: extract(@oc-yellow-list, 4);\r\n@oc-yellow-4: extract(@oc-yellow-list, 5);\r\n@oc-yellow-5: extract(@oc-yellow-list, 6);\r\n@oc-yellow-6: extract(@oc-yellow-list, 7);\r\n@oc-yellow-7: extract(@oc-yellow-list, 8);\r\n@oc-yellow-8: extract(@oc-yellow-list, 9);\r\n@oc-yellow-9: extract(@oc-yellow-list, 10);\r\n\r\n\r\n//  Orange\r\n//  ???????????????????????????????????\r\n\r\n@oc-orange-list: #fff4e6, #ffe8cc, #ffd8a8, #ffc078, #ffa94d, #ff922b, #fd7e14, #f76707, #e8590c, #d9480f;\r\n\r\n@oc-orange-0: extract(@oc-orange-list, 1);\r\n@oc-orange-1: extract(@oc-orange-list, 2);\r\n@oc-orange-2: extract(@oc-orange-list, 3);\r\n@oc-orange-3: extract(@oc-orange-list, 4);\r\n@oc-orange-4: extract(@oc-orange-list, 5);\r\n@oc-orange-5: extract(@oc-orange-list, 6);\r\n@oc-orange-6: extract(@oc-orange-list, 7);\r\n@oc-orange-7: extract(@oc-orange-list, 8);\r\n@oc-orange-8: extract(@oc-orange-list, 9);\r\n@oc-orange-9: extract(@oc-orange-list, 10);');
 /*!40000 ALTER TABLE `app_less` ENABLE KEYS */;
 UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `app_settings`
@@ -297,6 +585,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `app_settings` WRITE; TRUNCATE TABLE `app_settings`;
 /*!40000 ALTER TABLE `app_settings` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_settings` VALUES (1,'string','pages','availableGlobalRoutes','/backend/default/index\r\n/backend/default/view-config\r\n/backend/default/show-auth\r\n/settings/default\r\n/help\r\n/guide\r\n/pages/default\r\n/moxiemanager/default\r\n/crud\r\n/filefly\r\n/filefly/test\r\n/prototype\r\n/prototype/html\r\n/prototype/less\r\n/prototype/twig\r\n/widgets\r\n/widgets/crud/widget\r\n/widgets/crud/widget-template\r\n/translatemanager/language\r\n/user/admin\r\n/rbac/role\r\n/rbac/permission\r\n/redirects\r\n/resque\r\n/audit\r\n/user/settings\r\n/user/profile',1,'2016-05-13 22:27:14','2017-03-06 07:06:41');
 INSERT INTO `app_settings` VALUES (2,'string','pages','availableRoutes','/pages/default/page',1,'2016-05-15 22:09:50','2016-07-20 11:34:02');
 INSERT INTO `app_settings` VALUES (3,'string','app.assets','registerPrototypeAssetKey','doro',1,'2016-05-25 14:50:40','2017-01-11 10:46:43');
@@ -312,9 +601,11 @@ INSERT INTO `app_settings` VALUES (13,'string','backend.adminlte','skin','blue',
 INSERT INTO `app_settings` VALUES (14,'string','app.seo.keywords','/de/site/index','keyword, number 1, test 1, test 2',1,'2016-12-26 13:20:05','2017-03-07 14:24:22');
 INSERT INTO `app_settings` VALUES (15,'boolean','app.layout','enableTwigNavbar','1',0,'2017-02-21 06:48:15','2017-03-08 14:37:35');
 INSERT INTO `app_settings` VALUES (18,'string','app.seo.descriptions','/de/site/index','hallo dies ist ein test',1,'2017-03-07 14:25:21','2017-03-07 14:46:21');
+INSERT INTO `app_settings` VALUES (27,'boolean','backend.toolbar','useIframe','1',0,'2017-10-27 19:16:34','2017-10-27 19:17:27');
+INSERT INTO `app_settings` VALUES (28,'string','app.assets','settingsAssetList','app\\assets\\AppAsset',1,'2018-07-23 18:50:28',NULL);
 /*!40000 ALTER TABLE `app_settings` ENABLE KEYS */;
 UNLOCK TABLES;
-INSERT INTO `app_settings` VALUES (27,'boolean','backend.toolbar','useIframe','1',0,'2017-10-27 19:16:34','2017-10-27 19:17:27');
+commit;
 
 --
 -- Dumping data for table `app_twig`
@@ -322,6 +613,7 @@ INSERT INTO `app_settings` VALUES (27,'boolean','backend.toolbar','useIframe','1
 
 LOCK TABLES `app_twig` WRITE; TRUNCATE TABLE `app_twig`;
 /*!40000 ALTER TABLE `app_twig` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `app_twig` VALUES (4,'de/pages/default/page/1004','{{ use (\'hrzg/widget/widgets\') }}\r\n{{ cell_widget({id: \'main\'}) }}');
 INSERT INTO `app_twig` VALUES (5,'de/pages/default/page/1011','{{ use (\'hrzg/widget/widgets\') }}\r\n{{ cell_widget({id: \'main\'}) }}\r\n');
 INSERT INTO `app_twig` VALUES (7,'de/site/index','{{ use (\'hrzg/widget/widgets\') }}\r\n{{ cell_widget({id: \'top\'}) }}\r\n{{ cell_widget({id: \'main\'}) }}');
@@ -343,41 +635,7 @@ INSERT INTO `app_twig` VALUES (26,'_navbar','{{ use(\'dmstr/modules/pages/models
 INSERT INTO `app_twig` VALUES (27,'frontend.extra.menuItems','{% if (app.user.can(\'widgets_crud_widget\')) %}\r\n{{ use (\'dmstr/cookiebutton\') }}\r\n<div class=\"navbar-form navbar-left\">\r\n    \r\n    {{ cookie_button_widget(\r\n     {\r\n        \'label\': \'View\',\r\n        \'cookieName\': \'hrzg-widget_view-mode\',\r\n        \'cookieValue\': \'on\',\r\n        \'cookieOptions\': {\r\n            \'path\': \'/\',\r\n            \'http\': true,\r\n            \'expires\': 7\r\n        },\r\n        \'options\': {\r\n            \'class\': \'btn-primary\',\r\n        }\r\n     }\r\n    ) }}   \r\n</div>\r\n    {% endif %}');
 /*!40000 ALTER TABLE `app_twig` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping data for table `dmstr_page`
---
-
-LOCK TABLES `dmstr_page` WRITE; TRUNCATE TABLE `dmstr_page`;
-/*!40000 ALTER TABLE `dmstr_page` DISABLE KEYS */;
-INSERT INTO `dmstr_page` VALUES (101,1000,6,7,1,'','Page Tree','pages',NULL,'/pages/default','','','','{}',NULL,'*','*','*','*','pagelines',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-13 11:16:16','2017-01-30 09:45:52');
-INSERT INTO `dmstr_page` VALUES (102,1000,17,18,2,'','LESS Themes','prototype-less',NULL,'/prototype/less','','','','{}',NULL,'*','*','*','*','pencil-square',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 18:51:34','2016-09-30 03:18:36');
-INSERT INTO `dmstr_page` VALUES (103,1000,21,22,2,'','Static HTML','prototype-html',NULL,'/prototype/html','','','','{}',NULL,'*','*','*','*','edit',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-13 11:16:19','2017-02-08 08:56:42');
-INSERT INTO `dmstr_page` VALUES (104,1000,11,12,2,'','Translations','translatemanager',NULL,'/translatemanager/language','','','','{}',NULL,'*','*','*','*','globe',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 18:16:16','2016-05-16 09:44:40');
-INSERT INTO `dmstr_page` VALUES (105,1000,24,25,1,'','Users and Roles','user',NULL,'/user/admin','','','','{}',NULL,'*','*','*','*','user',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 18:16:16','2017-02-13 15:48:06');
-INSERT INTO `dmstr_page` VALUES (107,1000,19,20,2,'','Twig Layouts','twig',NULL,'/prototype/twig','','','','{}',NULL,'*','*','*','*','newspaper-o',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-16 00:34:43','2016-09-30 03:18:27');
-INSERT INTO `dmstr_page` VALUES (108,1000,27,28,2,'','Settings','settings',NULL,'/settings/default','','','','{\"sort\":\"section\"}',NULL,'*','*','*','*','cog',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-13 11:16:14','2017-02-08 11:16:07');
-INSERT INTO `dmstr_page` VALUES (110,1000,35,36,2,'','Jobs','jobs',NULL,'/resque','','','','{}',NULL,'*','*','*','*','play-circle',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-16 09:54:07','2016-12-23 00:17:01');
-INSERT INTO `dmstr_page` VALUES (111,1000,33,34,2,'','Redirects','redirects',NULL,'/redirects','','','','{}',NULL,'*','*','*','*','arrows-alt',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-16 09:52:36','2016-05-16 09:52:36');
-INSERT INTO `dmstr_page` VALUES (112,1000,9,10,2,'','Widget Content','widgets-content',NULL,'/widgets/crud/widget','','','','{}',NULL,'*','*','*','*','file-text',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-25 20:34:20','2017-02-01 10:05:14');
-INSERT INTO `dmstr_page` VALUES (113,1000,15,16,2,'','Widget Templates','widget-templates',NULL,'/widgets/crud/widget-template','','','','{}',NULL,'*','*','*','*','file-code-o',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-25 20:35:04','2017-03-08 23:45:14');
-INSERT INTO `dmstr_page` VALUES (114,1000,37,38,2,'','Audit','audit',NULL,'/audit','','','','{}',NULL,'*','*','*','*','search-plus',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-16 09:51:22','2016-05-16 09:51:22');
-INSERT INTO `dmstr_page` VALUES (115,1000,4,5,1,'','Media Files','moxiemanager',NULL,'/filefly','','','','{}',NULL,'*','*','*','*','image',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-25 22:29:42','2017-01-30 09:35:49');
-INSERT INTO `dmstr_page` VALUES (147,1000,8,13,1,'','CMS','cms',NULL,'','','','','{}',NULL,'*','*','*','*','briefcase',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-12-22 23:22:25','2017-01-30 16:07:09');
-INSERT INTO `dmstr_page` VALUES (148,1000,26,39,1,'','System','system',NULL,'','','','','{}',NULL,'*','*','*','*','cogs',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-12-22 23:34:27','2016-12-23 02:36:14');
-INSERT INTO `dmstr_page` VALUES (149,1000,29,30,2,'','Configuration','configuration',NULL,'/backend/default/view-config','','','','{}',NULL,'*','*','*','*','suitcase',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-12-22 23:45:18','2016-12-22 23:45:18');
-INSERT INTO `dmstr_page` VALUES (150,1000,14,23,1,'','Frontend Developer','developer-tools',NULL,'','','','','{}',NULL,'*','*','*','*','code',1,1,0,0,0,1,0,1,1,1,1,1,0,'2017-01-30 09:34:08','2017-01-30 09:34:45');
-INSERT INTO `dmstr_page` VALUES (151,1000,2,3,1,'','Dashboard','dashboard',NULL,'/backend/default/index','','','','{}',NULL,'*','*','*','*','dashboard',1,1,0,0,0,1,0,1,1,1,1,1,0,'2017-01-30 10:00:06','2017-01-30 16:22:35');
-INSERT INTO `dmstr_page` VALUES (1000,1000,1,44,0,'','Backend','backend',NULL,'/backend','','','','{}',NULL,'*','*','*','*','',1,1,0,0,0,1,1,1,1,1,1,1,0,'2016-05-15 18:16:16','2016-05-13 11:09:59');
-INSERT INTO `dmstr_page` VALUES (1001,1001,1,6,0,'doros zuhause','Frontend','root',NULL,'/pages/default/page','@vendor/dmstr/yii2-prototype-module/src/views/render/twig.php','doro, home, dorolein','das ist doro, doro ist eine ganz tolle webseite','{}',NULL,'en','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 22:32:46','2017-01-30 17:01:47');
-INSERT INTO `dmstr_page` VALUES (1003,1003,1,4,0,'_ROOT_CONTAINER_','Frontend','root',NULL,'','','_FOLDER','This is not a real page, just a container for the navigation.','{}',NULL,'de','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 22:54:23','2017-01-31 18:28:41');
-INSERT INTO `dmstr_page` VALUES (1004,1003,2,3,1,'Titel \"A\"','Beispielseite A','test-a',NULL,'/pages/default/page','@vendor/dmstr/yii2-prototype-module/src/views/render/twig.php','beispielseite, eine, beispiel, seite','dies ist eine beispielseite','{}',NULL,'de','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-05-15 22:54:36','2017-02-01 09:53:46');
-INSERT INTO `dmstr_page` VALUES (1035,1001,2,3,1,'Example Page','Example Page','folder-1',NULL,'/pages/default/page','@vendor/dmstr/yii2-widgets2-module/src/views/test/single.twig','example, page','this i a example page','{}',NULL,'en','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-08-01 23:18:32','2017-02-01 09:56:08');
-INSERT INTO `dmstr_page` VALUES (1044,1044,1,2,0,'','root_ru','root',NULL,'','','','','{}',NULL,'ru','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2016-11-08 15:09:28','2016-11-08 15:09:28');
-INSERT INTO `dmstr_page` VALUES (1054,1000,31,32,2,'','Authorizations','58bd0aa4a8b58',NULL,'/backend/default/show-auth','','','','{}',NULL,'*','*','*','*','certificate',1,1,0,0,0,1,0,1,1,1,1,1,0,'2017-03-06 07:07:16','2017-03-09 00:51:35');
-INSERT INTO `dmstr_page` VALUES (1055,1001,4,5,1,'','Test-58e1d40c0273e','58e1d41112d56',NULL,'','','','','{}',1,'en','*','*','*','',1,1,0,0,0,1,0,1,1,1,1,1,0,'2017-04-03 04:48:17','2017-04-03 04:48:17');
-/*!40000 ALTER TABLE `dmstr_page` ENABLE KEYS */;
-UNLOCK TABLES;
+commit;
 
 --
 -- Dumping data for table `dmstr_redirect`
@@ -385,21 +643,14 @@ UNLOCK TABLES;
 
 LOCK TABLES `dmstr_redirect` WRITE; TRUNCATE TABLE `dmstr_redirect`;
 /*!40000 ALTER TABLE `dmstr_redirect` DISABLE KEYS */;
+set autocommit=0;
 INSERT INTO `dmstr_redirect` VALUES (1,'path','','','/en','/en/doros-zuhause-1001',301,'2016-08-02 15:22:49','2017-01-30 16:49:19');
 INSERT INTO `dmstr_redirect` VALUES (2,'domain','http://example.com','http://www.example.com','','',301,'2016-08-02 18:27:40','2016-12-15 18:18:31');
 INSERT INTO `dmstr_redirect` VALUES (3,'path','','','/__test-redirect','/user/profile',301,'2017-04-03 04:48:39','2017-04-03 04:48:39');
+INSERT INTO `dmstr_redirect` VALUES (4,'path','','','/__test-redirect','/user/profile',301,'2018-07-23 20:10:01','2018-07-23 20:10:01');
 /*!40000 ALTER TABLE `dmstr_redirect` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping data for table `filefly_hashmap`
---
-
-LOCK TABLES `filefly_hashmap` WRITE; TRUNCATE TABLE `filefly_hashmap`;
-/*!40000 ALTER TABLE `filefly_hashmap` DISABLE KEYS */;
-INSERT INTO `filefly_hashmap` VALUES (1,'fsS3','root','/',NULL,1,'*','*','*','2017-04-03 04:41:16','2017-04-03 04:41:16');
-/*!40000 ALTER TABLE `filefly_hashmap` ENABLE KEYS */;
-UNLOCK TABLES;
+commit;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -409,4 +660,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-03  4:59:44
+-- Dump completed on 2018-07-23 20:24:00

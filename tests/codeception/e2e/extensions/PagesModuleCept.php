@@ -23,6 +23,6 @@ $I->amGoingTo("Add a node");
 $I->click('.kv-toolbar-container .kv-create');
 $I->waitForElementVisible('#tree-name', 10);
 $I->fillField('#tree-name', $uniqId);
-$I->click('Save');
+$I->click('Apply');
 $I->waitForText($uniqId, 10, '.kv-tree');
 $I->makeScreenshot('success-pages-add-node');

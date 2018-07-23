@@ -30,6 +30,8 @@ services:
       - APP_ASSET_USE_BUNDLED=1
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
+    volumes:
+      - ./_host-volumes/test-debug:/mnt/debug
     networks:
       default:
         aliases:
