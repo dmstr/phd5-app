@@ -61,7 +61,7 @@ return [
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
-        'backend.iframe.name' => 'backend-' . getenv('HOSTNAME'),
+        'backend.iframe.name' => getenv('APP_PARAMS_BACKEND_IFRAME_NAME') ?: 'backend-' . getenv('HOSTNAME'),
     ],
     'components' => [
         'assetManager' => [
