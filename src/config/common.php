@@ -80,7 +80,7 @@ return [
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
-        'backend.iframe.name' => 'backend-' . getenv('HOSTNAME'),
+        'backend.iframe.name' => '_self',
     ],
     'components' => [
         'assetManager' => [
