@@ -74,6 +74,7 @@ return [
         'authManager' => [
             'class' => \dektrium\rbac\components\DbManager::class,
             'defaultRoles' => ['Default'],
+            'cache' => 'cache'
         ],
         'cache' => getenv('APP_NO_CACHE') ? null : [
             'class' => \yii\redis\Cache::class,
