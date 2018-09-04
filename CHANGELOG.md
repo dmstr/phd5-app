@@ -4,6 +4,7 @@
 
 - switched to `2amigos/yii2-usuario`
 - updated `dmstr/yii2-widgets2-module` and `dmstr/yii2-pages-module`
+- use same window/tab for *Backend*, if `APP_PARAMS_BACKEND_IFRAME_NAME` is not set
 
 ### 5.2.0
 
