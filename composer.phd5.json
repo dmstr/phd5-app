@@ -22,7 +22,7 @@
         "dmstr/yii2-prototype-module": "^0.6.5",
         "dmstr/yii2-publication-module": "^0.3.0",
         "dmstr/yii2-resque-module": "^2.0.0-alpha2",
-        "dmstr/yii2-widgets2-module": "^0.6.6",
+        "dmstr/yii2-widgets2-module": "^0.6.8",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
