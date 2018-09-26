@@ -17,6 +17,7 @@ foreach ($links as $i => $url) {
 
     switch ($url) {
         case '/debug':
+        case '/gridview':
         case '/treemanager':
             continue 2;
             break;

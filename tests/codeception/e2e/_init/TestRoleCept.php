@@ -16,7 +16,7 @@ $I->amGoingTo('try to view and create pages');
 $I->amOnPage('/user/role/create');
 
 
-$I->fillField('#role-name', uniqid('Test'));
+$I->fillField('#role-name', uniqid('__Test'));
 $I->fillField('#role-description', 'Test Role');
 
 $I->click('Save');
