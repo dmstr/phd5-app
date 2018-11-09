@@ -247,17 +247,17 @@ return [
             'accessRoles' => ['audit-module'],
             'layout' => $boxLayout,
             'panels' => [
-                'audit/mail',
-                'audit/trail',
-                'audit/error',        # Links the extra error reporting functions (`exception()` and `errorMessage()`)
-                'audit/extra',        # Links the data functions (`data()`)
-                // These provide special functionality and get loaded to activate it
-                //'audit/request',
-                //'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
-                //'audit/curl',       # Links the curl tracking function (`curlBegin()`, `curlEnd()` and `curlExec()`)
-                //'audit/db',
-                //'audit/log',
-                //'audit/profiling',
+                'audit/trail' => [
+                    'class' => \bedezign\yii2\audit\panels\TrailPanel::class
+                ],
+                'audit/mail' => [
+                    'class' => \bedezign\yii2\audit\panels\MailPanel::class
+                ],
+                // Links the extra error reporting functions (`exception()` and `errorMessage()`)
+                'audit/error' => [
+                    'class' => \bedezign\yii2\audit\panels\ErrorPanel::class
+                ],
+                // see https://github.com/bedezign/yii2-audit for detailed config
             ],
             'ignoreActions' => [
                 (getenv('APP_AUDIT_DISABLE_ALL_ACTIONS') ? '*' : '_'),
