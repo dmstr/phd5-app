@@ -247,14 +247,14 @@ return [
             'accessRoles' => ['audit-module'],
             'layout' => $boxLayout,
             'panels' => [
-                'audit/request',
                 'audit/mail',
                 'audit/trail',
-                'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
+                'audit/error',        # Links the extra error reporting functions (`exception()` and `errorMessage()`)
+                'audit/extra',        # Links the data functions (`data()`)
                 // These provide special functionality and get loaded to activate it
-                'audit/error',      // Links the extra error reporting functions (`exception()` and `errorMessage()`)
-                'audit/extra',      // Links the data functions (`data()`)
-                'audit/curl',       // Links the curl tracking function (`curlBegin()`, `curlEnd()` and `curlExec()`)
+                //'audit/request',
+                //'audit/javascript', # enable app.assets.registerJSLoggingAsset via settings
+                //'audit/curl',       # Links the curl tracking function (`curlBegin()`, `curlEnd()` and `curlExec()`)
                 //'audit/db',
                 //'audit/log',
                 //'audit/profiling',
