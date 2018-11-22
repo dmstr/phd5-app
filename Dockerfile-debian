@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.2-fpm-4.5-nginx
+FROM dmstr/php-yii2:7.2-fpm-4.6-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
@@ -7,6 +7,7 @@ RUN apt-get update \
  && pecl install mailparse \
  && docker-php-ext-enable mailparse \
  && apt-get remove -y $PHPIZE_DEPS
+
 
 # System files
 COPY ./image-files /
