@@ -48,6 +48,7 @@ return [
                     '@yii/rbac/migrations',
                     '@yii/web/migrations',
                     '@app/migrations/legacy/migration-command',
+                    '@app/migrations/5.2-to-5.3',
                     '@bedezign/yii2/audit/migrations',
                     '@dmstr/modules/contact/migrations',
                     '@dmstr/modules/pages/migrations',

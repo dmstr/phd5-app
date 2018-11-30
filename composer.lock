@@ -3213,16 +3213,16 @@
         },
         {
             "name": "dmstr/yii2-publication-module",
-            "version": "0.5.0-alpha50",
+            "version": "0.5.0-alpha51",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-publication-module.git",
-                "reference": "4f61f931107ad6eeec01a6af42fdfcae16e41d54"
+                "reference": "d6440ff97349d287b5bde3f19a9a31f8aa121029"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/4f61f931107ad6eeec01a6af42fdfcae16e41d54",
-                "reference": "4f61f931107ad6eeec01a6af42fdfcae16e41d54",
+                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/d6440ff97349d287b5bde3f19a9a31f8aa121029",
+                "reference": "d6440ff97349d287b5bde3f19a9a31f8aa121029",
                 "shasum": ""
             },
             "require": {
@@ -3256,7 +3256,7 @@
                 "publication",
                 "yii2"
             ],
-            "time": "2018-11-20T13:02:39+00:00"
+            "time": "2018-11-22T08:01:30+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",

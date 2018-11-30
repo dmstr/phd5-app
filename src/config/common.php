@@ -340,6 +340,10 @@ return [
         'widgets' => [
             'class' => \hrzg\widget\Module::class,
             'layout' => '@backend/views/layouts/main',
+            'frontendRouteMap' => [
+                'app/site/index' => '/',
+                'pages/default/page' => 'pages/default/page',
+            ],
         ],
     ],
 ];
