@@ -1,10 +1,14 @@
 # Upgrading
 
-### 5.1.0 to 5.2.0
+### 5.2 to 5.3
+
+- upgrade `"wikimedia/composer-merge-plugin": "^1.4.1"` when using phd5-template
+
+### 5.1 to 5.2
 
 - Move *param* `yii.migrations` to `MigrateController` `migrationPath`
 
-### 5.0.0 to 5.1.0
+### 5.0 to 5.1
 
 - added host-volume for `src/` in test stack
 - added _setting_ `app.assets` > `settingsAssetList`
@@ -17,7 +21,7 @@
 - remove manual setting of `PHP_USER_ID` (correct value is applied on the base-image according to the Docker image OS)
 - use environment variables with prefix i.e. `DB_ENV_...`
 
-### 5.0.0-beta to 5.0.0
+### 5.0.0-beta to 5.0
 
 - add `"wikimedia/composer-merge-plugin": "~1.3.1"`; must be a local package (not global)
 - remove `"romka-chev/yii2-swiper": "^2.0"`, due to composer conflicts with asset-plugin
@@ -26,4 +30,4 @@
 
 ### 4.1.0 to 5.0.0-beta
 
-TBD
+Not supported
