@@ -100,7 +100,7 @@ class AppController extends Controller
     public function actionInitModules()
     {
         $this->stdout('Initializing modules...' . PHP_EOL);
-        foreach (Metadata::getModules() as $name => $module) {
+        foreach (Yii::$app->getModules() as $name => $module) {
             if (is_array($module)) {
                 $this->stdout("{$name}");
                 \Yii::$app->getModule($name)->init();
