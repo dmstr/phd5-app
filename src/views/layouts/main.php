@@ -11,6 +11,7 @@ namespace _;
  */
 
 use dmstr\helpers\SettingsAsset;
+use dmstr\modules\backend\widgets\Modal;
 use dmstr\modules\backend\widgets\Toolbar;
 use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
@@ -103,21 +104,6 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
     <?= Cell::widget(['id' => '_footer', 'requestParam' => '_global']) ?>
 </footer>
 
-<!-- Info Modal -->
-<div id="phd-info-button"
-     style="position: fixed; z-index: 1200; bottom: 0px; left: 10px; padding: 30px 0 0px; opacity: .3">
-    <p>
-        <?= Html::a(
-            '<i class="fa fa-heartbeat"></i>',
-            '#',
-            ['class' => 'text-muted', 'data-toggle' => 'modal', 'data-target' => '#phd-info-modal']
-        ) ?>
-    </p>
-</div>
-<div class="modal fade" id="phd-info-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <?= $this->render('_modal') ?>
-</div>
-
 <?php Pjax::end() ?>
 
 <!-- User flash messages -->
@@ -132,7 +118,7 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 
 <?= TwigWidget::widget(['key' => '_endBody', 'renderEmpty' => false]) ?>
 
-<?php if (Yii::$app->user->can('backend_default_index')): ?>
+<?php if (Yii::$app->user->can('backend_default_index') && Yii::$app->settings->get('backendWidget', 'frontend') === 'toolbar'): ?>
     <?= Toolbar::widget([
         'useIframe' => \Yii::$app->settings->getOrSet(
             'useIframe',
@@ -141,6 +127,10 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
             'boolean'
         ),
     ]) ?>
+<?php endif; ?>
+
+<?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'modal'): ?>
+    <?= Modal::widget() ?>
 <?php endif; ?>
 
 <?php $this->endBody() ?>
