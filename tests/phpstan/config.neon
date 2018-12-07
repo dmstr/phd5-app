@@ -1,0 +1,7 @@
+parameters:
+    autoload_directories:
+        - /app/src
+    excludes_analyse:
+        - */tests/*
+        - */views/*
+        - */migrations/*
