@@ -219,6 +219,7 @@ return [
                         'FA' => ['class' => \rmrevin\yii\fontawesome\FA::class],
                         'FileUrl' => ['class' => \hrzg\filemanager\helpers\Url::class],
                         'Url' => ['class' => \yii\helpers\Url::class],
+                        'Markdown' => ['class' => \yii\helpers\Markdown::class],
                     ],
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
