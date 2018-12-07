@@ -2,6 +2,7 @@
 
 namespace app\commands;
 
+use dmstr\helpers\Metadata;
 use mikehaertl\shellcommand\Command;
 use yii\console\Controller;
 use yii\helpers\VarDumper;
@@ -88,7 +89,25 @@ class AppController extends Controller
         );
         $this->run('user/create', [getenv('APP_ADMIN_EMAIL'), 'admin', $adminPassword]);
 
+        $this->stdout('Initializing modules');
+
         $this->stdout("\n\nDone.\n");
+    }
+
+    /**
+     * Call init() of non-loaded modules
+     */
+    public function actionInitModules()
+    {
+        $this->stdout('Initializing modules...' . PHP_EOL);
+        foreach (Metadata::getModules() as $name => $module) {
+            if (is_array($module)) {
+                $this->stdout("{$name}");
+                \Yii::$app->getModule($name)->init();
+                $this->stdout(" [OK]" . PHP_EOL);
+            }
+        }
+        $this->stdout(PHP_EOL . "Done." . PHP_EOL);
     }
 
     /**
