@@ -26,6 +26,7 @@ services:
       - APP_MAILER_USE_FILE_TRANSPORT=1
       - APP_ADMIN_PASSWORD=admin1
       - APP_ADMIN_EMAIL=admin@local.develop
+      - APP_ASSET_FORCE_PUBLISH=1
     volumes:
       # Re-use local composer cache via host-volume
       - type: bind

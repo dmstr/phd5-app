@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.2-fpm-4.5-alpine-nginx
+FROM dmstr/php-yii2:7.2-fpm-4.6-alpine-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apk add --update $PHPIZE_DEPS \
