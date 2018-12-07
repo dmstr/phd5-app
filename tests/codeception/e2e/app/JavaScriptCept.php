@@ -11,6 +11,8 @@ $I->amGoingTo('check javascript with a modal');
 $I->amOnPage('/en');
 $I->dontSee('#phd-info-panel');
 
+$I->amGoingTo('display the info button');
+$I->pressKey("body", "h");
 $I->click('#phd-info-button a');
 $I->waitForElementVisible('#phd-info-modal',3);
 $I->seeElement('#phd-info-modal');
