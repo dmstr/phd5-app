@@ -96,22 +96,6 @@ class AppController extends Controller
     }
 
     /**
-     * Call init() of non-loaded modules
-     */
-    public function actionInitModules()
-    {
-        $this->stdout('Initializing modules...' . PHP_EOL);
-        foreach (Yii::$app->getModules() as $name => $module) {
-            if (is_array($module)) {
-                $this->stdout("{$name}");
-                Yii::$app->getModule($name)->init();
-                $this->stdout(" [OK]" . PHP_EOL);
-            }
-        }
-        $this->stdout(PHP_EOL . "Done." . PHP_EOL);
-    }
-
-    /**
      * Clean cache, assets and audit tables
      */
     public function actionCleanup()

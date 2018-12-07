@@ -26,8 +26,5 @@ $I->amGoingTo('change the admin user password');
 $I->runShellCommand("yii user/password preview preview1");
 $I->seeInShellOutput('Password has been changed');
 
-$I->runShellCommand('yii app/init-modules');
-$I->seeInShellOutput('Initializing modules...');
-
 $I->runShellCommand('yii cache/flush-all');
 $I->seeInShellOutput('The following cache components were processed:');

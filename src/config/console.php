@@ -54,6 +54,7 @@ return [
                     '@dmstr/modules/pages/migrations',
                     '@dmstr/modules/publication/migrations',
                     '@dmstr/modules/redirect/migrations',
+                    '@dmstr/modules/backend/migrations',
                     '@hrzg/filefly/migrations',
                     '@hrzg/widget/migrations',
                     '@ignatenkovnikita/queuemanager/migrations',
