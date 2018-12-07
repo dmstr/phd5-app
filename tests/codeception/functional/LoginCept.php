@@ -29,11 +29,11 @@ $I->seeResponseCodeIs(200);
 
 $I->expectTo('see backend elements');
 $I->see('admin');
+$I->see('Application Modules', 'h3');
 $I->see('Widget Content','h4');
 $I->see('Page Tree','h4');
 $I->see('Settings','h4');
 $I->see('Audit','h4');
 $I->see('Jobs','h4');
-$I->see('Auto-detected modules', 'h3');
 $I->see('filefly','a.btn-app');
 $I->see('redirects','a.btn-app');
