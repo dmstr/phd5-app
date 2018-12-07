@@ -14,5 +14,4 @@ $I->seeInShellOutput('APP_NAME');
 $I->runShellCommand('yii app/version');
 $I->seeInShellOutput('Application Version');
 
-$I->runShellCommand('yii app/init-modules');
-$I->seeInShellOutput('Initializing modules...');
+
