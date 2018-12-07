@@ -6,6 +6,7 @@ use dmstr\helpers\Metadata;
 use mikehaertl\shellcommand\Command;
 use yii\console\Controller;
 use yii\helpers\VarDumper;
+use Yii;
 
 /**
  * @link http://www.diemeisterei.de/
@@ -103,7 +104,7 @@ class AppController extends Controller
         foreach (Yii::$app->getModules() as $name => $module) {
             if (is_array($module)) {
                 $this->stdout("{$name}");
-                \Yii::$app->getModule($name)->init();
+                Yii::$app->getModule($name)->init();
                 $this->stdout(" [OK]" . PHP_EOL);
             }
         }
