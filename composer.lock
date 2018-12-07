@@ -2600,16 +2600,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "1.0.0-beta8",
+            "version": "1.0.0-beta9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "e7693f65fff7376652aa07ea3a8dcda88d25f9cd"
+                "reference": "53572a80433498177ce819cb572ba654eabef473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/e7693f65fff7376652aa07ea3a8dcda88d25f9cd",
-                "reference": "e7693f65fff7376652aa07ea3a8dcda88d25f9cd",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/53572a80433498177ce819cb572ba654eabef473",
+                "reference": "53572a80433498177ce819cb572ba654eabef473",
                 "shasum": ""
             },
             "require": {
@@ -2646,7 +2646,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-12-07T12:06:56+00:00"
+            "time": "2018-12-07T19:05:53+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
