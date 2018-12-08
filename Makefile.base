@@ -57,7 +57,6 @@ setup: ##@base run application setup
 	# Running application setup command (database, user)
 	#
 	$(DOCKER_COMPOSE) run --rm php yii app/setup
-	$(DOCKER_COMPOSE) run --rm php yii app/init-modules
 
 logs: ##@base show logs
 	#
