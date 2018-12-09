@@ -491,16 +491,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.81.1",
+            "version": "3.81.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "02a3ea09dd846c2d3bb923d6c91902f08c5bf2af"
+                "reference": "1dd023879874ce22a7f8e2b2e014166cd1160b0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/02a3ea09dd846c2d3bb923d6c91902f08c5bf2af",
-                "reference": "02a3ea09dd846c2d3bb923d6c91902f08c5bf2af",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1dd023879874ce22a7f8e2b2e014166cd1160b0d",
+                "reference": "1dd023879874ce22a7f8e2b2e014166cd1160b0d",
                 "shasum": ""
             },
             "require": {
@@ -570,7 +570,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-12-06T20:10:37+00:00"
+            "time": "2018-12-07T19:55:05+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3098,16 +3098,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.0.0-alpha4",
+            "version": "2.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "196d094e7f07c2ce83f1bee5e06decdda92b0613"
+                "reference": "77e7910d1cadd6164fb8f3507a57acac8db559b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/196d094e7f07c2ce83f1bee5e06decdda92b0613",
-                "reference": "196d094e7f07c2ce83f1bee5e06decdda92b0613",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/77e7910d1cadd6164fb8f3507a57acac8db559b9",
+                "reference": "77e7910d1cadd6164fb8f3507a57acac8db559b9",
                 "shasum": ""
             },
             "require": {
@@ -3158,7 +3158,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2018-10-10T13:41:07+00:00"
+            "time": "2018-12-09T21:34:42+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -3389,16 +3389,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.0.0-alpha4",
+            "version": "2.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "37f5774d719528adf36a17dfb070bdcc1181b712"
+                "reference": "e3bddeb560fd37a023e8d4adccda7567d1510d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/37f5774d719528adf36a17dfb070bdcc1181b712",
-                "reference": "37f5774d719528adf36a17dfb070bdcc1181b712",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/e3bddeb560fd37a023e8d4adccda7567d1510d74",
+                "reference": "e3bddeb560fd37a023e8d4adccda7567d1510d74",
                 "shasum": ""
             },
             "require": {
@@ -3439,7 +3439,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-11-22T10:13:56+00:00"
+            "time": "2018-12-09T22:12:07+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -5235,12 +5235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e1c50ad6aac15aa5c76762f39fb6926b5f7fc1d2"
+                "reference": "46efa7cf127bfe6289e05b546db0442598f47359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e1c50ad6aac15aa5c76762f39fb6926b5f7fc1d2",
-                "reference": "e1c50ad6aac15aa5c76762f39fb6926b5f7fc1d2",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/46efa7cf127bfe6289e05b546db0442598f47359",
+                "reference": "46efa7cf127bfe6289e05b546db0442598f47359",
                 "shasum": ""
             },
             "conflict": {
@@ -5349,7 +5349,7 @@
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/sylius": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "symfony/dependency-injection": ">=2,<2.0.17",
-                "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.19|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2",
                 "symfony/http-foundation": ">=2,<2.7.49|>=2.8,<2.8.44|>=3,<3.3.18|>=3.4,<3.4.14|>=4,<4.0.14|>=4.1,<4.1.3",
                 "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
@@ -5357,14 +5357,14 @@
                 "symfony/polyfill": ">=1,<1.10",
                 "symfony/polyfill-php55": ">=1,<1.10",
                 "symfony/routing": ">=2,<2.0.19",
-                "symfony/security": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
+                "symfony/security": ">=2,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.19|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<2.8.37|>=3,<3.3.17|>=3.4,<3.4.7|>=4,<4.0.7",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.19|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.19|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
+                "symfony/symfony": ">=2,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
@@ -5428,7 +5428,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-12-07T09:18:50+00:00"
+            "time": "2018-12-09T09:52:28+00:00"
         },
         {
             "name": "sabre/dav",
@@ -8838,16 +8838,16 @@
         },
         {
             "name": "schmunk42/yii2-giiant",
-            "version": "0.10.7",
+            "version": "0.10.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmunk42/yii2-giiant.git",
-                "reference": "8c4a41aa44ca4c6e06978ece7340f6f25e6a97f5"
+                "reference": "627db3062a72b6803d7311f48404d6e4028a54d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/8c4a41aa44ca4c6e06978ece7340f6f25e6a97f5",
-                "reference": "8c4a41aa44ca4c6e06978ece7340f6f25e6a97f5",
+                "url": "https://api.github.com/repos/schmunk42/yii2-giiant/zipball/627db3062a72b6803d7311f48404d6e4028a54d8",
+                "reference": "627db3062a72b6803d7311f48404d6e4028a54d8",
                 "shasum": ""
             },
             "require": {
@@ -8897,7 +8897,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2018-09-12T12:47:35+00:00"
+            "time": "2018-12-08T10:58:09+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -10470,16 +10470,16 @@
         },
         {
             "name": "yiisoft/yii2-gii",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8"
+                "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/9ec1374d0844f448d2af29c707f77c9f8d1375c8",
-                "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
+                "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
                 "shasum": ""
             },
             "require": {
@@ -10492,10 +10492,6 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.0.x-dev"
-                },
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
                 }
             },
             "autoload": {
@@ -10519,7 +10515,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2018-05-02T22:05:25+00:00"
+            "time": "2018-12-08T10:07:49+00:00"
         }
     ],
     "aliases": [],
