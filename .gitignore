@@ -16,6 +16,7 @@ docker-compose.override.yml
 docker-compose.local.yml
 
 local.php
+local.env
 tests/codeception/_support/_generated
 tests/_log
 

@@ -11,6 +11,6 @@ $I->amOnPage('/');
 $I->dontSeeLink('/en/backend', '.nav');
 $I->dontSee('','.glyphicon.glyphicon-cog');
 
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 
 $I->see('','.glyphicon.glyphicon-cog');

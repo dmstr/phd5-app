@@ -7,10 +7,7 @@
 $I = new E2eTester($scenario);
 $I->wantTo('create a preview RBAC role');
 
-
-
-$I->amGoingTo('try to login as admin');
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 
 $I->amGoingTo('try to view and create pages');
 $I->amOnPage('/user/role/create');

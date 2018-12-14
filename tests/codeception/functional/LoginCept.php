@@ -19,7 +19,7 @@ $I->expectTo('see validations errors');
 $I->see('Invalid login or password');
 
 $I->amGoingTo('try to login with correct credentials');
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 
 $I->amOnPage('/site');
 $I->seeResponseCodeIs(200);
@@ -28,7 +28,7 @@ $I->amOnPage('/backend');
 $I->seeResponseCodeIs(200);
 
 $I->expectTo('see backend elements');
-$I->see('admin');
+$I->see('master');
 $I->see('Application Modules', 'h3');
 $I->see('Widget Content','h4');
 $I->see('Page Tree','h4');

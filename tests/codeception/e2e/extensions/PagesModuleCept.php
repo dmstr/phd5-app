@@ -8,7 +8,7 @@ $I = new E2eTester($scenario);
 $I->wantTo('ensure that Pages works');
 
 $I->amGoingTo('try to login with correct credentials');
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 $I->amGoingTo('try to view and create pages');
 $I->amOnPage('/pages');
 $I->see('Nodes', '.kv-heading-container');

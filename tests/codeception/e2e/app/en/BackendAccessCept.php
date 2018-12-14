@@ -18,7 +18,7 @@ $I->amOnPage('/settings');
 $I->dontSee('Settings', 'h1');
 
 $I->expectTo('have no access with login');
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 
 $I->amOnPage('/backend');
 $I->makeScreenshot('backend-dashboard');

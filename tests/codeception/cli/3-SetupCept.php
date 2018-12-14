@@ -22,7 +22,7 @@ $I->amGoingTo('change the admin user password');
 $I->runShellCommand("yii user/password admin admin1");
 $I->seeInShellOutput('Password has been changed');
 
-$I->amGoingTo('change the admin user password');
+$I->amGoingTo('change the preview user password');
 $I->runShellCommand("yii user/password preview preview1");
 $I->seeInShellOutput('Password has been changed');
 

@@ -17,6 +17,7 @@ TRUNCATE table `app_social_account`;
 INSERT INTO `app_user` (`id`, `username`, `email`, `password_hash`, `auth_key`, `confirmed_at`, `unconfirmed_email`, `blocked_at`, `registration_ip`, `created_at`, `updated_at`, `flags`)
 VALUES
 	(1, 'admin', 'admin@h17n.de', '$2y$10$uN98TVi0OytDDgcpENV7IOWlWemn2TD/vij5hoN2QbZ/P8iGQkafy', 'ArSNskfLRoiDivKY98jaqgORDj597si4', 1463058272, NULL, NULL, NULL, 1463058272, 1475855889, 0),
+	(99, 'master', 'master@h17n.de', '$2y$10$ltmS1hNzsCkD.U2NU1kfPu6T5KONWxSxLDQbsz6Mf8YwE2JhRYntq', 'DK9wiLZlA0ZyUgKvlmDw5folXPWCLL7F', 1463058272, NULL, NULL, NULL, 1463058272, 1475855889, 0),
 	(2, 'dev', 'dev@h17n.de', '$2y$10$8jo5HglYhJSgrl4iVVPSk.4pU3MOYSeyn1.jmtBgp0v3tRcQrtC1i', '33KED5Gw27sCnL3QyFe9svkaXL4pJUCx', 1463352048, NULL, NULL, '54.93.102.17', 1463349160, 1478617300, 0),
 	(3, 'editor', 'editor@h17n.de', '$2y$10$WzJWeCyCZi2n8w2nXIMbU.K7lJB8iMINcZIMutarHZ50qAGXsGIwy', 'HK7L1cW7VrpMGgvhHaQBnZGDu8zquCyM', 1467318745, NULL, NULL, '54.93.102.17', 1467318664, 1478617291, 0),
 	(4, 'preview', 'preview@h17n.de', '$2y$10$rfmrfvct3wD3akoVZY3l5OSidJ0xKMcoKeVlZZHfvT8fVZ4RYYj6m', 'WgWxMQCOMEyYgDDJ_mCBJcxvyL6h6SyI', 1467331347, NULL, NULL, '54.93.102.17', 1467331347, 1469693262, 0);
@@ -24,6 +25,7 @@ VALUES
 INSERT INTO `app_profile` (`user_id`, `name`, `public_email`, `gravatar_email`, `gravatar_id`, `location`, `website`, `bio`, `timezone`)
 VALUES
 	(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -31,7 +33,7 @@ VALUES
 
 LOCK TABLES `app_auth_assignment` WRITE; TRUNCATE TABLE `app_auth_assignment`;
 /*!40000 ALTER TABLE `app_auth_assignment` DISABLE KEYS */;
-INSERT INTO `app_auth_assignment` VALUES ('Developer','2',1467315311),('Editor','3',1467318765),('Preview','4',1467331484);
+INSERT INTO `app_auth_assignment` VALUES ('Master','5',1467315311),('Developer','2',1467315311),('Editor','3',1467318765),('Preview','4',1467331484);
 /*!40000 ALTER TABLE `app_auth_assignment` ENABLE KEYS */;
 UNLOCK TABLES;
 

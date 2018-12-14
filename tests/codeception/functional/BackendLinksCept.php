@@ -7,7 +7,7 @@ $I = new FunctionalTester($scenario);
 $I->wantTo('Click backend links');
 
 $I->amGoingTo('start in the backend');
-$I->login('admin', 'admin1');
+$I->login('master', 'master1');
 $url = '/backend';
 $I->amOnPage($url);
 
