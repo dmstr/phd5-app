@@ -21,6 +21,7 @@
 LOCK TABLES `app_auth_item` WRITE; TRUNCATE TABLE `app_auth_item`;
 /*!40000 ALTER TABLE `app_auth_item` DISABLE KEYS */;
 set autocommit=0;
+INSERT INTO `app_auth_item` VALUES ('Admin',1,'Legacy generic admin permission',NULL,NULL,1467315829,1489020665);
 INSERT INTO `app_auth_item` VALUES ('app',2,'All Application Controllers (without modules) [route]',NULL,NULL,1467315829,1489020665);
 INSERT INTO `app_auth_item` VALUES ('app_site',2,'Main Application Controller [route]',NULL,NULL,1463048457,1489020650);
 INSERT INTO `app_auth_item` VALUES ('backend',2,'Backend Module [route]',NULL,NULL,1467315450,1489020634);
@@ -47,9 +48,6 @@ INSERT INTO `app_auth_item` VALUES ('Public',1,'Unauthenticated User',NULL,NULL,
 INSERT INTO `app_auth_item` VALUES ('resque',2,'Resque Job Module [route]',NULL,NULL,1467318093,1489020432);
 INSERT INTO `app_auth_item` VALUES ('settings',2,'[route]',NULL,NULL,1467315669,1489020446);
 INSERT INTO `app_auth_item` VALUES ('settings-module',2,'Settings Module',NULL,NULL,1467315605,1489020455);
-INSERT INTO `app_auth_item` VALUES ('Test58e1d2ae92eb8',1,'Test Role',NULL,NULL,1491194543,1491194543);
-INSERT INTO `app_auth_item` VALUES ('Test58e1d3b9cc658',1,'Test Role',NULL,NULL,1491194810,1491194810);
-INSERT INTO `app_auth_item` VALUES ('Test5b5635eadaef2',1,'Test Role',NULL,NULL,1532376555,1532376555);
 INSERT INTO `app_auth_item` VALUES ('translate-module',2,'Translation Manager Module',NULL,NULL,1467318323,1489020467);
 INSERT INTO `app_auth_item` VALUES ('translatemanager',2,'[route]',NULL,NULL,1467318500,1489020477);
 INSERT INTO `app_auth_item` VALUES ('user',2,'[route]',NULL,NULL,1467318564,1489020489);
@@ -78,8 +76,10 @@ commit;
 LOCK TABLES `app_auth_item_child` WRITE; TRUNCATE TABLE `app_auth_item_child`;
 /*!40000 ALTER TABLE `app_auth_item_child` DISABLE KEYS */;
 set autocommit=0;
+INSERT INTO `app_auth_item_child` VALUES ('Master','Admin');
 INSERT INTO `app_auth_item_child` VALUES ('Master','app');
 INSERT INTO `app_auth_item_child` VALUES ('Editor','app_site');
+INSERT INTO `app_auth_item_child` VALUES ('Editor','widgets-cell-edit');
 INSERT INTO `app_auth_item_child` VALUES ('Preview','app_site');
 INSERT INTO `app_auth_item_child` VALUES ('Master','backend');
 INSERT INTO `app_auth_item_child` VALUES ('Editor','backend_default_index');
