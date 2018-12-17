@@ -334,6 +334,7 @@ return [
             'class' => Da\User\Module::class,
             'layout' => '@app/views/layouts/container',
             'defaultRoute' => 'admin',
+            'administratorPermissionName' => 'user-module',
             'administrators' => ['admin'],
             'enableFlashMessages' => false,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
