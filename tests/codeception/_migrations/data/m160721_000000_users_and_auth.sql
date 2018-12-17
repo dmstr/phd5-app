@@ -33,7 +33,7 @@ VALUES
 
 LOCK TABLES `app_auth_assignment` WRITE; TRUNCATE TABLE `app_auth_assignment`;
 /*!40000 ALTER TABLE `app_auth_assignment` DISABLE KEYS */;
-INSERT INTO `app_auth_assignment` VALUES ('Master','5',1467315311),('Developer','2',1467315311),('Editor','3',1467318765),('Preview','4',1467331484);
+INSERT INTO `app_auth_assignment` VALUES ('Master','99',1467315311),('Developer','2',1467315311),('Editor','3',1467318765),('Preview','4',1467331484);
 /*!40000 ALTER TABLE `app_auth_assignment` ENABLE KEYS */;
 UNLOCK TABLES;
 
