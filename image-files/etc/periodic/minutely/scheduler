@@ -1,0 +1,3 @@
+#!/bin/bash
+. /root/export-env
+/usr/local/bin/php /app/yii schedule/run --schedule-file=@app/config/schedule.php

@@ -22,6 +22,7 @@
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
+        "omnilight/yii2-scheduling": "^1.1",
         "pheme/yii2-settings": "^0.5.0",
         "roave/security-advisories": "dev-master",
         "schmunk42/yii2-markdocs-module": "~0.3",

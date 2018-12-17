@@ -1,3 +1,0 @@
-#!/bin/bash
-. /root/export-env
-sleep $(unique-number.sh 600) && /usr/local/bin/php /app/yii audit/cleanup --interactive=0 --entry --age=7
