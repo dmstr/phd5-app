@@ -2,9 +2,11 @@
 
 ### 5.3.0  (under development)
 
+- removed Alpine support
 - switched to `2amigos/yii2-usuario`
 - updated `dmstr/yii2-widgets2-module` and `dmstr/yii2-pages-module`
 - use same window/tab for *Backend*, if `APP_PARAMS_BACKEND_IFRAME_NAME` is not set
+- added `omnilight/yii2-scheduling`
 
 ### 5.2.0
 
