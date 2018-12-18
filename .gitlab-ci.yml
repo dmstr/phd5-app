@@ -110,33 +110,21 @@ after_script:
 # ----------------------------------------------------------
 # job definitions, they should use the defined job and flavour templates
 # ----------------------------------------------------------
-codeception:
-  <<: *codeception_tmpl_ref
-
 codeception-debian:
   <<: *build_flavour_debian_tmpl_ref
   <<: *codeception_tmpl_ref
 
 # ----------------------------------------------------------
-coverage:
-  <<: *coverage_tmpl_ref
-
 coverage-debian:
   <<: *build_flavour_debian_tmpl_ref
   <<: *coverage_tmpl_ref
 
 # ----------------------------------------------------------
-lint:
-  <<: *lint_tmpl_ref
-
 lint-debian:
   <<: *build_flavour_debian_tmpl_ref
   <<: *lint_tmpl_ref
 
 # ----------------------------------------------------------
-release:
-  <<: *release_tmpl_ref
-
 release-debian:
   <<: *build_flavour_debian_tmpl_ref
   <<: *release_tmpl_ref

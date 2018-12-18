@@ -85,10 +85,12 @@ return [
     'components' => [
         'assetManager' => [
             'dirMode' => 0775,
-            'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ? \dmstr\helpers\AssetHash::byFileTimeAndLess() : null,
+            'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ?
+                \dmstr\helpers\AssetHash::byFileTime(!YII_DEBUG)
+                : null,
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
-            'basePath' => '@app/../web/assets',
+            'basePath' => '@app/../web/assets/',
         ],
         'authManager' => [
             'class' => \yii\rbac\DbManager::class,

@@ -491,16 +491,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.81.6",
+            "version": "3.81.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0e07e92ec7042316ffc79ef290cf7bbb7d7be24b"
+                "reference": "73fdee34e6db72954a6110ff71ea5e9bf6e95e48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0e07e92ec7042316ffc79ef290cf7bbb7d7be24b",
-                "reference": "0e07e92ec7042316ffc79ef290cf7bbb7d7be24b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/73fdee34e6db72954a6110ff71ea5e9bf6e95e48",
+                "reference": "73fdee34e6db72954a6110ff71ea5e9bf6e95e48",
                 "shasum": ""
             },
             "require": {
@@ -570,7 +570,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-12-14T22:50:05+00:00"
+            "time": "2018-12-17T22:58:13+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2972,16 +2972,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.15",
+            "version": "0.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "989532dc8354c9ec0da17cc1acfba37c8d2920c6"
+                "reference": "928bf3ddb7d3d6721b87286c1b580dbc03874e9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/989532dc8354c9ec0da17cc1acfba37c8d2920c6",
-                "reference": "989532dc8354c9ec0da17cc1acfba37c8d2920c6",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/928bf3ddb7d3d6721b87286c1b580dbc03874e9e",
+                "reference": "928bf3ddb7d3d6721b87286c1b580dbc03874e9e",
                 "shasum": ""
             },
             "require": {
@@ -3013,7 +3013,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-12-12T17:05:48+00:00"
+            "time": "2018-12-14T18:34:19+00:00"
         },
         {
             "name": "dmstr/yii2-json-editor",

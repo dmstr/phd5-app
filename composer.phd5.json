@@ -10,7 +10,7 @@
         "dmstr/yii2-backend-module": "^1.0.0-beta9",
         "dmstr/yii2-contact-module": "^0.2.1",
         "dmstr/yii2-db": "^1.0.0-alpha1",
-        "dmstr/yii2-helpers": ">=0.4.7",
+        "dmstr/yii2-helpers": ">=0.4.16",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filefly-module": "^1.0.0-alpha1",
         "dmstr/yii2-filemanager-widgets": "^1.0.0-alpha1",
