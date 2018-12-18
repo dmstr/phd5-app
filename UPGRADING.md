@@ -3,6 +3,7 @@
 ### 5.2 to 5.3
 
 - upgrade `"wikimedia/composer-merge-plugin": "^1.4.1"` when using phd5-template
+- update helper function `E2eTester::login` with updated CSS selectors
 
 ### 5.1 to 5.2
 

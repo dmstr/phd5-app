@@ -20,9 +20,11 @@ class E2eTester extends \Codeception\Actor
 {
     use _generated\E2eTesterActions;
 
-   /**
-    * Define custom actions here
-    */
+    /**
+     * Login with username and password
+     * @param $username
+     * @param $password
+     */
     public function login($username, $password){
         $this->amOnPage('/user/security/login');
         $this->fillField('input[name="LoginForm[login]"]', $username);
