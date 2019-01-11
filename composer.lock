@@ -491,16 +491,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.82.6",
+            "version": "3.85.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a254cef386f193249e2dea5ca54f66b3e2c00963"
+                "reference": "993caf51c56384fcbddd97ed1361fcd89628c693"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a254cef386f193249e2dea5ca54f66b3e2c00963",
-                "reference": "a254cef386f193249e2dea5ca54f66b3e2c00963",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/993caf51c56384fcbddd97ed1361fcd89628c693",
+                "reference": "993caf51c56384fcbddd97ed1361fcd89628c693",
                 "shasum": ""
             },
             "require": {
@@ -570,7 +570,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-01-04T23:01:07+00:00"
+            "time": "2019-01-10T19:42:24+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3389,16 +3389,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.0.0-alpha5",
+            "version": "2.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "e3bddeb560fd37a023e8d4adccda7567d1510d74"
+                "reference": "83d4ea9e5f761c4861a54714e1efb633f91f125e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/e3bddeb560fd37a023e8d4adccda7567d1510d74",
-                "reference": "e3bddeb560fd37a023e8d4adccda7567d1510d74",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/83d4ea9e5f761c4861a54714e1efb633f91f125e",
+                "reference": "83d4ea9e5f761c4861a54714e1efb633f91f125e",
                 "shasum": ""
             },
             "require": {
@@ -3439,7 +3439,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-12-09T22:12:07+00:00"
+            "time": "2019-01-11T11:45:11+00:00"
         },
         {
             "name": "doctrine/lexer",
