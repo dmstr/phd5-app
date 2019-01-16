@@ -109,3 +109,4 @@ services:
     image: tophfr/mailcatcher
     ports:
       - '1080'
+      - '80'
