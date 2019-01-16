@@ -340,6 +340,9 @@ return [
             'administrators' => ['admin'],
             'enableFlashMessages' => false,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
+            'mailParams' => [
+                'fromEmail' => getenv('APP_ADMIN_EMAIL')
+            ],
         ],
         'widgets' => [
             'class' => \hrzg\widget\Module::class,
