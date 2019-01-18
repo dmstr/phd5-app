@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @link http://www.diemeisterei.de/
  *
@@ -9,25 +8,34 @@
  * file that was distributed with this source code
  */
 
+use bedezign\yii2\audit\components\web\ErrorHandler;
+use codemix\streamlog\Target;
+use dmstr\modules\backend\interfaces\ContextMenuItemsInterface;
+use pheme\settings\Module as SettingsModule;
+use schmunk42\markdocs\Module as MarkdocsModule;
+use yii\helpers\ArrayHelper;
+
 // Settings for web-application only
 return [
     'on registerMenuItems' => function ($event) {
-        Yii::$app->params['context.menuItems'] = \yii\helpers\ArrayHelper::merge(
-            Yii::$app->params['context.menuItems'],
-            $event->sender->getMenuItems()
-        );
+        if ($event->sender instanceof ContextMenuItemsInterface) {
+            Yii::$app->params['context.menuItems'] = ArrayHelper::merge(
+                Yii::$app->params['context.menuItems'],
+                $event->sender->getMenuItems()
+            );
+        }
         $event->handled = true;
     },
     'components' => [
         'errorHandler' => [
-            'class' => '\bedezign\yii2\audit\components\web\ErrorHandler',
+            'class' => ErrorHandler::class,
             'errorAction' => 'error/index',
         ],
         'log' => [
             'targets' => [
                 // writes to php-fpm output stream
                 'web' => [
-                    'class' => 'codemix\streamlog\Target',
+                    'class' => Target::class,
                     'url' => 'php://stdout',
                     'levels' => ['info', 'trace'],
                     'logVars' => [],
@@ -43,12 +51,12 @@ return [
     ],
     'modules' => [
         'docs' => [
-            'class' => 'schmunk42\markdocs\Module',
+            'class' => MarkdocsModule::class,
             'layout' => '@backend/views/layouts/box',
             'enableEmojis' => true,
         ],
         'settings' => [
-            'class' => 'pheme\settings\Module',
+            'class' => SettingsModule::class,
             'layout' => '@backend/views/layouts/box',
             'accessRoles' => ['settings-module'],
         ],
