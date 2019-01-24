@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.2-fpm-4.6-nginx
+FROM dmstr/php-yii2:7.3-fpm-6.0-beta1-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
@@ -49,4 +49,4 @@ RUN crontab src/config/crontab
 VOLUME /mnt/storage
 
 # export container environment for cronjobs on container start
-CMD /usr/local/bin/export-env.sh; forego start -r -f /root/Procfile
+CMD /usr/local/bin/export-env.sh; supervisord -c /etc/supervisor/supervisord.conf
