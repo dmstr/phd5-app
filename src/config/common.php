@@ -12,6 +12,10 @@
 // prepare application languages
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
+use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
+use lajax\translatemanager\services\scanners\ScannerPhpArray;
+use lajax\translatemanager\services\scanners\ScannerPhpFunction;
+use app\services\scanners\ScannerDatabase;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -327,8 +331,26 @@ return [
         ],
         'translatemanager' => [
             'class' => \lajax\translatemanager\Module::class,
-            'root' => '@app/views',
             'layout' => $boxLayout,
+            'root' => '@app/views',
+            'tables' => [
+                [
+                    'connection' => 'db',
+                    'table' => '{{%hrzg_widget_template}}',
+                    'columns' => ['twig_template']
+                ],
+                [
+                    'connection' => 'db',
+                    'table' => '{{app_twig}}',
+                    'columns' => ['value']
+                ]
+            ],
+            'scanners' => [
+                ScannerPhpFunction::class,
+                ScannerPhpArray::class,
+                ScannerJavaScriptFunction::class,
+                ScannerDatabase::class
+            ],
             'allowedIPs' => ['*'],
             'roles' => ['translate-module'],
         ],
