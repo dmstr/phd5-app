@@ -38,20 +38,20 @@ use yii\helpers\Console;
  * @property string pattern
  * @property integer categoryGroup
  * @property string messageGroup
- * @property Scanner _scanner
- * @property array _tables
+ * @property Scanner scanner
+ * @property array $tables
  */
 class ScannerDatabase extends BaseScannerDatabase
 {
     /**
      * @var Scanner object containing the detected language elements
      */
-    private $_scanner;
+    private $scanner;
 
     /**
      * @var array array containing the table ids to process.
      */
-    private $_tables;
+    private $tables;
 
     /**
      * @var string Pattern for finding translate function
@@ -74,11 +74,11 @@ class ScannerDatabase extends BaseScannerDatabase
      */
     public function __construct(Scanner $scanner)
     {
-        $this->_scanner = $scanner;
-        $this->_tables = Yii::$app->getModule('translatemanager')->tables;
+        $this->scanner = $scanner;
+        $this->tables = Yii::$app->getModule('translatemanager')->tables;
 
-        if (!empty($this->_tables) && \is_array($this->_tables)) {
-            foreach ($this->_tables as $tables) {
+        if (!empty($this->tables) && \is_array($this->tables)) {
+            foreach ($this->tables as $tables) {
                 if (empty($tables['connection'])) {
                     throw new InvalidConfigException('Incomplete database  configuration: connection ');
                 }
@@ -98,14 +98,14 @@ class ScannerDatabase extends BaseScannerDatabase
      */
     public function run()
     {
-        $this->_scanner->stdout('Detect DatabaseTable - BEGIN', Console::FG_GREY);
-        if (\is_array($this->_tables)) {
-            foreach ($this->_tables as $tables) {
-                $this->_scanningTable($tables);
+        $this->scanner->stdout('Detect DatabaseTable - BEGIN', Console::FG_GREY);
+        if (\is_array($this->tables)) {
+            foreach ($this->tables as $tables) {
+                $this->scanningTable($tables);
             }
         }
 
-        $this->_scanner->stdout('Detect DatabaseTable - END', Console::FG_GREY);
+        $this->scanner->stdout('Detect DatabaseTable - END', Console::FG_GREY);
     }
 
     /**
@@ -114,9 +114,9 @@ class ScannerDatabase extends BaseScannerDatabase
      * @param array $tables
      * @throws \yii\db\Exception
      */
-    private function _scanningTable($tables)
+    private function scanningTable($tables)
     {
-        $this->_scanner->stdout('Extracting messages from ' . $tables['table'] . '.' . implode(',', $tables['columns']), Console::FG_GREEN);
+        $this->scanner->stdout('Extracting messages from ' . $tables['table'] . '.' . implode(',', $tables['columns']), Console::FG_GREEN);
         $query = new \yii\db\Query();
         $data = $query->select($tables['columns'])
             ->from($tables['table'])
@@ -130,14 +130,14 @@ class ScannerDatabase extends BaseScannerDatabase
                 $parsing = preg_match_all($this->pattern, $column, $matches);
 
                 if ($parsing === false) {
-                    $this->_scanner->stdout('An error occurred while checking for pattern' . PHP_EOL, Console::BOLD, Console::FG_RED);
+                    $this->scanner->stdout('An error occurred while checking for pattern' . PHP_EOL, Console::BOLD, Console::FG_RED);
                 } else {
                     if (isset($matches[$this->categoryGroup], $matches[$this->messageGroup])) {
                         $categories = $matches[$this->categoryGroup];
                         $messages = $matches[$this->messageGroup];
 
                         for ($i = 0; $i < \count($categories); $i++) {
-                            $this->_scanner->addLanguageItem($categories[$i], $messages[$i]);
+                            $this->scanner->addLanguageItem($categories[$i], $messages[$i]);
                         }
                     }
                 }
