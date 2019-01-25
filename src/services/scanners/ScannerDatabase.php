@@ -7,7 +7,6 @@ use lajax\translatemanager\services\scanners\ScannerDatabase as BaseScannerDatab
 use Yii;
 use yii\helpers\Console;
 
-
 /**
  * Find pattern in db. Default pattern is t('category','message')
  *
@@ -125,11 +124,9 @@ class ScannerDatabase extends BaseScannerDatabase
             ->queryAll();
 
         foreach ($data as $columns) {
-
             $columns = array_map('trim', $columns);
 
             foreach ($columns as $column) {
-
                 $parsing = preg_match_all($this->pattern, $column, $matches);
 
                 if ($parsing === false) {
@@ -144,7 +141,6 @@ class ScannerDatabase extends BaseScannerDatabase
                         }
                     }
                 }
-
             }
         }
     }
