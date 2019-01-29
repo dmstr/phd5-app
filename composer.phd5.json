@@ -5,6 +5,7 @@
         "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
         "lajax/yii2-translate-manager": "^1.6.0",
+        "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^1.0.0-beta10",
