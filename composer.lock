@@ -841,16 +841,16 @@
         },
         {
             "name": "bower-asset/bootstrap",
-            "version": "v3.3.7",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+                "reference": "4c547f2175b9a05aa43551f6927da83fe249ce42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
-                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/4c547f2175b9a05aa43551f6927da83fe249ce42",
+                "reference": "4c547f2175b9a05aa43551f6927da83fe249ce42",
                 "shasum": ""
             },
             "require": {
@@ -887,7 +887,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2016-07-25T15:51:54+00:00"
+            "time": "2018-12-10T09:15:54+00:00"
         },
         {
             "name": "bower-asset/bootstrap-datepicker",
@@ -1462,45 +1462,6 @@
                 "schema"
             ],
             "time": "2016-08-07T16:07:24+00:00"
-        },
-        {
-            "name": "bower-asset/jsoneditor",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/josdejong/jsoneditor.git",
-                "reference": "63e61dd817f771782c3bf6eafaf6f1069e034569"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/josdejong/jsoneditor/zipball/63e61dd817f771782c3bf6eafaf6f1069e034569",
-                "reference": "63e61dd817f771782c3bf6eafaf6f1069e034569",
-                "shasum": ""
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "jsoneditor.min.js",
-                    "jsoneditor.min.css"
-                ],
-                "bower-asset-ignore": [
-                    "app",
-                    "build",
-                    "downloads",
-                    "src",
-                    "misc",
-                    "node_modules",
-                    "test",
-                    "tools",
-                    ".idea",
-                    "gulpfile.js",
-                    "package.json",
-                    ".npmignore",
-                    ".gitignore"
-                ]
-            },
-            "description": "A web-based tool to view, edit and format JSON",
-            "time": "2015-01-25T14:12:20+00:00"
         },
         {
             "name": "bower-asset/mermaid",
@@ -2443,60 +2404,6 @@
             "time": "2015-01-27T10:53:51+00:00"
         },
         {
-            "name": "devgroup/yii2-jsoneditor",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DevGroup-ru/yii2-jsoneditor.git",
-                "reference": "b4656d7953d78e513fc5dfe42b4c9515c07a0c67"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DevGroup-ru/yii2-jsoneditor/zipball/b4656d7953d78e513fc5dfe42b4c9515c07a0c67",
-                "reference": "b4656d7953d78e513fc5dfe42b4c9515c07a0c67",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jsoneditor": "~3.1",
-                "yiisoft/yii2": "2.0.*"
-            },
-            "require-dev": {
-                "yiisoft/yii2-debug": "2.0.*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "devgroup\\jsoneditor\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Kozhevnikov",
-                    "email": "b37hr3z3n@gmail.com"
-                },
-                {
-                    "name": "Evgeny Dubovitsky",
-                    "email": "flynn068@gmail.com"
-                },
-                {
-                    "name": "Pavel Fedotov",
-                    "email": "fps.06@mail.ru"
-                }
-            ],
-            "description": "Yii2 jsoneditor widget",
-            "keywords": [
-                "editor",
-                "json",
-                "jsoneditor",
-                "yii2"
-            ],
-            "time": "2014-12-16T14:27:06+00:00"
-        },
-        {
             "name": "dmstr/lajax-yii2-translate-manager-addons",
             "version": "1.0.0",
             "source": {
@@ -2641,16 +2548,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "1.0.0-beta12",
+            "version": "1.0.0-beta13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "3b9b6740d0b3821a8a3d0e9bd1f69c47682a5dab"
+                "reference": "a8c81d445423a8435c3c6fb9f203c24e723c5348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/3b9b6740d0b3821a8a3d0e9bd1f69c47682a5dab",
-                "reference": "3b9b6740d0b3821a8a3d0e9bd1f69c47682a5dab",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/a8c81d445423a8435c3c6fb9f203c24e723c5348",
+                "reference": "a8c81d445423a8435c3c6fb9f203c24e723c5348",
                 "shasum": ""
             },
             "require": {
@@ -2659,12 +2566,15 @@
                 "dmstr/yii2-adminlte-asset": "^2.5.0",
                 "dmstr/yii2-cookie-button": "~0.2",
                 "dmstr/yii2-helpers": "~0.4",
-                "dmstr/yii2-pages-module": "^2.0.0",
-                "dmstr/yii2-prototype-module": "~0.4",
                 "dmstr/yii2-web": "~0.3",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "loveorigami/yii2-notification-wrapper": "^6.3",
                 "yiisoft/yii2": "2.*"
+            },
+            "suggest": {
+                "codemix/yii2-localeurls": "Extended URL manager",
+                "dmstr/yii2-pages-module": "Menu manager",
+                "dmstr/yii2-prototype-module": "Content prototyping"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2687,7 +2597,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-12-19T11:01:57+00:00"
+            "time": "2019-01-30T17:43:37+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2819,16 +2729,16 @@
         },
         {
             "name": "dmstr/yii2-db",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-db.git",
-                "reference": "434941601c91c2c828256f09558a2d67a932552d"
+                "reference": "78a612c2d5bd86ec36ece45934e207d804621c34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/434941601c91c2c828256f09558a2d67a932552d",
-                "reference": "434941601c91c2c828256f09558a2d67a932552d",
+                "url": "https://api.github.com/repos/dmstr/yii2-db/zipball/78a612c2d5bd86ec36ece45934e207d804621c34",
+                "reference": "78a612c2d5bd86ec36ece45934e207d804621c34",
                 "shasum": ""
             },
             "require": {
@@ -2862,7 +2772,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-11-22T16:00:42+00:00"
+            "time": "2019-01-29T15:56:37+00:00"
         },
         {
             "name": "dmstr/yii2-emojifyjs-asset",
@@ -3139,25 +3049,27 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.0.0-alpha5",
+            "version": "2.0.0-alpha6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "77e7910d1cadd6164fb8f3507a57acac8db559b9"
+                "reference": "f98c0600f2b056cf156fda4f87c53b20c241bb73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/77e7910d1cadd6164fb8f3507a57acac8db559b9",
-                "reference": "77e7910d1cadd6164fb8f3507a57acac8db559b9",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/f98c0600f2b056cf156fda4f87c53b20c241bb73",
+                "reference": "f98c0600f2b056cf156fda4f87c53b20c241bb73",
                 "shasum": ""
             },
             "require": {
-                "2amigos/yii2-translateable-behavior": "^1.0.4",
+                "2amigos/yii2-translateable-behavior": "^1.1.0",
                 "bedezign/yii2-audit": "^1.1",
-                "devgroup/yii2-jsoneditor": "1.0.*",
-                "dmstr/yii2-db": "^1.0.0",
+                "dmstr/yii2-backend-module": "^1.0.0-beta12",
+                "dmstr/yii2-db": "1.0.0",
+                "dmstr/yii2-json-editor": "^0.2.2",
                 "dmstr/yii2-web": "^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
+                "justinrainbow/json-schema": "^5.2.0",
                 "kartik-v/yii2-tree-manager": ">=1.0.3 <=1.0.5",
                 "kartik-v/yii2-widget-select2": "^2.0.1",
                 "mikehaertl/php-shellcommand": "^1.2.4",
@@ -3166,8 +3078,7 @@
                 "yiisoft/yii2": "^2.0.13"
             },
             "require-dev": {
-                "codeception/codeception": "^2.2",
-                "dmstr/yii2-db": "^0.9.4"
+                "codeception/codeception": "^2.2"
             },
             "type": "yii2-extension",
             "extra": {
@@ -3199,7 +3110,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2018-12-09T21:34:42+00:00"
+            "time": "2019-01-30T18:37:12+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -4747,12 +4658,12 @@
         },
         {
             "name": "npm-asset/json-editor--json-editor",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/@json-editor/json-editor/-/json-editor-1.3.2.tgz",
+                "url": "https://registry.npmjs.org/@json-editor/json-editor/-/json-editor-1.3.3.tgz",
                 "reference": null,
-                "shasum": "18d930a6094af56798e4f274d592dd9a30d18895"
+                "shasum": "0d9fb4f096ab7c630ccc15bfc02cefcd001fe220"
             },
             "type": "npm-asset-library",
             "extra": {
@@ -4799,7 +4710,7 @@
                 "jsonschema",
                 "schema"
             ],
-            "time": "2019-01-07T15:50:13+00:00"
+            "time": "2019-01-30T08:24:23+00:00"
         },
         {
             "name": "omnilight/yii2-scheduling",
@@ -6703,20 +6614,20 @@
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "3f49c47924bb9fa5363c3fc7b073d954168cf438"
+                "reference": "4677951dda712dd99d5bf2a127eaee118dfea860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3f49c47924bb9fa5363c3fc7b073d954168cf438",
-                "reference": "3f49c47924bb9fa5363c3fc7b073d954168cf438",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/4677951dda712dd99d5bf2a127eaee118dfea860",
+                "reference": "4677951dda712dd99d5bf2a127eaee118dfea860",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
+                "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*",
                 "yiisoft/yii2": "~2.0.6"
             },
             "type": "yii2-extension",
@@ -6759,7 +6670,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2018-02-16T10:41:52+00:00"
+            "time": "2019-01-29T21:39:45+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
