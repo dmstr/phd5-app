@@ -244,6 +244,9 @@ return [
                                 $imageSource .
                                 Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
                         },
+                        't' => function ($category, $message) {
+                            return Yii::t($category, $message);
+                        },
                     ],
                     'uses' => [
                         'yii\bootstrap',
