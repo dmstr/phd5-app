@@ -10,6 +10,8 @@ $I->amGoingTo('check javascript with a modal');
 
 $I->amOnPage('/en');
 $I->dontSee('#phd-info-panel');
+$I->dontSee('App Version');
+$I->dontSee('Project Version');
 
 $I->login('editor', 'editor1');
 
