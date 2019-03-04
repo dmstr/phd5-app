@@ -235,7 +235,7 @@ return [
                                 $preset .= ',s' . strtr(
                                     base64_encode(hash_hmac('sha256', $imageSource, $key, 1)),
                                     '/+',
-                                                        '_-'
+                                    '_-'
                                 );
                             }
                             return Yii::$app->settings->get('imgBaseUrl', 'app.frontend') .
