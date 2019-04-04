@@ -85,6 +85,16 @@ return [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
         'backend.iframe.name' => getenv('APP_PARAMS_BACKEND_IFRAME_NAME') ?: '_self',
+        'backendBrowserSupport' => [
+            'Chrome' => 72,
+            'Edge' => false,
+            'Safari' => false,
+            'MobileSafari' => false,
+            'Firefox' => 65,
+            'Opera' => false,
+            'Vivaldi' => false,
+            'IE' => false
+        ]
     ],
     'components' => [
         'assetManager' => [
