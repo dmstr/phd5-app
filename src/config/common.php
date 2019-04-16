@@ -12,6 +12,10 @@
 // prepare application languages
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
+use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
+use lajax\translatemanager\services\scanners\ScannerPhpArray;
+use lajax\translatemanager\services\scanners\ScannerPhpFunction;
+use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -228,13 +232,20 @@ return [
                             // preset example, when using imageproxy, https://github.com/willnorris/imageproxy#examples
                             if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
                                 $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
-                                $preset .= ',s' . strtr(base64_encode(hash_hmac('sha256', $imageSource, $key, 1)), '/+', '_-');
+                                $preset .= ',s' . strtr(
+                                    base64_encode(hash_hmac('sha256', $imageSource, $key, 1)),
+                                    '/+',
+                                    '_-'
+                                );
                             }
                             return Yii::$app->settings->get('imgBaseUrl', 'app.frontend') .
                                 $preset .
                                 Yii::$app->settings->get('imgHostPrefix', 'app.frontend') .
                                 $imageSource .
                                 Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
+                        },
+                        't' => function ($category, $message) {
+                            return Yii::t($category, $message);
                         },
                     ],
                     'uses' => [
@@ -327,8 +338,26 @@ return [
         ],
         'translatemanager' => [
             'class' => \lajax\translatemanager\Module::class,
-            'root' => '@app/views',
             'layout' => $boxLayout,
+            'root' => '@app/views',
+            'tables' => [
+                [
+                    'connection' => 'db',
+                    'table' => '{{%hrzg_widget_template}}',
+                    'columns' => ['twig_template']
+                ],
+                [
+                    'connection' => 'db',
+                    'table' => '{{%twig}}',
+                    'columns' => ['value']
+                ]
+            ],
+            'scanners' => [
+                ScannerPhpFunction::class,
+                ScannerPhpArray::class,
+                ScannerJavaScriptFunction::class,
+                ScannerDatabase::class
+            ],
             'allowedIPs' => ['*'],
             'roles' => ['translate-module'],
         ],

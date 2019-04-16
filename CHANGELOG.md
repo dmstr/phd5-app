@@ -7,6 +7,7 @@
 - updated `dmstr/yii2-widgets2-module` and `dmstr/yii2-pages-module`
 - use same window/tab for *Backend*, if `APP_PARAMS_BACKEND_IFRAME_NAME` is not set
 - added `omnilight/yii2-scheduling`
+- removed seo keywords and descriptions in Settings module
 
 ### 5.2.0
 

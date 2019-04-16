@@ -41,17 +41,7 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
     );
 }
 
-// SEO
-$route = Url::toRoute(Yii::$app->controller->action->uniqueId);
-if ($keywords = \Yii::$app->settings->get($route, 'app.seo.keywords', null)) {
-    $this->registerMetaTag(['name' => 'keywords', 'content' => $keywords]);
-}
-if ($description = \Yii::$app->settings->get($route, 'app.seo.descriptions', null)) {
-    $this->registerMetaTag(['name' => 'description', 'content' => $description]);
-}
-if ($title = \Yii::$app->settings->get($route, 'app.seo.titles', null)) {
-    $this->title = $title;
-}
+// Favicon
 if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
     $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $favicon]);
 }

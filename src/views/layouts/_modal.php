@@ -42,8 +42,8 @@ use yii\helpers\Html;
                 <p class="small">
                     Built with <?= Html::a('phd', 'http://phd.dmstr.io') ?> from
                     <?= Html::a(
-                       'dmstr',
-                        'http://www.diemeisterei.de'
+                                    'dmstr',
+                                    'http://www.diemeisterei.de'
                     ) ?>
                 </p>
             </div>
