@@ -490,16 +490,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.91.4",
+            "version": "3.91.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "41b67dce3c86da61137b47054d9d52c6ef57b5ec"
+                "reference": "ffd63f5d39f48e679f2dc78346fd4dad746d7f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/41b67dce3c86da61137b47054d9d52c6ef57b5ec",
-                "reference": "41b67dce3c86da61137b47054d9d52c6ef57b5ec",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ffd63f5d39f48e679f2dc78346fd4dad746d7f43",
+                "reference": "ffd63f5d39f48e679f2dc78346fd4dad746d7f43",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +568,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-04-05T18:10:20+00:00"
+            "time": "2019-04-16T18:11:52+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2376,16 +2376,16 @@
         },
         {
             "name": "dmstr/lajax-yii2-translate-manager-addons",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/lajax-yii2-translate-manager-addons.git",
-                "reference": "dcc4c9f9603c8fb91847fdca95a3e29e972c080b"
+                "reference": "5a7767edf957bc2711cf3551e3fe71b44cafc914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/lajax-yii2-translate-manager-addons/zipball/dcc4c9f9603c8fb91847fdca95a3e29e972c080b",
-                "reference": "dcc4c9f9603c8fb91847fdca95a3e29e972c080b",
+                "url": "https://api.github.com/repos/dmstr/lajax-yii2-translate-manager-addons/zipball/5a7767edf957bc2711cf3551e3fe71b44cafc914",
+                "reference": "5a7767edf957bc2711cf3551e3fe71b44cafc914",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2413,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-02-22T19:47:17+00:00"
+            "time": "2019-04-17T05:13:16+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
