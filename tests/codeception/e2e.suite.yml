@@ -6,8 +6,8 @@ modules:
         - Asserts
     config:
         WebDriver:
-            browser: firefox
-            host: firefox
+            browser: chrome
+            host: chrome
             port: 4444
             window_size: 1024x768
             restart: true
