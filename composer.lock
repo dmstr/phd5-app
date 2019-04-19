@@ -226,16 +226,16 @@
         },
         {
             "name": "2amigos/yii2-usuario",
-            "version": "dev-master",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/yii2-usuario.git",
-                "reference": "4455075b31aec354f52c582609e11551ec5960dd"
+                "reference": "ec428ab46dbd7ba23579ae00685ca324880ad83b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-usuario/zipball/4455075b31aec354f52c582609e11551ec5960dd",
-                "reference": "4455075b31aec354f52c582609e11551ec5960dd",
+                "url": "https://api.github.com/repos/2amigos/yii2-usuario/zipball/ec428ab46dbd7ba23579ae00685ca324880ad83b",
+                "reference": "ec428ab46dbd7ba23579ae00685ca324880ad83b",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +305,7 @@
                 "yii2 user",
                 "yii2-user"
             ],
-            "time": "2019-04-18T09:21:21+00:00"
+            "time": "2019-04-19T14:48:39+00:00"
         },
         {
             "name": "almasaeed2010/adminlte",
@@ -10888,7 +10888,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "2amigos/yii2-usuario": 20,
         "dmstr/yii2-db": 15,
         "dmstr/yii2-filefly-module": 15,
         "dmstr/yii2-filemanager-widgets": 15,
