@@ -1,7 +1,7 @@
 {
     "require": {
         "bedezign/yii2-audit": "^1.0.7",
-        "2amigos/yii2-usuario": "^1.1",
+        "2amigos/yii2-usuario": "dev-master#4455075b31aec354f52c582609e11551ec5960dd",
         "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
         "lajax/yii2-translate-manager": "^1.6.0",
