@@ -358,7 +358,7 @@ return [
                 ],
                 [
                     'connection' => 'db',
-                    'table' => '{{app_twig}}',
+                    'table' => '{{%twig}}',
                     'columns' => ['value']
                 ]
             ],
