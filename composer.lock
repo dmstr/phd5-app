@@ -4402,7 +4402,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/@json-editor/json-editor/-/json-editor-1.3.5.tgz",
-                "reference": null,
                 "shasum": "b8ec91b2ad53d65a031c90941e3c3bbd084bc321"
             },
             "type": "npm-asset-library",
@@ -4458,7 +4457,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/outdated-browser-rework/-/outdated-browser-rework-2.8.0.tgz",
-                "reference": null,
                 "shasum": "fbd0c92700822630afc61498468551e0bbb3b6aa"
             },
             "require": {
@@ -4503,7 +4501,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.19.tgz",
-                "reference": null,
                 "shasum": "94151be4c0a7fb1d001af7022fdaca4642659e4b"
             },
             "type": "npm-asset-library",
