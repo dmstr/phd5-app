@@ -24,5 +24,3 @@ $I->click('button[type="submit"]');
 
 $I->waitForText('Success', 10);
 $I->seeInFormFields('form', ['User[username]'=>$username]);
-
-$I->pauseExecution();
