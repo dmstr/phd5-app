@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf3ce27350c6765f0358ea3ed792cbee",
+    "content-hash": "8640e9b8439981ae27aea032c62dd4ec",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -3131,7 +3131,7 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.0.0-beta2",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
@@ -11561,16 +11561,21 @@
             "alias_normalized": "0.5.0.0",
             "version": "0.7.0.0",
             "package": "pheme/yii2-settings"
+        },
+        {
+            "alias": "2.0.0",
+            "alias_normalized": "2.0.0.0",
+            "version": "2.0.0.0-RC2",
+            "package": "dmstr/yii2-widgets2-module"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "RC",
     "stability-flags": {
+        "dmstr/yii2-widgets2-module": 5,
         "dmstr/yii2-db": 15,
         "dmstr/yii2-filemanager-widgets": 15,
         "dmstr/yii2-pages-module": 15,
-        "dmstr/yii2-publication-module": 15,
         "dmstr/yii2-resque-module": 15,
-        "dmstr/yii2-widgets2-module": 15,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

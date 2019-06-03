@@ -1,13 +1,15 @@
 {
     "name": "dmstr/phd5-app",
-    "minimum-stability": "stable",
+    "minimum-stability": "rc",
     "require": {
         "wikimedia/composer-merge-plugin": "~1.4",
         "scrivo/highlight.php": "9.15.6.1 as 8.999",
-        "pheme/yii2-settings": "0.7 as 0.5"
+        "pheme/yii2-settings": "0.7 as 0.5",
+        "dmstr/yii2-widgets2-module": "2.0.0-rc2 as 2.0.0"
     },
     "extra": {
         "merge-plugin": {
+            "ignore-duplicates": true,
             "require": [
                 "composer.phd5.json"
             ]
