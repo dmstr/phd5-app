@@ -8,7 +8,7 @@ $I->wantTo('Click backend links');
 
 $I->amGoingTo('start in the backend');
 $I->login('master', 'master1');
-$url = '/backend';
+$url = '/en/backend';
 $I->amOnPage($url);
 
 $links = $I->grabMultiple('section.content a[href^="/"]', 'href');

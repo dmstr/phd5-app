@@ -3,7 +3,8 @@
     "minimum-stability": "stable",
     "require": {
         "wikimedia/composer-merge-plugin": "~1.4",
-        "scrivo/highlight.php": "9.15.6.1 as 8.999"
+        "scrivo/highlight.php": "9.15.6.1 as 8.999",
+        "pheme/yii2-settings": "0.7 as 0.5"
     },
     "extra": {
         "merge-plugin": {

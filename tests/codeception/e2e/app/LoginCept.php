@@ -3,11 +3,36 @@
 // @group mandatory
 
 $I = new E2eTester($scenario);
+
 $I->wantTo('ensure that login works');
+
+$I->amGoingTo('try to login with empty credentials');
+$I->login('', '');
+$I->expectTo('see validations errors');
+$I->see('Login cannot be blank.');
+$I->see('Password cannot be blank.');
+
+$I->amGoingTo('try to login with wrong credentials');
+$I->login('admin', 'wrong');
+$I->expectTo('see validations errors');
+$I->see('Invalid login or password');
 
 $I->amGoingTo('try to login with correct credentials');
 $I->login('master', 'master1');
 $I->makeScreenshot('login-success');
+
+$I->amOnPage('/backend');
+
+$I->expectTo('see backend elements');
+$I->see('master');
+$I->see('Application Modules', 'h3');
+$I->see('Widget Content','h4');
+$I->see('Page Tree','h4');
+$I->see('Settings','h4');
+$I->see('Audit','h4');
+$I->see('Jobs','h4');
+$I->see('filefly','a');
+$I->see('redirects','a');
 
 $I->expectTo('see user info');
 $I->click('.nav #link-user-menu a');
