@@ -25,6 +25,10 @@ return yii\helpers\ArrayHelper::merge(
                 'scriptUrl' => '',
                 'enableDefaultLanguageUrlCode' => false,
             ]
+        ],
+        'modules' => [
+            // workaround for log dispatch issue, see also https://github.com/yiisoft/yii2-debug/issues/372
+            'debug' => \yii\base\Module::class
         ]
     ]
 );
