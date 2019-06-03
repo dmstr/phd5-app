@@ -1,6 +1,6 @@
 {
     "name": "dmstr/phd5-app",
-    "minimum-stability": "rc",
+    "minimum-stability": "RC",
     "require": {
         "wikimedia/composer-merge-plugin": "~1.4",
         "scrivo/highlight.php": "9.15.6.1 as 8.999",
