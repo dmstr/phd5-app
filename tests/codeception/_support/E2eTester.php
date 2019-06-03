@@ -25,12 +25,14 @@ class E2eTester extends \Codeception\Actor
      * @param $username
      * @param $password
      */
-    public function login($username, $password){
+    public function login($username, $password, $waitForReload = true){
         $this->amOnPage('/user/security/login');
         $this->fillField('input[name="LoginForm[login]"]', $username);
         $this->fillField('input[name="LoginForm[password]"]', $password);
         $this->click('#LoginForm button');
-        $this->waitForElementNotVisible('#LoginForm', 10);
+        if ($waitForReload) {
+            $this->waitForElementNotVisible('#login-form', 10);
+        }
     }
 
     public function dontSeeHorizontalScrollbars(){
