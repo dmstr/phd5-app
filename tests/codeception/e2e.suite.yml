@@ -12,6 +12,7 @@ modules:
             window_size: 1024x768
             restart: true
             url: http://web:80/
+            wait: 3
 env:
     firefox:
       modules:
