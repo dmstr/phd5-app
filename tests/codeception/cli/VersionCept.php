@@ -2,9 +2,9 @@
 
 // @group mandatory
 
-$rootPath = realpath(__DIR__.'/../../..');
+$rootPath = realpath(__DIR__ . '/../../..');
 
-$I = new FunctionalTester($scenario);
+$I = new CliTester($scenario);
 
 $I->wantTo('check application versioning');
 
