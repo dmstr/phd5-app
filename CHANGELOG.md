@@ -1,6 +1,10 @@
 # Changelog
 
-### 5.3.0  (under development)
+### dev
+
+- added `APP_PAGES_TITLE_PREFIX`
+
+### 5.3.0
 
 - removed Alpine support
 - switched to `2amigos/yii2-usuario`

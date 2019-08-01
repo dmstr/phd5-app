@@ -25,6 +25,7 @@ use yii\widgets\Pjax;
 /* @var $content string */
 
 $this->title .= ' - '.getenv('APP_TITLE');
+$this->title = (getenv('APP_PAGES_TITLE_PREFIX') ?? '').$this->title;
 
 SettingsAsset::register($this);
 
