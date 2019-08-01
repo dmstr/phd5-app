@@ -6,13 +6,15 @@ BROWSER_SERVICE ?= chrome
 COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
 
 all: ##@test complete reinitialization of test-stack
-	$(MAKE) init-tests version build
+	$(MAKE) init-tests version build install
 	$(MAKE) clean up setup
 
 init-tests: ##@development initialize test-environment
 	cp -n .env-dist .env &2>/dev/null
 	mkdir -p _log/codeception && chmod 777 _log/codeception
 	mkdir -p _log/lint && chmod 777 _log/lint
+
+install:
 	$(DOCKER_COMPOSE) run -w /app --rm $(TESTER_SERVICE) composer install
 
 version: ##@development write current version string from git

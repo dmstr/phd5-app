@@ -3,14 +3,11 @@
 include ./Makefile.base
 
 all:    ##@development shorthand for 'build init up setup open'
-all: init build dev up setup open
+all: init-dev build install up setup open
 all:
 	#
 	# make all
 	# Done.
-
-init:   ##@development initialize all environments
-	$(MAKE) init-dev
 
 init-dev:    ##@development install composer package (enable host-volume in docker-compose config)
 init-dev:
@@ -20,6 +17,8 @@ init-dev:
 	#
 	cp -n .env-dist .env &2>/dev/null
 	mkdir -p web/assets runtime
+
+install:
 	$(DOCKER_COMPOSE) run --rm php composer install
 
 bash:	 ##@development run application bash in one-off container
