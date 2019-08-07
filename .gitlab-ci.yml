@@ -8,6 +8,7 @@ stages:
 
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}${CI_PROJECT_NAME}"
+  COMPOSE_FILE: ".docker/docker-compose.yml:.docker/docker-compose.dev.yml:.docker/docker-compose.test.yml:.docker/docker-compose.selenium.yml"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
   FLAVOUR: ""
