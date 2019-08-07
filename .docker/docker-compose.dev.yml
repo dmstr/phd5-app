@@ -27,6 +27,7 @@ services:
       - APP_ADMIN_EMAIL=admin@local.develop
       - APP_ASSET_FORCE_PUBLISH=1
       - APP_PAGES_TITLE_PREFIX='[DEV] '
+      - PHP_ENABLE_XDEBUG
     volumes:
       # Re-use local composer cache via host-volume
       - type: bind

@@ -30,7 +30,7 @@ endif
 
 default: help
 
-all:    ##@development shorthand for 'build init up setup open'
+all:    ##@base shorthand for 'build init up setup open'
 all: dev-init build install up setup open
 all:
 	#
@@ -38,7 +38,7 @@ all:
 	# Done.
 
 
-build: ##@base build images in test-stack
+build: ##@base build images in stack
 	#
 	# Building images from docker-compose definitions
 	#
@@ -58,15 +58,8 @@ clean: ##@base remove all containers in stack
 	$(DOCKER_COMPOSE) rm -fv
 	$(DOCKER_COMPOSE) down --remove-orphans
 
-
 open-db: ##@base open application database service in browser
 	$(OPEN_CMD) mysql://root:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port db 3306 | sed 's/[0-9.]*://') &>/dev/null
-
-dev-setup: ##@base run application setup
-	#
-	# Running application setup command (database, user)
-	#
-	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
 logs: ##@base show logs
 	#
@@ -75,20 +68,9 @@ logs: ##@base show logs
 	$(DOCKER_COMPOSE) logs -f --tail 100 | cat -v
 
 
-
-
-version: ##@development write current version string from git
+version: ##@base write current version string from git
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
 	@echo $(shell cat ../src/version)
-
-dev-init:    ##@development install composer package (enable host-volume in docker-compose config)
-dev-init:
-	#
-	# Running composer installation in development environment
-	# This may take a while on your first install...
-	#
-	cp -n .env-dist .env &2>/dev/null
-	mkdir -p web/assets runtime
 
 install:
 	$(DOCKER_COMPOSE) run --rm php composer install
@@ -104,23 +86,6 @@ bash-xdebug: ##@development open application development bash with xdebug enable
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) bash
 
 
-test-all: ##@test complete reinitialization of test-stack
-	$(MAKE) init-tests version build install
-	$(MAKE) clean up setup
-
-test-bash:	 ##@development run application bash in one-off container
-	#
-	# Starting application bash
-	#
-	$(DOCKER_COMPOSE) run --rm test-php bash
-
-exec:	 ##@development execute command (c='yii help') in running container
-	#
-	# Running command
-	# Note: Make sure the application container is running
-	#
-	$(DOCKER_COMPOSE) exec php $(c)
-
 upgrade: ##@development update application package, pull, rebuild
 	#
 	# Running package upgrade in container
@@ -133,23 +98,27 @@ dist-upgrade: ##@development update application package, pull, rebuild
 	$(MAKE) upgrade
 	$(MAKE) build
 
-assets:	 ##@development open application development bash
+dev-assets:	 ##@development open application development bash
 	#
 	# Building asset bundles
 	#
 	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress src/config/assets.php web/bundles/config.php
 
-latest: ##@development push to latest branch
-	#
-	# Pushing to latest branch
-	#
-	git push origin master:latest
 
-release: ##@development push to release branch
+dev-init:    ##@development install composer package (enable host-volume in docker-compose config)
+dev-init:
 	#
-	# Pushing to latest branch
+	# Running composer installation in development environment
+	# This may take a while on your first install...
 	#
-	git push origin master:release
+	cp -n .env-dist .env &2>/dev/null
+	mkdir -p web/assets runtime
+
+dev-setup: ##@development run application setup
+	#
+	# Running application setup command (database, user)
+	#
+	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
 dev-browser: ##@development open application web service in browser
 	#
@@ -162,11 +131,6 @@ up-xdebug: ##@development open application development bash with xdebug enabled
 	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
 
 
-test-init: ##@development initialize test-environment
-	cp -n .env-dist .env &2>/dev/null
-	mkdir -p _log/codeception && chmod 777 _log/codeception
-	mkdir -p _log/lint && chmod 777 _log/lint
-
 test: build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
@@ -177,10 +141,18 @@ test-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 
+test-init: ##@test initialize test-environment
+	cp -n .env-dist .env &2>/dev/null
+	mkdir -p _log/codeception && chmod 777 _log/codeception
+	mkdir -p _log/lint && chmod 777 _log/lint
 
+test-bash:	 ##@test run application bash in one-off container
+	#
+	# Starting application bash
+	#
+	$(DOCKER_COMPOSE) run --rm test-php bash
 
-
-test-browser: ##@base open application web service in browser
+test-browser: ##@test open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
@@ -189,14 +161,12 @@ test-browser: ##@base open application web service in browser
 test-selenium: ##@test open application database service in browser
 	$(OPEN_CMD) vnc://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(BROWSER_SERVICE) 5900 | sed 's/[0-9.]*://') &>/dev/null
 
-open-report: ##@test open HTML reports
+test-report: ##@test open HTML reports
 	$(OPEN_CMD) _log/codeception/report.html &>/dev/null
 
-open-coverage: ##@test open HTML reports
+test-report-coverage: ##@test open HTML reports
 	$(OPEN_CMD) _log/coverage/index.html &>/dev/null
 
-open-c3:
-	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')/c3/report/clear &>/dev/null
 
 
 lint-source:	 ##@development run source-code linting
