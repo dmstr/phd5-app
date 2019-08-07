@@ -69,8 +69,8 @@ logs: ##@base show logs
 
 
 version: ##@base write current version string from git
-	$(shell echo $(shell git describe --long --tags --dirty --always) > ../src/version)
-	@echo $(shell cat ../src/version)
+	$(shell echo $(shell git describe --long --tags --dirty --always) > ./src/version)
+	@echo $(shell cat ./src/version)
 
 install:
 	$(DOCKER_COMPOSE) run --rm php composer install
