@@ -18,9 +18,13 @@ class ScriptsCest
         $I->seeShellOutputMatches('/[0-9]{1,3}/');
     }
 
-    public function auditCleanupEmptyEnv(CliTester $I)
+    public function simulateSchedulerEnv(CliTester $I)
     {
-        $I->runShellCommand('env - /usr/local/bin/php /app/yii audit/cleanup --interactive=0 --entry --age=0');
+        $I->amGoingTo('prepare ENV variables export (usually done in startup command)');
+        $I->runShellCommand('/usr/local/bin/export-env.sh');
+
+        $I->wantTo('run a yii command with no ENV variables set');
+        $I->runShellCommand('env -i sh /root/export-env && /usr/local/bin/php /app/yii audit/cleanup --interactive=0 --entry --age=0');
         $I->seeInShellOutput('Cleanup was successful.');
     }
 }
