@@ -25,15 +25,11 @@ before_script:
   - echo $(git describe --always --dirty --tags)
   - ([[ $FLAVOUR ]] && echo "build flavour is $FLAVOUR" || echo "build flavour is default/undefinied")
   # run all commands from test environment
-  - cd tests
-  - make init-tests
 
 after_script:
   # set docker-compose isolation
   - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
   # run all commands from test environment
-  - cd tests
-  - make init-tests
   - make clean
 
 # ----------------------------------------------------------
@@ -48,8 +44,7 @@ after_script:
 .codeception_tmpl: &codeception_tmpl_ref
   stage: test
   script:
-    - make all
-    - make run-tests
+    - make test
   except:
     - coverage
   artifacts:
@@ -80,8 +75,7 @@ after_script:
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
     - export PHP_ENABLE_XDEBUG=1
-    - make all
-    - make run-coverage
+    - make test-coverage
   only:
     - coverage
   artifacts:
