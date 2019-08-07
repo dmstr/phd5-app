@@ -131,7 +131,7 @@ up-xdebug: ##@development open application development bash with xdebug enabled
 	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
 
 
-test: build install up
+test: version build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html --xml= --tap --json
