@@ -21,7 +21,8 @@ $I->makeScreenshot('widgets');
 
 $I->expect('to see widget container(s)');
 
-$I->click('Test page index');
+$I->amOnPage('/widgets');
+$I->click('Test index');
 $I->moveMouseOver('.hrzg-widget-widget-container');
 $I->makeScreenshot('widgets-frontend-container');
 

@@ -306,10 +306,6 @@ return [
                 'treemanager',
             ],
         ],
-        'contact' => [
-            'class' => \dmstr\modules\contact\Module::class,
-            'layout' => '@backend/views/layouts/main',
-        ],
         'filefly' => [
             'class' => \hrzg\filefly\Module::class,
             'layout' => '@backend/views/layouts/main',

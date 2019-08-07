@@ -6,7 +6,7 @@ version: '3.2'
 services:
   php:
     build:
-      context: .
+      context: ..
       # FLAVOUR can be undefinied OR -debian
       # undefined == alpine base image
       # -debian   == debian base image
@@ -34,23 +34,15 @@ services:
         target: /root/.composer/cache
         consistency: delegated
       - type: bind
-        source: ./composer.json
-        target: /app/composer.json
-        consistency: cached
-      - type: bind
-        source: ./composer.lock
-        target: /app/composer.lock
-        consistency: cached
-      - type: bind
-        source: ./src
+        source: ../src
         target: /app/src
         consistency: cached
       - type: bind
-        source: ./vendor-dev
+        source: ../vendor-dev
         target: /app/vendor
         consistency: delegated
       - type: bind
-        source: ./_host-volumes/runtime/mysql
+        source: ../_host-volumes/runtime/mysql
         target: /app/runtime/mysql
         consistency: delegated
 

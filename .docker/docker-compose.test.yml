@@ -1,0 +1,46 @@
+# Test stack overrides
+# ====================
+#
+# Paths in this file are relative to the project root
+
+version: '3.2'
+services:
+
+  test-php:
+    build:
+      context: ..
+      dockerfile: Dockerfile${FLAVOUR}
+    working_dir: /app/tests
+    ports:
+      - 80
+    environment:
+      - PHP_ENABLE_XDEBUG
+      - DB_ENV_MYSQL_ROOT_PASSWORD=secret
+      - YII_ENV=test
+
+      - APP_NAME=test-phd5
+      - APP_LANGUAGES=de,en,ru,fr-FR,fr-CH,fr,es-ES,pt-PT,pt-BR
+      - APP_TITLE=docker-compose.test.yml
+      - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data
+      - APP_ADMIN_PASSWORD=admin1
+      - APP_ADMIN_EMAIL=admin@example.local
+      - APP_INTERACTIVE=0
+      - APP_ASSET_USE_BUNDLED=1
+      - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
+      - APP_ASSET_FORCE_PUBLISH=0
+    volumes:
+      - ./_host-volumes/test-debug:/mnt/debug
+      - ../tests:/app/tests
+      - ../vendor-dev:/app/vendor
+    networks:
+      default:
+        aliases:
+          - web
+
+
+
+  mailcatcher:
+    image: tophfr/mailcatcher
+    ports:
+      - '1080'
+      - '80'

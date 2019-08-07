@@ -11,7 +11,7 @@
         "merge-plugin": {
             "ignore-duplicates": true,
             "require": [
-                "composer.phd5.json"
+                "src/composer.phd5.json"
             ]
         }
     },

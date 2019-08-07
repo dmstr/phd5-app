@@ -1,16 +1,28 @@
 .PHONY: all dev init bash exec upgrade update assets latest
 
+
+PHP_SERVICE     ?= php
+TESTER_SERVICE  ?= tester
+BROWSER_SERVICE ?= chrome
+COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
+
+
 include ./Makefile.base
 
 all:    ##@development shorthand for 'build init up setup open'
-all: init-dev build install up setup open
+all: dev-init build install up setup open
 all:
 	#
 	# make all
 	# Done.
+PHP_SERVICE     ?= php
+TESTER_SERVICE  ?= tester
+BROWSER_SERVICE ?= chrome
+COMPOSE_FILE_QA ?= ../docker-compose.yml:./docker-compose.test.yml:./docker-compose.qa.yml
 
-init-dev:    ##@development install composer package (enable host-volume in docker-compose config)
-init-dev:
+
+dev-init:    ##@development install composer package (enable host-volume in docker-compose config)
+dev-init:
 	#
 	# Running composer installation in development environment
 	# This may take a while on your first install...
@@ -26,6 +38,12 @@ bash:	 ##@development run application bash in one-off container
 	# Starting application bash
 	#
 	$(DOCKER_COMPOSE) run --rm php bash
+
+test-bash:	 ##@development run application bash in one-off container
+	#
+	# Starting application bash
+	#
+	$(DOCKER_COMPOSE) run --rm test-php bash
 
 exec:	 ##@development execute command (c='yii help') in running container
 	#
@@ -63,3 +81,27 @@ release: ##@development push to release branch
 	# Pushing to latest branch
 	#
 	git push origin master:release
+
+open: ##@base open application web service in browser
+	#
+	# Opening application on mapped web-service port
+	#
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://') &>/dev/null
+
+test-browser: ##@base open application web service in browser
+	#
+	# Opening application on mapped web-service port
+	#
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port test-php 80 | sed 's/[0-9.]*://') &>/dev/null
+
+test-selenium: ##@test open application database service in browser
+	$(OPEN_CMD) vnc://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(BROWSER_SERVICE) 5900 | sed 's/[0-9.]*://') &>/dev/null
+
+open-report: ##@test open HTML reports
+	$(OPEN_CMD) _log/codeception/report.html &>/dev/null
+
+open-coverage: ##@test open HTML reports
+	$(OPEN_CMD) _log/coverage/index.html &>/dev/null
+
+open-c3:
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port web 80 | sed 's/[0-9.]*://')/c3/report/clear &>/dev/null
