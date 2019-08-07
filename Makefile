@@ -167,7 +167,7 @@ test-init: ##@development initialize test-environment
 	mkdir -p _log/codeception && chmod 777 _log/codeception
 	mkdir -p _log/lint && chmod 777 _log/lint
 
-test: up
+test: build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html --xml= --tap --json
