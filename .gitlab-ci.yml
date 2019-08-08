@@ -21,6 +21,7 @@ before_script:
   - pwd
   - docker version
   - docker-compose version
+  - docker-compose config
   - echo ${ISOLATION}
   - echo $(git describe --always --dirty --tags)
   # run all commands from test environment
