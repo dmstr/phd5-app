@@ -34,8 +34,6 @@ after_script:
 # ----------------------------------------------------------
 # TEMPLATES
 # ----------------------------------------------------------
-# templates for flavour definitions used in jobs
-.build_flavour_debian_tmpl: &build_flavour_debian_tmpl_ref
 
 # ----------------------------------------------------------
 # templates which can be used in jobs with different flavours
@@ -103,22 +101,18 @@ after_script:
 # job definitions, they should use the defined job and flavour templates
 # ----------------------------------------------------------
 codeception-debian:
-  <<: *build_flavour_debian_tmpl_ref
   <<: *codeception_tmpl_ref
 
 # ----------------------------------------------------------
 coverage-debian:
-  <<: *build_flavour_debian_tmpl_ref
   <<: *coverage_tmpl_ref
 
 # ----------------------------------------------------------
 lint-debian:
-  <<: *build_flavour_debian_tmpl_ref
   <<: *lint_tmpl_ref
 
 # ----------------------------------------------------------
 release-debian:
-  <<: *build_flavour_debian_tmpl_ref
   <<: *release_tmpl_ref
 
 # ----------------------------------------------------------
