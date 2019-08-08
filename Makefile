@@ -185,8 +185,8 @@ lint-composer: ##@development run composer linting
 	# Liniting composer configuration
 	#
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi validate || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show | tee tests/_log/composer-packages-$(shell cat ./src/version).txt || ERROR=1; \
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show -o | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show -f json | tee tests/_log/composer-packages-$(shell cat ./src/version).txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).txt || ERROR=1; \
 	exit ${ERROR}
 
 lint-html:
@@ -195,7 +195,7 @@ lint-html:
 lint-links:
 	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 5
 
-lint: install lint-source lint-composer
+lint: version install lint-source lint-composer
 
 
 
