@@ -58,7 +58,6 @@ after_script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
     - make help
     - make lint
-    - make lint-composer
   artifacts:
     name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-lint
     when: always
