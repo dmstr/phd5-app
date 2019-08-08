@@ -196,7 +196,7 @@ lint-composer: ##@development run composer linting
 	#
 	# Listing outdated packages
 	#
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).txt || ERROR=1; \
+	$(DOCKER_COMPOSE) run -T --rm $(PHP_SERVICE) composer --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).txt || ERROR=1; \
 	exit ${ERROR}
 
 lint-html:
