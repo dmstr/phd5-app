@@ -175,7 +175,7 @@ lint-source:	 ##@development run source-code linting
 	# Liniting source-code with cs-fixer, phpmetrics & phpmd
 	#
 	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v --dry-run ../src
-	docker run --rm -v "${PWD}:/app" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --excluded-dirs=migrations src/
+	docker run --rm -v "${PWD}:/app" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --exclude=migrations,runtime src/
 	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html tests/phpmd/rulesets.xml --exclude src/migrations > tests/_log/lint/mess.html
 	exit ${ERROR}
 
