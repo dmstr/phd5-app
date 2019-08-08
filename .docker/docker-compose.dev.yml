@@ -7,10 +7,7 @@ services:
   php:
     build:
       context: ..
-      # FLAVOUR can be undefinied OR -debian
-      # undefined == alpine base image
-      # -debian   == debian base image
-      dockerfile: Dockerfile${FLAVOUR}
+      dockerfile: Dockerfile
     ports:
       - 80
     depends_on:

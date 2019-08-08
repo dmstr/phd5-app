@@ -9,7 +9,7 @@ services:
   test-php:
     build:
       context: ..
-      dockerfile: Dockerfile${FLAVOUR}
+      dockerfile: Dockerfile
     working_dir: /app/tests
     ports:
       - 80

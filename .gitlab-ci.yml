@@ -11,7 +11,6 @@ variables:
   COMPOSE_FILE: ".docker/docker-compose.yml:.docker/docker-compose.dev.yml:.docker/docker-compose.test.yml:.docker/docker-compose.selenium.yml"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
   REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
-  FLAVOUR: ""
 
 # ----------------------------------------------------------
 # before/after scripts, these will be used in every job within the job-scope
@@ -24,7 +23,6 @@ before_script:
   - docker-compose version
   - echo ${ISOLATION}
   - echo $(git describe --always --dirty --tags)
-  - ([[ $FLAVOUR ]] && echo "build flavour is $FLAVOUR" || echo "build flavour is default/undefinied")
   # run all commands from test environment
 
 after_script:
@@ -38,8 +36,7 @@ after_script:
 # ----------------------------------------------------------
 # templates for flavour definitions used in jobs
 .build_flavour_debian_tmpl: &build_flavour_debian_tmpl_ref
-  variables:
-    FLAVOUR: "-debian"
+
 # ----------------------------------------------------------
 # templates which can be used in jobs with different flavours
 .codeception_tmpl: &codeception_tmpl_ref
@@ -94,8 +91,8 @@ after_script:
   script:
     - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
     - make version build
-    - docker tag ${STACK_PHP_IMAGE}${FLAVOUR} ${REGISTRY_PHP_IMAGE}${FLAVOUR}
-    - docker push ${REGISTRY_PHP_IMAGE}${FLAVOUR}
+    - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
+    - docker push ${REGISTRY_PHP_IMAGE}
   only:
     - latest
     - experimental
