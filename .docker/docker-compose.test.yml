@@ -29,7 +29,7 @@ services:
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
     volumes:
-      - ./_host-volumes/test-debug:/mnt/debug
+      - ../_host-volumes/test-debug:/mnt/debug
       - ../tests:/app/tests
       - ../vendor-dev:/app/vendor
     networks:
