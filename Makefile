@@ -195,7 +195,7 @@ lint-html:
 lint-links:
 	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 5
 
-lint: lint-source lint-composer
+lint: install lint-source lint-composer
 
 
 
