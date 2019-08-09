@@ -24,9 +24,11 @@ RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
     fi
 
 # Application source-code
-COPY yii /app/
+ENV PATH=/app/src/bin:$PATH
 COPY ./web /app/web/
 COPY ./src /app/src/
+COPY ./config /app/config/
+COPY ./migrations /app/migrations/
 
 # Tests source-code for integration tests in derived images
 COPY ./tests /app/tests
@@ -39,15 +41,16 @@ RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R u+x /etc/periodic && \
     chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
 
+VOLUME /app/runtime
+VOLUME /web/assets
+
 # Build assets (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        APP_NO_CACHE=1 APP_LANGUAGES=en yii asset/compress src/config/assets.php web/bundles/config.php; \
+        APP_NO_CACHE=1 APP_LANGUAGES=en yii asset/compress config/assets.php web/bundles/config.php; \
     fi
 
 # Install crontab from application config
-RUN crontab src/config/crontab
-
-VOLUME /mnt/storage
+RUN crontab config/crontab
 
 # export container environment for cronjobs on container start
 CMD /usr/local/bin/export-env.sh; supervisord -c /etc/supervisor/supervisord.conf

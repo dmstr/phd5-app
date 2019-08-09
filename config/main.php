@@ -14,16 +14,15 @@ namespace app\config;
 use Yii;
 
 // PHP Constants
-$version = is_file(__DIR__.'/../version') ? trim(file_get_contents(__DIR__.'/../version')) : 'dev';
+$version = is_file(__DIR__ . '/../version') ? trim(file_get_contents(__DIR__ . '/../version')) : 'dev';
 defined('APP_VERSION') or define('APP_VERSION', $version);
 $projectVersion = is_file(__DIR__.'/../../project/version') ? trim(file_get_contents(__DIR__.'/../../project/version')) : 'vanilla';
 defined('PROJECT_VERSION') or define('PROJECT_VERSION', $projectVersion);
 defined('APP_TYPE') or define('APP_TYPE', (php_sapi_name() == 'cli') ? 'console' : 'web');
 
 // Define application aliases
-Yii::setAlias('@app', realpath(__DIR__.'/..'));
-Yii::setAlias('@root', '@app/..');
-Yii::setAlias('@runtime', '@root/runtime');
+Yii::setAlias('@app', '/app/src');
+Yii::setAlias('@root', '/app');
 Yii::setAlias('@web', '@root/web');
 Yii::setAlias('@webroot', '@root/web');
 

@@ -3,7 +3,7 @@
 // Prepare environment
 $rootPath = realpath(__DIR__.'/..');
 require($rootPath.'/vendor/autoload.php');
-require($rootPath.'/src/config/env.php');
+require($rootPath . '/config/env.php');
 
 // Define framework & application constants
 defined('YII_DEBUG') or define('YII_DEBUG', (boolean)getenv('YII_DEBUG'));
@@ -22,4 +22,4 @@ if (file_exists($rootPath.'/tests/codeception/c3.php')) {
 }
 
 // Run application
-(new yii\web\Application(require($rootPath.'/src/config/main.php')))->run();
+(new yii\web\Application(require($rootPath . '/config/main.php')))->run();

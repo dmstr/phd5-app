@@ -66,9 +66,9 @@ return [
     'id' => 'app',
     'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
-    'basePath' => dirname(__DIR__),
-    'vendorPath' => '@app/../vendor',
-    'runtimePath' => '@app/../runtime',
+    'basePath' => '@app',
+    'vendorPath' => '@root/vendor',
+    'runtimePath' => '@root/runtime',
     // Bootstrapped modules are loaded in every request
     'bootstrap' => [
         'log',
@@ -291,7 +291,6 @@ return [
                 'gii/*',
                 'asset/*',
                 'debug/*',
-                'app/*',
                 'resque/*',
                 'db/create',
                 'migrate/up',

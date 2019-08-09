@@ -102,7 +102,7 @@ dev-assets:	 ##@development open application development bash
 	#
 	# Building asset bundles
 	#
-	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress src/config/assets.php web/bundles/config.php
+	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress config/assets.php web/bundles/config.php
 
 
 dev-init:    ##@development install composer package (enable host-volume in docker-compose config)
@@ -112,7 +112,6 @@ dev-init:
 	# This may take a while on your first install...
 	#
 	cp -n .env-dist .env &2>/dev/null
-	mkdir -p web/assets runtime
 
 dev-setup: ##@development run application setup
 	#
@@ -138,6 +137,8 @@ test: ##@test run tests
 	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > tests/_log/docker.log
 
 test-coverage: ##@test run tests with code coverage
+	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) yii app/setup
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 

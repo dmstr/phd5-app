@@ -10,6 +10,8 @@
 
 ini_set('memory_limit', '512M');
 
+$rootPath = '/app';
+
 if (getenv('PHP_USER_ID')) {
     posix_setuid(getenv('PHP_USER_ID'));
 }
@@ -19,15 +21,18 @@ defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
 defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
 defined('APP_TYPE') or define('APP_TYPE', 'console');
 
-require(__DIR__ . '/vendor/autoload.php');
-require(__DIR__ . '/src/config/env.php');
+require($rootPath . '/vendor/autoload.php');
+require($rootPath . '/config/env.php');
 
 defined('YII_DEBUG') or define('YII_DEBUG', (boolean)getenv('YII_DEBUG'));
 defined('YII_ENV') or define('YII_ENV', getenv('YII_ENV'));
 
-require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
-$config = require(__DIR__ . '/src/config/main.php');
+require($rootPath . '/vendor/yiisoft/yii2/Yii.php');
+$config = require($rootPath . '/config/main.php');
 
 $application = new yii\console\Application($config);
+
+yii\BaseYii::getAlias('@vendor');
+
 $exitCode = $application->run();
 exit($exitCode);
