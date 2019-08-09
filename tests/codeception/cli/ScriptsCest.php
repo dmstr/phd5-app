@@ -24,7 +24,7 @@ class ScriptsCest
         $I->runShellCommand('/usr/local/bin/export-env.sh');
 
         $I->wantTo('run a yii command with no ENV variables set');
-        $I->runShellCommand('env -i sh /root/export-env && /usr/local/bin/php /app/yii audit/cleanup --interactive=0 --entry --age=0');
+        $I->runShellCommand('env -i sh /root/export-env && yii audit/cleanup --interactive=0 --entry --age=0');
         $I->seeInShellOutput('Cleanup was successful.');
     }
 }
