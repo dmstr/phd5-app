@@ -12,6 +12,8 @@ Documentation
  
 See [docs](https://github.com/dmstr/phd5-docs)
 
+Using this repository as a base-image, see [phd5-template](https://github.com/dmstr/phd5-template)
+
 TL;dr
 -----
 
