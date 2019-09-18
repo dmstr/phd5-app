@@ -239,20 +239,24 @@ return [
                     ],
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
-                            // preset example, when using imageproxy, https://github.com/willnorris/imageproxy#examples
+                            // sanitize input
+                            $preset = trim($preset, "/");
+                            $baseUrl = trim(Yii::$app->settings->get('imgBaseUrl', 'app.frontend'), "/");
+                            $prefix = trim(Yii::$app->settings->get('imgHostPrefix', 'app.frontend'), "/");
+
+                            // build remote URL
+                            $remoteUrl = $prefix.'/'.$imageSource.Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
+
+                            // add HMAC sign key to preset when using imageproxy, see also https://github.com/willnorris/imageproxy#examples
                             if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
                                 $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
                                 $preset .= ',s' . strtr(
-                                    base64_encode(hash_hmac('sha256', $imageSource, $key, 1)),
-                                    '/+',
-                                    '_-'
-                                );
+                                        base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
+                                        '/+',
+                                        '_-'
+                                    );
                             }
-                            return Yii::$app->settings->get('imgBaseUrl', 'app.frontend') .
-                                $preset .
-                                Yii::$app->settings->get('imgHostPrefix', 'app.frontend') .
-                                $imageSource .
-                                Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
+                            return $baseUrl . '/' . $preset . '/' . $remoteUrl;
                         },
                         't' => function ($category, $message) {
                             return Yii::t($category, $message);
