@@ -19,6 +19,7 @@ init-dev:
 	# This may take a while on your first install...
 	#
 	cp -n .env-dist .env &2>/dev/null
+	touch src/config/local.env
 	mkdir -p web/assets runtime
 	$(DOCKER_COMPOSE) run --rm php composer install
 
