@@ -251,9 +251,9 @@ return [
                             if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
                                 $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
                                 $preset .= ',s' . strtr(
-                                        base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
-                                        '/+',
-                                        '_-'
+                                    base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
+                                    '/+',
+                                    '_-'
                                     );
                             }
                             return $baseUrl . '/' . $preset . '/' . $remoteUrl;
