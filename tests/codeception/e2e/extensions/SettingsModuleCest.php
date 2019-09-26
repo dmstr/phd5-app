@@ -1,6 +1,4 @@
 <?php
-namespace extensions;
-
 
 class SettingsModuleCest
 {
@@ -15,5 +13,13 @@ class SettingsModuleCest
     // tests
     public function tryToTest(E2eTester $I)
     {
+        $I->amOnPage('/settings');
+        $I->dontSee('Settings', 'h1');
+
+        $I->login('master', 'master1');
+
+        $I->amOnPage('/settings');
+        $I->see('Settings', 'h1');
+        $I->makeScreenshot('settings');
     }
 }

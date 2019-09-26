@@ -1,6 +1,4 @@
 <?php
-namespace app\en;
-
 
 class LanguagesCest
 {
@@ -15,5 +13,20 @@ class LanguagesCest
     // tests
     public function tryToTest(E2eTester $I)
     {
+        $I->wantTo('ensure that language urls and redirects work');
+
+        $I->amOnPage('/');
+        $I->seeCurrentUrlEquals('/en/user/login');
+
+        $I->amOnPage('/xx');
+        $I->seeElement('.site-error');
+
+        $I->amOnPage('/de');
+        $I->seeCurrentUrlEquals('/de/user/login');
+        $I->see('Anmelden');
+        $I->makeScreenshot('language-de');
+
+        $I->amOnPage('/en-us');
+        $I->see('Not Found');
     }
 }

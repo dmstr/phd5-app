@@ -1,8 +1,6 @@
 <?php
-namespace app;
 
-
-class MobileCeptCest
+class MobileCest
 {
     public function _before(E2eTester $I)
     {
@@ -15,5 +13,17 @@ class MobileCeptCest
     // tests
     public function tryToTest(E2eTester $I)
     {
+        $I->wantTo('ensure that responsive mobile layout works');
+
+        $I->resizeWindow(320, 568);
+        $I->amOnPage('/');
+        $I->makeScreenshot('mobile');
+
+        $I->click('button.navbar-toggle');
+        $I->waitForElementVisible('#link-login');
+
+        $I->seeElement('li.active');
+        $I->seeElement('#link-login');
+        $I->makeScreenshot('mobile-open-menu');
     }
 }
