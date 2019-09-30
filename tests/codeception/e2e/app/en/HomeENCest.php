@@ -1,6 +1,6 @@
 <?php
 
-class HomeCest
+class HomeENCest
 {
     public function _before(E2eTester $I)
     {

@@ -1,6 +1,6 @@
 <?php
 
-class LanguagesCest
+class LanguagesENCest
 {
     public function _before(E2eTester $I)
     {

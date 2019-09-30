@@ -1,6 +1,6 @@
 <?php
 
-class LoginCest
+class LoginRUCest
 {
     public function _before(E2eTester $I)
     {
