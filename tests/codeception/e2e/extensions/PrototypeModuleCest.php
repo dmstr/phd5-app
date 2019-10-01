@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group mandatory
+ */
 class PrototypeModuleCest
 {
     public function _before(E2eTester $I)

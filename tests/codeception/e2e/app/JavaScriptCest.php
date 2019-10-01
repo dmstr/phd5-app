@@ -1,4 +1,7 @@
 <?php
+/**
+ * @group mandatory
+ */
 class JavaScriptCest
 {
     public function _before(E2eTester $I)

@@ -1,6 +1,8 @@
 <?php
-
-
+/**
+ * @group mandatory
+ * @group long-running
+ */
 class BackendLinksCest
 {
     public function _before(FunctionalTester $I)

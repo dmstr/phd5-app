@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group mandatory
+ */
 use Faker\Factory;
 
 class UserCreateCest

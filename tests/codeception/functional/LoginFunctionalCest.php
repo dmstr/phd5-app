@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group mandatory
+ */
 class LoginFunctionalCest
 {
     public function _before(FunctionalTester $I)

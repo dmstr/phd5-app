@@ -1,6 +1,7 @@
 <?php
-
-
+/**
+ * @group mandatory
+ */
 class AccessControlCest
 {
     public function _before(FunctionalTester $I)

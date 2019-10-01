@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group optional
+ */
 class LogoutFrontendCest
 {
     public function _before(E2eTester $I)

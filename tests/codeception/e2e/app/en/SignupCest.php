@@ -1,6 +1,7 @@
 <?php
-
-class SignupCest
+/**
+ * @group mandatory
+ */class SignupCest
 {
     public function _before(E2eTester $I)
     {

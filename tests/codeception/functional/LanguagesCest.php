@@ -1,6 +1,8 @@
 <?php
-
-
+/**
+ * @group mandatory
+ * @group base-test-setup
+ */
 class LanguagesCest
 {
     public function _before(FunctionalTester $I)

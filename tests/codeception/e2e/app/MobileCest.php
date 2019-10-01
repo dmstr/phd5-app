@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group mandatory
+ */
 class MobileCest
 {
     public function _before(E2eTester $I)

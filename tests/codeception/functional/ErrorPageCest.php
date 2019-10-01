@@ -1,6 +1,7 @@
 <?php
-
-
+/**
+ * @group mandatory
+ */
 class ErrorPageCest
 {
     public function _before(FunctionalTester $I)

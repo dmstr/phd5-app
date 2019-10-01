@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @group mandatory
+ * @group long-running
+ */
 class BackendAccessCest
 {
     public function _before(E2eTester $I)

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @group mandatory
+ */
 class VersionCest
 {
     public function _before(FunctionalTester $I)

@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @group mandatory
+ * @group base-test-setup
+ */
 class PreviewAccessCest
 {
     public function _before(E2eTester $I)

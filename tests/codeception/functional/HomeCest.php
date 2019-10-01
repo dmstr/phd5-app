@@ -1,6 +1,7 @@
 <?php
-
-
+/**
+ * @group optional
+ */
 class HomeCest
 {
     public function _before(FunctionalTester $I)
