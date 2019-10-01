@@ -13,7 +13,7 @@ class VersionCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testVersion(FunctionalTester $I)
     {
         $rootPath = realpath(__DIR__.'/../../..');
 

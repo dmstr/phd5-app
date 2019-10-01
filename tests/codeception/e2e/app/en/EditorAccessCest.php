@@ -14,7 +14,7 @@ class EditorAccessCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testProviderAccess(E2eTester $I)
     {
         $I->wantTo('ensure that preview access works');
 

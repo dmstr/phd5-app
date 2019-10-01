@@ -3,7 +3,7 @@
  * @group mandatory
  * @group base-test-setup
  */
-class LanguagesENCest
+class LanguagesEnCest
 {
     public function _before(E2eTester $I)
     {
@@ -14,7 +14,7 @@ class LanguagesENCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testLanguageUrls(E2eTester $I)
     {
         $I->wantTo('ensure that language urls and redirects work');
 

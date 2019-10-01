@@ -13,7 +13,7 @@ class LoginFunctionalCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testLogin(FunctionalTester $I)
     {
         $I->wantTo('ensure that login works');
 

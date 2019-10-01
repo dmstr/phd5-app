@@ -2,7 +2,7 @@
 /**
  * @group mandatory
  */
-class AccessControlUICest
+class AccessControlUiCest
 {
     public function _before(FunctionalTester $I)
     {
@@ -13,7 +13,7 @@ class AccessControlUICest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testAccessControlUi(FunctionalTester $I)
     {
         $I->wantTo('ensure that access control UI works');
 

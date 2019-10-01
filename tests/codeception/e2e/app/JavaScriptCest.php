@@ -13,7 +13,7 @@ class JavaScriptCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testJavaScript(E2eTester $I)
     {
         $I->wantTo('ensure that JavaScript works');
 

@@ -14,7 +14,7 @@ class LanguagesCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testLanguageUrls(FunctionalTester $I)
     {
         $I->wantTo('ensure that language urls work');
 

@@ -16,7 +16,7 @@ class ErrorCest
     }
 
     // tests
-    public function errorPage(\E2eTester $I)
+    public function testErrorPage(\E2eTester $I)
     {
         $I->amOnPage('/NON_EXISTENT_PAGE');
         $I->see('404', 'h1');

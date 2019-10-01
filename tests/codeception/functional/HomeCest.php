@@ -13,7 +13,7 @@ class HomeCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function tesHomePage(FunctionalTester $I)
     {
         $I->wantTo('ensure that home page works');
         $I->amOnPage('/site/index');

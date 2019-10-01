@@ -13,7 +13,7 @@ class LoginCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testLogin(E2eTester $I)
     {
         $I->wantTo('ensure that login works');
 

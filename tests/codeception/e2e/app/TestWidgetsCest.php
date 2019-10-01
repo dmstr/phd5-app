@@ -13,7 +13,7 @@ class TestWidgetsCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testWidgets(E2eTester $I)
     {
         $I->wantTo('ensure that widgets-module works');
 

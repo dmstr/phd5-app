@@ -13,7 +13,7 @@ class ErrorPageCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testErrorPage(FunctionalTester $I)
     {
         $I->wantTo('ensure that error page works');
 

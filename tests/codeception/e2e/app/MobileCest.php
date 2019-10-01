@@ -13,7 +13,7 @@ class MobileCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testMobileLayout(E2eTester $I)
     {
         $I->wantTo('ensure that responsive mobile layout works');
 

@@ -13,7 +13,7 @@ class LogoutFrontendCest
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testLogoutFrontend(E2eTester $I)
     {
         $I->wantTo('ensure that logout from frontend works');
 

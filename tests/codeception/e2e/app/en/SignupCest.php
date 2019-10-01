@@ -12,7 +12,7 @@
     }
 
     // tests
-    public function tryToTest(E2eTester $I)
+    public function testSignup(E2eTester $I)
     {
         $I->wantTo('ensure that sign-up works according to APP_USER_ENABLE_REGISTRATION setting');
         $enableRegistration = getenv('APP_USER_ENABLE_REGISTRATION');

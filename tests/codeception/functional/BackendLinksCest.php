@@ -14,7 +14,7 @@ class BackendLinksCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testBackendLinks(FunctionalTester $I)
     {
         $I->wantTo('Click backend links');
 

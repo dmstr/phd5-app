@@ -13,7 +13,7 @@ class AccessControlCest
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function testAccessControl(FunctionalTester $I)
     {
         $I->wantTo('ensure that access control works');
 
