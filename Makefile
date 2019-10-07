@@ -31,7 +31,7 @@ endif
 default: help
 
 all:    ##@base shorthand for 'build init up setup open'
-all: dev-init build install up setup open
+all: dev-init build install up dev-setup open
 all:
 	#
 	# make all
@@ -79,7 +79,7 @@ bash:	 ##@development run application bash in one-off container
 	#
 	# Starting application bash
 	#
-	$(DOCKER_COMPOSE) run --rm php bash
+	$(DOCKER_COMPOSE) exec php bash
 
 
 bash-xdebug: ##@development open application development bash with xdebug enabled

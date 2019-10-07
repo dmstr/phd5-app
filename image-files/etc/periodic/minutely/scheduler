@@ -1,3 +1,7 @@
 #!/bin/bash
+
+# import ENV variables for cronjob
 . /root/export-env
-/usr/local/bin/php /app/yii schedule/run --schedule-file=@app/config/schedule.php
+
+/usr/local/bin/php /app/src/bin/yii schedule/run --schedule-file=@root/config/schedule.php
+

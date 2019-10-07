@@ -53,4 +53,4 @@ RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
 RUN crontab config/crontab
 
 # export container environment for cronjobs on container start
-CMD /usr/local/bin/export-env.sh; supervisord -c /etc/supervisor/supervisord.conf
+CMD supervisord -c /etc/supervisor/supervisord.conf
