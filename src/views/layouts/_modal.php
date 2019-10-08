@@ -44,7 +44,7 @@ use yii\helpers\Html;
                     <?= Html::a(
                                     'dmstr',
                                     'http://www.diemeisterei.de'
-                    ) ?>
+                                ) ?>
                 </p>
             </div>
 
