@@ -10,7 +10,6 @@ before_install:
   - export STACK_PHP_IMAGE=${TRAVIS_REPO_SLUG}:${APP_VERSION}
   - export STACK_PHP_IMAGE_LATEST=${TRAVIS_REPO_SLUG}:latest
   - cp .env-dist .env
-  - make all
 
 script:
-  - make run-tests
+  - make test
