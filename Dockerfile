@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.3-fpm-6.0-rc1-nginx
+FROM dmstr/php-yii2:7.3-fpm-6.0-rc2-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
