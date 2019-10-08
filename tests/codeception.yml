@@ -29,4 +29,4 @@ coverage:
             - ../src/*.php
         exclude:
             - ../src/commands/*
-            - ../src/migrations/*
+            - ../migrations/*

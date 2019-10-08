@@ -31,7 +31,7 @@ endif
 default: help
 
 all:    ##@base shorthand for 'build init up setup open'
-all: dev-init build install up dev-setup open
+all: dev-init build dev-install up dev-setup dev-browser
 all:
 	#
 	# make all
@@ -72,31 +72,28 @@ version: ##@base write current version string from git
 	$(shell echo $(shell git describe --long --tags --dirty --always) > ./src/version)
 	@echo $(shell cat ./src/version)
 
-install:
-	$(DOCKER_COMPOSE) run --rm php composer install
 
-bash:	 ##@development run application bash in one-off container
-	#
-	# Starting application bash
-	#
-	$(DOCKER_COMPOSE) exec php bash
-
-
-bash-xdebug: ##@development open application development bash with xdebug enabled
-	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) bash
-
-
-upgrade: ##@development update application package, pull, rebuild
+upgrade: ##@base update application package, pull, rebuild
 	#
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
 	$(DOCKER_COMPOSE) run --rm php composer update -v
 
-dist-upgrade: ##@development update application package, pull, rebuild
+dist-upgrade: ##@base update application package, pull, rebuild
 	$(DOCKER_COMPOSE) build --pull --build-arg BUILD_NO_INSTALL=1
 	$(MAKE) upgrade
 	$(MAKE) build
+
+dev-install: ##@base install PHP packages
+	$(DOCKER_COMPOSE) run --rm php composer install
+
+dev-bash:	 ##@development run application bash in one-off container
+	#
+	# Starting application bash
+	#
+	$(DOCKER_COMPOSE) exec php bash
+
 
 dev-assets:	 ##@development open application development bash
 	#
@@ -124,10 +121,6 @@ dev-browser: ##@development open application web service in browser
 	# Opening application on mapped web-service port
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://') &>/dev/null
-
-
-up-xdebug: ##@development open application development bash with xdebug enabled
-	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
 
 
 test: version build install up
