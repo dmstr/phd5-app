@@ -41,6 +41,9 @@ return [
                     'logVars' => [],
                     'replaceNewline' => YII_DEBUG ? null : '',
                     'enabled' => YII_DEBUG && !YII_ENV_TEST,
+                    'except' => [
+                        getenv('APP_LOG_DB_COMMAND_EXECUTE') ? '' : 'yii\db\Command::execute',
+                    ],
                 ],
 
             ],
