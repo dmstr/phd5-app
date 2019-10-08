@@ -169,13 +169,25 @@ test-report-coverage: ##@test open HTML reports
 	$(OPEN_CMD) _log/coverage/index.html &>/dev/null
 
 
+fix-source:	 ##@development fix source-code linting errors
+	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	#
+	# Fixing source-code lint errors with cs-fixer
+	#
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v ../src
 
 lint-source:	 ##@development run source-code linting
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
-	# Liniting source-code with cs-fixer, phpmetrics & phpmd
+	# Liniting source-code with cs-fixer
 	#
 	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v --dry-run ../src
+
+lint-metrics:	 ##@development run source-code metrics
+	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	#
+	# Fixing source-code lint errors with cs-fixer
+	#
 	docker run --rm -v "${PWD}:/app" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --exclude=migrations,runtime src/
 	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html tests/phpmd/rulesets.xml --exclude src/migrations > tests/_log/lint/mess.html
 	exit ${ERROR}
