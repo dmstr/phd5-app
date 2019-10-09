@@ -31,7 +31,7 @@ endif
 default: help
 
 all:    ##@base shorthand for 'build init up setup open'
-all: dev-init build dev-install up dev-setup dev-browser
+all: init build install up setup browser
 all:
 	#
 	# make all
@@ -85,45 +85,46 @@ dist-upgrade: ##@base update application package, pull, rebuild
 	$(MAKE) upgrade
 	$(MAKE) build
 
-dev-install: ##@base install PHP packages
+install: ##@base install PHP packages
 	$(DOCKER_COMPOSE) run --rm php composer install
 
-dev-bash:	 ##@development run application bash in one-off container
+bash:	 ##@development run application bash in one-off container
 	#
 	# Starting application bash
 	#
 	$(DOCKER_COMPOSE) exec php bash
 
 
-dev-assets:	 ##@development open application development bash
+assets:	 ##@development open application development bash
 	#
 	# Building asset bundles
 	#
 	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress config/assets.php web/bundles/config.php
 
 
-dev-init:    ##@development install composer package (enable host-volume in docker-compose config)
-dev-init:
+init:    ##@development install composer package (enable host-volume in docker-compose config)
+init:
 	#
 	# Running composer installation in development environment
 	# This may take a while on your first install...
 	#
 	cp -n .env-dist .env &2>/dev/null
+	touch config/local.env
 
-dev-setup: ##@development run application setup
+setup: ##@development run application setup
 	#
 	# Running application setup command (database, user)
 	#
 	$(DOCKER_COMPOSE) run --rm php yii app/setup
 
-dev-browser: ##@development open application web service in browser
+browser: ##@development open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://') &>/dev/null
 
 
-test: version build dev-install up
+test: version build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html --xml= --tap --json
@@ -211,7 +212,7 @@ lint-html:
 lint-links:
 	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 5
 
-lint: version dev-install lint-source lint-composer
+lint: version install lint-source lint-composer
 
 
 
