@@ -352,16 +352,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.116.0",
+            "version": "3.117.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b0669936681365a6c5201a6d28bfa76553052912"
+                "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b0669936681365a6c5201a6d28bfa76553052912",
-                "reference": "b0669936681365a6c5201a6d28bfa76553052912",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3fc3d2c1962f34becc4313c839ed8b659d045114",
+                "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +431,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-11-12T19:15:09+00:00"
+            "time": "2019-11-13T19:14:25+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
