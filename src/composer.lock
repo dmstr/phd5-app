@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64fdbe1596c9ec2e68822cb02527310f",
+    "content-hash": "4f2938e4c3d5f0b1ffeafdbfaf303945",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -2466,20 +2466,20 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.16",
+            "version": "0.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "928bf3ddb7d3d6721b87286c1b580dbc03874e9e"
+                "reference": "a47519426d06536235cea7e4be11739e83f68146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/928bf3ddb7d3d6721b87286c1b580dbc03874e9e",
-                "reference": "928bf3ddb7d3d6721b87286c1b580dbc03874e9e",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/a47519426d06536235cea7e4be11739e83f68146",
+                "reference": "a47519426d06536235cea7e4be11739e83f68146",
                 "shasum": ""
             },
             "require": {
-                "pheme/yii2-settings": "^0.5.0",
+                "pheme/yii2-settings": "^0.5.0 || ^0.7.0",
                 "yiisoft/yii2": "~2.0.0"
             },
             "type": "yii2-extension",
@@ -2507,7 +2507,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-12-14T18:34:19+00:00"
+            "time": "2019-11-13T10:54:34+00:00"
         },
         {
             "name": "dmstr/yii2-json-editor",
@@ -2592,16 +2592,16 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "0b0093e7d2f2a754f6390fbd662e46cad1930601"
+                "reference": "252964f5d09d601544ad50d5d26c1f05084f66f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/0b0093e7d2f2a754f6390fbd662e46cad1930601",
-                "reference": "0b0093e7d2f2a754f6390fbd662e46cad1930601",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/252964f5d09d601544ad50d5d26c1f05084f66f5",
+                "reference": "252964f5d09d601544ad50d5d26c1f05084f66f5",
                 "shasum": ""
             },
             "require": {
@@ -2616,7 +2616,7 @@
                 "kartik-v/yii2-tree-manager": ">=1.0.3 <=1.0.5",
                 "kartik-v/yii2-widget-select2": "^2.0.1",
                 "mikehaertl/php-shellcommand": "^1.2.4",
-                "pheme/yii2-settings": "^0.5.0",
+                "pheme/yii2-settings": "^0.5.0 || ^0.7.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
                 "yiisoft/yii2": "^2.0.13"
             },
@@ -2653,7 +2653,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2019-04-05T10:54:56+00:00"
+            "time": "2019-11-13T11:08:17+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -2883,16 +2883,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.0.0-rc3",
+            "version": "2.0.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "6ba852ce1839eb359472e8fcb51430dd1e992d7e"
+                "reference": "7c7bca922f09a36e109b539d9e637992604f2416"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/6ba852ce1839eb359472e8fcb51430dd1e992d7e",
-                "reference": "6ba852ce1839eb359472e8fcb51430dd1e992d7e",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/7c7bca922f09a36e109b539d9e637992604f2416",
+                "reference": "7c7bca922f09a36e109b539d9e637992604f2416",
                 "shasum": ""
             },
             "require": {
@@ -2907,7 +2907,7 @@
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
                 "rmrevin/yii2-fontawesome": "~2.9",
-                "scrivo/highlight.php": "~8.0",
+                "scrivo/highlight.php": "~8.0 || ~9.0",
                 "trntv/yii2-aceeditor": "^2.1.0",
                 "uran1980/yii2-jquery-essential": "^0.0.6",
                 "yiisoft/yii2": "2.0.*",
@@ -2935,7 +2935,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-08-07T14:48:04+00:00"
+            "time": "2019-11-13T10:19:40+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -5199,12 +5199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "15eb463aecc9e315b89b744ee0feb0bb1b4c6787"
+                "reference": "e3e6456e753326a096303e96b0f759fe789e63e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/15eb463aecc9e315b89b744ee0feb0bb1b4c6787",
-                "reference": "15eb463aecc9e315b89b744ee0feb0bb1b4c6787",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3e6456e753326a096303e96b0f759fe789e63e8",
+                "reference": "e3e6456e753326a096303e96b0f759fe789e63e8",
                 "shasum": ""
             },
             "conflict": {
@@ -5321,13 +5321,14 @@
                 "sylius/grid": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
                 "sylius/grid-bundle": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
                 "sylius/sylius": ">=1,<1.1.18|>=1.2,<1.2.17|>=1.3,<1.3.12|>=1.4,<1.4.4",
-                "symfony/cache": ">=3.1,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/cache": ">=3.1,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/dependency-injection": ">=2,<2.0.17|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.50|>=2.8,<2.8.49|>=3,<3.4.20|>=4,<4.0.15|>=4.1,<4.1.9|>=4.2,<4.2.1",
                 "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2|>=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
-                "symfony/http-foundation": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
-                "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
+                "symfony/http-foundation": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
+                "symfony/http-kernel": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
+                "symfony/mime": ">=4.3,<4.3.8",
                 "symfony/phpunit-bridge": ">=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/polyfill": ">=1,<1.10",
                 "symfony/polyfill-php55": ">=1,<1.10",
@@ -5338,11 +5339,12 @@
                 "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<2.8.37|>=3,<3.3.17|>=3.4,<3.4.7|>=4,<4.0.7",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-guard": ">=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
+                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.2.12|>=4.3,<4.3.8",
                 "symfony/serializer": ">=2,<2.0.11",
                 "symfony/symfony": ">=2,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
+                "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "tecnickcom/tcpdf": "<6.2.22",
@@ -5407,7 +5409,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-11-07T10:12:47+00:00"
+            "time": "2019-11-13T10:25:51+00:00"
         },
         {
             "name": "sabre/dav",
@@ -5910,21 +5912,22 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.15.6.1",
+            "version": "v9.15.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "00cf4aa63dd5c214660f628d3082ab231db50f48"
+                "reference": "9ad3adb4456dc91196327498dbbce6aa1ba1239e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/00cf4aa63dd5c214660f628d3082ab231db50f48",
-                "reference": "00cf4aa63dd5c214660f628d3082ab231db50f48",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/9ad3adb4456dc91196327498dbbce6aa1ba1239e",
+                "reference": "9ad3adb4456dc91196327498dbbce6aa1ba1239e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "ext-mbstring": "*"
+                "ext-mbstring": "*",
+                "php": ">=5.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8|^5.7",
@@ -5972,7 +5975,7 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2019-03-31T21:09:11+00:00"
+            "time": "2019-08-27T04:27:48+00:00"
         },
         {
             "name": "select2/select2",
@@ -6369,7 +6372,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -9703,7 +9706,7 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
@@ -9762,16 +9765,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d2e39dbddae68560fa6be0c576da6ad4e945b90d"
+                "reference": "831424efae0a1fe6642784bd52aae14ece6538e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d2e39dbddae68560fa6be0c576da6ad4e945b90d",
-                "reference": "d2e39dbddae68560fa6be0c576da6ad4e945b90d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/831424efae0a1fe6642784bd52aae14ece6538e6",
+                "reference": "831424efae0a1fe6642784bd52aae14ece6538e6",
                 "shasum": ""
             },
             "require": {
@@ -9833,11 +9836,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-05T15:00:49+00:00"
+            "time": "2019-11-13T07:29:07+00:00"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -9890,7 +9893,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -9951,7 +9954,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -10079,7 +10082,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -10129,7 +10132,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -10178,7 +10181,7 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
@@ -10407,7 +10410,7 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -10457,7 +10460,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -10769,34 +10772,15 @@
             "time": "2018-12-08T10:07:49+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "8.999",
-            "alias_normalized": "8.999.0.0",
-            "version": "9.15.6.1",
-            "package": "scrivo/highlight.php"
-        },
-        {
-            "alias": "0.5",
-            "alias_normalized": "0.5.0.0",
-            "version": "0.7.0.0",
-            "package": "pheme/yii2-settings"
-        },
-        {
-            "alias": "2.0.0",
-            "alias_normalized": "2.0.0.0",
-            "version": "2.0.0.0-RC3",
-            "package": "dmstr/yii2-widgets2-module"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "RC",
     "stability-flags": {
-        "dmstr/yii2-widgets2-module": 5,
         "dmstr/yii2-db": 15,
         "dmstr/yii2-filemanager-widgets": 15,
-        "dmstr/yii2-pages-module": 15,
+        "dmstr/yii2-pages-module": 5,
         "dmstr/yii2-prototype-module": 10,
         "dmstr/yii2-resque-module": 15,
+        "dmstr/yii2-widgets2-module": 5,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
