@@ -88,12 +88,17 @@ dist-upgrade: ##@base update application package, pull, rebuild
 install: ##@base install PHP packages
 	$(DOCKER_COMPOSE) run --rm php composer install
 
-bash:	 ##@development run application bash in one-off container
+bash:	 ##@development execute application bash in one-off container
 	#
 	# Starting application bash
 	#
 	$(DOCKER_COMPOSE) exec php bash
 
+cli:	 ##@development run application cli in one-off container
+	#
+	# Starting application CLI container
+	#
+	$(DOCKER_COMPOSE) run --rm php bash
 
 assets:	 ##@development open application development bash
 	#
