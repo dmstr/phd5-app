@@ -10,6 +10,7 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
+    image: ${STACK_PHP_IMAGE}
     working_dir: /app/tests
     ports:
       - 80
