@@ -1,6 +1,6 @@
 {
     "require": {
-        "bedezign/yii2-audit": "<1.1.2",
+        "bedezign/yii2-audit": "^1.0.7 <1.1.2",
         "2amigos/yii2-usuario": "^1.1",
         "bower-asset/jquery": "2.*",
         "cinghie/yii2-cookie-consent": "^1.4",
