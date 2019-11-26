@@ -180,6 +180,7 @@ return [
         ],
         'queue' => [
             'class' => \yii\queue\redis\Queue::class,
+            'channel' => getenv('APP_QUEUE_CHANNEL'),
             'as log' => \yii\queue\LogBehavior::class,
             'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
         ],

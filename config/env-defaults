@@ -60,6 +60,9 @@ APP_AUDIT_DISABLE_ALL_ACTIONS=1
 # Enable user registration feature?
 APP_USER_ENABLE_REGISTRATION=0
 
+# Default queue name
+APP_QUEUE_CHANNEL=queue
+
 # Twig view renderer configuration
 TWIG_DEBUG_MODE=0
 
