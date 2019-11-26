@@ -256,7 +256,7 @@ return [
                                     '_-'
                                     );
                             }
-                            return $baseUrl . '/' . $preset . '/' . $remoteUrl;
+                            return implode('/', array_filter([$baseUrl,$preset,$remoteUrl]));
                         },
                         't' => function ($category, $message) {
                             return Yii::t($category, $message);
