@@ -32,13 +32,13 @@ $dotenv->load();
 $dotenv->required('YII_DEBUG', ['', '0', '1', 'true', true]);
 $dotenv->required('YII_ENV', ['dev', 'prod', 'test']);
 $dotenv->required([
-    'YII_TRACE_LEVEL',
-    'APP_NAME',
-    'APP_TITLE',
-    'APP_ADMIN_EMAIL',
-    'APP_LANGUAGES',
-    'APP_COOKIE_VALIDATION_KEY',
-]);
+                      'YII_TRACE_LEVEL',
+                      'APP_NAME',
+                      'APP_TITLE',
+                      'APP_ADMIN_EMAIL',
+                      'APP_LANGUAGES',
+                      'APP_COOKIE_VALIDATION_KEY',
+                  ])->notEmpty();
 
 // Additional validations
 if (!preg_match('/^[a-z0-9_-]{2,16}$/', getenv('APP_NAME'))) {
