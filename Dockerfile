@@ -42,7 +42,7 @@ RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
 
 VOLUME /app/runtime
-VOLUME /web/assets
+VOLUME /app/web/assets
 
 # Build assets (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
