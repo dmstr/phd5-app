@@ -2266,6 +2266,52 @@
             "time": "2017-02-17T09:53:52+00:00"
         },
         {
+            "name": "dmstr/yii2-cookie-consent",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-cookie-consent.git",
+                "reference": "bbfed187520a2a3eefb90c799ed655104edf564d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-cookie-consent/zipball/bbfed187520a2a3eefb90c799ed655104edf564d",
+                "reference": "bbfed187520a2a3eefb90c799ed655104edf564d",
+                "shasum": ""
+            },
+            "require": {
+                "npm-asset/dmstr--cookie-consent": "^0.2.0",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\cookieconsent\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "German Bisurgi",
+                    "email": "g.bisurgi@herzogkommunikation.de"
+                },
+                {
+                    "name": "Elias Luhr",
+                    "email": "e.luhr@herzogkommunikation.de"
+                }
+            ],
+            "description": "Yii2 Cookie Consent Widget",
+            "keywords": [
+                "cookie consent",
+                "extension",
+                "yii2"
+            ],
+            "time": "2019-12-03T08:04:04+00:00"
+        },
+        {
             "name": "dmstr/yii2-db",
             "version": "1.0.0",
             "source": {
@@ -4200,6 +4246,52 @@
                 "jsonpath"
             ],
             "time": "2016-12-03T22:08:25+00:00"
+        },
+        {
+            "name": "npm-asset/dmstr--cookie-consent",
+            "version": "0.2.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@dmstr/cookie-consent/-/cookie-consent-0.2.0.tgz",
+                "shasum": "6b511a9a0948b2f74ac3b7e6dc5a4c21d6e4aff3"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/dmstr/cookie-consent/issues"
+                },
+                "npm-asset-main": "dist/cookie-consent.js",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/dmstr/cookie-consent.git"
+                },
+                "npm-asset-scripts": {
+                    "watch": "webpack --watch",
+                    "build": "webpack",
+                    "lint": "eslint ./src",
+                    "lint:fix": "eslint ./src --fix",
+                    "serve": "live-server --port=9001",
+                    "test": "cd tests && docker-compose run --rm node yarn build && docker-compose up -d && docker-compose ps && docker-compose run --rm codeceptjs codeceptjs run-multiple basic:chrome --steps"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "germanbisurgi",
+                    "email": "gebisurgi@gmail.com"
+                }
+            ],
+            "description": "Library to address GDPR (The General Data Protection Regulation)",
+            "homepage": "https://github.com/dmstr/cookie-consent#readme",
+            "keywords": [
+                "GDPR",
+                "consent",
+                "cookie"
+            ],
+            "time": "2019-11-27T13:30:29+00:00"
         },
         {
             "name": "npm-asset/json-editor--json-editor",

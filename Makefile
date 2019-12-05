@@ -98,7 +98,7 @@ cli:	 ##@development run application cli in one-off container
 	#
 	# Starting application CLI container
 	#
-	$(DOCKER_COMPOSE) run --rm php bash
+	$(DOCKER_COMPOSE) run --rm --workdir=/app/src php bash
 
 assets:	 ##@development open application development bash
 	#

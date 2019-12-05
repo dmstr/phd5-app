@@ -7,6 +7,7 @@
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^1.0.4",
+        "dmstr/yii2-cookie-consent": "^1.3.2",
         "dmstr/yii2-db": "^1.0.0-alpha1",
         "dmstr/yii2-helpers": ">=0.4.16",
         "dmstr/yii2-redirect-module": "^0.3.1",
