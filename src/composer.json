@@ -9,11 +9,12 @@
         "merge-plugin": {
             "ignore-duplicates": true,
             "require": [
-                "src/composer.phd5.json"
+                "composer.phd5.json"
             ]
         }
     },
     "config": {
+        "vendor-dir": "./../vendor",
         "preferred-install": {
             "dmstr/*": "source",
             "hrzg/*": "source",
@@ -23,8 +24,8 @@
         },
         "fxp-asset": {
             "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
+                "npm-asset-library": "../vendor/npm",
+                "bower-asset-library": "../vendor/bower"
             },
             "vcs-driver-options": {
                 "github-no-api": true

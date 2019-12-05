@@ -78,7 +78,7 @@ upgrade: ##@base update application package, pull, rebuild
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
-	$(DOCKER_COMPOSE) run --rm php composer update -v
+	$(DOCKER_COMPOSE) run --rm php composer -dsrc update -v
 
 dist-upgrade: ##@base update application package, pull, rebuild
 	$(DOCKER_COMPOSE) build --pull --build-arg BUILD_NO_INSTALL=1
@@ -86,7 +86,7 @@ dist-upgrade: ##@base update application package, pull, rebuild
 	$(MAKE) build
 
 install: ##@base install PHP packages
-	$(DOCKER_COMPOSE) run --rm php composer install
+	$(DOCKER_COMPOSE) run --rm php composer -dsrc  install
 
 bash:	 ##@development execute application bash in one-off container
 	#
@@ -196,19 +196,19 @@ lint-composer: ##@development run composer linting
 	#
 	# Liniting composer configuration
 	#
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi validate || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer -dsrc --no-ansi validate || ERROR=1; \
 
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Listing installed packages
 	#
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer --no-ansi show -f json | tee tests/_log/composer-packages-$(shell cat ./src/version).json || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer  -dsrc --no-ansi show -f json | tee tests/_log/composer-packages-$(shell cat ./src/version).json || ERROR=1; \
 
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Listing outdated packages
 	#
-	$(DOCKER_COMPOSE) run -T --rm $(PHP_SERVICE) composer --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).json || ERROR=1; \
+	$(DOCKER_COMPOSE) run -T --rm $(PHP_SERVICE) composer  -dsrc --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).json || ERROR=1; \
 	exit ${ERROR}
 
 lint-html:

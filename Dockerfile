@@ -13,14 +13,13 @@ RUN apt-get update \
 COPY ./image-files /
 
 # Application packages
-ENV COMPOSER=/app/src/composer.json
 WORKDIR /app
 COPY src/composer.* /app/src/
 
 # Composer installation (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        composer install --no-dev --prefer-dist --optimize-autoloader && \
-        composer clear-cache; \
+        composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
+        composer -dsrc clear-cache; \
     fi
 
 # Application source-code
