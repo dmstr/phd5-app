@@ -98,13 +98,13 @@ cli:	 ##@development run application cli in one-off container
 	#
 	# Starting application CLI container
 	#
-	$(DOCKER_COMPOSE) run --rm --workdir=/app/src php bash
+	$(DOCKER_COMPOSE) run --rm --workdir=/app/src -e PHP_USER_ID=0 $(PHP_SERVICE) bash
 
 assets:	 ##@development open application development bash
 	#
 	# Building asset bundles
 	#
-	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 php yii asset/compress config/assets.php web/bundles/config.php
+	$(DOCKER_COMPOSE) run --rm -e APP_ASSET_USE_BUNDLED=0 $(PHP_SERVICE) yii asset/compress config/assets.php web/bundles/config.php
 
 
 init:    ##@development install composer package (enable host-volume in docker-compose config)
@@ -120,13 +120,13 @@ setup: ##@development run application setup
 	#
 	# Running application setup command (database, user)
 	#
-	$(DOCKER_COMPOSE) run --rm php yii app/setup
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) yii app/setup
 
 browser: ##@development open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
-	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port php 80 | sed 's/[0-9.]*://') &>/dev/null
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(PHP_SERVICE) 80 | sed 's/[0-9.]*://') &>/dev/null
 
 
 test: version build install up
@@ -150,13 +150,13 @@ test-bash:	 ##@test run application bash in one-off container
 	#
 	# Starting application bash
 	#
-	$(DOCKER_COMPOSE) run --rm test-php bash
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE)  bash
 
 test-browser: ##@test open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
-	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port test-php 80 | sed 's/[0-9.]*://') &>/dev/null
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(TESTER_SERVICE)  80 | sed 's/[0-9.]*://') &>/dev/null
 
 test-selenium: ##@test open application database service in browser
 	$(OPEN_CMD) vnc://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(BROWSER_SERVICE) 5900 | sed 's/[0-9.]*://') &>/dev/null
