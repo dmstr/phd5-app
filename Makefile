@@ -133,7 +133,8 @@ test: version build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html --xml= --tap --json
-	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > tests/_log/docker.log
+	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > _host-volumes/tests/_log/php.log
+	$(DOCKER_COMPOSE) logs $(TESTER_SERVICE) > _host-volumes/tests/_log/tester.log
 
 test-coverage: ##@test run tests with code coverage
 	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
