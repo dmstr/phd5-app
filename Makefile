@@ -185,31 +185,32 @@ lint-source:	 ##@development run source-code linting
 lint-metrics:	 ##@development run source-code metrics
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
-	# Fixing source-code lint errors with cs-fixer
+	# Source-code metrics
 	#
-	docker run --rm -v "${PWD}:/app" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --exclude=migrations,runtime src/
-	docker run --rm -v "${PWD}:/project" jolicode/phaudit phpmd src html tests/phpmd/rulesets.xml --exclude src/migrations > tests/_log/lint/mess.html
-	exit ${ERROR}
+	docker run --rm -v "${PWD}:/app" -v "${PWD}/_host-volumes/tests-log:/app/tests/_log" --workdir=/app herloct/phpmetrics --report-html=tests/_log/lint/metrics --exclude=migrations,runtime src/
+	docker run --rm -v "${PWD}:/project" -v "${PWD}/_host-volumes/tests-log/lint:/app/tests/_log/lint" jolicode/phaudit sh -c 'phpmd src html /project/tests/phpmd/rulesets.xml --exclude src/migrations | sudo tee /app/tests/_log/lint/mess.html'
 
 lint-composer: ##@development run composer linting
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) mkdir -p _log/composer
+
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Liniting composer configuration
 	#
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer -dsrc --no-ansi validate || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) composer -d../src --no-ansi validate
 
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Listing installed packages
 	#
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer  -dsrc --no-ansi show -f json | tee tests/_log/composer-packages-$(shell cat ./src/version).json || ERROR=1; \
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) sh -c 'composer -d../src --no-ansi show -f json | tee _log/composer/packages-$(shell cat ./src/version).json'
 
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Listing outdated packages
 	#
-	$(DOCKER_COMPOSE) run -T --rm $(PHP_SERVICE) composer  -dsrc --no-ansi show -o -f json | grep -zo "\{.*\}" | tee tests/_log/composer-outdated-packages-$(shell cat ./src/version).json || ERROR=1; \
-	exit ${ERROR}
+	$(DOCKER_COMPOSE) run -T --rm $(TESTER_SERVICE) sh -c 'composer  -d../src --no-ansi show -o -f json | grep -zo "\{.*\}" | tee _log/composer/outdated-packages-$(shell cat ./src/version).json'
+
 
 lint-html:
 	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  validator http://web
@@ -217,7 +218,7 @@ lint-html:
 lint-links:
 	COMPOSE_FILE=$(COMPOSE_FILE_QA) $(DOCKER_COMPOSE) run --rm  linkchecker linkchecker http://web -F html/utf8/./tmp/tests/_log/check.html -f /tmp/tests/linkcheckerrc -r 3 -t 5
 
-lint: version install lint-source lint-composer
+lint: version install lint-source lint-metrics lint-composer
 
 
 

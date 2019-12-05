@@ -30,10 +30,13 @@ services:
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
     volumes:
+      # Re-use local composer cache via host-volume
+      - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
       - ../src:/app/src
       - ../tests:/app/tests
       - ../vendor-dev:/app/vendor
       - ../_host-volumes/test-debug:/mnt/debug
+      - ../_host-volumes/tests-log:/app/tests/_log
     networks:
       default:
         aliases:

@@ -32,7 +32,6 @@ services:
       - ../vendor-dev:/app/vendor:delegated
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
-      - ../_host-volumes/runtime/mysql:/app/runtime/mysql:delegated
 
   db:
     command: --character-set-server=utf8 --collation-server=utf8_general_ci
