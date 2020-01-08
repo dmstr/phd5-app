@@ -254,7 +254,7 @@ return [
                                     base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
                                     '/+',
                                     '_-'
-                                    );
+                                );
                             }
                             return $baseUrl . '/' . $preset . '/' . $remoteUrl;
                         },
