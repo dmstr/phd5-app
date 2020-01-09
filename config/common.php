@@ -174,6 +174,8 @@ return [
             'transport' => [
                 'class' => Swift_SmtpTransport::class,
                 'host' => getenv('APP_MAILER_HOST'),
+                'port' => getenv('APP_MAILER_PORT'),
+                'encryption' => getenv('APP_MAILER_ENCRYPTION'),
                 'username' => getenv('APP_MAILER_USERNAME'),
                 'password' => getenv('APP_MAILER_PASSWORD'),
             ],
