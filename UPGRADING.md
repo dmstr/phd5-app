@@ -9,6 +9,7 @@
   - `tests/codeception/mock_register_shutdown_function.php`
   - `tests/codeception/functional/_bootstrap.php`
   - `tests/codeception/unit/_bootstrap.php`
+- default value for `APP_ADMIN_EMAIL` removed, must be set in project
 
 ### 5.2 to 5.3
 
