@@ -10,6 +10,7 @@
   - `tests/codeception/functional/_bootstrap.php`
   - `tests/codeception/unit/_bootstrap.php`
 - default value for `APP_ADMIN_EMAIL` removed, must be set in project
+- image startup command has been changed from `forego` to `supervisord`
 
 ### 5.2 to 5.3
 
