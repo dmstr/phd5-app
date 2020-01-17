@@ -2698,16 +2698,16 @@
         },
         {
             "name": "dmstr/yii2-prototype-module",
-            "version": "1.0.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-prototype-module.git",
-                "reference": "e0f3b2a01c1f2b1bb0a7f3e746a29a3d299bb434"
+                "reference": "2c603ff06fa70543b1f7ceee7b6593ebf819c19c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/e0f3b2a01c1f2b1bb0a7f3e746a29a3d299bb434",
-                "reference": "e0f3b2a01c1f2b1bb0a7f3e746a29a3d299bb434",
+                "url": "https://api.github.com/repos/dmstr/yii2-prototype-module/zipball/2c603ff06fa70543b1f7ceee7b6593ebf819c19c",
+                "reference": "2c603ff06fa70543b1f7ceee7b6593ebf819c19c",
                 "shasum": ""
             },
             "require": {
@@ -2744,7 +2744,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-03-29T07:56:27+00:00"
+            "time": "2020-01-15T08:16:03+00:00"
         },
         {
             "name": "dmstr/yii2-publication-module",
@@ -10867,7 +10867,6 @@
     "stability-flags": {
         "dmstr/yii2-filemanager-widgets": 15,
         "dmstr/yii2-pages-module": 5,
-        "dmstr/yii2-prototype-module": 10,
         "dmstr/yii2-resque-module": 15,
         "dmstr/yii2-widgets2-module": 5,
         "roave/security-advisories": 20
