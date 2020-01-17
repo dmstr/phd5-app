@@ -2267,16 +2267,16 @@
         },
         {
             "name": "dmstr/yii2-cookie-consent",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-cookie-consent.git",
-                "reference": "a47583def63d07b91f96a265769f10f31a66c4ac"
+                "reference": "75966962351629d47183d307f8302bc2f1537ad6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-cookie-consent/zipball/a47583def63d07b91f96a265769f10f31a66c4ac",
-                "reference": "a47583def63d07b91f96a265769f10f31a66c4ac",
+                "url": "https://api.github.com/repos/dmstr/yii2-cookie-consent/zipball/75966962351629d47183d307f8302bc2f1537ad6",
+                "reference": "75966962351629d47183d307f8302bc2f1537ad6",
                 "shasum": ""
             },
             "require": {
@@ -2309,7 +2309,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-12-20T08:13:31+00:00"
+            "time": "2020-01-17T10:05:11+00:00"
         },
         {
             "name": "dmstr/yii2-db",
@@ -4190,6 +4190,7 @@
                 "cron",
                 "schedule"
             ],
+            "abandoned": "dragonmantank/cron-expression",
             "time": "2019-12-28T04:23:06+00:00"
         },
         {

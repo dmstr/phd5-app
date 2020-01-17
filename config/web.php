@@ -27,6 +27,9 @@ return [
         $event->handled = true;
     },
     'components' => [
+        'cookieConsentHelper' => [
+            'class' => dmstr\cookieconsent\components\CookieConsentHelper::class
+        ],
         'errorHandler' => [
             'class' => ErrorHandler::class,
             'errorAction' => 'error/index',
