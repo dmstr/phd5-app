@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace project\modules\test\controllers;
 
 /*
  * @link http://www.diemeisterei.de/
@@ -10,16 +10,13 @@ namespace app\controllers;
  * file that was distributed with this source code.
  */
 
-use dmstr\web\traits\AccessBehaviorTrait;
 use yii\web\Controller;
 
 /**
  * Site controller.
  */
-class TestController extends Controller
+class CookieConsentController extends Controller
 {
-    use AccessBehaviorTrait;
-
     public function actionConsent()
     {
         return $this->render('consent');

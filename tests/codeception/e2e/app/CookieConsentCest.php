@@ -17,8 +17,7 @@ class CookieConsentCest
     public function cookieConsent(E2eTester $I)
     {
         $I->wantTo('ensure that Cookie Consent initial state is correct');
-        $I->login('master', 'master1');
-        $I->amOnPage('/test/consent');
+        $I->amOnPage('/test/cookie-consent/consent');
         $I->waitForElementVisible('.cookie-consent-popup', 5);
         $I->waitForElementVisible('.cookie-consent-accept-all', 5);
         $I->waitForElementVisible('.cookie-consent-controls-toggle', 5);
