@@ -30,7 +30,7 @@ use dmstr\cookieconsent\widgets\CookieConsent;
         'learnMore' => Yii::t('cookie-consent', 'Privacy statement'),
         'visibleControls' => false,
         'visibleDetails' => false,
-        'link' => '/de/test/privacy',
+        'link' => \yii\helpers\Url::to('privacy'),
         'consent' => [
             'necessary' => [
                 'label' => Yii::t('cookie-consent', 'Necessary'),
