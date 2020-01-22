@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cc7fe1004866f77e547427997c24f73",
+    "content-hash": "931aec76d9e81be4bedf09e7c81bf222",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -11659,9 +11659,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "dmstr/yii2-filemanager-widgets": 15,
+        "dmstr/yii2-filefly-module": 5,
+        "dmstr/yii2-filemanager-widgets": 5,
         "dmstr/yii2-resque-module": 15,
         "dmstr/yii2-widgets2-module": 5,
         "roave/security-advisories": 20
