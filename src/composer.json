@@ -3,8 +3,7 @@
     "description": "phd5 base application",
     "minimum-stability": "RC",
     "require": {
-        "wikimedia/composer-merge-plugin": "~1.4",
-        "pheme/yii2-settings": "^0.7.0"
+        "wikimedia/composer-merge-plugin": "~1.4"
     },
     "extra": {
         "merge-plugin": {
