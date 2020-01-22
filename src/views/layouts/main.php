@@ -18,14 +18,13 @@ use hrzg\widget\widgets\Cell;
 use lo\modules\noty\Wrapper;
 use Yii;
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->title .= ' - '.getenv('APP_TITLE');
-$this->title = (getenv('APP_PAGES_TITLE_PREFIX') ?? '').$this->title;
+$this->title .= ' - ' . getenv('APP_TITLE');
+$this->title = (getenv('APP_PAGES_TITLE_PREFIX') ?? '') . $this->title;
 
 SettingsAsset::register($this);
 
@@ -66,10 +65,10 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 <?php $this->beginBody() ?>
 
 <?php Pjax::begin([
-    'id' => 'main-content',
-    'timeout' => 5000,
-    'linkSelector' => '.frontend-reload',
-]) ?>
+                      'id' => 'main-content',
+                      'timeout' => 5000,
+                      'linkSelector' => '.frontend-reload',
+                  ]) ?>
 
 <?= TwigWidget::widget(['key' => '_beginBody', 'renderEmpty' => false]) ?>
 
@@ -99,29 +98,33 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 
 <!-- User flash messages -->
 <?= Wrapper::widget([
-    'layerClass' => 'lo\modules\noty\layers\Growl',
-    'options' => [
-        'dismissQueue' => true,
-        'location' => 'br',
-        'timeout' => 4000,
-    ],
-]) ?>
+                        'layerClass' => 'lo\modules\noty\layers\Growl',
+                        'options' => [
+                            'dismissQueue' => true,
+                            'location' => 'br',
+                            'timeout' => 4000,
+                        ],
+                    ]) ?>
 
 <?= TwigWidget::widget(['key' => '_endBody', 'renderEmpty' => false]) ?>
 
-<?php if (Yii::$app->user->can('backend_default_index') && Yii::$app->settings->get('backendWidget', 'frontend') === 'toolbar'): ?>
-    <?= Toolbar::widget([
-        'useIframe' => \Yii::$app->settings->getOrSet(
-            'useIframe',
-            false,
-            'backend.toolbar',
-            'boolean'
-        ),
-    ]) ?>
-<?php endif; ?>
+<?php if (Yii::$app->user->can('backend_default_index')): ?>
 
-<?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'modal'): ?>
-    <?= Modal::widget() ?>
+    <?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'toolbar'): ?>
+        <?= Toolbar::widget([
+                                'useIframe' => \Yii::$app->settings->getOrSet(
+                                    'useIframe',
+                                    false,
+                                    'backend.toolbar',
+                                    'boolean'
+                                ),
+                            ]) ?>
+    <?php endif; ?>
+
+    <?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'modal'): ?>
+        <?= Modal::widget() ?>
+    <?php endif; ?>
+
 <?php endif; ?>
 
 <?php $this->endBody() ?>
