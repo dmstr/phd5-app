@@ -25,7 +25,7 @@ VALUES
 INSERT INTO `app_profile` (`user_id`, `name`, `public_email`, `gravatar_email`, `gravatar_id`, `location`, `website`, `bio`, `timezone`)
 VALUES
 	(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
