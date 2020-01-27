@@ -352,16 +352,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.4",
+            "version": "3.133.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6ecd907672784cca89584c7553fa38589c1efcb6"
+                "reference": "cd7bd2fdd159146ef6c7eeb90b73fae4fd11da57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6ecd907672784cca89584c7553fa38589c1efcb6",
-                "reference": "6ecd907672784cca89584c7553fa38589c1efcb6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cd7bd2fdd159146ef6c7eeb90b73fae4fd11da57",
+                "reference": "cd7bd2fdd159146ef6c7eeb90b73fae4fd11da57",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-01-21T19:14:39+00:00"
+            "time": "2020-01-24T19:11:35+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -2445,16 +2445,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "1.1.0-rc4",
+            "version": "1.1.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "3b9955d12ed9a4049e227a75bb0128694f3936c7"
+                "reference": "2587b7c810273219bea74b118042d7b991f72889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/3b9955d12ed9a4049e227a75bb0128694f3936c7",
-                "reference": "3b9955d12ed9a4049e227a75bb0128694f3936c7",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/2587b7c810273219bea74b118042d7b991f72889",
+                "reference": "2587b7c810273219bea74b118042d7b991f72889",
                 "shasum": ""
             },
             "require": {
@@ -2492,7 +2492,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-07-11T09:08:57+00:00"
+            "time": "2020-01-24T12:28:11+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
