@@ -18,7 +18,7 @@ class LanguagesEnCest
     {
         $I->wantTo('ensure that language urls and redirects work');
 
-        $I->amOnPage('/');
+        $I->amOnPage('/site/index');
         $I->seeCurrentUrlEquals('/en/user/login');
 
         $I->amOnPage('/xx');

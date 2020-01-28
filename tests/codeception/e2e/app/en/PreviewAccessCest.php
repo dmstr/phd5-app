@@ -18,7 +18,7 @@ class PreviewAccessCest
     {
         $I->wantTo('ensure that preview access works');
 
-        $I->amOnPage('/');
+        $I->amOnPage('/site/index');
         $I->makeScreenshot('debug-preview-access-login');
 
         $I->amGoingTo('try to login as preview');

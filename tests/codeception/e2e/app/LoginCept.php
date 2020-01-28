@@ -40,7 +40,7 @@ $I->see('filefly','a');
 $I->see('redirects','a');
 
 
-$I->amOnPage('/');
+$I->amOnPage('/site/index');
 $I->expectTo('see user info');
 $I->click('.nav #link-user-menu a');
 #$i->wait(1);
