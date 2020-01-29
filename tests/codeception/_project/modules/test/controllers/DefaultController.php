@@ -1,6 +1,6 @@
 <?php
 
-namespace project\modules\test\controllers;
+namespace testProject\modules\test\controllers;
 
 use yii\web\Controller;
 
