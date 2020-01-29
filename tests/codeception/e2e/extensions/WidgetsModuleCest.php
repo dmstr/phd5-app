@@ -41,18 +41,18 @@ class WidgetsModuleCest
 
         $I->comment('Mouse-over first container');
         $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
-        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-primary', 2);
+        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-primary', 10);
         $I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
 // TODO: fixme
-        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul', 2);
+        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul', 10);
         $I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
-        $I->waitForElementNotVisible('#cell-header .hrzg-widget-container-controls ul', 2);
+        $I->waitForElementNotVisible('#cell-header .hrzg-widget-container-controls ul', 10);
 
         $I->comment('Mouse-over second container');
         $I->moveMouseOver('#cell-container.hrzg-widget-widget-container');
-        $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls .btn-primary', 2);
+        $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls .btn-primary', 10);
         $I->click('#cell-container .hrzg-widget-container-controls .btn-primary');
-        $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls ul', 2);
+        $I->waitForElementVisible('#cell-container .hrzg-widget-container-controls ul', 10);
         $I->click('Content', '#cell-container .hrzg-widget-container-controls ul');
 
         $I->switchToWindow('backend-test');
@@ -61,7 +61,7 @@ class WidgetsModuleCest
 
         $I->amGoingTo('select a widget');
         $I->selectOption('#widgetcontent-widget_template_id', 'Content');
-        $I->waitForElementVisible('#widgetcontent-default_properties_json-container .well', 3);
+        $I->waitForElementVisible('#widgetcontent-default_properties_json-container .well', 10);
 
         $I->wantTo('ensure pre-filled values still exist');
         $I->seeInField('#widgetcontent-route','widgets/test/index');
@@ -69,7 +69,7 @@ class WidgetsModuleCest
 
         $I->wantTo('ensure ckeditor works inside json editor');
         $I->click('Add Paragraph', 'form#widget-create');
-        $I->waitForElementVisible('form .cke', 5);
+        $I->waitForElementVisible('form .cke', 10);
         $I->seeElement('form .cke_contents');
 
         $I->makeScreenshot('widgets-backend-create-1');

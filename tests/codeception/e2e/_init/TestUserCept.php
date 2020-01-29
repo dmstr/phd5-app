@@ -26,7 +26,7 @@ $I->makeScreenshot('success-preview-user');
 $I->amGoingTo('assign permission to preview user');
 $I->click('Assignments');
 
-$I->waitForElementVisible('.selectize-input', 5);
+$I->waitForElementVisible('.selectize-input', 10);
 $I->click('.selectize-input');
 
 $I->waitForElementVisible('[data-value="pages"]', 10);
