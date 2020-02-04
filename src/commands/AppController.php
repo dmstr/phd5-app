@@ -2,11 +2,10 @@
 
 namespace app\commands;
 
-use dmstr\helpers\Metadata;
 use mikehaertl\shellcommand\Command;
+use Yii;
 use yii\console\Controller;
 use yii\helpers\VarDumper;
-use Yii;
 
 /**
  * @link http://www.diemeisterei.de/
@@ -135,5 +134,24 @@ class AppController extends Controller
                 echo $command->getStdErr();
             }
         }
+    }
+
+    public function actionTestMail($to)
+    {
+        $mailer = Yii::$app->mailer;
+
+        $message = $mailer->compose();
+        $message
+            ->setTo($to)
+            ->setSubject('Test-Mail from ' . getenv('APP_NAME'))
+            ->setTextBody(getenv('APP_TITLE') . ' | ' . getenv('HOSTNAME'));
+
+        if ($message->send()) {
+            $this->stdout('Mail sent');
+        } else {
+            $this->stderr('Mail sending failed');
+        }
+
+        $this->stdout(PHP_EOL);
     }
 }
