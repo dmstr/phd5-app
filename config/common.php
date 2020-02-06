@@ -179,6 +179,11 @@ return [
                 'username' => getenv('APP_MAILER_USERNAME'),
                 'password' => getenv('APP_MAILER_PASSWORD'),
             ],
+            'messageConfig' => [
+                'charset' => 'UTF-8',
+                'returnPath' => getenv('APP_MAILER_RETURN_PATH'),
+                'from' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')],
+            ],
         ],
         'queue' => [
             'class' => \yii\queue\redis\Queue::class,
