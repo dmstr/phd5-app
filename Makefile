@@ -31,7 +31,7 @@ endif
 default: help
 
 all:    ##@base shorthand for 'build init up setup open'
-all: init build install up setup browser
+all: init build install up setup open
 all:
 	#
 	# make all
@@ -122,12 +122,17 @@ setup: ##@development run application setup
 	#
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) yii app/setup
 
-browser: ##@development open application web service in browser
+open: ##@development open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(PHP_SERVICE) 80 | sed 's/[0-9.]*://') &>/dev/null
 
+open-mailcatcher: ##@development open development mailcatcher
+	#
+	# Opening application on mapped web-service port
+	#
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port mailcatcher 80 | sed 's/[0-9.]*://') &>/dev/null
 
 test: version build install up
 test: ##@test run tests
@@ -153,7 +158,7 @@ test-bash:	 ##@test run application bash in one-off container
 	#
 	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE)  bash
 
-test-browser: ##@test open application web service in browser
+test-open: ##@test open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
