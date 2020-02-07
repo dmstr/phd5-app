@@ -24,11 +24,11 @@ class PreviewAccessCest
         $I->amGoingTo('try to login as preview');
         $I->login('preview', 'preview1');
 
-        $I->amOnPage('/en');
+        $I->amOnPage('/en/site/index');
 #$I->see('Application installed successfully', 'h2');
         $I->dontSeeHorizontalScrollbars();
 
-        $I->amOnPage('/de');
+        $I->amOnPage('/de/site/index');
         $I->dontSee('.alert');
         $I->dontSee('Sign in');
         $I->canSee('Demo','h1');

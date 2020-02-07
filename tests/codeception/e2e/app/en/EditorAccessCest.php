@@ -25,11 +25,11 @@ class EditorAccessCest
         $I->login('preview', 'preview1');
 
         $I->expect('not to see an inactive widget');
-        $I->amOnPage('/ru');
+        $I->amOnPage('/ru/site/index');
         $I->dontSeeElement('#cell-main .hrzg-widget-widget');
         $I->dontSeeHorizontalScrollbars();
 
-        $I->amOnPage('/de');
+        $I->amOnPage('/de/site/index');
         $I->dontSee('.alert');
         $I->dontSee('Sign in');
         $I->canSee('Demo','h1');
