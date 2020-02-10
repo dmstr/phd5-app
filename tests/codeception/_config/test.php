@@ -30,6 +30,11 @@ return [
     'params' => [
         'backend.iframe.name' => 'backend-test',
     ],
+    'components' => [
+        'user' => [
+            'loginUrl' => '/user/login'
+        ]
+    ],
     'modules' => [
         'test' => [
             'class' => testProject\modules\test\Module::class,
