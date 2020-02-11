@@ -390,7 +390,7 @@ return [
             'enableFlashMessages' => false,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
             'mailParams' => [
-                'fromEmail' => getenv('APP_ADMIN_EMAIL')
+                'fromEmail' => getenv('APP_MAILER_FROM')
             ],
         ],
         'widgets' => [
