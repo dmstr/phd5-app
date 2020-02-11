@@ -24,6 +24,7 @@ class PagesModuleCest
         $I->login('master', 'master1');
         $I->amGoingTo('try to view and create pages');
         $I->amOnPage('/pages');
+        $I->waitForElementVisible('.kv-heading-container');
         $I->see('Nodes', '.kv-heading-container');
         $I->makeScreenshot('success-pages-index');
 
