@@ -24,6 +24,7 @@ $_SERVER['REQUEST_TIME'] = time();
 
 return [
     'language' => 'en',
+    'defaultRoute' => '/site/index',
     'aliases' => [
         '@testProject' => '@root/tests/codeception/_project',
     ],
