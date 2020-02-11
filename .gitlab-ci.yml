@@ -92,7 +92,7 @@ after_script:
     - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
     - docker push ${REGISTRY_PHP_IMAGE}
   only:
-    - release
+    - release-dockerhub
     - tags
 
 
