@@ -101,7 +101,8 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
                         'layerClass' => 'lo\modules\noty\layers\Growl',
                         'options' => [
                             'dismissQueue' => true,
-                            'location' => 'br',
+                            'size' => 'medium',
+                            'location' => Yii::$app->settings->getOrSet('growl.location', 'br', 'frontend', 'string'),
                             'timeout' => 4000,
                         ],
                     ]) ?>
