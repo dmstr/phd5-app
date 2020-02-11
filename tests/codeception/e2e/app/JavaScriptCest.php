@@ -32,10 +32,10 @@ class JavaScriptCest
 
         $I->amGoingTo('show the info button');
         $I->pressKey("body", "h");
-        $I->waitForElementVisible('#phd-info-button',10);
+        $I->waitForElementVisible('#phd-info-button');
         $I->moveMouseOver('#phd-info-button');
         $I->click('#phd-info-button a[data-target="#phd-info-modal"]');
-        $I->waitForElementVisible('#phd-info-modal',10);
+        $I->waitForElementVisible('#phd-info-modal');
         $I->seeElement('#phd-info-modal');
         $I->makeScreenshot('modal');
 

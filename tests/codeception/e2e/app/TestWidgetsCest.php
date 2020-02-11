@@ -41,15 +41,15 @@ class TestWidgetsCest
 
         $I->comment('Mouse-over first container');
         $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
-        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success', 10);
+        $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-success');
         $I->click('#cell-header .hrzg-widget-container-controls .btn-success');
-        $I->waitForElementVisible('.widget-create', 10);
+        $I->waitForElementVisible('.widget-create');
 
 
         $I->amGoingTo('select a widget');
 
         $I->selectOption('#widgetcontent-widget_template_id', 'Content');
-        $I->waitForElementVisible('#widgetcontent-default_properties_json-container .well', 10);
+        $I->waitForElementVisible('#widgetcontent-default_properties_json-container .well');
 
 
         $I->wantTo('ensure pre-filled values still exist');

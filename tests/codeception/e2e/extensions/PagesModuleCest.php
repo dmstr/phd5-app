@@ -30,12 +30,12 @@ class PagesModuleCest
 
         $I->amGoingTo("Check/load the root node of 'en'");
         $I->click('li[data-key="1001"] .kv-node-detail');
-        $I->waitForElementVisible('.kv-detail-container form.form-vertical', 10);
+        $I->waitForElementVisible('.kv-detail-container form.form-vertical');
         $I->makeScreenshot('success-pages-root-node');
 
         $I->amGoingTo("Add a node");
         $I->click('.kv-toolbar-container .kv-create');
-        $I->waitForElementVisible('#tree-name', 10);
+        $I->waitForElementVisible('#tree-name');
         $I->fillField('#tree-name', $uniqId);
         $I->click('Apply');
         $I->waitForText($uniqId, 10, '.kv-tree');

@@ -34,7 +34,7 @@ class UserCreateCest
 
         $I->click('button[type="submit"]');
 
-        $I->waitForText('Success', 10);
+        $I->waitForText('Success');
         $I->seeInFormFields('form', ['User[username]'=>$username]);
 
         $I->pauseExecution();
