@@ -10,12 +10,13 @@
  */
 
 // prepare application languages
+use Da\User\Component\AuthDbManagerComponent;
+use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
 use dmstr\web\AdminLteAsset;
 use hrzg\filefly\components\ImageUrlRule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
 use lajax\translatemanager\services\scanners\ScannerPhpArray;
 use lajax\translatemanager\services\scanners\ScannerPhpFunction;
-use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -34,32 +35,6 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
 }
 
 $boxLayout = '@backend/views/layouts/box';
-
-// custom layout for user module (manage/admin)
-Yii::$container->set(
-    Da\User\Controller\AdminController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\PermissionController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\RoleController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\RuleController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
 
 // Basic configuration, used in web and console applications
 return [
@@ -94,6 +69,25 @@ return [
             'Opera' => false,
             'Vivaldi' => false,
             'IE' => false
+        ]
+    ],
+    'container' => [
+        'definitions' => [
+            AuthDbManagerComponent::class => [
+                'defaultRoles' => ['Default']
+            ],
+            Da\User\Controller\AdminController::class => [
+                'layout' => $boxLayout,
+            ],
+            Da\User\Controller\PermissionController::class => [
+                'layout' => $boxLayout,
+            ],
+            Da\User\Controller\RoleController::class => [
+                'layout' => $boxLayout,
+            ],
+            Da\User\Controller\RuleController::class => [
+                'layout' => $boxLayout,
+            ]
         ]
     ],
     'components' => [
