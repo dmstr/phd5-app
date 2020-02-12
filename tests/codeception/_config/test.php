@@ -22,6 +22,7 @@ $_SERVER['REQUEST_TIME'] = time();
     }
 );
 
+// For e2e tests, also for app integration tests in projects
 return [
     'language' => 'en',
     'defaultRoute' => APP_TYPE == 'web' ? '/site/index' : 'help',
