@@ -241,9 +241,10 @@ return [
                             $preset = trim($preset, "/");
                             $baseUrl = trim(Yii::$app->settings->get('imgBaseUrl', 'app.frontend'), "/");
                             $prefix = trim(Yii::$app->settings->get('imgHostPrefix', 'app.frontend'), "/");
+                            $imageSourceFull = $imageSource . Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
 
                             // build remote URL
-                            $remoteUrl = $prefix.'/'.$imageSource.Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
+                            $remoteUrl = implode('/', array_filter([$prefix, $imageSourceFull]));
 
                             // add HMAC sign key to preset when using imageproxy, see also https://github.com/willnorris/imageproxy#examples
                             if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
