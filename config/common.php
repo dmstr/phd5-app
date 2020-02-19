@@ -74,7 +74,8 @@ return [
     'container' => [
         'definitions' => [
             AuthDbManagerComponent::class => [
-                'defaultRoles' => ['Default']
+                'defaultRoles' => ['Default'],
+                'cache' => 'cache'
             ],
             Da\User\Controller\AdminController::class => [
                 'layout' => $boxLayout,
@@ -99,11 +100,6 @@ return [
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
             'basePath' => '@app/../web/assets/',
-        ],
-        'authManager' => [
-            'class' => \yii\rbac\DbManager::class,
-            'defaultRoles' => ['Default'],
-            'cache' => 'cache'
         ],
         'cache' =>
             [
