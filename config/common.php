@@ -183,7 +183,8 @@ return [
         ],
         'redis' => [
             'class' => \yii\redis\Connection::class,
-            'hostname' => 'redis',
+            'hostname' => getenv('REDIS_PORT_6379_TCP_ADDR'),
+            'port' => getenv('REDIS_PORT_6379_TCP_PORT'),
         ],
         'session' => [
             'class' => \yii\web\DbSession::class
