@@ -9,7 +9,7 @@ $I->wantTo('ensure that login works');
 $I->amGoingTo('try to login with empty credentials');
 $I->login('', '', false);
 $I->expectTo('see validations errors');
-$I->see('Login cannot be blank.');
+$I->waitForText('Login cannot be blank.');
 $I->see('Password cannot be blank.');
 
 $I->amGoingTo('try to login with wrong credentials');

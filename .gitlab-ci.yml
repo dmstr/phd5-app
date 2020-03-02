@@ -70,7 +70,6 @@ after_script:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - export PHP_ENABLE_XDEBUG=1
     - make test-coverage
   only:
     - coverage

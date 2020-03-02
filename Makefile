@@ -142,7 +142,7 @@ test: ##@test run tests
 	$(DOCKER_COMPOSE) logs $(TESTER_SERVICE) > _host-volumes/tests-log/tester.log
 
 test-coverage: ##@test run tests with code coverage
-	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up -d
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) yii app/setup
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
@@ -157,6 +157,12 @@ test-bash:	 ##@test run application bash in one-off container
 	# Starting application bash
 	#
 	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE)  bash
+
+test-cli:	 ##@test run application test bash in one-off container
+	#
+	# Starting application bash
+	#
+	$(DOCKER_COMPOSE) run --rm -v $(PWD)/vendor-dev:/app/vendor $(TESTER_SERVICE) bash
 
 test-open: ##@test open application web service in browser
 	#

@@ -27,11 +27,12 @@ class E2eTester extends \Codeception\Actor
      */
     public function login($username, $password, $waitForReload = true){
         $this->amOnPage('/user/security/login');
+        $this->waitForElementVisible('#LoginForm');
         $this->fillField('input[name="LoginForm[login]"]', $username);
         $this->fillField('input[name="LoginForm[password]"]', $password);
         $this->click('#LoginForm button');
         if ($waitForReload) {
-            $this->waitForElementNotVisible('#login-form');
+            $this->waitForElementNotVisible('#LoginForm', 30);
             // workaround for failing login, probably caused by "smart-wait", see also https://github.com/Codeception/Codeception/pull/4389/files
             $this->wait(0.1);
         }
