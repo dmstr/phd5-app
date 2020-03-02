@@ -29,9 +29,6 @@ COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
 
-# Tests source-code for integration tests in derived images
-COPY ./tests /app/tests
-
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
@@ -53,3 +50,6 @@ RUN crontab config/crontab
 
 # export container environment for cronjobs on container start
 CMD supervisord -c /etc/supervisor/supervisord.conf
+
+# Tests source-code for integration tests in derived images
+COPY ./tests /app/tests

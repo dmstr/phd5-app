@@ -149,9 +149,8 @@ test-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 
 test-init: ##@test initialize test-environment
-	cp -n .env-dist .env &2>/dev/null
-	mkdir -p _log/codeception && chmod 777 _log/codeception
-	mkdir -p _log/lint && chmod 777 _log/lint
+	mkdir -p _host-volumes/tests-log/codeception/_log && chmod 777 _host-volumes/tests-log/codeception/_log
+	mkdir -p _host-volumes/tests-log/lint && chmod 777 _host-volumes/tests-log/lint
 
 test-bash:	 ##@test run application bash in one-off container
 	#
