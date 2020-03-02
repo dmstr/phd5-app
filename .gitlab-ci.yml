@@ -78,7 +78,7 @@ after_script:
     when: always
     expire_in: 4 weeks
     paths:
-      - tests/_log
+      - _host-volumes/tests-log
 
 
 .release_tmpl: &release_tmpl_ref
