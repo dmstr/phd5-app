@@ -141,6 +141,7 @@ test: ##@test run tests
 	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > _host-volumes/tests-log/php.log
 	$(DOCKER_COMPOSE) logs $(TESTER_SERVICE) > _host-volumes/tests-log/tester.log
 
+test-coverage: version build install up
 test-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) up -d
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) yii app/setup
