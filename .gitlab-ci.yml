@@ -70,6 +70,7 @@ after_script:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - make test-init
     - make test-coverage
   only:
     - coverage
