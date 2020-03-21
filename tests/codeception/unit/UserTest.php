@@ -4,6 +4,9 @@ namespace tests\codeception\unit\models;
 
 use Da\User\Model\User;
 
+/**
+ * @group user-module
+ */
 class UserTest extends \Codeception\Test\Unit
 {
     public function testUserLoginLogout()

@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group frontend
  */
 class LoginFunctionalCest
 {

@@ -1,6 +1,8 @@
 <?php
 /**
  * @group mandatory
+ * @group frontend
+ * @group mobile
  */
 class MobileCest
 {

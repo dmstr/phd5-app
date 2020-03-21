@@ -1,6 +1,7 @@
 <?php
 /**
  * @group optional
+ * @group frontend
  */
 class LogoutFrontendCest
 {

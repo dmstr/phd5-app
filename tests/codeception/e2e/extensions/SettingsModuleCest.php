@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group settings-module
  */
 class SettingsModuleCest
 {

@@ -1,7 +1,10 @@
 <?php
 /**
  * @group mandatory
- */class SignupCest
+ * @group user-module
+ */
+
+class SignupCest
 {
     public function _before(E2eTester $I)
     {

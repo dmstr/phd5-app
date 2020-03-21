@@ -2,6 +2,7 @@
 /**
  * @group mandatory
  * @group base-test-setup
+ * @group backend
  */
 class EditorAccessCest
 {

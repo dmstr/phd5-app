@@ -10,6 +10,7 @@ use E2eTester;
  * @author Elias Luhr <e.luhr@herzogkommunikation.de>
  *
  * @group mandatory
+ * @group redirects-module
  */
 class RedirectsCest
 {

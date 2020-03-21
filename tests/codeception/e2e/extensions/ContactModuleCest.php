@@ -4,6 +4,7 @@ use E2eTester;
 
 /**
  * @group mandatory
+ * @group contact-module
  */
 class ContactModuleCest
 {

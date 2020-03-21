@@ -1,6 +1,8 @@
 <?php
 /**
  * @group optional
+ * @group frontend
+ * @group widgets-module
  */
 class TestWidgetsCest
 {

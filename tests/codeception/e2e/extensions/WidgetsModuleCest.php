@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group widgets-module
  */
 class WidgetsModuleCest
 {

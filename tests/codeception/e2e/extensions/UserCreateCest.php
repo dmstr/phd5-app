@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group user-module
  */
 use Faker\Factory;
 

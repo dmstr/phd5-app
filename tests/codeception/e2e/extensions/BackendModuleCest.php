@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group backend-module
  */
 class BackendModuleCest
 {

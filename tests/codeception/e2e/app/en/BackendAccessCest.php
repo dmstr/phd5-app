@@ -2,6 +2,7 @@
 /**
  * @group mandatory
  * @group long-running
+ * @group backend
  */
 class BackendAccessCest
 {

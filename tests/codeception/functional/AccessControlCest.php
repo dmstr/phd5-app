@@ -1,6 +1,7 @@
 <?php
 /**
  * @group mandatory
+ * @group backend
  */
 class AccessControlCest
 {
@@ -13,6 +14,8 @@ class AccessControlCest
     }
 
     /**
+     * Non-public routes
+     *
      * @example ["/backend"]
      * @example ["/backend/default/view-config"]
      * @example ["/prototype"]
