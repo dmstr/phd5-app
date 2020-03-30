@@ -258,8 +258,8 @@ return [
                             }
                             return implode('/', array_filter([$baseUrl,$preset,$remoteUrl]));
                         },
-                        't' => function ($category, $message) {
-                            return Yii::t($category, $message);
+                        't' => function ($category, $message, $params = [], $language = null) {
+                            return Yii::t($category, $message, $params, $language);
                         },
                     ],
                     'uses' => [
