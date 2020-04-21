@@ -1,6 +1,7 @@
 <?php
 /**
  * @group optional
+ * @group wip
  * @group frontend
  * @group widgets-module
  */

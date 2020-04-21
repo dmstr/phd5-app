@@ -4,6 +4,7 @@
  * Class ErrorCest
  * @package fitter
  * @group optional
+ * @group wip
  */
 class ErrorCest
 {
