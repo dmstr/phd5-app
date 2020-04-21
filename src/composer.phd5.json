@@ -7,7 +7,7 @@
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^1.2.2",
-        "dmstr/yii2-contact-module": "^0.4.0",
+        "dmstr/yii2-contact-module": "^1.0",
         "dmstr/yii2-cookie-consent": "^1.4.3",
         "dmstr/yii2-db": "^1.2.1",
         "dmstr/yii2-helpers": ">=0.4.16",
@@ -48,5 +48,11 @@
         "bower-asset/json-editor": "*",
         "bedezign/yii2-audit": "~1.0.12 || >=1.1.2",
         "fxp/composer-asset-plugin": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }

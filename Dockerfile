@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.3-fpm-6.0-rc3-nginx
+FROM dmstr/php-yii2:7.4-fpm-7.0-alpha1-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
@@ -41,6 +41,7 @@ VOLUME /app/runtime
 VOLUME /app/web/assets
 
 # Build assets (skipped on first build in dist-upgrade)
+RUN ln -s /app/vendor/bower-asset /app/vendor/bower
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         APP_NO_CACHE=1 APP_LANGUAGES=en APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
     fi
