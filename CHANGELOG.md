@@ -2,6 +2,11 @@
 
 ### dev
 
+- switched to PHP 7.4
+- switched to asset-packagist by default
+
+### 5.4.0
+
 - added `APP_PAGES_TITLE_PREFIX`
 - removed `cinghie/yii2-cookie-consent`
 - removed `dmstr/yii2-contact-module`

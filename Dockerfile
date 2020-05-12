@@ -41,6 +41,8 @@ VOLUME /app/runtime
 VOLUME /app/web/assets
 
 # Build assets (skipped on first build in dist-upgrade)
+RUN ln -s /app/vendor/bower-asset /app/vendor/bower \
+ && ln -s /app/vendor/npm-asset /app/vendor/npm
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         APP_NO_CACHE=1 APP_LANGUAGES=en APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
     fi
