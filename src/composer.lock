@@ -2552,16 +2552,16 @@
         },
         {
             "name": "dmstr/yii2-helpers",
-            "version": "0.4.17",
+            "version": "0.4.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-helpers.git",
-                "reference": "a47519426d06536235cea7e4be11739e83f68146"
+                "reference": "2a1641227f9efd7bcda5dc8ff6bdb5bb6568ace8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/a47519426d06536235cea7e4be11739e83f68146",
-                "reference": "a47519426d06536235cea7e4be11739e83f68146",
+                "url": "https://api.github.com/repos/dmstr/yii2-helpers/zipball/2a1641227f9efd7bcda5dc8ff6bdb5bb6568ace8",
+                "reference": "2a1641227f9efd7bcda5dc8ff6bdb5bb6568ace8",
                 "shasum": ""
             },
             "require": {
@@ -2593,7 +2593,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2019-11-13T10:54:34+00:00"
+            "time": "2020-06-24T12:35:07+00:00"
         },
         {
             "name": "dmstr/yii2-json-editor",
