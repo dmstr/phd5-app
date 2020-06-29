@@ -322,6 +322,9 @@ return [
                 'runtime' => 'fsRuntime',
             ],
         ],
+        'gridview' => [
+            'class' => \kartik\grid\Module::class
+        ],
         'noty' => [
             'class' => \lo\modules\noty\Module::class,
         ],
