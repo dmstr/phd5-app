@@ -2032,16 +2032,16 @@
         },
         {
             "name": "dmstr/yii2-active-record-permissions",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-active-record-permissions.git",
-                "reference": "efcf15e15e4df03911d72ae57a6680975495e353"
+                "reference": "30b189537bb60141ede79fbb597b66d8947772e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-active-record-permissions/zipball/efcf15e15e4df03911d72ae57a6680975495e353",
-                "reference": "efcf15e15e4df03911d72ae57a6680975495e353",
+                "url": "https://api.github.com/repos/dmstr/yii2-active-record-permissions/zipball/30b189537bb60141ede79fbb597b66d8947772e0",
+                "reference": "30b189537bb60141ede79fbb597b66d8947772e0",
                 "shasum": ""
             },
             "require": {
@@ -2072,7 +2072,7 @@
             "keywords": [
                 "_____"
             ],
-            "time": "2020-05-11T14:14:57+00:00"
+            "time": "2020-06-29T10:02:20+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
@@ -2730,22 +2730,22 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "074582d474a37f6165ee6629168b0a2507cd3a87"
+                "reference": "35e7aca4439d96b6d7c5acbe486247b35d301762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/074582d474a37f6165ee6629168b0a2507cd3a87",
-                "reference": "074582d474a37f6165ee6629168b0a2507cd3a87",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/35e7aca4439d96b6d7c5acbe486247b35d301762",
+                "reference": "35e7aca4439d96b6d7c5acbe486247b35d301762",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-translateable-behavior": "^1.1.0",
                 "bedezign/yii2-audit": "^1.1",
-                "dmstr/yii2-active-record-permissions": "^1.0.0",
+                "dmstr/yii2-active-record-permissions": "^1.1.0",
                 "dmstr/yii2-backend-module": "^2.0.0",
                 "dmstr/yii2-json-editor": "^1.0.0",
                 "dmstr/yii2-web": "^0.4.0",
@@ -2791,7 +2791,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2020-06-29T08:43:51+00:00"
+            "time": "2020-06-29T11:05:01+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
