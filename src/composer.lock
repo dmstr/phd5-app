@@ -2178,16 +2178,16 @@
         },
         {
             "name": "dmstr/yii2-backend-module",
-            "version": "1.2.2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-backend-module.git",
-                "reference": "f19e6aa18af2d5f45a3dcd54678203ed019ee641"
+                "reference": "8587a69ac36ded611c162f5f94f0bb3c785828bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/f19e6aa18af2d5f45a3dcd54678203ed019ee641",
-                "reference": "f19e6aa18af2d5f45a3dcd54678203ed019ee641",
+                "url": "https://api.github.com/repos/dmstr/yii2-backend-module/zipball/8587a69ac36ded611c162f5f94f0bb3c785828bf",
+                "reference": "8587a69ac36ded611c162f5f94f0bb3c785828bf",
                 "shasum": ""
             },
             "require": {
@@ -2228,7 +2228,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2020-02-11T13:25:21+00:00"
+            "time": "2020-06-10T06:20:35+00:00"
         },
         {
             "name": "dmstr/yii2-bootstrap",
@@ -2273,24 +2273,23 @@
         },
         {
             "name": "dmstr/yii2-contact-module",
-            "version": "0.4.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-contact-module.git",
-                "reference": "419662701ec970d5616070cce4f7903239fd3490"
+                "reference": "df4936fce43d2c71f62b5888df13107fe25d4b8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/419662701ec970d5616070cce4f7903239fd3490",
-                "reference": "419662701ec970d5616070cce4f7903239fd3490",
+                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/df4936fce43d2c71f62b5888df13107fe25d4b8d",
+                "reference": "df4936fce43d2c71f62b5888df13107fe25d4b8d",
                 "shasum": ""
             },
             "require": {
-                "dmstr/yii2-json-editor": "^0.3.5",
+                "dmstr/yii2-json-editor": "^1.0.0",
                 "dmstr/yii2-prototype-module": ">=0.5.4",
                 "justinrainbow/json-schema": "^5.2.0",
                 "kartik-v/yii2-export": "^1.2",
-                "pheme/yii2-settings": "^0.7.0",
                 "yiisoft/yii2": "^2.0.11"
             },
             "type": "yii2-extension",
@@ -2314,7 +2313,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2020-01-23T07:40:18+00:00"
+            "time": "2020-06-29T08:56:20+00:00"
         },
         {
             "name": "dmstr/yii2-cookie-button",
@@ -2646,21 +2645,25 @@
         },
         {
             "name": "dmstr/yii2-json-editor",
-            "version": "0.3.5",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-json-editor.git",
-                "reference": "24e41099dd4d650d6023f7be945d76e1534565e3"
+                "reference": "9cb7f63cc80801ee206035e1ae77343943df914e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/24e41099dd4d650d6023f7be945d76e1534565e3",
-                "reference": "24e41099dd4d650d6023f7be945d76e1534565e3",
+                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/9cb7f63cc80801ee206035e1ae77343943df914e",
+                "reference": "9cb7f63cc80801ee206035e1ae77343943df914e",
                 "shasum": ""
             },
             "require": {
                 "npm-asset/json-editor--json-editor": "^1.3",
                 "yiisoft/yii2": "~2.0.0"
+            },
+            "suggest": {
+                "2amigos/yii2-ckeditor-widget": "Recommended assets for CKEditor plugin in json-editor",
+                "2amigos/yii2-selectize-widget": "Recommended assets for selectize plugin in json-editor"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -2686,7 +2689,7 @@
                 "json-editor",
                 "yii2"
             ],
-            "time": "2019-04-03T12:14:46+00:00"
+            "time": "2020-06-05T13:15:19+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
@@ -2727,24 +2730,24 @@
         },
         {
             "name": "dmstr/yii2-pages-module",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-pages-module.git",
-                "reference": "b6e379761ca55796a68e396b63afb4af5d80ea07"
+                "reference": "074582d474a37f6165ee6629168b0a2507cd3a87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/b6e379761ca55796a68e396b63afb4af5d80ea07",
-                "reference": "b6e379761ca55796a68e396b63afb4af5d80ea07",
+                "url": "https://api.github.com/repos/dmstr/yii2-pages-module/zipball/074582d474a37f6165ee6629168b0a2507cd3a87",
+                "reference": "074582d474a37f6165ee6629168b0a2507cd3a87",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-translateable-behavior": "^1.1.0",
                 "bedezign/yii2-audit": "^1.1",
-                "dmstr/yii2-backend-module": "^1.0.0-beta12",
-                "dmstr/yii2-db": "^1.0.0",
-                "dmstr/yii2-json-editor": "^0.3.5",
+                "dmstr/yii2-active-record-permissions": "^1.0.0",
+                "dmstr/yii2-backend-module": "^2.0.0",
+                "dmstr/yii2-json-editor": "^1.0.0",
                 "dmstr/yii2-web": "^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "justinrainbow/json-schema": "^5.2.0",
@@ -2753,7 +2756,7 @@
                 "mikehaertl/php-shellcommand": "^1.2.4",
                 "pheme/yii2-settings": "^0.5.0 || ^0.7.0",
                 "rmrevin/yii2-fontawesome": "~2.9",
-                "yiisoft/yii2": "^2.0.13"
+                "yiisoft/yii2": "*"
             },
             "require-dev": {
                 "codeception/codeception": "^2.2"
@@ -2788,7 +2791,7 @@
                 "navigation",
                 "yii2"
             ],
-            "time": "2020-01-22T15:09:33+00:00"
+            "time": "2020-06-29T08:43:51+00:00"
         },
         {
             "name": "dmstr/yii2-prototype-module",
@@ -2842,21 +2845,21 @@
         },
         {
             "name": "dmstr/yii2-publication-module",
-            "version": "0.5.3",
+            "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-publication-module.git",
-                "reference": "55a0c4044d48b76a69e8ef1c303220af1b56e14f"
+                "reference": "292cd97c5552ec8c53f0a594f832984444e68c9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/55a0c4044d48b76a69e8ef1c303220af1b56e14f",
-                "reference": "55a0c4044d48b76a69e8ef1c303220af1b56e14f",
+                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/292cd97c5552ec8c53f0a594f832984444e68c9b",
+                "reference": "292cd97c5552ec8c53f0a594f832984444e68c9b",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-translateable-behavior": "^1.0.4",
-                "dmstr/yii2-json-editor": "^0.3.5",
+                "dmstr/yii2-json-editor": "^1.0.0",
                 "dmstr/yii2-widgets2-module": "^2.0.0",
                 "insolita/yii2-adminlte-widgets": "~1.1",
                 "kartik-v/yii2-widget-select2": "^2",
@@ -2885,7 +2888,7 @@
                 "publication",
                 "yii2"
             ],
-            "time": "2019-12-11T14:28:51+00:00"
+            "time": "2020-06-16T17:56:48+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -3018,16 +3021,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.1.0-rc3",
+            "version": "2.2.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "f688678061808067d774c2d7b2cc3ee8a1b1376a"
+                "reference": "0f0a69aeb43321dbe61eefeae402cccbd927a013"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/f688678061808067d774c2d7b2cc3ee8a1b1376a",
-                "reference": "f688678061808067d774c2d7b2cc3ee8a1b1376a",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/0f0a69aeb43321dbe61eefeae402cccbd927a013",
+                "reference": "0f0a69aeb43321dbe61eefeae402cccbd927a013",
                 "shasum": ""
             },
             "require": {
@@ -3037,7 +3040,7 @@
                 "devgroup/yii2-jsoneditor": "^1.1.0",
                 "dmstr/yii2-active-record-permissions": "^1.0.0",
                 "dmstr/yii2-ajax-button": "^1.0",
-                "dmstr/yii2-json-editor": "^0.3.5",
+                "dmstr/yii2-json-editor": "^1.0.0",
                 "dmstr/yii2-web": "^0.3.1 || ^0.4.0",
                 "insolita/yii2-adminlte-widgets": "^1.1.4",
                 "mikehaertl/php-shellcommand": "^1.2.4",
@@ -3070,7 +3073,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2020-05-20T08:55:05+00:00"
+            "time": "2020-06-16T17:58:20+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -12149,6 +12152,7 @@
     "stability-flags": {
         "dmstr/yii2-filefly-module": 5,
         "dmstr/yii2-filemanager-widgets": 5,
+        "dmstr/yii2-publication-module": 5,
         "dmstr/yii2-resque-module": 15,
         "dmstr/yii2-widgets2-module": 5,
         "roave/security-advisories": 20
