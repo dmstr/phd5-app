@@ -6,15 +6,7 @@
  */
 class BackendLinksCest
 {
-    public function _before(FunctionalTester $I)
-    {
-    }
-
-    public function _after(FunctionalTester $I)
-    {
-    }
-
-    // tests
+       // tests
     public function testBackendLinks(FunctionalTester $I)
     {
         $I->wantTo('Click backend links');

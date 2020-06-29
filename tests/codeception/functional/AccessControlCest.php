@@ -5,19 +5,11 @@
  */
 class AccessControlCest
 {
-    public function _before(FunctionalTester $I)
-    {
-    }
-
-    public function _after(FunctionalTester $I)
-    {
-    }
-
     /**
      * Non-public routes
      *
      * @example ["/backend"]
-     * @example ["/backend/default/view-config"]
+     * @example ["/backend/config/view"]
      * @example ["/prototype"]
      * @example ["/prototype/html"]
      * @example ["/prototype/less"]

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @group mandatory
  * @group long-running
@@ -6,14 +7,6 @@
  */
 class BackendAccessCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
-
-    public function _after(E2eTester $I)
-    {
-    }
-
     // tests
     public function testBackendAccess(E2eTester $I)
     {
@@ -35,7 +28,7 @@ class BackendAccessCest
         $I->amOnPage('/backend');
         $I->makeScreenshot('backend-dashboard');
 
-        $I->amOnPage('/backend/default/view-config');
+        $I->amOnPage('/backend/config/view');
         $I->see('Components', 'li');
         $I->see('Modules', 'li');
         $I->makeScreenshot('backend-view-config');
