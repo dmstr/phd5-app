@@ -48,6 +48,9 @@ APP_ASSET_FORCE_PUBLISH=0
 # Url manager settings
 APP_PRETTY_URLS=1
 
+# Default login url. For anonymous login use /security/login
+APP_LOGIN_URL=
+
 # Mailer configuration
 APP_MAILER_HOST=mailcatcher
 APP_MAILER_USERNAME=smtp-user@mailserver.local

@@ -195,7 +195,9 @@ return [
         'user' => [
             'class' => \dmstr\web\User::class,
             'enableAutoLogin' => true,
-            'loginUrl' => ['/user/security/login'],
+            'loginUrl' => [
+                getenv('APP_LOGIN_URL') ?: '/user/security/login'
+            ],
             'identityClass' => Da\User\Model\User::class,
             'rootUsers' => ['admin'],
         ],
