@@ -13,19 +13,27 @@
             ]
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "config": {
         "vendor-dir": "./../vendor",
         "preferred-install": {
             "dmstr/*": "source",
+            "dmstr-forks/*": "source",
             "hrzg/*": "source",
             "schmunk42/*": "source",
             "dektrium/yii2-rbac": "source",
             "*": "auto"
         },
         "fxp-asset": {
+            "enabled": false,
             "installer-paths": {
-                "npm-asset-library": "../vendor/npm",
-                "bower-asset-library": "../vendor/bower"
+                "npm-asset-library": "../vendor/npm-asset",
+                "bower-asset-library": "../vendor/bower-asset"
             },
             "vcs-driver-options": {
                 "github-no-api": true
