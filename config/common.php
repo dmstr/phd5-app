@@ -251,12 +251,12 @@ return [
                             if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
                                 $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
                                 $preset .= ',s' . strtr(
-                                    base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
-                                    '/+',
-                                    '_-'
+                                        base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
+                                        '/+',
+                                        '_-'
                                     );
                             }
-                            return implode('/', array_filter([$baseUrl,$preset,$remoteUrl]));
+                            return implode('/', array_filter([$baseUrl, $preset, $remoteUrl]));
                         },
                         't' => function ($category, $message, $params = [], $language = null) {
                             return Yii::t($category, $message, $params, $language);
@@ -276,14 +276,21 @@ return [
             'layout' => $boxLayout,
             'panels' => [
                 'audit/trail' => [
-                    'class' => \bedezign\yii2\audit\panels\TrailPanel::class
+                    'class' => \bedezign\yii2\audit\panels\TrailPanel::class,
+                    'maxAge' => null,
                 ],
                 'audit/mail' => [
-                    'class' => \bedezign\yii2\audit\panels\MailPanel::class
+                    'class' => \bedezign\yii2\audit\panels\MailPanel::class,
+                    'maxAge' => null,
                 ],
                 // Links the extra error reporting functions (`exception()` and `errorMessage()`)
                 'audit/error' => [
-                    'class' => \bedezign\yii2\audit\panels\ErrorPanel::class
+                    'class' => \bedezign\yii2\audit\panels\ErrorPanel::class,
+                    'maxAge' => 30,
+                ],
+                'audit/extra' => [
+                    'class' => \bedezign\yii2\audit\panels\ExtraDataPanel::class,
+                    'maxAge' => 30,
                 ],
                 // see https://github.com/bedezign/yii2-audit for detailed config
             ],
