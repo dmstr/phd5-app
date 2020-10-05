@@ -1,10 +1,11 @@
 # Changelog
 
-### dev
+### 5.4.0-dev
 
 - added `APP_PAGES_TITLE_PREFIX`
 - removed `cinghie/yii2-cookie-consent`
 - removed `dmstr/yii2-contact-module`
+- changed default vendor-asset paths to `bower-asset` & `npm-asset`
 
 ### 5.3.0
 

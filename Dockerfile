@@ -28,6 +28,7 @@ COPY ./web /app/web/
 COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
+RUN ln -s ./vendor/bower-assets ./vendor/bower
 
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
