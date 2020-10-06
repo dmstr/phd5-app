@@ -356,16 +356,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.1",
+            "version": "3.158.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "55ae8bdf2eb2f9774193fa79c6fc436835c42db4"
+                "reference": "b80957465d94c127254e36061dd3d0c3ccc94cc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/55ae8bdf2eb2f9774193fa79c6fc436835c42db4",
-                "reference": "55ae8bdf2eb2f9774193fa79c6fc436835c42db4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b80957465d94c127254e36061dd3d0c3ccc94cc1",
+                "reference": "b80957465d94c127254e36061dd3d0c3ccc94cc1",
                 "shasum": ""
             },
             "require": {
@@ -437,7 +437,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-10-02T18:16:40+00:00"
+            "time": "2020-10-05T18:13:27+00:00"
         },
         {
             "name": "bedezign/yii2-audit",
@@ -996,7 +996,7 @@
             "version": "v0.12.6",
             "source": {
                 "type": "git",
-                "url": "git@github.com:selectize/selectize.js.git",
+                "url": "https://github.com/selectize/selectize.js.git",
                 "reference": "eb0fca364f9bd6864ae197ea58c853f2717052a9"
             },
             "dist": {
@@ -2111,16 +2111,16 @@
         },
         {
             "name": "dmstr/yii2-json-editor",
-            "version": "1.2.5",
+            "version": "1.3.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-json-editor.git",
-                "reference": "0f655395c3988249dc85b09536996be93e1da9c9"
+                "reference": "1a3427d4c85ee24a252b37bce775eeb9e9c2a8fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/0f655395c3988249dc85b09536996be93e1da9c9",
-                "reference": "0f655395c3988249dc85b09536996be93e1da9c9",
+                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/1a3427d4c85ee24a252b37bce775eeb9e9c2a8fc",
+                "reference": "1a3427d4c85ee24a252b37bce775eeb9e9c2a8fc",
                 "shasum": ""
             },
             "require": {
@@ -2155,7 +2155,7 @@
                 "json-editor",
                 "yii2"
             ],
-            "time": "2020-10-01T13:28:36+00:00"
+            "time": "2020-10-06T09:42:11+00:00"
         },
         {
             "name": "dmstr/yii2-mermaid-asset",
@@ -5491,12 +5491,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e859317fce42b1ec2d42b204285beaba541e8dbf"
+                "reference": "107aa9daab3521a0d28f868ff8dc75db546f7ee3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e859317fce42b1ec2d42b204285beaba541e8dbf",
-                "reference": "e859317fce42b1ec2d42b204285beaba541e8dbf",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/107aa9daab3521a0d28f868ff8dc75db546f7ee3",
+                "reference": "107aa9daab3521a0d28f868ff8dc75db546f7ee3",
                 "shasum": ""
             },
             "conflict": {
@@ -5556,7 +5556,7 @@
                 "ezsystems/ezplatform-kernel": ">=1,<1.0.2.1",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": ">=5.3,<5.3.12.1|>=5.4,<5.4.14.2|>=6,<6.7.9.1|>=6.8,<6.13.6.3|>=7,<7.2.4.1|>=7.3,<7.3.2.1|>=7.5,<7.5.7.1",
-                "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.6|>=5.4,<5.4.14.1|>=2011,<2017.12.7.2|>=2018.6,<2018.6.1.4|>=2018.9,<2018.9.1.3|>=2019.3,<2019.3.4.2",
+                "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.6|>=5.4,<5.4.14.2|>=2011,<2017.12.7.3|>=2018.6,<2018.6.1.4|>=2018.9,<2018.9.1.3|>=2019.3,<2019.3.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
                 "ezyang/htmlpurifier": "<4.1.1",
@@ -5780,7 +5780,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-10-02T17:02:13+00:00"
+            "time": "2020-10-05T16:02:42+00:00"
         },
         {
             "name": "sabre/dav",
@@ -11452,6 +11452,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "dmstr/yii2-db": 5,
+        "dmstr/yii2-json-editor": 10,
         "dmstr/yii2-filefly-module": 5,
         "dmstr/yii2-filemanager-widgets": 5,
         "dmstr/yii2-publication-module": 5,

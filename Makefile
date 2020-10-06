@@ -37,6 +37,7 @@ all:
 	# make all
 	# Done.
 
+dev: up setup browser
 
 build: ##@base build images in stack
 	#
@@ -122,7 +123,8 @@ setup: ##@development run application setup
 	#
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) yii app/setup
 
-open: ##@development open application web service in browser
+open: browser ##@development alias for: browser
+browser: ##@development open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
