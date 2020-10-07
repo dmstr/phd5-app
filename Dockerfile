@@ -29,6 +29,8 @@ COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
 RUN ln -s ./vendor/bower-assets ./vendor/bower
+# create bc link if not exists
+RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
