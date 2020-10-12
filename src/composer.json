@@ -1,7 +1,8 @@
 {
     "name": "dmstr/phd5-app",
     "description": "phd5 base application",
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
+    "prefer-stable": true,
     "require": {
         "wikimedia/composer-merge-plugin": "~1.4"
     },
@@ -13,12 +14,6 @@
             ]
         }
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "config": {
         "vendor-dir": "./../vendor",
         "preferred-install": {
@@ -30,7 +25,7 @@
             "*": "auto"
         },
         "fxp-asset": {
-            "enabled": false,
+            "enabled": true,
             "installer-paths": {
                 "npm-asset-library": "../vendor/npm-asset",
                 "bower-asset-library": "../vendor/bower-asset"

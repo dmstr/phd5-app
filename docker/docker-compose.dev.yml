@@ -18,6 +18,7 @@ services:
       # For host-volume development (permissions)
       # For composer usage in container
       - GITHUB_API_TOKEN
+      - COMPOSER_MEMORY_LIMIT=2G
       - ENV_LOCAL_FILE=local.env
       - APP_ADMIN_PASSWORD=admin1
       - APP_ADMIN_EMAIL=admin@local.develop
