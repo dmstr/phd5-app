@@ -12,6 +12,7 @@
 - default value for `APP_ADMIN_EMAIL` removed, must be set in project
 - image startup command has been changed from `forego` to `supervisord`
 - update namespaces for `RbacMigration`, which has been extracted into separate package `dmstr/yii2-rbac-migration`
+- make sure to assign `FileflyDefault` to `Editor` and `FileflyAdmin` to `Master`
 
 ### 5.2 to 5.3
 
