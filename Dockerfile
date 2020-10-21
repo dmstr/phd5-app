@@ -28,8 +28,8 @@ COPY ./web /app/web/
 COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
-RUN ln -s ./vendor/bower-asset ./vendor/bower \
- && ln -s ./vendor/npm-asset ./vendor/npm
+RUN ln -s bower-asset /app/vendor/bower \
+ && ln -s npm-asset /app/vendor/npm
 # create bc link if not exists
 RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 
