@@ -2,7 +2,7 @@
 
 ### 5.3 to 5.4
 
-- set `ENV COMPOSER=/app/composer.json` in project `Dockerfile`
+- set `ENV COMPOSER=/app/composer.json` or `ENV COMPOSER=/app/project/composer.json`  in project `Dockerfile`
 - adjust merge path `"src/composer.phd5.json"` in project `composer.json`
 - adjust config path `src/config/` to `config/` eg. in tests
 - register empty `register_shutdown_function` for unit and functional tests, see also 
