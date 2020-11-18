@@ -5,6 +5,9 @@
 - set `ENV COMPOSER=/app/composer.json` or `ENV COMPOSER=/app/project/composer.json`  in project `Dockerfile`
 - adjust merge path `"src/composer.phd5.json"` in project `composer.json`
 - adjust config path `src/config/` to `config/` eg. in tests
+- adjust bower and npm aliases/path in config and `composer.json`
+  - `"npm-asset-library": "../vendor/npm-asset"`
+  - `"bower-asset-library": "../vendor/bower-asset"`
 - register empty `register_shutdown_function` for unit and functional tests, see also 
   - `tests/codeception/mock_register_shutdown_function.php`
   - `tests/codeception/functional/_bootstrap.php`
