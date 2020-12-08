@@ -6,7 +6,7 @@ version: '3.2'
 services:
   php:
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     ports:
       - 80
@@ -26,10 +26,10 @@ services:
       - APP_PAGES_TITLE_PREFIX='[DEV] '
       - PHP_ENABLE_XDEBUG
     volumes:
-      - ../config:/app/config:cached
-      - ../src:/app/src:cached
-      - ../migrations:/app/migrations:cached
-      - ../vendor-dev:/app/vendor:delegated
+      - ./config:/app/config:cached
+      - ./src:/app/src:cached
+      - ./migrations:/app/migrations:cached
+      - ./vendor-dev:/app/vendor:delegated
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
 

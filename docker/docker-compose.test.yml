@@ -8,7 +8,7 @@ services:
 
   test-php:
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     image: ${STACK_PHP_IMAGE}
     working_dir: /app/tests
@@ -32,11 +32,11 @@ services:
     volumes:
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
-      - ../src:/app/src
-      - ../tests:/app/tests
-      - ../vendor-dev:/app/vendor
-      - ../_host-volumes/test-debug:/mnt/debug
-      - ../_host-volumes/tests-log:/app/tests/_log
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./vendor-dev:/app/vendor
+      - ./_host-volumes/test-debug:/mnt/debug
+      - ./_host-volumes/tests-log:/app/tests/_log
     networks:
       default:
         aliases:

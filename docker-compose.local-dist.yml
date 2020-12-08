@@ -1,0 +1,20 @@
+# Local stack overrides
+#
+# Variables are populated with values from `.env`
+#
+version: '3.2'
+services:
+
+  php:
+    volumes:
+      # Debug
+      #- ./_host-volumes/assets:/app/web/assets ### (!) be aware of permission issues, depending on Docker setup
+      #- ./_host-volumes/runtime:/app/runtime ### (!) be aware of permission issues, depending on Docker setup
+      - ./_host-volumes/dumps:/dumps
+    environment:
+      - X_DB_DUMP_SQL=/dumps/dump-app10549179-202012040835.sql
+    ports:
+      - "${STACK_PORT_PREFIX}80:80"
+  db:
+    ports:
+      - "${STACK_PORT_PREFIX}06:3306"
