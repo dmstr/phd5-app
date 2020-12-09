@@ -1,8 +1,9 @@
-FROM dmstr/php-yii2:7.3-fpm-6.0-rc3-nginx
+FROM dmstr/php-yii2:7.4-fpm-7.0-alpha2
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        cron \
         procps # recommended for dmstr/yii2-resque-module \
  && pecl install mailparse \
  && docker-php-ext-enable mailparse \
@@ -17,9 +18,12 @@ WORKDIR /app
 COPY src/composer.* /app/src/
 
 # Composer installation (skipped on first build in dist-upgrade)
+# create bc link if not exists
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
-        composer -dsrc clear-cache; \
+        composer -dsrc clear-cache && \
+        ln -s bower-asset /app/vendor/bower && \
+        ln -s npm-asset /app/vendor/npm; \
     fi
 
 # Application source-code
@@ -28,9 +32,7 @@ COPY ./web /app/web/
 COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
-RUN ln -s bower-asset /app/vendor/bower \
- && ln -s npm-asset /app/vendor/npm
-# create bc link if not exists
+
 RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 
 # Permissions
