@@ -76,7 +76,7 @@ class AppController extends Controller
 
         $this->stdout("\nDatabase\n");
         $this->stdout("--------\n");
-        $this->run('db/create');
+        $this->run('db/create', [getenv('DB_ENV_MYSQL_ROOT_USER'),getenv('DB_ENV_MYSQL_ROOT_PASSWORD')]);
         $this->run('migrate/up', ['interactive' => (bool)getenv('APP_INTERACTIVE')]);
 
         $this->stdout("\nUser\n");
