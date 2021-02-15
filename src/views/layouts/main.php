@@ -64,12 +64,6 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 
 <?php $this->beginBody() ?>
 
-<?php Pjax::begin([
-                      'id' => 'main-content',
-                      'timeout' => 5000,
-                      'linkSelector' => '.frontend-reload',
-                  ]) ?>
-
 <?= TwigWidget::widget(['key' => '_beginBody', 'renderEmpty' => false]) ?>
 
 <!-- Navbar -->
@@ -83,18 +77,21 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 ?>
 
 <!-- Content -->
+<?= TwigWidget::widget(['key' => '_beforeContent', 'renderEmpty' => false]) ?>
+
 <div class="wrap">
 
     <?= $content ?>
 
 </div>
 
+<?= TwigWidget::widget(['key' => '_afterContent', 'renderEmpty' => false]) ?>
+
+
 <!-- Footer -->
 <footer class="footer">
     <?= Cell::widget(['id' => '_footer', 'requestParam' => '_global']) ?>
 </footer>
-
-<?php Pjax::end() ?>
 
 <!-- User flash messages -->
 <?= Wrapper::widget([

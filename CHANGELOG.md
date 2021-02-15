@@ -4,6 +4,8 @@
 
 - `yii db` has changed API
 - base-image upgraded to `PHP 7.4`
+- added `Cell`s (`_beforeContent`, `_afterContent`) to `layouts/main.php`
+- removed `Pjax` container in `layouts/main.php`
 
 ### 5.4.0
 
