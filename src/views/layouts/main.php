@@ -69,10 +69,10 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 <!-- Navbar -->
 <?php
 if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
-                      echo \dmstr\modules\prototype\widgets\TwigWidget::widget(['key' => '_navbar']);
-                  } else {
-                      echo $this->render('_navbar');
-                  }
+    echo \dmstr\modules\prototype\widgets\TwigWidget::widget(['key' => '_navbar']);
+} else {
+    echo $this->render('_navbar');
+}
 
 ?>
 
