@@ -187,6 +187,14 @@ return [
                     'messageTable' => '{{%language_translate}}',
                     'cachingDuration' => 86400,
                     'enableCaching' => !YII_ENV_DEV
+                ],
+                'noty' => [
+                    'class' => DbMessageSource::class,
+                    'sourceLanguage' => 'xx-XX',
+                    'sourceMessageTable' => '{{%language_source}}',
+                    'messageTable' => '{{%language_translate}}',
+                    'cachingDuration' => 86400,
+                    'enableCaching' => !YII_ENV_DEV
                 ]
             ]
         ],
