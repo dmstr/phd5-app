@@ -1,8 +1,5 @@
 <?php
-
-namespace app\controllers;
-
-/*
+/**
  * @link http://www.diemeisterei.de/
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
@@ -10,8 +7,10 @@ namespace app\controllers;
  * file that was distributed with this source code.
  */
 
-use Yii;
+namespace app\controllers;
+
 use yii\web\Controller;
+use yii\web\ErrorAction;
 
 /**
  * Site controller.
@@ -25,8 +24,8 @@ class ErrorController extends Controller
     {
         return [
             'index' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
+                'class' => ErrorAction::class,
+            ]
         ];
     }
 }

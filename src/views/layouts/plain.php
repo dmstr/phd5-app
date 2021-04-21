@@ -1,14 +1,13 @@
 <?php
-
-namespace _;
-
-/*
+/**
  * @link http://www.diemeisterei.de/
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+namespace _;
 
 use dmstr\helpers\SettingsAsset;
 use dmstr\modules\backend\widgets\Modal;
@@ -17,7 +16,9 @@ use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
 use lo\modules\noty\Wrapper;
 use Yii;
+use yii\base\Event;
 use yii\helpers\Html;
+use yii\web\View;
 use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
@@ -29,9 +30,9 @@ $this->title = (getenv('APP_PAGES_TITLE_PREFIX') ?? '') . $this->title;
 SettingsAsset::register($this);
 
 if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
-    \yii\base\Event::on(
-        \yii\web\View::className(),
-        \yii\web\View::EVENT_AFTER_RENDER,
+    Event::on(
+        View::class,
+        View::EVENT_AFTER_RENDER,
         function ($e) {
             // disable unbundled asset
             $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
@@ -42,7 +43,7 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
 }
 
 // Favicon
-if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
+if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets')) {
     $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $favicon]);
 }
 

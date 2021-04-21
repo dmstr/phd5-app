@@ -1,13 +1,17 @@
-<?php $this->beginContent('@app/views/layouts/main.php'); ?>
+<?php
+/**
+* @var string $content
+* @var \yii\web\View $this
+*/
+
+use yii\widgets\Breadcrumbs;
+
+$this->beginContent('@app/views/layouts/main.php');
+?>
 
     <div class="container-layout">
         <div class="container-fluid">
-            <?=
-            \yii\widgets\Breadcrumbs::widget(
-                [
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]
-            ) ?>
+            <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs'] ?? []]) ?>
         </div>
 
         <div class="container-fluid">
