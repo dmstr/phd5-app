@@ -14,6 +14,7 @@ use Da\User\Controller\AdminController;
 use Da\User\Controller\PermissionController;
 use Da\User\Controller\RoleController;
 use Da\User\Controller\RuleController;
+use Da\User\Model\User as UserModel;
 use Da\User\Module as UserModule;
 use dmstr\helpers\AssetHash;
 use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
@@ -87,6 +88,14 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
 }
 
 $isHttps = getenv('HTTPS') === 'on';
+
+$dbAttributes = [
+    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
+];
+
+if (getenv('MYSQL_ATTR_SSL_CA')) {
+    $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
+}
 
 $boxLayout = '@backend/views/layouts/box';
 
@@ -169,7 +178,8 @@ return [
             'password' => getenv('DATABASE_PASSWORD'),
             'charset' => 'utf8',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
-            'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE')
+            'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE'),
+            'attributes' => $dbAttributes
         ],
         'dbSystem' => [
             'class' => DbConnection::class,
@@ -179,7 +189,8 @@ return [
             'charset' => 'utf8',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => true,
-            'schemaCache' => 'cacheSystem'
+            'schemaCache' => 'cacheSystem',
+            'attributes' => $dbAttributes
         ],
         'fsLocal' => [
             'class' => LocalFilesystem::class,
@@ -274,7 +285,7 @@ return [
             'class' => User::class,
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/security/login'],
-            'identityClass' => Da\User\Model\User::class,
+            'identityClass' => UserModel::class,
             'rootUsers' => ['admin']
         ],
         'urlManager' => [
