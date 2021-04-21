@@ -1,6 +1,6 @@
 <?php
 
-use bedezign\yii2\audit\Audit;
+use bedezign\yii2\audit\Audit as AuditModule;
 use bedezign\yii2\audit\panels\ErrorPanel;
 use bedezign\yii2\audit\panels\ExtraDataPanel;
 use bedezign\yii2\audit\panels\MailPanel;
@@ -324,7 +324,7 @@ return [
     ],
     'modules' => [
         'audit' => [
-            'class' => Audit::class,
+            'class' => AuditModule::class,
             'accessRoles' => ['audit-module'],
             'layout' => $boxLayout,
             'panels' => [
@@ -414,7 +414,14 @@ return [
         'translatemanager' => [
             'class' => TranslatemanagerModule::class,
             'layout' => $boxLayout,
-            'root' => '@app/views',
+            'root' => [
+                '@app/views',
+                '@vendor/loveorigami/yii2-notification-wrapper/src',
+                '@vendor/dmstr',
+                '@vendor/lajax/yii2-translate-manager',
+                '@vendor/bedezign/yii2-audit/src',
+                '@vendor/ignatenkovnikita/yii2-queuemanager'
+            ],
             'tables' => [
                 [
                     'connection' => 'db',
