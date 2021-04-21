@@ -467,6 +467,7 @@ return [
         'user' => [
             'class' => UserModule::class,
             'layout' => '@app/views/layouts/container',
+            'enableGdprCompliance' => true,
             'defaultRoute' => 'admin',
             'administratorPermissionName' => 'user-module',
             'administrators' => ['admin'],
