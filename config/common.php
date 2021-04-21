@@ -54,6 +54,7 @@ use yii\redis\Cache;
 use yii\redis\Connection as RedisConnection;
 use yii\swiftmailer\Mailer;
 use yii\twig\ViewRenderer;
+use yii\web\Cookie;
 use yii\web\DbSession;
 use yii\web\View;
 
@@ -83,6 +84,8 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
         ]
     );
 }
+
+$isHttps = getenv('HTTPS') === 'on';
 
 $boxLayout = '@backend/views/layouts/box';
 
@@ -138,6 +141,9 @@ return [
             ],
             RuleController::class => [
                 'layout' => $boxLayout
+            ],
+            Cookie::class => [
+                'secure' => $isHttps
             ]
         ]
     ],
@@ -255,7 +261,10 @@ return [
         ],
         'session' => [
             'class' => DbSession::class,
-            'db' => 'dbSystem'
+            'db' => 'dbSystem',
+            'cookieParams' => [
+                'secure' => $isHttps
+            ]
         ],
         'settings' => [
             'class' => Settings::class
@@ -284,7 +293,10 @@ return [
                 '#^img/stream#' => '#^img/stream#',
                 '#^filefly/api#' => '#^filefly/api#'
             ],
-            'languages' => $languages
+            'languages' => $languages,
+            'languageCookieOptions' => [
+                'secure' => $isHttps
+            ]
         ],
         'view' => [
             'class' => View::class,
