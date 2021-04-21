@@ -40,8 +40,9 @@ use lajax\translatemanager\services\scanners\ScannerPhpFunction;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
+use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
-use yii\db\Connection;
+use yii\db\Connection as DbConnection;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\helpers\Markdown;
@@ -50,6 +51,7 @@ use yii\i18n\DbMessageSource;
 use yii\queue\LogBehavior;
 use yii\queue\redis\Queue;
 use yii\redis\Cache;
+use yii\redis\Connection as RedisConnection;
 use yii\swiftmailer\Mailer;
 use yii\twig\ViewRenderer;
 use yii\web\DbSession;
@@ -147,19 +149,30 @@ return [
             'bundles' => $bundles,
             'basePath' => '@app/../web/assets/'
         ],
-        'cache' =>
-            [
-                'class' => getenv('APP_NO_CACHE') ?
-                    DummyCache::class : Cache::class
-            ],
+        'cache' => [
+            'class' => getenv('APP_NO_CACHE') ? DummyCache::class : Cache::class
+        ],
+        'cacheSystem' => [
+            'class' => ArrayCache::class
+        ],
         'db' => [
-            'class' => Connection::class,
+            'class' => DbConnection::class,
             'dsn' => getenv('DATABASE_DSN'),
             'username' => getenv('DATABASE_USER'),
             'password' => getenv('DATABASE_PASSWORD'),
             'charset' => 'utf8',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE')
+        ],
+        'dbSystem' => [
+            'class' => DbConnection::class,
+            'dsn' => getenv('DATABASE_DSN'),
+            'username' => getenv('DATABASE_USER'),
+            'password' => getenv('DATABASE_PASSWORD'),
+            'charset' => 'utf8',
+            'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
+            'enableSchemaCache' => true,
+            'schemaCache' => 'cacheSystem'
         ],
         'fsLocal' => [
             'class' => LocalFilesystem::class,
@@ -182,7 +195,7 @@ return [
                 '*' => [
                     'class' => DbMessageSource::class,
                     'db' => 'db',
-                    'sourceLanguage' => 'en',
+                    'sourceLanguage' => 'xx-XX',
                     'sourceMessageTable' => '{{%language_source}}',
                     'messageTable' => '{{%language_translate}}',
                     'cachingDuration' => 86400,
@@ -236,12 +249,13 @@ return [
             'as queuemanager' => QueueManagerBehavior::class
         ],
         'redis' => [
-            'class' => \yii\redis\Connection::class,
+            'class' => RedisConnection::class,
             'hostname' => getenv('REDIS_PORT_6379_TCP_ADDR'),
             'port' => getenv('REDIS_PORT_6379_TCP_PORT')
         ],
         'session' => [
-            'class' => DbSession::class
+            'class' => DbSession::class,
+            'db' => 'dbSystem'
         ],
         'settings' => [
             'class' => Settings::class
@@ -344,7 +358,7 @@ return [
                 'audit/extra' => [
                     'class' => ExtraDataPanel::class,
                     'maxAge' => 30
-                ],
+                ]
                 // see https://github.com/bedezign/yii2-audit for detailed config
             ],
             'ignoreActions' => [
@@ -359,7 +373,8 @@ return [
                 'db/create',
                 'migrate/up'
             ],
-            'maxAge' => 7
+            'maxAge' => 7,
+            'db' => 'dbSystem'
         ],
         'backend' => [
             'class' => BackendModule::class,
