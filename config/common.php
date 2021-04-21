@@ -75,7 +75,7 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     $bundles = include Yii::getAlias('@web/bundles') . '/config.php';
     // disable loading of bundles skin file, when using bundled assets
     Yii::$container->set(
-        AdminLteAsset::className(),
+        AdminLteAsset::class,
         [
             'skin' => false,
         ]
@@ -286,7 +286,6 @@ return [
                         'Json' => ['class' => Json::class],
                         'Tree' => ['class' => Tree::class],
                         'FA' => ['class' => FA::class],
-                        'FileUrl' => ['class' => \hrzg\filemanager\helpers\Url::class],
                         'Url' => ['class' => Url::class],
                         'Markdown' => ['class' => Markdown::class]
                     ],
