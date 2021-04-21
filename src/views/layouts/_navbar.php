@@ -45,7 +45,7 @@ if (Yii::$app->hasModule('user')) {
         $menuItems[] = [
             'label' => Yii::t('app', '{icon} {username}', [
                 'icon' => '<i class="glyphicon glyphicon-user"></i>',
-                'username' => Yii::$app->user->username
+                'username' => Yii::$app->user->identity->username
             ]),
             'options' => ['id' => 'link-user-menu'],
             'items' => [
