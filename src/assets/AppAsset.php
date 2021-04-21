@@ -1,20 +1,23 @@
 <?php
-
-namespace app\assets;
-
-/*
+/**
  * @link http://www.yiiframework.com/
  *
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
 
+namespace app\assets;
+
+use yii\web\AssetBundle;
+use yii\web\YiiAsset;
+use yii\bootstrap\BootstrapAsset;
+
 /**
  * Configuration for `backend` client script files.
  *
  * @since 4.0
  */
-class AppAsset extends \yii\web\AssetBundle
+class AppAsset extends AssetBundle
 {
     public $sourcePath = '@app/assets/web';
 
@@ -25,7 +28,7 @@ class AppAsset extends \yii\web\AssetBundle
     ];
 
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        YiiAsset::class,
+        BootstrapAsset::class,
     ];
 }

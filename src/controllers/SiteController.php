@@ -1,8 +1,5 @@
 <?php
-
-namespace app\controllers;
-
-/*
+/**
  * @link http://www.diemeisterei.de/
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
@@ -10,6 +7,9 @@ namespace app\controllers;
  * file that was distributed with this source code.
  */
 
+namespace app\controllers;
+
+use dmstr\modules\pages\models\Tree;
 use dmstr\web\traits\AccessBehaviorTrait;
 use yii\web\Controller;
 
@@ -32,7 +32,7 @@ class SiteController extends Controller
 
     public function actionRootNode()
     {
-        $rootNodeQuery = \dmstr\modules\pages\models\Tree::find()->where(['domain_id' => 'root']);
+        $rootNodeQuery = Tree::find()->where(['domain_id' => 'root']);
         $rootNode = $rootNodeQuery->one();
         return $this->run('/pages/default/page', ['pageId' => $rootNode->id]);
     }

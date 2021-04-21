@@ -1,8 +1,5 @@
 <?php
-
-namespace _;
-
-/*
+/**
  * @link http://www.diemeisterei.de/
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
  *
@@ -10,15 +7,19 @@ namespace _;
  * file that was distributed with this source code.
  */
 
+namespace _;
+
 use dmstr\helpers\SettingsAsset;
 use dmstr\modules\backend\widgets\Modal;
 use dmstr\modules\backend\widgets\Toolbar;
 use dmstr\modules\prototype\widgets\TwigWidget;
 use hrzg\widget\widgets\Cell;
+use lo\modules\noty\layers\Growl;
 use lo\modules\noty\Wrapper;
 use Yii;
+use yii\base\Event;
 use yii\helpers\Html;
-use yii\widgets\Pjax;
+use yii\web\View;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -29,9 +30,9 @@ $this->title = (getenv('APP_PAGES_TITLE_PREFIX') ?? '') . $this->title;
 SettingsAsset::register($this);
 
 if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
-    \yii\base\Event::on(
-        \yii\web\View::className(),
-        \yii\web\View::EVENT_AFTER_RENDER,
+    Event::on(
+        View::class,
+        View::EVENT_AFTER_RENDER,
         function ($e) {
             // disable unbundled asset
             $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
@@ -42,7 +43,7 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
 }
 
 // Favicon
-if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
+if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets')) {
     $this->registerLinkTag(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $favicon]);
 }
 
@@ -69,7 +70,7 @@ if ($favicon = \Yii::$app->settings->get('faviconPng', 'app.assets', null)) {
 <!-- Navbar -->
 <?php
 if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
-    echo \dmstr\modules\prototype\widgets\TwigWidget::widget(['key' => '_navbar']);
+    echo TwigWidget::widget(['key' => '_navbar']);
 } else {
     echo $this->render('_navbar');
 }
@@ -95,14 +96,14 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 
 <!-- User flash messages -->
 <?= Wrapper::widget([
-                        'layerClass' => 'lo\modules\noty\layers\Growl',
-                        'options' => [
-                            'dismissQueue' => true,
-                            'size' => 'medium',
-                            'location' => Yii::$app->settings->getOrSet('growl.location', 'br', 'frontend', 'string'),
-                            'timeout' => 4000,
-                        ],
-                    ]) ?>
+    'layerClass' => Growl::class,
+    'options' => [
+        'dismissQueue' => true,
+        'size' => 'medium',
+        'location' => Yii::$app->settings->getOrSet('growl.location', 'br', 'frontend', 'string') ?? 'br',
+        'timeout' => 4000,
+    ],
+]) ?>
 
 <?= TwigWidget::widget(['key' => '_endBody', 'renderEmpty' => false]) ?>
 
@@ -110,13 +111,13 @@ if (Yii::$app->settings->get('enableTwigNavbar', 'app.layout', false)) {
 
     <?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'toolbar'): ?>
         <?= Toolbar::widget([
-                                'useIframe' => \Yii::$app->settings->getOrSet(
-                                    'useIframe',
-                                    false,
-                                    'backend.toolbar',
-                                    'boolean'
-                                ),
-                            ]) ?>
+            'useIframe' => \Yii::$app->settings->getOrSet(
+                'useIframe',
+                false,
+                'backend.toolbar',
+                'boolean'
+            ),
+        ]) ?>
     <?php endif; ?>
 
     <?php if (Yii::$app->settings->get('backendWidget', 'frontend') === 'modal'): ?>

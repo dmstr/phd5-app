@@ -8,7 +8,7 @@ use yii\helpers\Html;
     <div class="modal-content">
         <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                    class="sr-only"><?= Yii::t('default', 'Close') ?></span></button>
+                    class="sr-only"><?= Yii::t('app', 'Close') ?></span></button>
 
             <p>
             <h3><?= getenv('APP_TITLE') ?></h3>
