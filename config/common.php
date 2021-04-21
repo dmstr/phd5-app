@@ -109,11 +109,11 @@ return [
         'context.menuItems' => [],
         'backend.iframe.name' => getenv('APP_PARAMS_BACKEND_IFRAME_NAME') ?: '_self',
         'backend.browserSupport' => [
-            'Chrome' => 72,
+            'Chrome' => 87,
             'Edge' => false,
             'Safari' => false,
             'MobileSafari' => false,
-            'Firefox' => 65,
+            'Firefox' => 88,
             'Opera' => false,
             'Vivaldi' => false,
             'IE' => false
