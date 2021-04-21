@@ -163,7 +163,7 @@ return [
             'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ? AssetHash::byFileTime(!YII_DEBUG) : null,
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
-            'basePath' => '@app/../web/assets/'
+            'basePath' => '@web/assets/'
         ],
         'cache' => [
             'class' => getenv('APP_NO_CACHE') ? DummyCache::class : Cache::class
