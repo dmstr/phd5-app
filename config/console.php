@@ -17,7 +17,7 @@ return [
         'audit' => \bedezign\yii2\audit\commands\AuditController::class,
         'db' => [
             'class' => \dmstr\console\controllers\MysqlController::class,
-            'noDataTables' => [
+            'excludeTables' => [
                 getenv('DATABASE_TABLE_PREFIX') . 'auth_assignment',
                 getenv('DATABASE_TABLE_PREFIX') . 'migration',
                 getenv('DATABASE_TABLE_PREFIX') . 'user',

@@ -5,6 +5,7 @@ namespace app\commands;
 use mikehaertl\shellcommand\Command;
 use Yii;
 use yii\console\Controller;
+use yii\helpers\ArrayHelper;
 use yii\helpers\VarDumper;
 
 /**
@@ -18,6 +19,42 @@ use yii\helpers\VarDumper;
 class AppController extends Controller
 {
     public $defaultAction = 'version';
+
+    /**
+     * @var int config levels to show
+     */
+    public $level = 10;
+
+    /**
+     * @inheritdoc
+     */
+    public function options($actionID)
+    {
+        switch ($actionID) {
+            case 'config':
+                $additionalOptions = ['level'];
+                break;
+            default:
+                $additionalOptions = [];
+        }
+        return ArrayHelper::merge(
+            $additionalOptions,
+            parent::options($actionID)
+        );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function optionAliases()
+    {
+        return ArrayHelper::merge(
+            [
+                'l' => 'level'
+            ],
+            parent::optionAliases()
+        );
+    }
 
     /**
      * Shows application configuration
@@ -38,7 +75,7 @@ class AppController extends Controller
                 $data = $GLOBALS['config'][$keys[0]][$keys[1]];
             }
         }
-        $this->stdout(VarDumper::dumpAsString($data));
+        $this->stdout(VarDumper::dumpAsString($data, $this->level));
     }
 
     /**
