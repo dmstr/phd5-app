@@ -9,7 +9,6 @@
 
 namespace app\controllers;
 
-use dmstr\modules\pages\models\Tree;
 use dmstr\web\traits\AccessBehaviorTrait;
 use yii\web\Controller;
 
@@ -28,12 +27,5 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
-    }
-
-    public function actionRootNode()
-    {
-        $rootNodeQuery = Tree::find()->where(['domain_id' => 'root']);
-        $rootNode = $rootNodeQuery->one();
-        return $this->run('/pages/default/page', ['pageId' => $rootNode->id]);
     }
 }
