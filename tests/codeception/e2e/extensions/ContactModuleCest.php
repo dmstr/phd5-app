@@ -1,6 +1,4 @@
-<?php namespace extensions;
-
-use E2eTester;
+<?php
 
 /**
  * @group mandatory
@@ -14,7 +12,7 @@ class ContactModuleCest
 
         $I->amOnPage('/contact/default/index');
         $I->waitForElementVisible('.wrap');
-        $I->dontSee('Not Found (#404)'); // check if site is reachable
-        $I->see('Bad Request (#400)'); // check if schema parameter is required
+        $I->dontSee('404'); // check if site is reachable
+        $I->see('400'); // check if schema parameter is required
     }
 }

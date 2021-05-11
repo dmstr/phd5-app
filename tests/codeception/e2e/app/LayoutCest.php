@@ -5,15 +5,7 @@
  */
 class LayoutCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testLayout(E2eTester $I)
     {
         $I->wantTo('ensure that there is no horizontal scrollbar');

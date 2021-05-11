@@ -7,7 +7,7 @@
  */
 class BackendAccessCest
 {
-    // tests
+
     public function testBackendAccess(E2eTester $I)
     {
         $I->wantTo('ensure backend access works');

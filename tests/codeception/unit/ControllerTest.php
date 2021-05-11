@@ -1,13 +1,15 @@
 <?php
 
-class ControllerTest extends \Codeception\Test\Unit
+use Codeception\Test\Unit;
+
+/**
+ * @group mandatory
+ */
+class ControllerTest extends Unit
 {
-    /**
-     * @group mandatory
-     */
+
     public function testApp()
     {
-
         $this->assertNotNull(Yii::$app);
     }
 

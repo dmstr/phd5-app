@@ -6,15 +6,7 @@
  */
 class EditorAccessCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testProviderAccess(E2eTester $I)
     {
         $I->wantTo('ensure that preview access works');
