@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @group mandatory
  * @group base-test-setup
@@ -6,15 +7,7 @@
  */
 class PreviewAccessCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testPreviewAccess(E2eTester $I)
     {
         $I->wantTo('ensure that preview access works');
@@ -26,7 +19,6 @@ class PreviewAccessCest
         $I->login('preview', 'preview1');
 
         $I->amOnPage('/en/site/index');
-#$I->see('Application installed successfully', 'h2');
         $I->dontSeeHorizontalScrollbars();
 
         $I->amOnPage('/de/site/index');

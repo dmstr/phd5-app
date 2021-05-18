@@ -8,7 +8,7 @@ class AccessControlCest
     /**
      * Non-public routes
      *
-     * @example ["/backend"]
+     * @example ["/backend/default/index"]
      * @example ["/backend/config/view"]
      * @example ["/prototype"]
      * @example ["/prototype/html"]
