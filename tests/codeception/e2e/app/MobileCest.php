@@ -6,21 +6,13 @@
  */
 class MobileCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testMobileLayout(E2eTester $I)
     {
         $I->wantTo('ensure that responsive mobile layout works');
 
         $I->resizeWindow(320, 568);
-        $I->amOnPage('/');
+        $I->amOnPage('/user/security/login');
         $I->makeScreenshot('mobile');
 
         $I->click('button.navbar-toggle');

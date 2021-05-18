@@ -1,20 +1,12 @@
 <?php
+
 /**
  * @group mandatory
  * @group frontend
  */
-
 class CookieConsentCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function cookieConsent(E2eTester $I)
     {
         $I->wantTo('ensure that Cookie Consent initial state is correct');

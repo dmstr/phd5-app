@@ -1,21 +1,14 @@
 <?php
+
+use Faker\Factory;
+
 /**
  * @group mandatory
  * @group user-module
  */
-use Faker\Factory;
-
 class UserCreateCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function tryToTest(E2eTester $I)
     {
         $faker = Factory::create();
@@ -36,7 +29,7 @@ class UserCreateCest
         $I->click('button[type="submit"]');
 
         $I->waitForText('Success');
-        $I->seeInFormFields('form', ['User[username]'=>$username]);
+        $I->seeInFormFields('form', ['User[username]' => $username]);
 
         $I->pauseExecution();
     }

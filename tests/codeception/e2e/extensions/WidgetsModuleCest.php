@@ -1,22 +1,17 @@
 <?php
+
+use Codeception\Util\Fixtures;
+
 /**
  * @group mandatory
  * @group widgets-module
  */
 class WidgetsModuleCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function tryToTest(E2eTester $I)
     {
-        $uniqid = \Codeception\Util\Fixtures::get('uniqid');
+        $uniqid = Fixtures::get('uniqid');
 
         $I->wantTo('ensure that widgets-module works');
 
@@ -44,7 +39,7 @@ class WidgetsModuleCest
         $I->moveMouseOver('#cell-header.hrzg-widget-widget-container');
         $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls .btn-primary');
         $I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
-// TODO: fixme
+
         $I->waitForElementVisible('#cell-header .hrzg-widget-container-controls ul');
         $I->click('#cell-header .hrzg-widget-container-controls .btn-primary');
         $I->waitForElementNotVisible('#cell-header .hrzg-widget-container-controls ul');
