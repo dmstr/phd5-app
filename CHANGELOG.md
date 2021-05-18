@@ -10,6 +10,10 @@
 - `yii db` has changed API
 - base-image upgraded to `PHP 7.4`
 
+### 5.4.1
+
+- added `fsFtp` filesystem component
+
 ### 5.4.0
 
 - added `APP_PAGES_TITLE_PREFIX`
