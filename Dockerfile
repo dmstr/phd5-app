@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.4-fpm-7.0-nginx
+FROM dmstr/php-yii2:7.4-fpm-8.0-beta1-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
@@ -38,10 +38,9 @@ RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
-    chmod -R ugo+r /root/.composer/vendor && \
     chmod u+x /usr/local/bin/unique-number.sh /usr/local/bin/export-env.sh && \
     chmod -R u+x /etc/periodic && \
-    chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
+    chown -R www-data:www-data runtime web/assets web/bundles /mnt/storage
 
 VOLUME /app/runtime
 VOLUME /app/web/assets

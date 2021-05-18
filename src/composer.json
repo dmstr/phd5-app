@@ -3,8 +3,14 @@
     "description": "phd5 base application",
     "minimum-stability": "beta",
     "prefer-stable": true,
+    "repositories": {
+        "ap": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
     "require": {
-        "wikimedia/composer-merge-plugin": "~1.4"
+        "wikimedia/composer-merge-plugin": "~2.0"
     },
     "extra": {
         "merge-plugin": {
@@ -25,7 +31,7 @@
             "*": "auto"
         },
         "fxp-asset": {
-            "enabled": true,
+            "enabled": false,
             "installer-paths": {
                 "npm-asset-library": "../vendor/npm-asset",
                 "bower-asset-library": "../vendor/bower-asset"
