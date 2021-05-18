@@ -1,5 +1,8 @@
 # Changelog
 
+### 5.4.1
+- added `fsFtp` filesystem component
+
 ### 5.4.0
 
 - added `APP_PAGES_TITLE_PREFIX`

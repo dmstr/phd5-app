@@ -131,6 +131,19 @@ return [
             'class' => \creocoder\flysystem\LocalFilesystem::class,
             'path' => '@runtime',
         ],
+        'fsFtp' => [
+            'class' => \creocoder\flysystem\FtpFilesystem::class,
+            'host' => getenv('FTP_BUCKET_HOST'),
+            'port' => getenv('FTP_BUCKET_PORT') ?: 21,
+            'username' => getenv('FTP_BUCKET_USER'),
+            'password' => getenv('FTP_BUCKET_PASSWORD'),
+            'root' => getenv('FTP_BUCKET_FILESYSTEM_BASE_PATH') ?: '/',
+            'ssl' => getenv('FTP_BUCKET_SSL') ?: 0,
+            'passive' => 1,
+            'timeout' => 10,
+            'transferMode' => FTP_BINARY,
+            'enableTimestampsOnUnixListings' => true
+        ],
         'i18n' => [
             'translations' => [
                 '*' => [
