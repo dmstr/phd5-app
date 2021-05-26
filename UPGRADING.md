@@ -1,5 +1,10 @@
 # Upgrading
 
+### 5.4/5.5 to 5.6
+
+- upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
+- disable `fxp/asset-plugin` eg. `"enabled": false`
+
 ### 5.3 to 5.4
 
 - set `ENV COMPOSER=/app/composer.json` or `ENV COMPOSER=/app/project/composer.json`  in project `Dockerfile`
