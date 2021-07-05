@@ -3,6 +3,7 @@
 ### 5.4/5.5 to 5.6
 
 - upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
+- add `    "ap": {  "type": "composer",  "url": "https://asset-packagist.org"  }` to `repositories` section in `composer.json`
 - disable `fxp/asset-plugin` eg. `"enabled": false`
 
 ### 5.3 to 5.4
