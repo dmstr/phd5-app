@@ -2605,16 +2605,16 @@
         },
         {
             "name": "dmstr/yii2-web",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-web.git",
-                "reference": "e76b7671d4275bc204a2cc09d94201f9be9e3fc4"
+                "reference": "d21d3308e76e60d6b280b48091b1d9dcbf4228a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-web/zipball/e76b7671d4275bc204a2cc09d94201f9be9e3fc4",
-                "reference": "e76b7671d4275bc204a2cc09d94201f9be9e3fc4",
+                "url": "https://api.github.com/repos/dmstr/yii2-web/zipball/d21d3308e76e60d6b280b48091b1d9dcbf4228a4",
+                "reference": "d21d3308e76e60d6b280b48091b1d9dcbf4228a4",
                 "shasum": ""
             },
             "require": {
@@ -2645,9 +2645,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-web/issues",
-                "source": "https://github.com/dmstr/yii2-web/tree/1.1.0"
+                "source": "https://github.com/dmstr/yii2-web/tree/1.1.1"
             },
-            "time": "2021-08-23T15:43:45+00:00"
+            "time": "2021-08-23T15:58:59+00:00"
         },
         {
             "name": "dmstr/yii2-widgets2-module",
