@@ -21,7 +21,7 @@
         "dmstr/yii2-resque-module": "^2.0.0-alpha2",
         "dmstr/yii2-widgets2-module": "^2.2.0-rc1",
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
-        "dmstr/yii2-web": ">=1.0.0",
+        "dmstr/yii2-web": ">=1.1.0",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
