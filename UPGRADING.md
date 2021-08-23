@@ -5,6 +5,7 @@
 - upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
 - add `    "ap": {  "type": "composer",  "url": "https://asset-packagist.org"  }` to `repositories` section in `composer.json`
 - disable `fxp/asset-plugin` eg. `"enabled": false`
+- make sure you have a `Public` role, which is a child of `Default` and `Guest` (`dmstr/yii2-web:>=1.1.1`)
 
 ### 5.3 to 5.4
 
