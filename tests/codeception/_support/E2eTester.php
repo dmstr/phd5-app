@@ -47,6 +47,6 @@ class E2eTester extends \Codeception\Actor
 
     public function pauseExecution()
     {
-        return $this->pause();
+        $this->pause();
     }
 }
