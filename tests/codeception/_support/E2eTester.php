@@ -44,4 +44,9 @@ class E2eTester extends \Codeception\Actor
             'Horizontal scrollbar'
         );
     }
+
+    public function pauseExecution()
+    {
+        $this->pause();
+    }
 }
