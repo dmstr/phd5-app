@@ -28,9 +28,7 @@ class UserCreateCest
 
         $I->click('button[type="submit"]');
 
-        $I->waitForText('Success');
+        $I->waitForText('Success',10, '#growls-br > .growl.growl-notice');
         $I->seeInFormFields('form', ['User[username]' => $username]);
-
-        $I->pauseExecution();
     }
 }
