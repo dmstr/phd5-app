@@ -46,16 +46,12 @@ See [configuration](https://github.com/dmstr/phd5-docs/blob/master/guide/develop
 
 Initialize application and run command from `tests` folder
 
-    make init
-    cd tests
-
-Setup test application stack    
+    make test
     
-    make up setup bash
-    
-Run tests inside the container    
+Debug tests inside the container    
       
-    $ codecept run      
+    make bash
+    $ codecept run -d
 
 See [testing](https://github.com/dmstr/phd5-docs/blob/master/guide/development/testing.md)...   
 
