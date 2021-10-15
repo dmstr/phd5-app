@@ -58,3 +58,6 @@ CMD supervisord -c /etc/supervisor/supervisord.conf
 
 # Tests source-code for integration tests in derived images
 COPY ./tests /app/tests
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=1m \
+  CMD curl -f http://localhost/static/status.php || exit 1
