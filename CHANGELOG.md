@@ -1,5 +1,12 @@
 # Changelog
 
+### 5.6.0
+
+- PHP 8
+- composer 2
+- added healthchecks
+- use asset-packagist (preferred); disabled fxp/composer-asset-plugin
+
 ### 5.5.0-beta1
 
 - added `Cell`s (`_beforeContent`, `_afterContent`) to `layouts/main.php`
