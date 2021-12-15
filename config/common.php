@@ -269,6 +269,7 @@ return [
             ],
             'messageConfig' => [
                 'charset' => 'UTF-8',
+                'replyTo' => getenv('APP_MAILER_REPLY_TO'),
                 'returnPath' => getenv('APP_MAILER_RETURN_PATH'),
                 'from' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')]
             ]
