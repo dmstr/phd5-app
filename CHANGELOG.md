@@ -2,7 +2,7 @@
 
 ### 5.6.0
 
-- PHP 8
+- updated base-image `dmstr/php-yii2:7.4-fpm-8.0`
 - composer 2
 - added healthchecks
 - use asset-packagist (preferred); disabled fxp/composer-asset-plugin
