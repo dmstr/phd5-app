@@ -2,18 +2,11 @@
 /**
  * @group mandatory
  * @group long-running
+ * @group backend
  */
 class BackendLinksCest
 {
-    public function _before(FunctionalTester $I)
-    {
-    }
 
-    public function _after(FunctionalTester $I)
-    {
-    }
-
-    // tests
     public function testBackendLinks(FunctionalTester $I)
     {
         $I->wantTo('Click backend links');
@@ -25,14 +18,13 @@ class BackendLinksCest
 
         $links = $I->grabMultiple('section.content a[href^="/"]', 'href');
 
-        foreach ($links as $i => $url) {
+        foreach ($links as $url) {
 
             switch ($url) {
                 case '/debug':
                 case '/gridview':
                 case '/treemanager':
                     continue 2;
-                    break;
             }
 
             $I->amGoingTo('check '.$url);

@@ -1,10 +1,13 @@
 <?php
 
-namespace tests\codeception\unit\models;
 
+use Codeception\Test\Unit;
 use Da\User\Model\User;
 
-class UserTest extends \Codeception\Test\Unit
+/**
+ * @group user-module
+ */
+class UserTest extends Unit
 {
     public function testUserLoginLogout()
     {

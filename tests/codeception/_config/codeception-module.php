@@ -10,7 +10,7 @@
 $_SERVER['HOST_NAME'] = 'web';
 $_SERVER['REQUEST_TIME'] = time();
 
-// For functional and unit tests
+// For functional and unit tests, also for app integration tests in projects
 defined('APP_TYPE') or define('APP_TYPE', 'web');
 
 return yii\helpers\ArrayHelper::merge(
@@ -25,6 +25,9 @@ return yii\helpers\ArrayHelper::merge(
                 'scriptUrl' => '',
                 'enableDefaultLanguageUrlCode' => false,
             ],
+            'user' => [
+                'loginUrl' => '/user/login'
+            ]
         ],
     ]
 );

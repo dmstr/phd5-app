@@ -31,12 +31,13 @@ endif
 default: help
 
 all:    ##@base shorthand for 'build init up setup open'
-all: init build install up setup browser
+all: init build install up setup open
 all:
 	#
 	# make all
 	# Done.
 
+dev: up setup browser
 
 build: ##@base build images in stack
 	#
@@ -88,7 +89,7 @@ dist-upgrade: ##@base update application package, pull, rebuild
 install: ##@base install PHP packages
 	$(DOCKER_COMPOSE) run --rm php composer -dsrc  install
 
-bash:	 ##@development execute application bash in one-off container
+bash:	 ##@development execute application bash in php container
 	#
 	# Starting application bash
 	#
@@ -122,12 +123,18 @@ setup: ##@development run application setup
 	#
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) yii app/setup
 
+open: browser ##@development alias for: browser
 browser: ##@development open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(PHP_SERVICE) 80 | sed 's/[0-9.]*://') &>/dev/null
 
+open-mailcatcher: ##@development open development mailcatcher
+	#
+	# Opening application on mapped web-service port
+	#
+	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port mailcatcher 80 | sed 's/[0-9.]*://') &>/dev/null
 
 test: version build install up
 test: ##@test run tests
@@ -136,16 +143,16 @@ test: ##@test run tests
 	$(DOCKER_COMPOSE) logs $(PHP_SERVICE) > _host-volumes/tests-log/php.log
 	$(DOCKER_COMPOSE) logs $(TESTER_SERVICE) > _host-volumes/tests-log/tester.log
 
+test-coverage: version build install up
 test-coverage: ##@test run tests with code coverage
-	PHP_ENABLE_XDEBUG=1 $(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up -d
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) yii app/setup
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 
 test-init: ##@test initialize test-environment
-	cp -n .env-dist .env &2>/dev/null
-	mkdir -p _log/codeception && chmod 777 _log/codeception
-	mkdir -p _log/lint && chmod 777 _log/lint
+	mkdir -p _host-volumes/tests-log/codeception/_log && chmod 777 _host-volumes/tests-log/codeception/_log
+	mkdir -p _host-volumes/tests-log/lint && chmod 777 _host-volumes/tests-log/lint
 
 test-bash:	 ##@test run application bash in one-off container
 	#
@@ -153,7 +160,13 @@ test-bash:	 ##@test run application bash in one-off container
 	#
 	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE)  bash
 
-test-browser: ##@test open application web service in browser
+test-cli:	 ##@test run application test bash in one-off container
+	#
+	# Starting application bash
+	#
+	$(DOCKER_COMPOSE) run --rm -v $(PWD)/vendor-dev:/app/vendor $(TESTER_SERVICE) bash
+
+test-open: ##@test open application web service in browser
 	#
 	# Opening application on mapped web-service port
 	#

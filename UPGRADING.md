@@ -1,16 +1,28 @@
 # Upgrading
 
+### 5.4/5.5 to 5.6
+
+- upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
+- add `    "ap": {  "type": "composer",  "url": "https://asset-packagist.org"  }` to `repositories` section in `composer.json`
+- disable `fxp/asset-plugin` eg. `"enabled": false`
+- make sure you have a `Public` role, which is a child of `Default` and `Guest` (`dmstr/yii2-web:>=1.1.1`)
+
 ### 5.3 to 5.4
 
-- set `ENV COMPOSER=/app/composer.json` in project `Dockerfile`
+- set `ENV COMPOSER=/app/composer.json` or `ENV COMPOSER=/app/project/composer.json`  in project `Dockerfile`
 - adjust merge path `"src/composer.phd5.json"` in project `composer.json`
-- adjust config path `/app/config/` eg. in tests
+- adjust config path `src/config/` to `config/` eg. in tests
+- adjust bower and npm aliases/path in config and `composer.json`
+  - `"npm-asset-library": "../vendor/npm-asset"`
+  - `"bower-asset-library": "../vendor/bower-asset"`
 - register empty `register_shutdown_function` for unit and functional tests, see also 
   - `tests/codeception/mock_register_shutdown_function.php`
   - `tests/codeception/functional/_bootstrap.php`
   - `tests/codeception/unit/_bootstrap.php`
 - default value for `APP_ADMIN_EMAIL` removed, must be set in project
 - image startup command has been changed from `forego` to `supervisord`
+- update namespaces for `RbacMigration`, which has been extracted into separate package `dmstr/yii2-rbac-migration`
+- make sure to assign `FileflyDefault` to `Editor` and `FileflyAdmin` to `Master`
 
 ### 5.2 to 5.3
 

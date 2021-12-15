@@ -1,6 +1,6 @@
 <?php
 
-namespace project\modules\test\controllers;
+namespace testProject\modules\test\controllers;
 
 /*
  * @link http://www.diemeisterei.de/

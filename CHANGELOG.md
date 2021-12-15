@@ -1,10 +1,33 @@
 # Changelog
 
-### dev
+### 5.6.0
+
+- updated base-image `dmstr/php-yii2:7.4-fpm-8.0`
+- composer 2
+- added healthchecks
+- use asset-packagist (preferred); disabled fxp/composer-asset-plugin
+
+### 5.5.0-beta1
+
+- added `Cell`s (`_beforeContent`, `_afterContent`) to `layouts/main.php`
+- removed `Pjax` container in `layouts/main.php`
+
+### 5.5.0-alpha1
+
+- `yii db` has changed API
+- base-image upgraded to `PHP 7.4`
+
+### 5.4.1
+
+- added `fsFtp` filesystem component
+
+### 5.4.0
 
 - added `APP_PAGES_TITLE_PREFIX`
 - removed `cinghie/yii2-cookie-consent`
 - removed `dmstr/yii2-contact-module`
+- changed default vendor-asset paths to `bower-asset` & `npm-asset`
+- changed scheduler to use `--entrySolo` for `audit/cleanup`
 
 ### 5.3.0
 

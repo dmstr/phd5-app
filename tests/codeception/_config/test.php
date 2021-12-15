@@ -22,17 +22,24 @@ $_SERVER['REQUEST_TIME'] = time();
     }
 );
 
+// For e2e tests, also for app integration tests in projects
 return [
     'language' => 'en',
+    'defaultRoute' => APP_TYPE == 'web' ? '/site/index' : 'help',
     'aliases' => [
-        '@project' => '@root/tests/codeception/_project',
+        '@testProject' => '@root/tests/codeception/_project',
     ],
     'params' => [
         'backend.iframe.name' => 'backend-test',
     ],
+    'components' => [
+        'user' => [
+            'loginUrl' => '/user/login'
+        ]
+    ],
     'modules' => [
         'test' => [
-            'class' => project\modules\test\Module::class,
+            'class' => testProject\modules\test\Module::class,
             'layout' => '@app/views/layouts/container',
         ]
     ]

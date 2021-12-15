@@ -3,4 +3,5 @@
  * @var \omnilight\scheduling\Schedule $schedule
  */
 
-$schedule->exec('yii audit/cleanup --interactive=0 --entry --age=7')->daily();
+// cleanup with entrySolo, since panels have different default maxAge settings
+$schedule->exec('yii audit/cleanup --interactive=0 --entrySolo')->daily();

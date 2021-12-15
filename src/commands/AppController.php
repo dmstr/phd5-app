@@ -2,11 +2,11 @@
 
 namespace app\commands;
 
-use dmstr\helpers\Metadata;
 use mikehaertl\shellcommand\Command;
-use yii\console\Controller;
-use yii\helpers\VarDumper;
 use Yii;
+use yii\console\Controller;
+use yii\helpers\ArrayHelper;
+use yii\helpers\VarDumper;
 
 /**
  * @link http://www.diemeisterei.de/
@@ -19,6 +19,42 @@ use Yii;
 class AppController extends Controller
 {
     public $defaultAction = 'version';
+
+    /**
+     * @var int config levels to show
+     */
+    public $level = 10;
+
+    /**
+     * @inheritdoc
+     */
+    public function options($actionID)
+    {
+        switch ($actionID) {
+            case 'config':
+                $additionalOptions = ['level'];
+                break;
+            default:
+                $additionalOptions = [];
+        }
+        return ArrayHelper::merge(
+            $additionalOptions,
+            parent::options($actionID)
+        );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function optionAliases()
+    {
+        return ArrayHelper::merge(
+            [
+                'l' => 'level'
+            ],
+            parent::optionAliases()
+        );
+    }
 
     /**
      * Shows application configuration
@@ -39,7 +75,7 @@ class AppController extends Controller
                 $data = $GLOBALS['config'][$keys[0]][$keys[1]];
             }
         }
-        $this->stdout(VarDumper::dumpAsString($data));
+        $this->stdout(VarDumper::dumpAsString($data, $this->level));
     }
 
     /**
@@ -59,8 +95,7 @@ class AppController extends Controller
     {
         $this->stdout('Application Version: ');
         $this->stdout(getenv('APP_NAME') . ' ');
-        $this->stdout(APP_VERSION);
-        echo "\n";
+        $this->stdout(APP_VERSION . "\n");
     }
 
     /**
@@ -77,7 +112,7 @@ class AppController extends Controller
 
         $this->stdout("\nDatabase\n");
         $this->stdout("--------\n");
-        $this->run('db/create');
+        $this->run('db/create', [getenv('DB_ENV_MYSQL_ROOT_USER'),getenv('DB_ENV_MYSQL_ROOT_PASSWORD')]);
         $this->run('migrate/up', ['interactive' => (bool)getenv('APP_INTERACTIVE')]);
 
         $this->stdout("\nUser\n");
@@ -85,7 +120,7 @@ class AppController extends Controller
         $adminPassword = $this->prompt(
             'Enter admin password',
             [
-                'default' => getenv('APP_ADMIN_PASSWORD') ?: \Yii::$app->security->generateRandomString(8),
+                'default' => getenv('APP_ADMIN_PASSWORD') ?: Yii::$app->security->generateRandomString(8),
             ]
         );
         $this->run('user/create', [getenv('APP_ADMIN_EMAIL'), 'admin', $adminPassword]);
@@ -112,7 +147,7 @@ class AppController extends Controller
      */
     public function actionClearAssets()
     {
-        $assets = \Yii::getAlias('@web/assets');
+        $assets = Yii::getAlias('@web/assets');
 
         // Matches from 7-8 char folder names, the 8. char is optional
         $matchRegex = '"^[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]\?[a-z0-9]$"';
@@ -129,11 +164,30 @@ class AppController extends Controller
         if ($delete) {
             // Try to execute $command
             if ($command->execute()) {
-                echo "Web assets have been deleted.\n\n";
+                $this->stdout("Web assets have been deleted.\n\n");
             } else {
-                echo "\n" . $command->getError() . "\n";
-                echo $command->getStdErr();
+                $this->stderr("\n" . $command->getError() . "\n");
+                $this->stderr($command->getStdErr());
             }
         }
+    }
+
+    public function actionTestMail($to)
+    {
+        $mailer = Yii::$app->mailer;
+
+        $message = $mailer->compose();
+        $message
+            ->setTo($to)
+            ->setSubject('Test-Mail from ' . getenv('APP_NAME'))
+            ->setTextBody(getenv('APP_TITLE') . ' | ' . getenv('HOSTNAME'));
+
+        if ($message->send()) {
+            $this->stdout('Mail sent');
+        } else {
+            $this->stderr('Mail sending failed');
+        }
+
+        $this->stdout(PHP_EOL);
     }
 }

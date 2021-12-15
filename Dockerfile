@@ -1,8 +1,9 @@
-FROM dmstr/php-yii2:7.3-fpm-6.0-rc3-nginx
+FROM dmstr/php-yii2:7.4-fpm-8.0-beta3-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        cron \
         procps # recommended for dmstr/yii2-resque-module \
  && pecl install mailparse \
  && docker-php-ext-enable mailparse \
@@ -17,9 +18,12 @@ WORKDIR /app
 COPY src/composer.* /app/src/
 
 # Composer installation (skipped on first build in dist-upgrade)
+# create bc link if not exists
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
-        composer -dsrc clear-cache; \
+        composer -dsrc clear-cache && \
+        ln -s bower-asset /app/vendor/bower && \
+        ln -s npm-asset /app/vendor/npm; \
     fi
 
 # Application source-code
@@ -29,16 +33,14 @@ COPY ./src /app/src/
 COPY ./config /app/config/
 COPY ./migrations /app/migrations/
 
-# Tests source-code for integration tests in derived images
-COPY ./tests /app/tests
+RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
-    chmod -R ugo+r /root/.composer/vendor && \
     chmod u+x /usr/local/bin/unique-number.sh /usr/local/bin/export-env.sh && \
     chmod -R u+x /etc/periodic && \
-    chown -R www-data:www-data runtime web/assets web/bundles /root/.composer/vendor /mnt/storage
+    chown -R www-data:www-data runtime web/assets web/bundles /mnt/storage
 
 VOLUME /app/runtime
 VOLUME /app/web/assets
@@ -53,3 +55,9 @@ RUN crontab config/crontab
 
 # export container environment for cronjobs on container start
 CMD supervisord -c /etc/supervisor/supervisord.conf
+
+# Tests source-code for integration tests in derived images
+COPY ./tests /app/tests
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=1m \
+  CMD curl -f http://localhost/static/status.php || exit 1

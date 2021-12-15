@@ -1,18 +1,11 @@
 <?php
 /**
  * @group mandatory
+ * @group widgets-module
  */
 class WidgetsModuleTemplateCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function tryToTest(E2eTester $I)
     {
         $I->wantTo('ensure that widgets-module works');

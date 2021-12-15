@@ -1,34 +1,27 @@
 <?php
+
 /**
  * @group mandatory
  * @group base-test-setup
+ * @group frontend
  */
 class PreviewAccessCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testPreviewAccess(E2eTester $I)
     {
         $I->wantTo('ensure that preview access works');
 
-        $I->amOnPage('/');
+        $I->amOnPage('/site/index');
         $I->makeScreenshot('debug-preview-access-login');
 
         $I->amGoingTo('try to login as preview');
         $I->login('preview', 'preview1');
 
-        $I->amOnPage('/en');
-#$I->see('Application installed successfully', 'h2');
+        $I->amOnPage('/en/site/index');
         $I->dontSeeHorizontalScrollbars();
 
-        $I->amOnPage('/de');
+        $I->amOnPage('/de/site/index');
         $I->dontSee('.alert');
         $I->dontSee('Sign in');
         $I->canSee('Demo','h1');

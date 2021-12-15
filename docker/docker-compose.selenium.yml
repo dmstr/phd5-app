@@ -3,6 +3,7 @@ services:
   test-php:
     depends_on:
       - chrome
+
   chrome:
     image: selenium/standalone-chrome-debug:3.12
     userns_mode: host
@@ -11,7 +12,9 @@ services:
       - '5900'
     environment:
       - VNC_NO_PASSWORD=1
-
+    volumes:
+      # Mount shm, see https://github.com/SeleniumHQ/docker-selenium#running-the-images
+      - /dev/shm:/dev/shm
 
   firefox:
     # update to version 3 blocked by https://github.com/facebook/php-webdriver/issues/469
@@ -24,5 +27,5 @@ services:
       - '4444'
       - '5900'
     volumes:
-      # Mount shm also for firefox, see https://github.com/SeleniumHQ/docker-selenium#running-the-images
+      # Mount shm, see https://github.com/SeleniumHQ/docker-selenium#running-the-images
       - /dev/shm:/dev/shm

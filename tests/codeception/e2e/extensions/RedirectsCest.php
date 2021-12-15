@@ -10,6 +10,7 @@ use E2eTester;
  * @author Elias Luhr <e.luhr@herzogkommunikation.de>
  *
  * @group mandatory
+ * @group redirects-module
  */
 class RedirectsCest
 {
@@ -38,7 +39,7 @@ class RedirectsCest
         $I->amOnPage('/redirects');
         $I->click('New');
 
-        $I->waitForElementVisible('.redirect-form', 10);
+        $I->waitForElementVisible('.redirect-form');
         $I->selectOption('Redirect[type]', 'Path redirect');
         $I->fillField('Redirect[from_path]', '/' . $this->_test_redirect);
         $I->fillField('Redirect[to_path]', '/site/index');

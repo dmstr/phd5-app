@@ -1,5 +1,65 @@
 <?php
 
+use bedezign\yii2\audit\Audit as AuditModule;
+use bedezign\yii2\audit\panels\ErrorPanel;
+use bedezign\yii2\audit\panels\ExtraDataPanel;
+use bedezign\yii2\audit\panels\MailPanel;
+use bedezign\yii2\audit\panels\TrailPanel;
+use codemix\localeurls\UrlManager;
+use codemix\streamlog\Target;
+use creocoder\flysystem\AwsS3Filesystem;
+use creocoder\flysystem\LocalFilesystem;
+use Da\User\Component\AuthDbManagerComponent;
+use Da\User\Controller\AdminController;
+use Da\User\Controller\PermissionController;
+use Da\User\Controller\RoleController;
+use Da\User\Controller\RuleController;
+use Da\User\Model\User as UserModel;
+use Da\User\Module as UserModule;
+use dmstr\helpers\AssetHash;
+use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
+use dmstr\modules\backend\Module as BackendModule;
+use dmstr\modules\contact\Module as ContactModule;
+use dmstr\modules\pages\models\Tree;
+use dmstr\modules\pages\Module as PagesModule;
+use dmstr\modules\prototype\Module as PrototypeModule;
+use dmstr\modules\publication\Module as PublicationModule;
+use dmstr\modules\redirect\Module as RedirectModule;
+use dmstr\web\AdminLteAsset;
+use dmstr\web\User;
+use dmstr\willnorrisImageproxy\Url as ImageUrlHelper;
+use hrzg\filefly\components\ImageUrlRule;
+use hrzg\filefly\Module as FileFlyModule;
+use hrzg\resque\Module as ResqueModule;
+use hrzg\widget\Module as WidgetsModule;
+use ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior;
+use ignatenkovnikita\queuemanager\QueueManager as QueueManagerModule;
+use kartik\grid\Module as GridViewModule;
+use lajax\translatemanager\Module as TranslatemanagerModule;
+use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
+use lajax\translatemanager\services\scanners\ScannerPhpArray;
+use lajax\translatemanager\services\scanners\ScannerPhpFunction;
+use lo\modules\noty\Module as NotyModule;
+use pheme\settings\components\Settings;
+use rmrevin\yii\fontawesome\FA;
+use yii\caching\ArrayCache;
+use yii\caching\DummyCache;
+use yii\db\Connection as DbConnection;
+use yii\helpers\Html;
+use yii\helpers\Json;
+use yii\helpers\Markdown;
+use yii\helpers\Url;
+use yii\i18n\DbMessageSource;
+use yii\queue\LogBehavior;
+use yii\queue\redis\Queue;
+use yii\redis\Cache;
+use yii\redis\Connection as RedisConnection;
+use yii\swiftmailer\Mailer;
+use yii\twig\ViewRenderer;
+use yii\web\Cookie;
+use yii\web\DbSession;
+use yii\web\View;
+
 /**
  * @link http://www.diemeisterei.de/
  *
@@ -10,12 +70,6 @@
  */
 
 // prepare application languages
-use dmstr\web\AdminLteAsset;
-use hrzg\filefly\components\ImageUrlRule;
-use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
-use lajax\translatemanager\services\scanners\ScannerPhpArray;
-use lajax\translatemanager\services\scanners\ScannerPhpFunction;
-use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
 
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
@@ -26,40 +80,24 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     $bundles = include Yii::getAlias('@web/bundles') . '/config.php';
     // disable loading of bundles skin file, when using bundled assets
     Yii::$container->set(
-        AdminLteAsset::className(),
+        AdminLteAsset::class,
         [
             'skin' => false,
         ]
     );
 }
 
-$boxLayout = '@backend/views/layouts/box';
+$isHttps = getenv('HTTPS') === 'on';
 
-// custom layout for user module (manage/admin)
-Yii::$container->set(
-    Da\User\Controller\AdminController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\PermissionController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\RoleController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
-Yii::$container->set(
-    Da\User\Controller\RuleController::class,
-    [
-        'layout' => $boxLayout,
-    ]
-);
+$dbAttributes = [
+    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
+];
+
+if (getenv('MYSQL_ATTR_SSL_CA')) {
+    $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
+}
+
+$boxLayout = '@backend/views/layouts/box';
 
 // Basic configuration, used in web and console applications
 return [
@@ -73,101 +111,151 @@ return [
     'bootstrap' => [
         'log',
         'redirects',
-        'queue',
+        'queue'
     ],
     'aliases' => [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
         'storage' => '/mnt/storage',
-        'bower' => '@vendor/bower',
-        'npm' => '@vendor/npm',
+        'bower' => '@vendor/bower-asset',
+        'npm' => '@vendor/npm-asset'
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
         'context.menuItems' => [],
         'backend.iframe.name' => getenv('APP_PARAMS_BACKEND_IFRAME_NAME') ?: '_self',
         'backend.browserSupport' => [
-            'Chrome' => 72,
+            'Chrome' => 87,
             'Edge' => false,
             'Safari' => false,
             'MobileSafari' => false,
-            'Firefox' => 65,
+            'Firefox' => 88,
             'Opera' => false,
             'Vivaldi' => false,
             'IE' => false
         ]
     ],
+    'container' => [
+        'definitions' => [
+            AuthDbManagerComponent::class => [
+                'defaultRoles' => ['Default'],
+                'cache' => 'cache'
+            ],
+            AdminController::class => [
+                'layout' => $boxLayout
+            ],
+            PermissionController::class => [
+                'layout' => $boxLayout
+            ],
+            RoleController::class => [
+                'layout' => $boxLayout
+            ],
+            RuleController::class => [
+                'layout' => $boxLayout
+            ],
+            Cookie::class => [
+                'secure' => $isHttps
+            ]
+        ]
+    ],
     'components' => [
         'assetManager' => [
             'dirMode' => 0775,
-            'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ?
-                \dmstr\helpers\AssetHash::byFileTime(!YII_DEBUG)
-                : null,
+            'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ? AssetHash::byFileTime(!YII_DEBUG) : null,
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
-            'basePath' => '@app/../web/assets/',
+            'basePath' => '@app/../web/assets/'
         ],
-        'authManager' => [
-            'class' => \yii\rbac\DbManager::class,
-            'defaultRoles' => ['Default'],
-            'cache' => 'cache'
+        'cache' => [
+            'class' => getenv('APP_NO_CACHE') ? DummyCache::class : Cache::class
         ],
-        'cache' =>
-            [
-                'class' => getenv('APP_NO_CACHE') ?
-                    \yii\caching\DummyCache::class : \yii\redis\Cache::class,
-            ],
+        'cacheSystem' => [
+            'class' => ArrayCache::class
+        ],
         'db' => [
-            'class' => \yii\db\Connection::class,
+            'class' => DbConnection::class,
             'dsn' => getenv('DATABASE_DSN'),
             'username' => getenv('DATABASE_USER'),
             'password' => getenv('DATABASE_PASSWORD'),
             'charset' => 'utf8',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE'),
+            'attributes' => $dbAttributes
+        ],
+        'dbSystem' => [
+            'class' => DbConnection::class,
+            'dsn' => getenv('DATABASE_DSN'),
+            'username' => getenv('DATABASE_USER'),
+            'password' => getenv('DATABASE_PASSWORD'),
+            'charset' => 'utf8',
+            'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
+            'enableSchemaCache' => true,
+            'schemaCache' => 'cacheSystem',
+            'attributes' => $dbAttributes
         ],
         'fsLocal' => [
-            'class' => \creocoder\flysystem\LocalFilesystem::class,
-            'path' => '@storage',
+            'class' => LocalFilesystem::class,
+            'path' => '@storage'
         ],
         'fsS3' => [
-            'class' => \creocoder\flysystem\AwsS3Filesystem::class,
+            'class' => AwsS3Filesystem::class,
             'key' => getenv('AMAZON_S3_BUCKET_PUBLIC_KEY'),
             'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
             'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
             'prefix' => getenv('APP_NAME') . '/public',
-            'region' => getenv('AMAZON_S3_BUCKET_REGION'),
+            'region' => getenv('AMAZON_S3_BUCKET_REGION')
         ],
         'fsRuntime' => [
-            'class' => \creocoder\flysystem\LocalFilesystem::class,
-            'path' => '@runtime',
+            'class' => LocalFilesystem::class,
+            'path' => '@runtime'
+        ],
+        'fsFtp' => [
+            'class' => \creocoder\flysystem\FtpFilesystem::class,
+            'host' => getenv('FTP_BUCKET_HOST'),
+            'port' => getenv('FTP_BUCKET_PORT') ?: 21,
+            'username' => getenv('FTP_BUCKET_USER'),
+            'password' => getenv('FTP_BUCKET_PASSWORD'),
+            'root' => getenv('FTP_BUCKET_FILESYSTEM_BASE_PATH') ?: '/',
+            'ssl' => getenv('FTP_BUCKET_SSL') ?: 0,
+            'passive' => 1,
+            'timeout' => 10,
+            'transferMode' => FTP_BINARY,
+            'enableTimestampsOnUnixListings' => true
         ],
         'i18n' => [
             'translations' => [
                 '*' => [
-                    'class' => \yii\i18n\DbMessageSource::class,
+                    'class' => DbMessageSource::class,
                     'db' => 'db',
-                    'sourceLanguage' => 'en',
+                    'sourceLanguage' => 'xx-XX',
                     'sourceMessageTable' => '{{%language_source}}',
                     'messageTable' => '{{%language_translate}}',
                     'cachingDuration' => 86400,
-                    'enableCaching' => !YII_ENV_DEV,
+                    'enableCaching' => !YII_ENV_DEV
                 ],
-            ],
+                'noty' => [
+                    'class' => DbMessageSource::class,
+                    'sourceLanguage' => 'xx-XX',
+                    'sourceMessageTable' => '{{%language_source}}',
+                    'messageTable' => '{{%language_translate}}',
+                    'cachingDuration' => 86400,
+                    'enableCaching' => !YII_ENV_DEV
+                ]
+            ]
         ],
         'log' => [
             'traceLevel' => getenv('YII_TRACE_LEVEL') ?: 0,
             'targets' => [
                 'common' => [
-                    'class' => \codemix\streamlog\Target::class,
+                    'class' => Target::class,
                     'url' => 'php://stderr',
                     'levels' => ['error', 'warning'],
                     'logVars' => [],
-                    'replaceNewline' => (APP_TYPE == 'console') ? null : '',
-                ],
-            ],
+                    'replaceNewline' => APP_TYPE === 'console' ? null : ''
+                ]
+            ]
         ],
         'mailer' => [
-            'class' => \yii\swiftmailer\Mailer::class,
+            'class' => Mailer::class,
             'fileTransportPath' => '@runtime/mail',
             'enableSwiftMailerLogging' => true,
             'useFileTransport' => getenv('APP_MAILER_USE_FILE_TRANSPORT'),
@@ -177,34 +265,45 @@ return [
                 'port' => getenv('APP_MAILER_PORT'),
                 'encryption' => getenv('APP_MAILER_ENCRYPTION'),
                 'username' => getenv('APP_MAILER_USERNAME'),
-                'password' => getenv('APP_MAILER_PASSWORD'),
+                'password' => getenv('APP_MAILER_PASSWORD')
             ],
+            'messageConfig' => [
+                'charset' => 'UTF-8',
+                'replyTo' => getenv('APP_MAILER_REPLY_TO'),
+                'returnPath' => getenv('APP_MAILER_RETURN_PATH'),
+                'from' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')]
+            ]
         ],
         'queue' => [
-            'class' => \yii\queue\redis\Queue::class,
+            'class' => Queue::class,
             'channel' => getenv('APP_QUEUE_CHANNEL'),
-            'as log' => \yii\queue\LogBehavior::class,
-            'as queuemanager' => \ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior::class
+            'as log' => LogBehavior::class,
+            'as queuemanager' => QueueManagerBehavior::class
         ],
         'redis' => [
-            'class' => \yii\redis\Connection::class,
-            'hostname' => 'redis',
+            'class' => RedisConnection::class,
+            'hostname' => getenv('REDIS_PORT_6379_TCP_ADDR'),
+            'port' => getenv('REDIS_PORT_6379_TCP_PORT')
         ],
         'session' => [
-            'class' => \yii\web\DbSession::class
+            'class' => DbSession::class,
+            'db' => 'dbSystem',
+            'cookieParams' => [
+                'secure' => $isHttps
+            ]
         ],
         'settings' => [
-            'class' => \pheme\settings\components\Settings::class
+            'class' => Settings::class
         ],
         'user' => [
-            'class' => \dmstr\web\User::class,
+            'class' => User::class,
             'enableAutoLogin' => true,
             'loginUrl' => ['/user/security/login'],
-            'identityClass' => Da\User\Model\User::class,
-            'rootUsers' => ['admin'],
+            'identityClass' => UserModel::class,
+            'rootUsers' => ['admin']
         ],
         'urlManager' => [
-            'class' => \codemix\localeurls\UrlManager::class,
+            'class' => UrlManager::class,
             'enablePrettyUrl' => getenv('APP_PRETTY_URLS'),
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
@@ -212,82 +311,74 @@ return [
             'rules' => [
                 [
                     'class' => ImageUrlRule::class,
-                    'suffix' => ',p',
-                ],
+                    'suffix' => ',p'
+                ]
             ],
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
                 '#^img/stream#' => '#^img/stream#',
-                '#^filefly/api#' => '#^filefly/api#',
+                '#^filefly/api#' => '#^filefly/api#'
             ],
             'languages' => $languages,
+            'languageCookieOptions' => [
+                'secure' => $isHttps
+            ]
         ],
         'view' => [
-            'class' => 'yii\web\View',
+            'class' => View::class,
             'renderers' => [
                 'twig' => [
-                    'class' => \yii\twig\ViewRenderer::class,
+                    'class' => ViewRenderer::class,
                     'cachePath' => '@runtime/Twig/cache',
                     'options' => [
-                        'auto_reload' => true,
+                        'auto_reload' => true
                     ],
                     'globals' => [
-                        'Html' => ['class' => \yii\helpers\Html::class],
-                        'Json' => ['class' => \yii\helpers\Json::class],
-                        'Tree' => ['class' => \dmstr\modules\pages\models\Tree::class],
-                        'FA' => ['class' => \rmrevin\yii\fontawesome\FA::class],
-                        'FileUrl' => ['class' => \hrzg\filemanager\helpers\Url::class],
-                        'Url' => ['class' => \yii\helpers\Url::class],
-                        'Markdown' => ['class' => \yii\helpers\Markdown::class],
+                        'Html' => ['class' => Html::class],
+                        'Json' => ['class' => Json::class],
+                        'Tree' => ['class' => Tree::class],
+                        'FA' => ['class' => FA::class],
+                        'Url' => ['class' => Url::class],
+                        'Markdown' => ['class' => Markdown::class]
                     ],
                     'functions' => [
                         'image' => function ($imageSource, $preset = null) {
-                            // sanitize input
-                            $preset = trim($preset, "/");
-                            $baseUrl = trim(Yii::$app->settings->get('imgBaseUrl', 'app.frontend'), "/");
-                            $prefix = trim(Yii::$app->settings->get('imgHostPrefix', 'app.frontend'), "/");
-
-                            // build remote URL
-                            $remoteUrl = $prefix.'/'.$imageSource.Yii::$app->settings->get('imgHostSuffix', 'app.frontend');
-
-                            // add HMAC sign key to preset when using imageproxy, see also https://github.com/willnorris/imageproxy#examples
-                            if (getenv('IMAGEPROXY_SIGNATURE_KEY')) {
-                                $key = getenv('IMAGEPROXY_SIGNATURE_KEY');
-                                $preset .= ',s' . strtr(
-                                    base64_encode(hash_hmac('sha256', $remoteUrl, $key, 1)),
-                                    '/+',
-                                    '_-'
-                                    );
-                            }
-                            return implode('/', array_filter([$baseUrl,$preset,$remoteUrl]));
+                            return ImageUrlHelper::image($imageSource, $preset);
                         },
-                        't' => function ($category, $message) {
-                            return Yii::t($category, $message);
-                        },
+                        't' => function ($category, $message, $params = [], $language = null) {
+                            return Yii::t($category, $message, $params, $language);
+                        }
                     ],
                     'uses' => [
-                        'yii\bootstrap',
-                    ],
-                ],
-            ],
-        ],
+                        'yii\bootstrap'
+                    ]
+                ]
+            ]
+        ]
     ],
     'modules' => [
         'audit' => [
-            'class' => \bedezign\yii2\audit\Audit::class,
+            'class' => AuditModule::class,
             'accessRoles' => ['audit-module'],
             'layout' => $boxLayout,
             'panels' => [
                 'audit/trail' => [
-                    'class' => \bedezign\yii2\audit\panels\TrailPanel::class
+                    'class' => TrailPanel::class,
+                    'maxAge' => null
                 ],
                 'audit/mail' => [
-                    'class' => \bedezign\yii2\audit\panels\MailPanel::class
+                    'class' => MailPanel::class,
+                    'maxAge' => null
                 ],
                 // Links the extra error reporting functions (`exception()` and `errorMessage()`)
                 'audit/error' => [
-                    'class' => \bedezign\yii2\audit\panels\ErrorPanel::class
+                    'class' => ErrorPanel::class,
+                    'maxAge' => 30
                 ],
+                'audit/extra' => [
+                    'class' => ExtraDataPanel::class,
+                    'maxAge' => 30
+                ]
                 // see https://github.com/bedezign/yii2-audit for detailed config
             ],
             'ignoreActions' => [
@@ -300,61 +391,72 @@ return [
                 'debug/*',
                 'resque/*',
                 'db/create',
-                'migrate/up',
+                'migrate/up'
             ],
             'maxAge' => 7,
+            'db' => 'dbSystem'
         ],
         'backend' => [
-            'class' => \dmstr\modules\backend\Module::class,
+            'class' => BackendModule::class,
             'layout' => '@backend/views/layouts/main',
             'modulesDashboardBlacklist' => [
                 'noty',
-                'treemanager',
-            ],
+                'treemanager'
+            ]
         ],
         'contact' => [
-            'class' => dmstr\modules\contact\Module::class
+            'class' => ContactModule::class
         ],
         'filefly' => [
-            'class' => \hrzg\filefly\Module::class,
-            'layout' => '@backend/views/layouts/main',
+            'class' => FileFlyModule::class,
+            'layout' => $boxLayout,
             'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
             'filesystemComponents' => [
                 's3' => 'fsS3',
                 'local' => 'fsLocal',
-                'runtime' => 'fsRuntime',
-            ],
+                'runtime' => 'fsRuntime'
+            ]
+        ],
+        'gridview' => [
+            'class' => GridViewModule::class
         ],
         'noty' => [
-            'class' => \lo\modules\noty\Module::class,
+            'class' => NotyModule::class,
         ],
         'queuemanager' => [
-            'class' => \ignatenkovnikita\queuemanager\QueueManager::class,
-            'layout' => $boxLayout,
+            'class' => QueueManagerModule::class,
+            'layout' => $boxLayout
         ],
         'pages' => [
-            'class' => \dmstr\modules\pages\Module::class,
-            'layout' => '@backend/views/layouts/main',
+            'class' => PagesModule::class,
+            'layout' => $boxLayout
         ],
         'prototype' => [
-            'class' => \dmstr\modules\prototype\Module::class,
-            'layout' => $boxLayout,
+            'class' => PrototypeModule::class,
+            'layout' => $boxLayout
         ],
         'publication' => [
-            'class' => dmstr\modules\publication\Module::class
+            'class' => PublicationModule::class
         ],
         'redirects' => [
-            'class' => \dmstr\modules\redirect\Module::class,
-            'layout' => '@backend/views/layouts/main',
+            'class' => RedirectModule::class,
+            'layout' => $boxLayout
         ],
         'resque' => [
-            'class' => \hrzg\resque\Module::class,
-            'layout' => '@backend/views/layouts/main',
+            'class' => ResqueModule::class,
+            'layout' => $boxLayout
         ],
         'translatemanager' => [
-            'class' => \lajax\translatemanager\Module::class,
+            'class' => TranslatemanagerModule::class,
             'layout' => $boxLayout,
-            'root' => '@app/views',
+            'root' => [
+                '@app/views',
+                '@vendor/loveorigami/yii2-notification-wrapper/src',
+                '@vendor/dmstr',
+                '@vendor/lajax/yii2-translate-manager',
+                '@vendor/bedezign/yii2-audit/src',
+                '@vendor/ignatenkovnikita/yii2-queuemanager'
+            ],
             'tables' => [
                 [
                     'connection' => 'db',
@@ -374,11 +476,12 @@ return [
                 ScannerDatabase::class
             ],
             'allowedIPs' => ['*'],
-            'roles' => ['translate-module'],
+            'roles' => ['translate-module']
         ],
         'user' => [
-            'class' => Da\User\Module::class,
+            'class' => UserModule::class,
             'layout' => '@app/views/layouts/container',
+            'enableGdprCompliance' => true,
             'defaultRoute' => 'admin',
             'administratorPermissionName' => 'user-module',
             'administrators' => ['admin'],
@@ -390,12 +493,12 @@ return [
             ],
         ],
         'widgets' => [
-            'class' => \hrzg\widget\Module::class,
-            'layout' => '@backend/views/layouts/main',
+            'class' => WidgetsModule::class,
+            'layout' => $boxLayout,
             'frontendRouteMap' => [
                 'app/site/index' => '/',
                 'pages/default/page' => 'pages/default/page',
-            ],
-        ],
-    ],
+            ]
+        ]
+    ]
 ];

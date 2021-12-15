@@ -1,40 +1,32 @@
 <?php
 /**
  * @group mandatory
+ * @group backend
  */
 class AccessControlCest
 {
-    public function _before(FunctionalTester $I)
-    {
-    }
-
-    public function _after(FunctionalTester $I)
-    {
-    }
-
-    // tests
-    public function testAccessControl(FunctionalTester $I)
+    /**
+     * Non-public routes
+     *
+     * @example ["/backend/default/index"]
+     * @example ["/backend/config/view"]
+     * @example ["/prototype"]
+     * @example ["/prototype/html"]
+     * @example ["/prototype/less"]
+     * @example ["/prototype/less/create"]
+     * @example ["/settings"]
+     * @example ["/settings/default/create"]
+     * @example ["/translatemanager"]
+     * @example ["/user"]
+     * @example ["/pages"]
+     * @example ["/resque"]
+     * @example ["/audit"]
+     */
+    public function testAccessControl(FunctionalTester $I, \Codeception\Example $example)
     {
         $I->wantTo('ensure that access control works');
-
-        $routesWithAccessControl = [
-            '/backend',
-            '/backend/default/view-config',
-            '/prototype',
-            '/prototype/html',
-            '/prototype/less',
-            '/prototype/less/create',
-            '/settings',
-            '/settings/default/create',
-            '/translatemanager',
-            '/user',
-            '/pages'
-        ];
-
-        foreach ($routesWithAccessControl AS $route) {
-            $I->amOnPage($route);
+         $I->amOnPage($example[0]);
             $I->canSeeCurrentUrlMatches('|user/login|');
-        }
 
     }
 }

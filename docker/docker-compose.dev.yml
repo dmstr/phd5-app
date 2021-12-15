@@ -6,7 +6,7 @@ version: '3.2'
 services:
   php:
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     ports:
       - 80
@@ -18,18 +18,18 @@ services:
       # For host-volume development (permissions)
       # For composer usage in container
       - GITHUB_API_TOKEN
+      - COMPOSER_MEMORY_LIMIT=2G
       - ENV_LOCAL_FILE=local.env
-      - APP_MAILER_USE_FILE_TRANSPORT=1
       - APP_ADMIN_PASSWORD=admin1
       - APP_ADMIN_EMAIL=admin@local.develop
       - APP_ASSET_FORCE_PUBLISH=1
       - APP_PAGES_TITLE_PREFIX='[DEV] '
       - PHP_ENABLE_XDEBUG
     volumes:
-      - ../config:/app/config:cached
-      - ../src:/app/src:cached
-      - ../migrations:/app/migrations:cached
-      - ../vendor-dev:/app/vendor:delegated
+      - ./config:/app/config:cached
+      - ./src:/app/src:cached
+      - ./migrations:/app/migrations:cached
+      - ./vendor-dev:/app/vendor:delegated
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
 

@@ -46,7 +46,9 @@ INSERT INTO `app_auth_item` VALUES ('pages_default_page',2,'CMS Page View Action
 INSERT INTO `app_auth_item` VALUES ('Preview',1,'Preview Access',NULL,NULL,1467331401,1489018970);
 INSERT INTO `app_auth_item` VALUES ('prototype',2,'CMS Prototype Module [route]',NULL,NULL,1463351107,1489020375);
 INSERT INTO `app_auth_item` VALUES ('prototype_render_twig',2,'deprecated',NULL,NULL,1463350937,1489020417);
+INSERT INTO `app_auth_item` VALUES ('Default',1,'Authenticated User',NULL,NULL,1463048457,1463048457);
 INSERT INTO `app_auth_item` VALUES ('Public',1,'Unauthenticated User',NULL,NULL,1463048457,1463048457);
+INSERT INTO `app_auth_item` VALUES ('Guest',1,'Guest User',NULL,NULL,1463048457,1463048457);
 INSERT INTO `app_auth_item` VALUES ('resque',2,'Resque Job Module [route]',NULL,NULL,1467318093,1489020432);
 INSERT INTO `app_auth_item` VALUES ('redirects',2,'/redirects/* [route]',NULL,NULL,1467318093,1489020432);
 INSERT INTO `app_auth_item` VALUES ('settings',2,'[route]',NULL,NULL,1467315669,1489020446);
@@ -68,6 +70,7 @@ INSERT INTO `app_auth_item` VALUES ('widgets_crud_widget_view',2,'Widgets CRUD C
 INSERT INTO `app_auth_item` VALUES ('widgets_default_index',2,'Widgets Manager',NULL,NULL,1491193845,1491193845);
 INSERT INTO `app_auth_item` VALUES ('widgets_test',2,'Widgets TEST Playground',NULL,NULL,1491193845,1491193845);
 INSERT INTO `app_auth_item` VALUES ('widgets-cell-edit',2,'Widgets frontend buttons',NULL,NULL,1532371751,1532371751);
+INSERT INTO `app_auth_item` VALUES ('contact_default_index',2,'',NULL,NULL,1629714940,1629714940);
 /*!40000 ALTER TABLE `app_auth_item` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -123,6 +126,9 @@ INSERT INTO `app_auth_item_child` VALUES ('Master','user-module');
 INSERT INTO `app_auth_item_child` VALUES ('FrontendDeveloper','widgets');
 INSERT INTO `app_auth_item_child` VALUES ('Master','widgets');
 INSERT INTO `app_auth_item_child` VALUES ('Editor','widgets_crud_widget');
+INSERT INTO `app_auth_item_child` VALUES ('Public','contact_default_index');
+INSERT INTO `app_auth_item_child` VALUES ('Guest','Public');
+INSERT INTO `app_auth_item_child` VALUES ('Default','Public');
 /*!40000 ALTER TABLE `app_auth_item_child` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;

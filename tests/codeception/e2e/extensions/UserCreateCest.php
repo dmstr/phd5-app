@@ -1,20 +1,14 @@
 <?php
-/**
- * @group mandatory
- */
+
 use Faker\Factory;
 
+/**
+ * @group mandatory
+ * @group user-module
+ */
 class UserCreateCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function tryToTest(E2eTester $I)
     {
         $faker = Factory::create();
@@ -34,9 +28,7 @@ class UserCreateCest
 
         $I->click('button[type="submit"]');
 
-        $I->waitForText('Success', 10);
-        $I->seeInFormFields('form', ['User[username]'=>$username]);
-
-        $I->pauseExecution();
+        $I->waitForText('Success',10, '#growls-br > .growl.growl-notice');
+        $I->seeInFormFields('form', ['User[username]' => $username]);
     }
 }

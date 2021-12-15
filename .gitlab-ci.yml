@@ -8,9 +8,8 @@ stages:
 
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}${CI_PROJECT_NAME}"
-  COMPOSE_FILE: "./docker/docker-compose.yml:./docker/docker-compose.dev.yml:./docker/docker-compose.test.yml:./docker/docker-compose.selenium.yml"
+  COMPOSE_FILE: "./docker-compose.yml:./docker/docker-compose.dev.yml:./docker/docker-compose.test.yml:./docker/docker-compose.selenium.yml"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
-  REGISTRY_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF_NAME}"
 
 # ----------------------------------------------------------
 # before/after scripts, these will be used in every job within the job-scope
@@ -24,7 +23,8 @@ before_script:
   - docker-compose config
   - echo ${ISOLATION}
   - echo $(git describe --always --dirty --tags)
-  # run all commands from test environment
+  - export APP_VERSION=$(git describe --always --dirty --tags)
+  - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
 
 after_script:
   # set docker-compose isolation
@@ -70,7 +70,7 @@ after_script:
   stage: test
   script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
-    - export PHP_ENABLE_XDEBUG=1
+    - make test-init
     - make test-coverage
   only:
     - coverage
@@ -79,7 +79,7 @@ after_script:
     when: always
     expire_in: 4 weeks
     paths:
-      - tests/_log
+      - _host-volumes/tests-log
 
 
 .release_tmpl: &release_tmpl_ref
@@ -92,8 +92,7 @@ after_script:
     - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
     - docker push ${REGISTRY_PHP_IMAGE}
   only:
-    - latest
-    - experimental
+    - releases
     - tags
 
 
@@ -114,14 +113,3 @@ lint-debian:
 # ----------------------------------------------------------
 release-debian:
   <<: *release_tmpl_ref
-
-# ----------------------------------------------------------
-deploy:staging:
-  stage: deploy
-  environment: staging
-  allow_failure: true
-  script:
-    - echo "Auto-deployment trigger not implemented."
-    - exit 1
-  only:
-    - latest

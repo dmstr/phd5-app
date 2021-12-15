@@ -1,18 +1,13 @@
 <?php
+
 /**
  * @group optional
+ * @group wip
+ * @group frontend
  */
 class LogoutFrontendCest
 {
-    public function _before(E2eTester $I)
-    {
-    }
 
-    public function _after(E2eTester $I)
-    {
-    }
-
-    // tests
     public function testLogoutFrontend(E2eTester $I)
     {
         $I->wantTo('ensure that logout from frontend works');
