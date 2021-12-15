@@ -486,10 +486,11 @@ return [
             'administratorPermissionName' => 'user-module',
             'administrators' => ['admin'],
             'enableFlashMessages' => false,
+            'generatePasswords' => true,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
             'mailParams' => [
-                'fromEmail' => getenv('APP_MAILER_FROM')
-            ]
+                'fromEmail' => [getenv('APP_MAILER_FROM')=>getenv('APP_TITLE')]
+            ],
         ],
         'widgets' => [
             'class' => WidgetsModule::class,
