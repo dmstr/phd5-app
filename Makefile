@@ -79,7 +79,7 @@ upgrade: ##@base update application package, pull, rebuild
 	# Running package upgrade in container
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
-	$(DOCKER_COMPOSE) run --rm php composer -dsrc update -v
+	$(DOCKER_COMPOSE) run --rm php composer -dsrc update -v -W
 
 dist-upgrade: ##@base update application package, pull, rebuild
 	$(DOCKER_COMPOSE) build --pull --build-arg BUILD_NO_INSTALL=1

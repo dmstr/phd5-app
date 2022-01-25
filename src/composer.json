@@ -42,6 +42,10 @@
             "git-skip-update": "2 days",
             "pattern-skip-version": "(-build|-patch)",
             "optimize-with-installed-packages": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "wikimedia/composer-merge-plugin": true
         }
     }
 }

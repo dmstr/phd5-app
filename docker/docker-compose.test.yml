@@ -29,6 +29,7 @@ services:
       - APP_ASSET_USE_BUNDLED=1
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
+      - XDEBUG_MODE
     volumes:
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
