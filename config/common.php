@@ -265,7 +265,8 @@ return [
                 'port' => getenv('APP_MAILER_PORT'),
                 'encryption' => getenv('APP_MAILER_ENCRYPTION'),
                 'username' => getenv('APP_MAILER_USERNAME'),
-                'password' => getenv('APP_MAILER_PASSWORD')
+                'password' => getenv('APP_MAILER_PASSWORD'),
+                'localDomain' => getenv('APP_MAILER_LOCAL_DOMAIN') ?: '127.0.0.1'
             ],
             'messageConfig' => [
                 'charset' => 'UTF-8',
