@@ -304,6 +304,7 @@ return [
         ],
         'urlManager' => [
             'class' => UrlManager::class,
+            'cache' => YII_ENV_DEV ? null : 'cache',
             'enablePrettyUrl' => getenv('APP_PRETTY_URLS'),
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
