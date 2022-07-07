@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:7.4-fpm-8.0-nginx
+FROM dmstr/php-yii2:8.0-fpm-8.0-beta2-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
@@ -47,7 +47,7 @@ VOLUME /app/web/assets
 
 # Build assets (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        APP_NO_CACHE=1 APP_LANGUAGES=en APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
+        APP_NO_CACHE=1 APP_LANGUAGES=en APP_USER_FROM_EMAIL=build@Dockerfile APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
     fi
 
 # Install crontab from application config

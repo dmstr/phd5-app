@@ -23,7 +23,6 @@
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
-        "league/flysystem-aws-s3-v3": "^1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.1",
         "omnilight/yii2-scheduling": "^1.1",
         "pheme/yii2-settings": "^0.7.0",
@@ -42,7 +41,7 @@
         "yiisoft/yii2-debug": "2.*",
         "yiisoft/yii2-faker": "2.*",
         "yiisoft/yii2-gii": "2.*",
-        "codeception/codeception": "~3.1.3",
+        "codeception/codeception": "~4.2.1",
         "captbaritone/mailcatcher-codeception-module": "^1.2"
     },
     "conflict": {
