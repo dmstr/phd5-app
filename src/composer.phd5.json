@@ -44,6 +44,7 @@
         "codeception/codeception": "~4.2.1",
         "codeception/module-filesystem": "^2.0.2",
         "codeception/module-cli": "^2.0",
+        "codeception/module-webdriver": "^2.0.2",
         "captbaritone/mailcatcher-codeception-module": "^1.2"
     },
     "conflict": {
