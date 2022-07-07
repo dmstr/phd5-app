@@ -43,7 +43,7 @@ class RedirectsCest
         $I->selectOption('Redirect[type]', 'Path redirect');
         $I->fillField('Redirect[from_path]', '/' . $this->_test_redirect);
         $I->fillField('Redirect[to_path]', '/site/index');
-        $I->selectOption('#redirect-status_code input', 301);
+        $I->selectOption('#redirect-status_code input', "301");
         $I->click('Create');
 
         $I->waitForElementNotVisible('.redirect-form');
