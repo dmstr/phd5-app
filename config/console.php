@@ -9,8 +9,6 @@
  * file that was distributed with this source code
  */
 
-use hrzg\widget\commands\CopyController;
-
 return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
@@ -68,8 +66,7 @@ return [
             ],
         ],
         'rbac' => \dmstr\helpers\RbacController::class,
-        'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class,
-        'widgets-copy' => CopyController::class
+        'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class
     ],
     'components' => [
         'log' => [

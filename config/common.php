@@ -12,6 +12,7 @@ use creocoder\flysystem\LocalFilesystem;
 use Da\User\Component\AuthDbManagerComponent;
 use Da\User\Controller\AdminController;
 use Da\User\Controller\PermissionController;
+use Da\User\Controller\ProfileController;
 use Da\User\Controller\RoleController;
 use Da\User\Controller\RuleController;
 use Da\User\Model\User as UserModel;
@@ -45,6 +46,7 @@ use rmrevin\yii\fontawesome\FA;
 use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
 use yii\db\Connection as DbConnection;
+use yii\filters\AccessControl;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\helpers\Markdown;
@@ -154,7 +156,38 @@ return [
             ],
             Cookie::class => [
                 'secure' => $isHttps
-            ]
+            ],
+            ProfileController::class => [
+                'as access' => [
+                    'class' => AccessControl::class,
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['index'],
+                            'roles' => ['@'],
+                        ],
+                        [
+                            'allow' => true,
+                            'actions' => ['show'],
+                            // allow for all logged in users
+                            #'roles' => ['@'],
+                            // allow only if user has 'user' grant or requested his own profile (check by user->id)
+                            'matchCallback' => function($action) {
+                                if (\Yii::$app->user->isGuest) {
+                                    return false;
+                                }
+                                if (\Yii::$app->user->can('user')) {
+                                    return true;
+                                }
+                                if (\Yii::$app->user->id === (int)Yii::$app->request->getQueryParam('id')) {
+                                    return true;
+                                }
+                                return false;
+                            }
+                        ],
+                    ],
+                ],
+            ],
         ]
     ],
     'components' => [
@@ -304,6 +337,7 @@ return [
         ],
         'urlManager' => [
             'class' => UrlManager::class,
+            'cache' => YII_ENV_DEV ? null : 'cache',
             'enablePrettyUrl' => getenv('APP_PRETTY_URLS'),
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
