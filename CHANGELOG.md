@@ -1,5 +1,10 @@
 # Changelog
 
+### 5.7.0
+
+- base-image upgraded to `PHP 8.0`
+- upgraded `codeception/codeception ~4.2.1`
+
 ### 5.6.0
 
 - updated base-image `dmstr/php-yii2:7.4-fpm-8.0`
