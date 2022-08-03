@@ -38,7 +38,7 @@ RUN test -f /app/yii || ln -s /app/src/bin/yii /app/yii
 # Permissions
 RUN mkdir -p runtime web/assets web/bundles /mnt/storage && \
     chmod -R 775 runtime web/assets web/bundles /mnt/storage && \
-    chmod u+x /usr/local/bin/unique-number.sh /usr/local/bin/export-env.sh /usr/local/bin/nodepkg-linuxstatic && \
+    chmod a+x /usr/local/bin/unique-number.sh /usr/local/bin/export-env.sh /usr/local/bin/nodepkg-linuxstatic && \
     chmod -R u+x /etc/periodic && \
     chown -R www-data:www-data runtime web/assets web/bundles /mnt/storage
 
