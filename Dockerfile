@@ -9,6 +9,9 @@ RUN apt-get update \
  && docker-php-ext-enable mailparse \
  && apt-get remove -y $PHPIZE_DEPS
 
+ENV SUPERVISOR_START_CRON=true \
+    SUPERVISOR_START_WORKER=true \
+    SUPERVISOR_START_EXPORT_ENV=true
 
 # System files
 COPY ./image-files /
