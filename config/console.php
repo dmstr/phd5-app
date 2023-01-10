@@ -84,4 +84,9 @@ return [
             ],
         ],
     ],
+    'modules' => [
+        'user' => [
+            'allowPasswordRecovery' => false
+        ]
+    ]
 ];
