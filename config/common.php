@@ -56,7 +56,7 @@ use yii\queue\LogBehavior;
 use yii\queue\redis\Queue;
 use yii\redis\Cache;
 use yii\redis\Connection as RedisConnection;
-use yii\swiftmailer\Mailer;
+use yii\symfonymailer\Mailer;
 use yii\twig\ViewRenderer;
 use yii\web\Cookie;
 use yii\web\DbSession;
@@ -290,12 +290,11 @@ return [
         'mailer' => [
             'class' => Mailer::class,
             'fileTransportPath' => '@runtime/mail',
-            'enableSwiftMailerLogging' => true,
             'useFileTransport' => getenv('APP_MAILER_USE_FILE_TRANSPORT'),
             'transport' => [
-                'class' => Swift_SmtpTransport::class,
+                'scheme' => getenv('APP_MAILER_SCHEME') ?: 'smtp',
                 'host' => getenv('APP_MAILER_HOST'),
-                'port' => getenv('APP_MAILER_PORT'),
+                'port' => (int)getenv('APP_MAILER_PORT'),
                 'encryption' => getenv('APP_MAILER_ENCRYPTION'),
                 'username' => getenv('APP_MAILER_USERNAME'),
                 'password' => getenv('APP_MAILER_PASSWORD')
