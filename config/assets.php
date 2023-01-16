@@ -40,9 +40,9 @@ $backendBundles = [
 
 return [
     // Adjust command/callback for JavaScript files compressing:
-    'jsCompressor' => 'uglifyjs {from} --mangle --compress --output {to}',
+    'jsCompressor' => 'nodepkg-linuxstatic uglifyjs {from} --mangle --compress --output {to}',
     // Adjust command/callback for CSS files compressing:
-    'cssCompressor' => 'uglifycss {from} > {to}',
+    'cssCompressor' => 'nodepkg-linuxstatic uglifycss {from} > {to}',
     // The list of asset bundles to compress:
     'bundles' => \yii\helpers\ArrayHelper::merge(
         $commonBundles,
@@ -88,5 +88,11 @@ return [
     'assetManager' => [
         'basePath' => '/app/web/bundles',
         'baseUrl' => '/bundles',
+        'converter' => [
+            'class' => 'yii\web\AssetConverter',
+            'commands' => [
+                'less' => ['css', 'nodepkg-linuxstatic lessc {from} {to} --no-color --source-map'],
+            ],
+        ],
     ],
 ];

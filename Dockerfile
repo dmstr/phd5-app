@@ -7,7 +7,9 @@ RUN apt-get update \
         procps # recommended for dmstr/yii2-resque-module \
  && pecl install mailparse \
  && docker-php-ext-enable mailparse \
- && apt-get remove -y $PHPIZE_DEPS
+ && apt-get remove -y $PHPIZE_DEPS \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV SUPERVISOR_START_CRON=true \
     SUPERVISOR_START_WORKER=true \
