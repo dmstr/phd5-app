@@ -196,7 +196,13 @@ return [
             'hashCallback' => getenv('APP_ASSET_FORCE_PUBLISH') ? AssetHash::byFileTime(!YII_DEBUG) : null,
             // Note: You need to bundle asset with `yii asset` for development/debugging
             'bundles' => $bundles,
-            'basePath' => '@app/../web/assets/'
+            'basePath' => '@app/../web/assets/',
+            'converter' => [
+                'class' => 'yii\web\AssetConverter',
+                'commands' => [
+                    'less' => ['css', 'nodepkg-linuxstatic lessc {from} {to} --no-color --source-map'],
+                ],
+            ],
         ],
         'cache' => [
             'class' => getenv('APP_NO_CACHE') ? DummyCache::class : Cache::class
