@@ -1,4 +1,4 @@
-FROM dmstr/php-yii2:8.0-fpm-8.0-beta2-nginx
+FROM yiisoftware/yii2-php:8.0-fpm-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
