@@ -14,12 +14,12 @@ defined('APP_TYPE') or define('APP_TYPE', 'web');
 require($rootPath . '/vendor/yiisoft/yii2/Yii.php');
 
 // Codeception testing routes
-if (YII_ENV_TEST && file_exists($rootPath . '/tests/codeception/c3.php')) {
+if (YII_ENV_TEST && file_exists($rootPath . '/tests/c3.php')) {
     define('C3_CODECOVERAGE_ERROR_LOG_FILE',
            getenv('C3_CODECOVERAGE_ERROR_LOG_FILE')); //Optional (if not set the default c3 output dir will be used)
     define('C3_CODECEPTION_CONFIG_PATH',
            getenv('C3_CODECEPTION_CONFIG_PATH')); //Optional (if not set the default c3 output dir will be used)
-    require_once $rootPath . '/tests/codeception/c3.php';
+    require_once $rootPath . '/tests/c3.php';
 }
 
 // Run application
