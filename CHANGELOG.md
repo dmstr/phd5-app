@@ -1,5 +1,10 @@
 # Changelog
 
+### 5.8.0 (under development)
+
+- switched base image to `yiisoftware/yii2-php:8.0-fpm-nginx`
+- moved `c3.php` to test root folder
+
 ### 5.7.0
 
 - base-image upgraded to `PHP 8.0`
