@@ -37,7 +37,7 @@ services:
       - ./tests:/app/tests
       - ./vendor-dev:/app/vendor
       - ./_host-volumes/test-debug:/mnt/debug
-      - ./_host-volumes/tests-log:/app/tests/_log
+      - ./_host-volumes/tests-log:/tests-log
     networks:
       default:
         aliases:

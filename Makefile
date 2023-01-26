@@ -136,7 +136,7 @@ open-mailcatcher: ##@development open development mailcatcher
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port mailcatcher 80 | sed 's/[0-9.]*://') &>/dev/null
 
-test: version build install up
+test: test-init version build install up
 test: ##@test run tests
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept clean
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --steps --html --xml= --tap --json
@@ -151,7 +151,7 @@ test-coverage: ##@test run tests with code coverage
 	$(DOCKER_COMPOSE) run --rm -e YII_ENV=test -e XDEBUG_MODE=coverage -e PHP_ENABLE_XDEBUG=1 $(TESTER_SERVICE) codecept run --env $(BROWSER_SERVICE) -x optional --coverage-html --coverage-xml --html --xml
 
 test-init: ##@test initialize test-environment
-	mkdir -p _host-volumes/tests-log/codeception/_log && chmod 777 _host-volumes/tests-log/codeception/_log
+	mkdir -p _host-volumes/tests-log && chmod 777 _host-volumes/tests-log
 	mkdir -p _host-volumes/tests-log/lint && chmod 777 _host-volumes/tests-log/lint
 
 test-bash:	 ##@test run application bash in one-off container
