@@ -1,4 +1,4 @@
-class_name: CliTester
+actor: CliTester
 modules:
     enabled:
         - Filesystem

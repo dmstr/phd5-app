@@ -1,4 +1,4 @@
-class_name: E2eTester
+actor: E2eTester
 modules:
     enabled:
         - \Helper\E2e
