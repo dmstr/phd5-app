@@ -9,6 +9,7 @@
  * file that was distributed with this source code
  */
 
+use Dotenv\Dotenv;
 use yii\helpers\FileHelper;
 
 $configPath = __DIR__;
@@ -17,7 +18,7 @@ $configPath = __DIR__;
 if (getenv('ENV_LOCAL_FILE')) {
     $localEnv = FileHelper::normalizePath($configPath . '/' . getenv('ENV_LOCAL_FILE'));
     if (is_file($localEnv)) {
-        $dotenvLocal = new Dotenv\Dotenv($configPath, getenv('ENV_LOCAL_FILE'));
+        $dotenvLocal = Dotenv::createUnsafeImmutable($configPath, getenv('ENV_LOCAL_FILE'));
         $dotenvLocal->load();
     } else {
         exit("Error: ENV_LOCAL_FILE '{$localEnv}' not found" . PHP_EOL);
@@ -25,7 +26,7 @@ if (getenv('ENV_LOCAL_FILE')) {
 }
 
 // Load application environment configuration
-$dotenv = new Dotenv\Dotenv($configPath, '/env-defaults');
+$dotenv = Dotenv::createUnsafeImmutable($configPath, '/env-defaults');
 $dotenv->load();
 
 // Basic checks & validation
