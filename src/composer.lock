@@ -1694,16 +1694,16 @@
         },
         {
             "name": "dmstr/yii2-contact-module",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-contact-module.git",
-                "reference": "32ee07aac94da9b0832c6f152969c166db216e6e"
+                "reference": "80d016b4312c3ae75bfb725ad1c6af1148aa2a01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/32ee07aac94da9b0832c6f152969c166db216e6e",
-                "reference": "32ee07aac94da9b0832c6f152969c166db216e6e",
+                "url": "https://api.github.com/repos/dmstr/yii2-contact-module/zipball/80d016b4312c3ae75bfb725ad1c6af1148aa2a01",
+                "reference": "80d016b4312c3ae75bfb725ad1c6af1148aa2a01",
                 "shasum": ""
             },
             "require": {
@@ -1736,9 +1736,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-contact-module/issues",
-                "source": "https://github.com/dmstr/yii2-contact-module/tree/2.0.0"
+                "source": "https://github.com/dmstr/yii2-contact-module/tree/2.1.0"
             },
-            "time": "2021-08-19T13:44:58+00:00"
+            "time": "2023-02-15T12:13:59+00:00"
         },
         {
             "name": "dmstr/yii2-cookie-button",

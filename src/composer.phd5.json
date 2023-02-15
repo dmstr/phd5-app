@@ -1,7 +1,7 @@
 {
     "require": {
         "bedezign/yii2-audit": "^1.1.1",
-        "2amigos/yii2-usuario": "^1.5.0",
+        "2amigos/yii2-usuario": "~1.5.1",
         "lajax/yii2-translate-manager": "^1.6.0",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
         "codemix/yii2-localeurls": "^1.7.1",
