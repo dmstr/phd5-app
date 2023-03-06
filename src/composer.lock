@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92a630a0a00a4d8d70db47b0d1038a35",
+    "content-hash": "478d3d14e356aeb6a69ffd12ec2bcba0",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -7572,27 +7572,30 @@
         },
         {
             "name": "wikimedia/composer-merge-plugin",
-            "version": "v2.0.1",
+            "version": "dev-feature/respect-lockdown",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-                "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912"
+                "url": "https://github.com/schmunk42/composer-merge-plugin.git",
+                "reference": "2261179c07628df7bcbda73dbc5164ea2b67d77b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
-                "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
+                "url": "https://api.github.com/repos/schmunk42/composer-merge-plugin/zipball/2261179c07628df7bcbda73dbc5164ea2b67d77b",
+                "reference": "2261179c07628df7bcbda73dbc5164ea2b67d77b",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1||^2.0",
-                "php": ">=7.2.0"
+                "php": ">=7.4.0"
             },
             "require-dev": {
                 "composer/composer": "^1.1||^2.0",
-                "php-parallel-lint/php-parallel-lint": "~1.1.0",
-                "phpunit/phpunit": "^8.5||^9.0",
-                "squizlabs/php_codesniffer": "~3.5.4"
+                "ext-json": "*",
+                "mediawiki/mediawiki-phan-config": "0.11.1",
+                "php-parallel-lint/php-parallel-lint": "~1.3.1",
+                "phpspec/prophecy-phpunit": "~2.0.1",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "~3.7.1"
             },
             "type": "composer-plugin",
             "extra": {
@@ -7606,7 +7609,27 @@
                     "Wikimedia\\Composer\\Merge\\V2\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "coverage": [
+                    "phpunit --log-junit=reports/unitreport.xml --coverage-text --coverage-html=reports/coverage --coverage-clover=reports/coverage.xml",
+                    "phpcs --encoding=utf-8 --standard=PSR2 --report-checkstyle=reports/checkstyle-phpcs.xml --report-full --extensions=php src/* tests/phpunit/*"
+                ],
+                "phan": [
+                    "phan -d . --long-progress-bar"
+                ],
+                "phpcs": [
+                    "phpcs --encoding=utf-8 --standard=PSR2 --extensions=php src/* tests/phpunit/*"
+                ],
+                "phpunit": [
+                    "phpunit"
+                ],
+                "test": [
+                    "composer validate --no-interaction",
+                    "parallel-lint src tests",
+                    "@phpunit",
+                    "@phpcs"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7618,10 +7641,9 @@
             ],
             "description": "Composer plugin to merge multiple composer.json files",
             "support": {
-                "issues": "https://github.com/wikimedia/composer-merge-plugin/issues",
-                "source": "https://github.com/wikimedia/composer-merge-plugin/tree/v2.0.1"
+                "source": "https://github.com/schmunk42/composer-merge-plugin/tree/feature/respect-lockdown"
             },
-            "time": "2021-02-24T05:28:06+00:00"
+            "time": "2023-01-11T14:05:46+00:00"
         },
         {
             "name": "yetopen/yii2-sms-sender-interface",
@@ -13794,6 +13816,7 @@
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": {
+        "wikimedia/composer-merge-plugin": 20,
         "dmstr/yii2-resque-module": 15,
         "dmstr/yii2-widgets2-module": 10,
         "roave/security-advisories": 20
