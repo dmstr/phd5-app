@@ -407,7 +407,7 @@ return [
                 ],
                 'audit/mail' => [
                     'class' => MailPanel::class,
-                    'maxAge' => null
+                    'maxAge' => 30
                 ],
                 // Links the extra error reporting functions (`exception()` and `errorMessage()`)
                 'audit/error' => [
