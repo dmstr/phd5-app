@@ -18,6 +18,9 @@ return yii\helpers\ArrayHelper::merge(
     [
         'language' => 'en',
         'components' => [
+            'redis' => [
+                'database' => 8
+            ],
             'request' => [
                 'cookieValidationKey' => 'FUNCTIONAL_TESTING'
             ],

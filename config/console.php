@@ -83,6 +83,21 @@ return [
                 ],
             ],
         ],
+        'dbSystem' => [
+            'on ' . yii\db\Connection::EVENT_AFTER_OPEN => function ($event) {
+                if ($event->sender->driverName === 'mysql') {
+                    // set session wait_timeout for this connection to mysql default value to prevent connection-timeouts
+                    // in e.g. audit module while exec long-running CLI processes
+                    $event->sender->createCommand(
+                        'SET SESSION wait_timeout = :timeout;',
+                        [
+                            ':timeout' => (int)getenv('DB_ENV_MYSQL_CLI_WAIT_TIMEOUT') ?: 28800
+                        ]
+                    )->execute();
+                }
+            },
+        ],
+
     ],
     'modules' => [
         'user' => [

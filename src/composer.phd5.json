@@ -58,5 +58,12 @@
         "dmstr/yii2-active-record-permissions": "<1.2.2",
         "fxp/composer-asset-plugin": "*",
         "dmstr/yii2-web": "<1.1.1"
+    },
+    "repositories": {
+        "2amigos/yii2-ckeditor-widget": {
+            "name": "dmstr-forks/2amigos-yii2-ckeditor-widget",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/2amigos-yii2-ckeditor-widget"
+        }
     }
 }

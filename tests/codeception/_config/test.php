@@ -33,6 +33,9 @@ return [
         'backend.iframe.name' => 'backend-test',
     ],
     'components' => [
+        'redis' => [
+            'database' => 9
+        ],
         'user' => [
             'loginUrl' => '/user/login'
         ]

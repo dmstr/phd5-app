@@ -3,6 +3,7 @@ ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        ssh \
         default-mysql-client \
         cron \
         procps # recommended for dmstr/yii2-resque-module \
@@ -14,7 +15,8 @@ RUN apt-get update \
 
 ENV SUPERVISOR_START_CRON=true \
     SUPERVISOR_START_WORKER=true \
-    SUPERVISOR_START_EXPORT_ENV=true
+    SUPERVISOR_START_EXPORT_ENV=true \
+    SUPERVISOR_WORKER_CMD_OPTS=""
 
 # System files
 COPY ./image-files /
