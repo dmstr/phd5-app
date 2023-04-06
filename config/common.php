@@ -43,6 +43,7 @@ use lajax\translatemanager\services\scanners\ScannerPhpFunction;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
+use yii\base\Event;
 use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
 use yii\db\Connection as DbConnection;
@@ -98,6 +99,24 @@ $dbAttributes = [
 if (getenv('MYSQL_ATTR_SSL_CA')) {
     $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
 }
+
+// update Redis increment counter according to queue_manager db (workaround)
+// TODO: use table_prefix
+Event::on(Queue::class, Queue::EVENT_BEFORE_PUSH, function ($event) {
+    if (Yii::$app->cache->get('queue_id_synced') !== true) {
+        $lastQueueIdSql = <<<SQL
+SELECT `AUTO_INCREMENT`  
+FROM  INFORMATION_SCHEMA.TABLES    
+WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME   = 'app_queue_manager'
+SQL;
+        $lastModelId = Yii::$app->db->createCommand($lastQueueIdSql)->queryScalar();
+        Yii::$app->redis->set("queue.message_id", $lastModelId);
+        Yii::$app->cache->set('queue_id_synced', true);
+        Yii::info("Synced redis queue id with database ($lastModelId)");
+    }
+
+    return $event;
+});
 
 $boxLayout = '@backend/views/layouts/box';
 
