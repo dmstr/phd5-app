@@ -1,4 +1,4 @@
-FROM yiisoftware/yii2-php:8.0-fpm-nginx
+FROM yiisoftware/yii2-php:8.1-fpm-nginx
 ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
