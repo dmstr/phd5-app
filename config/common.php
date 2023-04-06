@@ -397,7 +397,7 @@ return [
                         'Markdown' => ['class' => Markdown::class]
                     ],
                     'functions' => [
-                        'image' => function ($imageSource, $preset = null) {
+                        'image' => function ($imageSource, $preset = '') {
                             return ImageUrlHelper::image($imageSource, $preset);
                         },
                         't' => function ($category, $message, $params = [], $language = null) {
