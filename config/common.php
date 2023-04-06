@@ -90,12 +90,12 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     );
 }
 
+// set convenience variables
+$boxLayout = '@backend/views/layouts/box';
 $isHttps = getenv('HTTPS') === 'on';
-
 $dbAttributes = [
     PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
 ];
-
 if (getenv('MYSQL_ATTR_SSL_CA')) {
     $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
 }
@@ -116,8 +116,6 @@ SQL;
 
     return $event;
 });
-
-$boxLayout = '@backend/views/layouts/box';
 
 // Basic configuration, used in web and console applications
 return [
