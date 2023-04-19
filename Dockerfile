@@ -54,7 +54,7 @@ VOLUME /app/runtime /app/web/assets /mnt/storage
 
 # Build assets (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        APP_NO_CACHE=1 APP_LANGUAGES=en APP_USER_FROM_EMAIL=build@Dockerfile APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
+        PHP_USER_ID=0 APP_NO_CACHE=1 APP_LANGUAGES=en APP_USER_FROM_EMAIL=build@Dockerfile APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
     fi
 
 # Install crontab from application config

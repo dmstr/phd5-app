@@ -102,13 +102,20 @@ if (getenv('MYSQL_ATTR_SSL_CA')) {
 
 // update Redis increment counter according to queue_manager db (workaround)
 Event::on(Queue::class, Queue::EVENT_BEFORE_PUSH, function ($event) {
+    // added directly to the SQL query, since param binding
+    $table_name = getenv('DATABASE_TABLE_PREFIX').'queue_manager';
     if (Yii::$app->cache->get('queue_id_synced') !== true) {
         $lastQueueIdSql = <<<SQL
 SELECT `AUTO_INCREMENT`  
 FROM  INFORMATION_SCHEMA.TABLES    
-WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME   = '{table_prefix}queue_manager'
+WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '{$table_name}'
 SQL;
-        $lastModelId = Yii::$app->db->createCommand($lastQueueIdSql, ['{table_prefix}'=>getenv('DATABASE_TABLE_PREFIX')])->queryScalar();
+        $lastModelId = Yii::$app->db
+            ->createCommand($lastQueueIdSql)
+            ->queryScalar();
+        if (!is_int($lastModelId)) {
+            throw new \yii\db\Exception("Invalid increment ({$lastModelId}) for Redis queue");
+        }
         Yii::$app->redis->set("queue.message_id", $lastModelId);
         Yii::$app->cache->set('queue_id_synced', true);
         Yii::info("Synced redis queue id with database ($lastModelId)");
