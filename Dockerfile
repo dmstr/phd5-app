@@ -3,6 +3,7 @@ ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        ssh \
         cron \
         procps # recommended for dmstr/yii2-resque-module \
  && pecl install mailparse \
