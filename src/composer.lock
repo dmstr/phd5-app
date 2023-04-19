@@ -3850,16 +3850,16 @@
         },
         {
             "name": "loveorigami/yii2-notification-wrapper",
-            "version": "6.7.2",
+            "version": "6.7.2-patch1+dmstr",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loveorigami/yii2-notification-wrapper.git",
-                "reference": "544c5a34b33799e0f0f0882e1163273bd12728e0"
+                "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git",
+                "reference": "f25d0a062d5641af8973aac20024b4677d764945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loveorigami/yii2-notification-wrapper/zipball/544c5a34b33799e0f0f0882e1163273bd12728e0",
-                "reference": "544c5a34b33799e0f0f0882e1163273bd12728e0",
+                "url": "https://api.github.com/repos/dmstr-forks/loveorigami-yii2-notification-wrapper/zipball/f25d0a062d5641af8973aac20024b4677d764945",
+                "reference": "f25d0a062d5641af8973aac20024b4677d764945",
                 "shasum": ""
             },
             "require": {
@@ -3874,7 +3874,6 @@
                     "lo\\modules\\noty\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3906,8 +3905,7 @@
                 "yii2"
             ],
             "support": {
-                "issues": "https://github.com/loveorigami/yii2-notification-wrapper/issues",
-                "source": "https://github.com/loveorigami/yii2-notification-wrapper/tree/6.7.2"
+                "source": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper/tree/6.7.2-patch1+dmstr"
             },
             "time": "2016-03-31T00:00:00+00:00"
         },

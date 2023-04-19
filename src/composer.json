@@ -32,6 +32,7 @@
             "hrzg/*": "source",
             "schmunk42/*": "source",
             "dektrium/yii2-rbac": "source",
+            "loveorigami/*": "source",
             "*": "auto"
         },
         "fxp-asset": {
