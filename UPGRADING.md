@@ -1,5 +1,15 @@
 # Upgrading
 
+### to 5.10
+
+- Twig Debug mode (tbd)
+- PHP_CS_FIXER_IGNORE_ENV
+- adjust Makefile
+- adjust Codeception config
+  - rename log to output  
+  - rename class_name to actor
+  - move bootstrap to root section
+
 ### 5.4/5.5 to 5.6
 
 - upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
