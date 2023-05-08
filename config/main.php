@@ -41,6 +41,7 @@ return call_user_func(function () {
         "{$configDir}/".APP_TYPE.'.php' => true,
         "{$configDir}/common-".YII_ENV.'.php' => false,
         "{$configDir}/".APP_TYPE.'-'.YII_ENV.'.php' => false,
+        "{$configDir}/common-".((YII_DEBUG)?'debug':'release').'.php' => false,
         "{$configDir}/".APP_TYPE.'-'.((YII_DEBUG)?'debug':'release').'.php' => false,
     ];
 
@@ -55,7 +56,6 @@ return call_user_func(function () {
 
     // Merge configurations
     $config = [];
-    //var_dump($configFiles);exit;
     Yii::trace($configFiles, __METHOD__);
     foreach ($configFiles as $file => $isRequired) {
         if (!is_file($file)) {

@@ -72,8 +72,7 @@ after_script:
     - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
     - make test-init
     - make test-coverage
-  only:
-    - coverage
+  when: manual
   artifacts:
     name: ${CI_PROJECT_PATH}-p${CI_PIPELINE_ID}-coverage
     when: always

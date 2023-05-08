@@ -7,10 +7,14 @@
         "ap": {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        "merge-plugin": {
+            "type": "vcs",
+            "url": "https://github.com/schmunk42/composer-merge-plugin.git"
         }
     },
     "require": {
-        "wikimedia/composer-merge-plugin": "~2.0"
+        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown"
     },
     "extra": {
         "merge-plugin": {
@@ -28,6 +32,7 @@
             "hrzg/*": "source",
             "schmunk42/*": "source",
             "dektrium/yii2-rbac": "source",
+            "loveorigami/*": "source",
             "*": "auto"
         },
         "fxp-asset": {

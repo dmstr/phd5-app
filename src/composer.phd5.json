@@ -23,7 +23,7 @@
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
-        "loveorigami/yii2-notification-wrapper": "^6.7.1",
+        "loveorigami/yii2-notification-wrapper": "^6.7.2-patch1",
         "omnilight/yii2-scheduling": "^1.1",
         "pheme/yii2-settings": "^0.7.0",
         "roave/security-advisories": "dev-master",
@@ -47,7 +47,8 @@
         "codeception/module-cli": "^2.0",
         "codeception/module-webdriver": "^3.2.0",
         "codeception/module-asserts": "^2.0.1",
-        "codeception/module-yii2": "^1.1.0"
+        "codeception/module-yii2": "^1.1.0",
+        "captbaritone/mailcatcher-codeception-module": "dev-piotrknapik#cb375cdd8563093d96556200ac94083a388d9224"
     },
     "conflict": {
         "bower-asset/yii2-pjax": "2.0.7",
@@ -57,5 +58,22 @@
         "dmstr/yii2-active-record-permissions": "<1.2.2",
         "fxp/composer-asset-plugin": "*",
         "dmstr/yii2-web": "<1.1.1"
+    },
+    "repositories": {
+        "2amigos/yii2-ckeditor-widget": {
+            "name": "dmstr-forks/2amigos-yii2-ckeditor-widget",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/2amigos-yii2-ckeditor-widget"
+        },
+        "loveorigami/yii2-notification-wrapper": {
+            "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
+        },
+        "captbaritone/codeception-mailcatcher-module": {
+            "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/captbaritone-codeception-mailcatcher-module.git"
+        }
     }
 }

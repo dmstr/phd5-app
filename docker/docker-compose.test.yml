@@ -28,6 +28,7 @@ services:
       - APP_ASSET_USE_BUNDLED=1
       - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
       - APP_ASSET_FORCE_PUBLISH=0
+      - SUPERVISOR_START_CRON=false
       - XDEBUG_MODE=develop,coverage
       # TODO: remove when php-cs-fixer fully supports PHP 8.2 (https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%2FPHP8.2)
       - PHP_CS_FIXER_IGNORE_ENV=1

@@ -3,6 +3,7 @@ ARG BUILD_NO_INSTALL
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
+        ssh \
         default-mysql-client \
         cron \
         procps # recommended for dmstr/yii2-resque-module \
@@ -14,7 +15,8 @@ RUN apt-get update \
 
 ENV SUPERVISOR_START_CRON=true \
     SUPERVISOR_START_WORKER=true \
-    SUPERVISOR_START_EXPORT_ENV=true
+    SUPERVISOR_START_EXPORT_ENV=true \
+    SUPERVISOR_WORKER_CMD_OPTS=""
 
 # System files
 COPY ./image-files /
@@ -52,7 +54,7 @@ VOLUME /app/runtime /app/web/assets /mnt/storage
 
 # Build assets (skipped on first build in dist-upgrade)
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        APP_NO_CACHE=1 APP_LANGUAGES=en APP_USER_FROM_EMAIL=build@Dockerfile APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
+        PHP_USER_ID=0 APP_NO_CACHE=1 APP_LANGUAGES=en APP_USER_FROM_EMAIL=build@Dockerfile APP_ADMIN_EMAIL=build@Dockerfile yii asset/compress config/assets.php web/bundles/config.php; \
     fi
 
 # Install crontab from application config

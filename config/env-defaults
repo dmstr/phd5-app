@@ -116,6 +116,9 @@ DATABASE_USER=${DB_ENV_MYSQL_USER}
 DATABASE_PASSWORD=${DB_ENV_MYSQL_PASSWORD}
 DATABASE_TABLE_PREFIX=app_
 
+# set session wait_timeout for cli dbSystem mysql connection to prevent connection-timeouts
+DB_ENV_MYSQL_CLI_WAIT_TIMEOUT=28800
+
 
 # Cache
 # -----

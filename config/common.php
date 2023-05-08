@@ -43,6 +43,7 @@ use lajax\translatemanager\services\scanners\ScannerPhpFunction;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
+use yii\base\Event;
 use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
 use yii\db\Connection as DbConnection;
@@ -89,17 +90,39 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
     );
 }
 
+// set convenience variables
+$boxLayout = '@backend/views/layouts/box';
 $isHttps = getenv('HTTPS') === 'on';
-
 $dbAttributes = [
     PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
 ];
-
 if (getenv('MYSQL_ATTR_SSL_CA')) {
     $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
 }
 
-$boxLayout = '@backend/views/layouts/box';
+// update Redis increment counter according to queue_manager db (workaround)
+Event::on(Queue::class, Queue::EVENT_BEFORE_PUSH, function ($event) {
+    // added directly to the SQL query, since param binding
+    $table_name = getenv('DATABASE_TABLE_PREFIX').'queue_manager';
+    if (Yii::$app->cache->get('queue_id_synced') !== true) {
+        $lastQueueIdSql = <<<SQL
+SELECT `AUTO_INCREMENT`  
+FROM  INFORMATION_SCHEMA.TABLES    
+WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '{$table_name}'
+SQL;
+        $lastModelId = Yii::$app->db
+            ->createCommand($lastQueueIdSql)
+            ->queryScalar();
+        if (!is_int($lastModelId)) {
+            throw new \yii\db\Exception("Invalid increment ({$lastModelId}) for Redis queue");
+        }
+        Yii::$app->redis->set("queue.message_id", $lastModelId);
+        Yii::$app->cache->set('queue_id_synced', true);
+        Yii::info("Synced redis queue id with database ($lastModelId)");
+    }
+
+    return $event;
+});
 
 // Basic configuration, used in web and console applications
 return [
@@ -381,7 +404,7 @@ return [
                         'Markdown' => ['class' => Markdown::class]
                     ],
                     'functions' => [
-                        'image' => function ($imageSource, $preset = null) {
+                        'image' => function ($imageSource, $preset = '') {
                             return ImageUrlHelper::image($imageSource, $preset);
                         },
                         't' => function ($category, $message, $params = [], $language = null) {
@@ -407,7 +430,7 @@ return [
                 ],
                 'audit/mail' => [
                     'class' => MailPanel::class,
-                    'maxAge' => null
+                    'maxAge' => 30
                 ],
                 // Links the extra error reporting functions (`exception()` and `errorMessage()`)
                 'audit/error' => [
