@@ -187,14 +187,14 @@ fix-source:	 ##@development fix source-code linting errors
 	#
 	# Fixing source-code lint errors with cs-fixer
 	#
-	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v ../src
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v
 
 lint-source:	 ##@development run source-code linting
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	#
 	# Liniting source-code with cs-fixer
 	#
-	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v --dry-run ../src
+	$(DOCKER_COMPOSE) run --rm $(TESTER_SERVICE) php-cs-fixer fix --format=txt -v --dry-run
 
 lint-metrics:	 ##@development run source-code metrics
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
