@@ -499,12 +499,12 @@
             "version": "v1.9.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:eternicode/bootstrap-datepicker.git",
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker.git",
                 "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/fb8776d65825068b9f914ab37d6fd847c951f488",
+                "url": "https://api.github.com/repos/uxsolutions/bootstrap-datepicker/zipball/fb8776d65825068b9f914ab37d6fd847c951f488",
                 "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
             },
             "require": {
@@ -557,7 +557,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -1175,16 +1175,16 @@
         },
         {
             "name": "dmstr/lajax-yii2-translate-manager-addons",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/lajax-yii2-translate-manager-addons.git",
-                "reference": "bd137a2b2eae9179048a53b26ddd5fbf75130129"
+                "reference": "42211d296f8e0d6fdc9ae9e046e14f8c085a7251"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/lajax-yii2-translate-manager-addons/zipball/bd137a2b2eae9179048a53b26ddd5fbf75130129",
-                "reference": "bd137a2b2eae9179048a53b26ddd5fbf75130129",
+                "url": "https://api.github.com/repos/dmstr/lajax-yii2-translate-manager-addons/zipball/42211d296f8e0d6fdc9ae9e046e14f8c085a7251",
+                "reference": "42211d296f8e0d6fdc9ae9e046e14f8c085a7251",
                 "shasum": ""
             },
             "require": {
@@ -1214,9 +1214,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/lajax-yii2-translate-manager-addons/issues",
-                "source": "https://github.com/dmstr/lajax-yii2-translate-manager-addons/tree/1.2.1"
+                "source": "https://github.com/dmstr/lajax-yii2-translate-manager-addons/tree/1.2.2"
             },
-            "time": "2020-07-16T12:03:51+00:00"
+            "time": "2023-05-12T07:39:22+00:00"
         },
         {
             "name": "dmstr/yii2-active-record-permissions",
@@ -2104,16 +2104,16 @@
         },
         {
             "name": "dmstr/yii2-publication-module",
-            "version": "1.2.5",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-publication-module.git",
-                "reference": "93a677ef0990152cbb202b14c38b5b5858979c85"
+                "reference": "994eb052e929050b6907c3c69df1b79b5e915c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/93a677ef0990152cbb202b14c38b5b5858979c85",
-                "reference": "93a677ef0990152cbb202b14c38b5b5858979c85",
+                "url": "https://api.github.com/repos/dmstr/yii2-publication-module/zipball/994eb052e929050b6907c3c69df1b79b5e915c39",
+                "reference": "994eb052e929050b6907c3c69df1b79b5e915c39",
                 "shasum": ""
             },
             "require": {
@@ -2149,9 +2149,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-publication-module/issues",
-                "source": "https://github.com/dmstr/yii2-publication-module/tree/1.2.5"
+                "source": "https://github.com/dmstr/yii2-publication-module/tree/1.2.7"
             },
-            "time": "2023-04-18T09:36:52+00:00"
+            "time": "2023-05-10T14:04:08+00:00"
         },
         {
             "name": "dmstr/yii2-redirect-module",
@@ -4429,10 +4429,10 @@
         },
         {
             "name": "npm-asset/ace-builds",
-            "version": "1.18.0",
+            "version": "1.20.0",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.18.0.tgz"
+                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.20.0.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -5546,12 +5546,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "f86a07b7eb07f9297e939d8c5f97178b2c189dfe"
+                "reference": "4897b9c8b04ee19dd3d5cc40a2f35a77672bbe49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f86a07b7eb07f9297e939d8c5f97178b2c189dfe",
-                "reference": "f86a07b7eb07f9297e939d8c5f97178b2c189dfe",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/4897b9c8b04ee19dd3d5cc40a2f35a77672bbe49",
+                "reference": "4897b9c8b04ee19dd3d5cc40a2f35a77672bbe49",
                 "shasum": ""
             },
             "conflict": {
@@ -5736,6 +5736,7 @@
                 "ibexa/core": ">=4,<4.0.7|>=4.1,<4.1.4|>=4.2,<4.2.3",
                 "ibexa/graphql": ">=2.5,<2.5.31|>=3.3,<3.3.28|>=4.2,<4.2.3",
                 "ibexa/post-install": "<=1.0.4",
+                "ibexa/user": ">=4,<4.4.3",
                 "icecoder/icecoder": "<=8.1",
                 "idno/known": "<=1.3.1",
                 "illuminate/auth": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.10",
@@ -5876,6 +5877,7 @@
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
                 "phpxmlrpc/phpxmlrpc": "<4.9.2",
+                "pimcore/customer-management-framework-bundle": "<3.3.9",
                 "pimcore/data-hub": "<1.2.4",
                 "pimcore/perspective-editor": "<1.5.1",
                 "pimcore/pimcore": "<10.5.21",
@@ -6143,7 +6145,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-06T00:13:11+00:00"
+            "time": "2023-05-11T17:03:56+00:00"
         },
         {
             "name": "schmunk42/retry",
@@ -11207,16 +11209,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.7",
+            "version": "9.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2"
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
-                "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
                 "shasum": ""
             },
             "require": {
@@ -11290,7 +11292,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.7"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
             },
             "funding": [
                 {
@@ -11306,7 +11308,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-14T08:58:40+00:00"
+            "time": "2023-05-11T05:14:45+00:00"
         },
         {
             "name": "psr/cache",

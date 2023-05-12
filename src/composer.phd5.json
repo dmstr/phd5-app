@@ -57,7 +57,8 @@
         "bedezign/yii2-audit": "~1.0.12 || >=1.1.2",
         "dmstr/yii2-active-record-permissions": "<1.2.2",
         "fxp/composer-asset-plugin": "*",
-        "dmstr/yii2-web": "<1.1.1"
+        "dmstr/yii2-web": "<1.1.1",
+        "phpoffice/phpexcel": "*"
     },
     "repositories": {
         "2amigos/yii2-ckeditor-widget": {
