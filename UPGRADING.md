@@ -3,12 +3,14 @@
 ### to 5.10
 
 - Twig Debug mode (tbd)
-- PHP_CS_FIXER_IGNORE_ENV
-- adjust Makefile
+- set `PHP_CS_FIXER_IGNORE_ENV=1` in testing container
+- adjust `Makefile`
+  - add config `.php-cs-fixer.php`
+  - liniting without path option in command 
 - adjust Codeception config
-  - rename log to output  
-  - rename class_name to actor
-  - move bootstrap to root section
+  - rename `log` to `output`  
+  - rename `class_name` to `actor`
+  - move `bootstrap.php` to root section
 
 ### 5.4/5.5 to 5.6
 
