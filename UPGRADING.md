@@ -1,5 +1,9 @@
 # Upgrading
 
+### to 5.9
+
+- set `XDEBUG_MODE=develop,coverage` in tests
+
 ### 5.4/5.5 to 5.6
 
 - upgrade `"wikimedia/composer-merge-plugin": "~2.0"`

@@ -48,7 +48,8 @@
         "codeception/module-webdriver": "^2.0.2",
         "codeception/module-asserts": "^2.0.1",
         "codeception/module-yii2": "^1.1.0",
-        "captbaritone/mailcatcher-codeception-module": "^2.3"
+        "captbaritone/mailcatcher-codeception-module": "^2.3",
+        "hoa/console": "^3.17"
     },
     "conflict": {
         "bower-asset/yii2-pjax": "2.0.7",
