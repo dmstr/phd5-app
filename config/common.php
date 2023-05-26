@@ -468,7 +468,8 @@ return [
         ],
         'pages' => [
             'class' => PagesModule::class,
-            'layout' => $boxLayout
+            'layout' => $boxLayout,
+            'pageUseFallbackPage' => false,
         ],
         'prototype' => [
             'class' => PrototypeModule::class,
