@@ -124,6 +124,16 @@ SQL;
     return $event;
 });
 
+$i18nTranslation = [
+    'class' => DbMessageSource::class,
+    'db' => 'db',
+    'sourceLanguage' => 'xx-XX',
+    'sourceMessageTable' => '{{%language_source}}',
+    'messageTable' => '{{%language_translate}}',
+    'cachingDuration' => 86400,
+    'enableCaching' => !YII_ENV_DEV
+];
+
 // Basic configuration, used in web and console applications
 return [
     'id' => 'app',
@@ -285,23 +295,9 @@ return [
         ],
         'i18n' => [
             'translations' => [
-                '*' => [
-                    'class' => DbMessageSource::class,
-                    'db' => 'db',
-                    'sourceLanguage' => 'xx-XX',
-                    'sourceMessageTable' => '{{%language_source}}',
-                    'messageTable' => '{{%language_translate}}',
-                    'cachingDuration' => 86400,
-                    'enableCaching' => !YII_ENV_DEV
-                ],
-                'noty' => [
-                    'class' => DbMessageSource::class,
-                    'sourceLanguage' => 'xx-XX',
-                    'sourceMessageTable' => '{{%language_source}}',
-                    'messageTable' => '{{%language_translate}}',
-                    'cachingDuration' => 86400,
-                    'enableCaching' => !YII_ENV_DEV
-                ]
+                '*' => $i18nTranslation,
+                'app' => $i18nTranslation,
+                'noty' => $i18nTranslation
             ]
         ],
         'log' => [
