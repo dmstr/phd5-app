@@ -35,6 +35,7 @@ services:
     volumes:
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./config:/app/config
       - ./src:/app/src
       - ./tests:/app/tests
       - ./vendor-dev:/app/vendor
