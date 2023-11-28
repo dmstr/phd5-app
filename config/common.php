@@ -124,6 +124,10 @@ SQL;
     return $event;
 });
 
+// Enable S3 component, if ENVs are set (BC)
+$s3Enabled = class_exists('League\Flysystem\AwsS3v3\AwsS3Adapter') && getenv('AMAZON_S3_BUCKET_PUBLIC_KEY') && getenv('AMAZON_S3_BUCKET_SECRET_KEY') && getenv('AMAZON_S3_BUCKET_NAME') && getenv('AMAZON_S3_BUCKET_REGION');
+
+// Default db translation config
 $i18nTranslation = [
     'class' => DbMessageSource::class,
     'db' => 'db',
@@ -135,7 +139,7 @@ $i18nTranslation = [
 ];
 
 // Basic configuration, used in web and console applications
-return [
+$common = [
     'id' => 'app',
     'name' => getenv('APP_TITLE'),
     'language' => $languages[0],
@@ -267,14 +271,6 @@ return [
         'fsLocal' => [
             'class' => LocalFilesystem::class,
             'path' => '@storage'
-        ],
-        'fsS3' => [
-            'class' => AwsS3Filesystem::class,
-            'key' => getenv('AMAZON_S3_BUCKET_PUBLIC_KEY'),
-            'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
-            'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
-            'prefix' => getenv('APP_NAME') . '/public',
-            'region' => getenv('AMAZON_S3_BUCKET_REGION')
         ],
         'fsRuntime' => [
             'class' => LocalFilesystem::class,
@@ -470,7 +466,6 @@ return [
             'layout' => $boxLayout,
             'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
             'filesystemComponents' => [
-                's3' => 'fsS3',
                 'local' => 'fsLocal',
                 'runtime' => 'fsRuntime'
             ]
@@ -560,3 +555,18 @@ return [
         ]
     ]
 ];
+
+if ($s3Enabled) {
+    $common['components']['fsS3'] = [
+        'class' => AwsS3Filesystem::class,
+        'key' => getenv('AMAZON_S3_BUCKET_PUBLIC_KEY'),
+        'secret' => getenv('AMAZON_S3_BUCKET_SECRET_KEY'),
+        'bucket' => getenv('AMAZON_S3_BUCKET_NAME'),
+        'prefix' => getenv('APP_NAME') . '/public',
+        'region' => getenv('AMAZON_S3_BUCKET_REGION')
+    ];
+
+    $common['modules']['filefly']['filesystemComponents']['s3'] = 'fsS3';
+}
+
+return $common;
