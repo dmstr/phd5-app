@@ -6,7 +6,6 @@ src/app.env
 src/version
 
 vendor
-vendor-dev
 runtime
 web/bundles
 web/assets

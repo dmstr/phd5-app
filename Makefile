@@ -164,7 +164,7 @@ test-cli:	 ##@test run application test bash in one-off container
 	#
 	# Starting application bash
 	#
-	$(DOCKER_COMPOSE) run --rm -v $(PWD)/vendor-dev:/app/vendor $(TESTER_SERVICE) bash
+	$(DOCKER_COMPOSE) run --rm -v $(PWD)/vendor:/app/vendor $(TESTER_SERVICE) bash
 
 test-open: ##@test open application web service in browser
 	#
