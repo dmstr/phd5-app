@@ -38,7 +38,7 @@ services:
       - ./config:/app/config
       - ./src:/app/src
       - ./tests:/app/tests
-      - ./vendor-dev:/app/vendor
+      - ./vendor:/app/vendor
       - ./_host-volumes/test-debug:/mnt/debug
       - ./_host-volumes/tests-log:/tests-log
     networks:

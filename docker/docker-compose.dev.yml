@@ -29,7 +29,7 @@ services:
       - ./config:/app/config:cached
       - ./src:/app/src:cached
       - ./migrations:/app/migrations:cached
-      - ./vendor-dev:/app/vendor:delegated
+      - ./vendor:/app/vendor:delegated
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
 
