@@ -124,7 +124,19 @@ SQL;
     return $event;
 });
 
+// Enable S3 component, if ENVs are set (BC)
 $s3Enabled = class_exists('League\Flysystem\AwsS3v3\AwsS3Adapter') && getenv('AMAZON_S3_BUCKET_PUBLIC_KEY') && getenv('AMAZON_S3_BUCKET_SECRET_KEY') && getenv('AMAZON_S3_BUCKET_NAME') && getenv('AMAZON_S3_BUCKET_REGION');
+
+// Default db translation config
+$i18nTranslation = [
+    'class' => DbMessageSource::class,
+    'db' => 'db',
+    'sourceLanguage' => 'xx-XX',
+    'sourceMessageTable' => '{{%language_source}}',
+    'messageTable' => '{{%language_translate}}',
+    'cachingDuration' => 86400,
+    'enableCaching' => !YII_ENV_DEV
+];
 
 // Basic configuration, used in web and console applications
 $common = [
@@ -279,23 +291,9 @@ $common = [
         ],
         'i18n' => [
             'translations' => [
-                '*' => [
-                    'class' => DbMessageSource::class,
-                    'db' => 'db',
-                    'sourceLanguage' => 'xx-XX',
-                    'sourceMessageTable' => '{{%language_source}}',
-                    'messageTable' => '{{%language_translate}}',
-                    'cachingDuration' => 86400,
-                    'enableCaching' => !YII_ENV_DEV
-                ],
-                'noty' => [
-                    'class' => DbMessageSource::class,
-                    'sourceLanguage' => 'xx-XX',
-                    'sourceMessageTable' => '{{%language_source}}',
-                    'messageTable' => '{{%language_translate}}',
-                    'cachingDuration' => 86400,
-                    'enableCaching' => !YII_ENV_DEV
-                ]
+                '*' => $i18nTranslation,
+                'app' => $i18nTranslation,
+                'noty' => $i18nTranslation
             ]
         ],
         'log' => [

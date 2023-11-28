@@ -16,7 +16,7 @@ return [
         'view' => [
             'renderers' => [
                 'twig' => [
-                    'extensions' => (getenv('TWIG_DEBUG_MODE')) ? [new Twig_Extension_Debug()] : null,
+                    'extensions' => (getenv('TWIG_DEBUG_MODE')) ? [new \Twig\Extension\DebugExtension()] : null,
                     'options' => [
                         'debug' => (getenv('TWIG_DEBUG_MODE')) ? true : false,
                     ],

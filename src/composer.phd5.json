@@ -6,7 +6,7 @@
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
-        "dmstr/yii2-backend-module": "^2.1.0",
+        "dmstr/yii2-backend-module": "^2.2.5",
         "dmstr/yii2-contact-module": "^2.0.0",
         "dmstr/yii2-cookie-consent": "^1.4.3",
         "dmstr/yii2-db": "^3.0.1",
@@ -49,7 +49,7 @@
         "codeception/module-webdriver": "^3.2.0",
         "codeception/module-asserts": "^2.0.1",
         "codeception/module-yii2": "^1.1.0",
-        "captbaritone/mailcatcher-codeception-module": "dev-piotrknapik#cb375cdd8563093d96556200ac94083a388d9224"
+        "captbaritone/mailcatcher-codeception-module": "^3.0.0"
     },
     "conflict": {
         "bower-asset/yii2-pjax": "2.0.7",
@@ -70,11 +70,6 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
-        },
-        "captbaritone/codeception-mailcatcher-module": {
-            "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/captbaritone-codeception-mailcatcher-module.git"
         },
         "bedezign/yii2-audit": {
             "name": "dmstr-forks/bedezign-yii2-audit",
