@@ -10,7 +10,10 @@
 - adjust Codeception config
   - rename `log` to `output`  
   - rename `class_name` to `actor`
+  - remove JSON and TAP loggers
   - move `bootstrap.php` to root section
+  - adjust `XDEBUG_MODE=develop,coverage`
+  - disable yii2-debug module, see https://github.com/yiisoft/yii2-debug/issues/372#issuecomment-498443036
 
 ### 5.4/5.5 to 5.6
 
