@@ -19,7 +19,7 @@
         "dmstr/yii2-prototype-module": "^2.2.5",
         "dmstr/yii2-publication-module": "^1.2.3",
         "dmstr/yii2-resque-module": "^2.0.0",
-        "dmstr/yii2-widgets2-module": "^2.7.0",
+        "dmstr/yii2-widgets2-module": "^2.7.1",
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
@@ -33,8 +33,7 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0",
-        "ckeditor/ckeditor": "4.21.0"
+        "yiisoft/yii2-symfonymailer": "^3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
