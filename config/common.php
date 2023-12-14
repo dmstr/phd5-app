@@ -379,6 +379,7 @@ return [
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
                 '#^img/stream#' => '#^img/stream#',
+                '#^img/download#' => '#^img/download#',
                 '#^filefly/api#' => '#^filefly/api#'
             ],
             'languages' => $languages,
