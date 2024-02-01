@@ -33,7 +33,8 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0"
+        "yiisoft/yii2-symfonymailer": "^3.0",
+        "ckeditor/ckeditor": "4.20.*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
