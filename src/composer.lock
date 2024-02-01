@@ -921,16 +921,16 @@
         },
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.20.2",
+            "version": "4.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor4-releases.git",
-                "reference": "8cc8f1b065f93d90c305c2609fec4e4215dd20ba"
+                "reference": "0d51138b0a258165ac09724e8f5cda67cf9126a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/8cc8f1b065f93d90c305c2609fec4e4215dd20ba",
-                "reference": "8cc8f1b065f93d90c305c2609fec4e4215dd20ba",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/0d51138b0a258165ac09724e8f5cda67cf9126a3",
+                "reference": "0d51138b0a258165ac09724e8f5cda67cf9126a3",
                 "shasum": ""
             },
             "type": "library",
@@ -965,7 +965,7 @@
                 "source": "https://github.com/ckeditor/ckeditor4",
                 "wiki": "https://ckeditor.com/docs/ckeditor4/latest/"
             },
-            "time": "2023-02-15T12:55:37+00:00"
+            "time": "2023-06-30T13:35:30+00:00"
         },
         {
             "name": "codemix/yii2-localeurls",
@@ -2294,16 +2294,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "08cd2d3f94a44c76d5824b7a9b5bd850f35cbb60"
+                "reference": "ca5a505992011f941ed417f58af049c53a5e6828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/08cd2d3f94a44c76d5824b7a9b5bd850f35cbb60",
-                "reference": "08cd2d3f94a44c76d5824b7a9b5bd850f35cbb60",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/ca5a505992011f941ed417f58af049c53a5e6828",
+                "reference": "ca5a505992011f941ed417f58af049c53a5e6828",
                 "shasum": ""
             },
             "require": {
@@ -2311,6 +2311,7 @@
                 "2amigos/yii2-translateable-behavior": "^1.1.0",
                 "bedezign/yii2-audit": "^1.0",
                 "bower-asset/jquery-cookie": "~1.4.1",
+                "ckeditor/ckeditor": "4.22.1",
                 "dmstr/yii2-active-record-permissions": "^1.0.0",
                 "dmstr/yii2-ajax-button": "^1.0",
                 "dmstr/yii2-json-editor": "^1.0.0",
@@ -2349,9 +2350,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-widgets2-module/issues",
-                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.0"
+                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.1"
             },
-            "time": "2023-01-30T09:27:59+00:00"
+            "time": "2023-12-08T08:39:05+00:00"
         },
         {
             "name": "dmstr/yii2-willnorris-imageproxy",
