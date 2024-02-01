@@ -1,6 +1,6 @@
 {
     "require": {
-        "bedezign/yii2-audit": "^1.1.1",
+        "bedezign/yii2-audit": "^1.2.0",
         "2amigos/yii2-usuario": "^1.6.0",
         "lajax/yii2-translate-manager": "^1.6.0",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
@@ -33,7 +33,8 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0"
+        "yiisoft/yii2-symfonymailer": "^3.0",
+        "ckeditor/ckeditor": "4.22.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
@@ -55,7 +56,6 @@
         "bower-asset/yii2-pjax": "2.0.7",
         "bower-asset/jquery-growl": ">=1.3.3,<=1.3.4",
         "bower-asset/json-editor": "*",
-        "bedezign/yii2-audit": "~1.0.12 || >=1.1.2",
         "dmstr/yii2-active-record-permissions": "<1.2.2",
         "fxp/composer-asset-plugin": "*",
         "dmstr/yii2-web": "<1.1.1",
@@ -71,6 +71,11 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
+        },
+        "bedezign/yii2-audit": {
+            "name": "dmstr-forks/bedezign-yii2-audit",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/bedezign-yii2-audit.git"
         }
     }
 }
