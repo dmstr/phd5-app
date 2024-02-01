@@ -286,7 +286,7 @@ $common = [
             'ssl' => getenv('FTP_BUCKET_SSL') ?: 0,
             'passive' => 1,
             'timeout' => 10,
-            'transferMode' => FTP_BINARY,
+            'transferMode' => defined("FTP_BINARY") ? FTP_BINARY : null,
             'enableTimestampsOnUnixListings' => true
         ],
         'i18n' => [
