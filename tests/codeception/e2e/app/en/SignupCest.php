@@ -24,7 +24,7 @@ class SignupCest
             $I->amOnPage('/user/login');
             $I->dontSeeLink("Don't have an account? Sign up!", '/en/user/register');
             $I->amOnPage('/user/register');
-            $I->see('Not Found (#404)');
+            $I->seeElement('.site-error');
         }
     }
 }

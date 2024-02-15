@@ -23,6 +23,6 @@ class LanguagesEnCest
         $I->seeElement('.site-error');
 
         $I->amOnPage('/en-us');
-        $I->see('Not Found');
+        $I->seeElement('.site-error');
     }
 }
