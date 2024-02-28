@@ -1,6 +1,6 @@
 {
     "require": {
-        "bedezign/yii2-audit": "^1.2.0",
+        "bedezign/yii2-audit": "^1.2.4",
         "2amigos/yii2-usuario": "^1.6.0",
         "lajax/yii2-translate-manager": "^1.6.0",
         "ckeditor/ckeditor": "dev-standard/4.22.x as 4.999",
