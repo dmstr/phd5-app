@@ -921,19 +921,18 @@
         },
         {
             "name": "ckeditor/ckeditor",
-            "version": "dev-master",
+            "version": "dev-standard/4.22.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor4-releases.git",
-                "reference": "0d51138b0a258165ac09724e8f5cda67cf9126a3"
+                "reference": "0b196832b22b52ddd42d5e2209ec7b9441c98759"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/0d51138b0a258165ac09724e8f5cda67cf9126a3",
-                "reference": "0d51138b0a258165ac09724e8f5cda67cf9126a3",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/0b196832b22b52ddd42d5e2209ec7b9441c98759",
+                "reference": "0b196832b22b52ddd42d5e2209ec7b9441c98759",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -966,7 +965,7 @@
                 "source": "https://github.com/ckeditor/ckeditor4",
                 "wiki": "https://ckeditor.com/docs/ckeditor4/latest/"
             },
-            "time": "2024-02-07T11:40:49+00:00"
+            "time": "2023-06-30T13:28:38+00:00"
         },
         {
             "name": "codemix/yii2-localeurls",
@@ -14586,7 +14585,7 @@
     "aliases": [
         {
             "package": "ckeditor/ckeditor",
-            "version": "9999999-dev",
+            "version": "dev-standard/4.22.x",
             "alias": "4.999",
             "alias_normalized": "4.999.0.0"
         }
