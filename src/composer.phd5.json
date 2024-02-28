@@ -1,6 +1,6 @@
 {
     "require": {
-        "bedezign/yii2-audit": "^1.2.0",
+        "bedezign/yii2-audit": "^1.2.4",
         "2amigos/yii2-usuario": "^1.6.0",
         "lajax/yii2-translate-manager": "^1.6.0",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
@@ -33,7 +33,11 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0"
+        "yiisoft/yii2-symfonymailer": "^3.0",
+        "ckeditor/ckeditor": "dev-master#0d51138b0a258165ac09724e8f5cda67cf9126a3"
+    },
+    "provide": {
+        "ckeditor/ckeditor": "4.999"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
