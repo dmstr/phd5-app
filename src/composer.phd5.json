@@ -3,9 +3,10 @@
         "bedezign/yii2-audit": "^1.2.0",
         "2amigos/yii2-usuario": "^1.6.0",
         "lajax/yii2-translate-manager": "^1.6.0",
-        "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
+        "ckeditor/ckeditor": "dev-standard/4.22.x as 4.999",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
+        "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
         "dmstr/yii2-backend-module": "^2.1.0",
         "dmstr/yii2-contact-module": "^3.0.3",
         "dmstr/yii2-cookie-consent": "^1.4.3",
@@ -26,6 +27,7 @@
         "loveorigami/yii2-notification-wrapper": "^6.7.2-patch1",
         "omnilight/yii2-scheduling": "^1.1",
         "pheme/yii2-settings": "^0.7.0",
+        "php-mime-mail-parser/php-mime-mail-parser": "^8.0",
         "roave/security-advisories": "dev-master",
         "schmunk42/yii2-markdocs-module": "^1.0.0",
         "vlucas/phpdotenv": "^5.5",
@@ -33,8 +35,7 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0",
-        "ckeditor/ckeditor": "4.22.1"
+        "yiisoft/yii2-symfonymailer": "^3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
