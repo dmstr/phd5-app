@@ -13,6 +13,9 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN install-php-extensions \
+        ftp
+
 ENV SUPERVISOR_START_CRON=true \
     SUPERVISOR_START_WORKER=true \
     SUPERVISOR_START_EXPORT_ENV=true \
