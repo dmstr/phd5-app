@@ -14583,7 +14583,14 @@
             "time": "2023-05-30T22:51:52+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "ckeditor/ckeditor",
+            "version": "9999999-dev",
+            "alias": "4.999",
+            "alias_normalized": "4.999.0.0"
+        }
+    ],
     "minimum-stability": "beta",
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
