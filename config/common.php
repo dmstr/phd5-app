@@ -371,6 +371,7 @@ $common = [
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
                 '#^img/stream#' => '#^img/stream#',
+                '#^img/download#' => '#^img/download#',
                 '#^filefly/api#' => '#^filefly/api#'
             ],
             'languages' => $languages,
@@ -482,7 +483,8 @@ $common = [
         ],
         'pages' => [
             'class' => PagesModule::class,
-            'layout' => $boxLayout
+            'layout' => $boxLayout,
+            'pageUseFallbackPage' => false,
         ],
         'prototype' => [
             'class' => PrototypeModule::class,

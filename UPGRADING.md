@@ -15,6 +15,10 @@
   - adjust `XDEBUG_MODE=develop,coverage`
   - disable yii2-debug module, see https://github.com/yiisoft/yii2-debug/issues/372#issuecomment-498443036
 
+### to 5.9
+
+- set `XDEBUG_MODE=develop,coverage` in tests
+
 ### 5.4/5.5 to 5.6
 
 - upgrade `"wikimedia/composer-merge-plugin": "~2.0"`
