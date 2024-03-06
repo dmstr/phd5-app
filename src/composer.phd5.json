@@ -4,6 +4,7 @@
         "2amigos/yii2-usuario": "^1.6.0",
         "lajax/yii2-translate-manager": "^1.6.0",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
+        "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/yii2-backend-module": "^2.1.0",
