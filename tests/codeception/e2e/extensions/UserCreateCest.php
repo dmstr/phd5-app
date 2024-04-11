@@ -12,7 +12,7 @@ class UserCreateCest
     public function tryToTest(E2eTester $I)
     {
         $faker = Factory::create();
-        $username = $faker->userName;
+        $username = $faker->userName();
 
         $I->wantTo('ensure that User module works');
 
@@ -22,9 +22,9 @@ class UserCreateCest
         $I->amGoingTo('try to view and create snippets');
         $I->amOnPage('/user/admin/create');
 
-        $I->fillField('#user-email', $faker->email);
+        $I->fillField('#user-email', $faker->email());
         $I->fillField('#user-username', $username);
-        $I->fillField('#user-password', $faker->password);
+        $I->fillField('#user-password', $faker->password());
 
         $I->click('button[type="submit"]');
 
