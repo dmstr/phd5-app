@@ -73,7 +73,6 @@ use yii\web\View;
  */
 
 // prepare application languages
-
 $languages = explode(',', getenv('APP_LANGUAGES'));
 
 // prepare asset bundle config
