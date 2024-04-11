@@ -1,10 +1,11 @@
 # Changelog
 
-### 5.9.0 (under development)
+### 5.9.0
 
 - updated base image to `yiisoftware/yii2-php:8.1-fpm-nginx`
 - added debug-by-env variables `APP_DEBUG_KEY`, `APP_DEBUG_TOKEN`
 - added Redis queue id sync event
+- enabled debug module for CLI requests
 
 ### 5.8.0
 
