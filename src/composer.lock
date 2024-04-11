@@ -395,12 +395,12 @@
             "version": "1.2.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr-forks/bedezign-yii2-audit.git",
+                "url": "https://github.com/bedezign/yii2-audit.git",
                 "reference": "b4e6298521e81cec685459249fcb225a10ef9450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/bedezign-yii2-audit/zipball/b4e6298521e81cec685459249fcb225a10ef9450",
+                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/b4e6298521e81cec685459249fcb225a10ef9450",
                 "reference": "b4e6298521e81cec685459249fcb225a10ef9450",
                 "shasum": ""
             },
@@ -424,35 +424,37 @@
                     "bedezign\\yii2\\audit\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Steve Guns",
-                    "homepage": "http://bedezign.com/",
-                    "email": "Steve@bedezign.com"
+                    "email": "Steve@bedezign.com",
+                    "homepage": "http://bedezign.com/"
                 },
                 {
                     "name": "Brett O'Donnell",
-                    "homepage": "https://mrphp.com.au/",
-                    "email": "cornernote@gmail.com"
+                    "email": "cornernote@gmail.com",
+                    "homepage": "https://mrphp.com.au/"
                 },
                 {
                     "name": "Marc Hollander",
-                    "homepage": "http://maruc.nl/",
-                    "email": "marchollander@gmail.com"
+                    "email": "marchollander@gmail.com",
+                    "homepage": "http://maruc.nl/"
                 }
             ],
             "description": "Yii2 Audit records and displays web/cli requests, database changes, php/js errors and associated data.",
             "keywords": [
-                "audit",
+                "Audit",
                 "logging",
                 "trail",
                 "yii2"
             ],
             "support": {
-                "source": "https://github.com/dmstr-forks/bedezign-yii2-audit/tree/1.2.6"
+                "issues": "https://github.com/bedezign/yii2-audit/issues",
+                "source": "https://github.com/bedezign/yii2-audit/tree/1.2.6"
             },
             "time": "2024-03-26T17:17:47+00:00"
         },
