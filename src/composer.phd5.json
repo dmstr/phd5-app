@@ -73,11 +73,6 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
-        },
-        "bedezign/yii2-audit": {
-            "name": "dmstr-forks/bedezign-yii2-audit",
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/bedezign-yii2-audit.git"
         }
     }
 }
