@@ -20,7 +20,7 @@
         "dmstr/yii2-prototype-module": "^2.2.5",
         "dmstr/yii2-publication-module": "^1.2.3",
         "dmstr/yii2-resque-module": "^2.0.0",
-        "dmstr/yii2-widgets2-module": "^2.7.1",
+        "dmstr/yii2-widgets2-module": "^2.7.3",
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
         "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
@@ -73,11 +73,6 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
-        },
-        "bedezign/yii2-audit": {
-            "name": "dmstr-forks/bedezign-yii2-audit",
-            "type": "vcs",
-            "url": "https://github.com/dmstr-forks/bedezign-yii2-audit.git"
         }
     }
 }

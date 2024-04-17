@@ -395,12 +395,12 @@
             "version": "1.2.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr-forks/bedezign-yii2-audit.git",
+                "url": "https://github.com/bedezign/yii2-audit.git",
                 "reference": "b4e6298521e81cec685459249fcb225a10ef9450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/bedezign-yii2-audit/zipball/b4e6298521e81cec685459249fcb225a10ef9450",
+                "url": "https://api.github.com/repos/bedezign/yii2-audit/zipball/b4e6298521e81cec685459249fcb225a10ef9450",
                 "reference": "b4e6298521e81cec685459249fcb225a10ef9450",
                 "shasum": ""
             },
@@ -424,35 +424,37 @@
                     "bedezign\\yii2\\audit\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Steve Guns",
-                    "homepage": "http://bedezign.com/",
-                    "email": "Steve@bedezign.com"
+                    "email": "Steve@bedezign.com",
+                    "homepage": "http://bedezign.com/"
                 },
                 {
                     "name": "Brett O'Donnell",
-                    "homepage": "https://mrphp.com.au/",
-                    "email": "cornernote@gmail.com"
+                    "email": "cornernote@gmail.com",
+                    "homepage": "https://mrphp.com.au/"
                 },
                 {
                     "name": "Marc Hollander",
-                    "homepage": "http://maruc.nl/",
-                    "email": "marchollander@gmail.com"
+                    "email": "marchollander@gmail.com",
+                    "homepage": "http://maruc.nl/"
                 }
             ],
             "description": "Yii2 Audit records and displays web/cli requests, database changes, php/js errors and associated data.",
             "keywords": [
-                "audit",
+                "Audit",
                 "logging",
                 "trail",
                 "yii2"
             ],
             "support": {
-                "source": "https://github.com/dmstr-forks/bedezign-yii2-audit/tree/1.2.6"
+                "issues": "https://github.com/bedezign/yii2-audit/issues",
+                "source": "https://github.com/bedezign/yii2-audit/tree/1.2.6"
             },
             "time": "2024-03-26T17:17:47+00:00"
         },
@@ -497,16 +499,16 @@
         },
         {
             "name": "bower-asset/bootstrap-datepicker",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:eternicode/bootstrap-datepicker.git",
-                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker.git",
+                "reference": "722dc29432e89e048e5677b51fb4cfd8bbdab13c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/fb8776d65825068b9f914ab37d6fd847c951f488",
-                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
+                "url": "https://api.github.com/repos/uxsolutions/bootstrap-datepicker/zipball/722dc29432e89e048e5677b51fb4cfd8bbdab13c",
+                "reference": "722dc29432e89e048e5677b51fb4cfd8bbdab13c"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7.1,<4.0.0"
@@ -558,7 +560,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -2293,16 +2295,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "6104c69f8a15034ae7a1661c304ef49be11ec8b4"
+                "reference": "ef5b6603148509c0ff268fa1da218dffc275b284"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/6104c69f8a15034ae7a1661c304ef49be11ec8b4",
-                "reference": "6104c69f8a15034ae7a1661c304ef49be11ec8b4",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/ef5b6603148509c0ff268fa1da218dffc275b284",
+                "reference": "ef5b6603148509c0ff268fa1da218dffc275b284",
                 "shasum": ""
             },
             "require": {
@@ -2348,9 +2350,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-widgets2-module/issues",
-                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.2"
+                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.3"
             },
-            "time": "2024-02-27T16:12:43+00:00"
+            "time": "2024-04-16T12:50:08+00:00"
         },
         {
             "name": "dmstr/yii2-willnorris-imageproxy",
@@ -4422,10 +4424,10 @@
         },
         {
             "name": "npm-asset/ace-builds",
-            "version": "1.32.9",
+            "version": "1.33.0",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.32.9.tgz"
+                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.33.0.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -4586,10 +4588,10 @@
         },
         {
             "name": "npm-asset/jsonrepair",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.6.0.tgz"
+                "url": "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.6.1.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -5600,12 +5602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "31f373849a62ccfe23cba594e91b488e3ec2270b"
+                "reference": "26c93a86d619bca3122e9c2d5be82578ba5ef843"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/31f373849a62ccfe23cba594e91b488e3ec2270b",
-                "reference": "31f373849a62ccfe23cba594e91b488e3ec2270b",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/26c93a86d619bca3122e9c2d5be82578ba5ef843",
+                "reference": "26c93a86d619bca3122e9c2d5be82578ba5ef843",
                 "shasum": ""
             },
             "conflict": {
@@ -5911,7 +5913,7 @@
                 "mantisbt/mantisbt": "<2.26.1",
                 "marcwillmann/turn": "<0.3.3",
                 "matyhtf/framework": "<3.0.6",
-                "mautic/core": "<4.3",
+                "mautic/core": "<4.4.12|>=5.0.0.0-alpha,<5.0.4",
                 "mediawiki/core": "<1.36.2",
                 "mediawiki/matomo": "<2.4.3",
                 "mediawiki/semantic-media-wiki": "<4.0.2",
@@ -6055,7 +6057,7 @@
                 "really-simple-plugins/complianz-gdpr": "<6.4.2",
                 "redaxo/source": "<=5.15.1",
                 "remdex/livehelperchat": "<4.29",
-                "reportico-web/reportico": "<=7.1.21",
+                "reportico-web/reportico": "<=8.1",
                 "rhukster/dom-sanitizer": "<1.0.7",
                 "rmccue/requests": ">=1.6,<1.8",
                 "robrichards/xmlseclibs": ">=1,<3.0.4",
@@ -6176,7 +6178,7 @@
                 "t3s/content-consent": "<1.0.3|>=2,<2.0.2",
                 "tastyigniter/tastyigniter": "<3.3",
                 "tcg/voyager": "<=1.4",
-                "tecnickcom/tcpdf": "<6.2.22",
+                "tecnickcom/tcpdf": "<6.7.4",
                 "terminal42/contao-tablelookupwizard": "<3.3.5",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
                 "thelia/thelia": ">=2.1,<2.1.3",
@@ -6184,6 +6186,7 @@
                 "thinkcmf/thinkcmf": "<=5.1.7",
                 "thorsten/phpmyfaq": "<3.2.2",
                 "tikiwiki/tiki-manager": "<=17.1",
+                "timber/timber": "<=2",
                 "tinymce/tinymce": "<7",
                 "tinymighty/wiki-seo": "<1.2.2",
                 "titon/framework": "<9.9.99",
@@ -6237,6 +6240,7 @@
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "winter/wn-backend-module": "<1.2.4",
+                "winter/wn-dusk-plugin": "<2.1",
                 "winter/wn-system-module": "<1.2.4",
                 "wintercms/winter": "<=1.2.3",
                 "woocommerce/woocommerce": "<6.6",
@@ -6337,7 +6341,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-09T19:04:27+00:00"
+            "time": "2024-04-15T19:04:12+00:00"
         },
         {
             "name": "schmunk42/retry",
