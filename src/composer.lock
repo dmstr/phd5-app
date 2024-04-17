@@ -2295,16 +2295,16 @@
         },
         {
             "name": "dmstr/yii2-widgets2-module",
-            "version": "2.7.2",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "6104c69f8a15034ae7a1661c304ef49be11ec8b4"
+                "reference": "ef5b6603148509c0ff268fa1da218dffc275b284"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/6104c69f8a15034ae7a1661c304ef49be11ec8b4",
-                "reference": "6104c69f8a15034ae7a1661c304ef49be11ec8b4",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/ef5b6603148509c0ff268fa1da218dffc275b284",
+                "reference": "ef5b6603148509c0ff268fa1da218dffc275b284",
                 "shasum": ""
             },
             "require": {
@@ -2350,9 +2350,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-widgets2-module/issues",
-                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.2"
+                "source": "https://github.com/dmstr/yii2-widgets2-module/tree/2.7.3"
             },
-            "time": "2024-02-27T16:12:43+00:00"
+            "time": "2024-04-16T12:50:08+00:00"
         },
         {
             "name": "dmstr/yii2-willnorris-imageproxy",
