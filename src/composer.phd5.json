@@ -1,9 +1,8 @@
 {
     "require": {
-        "bedezign/yii2-audit": "^1.2.4",
-        "2amigos/yii2-usuario": "^1.6.0",
+        "bedezign/yii2-audit": "^1.2.7",
+        "2amigos/yii2-usuario": "^1.6.3",
         "lajax/yii2-translate-manager": "^1.6.0",
-        "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
@@ -11,7 +10,7 @@
         "dmstr/yii2-contact-module": "^3.0.3",
         "dmstr/yii2-cookie-consent": "^1.4.3",
         "dmstr/yii2-db": "^3.0.1",
-        "dmstr/yii2-helpers": ">=0.4.19",
+        "dmstr/yii2-helpers": "^1.0.1",
         "dmstr/yii2-json-editor": "^1.4.2",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filefly-module": "^1.6.0",
