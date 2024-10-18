@@ -340,7 +340,7 @@ $common = [
             'as queuemanager' => QueueManagerBehavior::class,
             'on ' . Queue::EVENT_AFTER_ERROR => function (ExecEvent $event) {
                 if ($event->error instanceof Throwable) {
-                Yii::$app->getModule('audit')->exception($event->error);
+                    Yii::$app->getModule('audit')->exception($event->error);
                 } else {
                     Yii::$app->getModule('audit')->errorMessage('Queue failed with an unspecified error.');
                 }
