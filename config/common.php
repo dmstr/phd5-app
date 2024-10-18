@@ -53,6 +53,7 @@ use yii\helpers\Json;
 use yii\helpers\Markdown;
 use yii\helpers\Url;
 use yii\i18n\DbMessageSource;
+use yii\queue\ExecEvent;
 use yii\queue\LogBehavior;
 use yii\queue\redis\Queue;
 use yii\redis\Cache;
@@ -336,7 +337,14 @@ $common = [
             'class' => Queue::class,
             'channel' => getenv('APP_QUEUE_CHANNEL'),
             'as log' => LogBehavior::class,
-            'as queuemanager' => QueueManagerBehavior::class
+            'as queuemanager' => QueueManagerBehavior::class,
+            'on ' . Queue::EVENT_AFTER_ERROR => function (ExecEvent $event) {
+                if ($event->error instanceof Throwable) {
+                Yii::$app->getModule('audit')->exception($event->error);
+                } else {
+                    Yii::$app->getModule('audit')->errorMessage('Queue failed with an unspecified error.');
+                }
+            }
         ],
         'redis' => [
             'class' => RedisConnection::class,
