@@ -1724,16 +1724,16 @@
         },
         {
             "name": "dmstr/yii2-filefly-module",
-            "version": "1.7.2",
+            "version": "1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-filefly-module.git",
-                "reference": "9d4a66a7fbd978ad7cc45fa82207c1f64f9799ae"
+                "reference": "5cfde0dffd999a1401edfd66d0821cadb97d5219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/9d4a66a7fbd978ad7cc45fa82207c1f64f9799ae",
-                "reference": "9d4a66a7fbd978ad7cc45fa82207c1f64f9799ae",
+                "url": "https://api.github.com/repos/dmstr/yii2-filefly-module/zipball/5cfde0dffd999a1401edfd66d0821cadb97d5219",
+                "reference": "5cfde0dffd999a1401edfd66d0821cadb97d5219",
                 "shasum": ""
             },
             "require": {
@@ -1773,9 +1773,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-filefly-module/issues",
-                "source": "https://github.com/dmstr/yii2-filefly-module/tree/1.7.2"
+                "source": "https://github.com/dmstr/yii2-filefly-module/tree/1.7.3"
             },
-            "time": "2024-08-16T09:10:33+00:00"
+            "time": "2024-10-18T12:04:33+00:00"
         },
         {
             "name": "dmstr/yii2-filemanager-widgets",
