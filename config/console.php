@@ -62,7 +62,8 @@ return [
                 ]
             ),
             'migrationNamespaces' => [
-                Da\User\Migration::class
+                Da\User\Migration::class,
+                'yii\queue\db\migrations'
             ],
         ],
         'rbac' => \dmstr\helpers\RbacController::class,
