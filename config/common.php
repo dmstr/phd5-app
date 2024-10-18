@@ -33,8 +33,6 @@ use hrzg\filefly\components\ImageUrlRule;
 use hrzg\filefly\Module as FileFlyModule;
 use hrzg\resque\Module as ResqueModule;
 use hrzg\widget\Module as WidgetsModule;
-use ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior;
-use ignatenkovnikita\queuemanager\QueueManager as QueueManagerModule;
 use kartik\grid\Module as GridViewModule;
 use lajax\translatemanager\Module as TranslatemanagerModule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
@@ -43,7 +41,6 @@ use lajax\translatemanager\services\scanners\ScannerPhpFunction;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
-use yii\base\Event;
 use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
 use yii\db\Connection as DbConnection;
@@ -310,7 +307,6 @@ $common = [
             'channel' => getenv('APP_QUEUE_CHANNEL'),
             'mutex' => 'queueMutex',
             'as log' => LogBehavior::class,
-            'as queuemanager' => QueueManagerBehavior::class,
             'on ' . Queue::EVENT_AFTER_ERROR => function (ExecEvent $event) {
                 if ($event->error instanceof Throwable) {
                     Yii::$app->getModule('audit')->exception($event->error);
@@ -467,10 +463,6 @@ $common = [
         'noty' => [
             'class' => NotyModule::class,
         ],
-        'queuemanager' => [
-            'class' => QueueManagerModule::class,
-            'layout' => $boxLayout
-        ],
         'pages' => [
             'class' => PagesModule::class,
             'layout' => $boxLayout,
@@ -499,8 +491,7 @@ $common = [
                 '@vendor/loveorigami/yii2-notification-wrapper/src',
                 '@vendor/dmstr',
                 '@vendor/lajax/yii2-translate-manager',
-                '@vendor/bedezign/yii2-audit/src',
-                '@vendor/ignatenkovnikita/yii2-queuemanager'
+                '@vendor/bedezign/yii2-audit/src'
             ],
             'tables' => [
                 [
