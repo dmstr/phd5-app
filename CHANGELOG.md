@@ -1,5 +1,13 @@
 # Changelog
 
+### 5.11.0 - under development
+
+- updated base image to `yiisoftware/yii2-php:8.3-fpm-nginx`
+
+### 5.10.0
+
+- updated base image to `yiisoftware/yii2-php:8.2-fpm-nginx`
+
 ### 5.9.0
 
 - updated base image to `yiisoftware/yii2-php:8.1-fpm-nginx`
