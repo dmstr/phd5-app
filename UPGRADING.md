@@ -7,12 +7,12 @@
 - adjust `Makefile`
   - add config `.php-cs-fixer.php`
   - liniting without path option in command 
-- adjust Codeception config
+- adjust Codeception configurations
   - rename `log` to `output`  
-  - rename `class_name` to `actor`
-  - remove JSON and TAP loggers
-  - move `bootstrap.php` to root section
+  - move `bootstrap` to root section (codeception.yml)
+  - rename `class_name` to `actor` (suite.yml(s))
   - adjust `XDEBUG_MODE=develop,coverage`
+  - remove JSON and TAP loggers
   - disable yii2-debug module, see https://github.com/yiisoft/yii2-debug/issues/372#issuecomment-498443036
 
 ### to 5.9

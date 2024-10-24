@@ -33,8 +33,6 @@ use hrzg\filefly\components\ImageUrlRule;
 use hrzg\filefly\Module as FileFlyModule;
 use hrzg\resque\Module as ResqueModule;
 use hrzg\widget\Module as WidgetsModule;
-use ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior;
-use ignatenkovnikita\queuemanager\QueueManager as QueueManagerModule;
 use kartik\grid\Module as GridViewModule;
 use lajax\translatemanager\Module as TranslatemanagerModule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
@@ -43,7 +41,6 @@ use lajax\translatemanager\services\scanners\ScannerPhpFunction;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
-use yii\base\Event;
 use yii\caching\ArrayCache;
 use yii\caching\DummyCache;
 use yii\db\Connection as DbConnection;
@@ -53,10 +50,12 @@ use yii\helpers\Json;
 use yii\helpers\Markdown;
 use yii\helpers\Url;
 use yii\i18n\DbMessageSource;
+use yii\queue\db\Queue;
+use yii\queue\ExecEvent;
 use yii\queue\LogBehavior;
-use yii\queue\redis\Queue;
 use yii\redis\Cache;
 use yii\redis\Connection as RedisConnection;
+use yii\redis\Mutex;
 use yii\symfonymailer\Mailer;
 use yii\twig\ViewRenderer;
 use yii\web\Cookie;
@@ -98,30 +97,6 @@ $dbAttributes = [
 if (getenv('MYSQL_ATTR_SSL_CA')) {
     $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
 }
-
-// update Redis increment counter according to queue_manager db (workaround)
-Event::on(Queue::class, Queue::EVENT_BEFORE_PUSH, function ($event) {
-    // added directly to the SQL query, since param binding
-    $table_name = getenv('DATABASE_TABLE_PREFIX').'queue_manager';
-    if (Yii::$app->cache->get('queue_id_synced') !== true) {
-        $lastQueueIdSql = <<<SQL
-SELECT `AUTO_INCREMENT`  
-FROM  INFORMATION_SCHEMA.TABLES    
-WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '{$table_name}'
-SQL;
-        $lastModelId = Yii::$app->db
-            ->createCommand($lastQueueIdSql)
-            ->queryScalar();
-        if (!is_int($lastModelId)) {
-            throw new \yii\db\Exception("Invalid increment ({$lastModelId}) for Redis queue");
-        }
-        Yii::$app->redis->set("queue.message_id", $lastModelId);
-        Yii::$app->cache->set('queue_id_synced', true);
-        Yii::info("Synced redis queue id with database ($lastModelId)");
-    }
-
-    return $event;
-});
 
 // Enable S3 component, if ENVs are set (BC)
 $s3Enabled = class_exists('League\Flysystem\AwsS3v3\AwsS3Adapter') && getenv('AMAZON_S3_BUCKET_PUBLIC_KEY') && getenv('AMAZON_S3_BUCKET_SECRET_KEY') && getenv('AMAZON_S3_BUCKET_NAME') && getenv('AMAZON_S3_BUCKET_REGION');
@@ -208,7 +183,7 @@ $common = [
                             // allow for all logged in users
                             #'roles' => ['@'],
                             // allow only if user has 'user' grant or requested his own profile (check by user->id)
-                            'matchCallback' => function($action) {
+                            'matchCallback' => function ($action) {
                                 if (\Yii::$app->user->isGuest) {
                                     return false;
                                 }
@@ -329,8 +304,19 @@ $common = [
         'queue' => [
             'class' => Queue::class,
             'channel' => getenv('APP_QUEUE_CHANNEL'),
+            'mutex' => 'queueMutex',
             'as log' => LogBehavior::class,
-            'as queuemanager' => QueueManagerBehavior::class
+            'on ' . Queue::EVENT_AFTER_ERROR => function (ExecEvent $event) {
+                if ($event->error instanceof Throwable) {
+                    Yii::$app->getModule('audit')->exception($event->error);
+                } else {
+                    Yii::$app->getModule('audit')->errorMessage('Queue failed with an unspecified error.');
+                }
+            }
+        ],
+        'queueMutex' => [
+            'class' => Mutex::class,
+            'keyPrefix' => 'queue'
         ],
         'redis' => [
             'class' => RedisConnection::class,
@@ -476,10 +462,6 @@ $common = [
         'noty' => [
             'class' => NotyModule::class,
         ],
-        'queuemanager' => [
-            'class' => QueueManagerModule::class,
-            'layout' => $boxLayout
-        ],
         'pages' => [
             'class' => PagesModule::class,
             'layout' => $boxLayout,
@@ -508,8 +490,7 @@ $common = [
                 '@vendor/loveorigami/yii2-notification-wrapper/src',
                 '@vendor/dmstr',
                 '@vendor/lajax/yii2-translate-manager',
-                '@vendor/bedezign/yii2-audit/src',
-                '@vendor/ignatenkovnikita/yii2-queuemanager'
+                '@vendor/bedezign/yii2-audit/src'
             ],
             'tables' => [
                 [
@@ -543,7 +524,7 @@ $common = [
             'generatePasswords' => true,
             'enableRegistration' => getenv('APP_USER_ENABLE_REGISTRATION'),
             'mailParams' => [
-                'fromEmail' => [getenv('APP_MAILER_FROM')=>getenv('APP_TITLE')]
+                'fromEmail' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')]
             ],
         ],
         'widgets' => [

@@ -55,14 +55,15 @@ return [
                     '@dmstr/modules/backend/migrations',
                     '@hrzg/filefly/migrations',
                     '@hrzg/widget/migrations',
-                    '@ignatenkovnikita/queuemanager/migrations',
                     '@vendor/lajax/yii2-translate-manager/migrations',
                     '@vendor/pheme/yii2-settings/migrations',
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
+                    '@vendor/dmstr/yii2-resque-module/src/migrations/2.0-to-3.0'
                 ]
             ),
             'migrationNamespaces' => [
-                Da\User\Migration::class
+                Da\User\Migration::class,
+                'yii\queue\db\migrations'
             ],
         ],
         'rbac' => \dmstr\helpers\RbacController::class,
