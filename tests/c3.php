@@ -1,5 +1,5 @@
 <?php
-// @codingStandardsIgnoreFile
+// phpcs:ignoreFile
 // @codeCoverageIgnoreStart
 
 /**
@@ -10,7 +10,9 @@
 
 // $_SERVER['HTTP_X_CODECEPTION_CODECOVERAGE_DEBUG'] = 1;
 
+use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
+use SebastianBergmann\CodeCoverage\Driver\Selector;
 use SebastianBergmann\CodeCoverage\Filter as CodeCoverageFilter;
 
 if (isset($_COOKIE['CODECEPTION_CODECOVERAGE'])) {
@@ -25,7 +27,7 @@ if (isset($_COOKIE['CODECEPTION_CODECOVERAGE'])) {
     if ($cookie) {
         foreach ($cookie as $key => $value) {
             if (!empty($value)) {
-                $_SERVER["HTTP_X_CODECEPTION_" . strtoupper($key)] = $value;
+                $_SERVER['HTTP_X_CODECEPTION_' . strtoupper($key)] = $value;
             }
         }
     }
@@ -41,9 +43,7 @@ if (!function_exists('__c3_error')) {
         $errorLogFile = defined('C3_CODECOVERAGE_ERROR_LOG_FILE') ?
             C3_CODECOVERAGE_ERROR_LOG_FILE :
             C3_CODECOVERAGE_MEDIATE_STORAGE . DIRECTORY_SEPARATOR . 'error.txt';
-        if (is_writable($errorLogFile)) {
-            file_put_contents($errorLogFile, $message);
-        } else {
+        if (file_put_contents($errorLogFile, $message, FILE_APPEND | LOCK_EX) === false) {
             $message = "Could not write error to log file ($errorLogFile), original message: $message";
         }
         if (!headers_sent()) {
@@ -175,7 +175,7 @@ if (!defined('C3_CODECOVERAGE_MEDIATE_STORAGE')) {
     function __c3_build_cobertura_report(PHP_CodeCoverage $codeCoverage, $path)
     {
         if (!class_exists(\SebastianBergmann\CodeCoverage\Report\Cobertura::class)) {
-            throw new Exception("Cobertura report requires php-code-coverage >= 9.2");
+            throw new Exception('Cobertura report requires php-code-coverage >= 9.2');
         }
         $writer = new \SebastianBergmann\CodeCoverage\Report\Cobertura();
         $writer->process($codeCoverage, $path . '.cobertura.xml');
@@ -223,6 +223,26 @@ if (!defined('C3_CODECOVERAGE_MEDIATE_STORAGE')) {
         return __c3_exit();
     }
 
+     /**
+     * Keep track of the number of running tests
+     * @param bool $decrease default false. Whether to increase or decrease the counter
+     */
+    function __c3_testcounter($decrease = false)
+    {
+        $blockfilename = realpath(C3_CODECOVERAGE_MEDIATE_STORAGE) . DIRECTORY_SEPARATOR . 'block_report';
+        $file = fopen($blockfilename, 'c+');
+        if (flock($file, LOCK_EX)){
+            // 24 bytes is enough to hold largest integer supported in 64 bit systems
+            $testcounter = intval(fread($file, 24)) + ($decrease ? -1 : 1);
+            ftruncate($file, 0);
+            rewind($file);
+            fwrite($file, $testcounter);
+        } else {
+            __c3_error("Failed to acquire write-lock for $blockfilename");
+        }
+        fclose($file);
+    }
+
     /**
      * @param $filename
      * @param bool $lock Lock the file for writing?
@@ -240,6 +260,14 @@ if (!defined('C3_CODECOVERAGE_MEDIATE_STORAGE')) {
                     __c3_error("Failed to acquire write-lock for $filename");
                 }
             } else {
+                // wait until serialized coverage data of all tests is written to file
+                $blockfilename = realpath(C3_CODECOVERAGE_MEDIATE_STORAGE) . DIRECTORY_SEPARATOR . 'block_report';
+                if (file_exists($blockfilename) && filesize($blockfilename) !== 0) {
+                    $retries = 120; // 30 sec total
+                    while (file_get_contents($blockfilename) !== '0' && --$retries >= 0) {
+                        usleep(250000); // 0.25 sec
+                    }
+                }
                 $phpCoverage = unserialize(file_get_contents($filename));
             }
 
@@ -263,15 +291,24 @@ if (!defined('C3_CODECOVERAGE_MEDIATE_STORAGE')) {
             $pathCoverage = (bool)$settings['coverage']['path_coverage'];
         }
 
-        if (method_exists(Driver::class, 'forLineCoverage')) {
-            //php-code-coverage 9+
+        if (class_exists(Selector::class)) {
+            //php-code-coverage >= 9.1.10
+            $filter = new CodeCoverageFilter();
+            if ($pathCoverage) {
+                $driver = (new Selector())->forLineAndPathCoverage($filter);
+            } else {
+                $driver = (new Selector())->forLineCoverage($filter);
+            }
+            $phpCoverage = new CodeCoverage($driver, $filter);
+        } elseif (method_exists(Driver::class, 'forLineCoverage')) {
+            //php-code-coverage 9.0.0 - 9.1.9
             $filter = new CodeCoverageFilter();
             if ($pathCoverage) {
                 $driver = Driver::forLineAndPathCoverage($filter);
             } else {
                 $driver = Driver::forLineCoverage($filter);
             }
-            $phpCoverage = new PHP_CodeCoverage($driver, $filter);
+            $phpCoverage = new CodeCoverage($driver, $filter);
         } else {
             //php-code-coverage 8 or older
             $phpCoverage = new PHP_CodeCoverage();
@@ -372,6 +409,7 @@ if ($requestedC3Report) {
     }
 } else {
     list($codeCoverage, ) = __c3_factory(null);
+    __c3_testcounter();
     $codeCoverage->start(C3_CODECOVERAGE_TESTNAME);
     if (!array_key_exists('HTTP_X_CODECEPTION_CODECOVERAGE_DEBUG', $_SERVER)) {
         register_shutdown_function(
@@ -408,6 +446,7 @@ if ($requestedC3Report) {
                     flock($file, LOCK_UN);
                     fclose($file);
                 }
+                __c3_testcounter(true);
             }
         );
     }
