@@ -22,3 +22,4 @@ tests/_log
 
 .php_cs.cache
 
+/tests/.php-cs-fixer.cache
