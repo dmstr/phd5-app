@@ -34,7 +34,8 @@
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
         "yiisoft/yii2-symfonymailer": "^3.0",
-        "dmstr/yii2-rbac-migration": "^2.0"
+        "dmstr/yii2-rbac-migration": "^2.0",
+        "ckeditor/ckeditor": "dev-full/4.21.x as 4.999"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",

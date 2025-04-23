@@ -927,16 +927,16 @@
         },
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.25.1",
+            "version": "dev-full/4.21.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor4-releases.git",
-                "reference": "3fa1987d35342526e4eb2e64f6ec7172561b7328"
+                "reference": "4662f97b3197f41bb834ca6f934b4120e67ff77c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/3fa1987d35342526e4eb2e64f6ec7172561b7328",
-                "reference": "3fa1987d35342526e4eb2e64f6ec7172561b7328",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor4-releases/zipball/4662f97b3197f41bb834ca6f934b4120e67ff77c",
+                "reference": "4662f97b3197f41bb834ca6f934b4120e67ff77c",
                 "shasum": ""
             },
             "type": "library",
@@ -971,7 +971,7 @@
                 "source": "https://github.com/ckeditor/ckeditor4",
                 "wiki": "https://ckeditor.com/docs/ckeditor4/latest/"
             },
-            "time": "2025-02-05T12:32:07+00:00"
+            "time": "2023-03-22T10:35:24+00:00"
         },
         {
             "name": "codemix/yii2-localeurls",
@@ -15356,9 +15356,17 @@
             "time": "2023-05-30T22:51:52+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "ckeditor/ckeditor",
+            "version": "dev-full/4.21.x",
+            "alias": "4.999",
+            "alias_normalized": "4.999.0.0"
+        }
+    ],
     "minimum-stability": "beta",
     "stability-flags": {
+        "ckeditor/ckeditor": 20,
         "roave/security-advisories": 20,
         "schmunk42/yii2-giiant": 10,
         "wikimedia/composer-merge-plugin": 20
