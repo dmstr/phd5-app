@@ -5,16 +5,13 @@ services:
       - chrome
 
   chrome:
-    image: selenium/standalone-chrome-debug:3.12
-    userns_mode: host
+    image: selenium/standalone-chromium:134.0
+    shm_size: 2gb # recommended by seleniumhq https://github.com/SeleniumHQ/docker-selenium?tab=readme-ov-file#--shm-size2g
     ports:
       - '4444'
       - '5900'
     environment:
-      - VNC_NO_PASSWORD=1
-    volumes:
-      # Mount shm, see https://github.com/SeleniumHQ/docker-selenium#running-the-images
-      - /dev/shm:/dev/shm
+      - SE_VNC_NO_PASSWORD=1
 
   firefox:
     # update to version 3 blocked by https://github.com/facebook/php-webdriver/issues/469
