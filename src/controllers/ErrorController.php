@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.diemeisterei.de/
  * @copyright Copyright (c) 2016 diemeisterei GmbH, Stuttgart
