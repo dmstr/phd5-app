@@ -49,7 +49,6 @@ services:
 
 
   mailcatcher:
-    image: tophfr/mailcatcher
+    image: tophfr/mailcatcher:0.7.1
     ports:
-      - '1080'
       - '80'
