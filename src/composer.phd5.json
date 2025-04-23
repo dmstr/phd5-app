@@ -71,6 +71,11 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
+        },
+        "thephpleague/flysystem": {
+            "name": "dmstr-forks/flysystem",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/flysystem.git"
         }
     }
 }

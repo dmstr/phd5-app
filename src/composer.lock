@@ -3771,16 +3771,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.1.10",
+            "version": "1.1.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1"
+                "url": "https://github.com/dmstr-forks/flysystem.git",
+                "reference": "e88accc9188cb87df96ad68f87a43379cba80106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3239285c825c152bcc315fe0e87d6b55f5972ed1",
-                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1",
+                "url": "https://api.github.com/repos/dmstr-forks/flysystem/zipball/e88accc9188cb87df96ad68f87a43379cba80106",
+                "reference": "e88accc9188cb87df96ad68f87a43379cba80106",
                 "shasum": ""
             },
             "require": {
@@ -3821,7 +3821,16 @@
                     "League\\Flysystem\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "League\\Flysystem\\Stub\\": "stub/"
+                }
+            },
+            "scripts": {
+                "phpstan": [
+                    "php phpstan.php"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -3833,11 +3842,10 @@
             ],
             "description": "Filesystem abstraction: Many filesystems, one API.",
             "keywords": [
-                "Cloud Files",
-                "WebDAV",
                 "abstraction",
                 "aws",
                 "cloud",
+                "cloud files",
                 "copy.com",
                 "dropbox",
                 "file systems",
@@ -3849,19 +3857,19 @@
                 "remote",
                 "s3",
                 "sftp",
-                "storage"
+                "storage",
+                "webdav"
             ],
             "support": {
-                "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/1.1.10"
+                "source": "https://github.com/dmstr-forks/flysystem/tree/1.1.11"
             },
             "funding": [
                 {
-                    "url": "https://offset.earth/frankdejonge",
-                    "type": "other"
+                    "type": "other",
+                    "url": "https://offset.earth/frankdejonge"
                 }
             ],
-            "time": "2022-10-04T09:16:37+00:00"
+            "time": "2025-04-23T16:19:42+00:00"
         },
         {
             "name": "league/mime-type-detection",
