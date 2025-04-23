@@ -1,10 +1,11 @@
 # Changelog
 
-### 5.11.0 - under development
+### 5.11.0
 
-- updated base image to `yiisoftware/yii2-php:8.3-fpm-nginx`
+- updated base image to `yiisoftware/yii2-php:8.4-fpm-nginx`
 - changed queue driver from `redis` to `db`
 - removed `ignatenkovnikita/yii2-queuemanager`
+- added dependency to 
 
 ### 5.10.0
 
