@@ -13,16 +13,15 @@
         "dmstr/yii2-helpers": "^1.0.1",
         "dmstr/yii2-json-editor": "^1.4.2",
         "dmstr/yii2-redirect-module": "^0.3.1",
-        "dmstr/yii2-filefly-module": "^1.6.0",
+        "dmstr/yii2-filefly-module": "^1.7.3",
         "dmstr/yii2-filemanager-widgets": "^1.2.0",
         "dmstr/yii2-pages-module": "^2.5.7",
         "dmstr/yii2-prototype-module": "^2.2.5",
         "dmstr/yii2-publication-module": "^1.2.3",
-        "dmstr/yii2-resque-module": "^2.0.0",
+        "dmstr/yii2-resque-module": "^3.0.0",
         "dmstr/yii2-widgets2-module": "^2.7.3",
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
-        "ignatenkovnikita/yii2-queuemanager": "^0.1.0",
         "loveorigami/yii2-notification-wrapper": "^6.7.2-patch1",
         "omnilight/yii2-scheduling": "^1.1",
         "pheme/yii2-settings": "^0.7.0",
@@ -34,8 +33,7 @@
         "yiisoft/yii2-bootstrap": "2.*",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
-        "yiisoft/yii2-symfonymailer": "^3.0",
-        "ckeditor/ckeditor": "dev-full/4.21.x as 4.999"
+        "yiisoft/yii2-symfonymailer": "^3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
