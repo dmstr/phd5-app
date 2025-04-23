@@ -34,8 +34,7 @@ services:
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
 
   db:
-    command: --character-set-server=utf8 --collation-server=utf8_general_ci
-    image: percona:5.7
+    image: mariadb:10.6.4
     environment:
       - MYSQL_ROOT_PASSWORD=secret
     ports:

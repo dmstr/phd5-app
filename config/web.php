@@ -13,7 +13,20 @@ use codemix\streamlog\Target;
 use dmstr\modules\backend\interfaces\ContextMenuItemsInterface;
 use pheme\settings\Module as SettingsModule;
 use schmunk42\markdocs\Module as MarkdocsModule;
+use yii\base\Event;
 use yii\helpers\ArrayHelper;
+use yii\web\JsonParser;
+use yii\widgets\ActiveForm;
+
+// Disable the submit-button while submitting to prevent duplicated requests
+Event::on(ActiveForm::class, ActiveForm::EVENT_INIT, function () {
+    Yii::$app->controller->view->registerJs(<<<JS
+$(document).on('beforeSubmit', 'form', function() {
+    $(this).find('[type=submit]').attr('disabled', true).addClass('disabled');
+});
+JS
+    );
+});
 
 // Settings for web-application only
 return [
@@ -50,6 +63,9 @@ return [
         ],
         'request' => [
             'cookieValidationKey' => getenv('APP_COOKIE_VALIDATION_KEY'),
+            'parsers' => [
+                'application/json' => JsonParser::class,
+            ]
         ],
     ],
     'modules' => [

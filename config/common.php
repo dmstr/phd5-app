@@ -1,5 +1,6 @@
 <?php
 
+use app\helpers\ImageUrlHelper;
 use bedezign\yii2\audit\Audit as AuditModule;
 use bedezign\yii2\audit\panels\ErrorPanel;
 use bedezign\yii2\audit\panels\ExtraDataPanel;
@@ -28,7 +29,7 @@ use dmstr\modules\publication\Module as PublicationModule;
 use dmstr\modules\redirect\Module as RedirectModule;
 use dmstr\web\AdminLteAsset;
 use dmstr\web\User;
-use dmstr\willnorrisImageproxy\Url as ImageUrlHelper;
+use dosamigos\translateable\TranslateableBehavior;
 use hrzg\filefly\components\ImageUrlRule;
 use hrzg\filefly\Module as FileFlyModule;
 use hrzg\resque\Module as ResqueModule;
@@ -91,11 +92,15 @@ if (getenv('APP_ASSET_USE_BUNDLED')) {
 // set convenience variables
 $boxLayout = '@backend/views/layouts/box';
 $isHttps = getenv('HTTPS') === 'on';
-$dbAttributes = [
-    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
-];
-if (getenv('MYSQL_ATTR_SSL_CA')) {
-    $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
+if (extension_loaded('pdo_mysql')) {
+    $dbAttributes = [
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => 0
+    ];
+    if (getenv('MYSQL_ATTR_SSL_CA')) {
+        $dbAttributes[PDO::MYSQL_ATTR_SSL_CA] = getenv('MYSQL_ATTR_SSL_CA');
+    }
+} else {
+    $dbAttributes = [];
 }
 
 // Enable S3 component, if ENVs are set (BC)
@@ -111,6 +116,10 @@ $i18nTranslation = [
     'cachingDuration' => 86400,
     'enableCaching' => !YII_ENV_DEV
 ];
+
+$fallbackLanguage = getenv('APP_FALLBACK_LANGUAGE') ?: explode(',', getenv('APP_LANGUAGES'))[0];
+$timezone = getenv('APP_TIMEZONE') ?: 'Europe/Berlin';
+$locale = getenv('APP_LOCALE') ?: 'de-DE';
 
 // Basic configuration, used in web and console applications
 $common = [
@@ -199,6 +208,9 @@ $common = [
                     ],
                 ],
             ],
+            TranslateableBehavior::class => [
+                'fallbackLanguage' => $fallbackLanguage
+            ]
         ]
     ],
     'components' => [
@@ -226,7 +238,7 @@ $common = [
             'dsn' => getenv('DATABASE_DSN'),
             'username' => getenv('DATABASE_USER'),
             'password' => getenv('DATABASE_PASSWORD'),
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => !getenv('APP_DB_DISABLE_SCHEMA_CACHE'),
             'attributes' => $dbAttributes
@@ -236,11 +248,15 @@ $common = [
             'dsn' => getenv('DATABASE_DSN'),
             'username' => getenv('DATABASE_USER'),
             'password' => getenv('DATABASE_PASSWORD'),
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'tablePrefix' => getenv('DATABASE_TABLE_PREFIX'),
             'enableSchemaCache' => true,
             'schemaCache' => 'cacheSystem',
             'attributes' => $dbAttributes
+        ],
+        'formatter' => [
+            'locale' => $locale,
+            'defaultTimeZone' => $timezone
         ],
         'fsLocal' => [
             'class' => LocalFilesystem::class,
@@ -260,7 +276,7 @@ $common = [
             'ssl' => getenv('FTP_BUCKET_SSL') ?: 0,
             'passive' => 1,
             'timeout' => 10,
-            'transferMode' => defined("FTP_BINARY") ? FTP_BINARY : null,
+            'transferMode' => defined('FTP_BINARY') ? FTP_BINARY : null,
             'enableTimestampsOnUnixListings' => true
         ],
         'i18n' => [
@@ -454,7 +470,15 @@ $common = [
             'filesystemComponents' => [
                 'local' => 'fsLocal',
                 'runtime' => 'fsRuntime'
-            ]
+            ],
+            'urlCallback' => function ($item) {
+                $urls = [];
+                if ($item['type'] === 'file') {
+                    $urls['Image'] = ImageUrlHelper::imageRelative($item['path']);
+                    $urls['Download'] = ImageUrlHelper::downloadRelative($item['path']);
+                }
+                return $urls;
+            },
         ],
         'gridview' => [
             'class' => GridViewModule::class
@@ -526,6 +550,7 @@ $common = [
             'mailParams' => [
                 'fromEmail' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')]
             ],
+            'gdprPrivacyPolicyUrl' => '/datenschutz'
         ],
         'widgets' => [
             'class' => WidgetsModule::class,
