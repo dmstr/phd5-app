@@ -248,16 +248,16 @@
         },
         {
             "name": "2amigos/yii2-usuario",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/2amigos/yii2-usuario.git",
-                "reference": "c5a1e9b7c79d7c246d4fb5b5be68c4dbc9912540"
+                "url": "https://github.com/dmstr-forks/yii2-usuario.git",
+                "reference": "9c5233f4b0b4ad8d55b1bcc9ea97ef9fd154c756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-usuario/zipball/c5a1e9b7c79d7c246d4fb5b5be68c4dbc9912540",
-                "reference": "c5a1e9b7c79d7c246d4fb5b5be68c4dbc9912540",
+                "url": "https://api.github.com/repos/dmstr-forks/yii2-usuario/zipball/9c5233f4b0b4ad8d55b1bcc9ea97ef9fd154c756",
+                "reference": "9c5233f4b0b4ad8d55b1bcc9ea97ef9fd154c756",
                 "shasum": ""
             },
             "require": {
@@ -302,7 +302,11 @@
                     "Da\\User\\": "./src/User"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Da\\User\\": "./src/User"
+                }
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -323,12 +327,12 @@
             "description": "Highly customizable and extensible user management, authentication, and authorization Yii2 extension",
             "keywords": [
                 "2amigos",
-                "User management",
                 "access",
                 "acl",
                 "backend",
                 "rbac",
                 "user",
+                "user management",
                 "yii",
                 "yii 2",
                 "yii framework",
@@ -337,11 +341,11 @@
                 "yii2-user"
             ],
             "support": {
-                "forum": "https://gitter.im/2amigos/yii2-usuario",
                 "issues": "https://github.com/2amigos/yii2-usuario/issues?state=open",
+                "forum": "https://gitter.im/2amigos/yii2-usuario",
                 "source": "https://github.com/2amigos/yii2-usuario"
             },
-            "time": "2024-03-18T21:23:12+00:00"
+            "time": "2025-04-23T16:30:52+00:00"
         },
         {
             "name": "almasaeed2010/adminlte",
