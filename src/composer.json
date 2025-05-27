@@ -29,6 +29,7 @@
         "preferred-install": {
             "dmstr/*": "source",
             "dmstr-forks/*": "source",
+            "2amigos/*": "source",
             "hrzg/*": "source",
             "schmunk42/*": "source",
             "dektrium/yii2-rbac": "source",
