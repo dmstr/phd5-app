@@ -11,6 +11,8 @@ services:
       #- ./_host-volumes/assets:/app/web/assets ### (!) be aware of permission issues, depending on Docker setup
       #- ./_host-volumes/runtime:/app/runtime ### (!) be aware of permission issues, depending on Docker setup
       - ./_host-volumes/dumps:/dumps
+      # fs dev local fs
+      - ./_host-volumes/storage:/mnt/storage:delegated
     environment:
       - X_DB_DUMP_SQL=/dumps/dump-app10549179-202012040835.sql
     ports:
@@ -18,3 +20,5 @@ services:
   db:
     ports:
       - "${STACK_PORT_PREFIX}06:3306"
+#    volumes:
+#      - ./_host-volumes/mysql-1:/var/lib/mysql

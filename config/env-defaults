@@ -71,6 +71,7 @@ APP_QUEUE_CHANNEL=queue
 # Twig view renderer configuration
 TWIG_DEBUG_MODE=0
 
+# vue-filemanager: keep?
 APP_FILEFLY_DEFAULT_FILESYSTEM=fsLocal
 # should non-empty directories be deleted recursively?
 AFM_DELETE_RECURSIVE=0

@@ -32,12 +32,11 @@ return [
                 getenv('DATABASE_TABLE_PREFIX') . 'audit_trail',
                 getenv('DATABASE_TABLE_PREFIX') . 'dmstr_contact_log',
                 getenv('DATABASE_TABLE_PREFIX') . 'queue_manager',
+                // vue-filemanager: Keep?
                 'filefly_hashmap', # TODO: fix prefix in module
             ],
         ],
-        'fs' => [
-            'class' => \hrzg\filefly\commands\FsController::class,
-        ],
+        // vue-filemanager: removed FsController
         'migrate' => [
             'class' => \yii\console\controllers\MigrateController::class,
             'migrationPath' => \yii\helpers\ArrayHelper::merge(
@@ -53,7 +52,7 @@ return [
                     '@dmstr/modules/publication/migrations',
                     '@dmstr/modules/redirect/migrations',
                     '@dmstr/modules/backend/migrations',
-                    '@hrzg/filefly/migrations',
+                    // vue-filemanager: removed filefly/migrations
                     '@hrzg/widget/migrations',
                     '@vendor/lajax/yii2-translate-manager/migrations',
                     '@vendor/pheme/yii2-settings/migrations',

@@ -130,6 +130,9 @@ browser: ##@development open application web service in browser
 	#
 	$(OPEN_CMD) http://$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port $(PHP_SERVICE) 80 | sed 's/[0-9.]*://') &>/dev/null
 
+migrate:
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) yii migrate/up
+
 open-mailcatcher: ##@development open development mailcatcher
 	#
 	# Opening application on mapped web-service port

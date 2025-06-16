@@ -13,8 +13,6 @@
         "dmstr/yii2-helpers": "^1.0.1",
         "dmstr/yii2-json-editor": "^1.4.2",
         "dmstr/yii2-redirect-module": "^0.3.1",
-        "dmstr/yii2-filefly-module": "^1.7.3",
-        "dmstr/yii2-filemanager-widgets": "^1.2.0",
         "dmstr/yii2-pages-module": "^2.5.7",
         "dmstr/yii2-prototype-module": "^2.2.5",
         "dmstr/yii2-publication-module": "^1.2.3",
@@ -36,6 +34,8 @@
         "yiisoft/yii2-symfonymailer": "^3.0",
         "dmstr/yii2-rbac-migration": "^2.0",
         "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
+        "eluhr/yii2-flysystem-rest-api": "dev-dev/refactoring as 0.1.1-p99",
+        "eluhr/yii2-flysystem-widgets": "dev-dev/refactoring as 0.0.1-p99",
         "ext-pdo": "*"
     },
     "require-dev": {
@@ -73,6 +73,16 @@
             "name": "dmstr-forks/loveorigami-yii2-notification-wrapper",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/loveorigami-yii2-notification-wrapper.git"
+        },
+        "flysystem-rest-api": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git"
+        },
+        "flysystem-widgets": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets.git"
         },
         "thephpleague/flysystem": {
             "name": "dmstr-forks/flysystem",

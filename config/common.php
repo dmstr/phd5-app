@@ -8,8 +8,6 @@ use bedezign\yii2\audit\panels\MailPanel;
 use bedezign\yii2\audit\panels\TrailPanel;
 use codemix\localeurls\UrlManager;
 use codemix\streamlog\Target;
-use creocoder\flysystem\AwsS3Filesystem;
-use creocoder\flysystem\LocalFilesystem;
 use Da\User\Component\AuthDbManagerComponent;
 use Da\User\Controller\AdminController;
 use Da\User\Controller\PermissionController;
@@ -30,10 +28,11 @@ use dmstr\modules\redirect\Module as RedirectModule;
 use dmstr\web\AdminLteAsset;
 use dmstr\web\User;
 use dosamigos\translateable\TranslateableBehavior;
-use hrzg\filefly\components\ImageUrlRule;
-use hrzg\filefly\Module as FileFlyModule;
+// vue-filemanager: removed filefly imports - no longer needed
 use hrzg\resque\Module as ResqueModule;
 use hrzg\widget\Module as WidgetsModule;
+use ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior;
+use ignatenkovnikita\queuemanager\QueueManager as QueueManagerModule;
 use kartik\grid\Module as GridViewModule;
 use lajax\translatemanager\Module as TranslatemanagerModule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
@@ -105,6 +104,8 @@ if (extension_loaded('pdo_mysql')) {
 
 // Enable S3 component, if ENVs are set (BC)
 $s3Enabled = class_exists('League\Flysystem\AwsS3v3\AwsS3Adapter') && getenv('AMAZON_S3_BUCKET_PUBLIC_KEY') && getenv('AMAZON_S3_BUCKET_SECRET_KEY') && getenv('AMAZON_S3_BUCKET_NAME') && getenv('AMAZON_S3_BUCKET_REGION');
+
+$boxLayout = '@backend/views/layouts/box';
 
 // Default db translation config
 $i18nTranslation = [
@@ -254,31 +255,7 @@ $common = [
             'schemaCache' => 'cacheSystem',
             'attributes' => $dbAttributes
         ],
-        'formatter' => [
-            'locale' => $locale,
-            'defaultTimeZone' => $timezone
-        ],
-        'fsLocal' => [
-            'class' => LocalFilesystem::class,
-            'path' => '@storage'
-        ],
-        'fsRuntime' => [
-            'class' => LocalFilesystem::class,
-            'path' => '@runtime'
-        ],
-        'fsFtp' => [
-            'class' => \creocoder\flysystem\FtpFilesystem::class,
-            'host' => getenv('FTP_BUCKET_HOST'),
-            'port' => getenv('FTP_BUCKET_PORT') ?: 21,
-            'username' => getenv('FTP_BUCKET_USER'),
-            'password' => getenv('FTP_BUCKET_PASSWORD'),
-            'root' => getenv('FTP_BUCKET_FILESYSTEM_BASE_PATH') ?: '/',
-            'ssl' => getenv('FTP_BUCKET_SSL') ?: 0,
-            'passive' => 1,
-            'timeout' => 10,
-            'transferMode' => defined('FTP_BINARY') ? FTP_BINARY : null,
-            'enableTimestampsOnUnixListings' => true
-        ],
+        // vue-filemanager: removed filesystem components
         'i18n' => [
             'translations' => [
                 '*' => $i18nTranslation,
@@ -328,7 +305,8 @@ $common = [
                 } else {
                     Yii::$app->getModule('audit')->errorMessage('Queue failed with an unspecified error.');
                 }
-            }
+            },
+//            'as queuemanager' => QueueManagerBehavior::class
         ],
         'queueMutex' => [
             'class' => Mutex::class,
@@ -363,17 +341,10 @@ $common = [
             'showScriptName' => false,
             'enableDefaultLanguageUrlCode' => true,
             'baseUrl' => '/',
-            'rules' => [
-                [
-                    'class' => ImageUrlRule::class,
-                    'suffix' => ',p'
-                ]
-            ],
+            // vue-filemanager: removed ImageUrlRule
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
-                '#^img/stream#' => '#^img/stream#',
-                '#^img/download#' => '#^img/download#',
-                '#^filefly/api#' => '#^filefly/api#'
+                // vue-filemanager: removed img/stream & filefly/api rules
             ],
             'languages' => $languages,
             'languageCookieOptions' => [
@@ -463,28 +434,16 @@ $common = [
         'contact' => [
             'class' => ContactModule::class
         ],
-        'filefly' => [
-            'class' => FileFlyModule::class,
-            'layout' => $boxLayout,
-            'filesystem' => getenv('APP_FILEFLY_DEFAULT_FILESYSTEM'),
-            'filesystemComponents' => [
-                'local' => 'fsLocal',
-                'runtime' => 'fsRuntime'
-            ],
-            'urlCallback' => function ($item) {
-                $urls = [];
-                if ($item['type'] === 'file') {
-                    $urls['Image'] = ImageUrlHelper::imageRelative($item['path']);
-                    $urls['Download'] = ImageUrlHelper::downloadRelative($item['path']);
-                }
-                return $urls;
-            },
-        ],
+        // vue-filemanager: removed filefly module def
         'gridview' => [
             'class' => GridViewModule::class
         ],
         'noty' => [
             'class' => NotyModule::class,
+        ],
+        'queuemanager' => [
+            'class' => QueueManagerModule::class,
+            'layout' => $boxLayout
         ],
         'pages' => [
             'class' => PagesModule::class,
@@ -514,7 +473,8 @@ $common = [
                 '@vendor/loveorigami/yii2-notification-wrapper/src',
                 '@vendor/dmstr',
                 '@vendor/lajax/yii2-translate-manager',
-                '@vendor/bedezign/yii2-audit/src'
+                '@vendor/bedezign/yii2-audit/src',
+                '@vendor/ignatenkovnikita/yii2-queuemanager'
             ],
             'tables' => [
                 [
@@ -573,7 +533,7 @@ if ($s3Enabled) {
         'region' => getenv('AMAZON_S3_BUCKET_REGION')
     ];
 
-    $common['modules']['filefly']['filesystemComponents']['s3'] = 'fsS3';
+    // vue-filemanager: removed filefly s3 configuration - no longer needed with new flysystem module
 }
 
 return $common;
