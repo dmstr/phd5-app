@@ -26,7 +26,7 @@ services:
       - APP_ADMIN_EMAIL=admin@example.local
       - APP_INTERACTIVE=0
       - APP_ASSET_USE_BUNDLED=1
-      - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php
+      - APP_CONFIG_FILE=@root/tests/codeception/_config/test.php,@root/config/_fs_dev.php
       - APP_ASSET_FORCE_PUBLISH=0
       - SUPERVISOR_START_CRON=false
       - XDEBUG_MODE=develop,coverage

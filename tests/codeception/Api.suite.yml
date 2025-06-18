@@ -1,0 +1,8 @@
+actor: ApiTester
+modules:
+    enabled:
+        - \Helper\Api
+        - Yii2
+        - REST:
+              url: http://web
+              depends: PhpBrowser

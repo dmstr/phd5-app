@@ -6,7 +6,8 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
+use bizley\jwt\Jwt;
+use Lcobucci\JWT\Validation\Constraint\SignedWith;
 // "Faked" values for testing
 $_SERVER['HOST_NAME'] = 'web';
 $_SERVER['REQUEST_TIME'] = time();
@@ -23,7 +24,7 @@ $_SERVER['REQUEST_TIME'] = time();
 );
 
 // For e2e tests, also for app integration tests in projects
-return [
+$common = [
     'language' => 'en',
     'defaultRoute' => APP_TYPE == 'web' ? '/site/index' : 'help',
     'aliases' => [
@@ -38,7 +39,25 @@ return [
         ],
         'user' => [
             'loginUrl' => '/user/login'
-        ]
+        ],
+        'jwt' => [
+            'class' => Jwt::class,
+            'signer' => Jwt::RS256,
+            'signingKey' => [
+                'key' => getenv('API_PRIVATE_KEY_FILE'),
+                'method' => Jwt::METHOD_FILE
+            ],
+            'verifyingKey' => [
+                'key' => getenv('API_PUBLIC_KEY_FILE'),
+                'method' => Jwt::METHOD_FILE,
+            ],
+            'validationConstraints' => function (Jwt $jwt) {
+                $config = $jwt->getConfiguration();
+                return [
+                    new SignedWith($config->signer(), $config->verificationKey()),
+                ];
+            }
+        ],
     ],
     'modules' => [
         'test' => [
@@ -47,3 +66,5 @@ return [
         ]
     ]
 ];
+
+return $common;
