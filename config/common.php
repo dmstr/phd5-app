@@ -61,6 +61,9 @@ use yii\twig\ViewRenderer;
 use yii\web\Cookie;
 use yii\web\DbSession;
 use yii\web\View;
+use bizley\jwt\Jwt;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Validation\Constraint\SignedWith;
 
 /**
  * @link http://www.diemeisterei.de/
@@ -381,7 +384,26 @@ $common = [
                     ]
                 ]
             ]
-        ]
+        ],
+        'jwt' => [
+            'class' => Jwt::class,
+            'signer' => Jwt::RS256,
+            'signingKey' => [
+                'key' => getenv('API_PRIVATE_KEY_FILE'),
+                'method' => Jwt::METHOD_FILE
+            ],
+            'verifyingKey' => [
+                'key' => getenv('API_PUBLIC_KEY_FILE'),
+                'method' => Jwt::METHOD_FILE,
+            ],
+            'validationConstraints' => function (Jwt $jwt) {
+                $config = $jwt->getConfiguration();
+                return [
+                    new SignedWith($config->signer(), $config->verificationKey()),
+                ];
+            }
+        ],
+
     ],
     'modules' => [
         'audit' => [
