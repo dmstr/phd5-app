@@ -40,8 +40,12 @@ return [
             'adminRole' => 'FilemanagerMaster',
             'canSetPermissionRole' => 'FilemanagerPermissions',
             'adapter' => function() {
+$path = getenv('FILEMANAGER_FS_LOCAL_ROOT') ? rtrim(getenv('FILEMANAGER_FS_LOCAL_ROOT'), '/') . '/fs-local' : '/mnt/storage/fs-local-2';
+$path = '/mnt/storage';
+Yii::debug($path);
                 return new League\Flysystem\Local\LocalFilesystemAdapter(
-                    getenv('FILEMANAGER_FS_LOCAL_ROOT') ? rtrim(getenv('FILEMANAGER_FS_LOCAL_ROOT'), '/') . '/fs-local' : '/mnt/storage/fs-local'
+                    $path,
+                    lazyRootCreation: true
                 );
             },
             // these are examples for 'storage plugins'

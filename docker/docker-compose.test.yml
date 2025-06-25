@@ -21,7 +21,7 @@ services:
       - APP_NAME=test-phd5
       - APP_LANGUAGES=de,en,ru,fr-FR,fr-CH,fr,es-ES,pt-PT,pt-BR
       - APP_TITLE=docker-compose.test.yml
-      - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data,@vendor/eluhr/yii2-flysystem-rest-api/src/migrations,@root/migrations/fs-dev
+      - APP_MIGRATION_LOOKUP=@root/tests/codeception/_migrations/data,@vendor/eluhr/yii2-flysystem-rest-api/src/migrations
       - APP_ADMIN_PASSWORD=admin1
       - APP_ADMIN_EMAIL=admin@example.local
       - APP_INTERACTIVE=0
@@ -42,6 +42,7 @@ services:
       - ./tests:/app/tests
       - ./vendor:/app/vendor
       - ./_host-volumes/test-debug:/mnt/debug
+      - ./_host-volumes/storage-test:/mnt/storage:delegated
       - ./_host-volumes/tests-log:/tests-log
     networks:
       default:

@@ -47,7 +47,9 @@ final class FilemanagerApiCest {
      * @return void
      * @depends testFilemanagerApiResponseWithWrongId
      */
-    public function testFilemanagerGetFolder(ApiTester $I): void {
+    public function testFilemanager(ApiTester $I): void {
+        $dirName = \Codeception\Util\Fixtures::get('uniqid');
+
         $I->amGoingTo( 'try to get folder list');
 
         $I->sendGET('/filemanager/api/list', ["path" => "/"]);
@@ -70,136 +72,119 @@ final class FilemanagerApiCest {
         $I->seeResponseContainsJson(["guiPermissions" => ["write" => true]]);
         $I->seeResponseContainsJson(["guiPermissions" => ["delete" => true]]);
         $I->seeResponseContainsJson(["guiPermissions" => ["canChangePermissions" => true]]);
-    }
 
-    /**
-     * @param ApiTester $I
-     * @return void
-     * @depends testFilemanagerGetFolder
-     */
-    public function testCreateTestDirectory(ApiTester $I): void {
-        $I->amGoingTo('create a directory called test-1');
+        $I->amGoingTo('create a directory called '.$dirName);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseIsJson();
 //        print_r($I->grabResponse());
 //        print_r(str_contains($I->grabResponse(), "test-1"));
-        if (str_contains($I->grabResponse(), "test-1")) {
-            $I->sendDELETE('/filemanager/api/delete-directory?path=/test-1');
-        }
+
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/',
-            'name' => 'test-1'
+            'name' => $dirName
         ]);
 
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/test-1"]);
+        $I->seeResponseContainsJson(["path" => "/".$dirName]);
         $I->seeResponseContainsJson(["message" => ""]);
-    }
 
-    /**
-     * @param ApiTester $I
-     * @return void
-     * @depends testCreateTestDirectory
-     */
-    public function testGetTestDirectory(ApiTester $I): void {
-        $I->amGoingTo('get a directory called test-1');
+        $I->amGoingTo('get a directory called '.$dirName);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
 
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(["name" => "test-1"]);
-        $I->seeResponseContainsJson(["fullPath" => "/test-1"]);
-    }
+        $I->seeResponseContainsJson(["name" => $dirName]);
+        $I->seeResponseContainsJson(["fullPath" => "/".$dirName]);
 
-    /**
-     * @param ApiTester $I
-     * @return void
-     * @depends testGetTestDirectory
-     */
-    public function testDeleteTestDirectory(ApiTester $I): void {
-        $I->amGoingTo('delete a directory called test-1');
+        $I->amGoingTo('delete a directory called '.$dirName);
 
-        $I->sendDELETE('/filemanager/api/delete-directory?path=/test-1');
+        $I->sendDELETE('/filemanager/api/delete-directory?path=/'.$dirName);
 
         $I->seeResponseIsJson();
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseContainsJson(["success" => true]);
-    }
 
-    /**
-     * @param ApiTester $I
-     * @return void
-     * @depends testDeleteTestDirectory
-     */
-    public function testNotGetTestDirectory(ApiTester $I): void {
-        $I->amGoingTo('not get a directory called test#1');
+        $I->amGoingTo('not get a directory called '.$dirName);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
 
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseIsJson();
-        $I->dontSeeResponseContainsJson(["name" => "test-1"]);
-        $I->dontSeeResponseContainsJson(["fullPath" => "/test-1"]);
+        $I->dontSeeResponseContainsJson(["name" => $dirName]);
+        $I->dontSeeResponseContainsJson(["fullPath" => "/".$dirName]);
 //        print_r($I->grabResponse());
-    }
 
-    /**
-     * @param ApiTester $I
-     * @return void
-     * @depends testNotGetTestDirectory
-     */
-    public function testCreateDirectoryInDirectory(ApiTester $I): void {
-        $I->amGoingTo('create a directory called test-1');
+        $I->amGoingTo('create a directory called '.$dirName);
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/',
-            'name' => 'test-1'
+            'name' => $dirName
         ]);
 
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/test-1"]);
+        $I->seeResponseContainsJson(["path" => "/".$dirName]);
+
+        $I->amGoingTo('create a directory called '.$dirName."-2 inside the directory called ".$dirName);
 
         $I->sendPOST('/filemanager/api/create-directory', [
-            'path' => '/test-1',
-            'name' => 'test-2'
+            'path' => '/'.$dirName,
+            'name' => $dirName."-2"
         ]);
 
         $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/test-1/test-2"]);
+        $I->seeResponseContainsJson(["path" => "/".$dirName."/".$dirName."-2"]);;
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
 
         $I->seeResponseCodeIs(HttpCode::OK);
 //        print_r($I->grabResponse());
         $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(["name" => "test-1"]);
-        $I->seeResponseContainsJson(["fullPath" => "/test-1"]);
+        $I->seeResponseContainsJson(["name" => $dirName]);
+        $I->seeResponseContainsJson(["fullPath" => "/".$dirName]);
 
 //        $I->seeResponseContainsJson(["name" => "test-1/test-2"]);
 //        $I->seeResponseContainsJson(["fullPath" => "/test-1/test-2"]);
 
-        $I->sendDELETE('/filemanager/api/delete-directory?path=/test-1');
+        $I->sendDELETE('/filemanager/api/delete-directory?path=/'.$dirName);
 
         $I->seeResponseIsJson();
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY);
         $I->seeResponseContainsJson(["message" => "Directory is not empty and can not be deleted"]);
 
-        $I->sendDELETE('/filemanager/api/delete-directory?path=/test-1/test-2');
+        $I->sendDELETE('/filemanager/api/delete-directory?path=/'.$dirName."/".$dirName."-2");;
         $I->seeResponseIsJson();
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseContainsJson(["success" => true]);
 
-        $I->sendDELETE('/filemanager/api/delete-directory?path=/test-1');
+        $I->sendDELETE('/filemanager/api/delete-directory?path=/'.$dirName);
         $I->seeResponseIsJson();
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseContainsJson(["success" => true]);
+    }
+
+    public function testFilemanager2(ApiTester $I): void {
+        $newDir = uniqid("blabla");
+        $I->sendPOST('/filemanager/api/create-directory', [
+            'path' => '/',
+            'name' => $newDir
+        ]);
+        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->sendGET('/filemanager/api/list', ["path" => "/".$newDir]);
+
+    }
+
+    public function testFilemanagerlist(ApiTester $I): void {
+        $I->sendGET('/filemanager/api/list', ["path" => "/"]);
+
+        $I->seeResponseCodeIs(HttpCode::OK); // 200
+        $I->seeResponseIsJson();
     }
 }
