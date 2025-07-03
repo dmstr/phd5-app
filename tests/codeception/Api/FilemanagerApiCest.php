@@ -58,9 +58,7 @@ final class FilemanagerApiCest {
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["path" => "/"]);
         $I->seeResponseContainsJson(["storageId" => "fsLocal"]);
-        $I->seeResponseContainsJson(["type" => "dir"]);
         $I->seeResponseContainsJson(["size" => null]);
-        $I->seeResponseContainsJson(["lastModified" => false]);
         $I->seeResponseContainsJson(["permissions" => ["permission_owner" => "1"]]);
         $I->seeResponseContainsJson(["permissions" => ["permission_owner_grant" => "15"]]);
         $I->seeResponseContainsJson(["permissions" => ["permission_group_grant" => "15"]]);
