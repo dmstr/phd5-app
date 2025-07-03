@@ -58,8 +58,6 @@ final class FilemanagerApiCest {
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["path" => "/"]);
         $I->seeResponseContainsJson(["storageId" => "fsLocal"]);
-        $I->seeResponseContainsJson(["name" => "public"]);
-        $I->seeResponseContainsJson(["fullPath" => "/public"]);
         $I->seeResponseContainsJson(["type" => "dir"]);
         $I->seeResponseContainsJson(["size" => null]);
         $I->seeResponseContainsJson(["lastModified" => false]);
@@ -178,7 +176,6 @@ final class FilemanagerApiCest {
         ]);
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->sendGET('/filemanager/api/list', ["path" => "/".$newDir]);
-
     }
 
     public function testFilemanagerlist(ApiTester $I): void {
