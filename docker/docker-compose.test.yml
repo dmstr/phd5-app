@@ -32,8 +32,8 @@ services:
       - XDEBUG_MODE=develop,coverage
       # TODO: remove when php-cs-fixer fully supports PHP 8.2 (https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%2FPHP8.2)
       - PHP_CS_FIXER_IGNORE_ENV=1
-      - API_PRIVATE_KEY_FILE=file:///app/config/api.key
-      - API_PUBLIC_KEY_FILE=file:///app/config/api.key.pub
+      - API_PRIVATE_KEY_FILE=file:///app/config/fm-test-key.key
+      - API_PUBLIC_KEY_FILE=file:///app/config/fm-test-key.key.pub
     volumes:
       # Re-use local composer cache via host-volume
       - $HOME/.composer-docker/cache:/root/.composer/cache:delegated
