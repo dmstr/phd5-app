@@ -48,7 +48,7 @@ final class FilemanagerApiCest {
      * @depends testFilemanagerApiResponseWithWrongId
      */
     public function testFilemanager(ApiTester $I): void {
-        $dirName = \Codeception\Util\Fixtures::get('uniqid');
+        $dirName = uniqid("filemanagerapicest-test-folder-");
 
         $I->amGoingTo( 'try to get folder list');
 
@@ -168,14 +168,19 @@ final class FilemanagerApiCest {
         $I->seeResponseContainsJson(["success" => true]);
     }
 
-    public function testFilemanager2(ApiTester $I): void {
-        $newDir = uniqid("blabla");
+    public function testFilemanagerPersistenceTest(ApiTester $I): void {
+        $newDir = uniqid("filemanagerapicest-test-folder-persisted-");
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/',
             'name' => $newDir
         ]);
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->sendGET('/filemanager/api/list', ["path" => "/".$newDir]);
+
+        // Comment this part below to keep test folders
+//        $I->sendDELETE('/filemanager/api/delete-directory?path=/'.$newDir);
+//        $I->seeResponseIsJson();
+//        $I->seeResponseCodeIs(HttpCode::OK);
     }
 
     public function testFilemanagerlist(ApiTester $I): void {
