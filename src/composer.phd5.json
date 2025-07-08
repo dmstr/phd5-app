@@ -52,7 +52,9 @@
         "codeception/module-asserts": "^2.0.1",
         "codeception/module-yii2": "^1.1.0",
         "captbaritone/mailcatcher-codeception-module": "^3.0.0",
-        "hoa/console": "^3.17"
+        "hoa/console": "^3.17",
+        "codeception/module-phpbrowser": "^3.0",
+        "codeception/module-rest": "^3.4"
     },
     "conflict": {
         "bower-asset/yii2-pjax": "2.0.7",
