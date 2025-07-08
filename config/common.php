@@ -31,8 +31,6 @@ use dosamigos\translateable\TranslateableBehavior;
 // vue-filemanager: removed filefly imports - no longer needed
 use hrzg\resque\Module as ResqueModule;
 use hrzg\widget\Module as WidgetsModule;
-use ignatenkovnikita\queuemanager\behaviors\QueueManagerBehavior;
-use ignatenkovnikita\queuemanager\QueueManager as QueueManagerModule;
 use kartik\grid\Module as GridViewModule;
 use lajax\translatemanager\Module as TranslatemanagerModule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
@@ -308,7 +306,6 @@ $common = [
                     Yii::$app->getModule('audit')->errorMessage('Queue failed with an unspecified error.');
                 }
             },
-//            'as queuemanager' => QueueManagerBehavior::class
         ],
         'queueMutex' => [
             'class' => Mutex::class,
@@ -461,10 +458,6 @@ $common = [
         ],
         'noty' => [
             'class' => NotyModule::class,
-        ],
-        'queuemanager' => [
-            'class' => QueueManagerModule::class,
-            'layout' => $boxLayout
         ],
         'pages' => [
             'class' => PagesModule::class,
