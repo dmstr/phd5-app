@@ -7,11 +7,10 @@ use Lcobucci\JWT\Token\Plain;
 use Yii;
 use yii\base\NotSupportedException;
 
-class User extends \Da\User\Model\User {
-
-    public static function findIdentityByAccessToken($token, $type = null) {
-//        return User::findOne(1);
-
+class User extends \Da\User\Model\User
+{
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
         if ($type === JwtHttpBearerAuth::class) {
             /** @var Plain $jwtToken */
             $jwtToken = Yii::$app->jwt->getParser()->parse((string)$token);
