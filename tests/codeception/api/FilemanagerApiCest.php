@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use Codeception\Util\HttpCode;
 
+/**
+ * @group wip
+*/
 final class FilemanagerApiCest
 {
     public function _before(ApiTester $I): void
