@@ -62,7 +62,6 @@ use yii\web\Cookie;
 use yii\web\DbSession;
 use yii\web\View;
 use bizley\jwt\Jwt;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
 
 /**
