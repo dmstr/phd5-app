@@ -202,14 +202,12 @@ final class FilemanagerApiCest
         $faker = Factory::create();
         $name = basename($faker->filePath());
 
-
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/',
             'name' => $name
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
-//        $I->seeResponseCodeIs(HttpCode::CREATED); // TODO: Endpoint should return 201 instead of 200
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(['success' => true, 'path' => DIRECTORY_SEPARATOR . $name]);
+        $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
     }
 }
