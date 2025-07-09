@@ -493,8 +493,7 @@ $common = [
                 '@vendor/loveorigami/yii2-notification-wrapper/src',
                 '@vendor/dmstr',
                 '@vendor/lajax/yii2-translate-manager',
-                '@vendor/bedezign/yii2-audit/src',
-                '@vendor/ignatenkovnikita/yii2-queuemanager'
+                '@vendor/bedezign/yii2-audit/src'
             ],
             'tables' => [
                 [
