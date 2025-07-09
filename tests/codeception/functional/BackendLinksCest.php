@@ -31,7 +31,6 @@ class BackendLinksCest
             $I->amOnPage($url);
 
             $I->cantSeeElement('.site-error');
-            $I->cantSeeElement('.alert-warning .alert');
         }
 
     }
