@@ -14,8 +14,7 @@
         }
     },
     "require": {
-        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown",
-        "bizley/jwt": "^4.0"
+        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown"
     },
     "extra": {
         "merge-plugin": {

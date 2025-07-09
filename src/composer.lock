@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae1482c2f420ef6be9441c08029cf519",
+    "content-hash": "478d3d14e356aeb6a69ffd12ec2bcba0",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -248,20 +248,22 @@
         },
         {
             "name": "2amigos/yii2-usuario",
-            "version": "1.6.4",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr-forks/2amigos-yii2-usuario.git",
-                "reference": "5e3096708ab2a3d38111b1957751838f5248e74e"
+                "reference": "3f9aa8e445e543ba351aae7dc366daff6b7202b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/2amigos-yii2-usuario/zipball/5e3096708ab2a3d38111b1957751838f5248e74e",
-                "reference": "5e3096708ab2a3d38111b1957751838f5248e74e",
+                "url": "https://api.github.com/repos/dmstr-forks/2amigos-yii2-usuario/zipball/3f9aa8e445e543ba351aae7dc366daff6b7202b0",
+                "reference": "3f9aa8e445e543ba351aae7dc366daff6b7202b0",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-selectize-widget": "^1.1",
+                "bizley/jwt": "^4.0",
+                "eluhr/yii2-rest-api-utils": "^1.1",
                 "eluhr/yii2-uuid-attribute-behavior": "^1.0",
                 "php": ">=5.5",
                 "ramsey/uuid": "^4.7",
@@ -347,7 +349,7 @@
                 "forum": "https://gitter.im/2amigos/yii2-usuario",
                 "source": "https://github.com/2amigos/yii2-usuario"
             },
-            "time": "2025-05-27T11:59:15+00:00"
+            "time": "2025-07-09T08:40:06+00:00"
         },
         {
             "name": "almasaeed2010/adminlte",
@@ -2714,7 +2716,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git",
-                "reference": "f7d815db5a7871e2c56759c2ad76ebfdeaa561e9"
+                "reference": "5cf8da70b6a4312adc51666a0d664f50855b2538"
             },
             "require": {
                 "dmstr/yii2-web": "^1.1",
@@ -2739,7 +2741,7 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2025-07-08T13:30:32+00:00"
+            "time": "2025-07-09T08:46:33+00:00"
         },
         {
             "name": "eluhr/yii2-flysystem-widgets",
@@ -2772,6 +2774,56 @@
                 }
             ],
             "time": "2025-04-25T11:17:17+00:00"
+        },
+        {
+            "name": "eluhr/yii2-rest-api-utils",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eluhr/yii2-rest-api-utils.git",
+                "reference": "75ed247c81cc658673afa778092a747348414949"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eluhr/yii2-rest-api-utils/zipball/75ed247c81cc658673afa778092a747348414949",
+                "reference": "75ed247c81cc658673afa778092a747348414949",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "eluhr\\restApiUtils\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Elias Luhr",
+                    "email": "e.luhr@herzogkommunikation.de"
+                }
+            ],
+            "description": "This brings some utils for yii2 rest apis.",
+            "keywords": [
+                "api",
+                "extension",
+                "rest",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/eluhr/yii2-rest-api-utils/issues",
+                "source": "https://github.com/eluhr/yii2-rest-api-utils/tree/1.1.1"
+            },
+            "time": "2024-10-11T09:48:33+00:00"
         },
         {
             "name": "eluhr/yii2-uuid-attribute-behavior",
@@ -3831,6 +3883,70 @@
                 "source": "https://github.com/lajax/yii2-translate-manager"
             },
             "time": "2020-07-04T07:19:38+00:00"
+        },
+        {
+            "name": "lcobucci/clock",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lcobucci/clock.git",
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lcobucci/clock/zipball/db3713a61addfffd615b79bf0bc22f0ccc61b86b",
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/clock": "^1.0"
+            },
+            "provide": {
+                "psr/clock-implementation": "1.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.29",
+                "lcobucci/coding-standard": "^11.1.0",
+                "phpstan/extension-installer": "^1.3.1",
+                "phpstan/phpstan": "^1.10.25",
+                "phpstan/phpstan-deprecation-rules": "^1.1.3",
+                "phpstan/phpstan-phpunit": "^1.3.13",
+                "phpstan/phpstan-strict-rules": "^1.5.1",
+                "phpunit/phpunit": "^11.3.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\Clock\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Cobucci",
+                    "email": "lcobucci@gmail.com"
+                }
+            ],
+            "description": "Yet another clock abstraction",
+            "support": {
+                "issues": "https://github.com/lcobucci/clock/issues",
+                "source": "https://github.com/lcobucci/clock/tree/3.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lcobucci",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lcobucci",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-09-24T20:45:14+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -11230,16 +11346,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.81.0",
+            "version": "v3.82.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "e00a39c729aced6c3771b9530c6e58c2efa87592"
+                "reference": "684ed3ab41008a2a4848de8bde17eb168c596247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/e00a39c729aced6c3771b9530c6e58c2efa87592",
-                "reference": "e00a39c729aced6c3771b9530c6e58c2efa87592",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/684ed3ab41008a2a4848de8bde17eb168c596247",
+                "reference": "684ed3ab41008a2a4848de8bde17eb168c596247",
                 "shasum": ""
             },
             "require": {
@@ -11323,7 +11439,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.81.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.82.2"
             },
             "funding": [
                 {
@@ -11331,7 +11447,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-07T15:27:54+00:00"
+            "time": "2025-07-08T21:13:15+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

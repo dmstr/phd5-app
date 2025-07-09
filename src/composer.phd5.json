@@ -1,7 +1,7 @@
 {
     "require": {
         "bedezign/yii2-audit": "^1.2.7",
-        "2amigos/yii2-usuario": "^1.6.4",
+        "2amigos/yii2-usuario": "^1.7.0",
         "lajax/yii2-translate-manager": "^1.6.0",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
@@ -36,7 +36,10 @@
         "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
         "eluhr/yii2-flysystem-rest-api": "dev-dev/refactoring as 0.1.1-p99",
         "eluhr/yii2-flysystem-widgets": "dev-dev/refactoring as 0.0.1-p99",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "eluhr/yii2-rest-api-utils": "^1.1",
+        "bizley/jwt": "^4.0",
+        "lcobucci/clock": "^3.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
