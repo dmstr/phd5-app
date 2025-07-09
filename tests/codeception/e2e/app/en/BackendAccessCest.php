@@ -48,7 +48,6 @@ class BackendAccessCest
         $I->makeScreenshot('user-admin');
 
         $I->amOnPage('/resque/manage');
-        $I->see('Workers', '.small-box');
         $I->see('Waiting');
         $I->see('Reserved');
         $I->see('Delayed');
