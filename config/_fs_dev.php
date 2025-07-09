@@ -120,6 +120,7 @@ return [
             'rules' => [
                 'img/stream' => 'filemanager/api/stream',
                 'img/download' => 'filemanager/api/download',
+                'filemanager/backend' => 'filemanager-backend',
             ],
             'ignoreLanguageUrlPatterns' => [
                 '#^img/stream#' => '#^img/stream#',
@@ -134,7 +135,6 @@ return [
         'filemanager' => [
             'class' => eluhr\flysystemRestApi\Module::class,
             'fileStorage' => 'fsLocal',
-            'backendLayout' => '@backend/views/layouts/box',
             'jwtComponent' => 'systemJwt'
         ],
     ],
