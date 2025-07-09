@@ -6,6 +6,7 @@ use bedezign\yii2\audit\panels\ErrorPanel;
 use bedezign\yii2\audit\panels\ExtraDataPanel;
 use bedezign\yii2\audit\panels\MailPanel;
 use bedezign\yii2\audit\panels\TrailPanel;
+use bizley\jwt\Jwt;
 use codemix\localeurls\UrlManager;
 use codemix\streamlog\Target;
 use Da\User\Component\AuthDbManagerComponent;
@@ -16,6 +17,7 @@ use Da\User\Controller\RoleController;
 use Da\User\Controller\RuleController;
 use Da\User\Model\User as UserModel;
 use Da\User\Module as UserModule;
+use Da\User\Service\JwtService;
 use dmstr\helpers\AssetHash;
 use dmstr\lajax\translatemanager\services\scanners\ScannerDatabase;
 use dmstr\modules\backend\Module as BackendModule;
@@ -28,7 +30,6 @@ use dmstr\modules\redirect\Module as RedirectModule;
 use dmstr\web\AdminLteAsset;
 use dmstr\web\User;
 use dosamigos\translateable\TranslateableBehavior;
-// vue-filemanager: removed filefly imports - no longer needed
 use hrzg\resque\Module as ResqueModule;
 use hrzg\widget\Module as WidgetsModule;
 use kartik\grid\Module as GridViewModule;
@@ -36,6 +37,9 @@ use lajax\translatemanager\Module as TranslatemanagerModule;
 use lajax\translatemanager\services\scanners\ScannerJavaScriptFunction;
 use lajax\translatemanager\services\scanners\ScannerPhpArray;
 use lajax\translatemanager\services\scanners\ScannerPhpFunction;
+use Lcobucci\Clock\SystemClock;
+use Lcobucci\JWT\Validation\Constraint\LooseValidAt;
+use Lcobucci\JWT\Validation\Constraint\SignedWith;
 use lo\modules\noty\Module as NotyModule;
 use pheme\settings\components\Settings;
 use rmrevin\yii\fontawesome\FA;
@@ -59,8 +63,8 @@ use yii\twig\ViewRenderer;
 use yii\web\Cookie;
 use yii\web\DbSession;
 use yii\web\View;
-use bizley\jwt\Jwt;
-use Lcobucci\JWT\Validation\Constraint\SignedWith;
+
+// vue-filemanager: removed filefly imports - no longer needed
 
 /**
  * @link http://www.diemeisterei.de/
@@ -344,6 +348,7 @@ $common = [
             'ignoreLanguageUrlPatterns' => [
                 // route pattern => url pattern
                 // vue-filemanager: removed img/stream & filefly/api rules
+                '#user/api#' => '#user/api#',
             ],
             'languages' => $languages,
             'languageCookieOptions' => [
@@ -381,7 +386,7 @@ $common = [
                 ]
             ]
         ],
-        'jwt' => [
+        'systemJwt' => [
             'class' => Jwt::class,
             'signer' => Jwt::RS256,
             'signingKey' => [
@@ -396,6 +401,7 @@ $common = [
                 $config = $jwt->getConfiguration();
                 return [
                     new SignedWith($config->signer(), $config->verificationKey()),
+                    new LooseValidAt(SystemClock::fromUTC()),
                 ];
             }
         ],
@@ -524,7 +530,15 @@ $common = [
             'mailParams' => [
                 'fromEmail' => [getenv('APP_MAILER_FROM') => getenv('APP_TITLE')]
             ],
-            'gdprPrivacyPolicyUrl' => '/datenschutz'
+            'gdprPrivacyPolicyUrl' => '/datenschutz',
+            'enableRestApiLogin' => true,
+            'components' => [
+                'jwtService' => [
+                    'class' => JwtService::class,
+                    'enabled' => true,
+                    'jwtComponent' => 'systemJwt'
+                ]
+            ]
         ],
         'widgets' => [
             'class' => WidgetsModule::class,

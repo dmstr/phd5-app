@@ -135,6 +135,7 @@ return [
             'class' => eluhr\flysystemRestApi\Module::class,
             'fileStorage' => 'fsLocal',
             'backendLayout' => '@backend/views/layouts/box',
+            'jwtComponent' => 'systemJwt'
         ],
     ],
 ];
