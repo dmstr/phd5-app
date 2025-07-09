@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Codeception\Util\HttpCode;
+
 
 /**
  * Inherited Methods
@@ -25,4 +27,12 @@ class ApiTester extends \Codeception\Actor
     /**
      * Define custom actions here
      */
+    public function authenticate($username, $password)
+    {
+        $this->sendPost('/user/api/v1/security/login', ['login' => $username, 'password' => $password]);
+        $this->seeResponseCodeIs(HttpCode::OK);
+        $this->seeResponseIsJson();
+        $token = $this->grabDataFromResponseByJsonPath('$.token')[0] ?? '';
+        $this->amBearerAuthenticated($token);
+    }
 }

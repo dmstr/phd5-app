@@ -13,17 +13,7 @@ final class FilemanagerApiCest
 {
     public function _before(ApiTester $I): void
     {
-        $jwt = YII::$app->jwt;
-
-        $token = $jwt->getBuilder()
-            ->issuedBy('test-app')
-            ->permittedFor('test-api')
-            ->issuedAt(\DateTimeImmutable::createFromTimestamp(time()))
-            ->expiresAt(\DateTimeImmutable::createFromTimestamp(time() + 3600)) // 1 hour
-            ->relatedTo('1')
-            ->getToken($jwt->getConfiguration()->signer(), $jwt->getConfiguration()->signingKey());
-
-        $I->amBearerAuthenticated($token->toString());
+        $I->authenticate('admin', 'admin1');
     }
 
     public function testFilemanagerApiResponseWithWrongId(ApiTester $I): void
@@ -89,7 +79,7 @@ final class FilemanagerApiCest
             'name' => $dirName
         ]);
 
-        $I->seeResponseCodeIs(HttpCode::OK); // 200
+        $I->seeResponseCodeIs(HttpCode::CREATED); // 200
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["success" => true]);
         $I->seeResponseContainsJson(["path" => "/" . $dirName]);
@@ -129,7 +119,7 @@ final class FilemanagerApiCest
             'name' => $dirName
         ]);
 
-        $I->seeResponseCodeIs(HttpCode::OK); // 200
+        $I->seeResponseCodeIs(HttpCode::CREATED); // 200
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["success" => true]);
         $I->seeResponseContainsJson(["path" => "/" . $dirName]);
@@ -179,7 +169,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $newDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->sendGET('/filemanager/api/list', ["path" => "/" . $newDir]);
 
         // Comment this part below to keep test folders
@@ -206,7 +196,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $name
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
     }
@@ -221,7 +211,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $parentDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -229,7 +219,7 @@ final class FilemanagerApiCest
             'path' => '/' . $parentDir,
             'name' => $childDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -247,7 +237,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $parentDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -255,7 +245,7 @@ final class FilemanagerApiCest
             'path' => '/' . $parentDir,
             'name' => $childDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -283,7 +273,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $parentDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -291,7 +281,7 @@ final class FilemanagerApiCest
             'path' => '/' . $parentDir,
             'name' => $childDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -318,16 +308,16 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $parentDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
         $I->sendDELETE('/filemanager/api/delete-directory?path=/' . $parentDir . '/.');
-        $I->seeResponseCodeIs(HttpCode::BAD_REQUEST);
+        $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY);
         $I->seeResponseIsJson();
 
         $I->sendDELETE('/filemanager/api/delete-directory?path=/' . $parentDir . '/..');
-        $I->seeResponseCodeIs(HttpCode::BAD_REQUEST);
+        $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY);
         $I->seeResponseIsJson();
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
@@ -350,7 +340,7 @@ final class FilemanagerApiCest
                 'path' => '/',
                 'name' => $dirName
             ]);
-            $I->seeResponseCodeIs(HttpCode::OK);
+            $I->seeResponseCodeIs(HttpCode::CREATED);
             $I->seeResponseIsJson();
             $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -364,12 +354,12 @@ final class FilemanagerApiCest
     public function testCreateDirectoryWithLongName(ApiTester $I)
     {
         $longDirName = str_repeat('verylongdirectoryname', 10) . uniqid();
-        
+
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/',
             'name' => $longDirName
         ]);
-        
+
         $I->seeResponseIsJson();
     }
 
@@ -381,7 +371,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $dirName
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['success' => true, 'message' => 'created']);
 
@@ -417,19 +407,19 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $parentDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/' . $parentDir,
             'name' => $childDir1
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/' . $parentDir,
             'name' => $childDir2
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/' . $parentDir]);
         $I->seeResponseCodeIs(HttpCode::OK);
@@ -448,19 +438,19 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $level1
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/' . $level1,
             'name' => $level2
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendPOST('/filemanager/api/create-directory', [
             'path' => '/' . $level1 . '/' . $level2,
             'name' => $level3
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/' . $level1 . '/' . $level2]);
         $I->seeResponseCodeIs(HttpCode::OK);
@@ -486,7 +476,7 @@ final class FilemanagerApiCest
             'path' => '/',
             'name' => $testDir
         ]);
-        $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeResponseCodeIs(HttpCode::CREATED);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/' . $testDir]);
         $I->seeResponseCodeIs(HttpCode::OK);
