@@ -2716,7 +2716,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git",
-                "reference": "8e3ee071e151d3f4cebdfad772972e68706c0212"
+                "reference": "c01824ed96eeecd4c108dbca20f5308fd612aeaf"
             },
             "require": {
                 "dmstr/yii2-web": "^1.1",
@@ -2741,7 +2741,7 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2025-07-09T10:18:58+00:00"
+            "time": "2025-07-09T12:14:43+00:00"
         },
         {
             "name": "eluhr/yii2-flysystem-widgets",
