@@ -15,7 +15,6 @@ use pheme\settings\Module as SettingsModule;
 use schmunk42\markdocs\Module as MarkdocsModule;
 use yii\base\Event;
 use yii\helpers\ArrayHelper;
-use app\models\User as UserModel;
 use yii\web\JsonParser;
 use yii\widgets\ActiveForm;
 
@@ -67,9 +66,6 @@ return [
             'parsers' => [
                 'application/json' => JsonParser::class,
             ]
-        ],
-        'user' => [
-            'identityClass' => UserModel::class
         ]
     ],
     'modules' => [
