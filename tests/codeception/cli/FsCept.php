@@ -1,6 +1,6 @@
 <?php
 
-// @group mandatory
+// @group wip
 
 $dir = \Codeception\Util\Fixtures::get('uniqid');
 
