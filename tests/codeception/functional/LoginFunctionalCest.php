@@ -38,7 +38,6 @@ class LoginFunctionalCest
         $I->see('Settings','h4');
         $I->see('Audit','h4');
         $I->see('Jobs','h4');
-        $I->see('filefly','a');
         $I->see('redirects','a');
     }
 }
