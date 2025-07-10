@@ -135,7 +135,7 @@ return [
         'filemanager' => [
             'class' => eluhr\flysystemRestApi\Module::class,
             'fileStorage' => 'fsLocal',
-            'jwtComponent' => 'systemJwt'
+            'jwtComponent' => 'jwtSystem'
         ],
     ],
 ];

@@ -16,7 +16,7 @@ class Yii extends \yii\BaseYii
  * Class BaseApplication
  * Used for properties that are identical for both WebApplication and ConsoleApplication
  *
- * @property-read \bizley\jwt\Jwt $systemJwt
+ * @property-read \bizley\jwt\Jwt $jwtSystem
  * @property-read \pheme\settings\components\Settings $settings Settings component
  *
  */

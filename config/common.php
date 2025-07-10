@@ -386,7 +386,7 @@ $common = [
                 ]
             ]
         ],
-        'systemJwt' => [
+        'jwtSystem' => [
             'class' => Jwt::class,
             'signer' => Jwt::RS256,
             'signingKey' => [
@@ -535,7 +535,7 @@ $common = [
                 'jwtService' => [
                     'class' => JwtService::class,
                     'enabled' => true,
-                    'jwtComponent' => 'systemJwt'
+                    'jwtComponent' => 'jwtSystem'
                 ]
             ]
         ],
