@@ -1,7 +1,5 @@
 <?php
 
-use pheme\settings\components\Settings;
-
 /**
  * Yii bootstrap file.
  * Used for enhanced IDE code autocompletion.
@@ -19,6 +17,8 @@ class Yii extends \yii\BaseYii
  * Used for properties that are identical for both WebApplication and ConsoleApplication
  *
  * @property-read \bizley\jwt\Jwt $systemJwt
+ * @property-read \pheme\settings\components\Settings $settings Settings component
+ *
  */
 abstract class BaseApplication extends yii\base\Application
 {
@@ -28,7 +28,8 @@ abstract class BaseApplication extends yii\base\Application
  * Class WebApplication
  * Include only Web application related components here
  *
- * @property Settings $settings Settings component
+ * @property dmstr\web\User $user
+ * @method dmstr\web\User getUser()
  */
 class WebApplication extends yii\web\Application
 {
