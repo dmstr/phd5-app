@@ -18,6 +18,7 @@ class Yii extends \yii\BaseYii
  * Class BaseApplication
  * Used for properties that are identical for both WebApplication and ConsoleApplication
  *
+ * @property-read \bizley\jwt\Jwt $systemJwt
  */
 abstract class BaseApplication extends yii\base\Application
 {
