@@ -22,6 +22,11 @@
  *   ```
  */
 
+use eluhr\flysystemRestApi\plugins\ClipBoardValuesPlugin;
+use eluhr\flysystemRestApi\plugins\FileExtensionPlugin;
+use eluhr\flysystemRestApi\plugins\FilePreviewPlugin;
+use eluhr\flysystemRestApi\plugins\MimeTypePlugin;
+use eluhr\flysystemRestApi\plugins\ThumbnailPlugin;
 use yii\helpers\Url;
 
 return [
@@ -32,17 +37,15 @@ return [
             'storageId' => 'fsLocal',
             # overwrite defaultRootNodePermission options, see: \eluhr\flysystemRestApi\components\FileStorage::$_defaultRootNodePermissions
             'rootNodePermissions' => [
-               'permission_group_name' => 'FilemanagerEditor'
+                'permission_group_name' => 'FilemanagerEditor'
             ],
             # should owner be inherited from parent(s)? default is true
             'inheritOwner' => true,
             # if set, users in this role will be granted all permissions without any check (like 'root' on unix), so handle with care!
             'adminRole' => 'FilemanagerMaster',
             'canSetPermissionRole' => 'FilemanagerPermissions',
-            'adapter' => function() {
-                    $path = getenv('FILEMANAGER_FS_LOCAL_ROOT') ? rtrim(getenv('FILEMANAGER_FS_LOCAL_ROOT'), '/') . '/fs-local' : '/mnt/storage/fs-local';
-                    $path = '/mnt/storage';
-                    Yii::debug($path);
+            'adapter' => function () {
+                $path = getenv('FILEMANAGER_FS_LOCAL_ROOT') ? rtrim(getenv('FILEMANAGER_FS_LOCAL_ROOT'), '/') : '/mnt/storage';
                 return new League\Flysystem\Local\LocalFilesystemAdapter(
                     $path,
                     lazyRootCreation: true
@@ -50,15 +53,13 @@ return [
             },
             // these are examples for 'storage plugins'
             'storageItemPlugins' => [
-                // \eluhr\flysystemRestApi\plugins\TagPlugin::class, // Needs dev/el branch for rest-api. Run migration in @vendor/eluhr/yii2-flysystem-rest-api/src/migrations/plugins/tag
-                // \eluhr\flysystemRestApi\plugins\CategoryPlugin::class, // Needs dev/el branch for rest-api. Run migration in @vendor/eluhr/yii2-flysystem-rest-api/src/migrations/plugins/category
-                \eluhr\flysystemRestApi\plugins\MimeTypePlugin::class,
-                \eluhr\flysystemRestApi\plugins\FileExtensionPlugin::class,
+               MimeTypePlugin::class,
+                FileExtensionPlugin::class,
                 [
-                    'class'     => \eluhr\flysystemRestApi\plugins\ClipBoardValuesPlugin::class,
+                    'class' => ClipBoardValuesPlugin::class,
                     'callbacks' => [
 
-                        'url' => function($item) {
+                        'url' => function ($item) {
                             if ($item->type === 'file') {
                                 $route = '/img/download';
                                 if (in_array(pathinfo($item->name, PATHINFO_EXTENSION), ['png', 'jpg', 'jpeg'])) {
@@ -73,7 +74,7 @@ return [
                             }
                             return null;
                         },
-                        'url2' => function($item) {
+                        'url2' => function ($item) {
                             if ($item->type === 'file') {
                                 $route = '/img/download';
                                 if (in_array(pathinfo($item->name, PATHINFO_EXTENSION), ['png', 'jpg', 'jpeg'])) {
@@ -88,7 +89,7 @@ return [
                             }
                             return null;
                         },
-                        'url3' => function($item) {
+                        'url3' => function ($item) {
                             if ($item->type === 'dir') {
                                 return implode(DIRECTORY_SEPARATOR, array_filter([$item->path, $item->name]));
                             }
@@ -97,19 +98,19 @@ return [
                     ]
                 ],
                 [
-                    'class' => \eluhr\flysystemRestApi\plugins\FilePreviewPlugin::class,
-                    'urlCallback' => function($item) {
+                    'class' => FilePreviewPlugin::class,
+                    'urlCallback' => function ($item) {
                         if ($item->type === 'file') {
-                            return Url::to(['/img/stream', 'path' =>  implode(DIRECTORY_SEPARATOR, array_filter([$item->path, $item->name]))]);
+                            return Url::to(['/img/stream', 'path' => implode(DIRECTORY_SEPARATOR, array_filter([$item->path, $item->name]))]);
                         }
                         return null;
                     }
                 ],
                 [
-                    'class' => \eluhr\flysystemRestApi\plugins\ThumbnailPlugin::class,
-                    'urlCallback' => function($item) {
+                    'class' => ThumbnailPlugin::class,
+                    'urlCallback' => function ($item) {
                         if ($item->type === 'file' && in_array(pathinfo($item->name, PATHINFO_EXTENSION), ['png', 'jpg', 'jpeg', 'gif'])) {
-                            return Url::to(['/img/stream', 'path' =>  implode(DIRECTORY_SEPARATOR, array_filter([$item->path, $item->name]))]);
+                            return Url::to(['/img/stream', 'path' => implode(DIRECTORY_SEPARATOR, array_filter([$item->path, $item->name]))]);
                         }
                         return null;
                     }
