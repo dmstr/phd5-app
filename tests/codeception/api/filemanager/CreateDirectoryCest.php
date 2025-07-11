@@ -109,7 +109,7 @@ final class FilemanagerApiCreateDirectoryCest {
             'path' => '/',
             'name' => $dirName
         ]);
-        $I->seeResponseCodeIs(HttpCode::BAD_REQUEST);
+        $I->seeResponseCodeIs(HttpCode::CONFLICT);
         $I->seeResponseIsJson();
         //$I->seeResponseContainsJson(['success' => false]);
     }
