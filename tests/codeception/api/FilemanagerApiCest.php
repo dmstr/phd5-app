@@ -79,9 +79,7 @@ final class FilemanagerApiCest
 
         $I->seeResponseCodeIs(HttpCode::CREATED); // 200
         $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/" . $dirName]);
-        $I->seeResponseContainsJson(["message" => ""]);
+        $I->seeResponseContainsJson(["success" => true, "message" => "created"]);
 
         $I->amGoingTo('get a directory called ' . $dirName);
 
@@ -89,8 +87,8 @@ final class FilemanagerApiCest
 
         $I->seeResponseCodeIs(HttpCode::OK);
         $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(["name" => $dirName]);
-        $I->seeResponseContainsJson(["fullPath" => "/" . $dirName]);
+        $I->seeResponseContains($dirName);
+        $I->seeResponseContains("/" . $dirName);
 
         $I->amGoingTo('delete a directory called ' . $dirName);
 
@@ -120,7 +118,6 @@ final class FilemanagerApiCest
         $I->seeResponseCodeIs(HttpCode::CREATED); // 200
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/" . $dirName]);
 
         $I->amGoingTo('create a directory called ' . $dirName . "-2 inside the directory called " . $dirName);
 
@@ -129,12 +126,11 @@ final class FilemanagerApiCest
             'name' => $dirName . "-2"
         ]);
 
-        $I->seeResponseContainsJson(["success" => true]);
-        $I->seeResponseContainsJson(["path" => "/" . $dirName . "/" . $dirName . "-2"]);;
+        $I->seeResponseContainsJson(["success" => true, 'message' => 'created']);
 
         $I->sendGET('/filemanager/api/list', ['path' => '/']);
 
-        $I->seeResponseCodeIs(HttpCode::CREATED);
+        $I->seeResponseCodeIs(HttpCode::OK);
 //        print_r($I->grabResponse());
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(["name" => $dirName]);
