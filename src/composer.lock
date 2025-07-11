@@ -248,16 +248,16 @@
         },
         {
             "name": "2amigos/yii2-usuario",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr-forks/2amigos-yii2-usuario.git",
-                "reference": "50342d052d0233463da45a1f41b242702cfd7d83"
+                "reference": "e8c3c983d16200b69086c338133ebe61ce8ff149"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr-forks/2amigos-yii2-usuario/zipball/50342d052d0233463da45a1f41b242702cfd7d83",
-                "reference": "50342d052d0233463da45a1f41b242702cfd7d83",
+                "url": "https://api.github.com/repos/dmstr-forks/2amigos-yii2-usuario/zipball/e8c3c983d16200b69086c338133ebe61ce8ff149",
+                "reference": "e8c3c983d16200b69086c338133ebe61ce8ff149",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "forum": "https://gitter.im/2amigos/yii2-usuario",
                 "source": "https://github.com/2amigos/yii2-usuario"
             },
-            "time": "2025-07-10T12:51:57+00:00"
+            "time": "2025-07-11T07:49:37+00:00"
         },
         {
             "name": "almasaeed2010/adminlte",
