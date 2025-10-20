@@ -2430,12 +2430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-widgets2-module.git",
-                "reference": "b4bda1d8521efc5759867c105283dc47d49ddf87"
+                "reference": "601278925ad95b68dce2e756e6aacb295bd537fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/b4bda1d8521efc5759867c105283dc47d49ddf87",
-                "reference": "b4bda1d8521efc5759867c105283dc47d49ddf87",
+                "url": "https://api.github.com/repos/dmstr/yii2-widgets2-module/zipball/601278925ad95b68dce2e756e6aacb295bd537fc",
+                "reference": "601278925ad95b68dce2e756e6aacb295bd537fc",
                 "shasum": ""
             },
             "require": {
@@ -2483,7 +2483,7 @@
                 "issues": "https://github.com/dmstr/yii2-widgets2-module/issues",
                 "source": "https://github.com/dmstr/yii2-widgets2-module/tree/feature/bootstrap5"
             },
-            "time": "2025-10-20T18:31:33+00:00"
+            "time": "2025-10-20T19:15:30+00:00"
         },
         {
             "name": "dmstr/yii2-willnorris-imageproxy",
@@ -3046,16 +3046,16 @@
         },
         {
             "name": "insolita/yii2-adminlte-widgets",
-            "version": "v1.1.6",
+            "version": "dev-feature/bootstrap5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Insolita/yii2-adminlte-widgets.git",
-                "reference": "a4e292e0aea1427ef769ab8c5ee09d8846f214b5"
+                "url": "https://github.com/eluhr/yii2-adminlte-widgets.git",
+                "reference": "e237aac6f67a6839642ac02d714061e26e4c7f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Insolita/yii2-adminlte-widgets/zipball/a4e292e0aea1427ef769ab8c5ee09d8846f214b5",
-                "reference": "a4e292e0aea1427ef769ab8c5ee09d8846f214b5",
+                "url": "https://api.github.com/repos/eluhr/yii2-adminlte-widgets/zipball/e237aac6f67a6839642ac02d714061e26e4c7f7a",
+                "reference": "e237aac6f67a6839642ac02d714061e26e4c7f7a",
                 "shasum": ""
             },
             "require": {
@@ -3068,7 +3068,6 @@
                     "insolita\\wgadminlte\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3080,15 +3079,14 @@
             ],
             "description": "Widgets for AdminLTE theme (Box with remember collapse state, Timeline, Tile, Callout, SmallBox etc)",
             "keywords": [
-                "AdminLTE",
+                "adminlte",
                 "widget",
                 "yii2"
             ],
             "support": {
-                "issues": "https://github.com/Insolita/yii2-adminlte-widgets/issues",
-                "source": "https://github.com/Insolita/yii2-adminlte-widgets/tree/master"
+                "source": "https://github.com/eluhr/yii2-adminlte-widgets/tree/feature/bootstrap5"
             },
-            "time": "2016-06-02T20:58:50+00:00"
+            "time": "2025-10-20T19:08:06+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -16088,6 +16086,12 @@
             "alias_normalized": "2.8.3.0"
         },
         {
+            "package": "insolita/yii2-adminlte-widgets",
+            "version": "dev-feature/bootstrap5",
+            "alias": "1.1.999",
+            "alias_normalized": "1.1.999.0"
+        },
+        {
             "package": "lajax/yii2-translate-manager",
             "version": "dev-feature/bootstrap5",
             "alias": "1.8.999",
@@ -16118,6 +16122,7 @@
         "dmstr/yii2-prototype-module": 20,
         "dmstr/yii2-publication-module": 20,
         "dmstr/yii2-widgets2-module": 20,
+        "insolita/yii2-adminlte-widgets": 20,
         "lajax/yii2-translate-manager": 20,
         "roave/security-advisories": 20,
         "schmunk42/yii2-giiant": 10,

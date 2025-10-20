@@ -41,7 +41,8 @@
         "zhuravljov/yii2-datetime-widgets": "dev-feature/bootstrap5 as 1.1.999",
         "dmstr/yii2-bootstrap": "dev-feature/bootstrap5 as 0.2.999",
         "dmstr/yii2-adminlte-asset": "dev-feature/bootstrap5 as 2.6.999",
-        "yii2assets/yii2-fullscreen-modal": "dev-feature/bootstrap5 as 1.0.999"
+        "yii2assets/yii2-fullscreen-modal": "dev-feature/bootstrap5 as 1.0.999",
+        "insolita/yii2-adminlte-widgets": "dev-feature/bootstrap5 as 1.1.999"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
@@ -100,9 +101,14 @@
             "url": "https://github.com/eluhr/yii2-translate-manager.git"
         },
         "yii2assets/yii2-fullscreen-modal": {
-            "name": " yii2assets/yii2-fullscreen-modal",
+            "name": "yii2assets/yii2-fullscreen-modal",
             "type": "vcs",
             "url": "https://github.com/eluhr/yii2-fullscreen-modal.git"
+        },
+        "insolita/yii2-adminlte-widgets": {
+            "name": "insolita/yii2-adminlte-widgets",
+            "type": "vcs",
+            "url": "https://github.com/eluhr/yii2-adminlte-widgets.git"
         }
     }
 }
