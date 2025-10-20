@@ -143,6 +143,7 @@ $common = [
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),
+        'bsVersion' => '5',
         'context.menuItems' => [],
         'backend.iframe.name' => getenv('APP_PARAMS_BACKEND_IFRAME_NAME') ?: '_self',
         'backend.browserSupport' => [
@@ -406,7 +407,7 @@ $common = [
                         }
                     ],
                     'uses' => [
-                        'yii\bootstrap'
+                        'yii\bootstrap5'
                     ]
                 ]
             ]

@@ -13,7 +13,7 @@ $baseUrl = '@web/bundles';
 
 $commonBundles = [
     \rmrevin\yii\fontawesome\AssetBundle::className(),
-    \yii\bootstrap\BootstrapPluginAsset::className(),
+    \yii\bootstrap5\BootstrapPluginAsset::className(),
     \yii\grid\GridViewAsset::className(),
     \yii\widgets\PjaxAsset::className(),
     \yii\widgets\ActiveFormAsset::className(),
@@ -25,7 +25,7 @@ $commonBundles = [
 ];
 
 $bootstrapBundles = [
-    \yii\bootstrap\BootstrapAsset::class
+    \yii\bootstrap5\BootstrapAsset::class
 ];
 
 $frontendBundles = [

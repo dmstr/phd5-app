@@ -1,25 +1,25 @@
 {
     "require": {
         "bedezign/yii2-audit": "^1.2.7",
-        "2amigos/yii2-usuario": "^1.6.4",
-        "lajax/yii2-translate-manager": "^1.6.0",
+        "2amigos/yii2-usuario": "dev-feature/bootstrap5",
+        "lajax/yii2-translate-manager": "dev-feature/bootstrap5 as 1.8.999",
         "codemix/yii2-localeurls": "^1.7.1",
         "codemix/yii2-streamlog": "^1.2.1",
         "dmstr/lajax-yii2-translate-manager-addons": "^1.0.0",
-        "dmstr/yii2-backend-module": "^2.2.5",
+        "dmstr/yii2-backend-module": "dev-feature/bootstrap5 as 2.2.999",
         "dmstr/yii2-contact-module": "^3.0.3",
         "dmstr/yii2-cookie-consent": "^1.4.3",
         "dmstr/yii2-db": "^3.0.1",
         "dmstr/yii2-helpers": "^1.0.1",
-        "dmstr/yii2-json-editor": "^1.4.2",
+        "dmstr/yii2-json-editor": "dev-feature/bootstrap5 as 1.5.999",
         "dmstr/yii2-redirect-module": "^0.3.1",
         "dmstr/yii2-filefly-module": "^1.7.3",
         "dmstr/yii2-filemanager-widgets": "^1.2.0",
         "dmstr/yii2-pages-module": "^2.5.7",
-        "dmstr/yii2-prototype-module": "^2.2.5",
-        "dmstr/yii2-publication-module": "^1.2.3",
+        "dmstr/yii2-prototype-module": "dev-feature/bootstrap5 as 2.3.1",
+        "dmstr/yii2-publication-module": "dev-feature/bootstrap5 as 1.3.999",
         "dmstr/yii2-resque-module": "^3.0.0",
-        "dmstr/yii2-widgets2-module": "^2.7.3",
+        "dmstr/yii2-widgets2-module": "dev-feature/bootstrap5 as 2.8.3",
         "dmstr/yii2-willnorris-imageproxy": "^1.0.0",
         "dmstr/yii2-web": ">=1.1.1",
         "loveorigami/yii2-notification-wrapper": "^6.7.2-patch1",
@@ -30,13 +30,18 @@
         "schmunk42/yii2-markdocs-module": "^1.0.0",
         "vlucas/phpdotenv": "^5.5",
         "yiisoft/yii2-dev": "~2.0.11",
-        "yiisoft/yii2-bootstrap": "2.*",
+        "yiisoft/yii2-bootstrap5": "^2.0.50",
         "yiisoft/yii2-redis": "^2.0.5",
         "yiisoft/yii2-twig": "^2.1.0",
         "yiisoft/yii2-symfonymailer": "^3.0",
         "dmstr/yii2-rbac-migration": "^2.0",
         "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "dmstr/yii2-cookie-button": "dev-feature/bootstrap5 as 1.0.999",
+        "zhuravljov/yii2-datetime-widgets": "dev-feature/bootstrap5 as 1.1.999",
+        "dmstr/yii2-bootstrap": "dev-feature/bootstrap5 as 0.2.999",
+        "dmstr/yii2-adminlte-asset": "dev-feature/bootstrap5 as 2.6.999",
+        "yii2assets/yii2-fullscreen-modal": "dev-feature/bootstrap5 as 1.0.999"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
@@ -83,6 +88,21 @@
             "name": "dmstr-forks/yii2-usuario",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/2amigos-yii2-usuario.git"
+        },
+        "zhuravljov/yii2-datetime-widgets": {
+            "name": "zhuravljov/yii2-datetime-widgets",
+            "type": "vcs",
+            "url": "https://github.com/eluhr/yii2-datetime-widgets.git"
+        },
+        "lajax/yii2-translate-manager": {
+            "name": "lajax/yii2-translate-manager",
+            "type": "vcs",
+            "url": "https://github.com/eluhr/yii2-translate-manager.git"
+        },
+        "yii2assets/yii2-fullscreen-modal": {
+            "name": " yii2assets/yii2-fullscreen-modal",
+            "type": "vcs",
+            "url": "https://github.com/eluhr/yii2-fullscreen-modal.git"
         }
     }
 }

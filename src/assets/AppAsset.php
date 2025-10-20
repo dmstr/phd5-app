@@ -11,7 +11,7 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
-use yii\bootstrap\BootstrapAsset;
+use yii\bootstrap5\BootstrapAsset;
 
 /**
  * Configuration for `backend` client script files.

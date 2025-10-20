@@ -35,7 +35,7 @@ if (getenv('APP_ASSET_DISABLE_BOOTSTRAP_BUNDLE')) {
         View::EVENT_AFTER_RENDER,
         function ($e) {
             // disable unbundled asset
-            $e->sender->assetBundles['yii\\bootstrap\\BootstrapAsset'] = null;
+            $e->sender->assetBundles['yii\\bootstrap5\\BootstrapAsset'] = null;
             // disable bundled asset
             $e->sender->assetBundles['bootstrap'] = null;
         }
