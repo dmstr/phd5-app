@@ -10,6 +10,7 @@ src/app.env
 data
 vendor
 vendor-dev
+node_modules
 
 **/runtime/
 web/assets

@@ -4,6 +4,7 @@ _host-volumes
 .env
 src/app.env
 src/version
+settings.local.json
 
 vendor
 vendor-dev
@@ -22,3 +23,4 @@ tests/_log
 
 .php_cs.cache
 
+node_modules
