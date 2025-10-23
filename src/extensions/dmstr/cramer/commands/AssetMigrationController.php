@@ -168,10 +168,19 @@ class AssetMigrationController extends Controller
             }
         }
         // When using bower: Bower packages are handled via bower.json, not package.json
-
-        // Add NPM assets (these are always needed)
+        // But add real NPM packages, converting npm-asset naming to real npm names
         foreach ($npmAssets as $name => $version) {
-            $cleanName = str_replace('--', '/', $name);
+            // Convert npm-asset naming convention:
+            // "json-editor--json-editor" -> "@json-editor/json-editor"
+            // "dmstr--cookie-consent" -> "@dmstr/cookie-consent"
+            if (strpos($name, '--') !== false) {
+                // This is a scoped package
+                $cleanName = '@' . str_replace('--', '/', $name);
+            } else {
+                // Regular unscoped package
+                $cleanName = $name;
+            }
+
             if (!isset($dependencies[$cleanName])) {
                 $npmVersion = $this->convertVersionToNpm($version);
                 $dependencies[$cleanName] = $npmVersion;
@@ -268,34 +277,42 @@ class AssetMigrationController extends Controller
             $report .= "npx bower install  # Installs bower packages into bower_components\n";
             $report .= "```\n\n";
 
-            $report .= "### Step 3: Add composer.assets.json to merge-plugin\n\n";
-            $report .= "Update `src/composer.json` to include the generated assets file:\n\n";
+            $report .= "### Step 3: Add local asset-replacement repository and require it\n\n";
+            $report .= "Add the local path repository to `src/composer.json`:\n\n";
+            $report .= "```bash\n";
+            $report .= "cd src\n";
+            $report .= "composer config repositories.replaced-assets path ./assets/replaced\n";
+            $report .= "```\n\n";
+
+            $report .= "This adds the following to your composer.json:\n\n";
             $report .= "```json\n";
-            $report .= "\"extra\": {\n";
-            $report .= "    \"merge-plugin\": {\n";
-            $report .= "        \"ignore-duplicates\": true,\n";
-            $report .= "        \"require\": [\n";
-            $report .= "            \"composer.phd5.json\",\n";
-            $report .= "            \"composer.assets.json\"  // ADD THIS LINE\n";
-            $report .= "        ]\n";
+            $report .= "\"repositories\": {\n";
+            $report .= "    \"replaced-assets\": {\n";
+            $report .= "        \"type\": \"path\",\n";
+            $report .= "        \"url\": \"./assets/replaced\"\n";
             $report .= "    }\n";
             $report .= "}\n";
             $report .= "```\n\n";
 
-            $report .= "This replaces all bower-asset/* and npm-asset/* packages with the local installation.\n\n";
+            $report .= "Then require the local package:\n\n";
+            $report .= "```bash\n";
+            $report .= "composer require app/local-replaced-assets:@dev\n";
+            $report .= "```\n\n";
+
+            $report .= "This installs the local package which replaces all bower-asset/* and npm-asset/* packages.\n\n";
 
             $report .= "### Step 4: Update aliases in config\n\n";
-            $report .= "Update `config/common.php` to use vendor paths:\n\n";
+            $report .= "Update `config/common.php` to use correct paths:\n\n";
             $report .= "```php\n";
             $report .= "'aliases' => [\n";
-            $report .= "    '@npm' => '@vendor/node_modules',\n";
-            $report .= "    '@bower' => '@vendor/bower_components',  // Native bower location\n";
+            $report .= "    '@npm' => '@root/node_modules',\n";
+            $report .= "    '@bower' => '@vendor/bower_components',\n";
             $report .= "],\n";
             $report .= "```\n\n";
 
             $report .= "**Important:** AssetBundles do NOT need to be changed! ";
-            $report .= "The `@bower` alias now points to `bower_components` in the vendor directory ";
-            $report .= "where bower maintains the same structure as before.\n\n";
+            $report .= "The `@npm` and `@bower` aliases point to the correct locations ";
+            $report .= "where npm and bower maintain the same structure as before.\n\n";
 
         } else {
             $report .= "**Using native NPM approach** (requires AssetBundle updates)\n\n";
@@ -488,10 +505,9 @@ class AssetMigrationController extends Controller
         ksort($replace);
 
         $composerAssets = [
-            'name' => 'phd5-app/assets',
+            'name' => 'app/local-replaced-assets',
             'description' => 'Asset package replacements for phd5-app (native bower approach)',
             'type' => 'library',
-            'license' => 'proprietary',
             'replace' => $replace
         ];
 
