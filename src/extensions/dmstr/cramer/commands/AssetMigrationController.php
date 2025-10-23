@@ -87,6 +87,13 @@ class AssetMigrationController extends Controller
         $this->stdout("Found Bower Assets: " . count($bowerAssets) . "\n", \yii\helpers\Console::FG_GREEN);
         $this->stdout("Found NPM Assets: " . count($npmAssets) . "\n\n", \yii\helpers\Console::FG_GREEN);
 
+        // Exit early if no assets found
+        if (empty($bowerAssets) && empty($npmAssets)) {
+            $this->stdout("No bower-asset or npm-asset packages found in composer.lock.\n", \yii\helpers\Console::FG_YELLOW);
+            $this->stdout("Nothing to migrate!\n\n", \yii\helpers\Console::FG_GREEN);
+            return self::EXIT_CODE_NORMAL;
+        }
+
         // Display bower assets
         $this->stdout("Bower Assets:\n", \yii\helpers\Console::BOLD);
         $this->stdout(str_repeat('-', 80) . "\n");
@@ -198,6 +205,9 @@ class AssetMigrationController extends Controller
             'devDependencies' => [
                 'less' => '^4.2.0',
             ],
+            'scripts' => [
+                'postinstall' => '/usr/local/bin/create-npm-asset-symlinks /app/node_modules'
+            ]
         ];
 
         // Add bower configuration if enabled
@@ -454,7 +464,7 @@ class AssetMigrationController extends Controller
      * Converts composer version format to Bower version format
      *
      * @param string $composerVersion Composer version string
-     * @return string Bower version string
+     * @return string Bower version string with ^ prefix
      */
     protected function convertVersionToBower($composerVersion)
     {
@@ -463,11 +473,11 @@ class AssetMigrationController extends Controller
 
         // Extract semver if possible
         if (preg_match('/^(\d+\.\d+\.\d+)/', $version, $matches)) {
-            return $matches[1];
+            return '^' . $matches[1];
         }
 
-        // Return as-is for other formats
-        return $version;
+        // Return with ^ prefix for other formats
+        return '^' . $version;
     }
 
     /**
