@@ -88,6 +88,8 @@ dist-upgrade: ##@base update application package, pull, rebuild
 
 install: ##@base install PHP packages
 	$(DOCKER_COMPOSE) run --rm php composer -dsrc  install
+	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/src/
+	$(DOCKER_COMPOSE) run --rm -w /app/src php npx bower install --allow-root
 
 bash:	 ##@development execute application bash in php container
 	#
