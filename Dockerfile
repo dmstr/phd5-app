@@ -1,6 +1,10 @@
 FROM yiisoftware/yii2-php:8.4-fpm-nginx
 ARG BUILD_NO_INSTALL
 
+# Install Node.js and NPM
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+ && apt-get install -y nodejs
+
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
         ssh \
@@ -22,18 +26,30 @@ ENV SUPERVISOR_START_CRON=true \
 
 # System files
 COPY ./image-files /
+RUN chmod +x /usr/local/bin/create-npm-asset-symlinks
 
 # Application packages
 WORKDIR /app
 COPY src/composer.* /app/src/
+COPY src/assets /app/src/assets
 
 # Composer installation (skipped on first build in dist-upgrade)
+# First install merge-plugin, then install with plugins enabled
 # create bc link if not exists
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
+        composer -vv -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
         composer -dsrc clear-cache && \
         ln -s bower-asset /app/vendor/bower && \
         ln -s npm-asset /app/vendor/npm; \
+    fi
+
+# NPM and Bower packages for frontend assets
+COPY src/package.json src/bower.json src/.bowerrc /app/src/
+RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
+        cd /app/src && \
+        npm --prefix=/app i /app/src/ && \
+        npx bower install --allow-root && \
+        npm cache clean --force; \
     fi
 
 # Application source-code
