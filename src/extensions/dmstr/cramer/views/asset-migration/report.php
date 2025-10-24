@@ -1,11 +1,25 @@
+<?php
+/**
+ * Migration Report View
+ *
+ * @var array $bowerAssets Bower assets map
+ * @var array $npmAssets NPM assets map
+ */
+
+use yii\helpers\Markdown;
+
+?>
 # Asset Migration Report
 
-Generated: 2025-10-24 09:14:24
+Generated: <?= date('Y-m-d H:i:s') ?>
+
 
 ## Summary
 
-- **Bower Assets**: 19
-- **NPM Assets**: 19
+- **Bower Assets**: <?= count($bowerAssets) ?>
+
+- **NPM Assets**: <?= count($npmAssets) ?>
+
 
 ## Migration Strategy
 
@@ -51,9 +65,9 @@ Remove bower-asset and npm-asset dependencies from `src/composer.phd5.json`:
 
 ```json
 // Remove:
-"bower-asset/ace-builds": "...",
-"bower-asset/bootstrap": "...",
-"bower-asset/bootstrap-datepicker": "...",
+<?php foreach (array_slice($bowerAssets, 0, 3) as $name => $version): ?>
+"bower-asset/<?= $name ?>": "...",
+<?php endforeach; ?>
 // ... etc
 ```
 
@@ -107,25 +121,9 @@ These packages are managed via bower.json:
 
 | Bower Package | Version |
 |---------------|----------|
-| bower-asset/ace-builds | v1.15.3 |
-| bower-asset/bootstrap | v3.4.1 |
-| bower-asset/bootstrap-datepicker | v1.9.0 |
-| bower-asset/bootstrap-daterangepicker | v3.1 |
-| bower-asset/chartjs | v2.9.4 |
-| bower-asset/inputmask | 5.0.8 |
-| bower-asset/jquery | 3.6.4 |
-| bower-asset/jquery-cookie | v1.4.1 |
-| bower-asset/jquery-growl | v1.3.5 |
-| bower-asset/jquery-ui | 1.12.1 |
-| bower-asset/mermaid | 8.14.0 |
-| bower-asset/microplugin | v0.0.3 |
-| bower-asset/moment | 2.30.1 |
-| bower-asset/noty | v2.4.1 |
-| bower-asset/punycode | v2.3.1 |
-| bower-asset/selectize | 0.12.6-patch1 |
-| bower-asset/sifter | v0.5.4 |
-| bower-asset/smalot-bootstrap-datetimepicker | 2.4.4 |
-| bower-asset/yii2-pjax | 2.0.8 |
+<?php foreach ($bowerAssets as $name => $version): ?>
+| bower-asset/<?= $name ?> | <?= $version ?> |
+<?php endforeach; ?>
 
 ## NPM Assets
 
@@ -133,23 +131,7 @@ These packages are installed directly via npm:
 
 | Package | Version |
 |---------|----------|
-| npm-asset/ace-builds | 1.43.4 |
-| npm-asset/ajv | 6.12.6 |
-| npm-asset/core-js | 3.45.1 |
-| npm-asset/dmstr--cookie-consent | 0.4.1 |
-| npm-asset/fast-deep-equal | 3.1.3 |
-| npm-asset/fast-json-stable-stringify | 2.1.0 |
-| npm-asset/javascript-natural-sort | 0.7.1 |
-| npm-asset/jmespath | 0.16.0 |
-| npm-asset/json-editor--json-editor | 2.15.2 |
-| npm-asset/json-schema-traverse | 0.4.1 |
-| npm-asset/json-source-map | 0.6.1 |
-| npm-asset/jsoneditor | 9.10.5 |
-| npm-asset/jsonrepair | 3.1.0 |
-| npm-asset/mobius1-selectr | 2.4.13 |
-| npm-asset/picomodal | 3.0.0 |
-| npm-asset/punycode | 2.3.1 |
-| npm-asset/sphinxxxx--color-conversion | 2.2.2 |
-| npm-asset/uri-js | 4.4.1 |
-| npm-asset/vanilla-picker | 2.12.3 |
+<?php foreach ($npmAssets as $name => $version): ?>
+| npm-asset/<?= $name ?> | <?= $version ?> |
+<?php endforeach; ?>
 
