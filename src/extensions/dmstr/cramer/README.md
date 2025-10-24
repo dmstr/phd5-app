@@ -49,6 +49,51 @@ The tool **sets up automatic compatibility**:
 - Example: `json-editor--json-editor` → `@json-editor/json-editor`
 - This ensures existing AssetBundles continue to work without modifications
 
+## Configuration
+
+Add the controller to your console configuration (`config/console.php`):
+
+```php
+return [
+    'controllerMap' => [
+        'asset-migration' => \dmstr\cramer\commands\AssetMigrationController::class,
+    ],
+    // ... rest of config
+];
+```
+
+### Manual Installation (Optional)
+
+If you want to use this tool without installing it via Composer (e.g., during development or testing), add the namespace alias to your configuration:
+
+```php
+return [
+    'aliases' => [
+        'dmstr/cramer' => '@app/extensions/dmstr/cramer',
+    ],
+    'controllerMap' => [
+        'asset-migration' => \dmstr\cramer\commands\AssetMigrationController::class,
+    ],
+    // ... rest of config
+];
+```
+
+**Note:** This is only required for manual installation. If you install the package via Composer, the alias is automatically configured through PSR-4 autoloading.
+
+### Custom Configuration
+
+You can customize the default behavior:
+
+```php
+'controllerMap' => [
+    'asset-migration' => [
+        'class' => \dmstr\cramer\commands\AssetMigrationController::class,
+        'outputPath' => '@app/debug',           // Custom output directory
+        'composerLockFile' => '@root/composer.lock', // Custom composer.lock path
+    ],
+],
+```
+
 ## Usage
 
 ### 1. Run the analyzer

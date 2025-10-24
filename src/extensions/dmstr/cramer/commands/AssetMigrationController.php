@@ -324,7 +324,7 @@ class AssetMigrationController extends Controller
 
         // Render report from view
         $report = $this->renderFile(
-            Yii::getAlias('@app/extensions/dmstr/cramer/views/asset-migration/report.php'),
+            __DIR__ . '/../views/asset-migration/report.php',
             [
                 'bowerAssets' => $bowerAssets,
                 'npmAssets' => $npmAssets,

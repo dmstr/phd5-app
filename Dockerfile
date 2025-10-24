@@ -37,7 +37,7 @@ COPY src/assets /app/src/assets
 # First install merge-plugin, then install with plugins enabled
 # create bc link if not exists
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
-        composer -vv -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
+        composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
         composer -dsrc clear-cache && \
         ln -s bower-asset /app/vendor/bower && \
         ln -s npm-asset /app/vendor/npm; \
