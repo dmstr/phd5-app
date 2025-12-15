@@ -6,7 +6,7 @@
     "repositories": {
         "replaced-assets": {
             "type": "path",
-            "url": "./composer.replaced-assets.json"
+            "url": "./assets-replaced"
         },
         "merge-plugin": {
             "type": "vcs",
@@ -18,7 +18,8 @@
         }
     },
     "require": {
-        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown"
+        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown",
+        "app/local-replaced-assets": "@dev"
     },
     "extra": {
         "merge-plugin": {

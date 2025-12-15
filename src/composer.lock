@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a101fbd863962b8284257b6091fb007e",
+    "content-hash": "78d4edf05052de8ee8eb1ae0e2ddee4e",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -399,6 +399,60 @@
             "time": "2019-08-29T08:20:20+00:00"
         },
         {
+            "name": "app/local-replaced-assets",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./assets-replaced",
+                "reference": "989079ceee6856306c2a4a3affddddf741a08b93"
+            },
+            "replace": {
+                "bower-asset/ace-builds": "*",
+                "bower-asset/bootstrap": "*",
+                "bower-asset/bootstrap-datepicker": "*",
+                "bower-asset/bootstrap-daterangepicker": "*",
+                "bower-asset/chartjs": "*",
+                "bower-asset/inputmask": "*",
+                "bower-asset/jquery": "*",
+                "bower-asset/jquery-cookie": "*",
+                "bower-asset/jquery-growl": "*",
+                "bower-asset/jquery-ui": "*",
+                "bower-asset/mermaid": "*",
+                "bower-asset/microplugin": "*",
+                "bower-asset/moment": "*",
+                "bower-asset/noty": "*",
+                "bower-asset/punycode": "*",
+                "bower-asset/selectize": "*",
+                "bower-asset/sifter": "*",
+                "bower-asset/smalot-bootstrap-datetimepicker": "*",
+                "bower-asset/yii2-pjax": "*",
+                "npm-asset/ace-builds": "*",
+                "npm-asset/ajv": "*",
+                "npm-asset/core-js": "*",
+                "npm-asset/dmstr--cookie-consent": "*",
+                "npm-asset/fast-deep-equal": "*",
+                "npm-asset/fast-json-stable-stringify": "*",
+                "npm-asset/javascript-natural-sort": "*",
+                "npm-asset/jmespath": "*",
+                "npm-asset/json-editor--json-editor": "*",
+                "npm-asset/json-schema-traverse": "*",
+                "npm-asset/json-source-map": "*",
+                "npm-asset/jsoneditor": "*",
+                "npm-asset/jsonrepair": "*",
+                "npm-asset/mobius1-selectr": "*",
+                "npm-asset/picomodal": "*",
+                "npm-asset/punycode": "*",
+                "npm-asset/sphinxxxx--color-conversion": "*",
+                "npm-asset/uri-js": "*",
+                "npm-asset/vanilla-picker": "*"
+            },
+            "type": "library",
+            "description": "Asset package replacements for phd5-app (native bower approach)",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "bedezign/yii2-audit",
             "version": "1.2.8",
             "source": {
@@ -531,357 +585,6 @@
                 }
             ],
             "time": "2024-10-11T10:33:12+00:00"
-        },
-        {
-            "name": "bower-asset/ace-builds",
-            "version": "v1.15.3",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ajaxorg/ace-builds.git",
-                "reference": "a6f05db4a359a66152afc29b6382caeb09a84cbd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ajaxorg/ace-builds/zipball/a6f05db4a359a66152afc29b6382caeb09a84cbd",
-                "reference": "a6f05db4a359a66152afc29b6382caeb09a84cbd"
-            },
-            "type": "bower-asset",
-            "license": [
-                "BSD"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap",
-            "version": "v3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
-                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.9.1,<4.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap-datepicker",
-            "version": "v1.9.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:eternicode/bootstrap-datepicker.git",
-                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/fb8776d65825068b9f914ab37d6fd847c951f488",
-                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7.1,<4.0.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap-daterangepicker",
-            "version": "v3.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:dangrossman/bootstrap-daterangepicker.git",
-                "reference": "5d9eb2cce58434baeeb82db39928c695420739a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dangrossman/bootstrap-daterangepicker/zipball/5d9eb2cce58434baeeb82db39928c695420739a2",
-                "reference": "5d9eb2cce58434baeeb82db39928c695420739a2"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.9.1,<4.0",
-                "bower-asset/moment": ">=2.9.0"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/chartjs",
-            "version": "v2.9.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chartjs/Chart.js.git",
-                "reference": "9bd4cf82fda9f50a5fb50b72843e06ab88124278"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chartjs/Chart.js/zipball/9bd4cf82fda9f50a5fb50b72843e06ab88124278",
-                "reference": "9bd4cf82fda9f50a5fb50b72843e06ab88124278"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/inputmask",
-            "version": "5.0.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7"
-            },
-            "type": "bower-asset",
-            "license": [
-                "http://opensource.org/licenses/mit-license.php"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery",
-            "version": "3.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/fde1f76e2799dd877c176abde0ec836553246991",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-cookie",
-            "version": "v1.4.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:carhartl/jquery-cookie.git",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.2"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/jquery-growl",
-            "version": "v1.3.5",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ksylvest/jquery-growl.git",
-                "reference": "b26d47cacb316ec291a6d12a77b18aef26a42fcd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/b26d47cacb316ec291a6d12a77b18aef26a42fcd",
-                "reference": "b26d47cacb316ec291a6d12a77b18aef26a42fcd"
-            },
-            "require": {
-                "bower-asset/jquery": "dev-default|*"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/jquery-ui",
-            "version": "1.12.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:components/jqueryui.git",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/mermaid",
-            "version": "8.14.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:knsv/mermaid.git",
-                "reference": "cbe3a9159db4d5e67d270fe701cd63de1510f6ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/knsv/mermaid/zipball/cbe3a9159db4d5e67d270fe701cd63de1510f6ee",
-                "reference": "cbe3a9159db4d5e67d270fe701cd63de1510f6ee"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/microplugin",
-            "version": "v0.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/brianreavis/microplugin.js.git",
-                "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brianreavis/microplugin.js/zipball/d8671e6cc769938648f8735610534427cdeeaf67",
-                "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/moment",
-            "version": "2.30.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/moment/moment.git",
-                "reference": "485d9a7d709bd5f3869a7ad24630cf0746d072dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/485d9a7d709bd5f3869a7ad24630cf0746d072dc",
-                "reference": "485d9a7d709bd5f3869a7ad24630cf0746d072dc"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/noty",
-            "version": "v2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/needim/noty.git",
-                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/needim/noty/zipball/ebb543ef0a3c039cdb7cdae887197ffa43433d52",
-                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/punycode",
-            "version": "v2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mathiasbynens/punycode.js.git",
-                "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/9e1b2cda98d215d3a73fcbfe93c62e021f4ba768",
-                "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/selectize",
-            "version": "0.12.6-patch1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:selectize/selectize.js.git",
-                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9",
-                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7.0",
-                "bower-asset/microplugin": "dev-0.0.x|0.0.x",
-                "bower-asset/sifter": "dev-0.5.x|0.5.x"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/sifter",
-            "version": "v0.5.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:brianreavis/sifter.js.git",
-                "reference": "2009705c24ba9bb0fbe71fa3c60b1dfa682538d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brianreavis/sifter.js/zipball/2009705c24ba9bb0fbe71fa3c60b1dfa682538d2",
-                "reference": "2009705c24ba9bb0fbe71fa3c60b1dfa682538d2"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/smalot-bootstrap-datetimepicker",
-            "version": "2.4.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:smalot/bootstrap-datetimepicker.git",
-                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/smalot/bootstrap-datetimepicker/zipball/32143c8b45575e51c92a8e29997cbe556d1bbba3",
-                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/yii2-pjax",
-            "version": "2.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "a9298d57da63d14a950f1b94366a864bc62264fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/a9298d57da63d14a950f1b94366a864bc62264fb",
-                "reference": "a9298d57da63d14a950f1b94366a864bc62264fb"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.8"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
         },
         {
             "name": "brick/math",
@@ -4765,260 +4468,6 @@
                 }
             ],
             "time": "2025-08-01T08:46:24+00:00"
-        },
-        {
-            "name": "npm-asset/ace-builds",
-            "version": "1.43.5",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.43.5.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "BSD-3-Clause"
-            ]
-        },
-        {
-            "name": "npm-asset/ajv",
-            "version": "6.12.6",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
-            },
-            "require": {
-                "npm-asset/fast-deep-equal": ">=3.1.1,<4.0.0",
-                "npm-asset/fast-json-stable-stringify": ">=2.0.0,<3.0.0",
-                "npm-asset/json-schema-traverse": ">=0.4.1,<0.5.0",
-                "npm-asset/uri-js": ">=4.2.2,<5.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/core-js",
-            "version": "3.47.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/core-js/-/core-js-3.47.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/dmstr--cookie-consent",
-            "version": "0.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@dmstr/cookie-consent/-/cookie-consent-0.4.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/fast-deep-equal",
-            "version": "3.1.3",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/fast-json-stable-stringify",
-            "version": "2.1.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/javascript-natural-sort",
-            "version": "0.7.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/javascript-natural-sort/-/javascript-natural-sort-0.7.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jmespath",
-            "version": "0.16.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jmespath/-/jmespath-0.16.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
-            "name": "npm-asset/json-editor--json-editor",
-            "version": "2.15.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@json-editor/json-editor/-/json-editor-2.15.2.tgz"
-            },
-            "require": {
-                "npm-asset/core-js": ">=3.27.2,<4.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/json-schema-traverse",
-            "version": "0.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/json-source-map",
-            "version": "0.6.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/json-source-map/-/json-source-map-0.6.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jsoneditor",
-            "version": "9.10.5",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jsoneditor/-/jsoneditor-9.10.5.tgz"
-            },
-            "require": {
-                "npm-asset/ace-builds": ">=1.31.1,<2.0.0",
-                "npm-asset/ajv": ">=6.12.6,<7.0.0",
-                "npm-asset/javascript-natural-sort": ">=0.7.1,<0.8.0",
-                "npm-asset/jmespath": ">=0.16.0,<0.17.0",
-                "npm-asset/json-source-map": ">=0.6.1,<0.7.0",
-                "npm-asset/jsonrepair": "3.1.0",
-                "npm-asset/mobius1-selectr": ">=2.4.13,<3.0.0",
-                "npm-asset/picomodal": ">=3.0.0,<4.0.0",
-                "npm-asset/vanilla-picker": ">=2.12.2,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
-            "name": "npm-asset/jsonrepair",
-            "version": "3.1.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.1.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
-            ]
-        },
-        {
-            "name": "npm-asset/mobius1-selectr",
-            "version": "2.4.13",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/mobius1-selectr/-/mobius1-selectr-2.4.13.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/picomodal",
-            "version": "3.0.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/picomodal/-/picomodal-3.0.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/punycode",
-            "version": "2.3.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/sphinxxxx--color-conversion",
-            "version": "2.2.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@sphinxxxx/color-conversion/-/color-conversion-2.2.2.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
-            ]
-        },
-        {
-            "name": "npm-asset/uri-js",
-            "version": "4.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"
-            },
-            "require": {
-                "npm-asset/punycode": ">=2.1.0,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "BSD-2-Clause"
-            ]
-        },
-        {
-            "name": "npm-asset/vanilla-picker",
-            "version": "2.12.3",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/vanilla-picker/-/vanilla-picker-2.12.3.tgz"
-            },
-            "require": {
-                "npm-asset/sphinxxxx--color-conversion": ">=2.2.2,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
-            ]
         },
         {
             "name": "omnilight/yii2-scheduling",
@@ -16158,6 +15607,7 @@
     ],
     "minimum-stability": "beta",
     "stability-flags": {
+        "app/local-replaced-assets": 20,
         "ckeditor/ckeditor": 20,
         "roave/security-advisories": 20,
         "schmunk42/yii2-giiant": 10,
@@ -16169,5 +15619,5 @@
         "ext-pdo": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

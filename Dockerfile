@@ -31,7 +31,7 @@ RUN chmod +x /usr/local/bin/create-npm-asset-symlinks
 # Application packages
 WORKDIR /app
 COPY src/composer.* /app/src/
-COPY src/assets /app/src/assets
+COPY src/assets-replaced /app/src/assets-replaced
 
 # Composer installation (skipped on first build in dist-upgrade)
 # First install merge-plugin, then install with plugins enabled

@@ -138,7 +138,7 @@ This generates all necessary files and asks for confirmation before overwriting 
 Check the generated files (location depends on `--outputPath`):
 - `package.json` - Contains NPM dependencies and postinstall hook
 - `bower.json` - Contains Bower dependencies
-- `composer.replaced-assets.json` - Local replacement package
+- `assets-replaced/composer.json` - Local replacement package (in its own directory for Composer path repository)
 - `MIGRATION_REPORT.md` - Detailed migration instructions
 
 ### 4. Follow the migration steps
@@ -149,24 +149,12 @@ See the generated `MIGRATION_REPORT.md` for detailed step-by-step instructions.
 
 ### 1. Dockerfile
 
-Update your Dockerfile to install NPM and Bower packages.
-
-**For phd5-app based projects** (source in `src/`):
+Update your Dockerfile to install NPM and Bower packages and copy the assets-replaced directory.
 
 ```dockerfile
-# NPM and Bower packages for frontend assets
-COPY src/package.json src/bower.json src/.bowerrc /app/src/
-RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
-        cd /app/src && \
-        npm --prefix=/app i /app/src/ && \
-        npx bower install --allow-root && \
-        npm cache clean --force; \
-    fi
-```
+# Copy assets-replaced directory for Composer path repository
+COPY project/assets-replaced /app/project/assets-replaced
 
-**For phd5-template based projects** (source in `project/`):
-
-```dockerfile
 # NPM and Bower packages for frontend assets
 COPY project/package.json project/bower.json project/.bowerrc /app/project/
 RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/project/package.json ]; then \
@@ -184,17 +172,7 @@ RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/project/package.json ]; then \
 
 ### 2. .bowerrc
 
-Create `.bowerrc` in your source directory to specify bower installation directory.
-
-**For phd5-app** (`src/.bowerrc`):
-
-```json
-{
-  "directory": "/app/vendor/bower-asset"
-}
-```
-
-**For phd5-template** (`project/.bowerrc`):
+Create `.bowerrc` in your project directory to specify bower installation directory (`project/.bowerrc`):
 
 ```json
 {
@@ -207,10 +185,12 @@ Create `.bowerrc` in your source directory to specify bower installation directo
 Add the local replacement package repository and require it:
 
 ```bash
-cd src
-composer config repositories.replaced-assets path ./composer.replaced-assets.json
+cd project
+composer config repositories.replaced-assets path ./assets-replaced
 composer require app/local-replaced-assets:@dev
 ```
+
+The `assets-replaced/` directory is automatically created by the `generate` command with the proper `composer.json` inside.
 
 This adds:
 
@@ -219,7 +199,7 @@ This adds:
     "repositories": {
         "replaced-assets": {
             "type": "path",
-            "url": "./composer.replaced-assets.json"
+            "url": "./assets-replaced"
         }
     },
     "require": {
@@ -230,18 +210,7 @@ This adds:
 
 ### 4. Makefile
 
-Update your `make install` target to include NPM and Bower installation.
-
-**For phd5-app based projects**:
-
-```makefile
-install:
-	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer install
-	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/src/
-	$(DOCKER_COMPOSE) run --rm -w /app/src php npx bower install --allow-root
-```
-
-**For phd5-template based projects**:
+Update your `make install` target to include NPM and Bower installation:
 
 ```makefile
 install:
@@ -255,7 +224,7 @@ install:
 Once migration is complete and tested, you can remove asset-packagist from your repositories:
 
 ```bash
-cd src
+cd project
 composer config --unset repositories.asset-packagist
 ```
 

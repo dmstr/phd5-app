@@ -22,5 +22,6 @@ tests/codeception/_support/_generated
 tests/_log
 
 .php_cs.cache
+.php-cs-fixer.cache
 
 node_modules
