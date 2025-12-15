@@ -188,6 +188,7 @@ class AssetMigrationController extends Controller
         $this->generatePackageJsonTemplate($bowerAssets, $npmAssets);
         $this->generateMigrationReport($bowerAssets, $npmAssets);
         $this->generateBowerJson($bowerAssets);
+        $this->generateBowerrc();
         $this->generateComposerAssets($bowerAssets, $npmAssets);
 
         $this->stdout("\n✓ Generation complete!\n\n", \yii\helpers\Console::FG_GREEN);
@@ -368,6 +369,28 @@ class AssetMigrationController extends Controller
 
         $this->stdout("✓ Generated: $bowerJsonFile\n", \yii\helpers\Console::FG_GREEN);
         $this->stdout("  (Install with: npx bower install)\n", \yii\helpers\Console::FG_YELLOW);
+    }
+
+    /**
+     * Generates .bowerrc configuration file
+     */
+    protected function generateBowerrc()
+    {
+        $outputDir = Yii::getAlias($this->outputPath);
+        $bowerrcFile = $outputDir . '/.bowerrc';
+
+        $bowerrc = [
+            'directory' => '/app/vendor/bower-asset'
+        ];
+
+        if (!$this->confirmFileWrite($bowerrcFile)) {
+            $this->stdout("Skipped: $bowerrcFile\n", \yii\helpers\Console::FG_YELLOW);
+            return;
+        }
+
+        file_put_contents($bowerrcFile, Json::encode($bowerrc, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+        $this->stdout("✓ Generated: $bowerrcFile\n", \yii\helpers\Console::FG_GREEN);
     }
 
     /**
