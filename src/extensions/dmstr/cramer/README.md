@@ -32,7 +32,7 @@ The Asset Migration Tool has two commands:
 - Does everything `analyze` does, plus:
 - Generates `package.json` - NPM dependencies with postinstall hook for symlink creation
 - Generates `bower.json` - Bower dependencies with version constraints
-- Generates `assets/replaced/composer.json` - Local Composer package that replaces all asset packages
+- Generates `composer.replaced-assets.json` - Local Composer package that replaces all asset packages
 - Asks for confirmation before overwriting existing files
 
 ### Local Replacement Package
@@ -138,7 +138,7 @@ This generates all necessary files and asks for confirmation before overwriting 
 Check the generated files (location depends on `--outputPath`):
 - `package.json` - Contains NPM dependencies and postinstall hook
 - `bower.json` - Contains Bower dependencies
-- `assets/replaced/composer.json` - Local replacement package
+- `composer.replaced-assets.json` - Local replacement package
 - `MIGRATION_REPORT.md` - Detailed migration instructions
 
 ### 4. Follow the migration steps
@@ -208,7 +208,7 @@ Add the local replacement package repository and require it:
 
 ```bash
 cd src
-composer config repositories.replaced-assets path ./assets/replaced
+composer config repositories.replaced-assets path ./composer.replaced-assets.json
 composer require app/local-replaced-assets:@dev
 ```
 
@@ -219,7 +219,7 @@ This adds:
     "repositories": {
         "replaced-assets": {
             "type": "path",
-            "url": "./assets/replaced"
+            "url": "./composer.replaced-assets.json"
         }
     },
     "require": {

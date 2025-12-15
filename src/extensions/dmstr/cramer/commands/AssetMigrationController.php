@@ -391,7 +391,7 @@ class AssetMigrationController extends Controller
     }
 
     /**
-     * Generates composer.json with replace directives in assets/replaced directory
+     * Generates composer.json with replace directives
      *
      * @param array $bowerAssets Bower assets map
      * @param array $npmAssets NPM assets map
@@ -399,17 +399,7 @@ class AssetMigrationController extends Controller
     protected function generateComposerAssets($bowerAssets, $npmAssets)
     {
         $outputDir = Yii::getAlias($this->outputPath);
-        $assetsDir = $outputDir . '/assets/replaced';
-
-        // Create directory if it doesn't exist
-        if (!is_dir($assetsDir)) {
-            if (!mkdir($assetsDir, 0775, true) && !is_dir($assetsDir)) {
-                $this->stderr("ERROR: Could not create directory: $assetsDir\n");
-                return;
-            }
-        }
-
-        $composerAssetsFile = $assetsDir . '/composer.json';
+        $composerAssetsFile = $outputDir . '/composer.replaced-assets.json';
 
         $replace = [];
 
