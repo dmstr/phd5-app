@@ -149,7 +149,9 @@ See the generated `MIGRATION_REPORT.md` for detailed step-by-step instructions.
 
 ### 1. Dockerfile
 
-Update your Dockerfile to install NPM and Bower packages:
+Update your Dockerfile to install NPM and Bower packages.
+
+**For phd5-app based projects** (source in `src/`):
 
 ```dockerfile
 # NPM and Bower packages for frontend assets
@@ -162,18 +164,41 @@ RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
     fi
 ```
 
+**For phd5-template based projects** (source in `project/`):
+
+```dockerfile
+# NPM and Bower packages for frontend assets
+COPY project/package.json project/bower.json project/.bowerrc /app/project/
+RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/project/package.json ]; then \
+        cd /app/project && \
+        npm --prefix=/app i /app/project/ && \
+        npx bower install --allow-root && \
+        npm cache clean --force; \
+    fi
+```
+
 **Important notes:**
 - `npm --prefix=/app` installs to `/app/node_modules`
 - `postinstall` hook runs automatically after npm install
-- Bower uses `.bowerrc` to install to `/app/vendor/bower_components`
+- Bower uses `.bowerrc` to install to `/app/vendor/bower-asset` (for compatibility with Yii asset aliases)
 
 ### 2. .bowerrc
 
-Create `src/.bowerrc` to specify bower installation directory:
+Create `.bowerrc` in your source directory to specify bower installation directory.
+
+**For phd5-app** (`src/.bowerrc`):
 
 ```json
 {
-  "directory": "/app/vendor/bower_components"
+  "directory": "/app/vendor/bower-asset"
+}
+```
+
+**For phd5-template** (`project/.bowerrc`):
+
+```json
+{
+  "directory": "/app/vendor/bower-asset"
 }
 ```
 
@@ -203,7 +228,29 @@ This adds:
 }
 ```
 
-### 4. Remove asset-packagist (optional)
+### 4. Makefile
+
+Update your `make install` target to include NPM and Bower installation.
+
+**For phd5-app based projects**:
+
+```makefile
+install:
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer install
+	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/src/
+	$(DOCKER_COMPOSE) run --rm -w /app/src php npx bower install --allow-root
+```
+
+**For phd5-template based projects**:
+
+```makefile
+install:
+	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer install
+	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/project/
+	$(DOCKER_COMPOSE) run --rm -w /app/project php npx bower install --allow-root
+```
+
+### 5. Remove asset-packagist (optional)
 
 Once migration is complete and tested, you can remove asset-packagist from your repositories:
 
@@ -221,8 +268,9 @@ Assets are installed to standard locations that work with existing Yii alias con
 - **NPM packages**: `/app/node_modules`
   - Mapped via `@root/node_modules` or `@npm` alias
 
-- **Bower packages**: `/app/vendor/bower_components`
-  - Mapped via `@vendor/bower_components` or `@bower` alias
+- **Bower packages**: `/app/vendor/bower-asset`
+  - Mapped via `@vendor/bower-asset` or `@bower` alias
+  - Uses `bower-asset` directory name for Yii compatibility (matches asset-packagist convention)
 
 - **NPM-asset compatibility**: Symlinks created automatically
   - Example: `/app/node_modules/json-editor--json-editor` → `/app/node_modules/@json-editor/json-editor`

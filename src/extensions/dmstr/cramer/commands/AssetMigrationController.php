@@ -50,7 +50,7 @@ class AssetMigrationController extends Controller
     {
         return array_merge(
             parent::optionAliases(),
-            ['o' => 'outputPath']
+            ['o' => 'outputPath', 'c' => 'composerLockFile']
         );
     }
 
