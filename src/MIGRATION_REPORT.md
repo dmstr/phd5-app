@@ -1,6 +1,6 @@
 # Asset Migration Report
 
-Generated: 2025-10-24 09:14:24
+Generated: 2025-12-15 18:47:08
 
 ## Summary
 
@@ -112,8 +112,8 @@ These packages are managed via bower.json:
 | bower-asset/bootstrap-datepicker | v1.9.0 |
 | bower-asset/bootstrap-daterangepicker | v3.1 |
 | bower-asset/chartjs | v2.9.4 |
-| bower-asset/inputmask | 5.0.8 |
-| bower-asset/jquery | 3.6.4 |
+| bower-asset/inputmask | 5.0.9 |
+| bower-asset/jquery | 3.7.1 |
 | bower-asset/jquery-cookie | v1.4.1 |
 | bower-asset/jquery-growl | v1.3.5 |
 | bower-asset/jquery-ui | 1.12.1 |
@@ -133,9 +133,9 @@ These packages are installed directly via npm:
 
 | Package | Version |
 |---------|----------|
-| npm-asset/ace-builds | 1.43.4 |
+| npm-asset/ace-builds | 1.43.5 |
 | npm-asset/ajv | 6.12.6 |
-| npm-asset/core-js | 3.45.1 |
+| npm-asset/core-js | 3.47.0 |
 | npm-asset/dmstr--cookie-consent | 0.4.1 |
 | npm-asset/fast-deep-equal | 3.1.3 |
 | npm-asset/fast-json-stable-stringify | 2.1.0 |

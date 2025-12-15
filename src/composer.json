@@ -4,6 +4,10 @@
     "minimum-stability": "beta",
     "prefer-stable": true,
     "repositories": {
+        "replaced-assets": {
+            "type": "path",
+            "url": "./composer.replaced-assets.json"
+        },
         "merge-plugin": {
             "type": "vcs",
             "url": "https://github.com/schmunk42/composer-merge-plugin.git"
@@ -11,15 +15,10 @@
         "ap": {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        "replaced-assets": {
-            "type": "path",
-            "url": "./assets/replaced"
         }
     },
     "require": {
-        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown",
-        "app/local-replaced-assets": "@dev"
+        "wikimedia/composer-merge-plugin": "dev-feature/respect-lockdown"
     },
     "extra": {
         "merge-plugin": {
