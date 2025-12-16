@@ -160,8 +160,8 @@ COPY project/assets-replaced /app/project/assets-replaced
 COPY project/package.json project/bower.json project/.bowerrc /app/project/
 RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/project/package.json ]; then \
         cd /app/project && \
-        npm --prefix=/app i /app/project/ && \
-        npx bower install --allow-root && \
+        npm --prefix=/app install --omit=dev /app/project/ && \
+        npx bower install --allow-root --force && \
         npm cache clean --force; \
     fi
 ```
@@ -217,8 +217,8 @@ Update your `make install` target to include NPM and Bower installation:
 ```makefile
 install:
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer install
-	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/project/
-	$(DOCKER_COMPOSE) run --rm -w /app/project php npx bower install --allow-root
+	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app install --omit=dev /app/project/
+	$(DOCKER_COMPOSE) run --rm -w /app/project php npx bower install --allow-root --force
 ```
 
 ## Configuration

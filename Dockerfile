@@ -47,8 +47,8 @@ RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
 COPY src/package.json src/bower.json src/.bowerrc /app/src/
 RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
         cd /app/src && \
-        npm --prefix=/app i /app/src/ && \
-        npx bower install --allow-root && \
+        npm --prefix=/app install --omit=dev /app/src/ && \
+        npx bower install --allow-root --force && \
         npm cache clean --force; \
     fi
 
