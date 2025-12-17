@@ -15,7 +15,7 @@ A Yii 2 console command to migrate from asset-packagist managed bower/npm assets
 This tool helps you migrate to native Bower and NPM package management:
 
 - **Bower packages** are installed directly via `bower install`
-- **NPM packages** are installed directly via `npm install`
+- **NPM packages** are installed directly via `yarn install`
 - **Composer replacements** prevent conflicts using a local replacement package
 - **Backward compatibility** is maintained through symlinks and proper path configuration
 
@@ -31,8 +31,11 @@ The Asset Migration Tool has two commands:
 ### `generate`
 - Does everything `analyze` does, plus:
 - Generates `package.json` - NPM dependencies with postinstall hook for symlink creation
+- Generates `.yarnrc` - Yarn configuration for custom modules folder (`--modules-folder /app/node_modules`)
+- Generates `yarn.lock` - Empty initial lockfile (only if not exists)
 - Generates `bower.json` - Bower dependencies with version constraints
-- Generates `composer.replaced-assets.json` - Local Composer package that replaces all asset packages
+- Generates `.bowerrc` - Bower configuration for install directory
+- Generates `assets-replaced/composer.json` - Local Composer package that replaces all asset packages
 - Asks for confirmation before overwriting existing files
 
 ### Local Replacement Package
@@ -137,6 +140,8 @@ This generates all necessary files and asks for confirmation before overwriting 
 
 Check the generated files (location depends on `--outputPath`):
 - `package.json` - Contains NPM dependencies and postinstall hook
+- `.yarnrc` - Yarn configuration (`--modules-folder /app/node_modules`)
+- `yarn.lock` - Empty initial lockfile
 - `bower.json` - Contains Bower dependencies
 - `.bowerrc` - Bower configuration (install directory)
 - `assets-replaced/composer.json` - Local replacement package (in its own directory for Composer path repository)
@@ -150,25 +155,25 @@ See the generated `MIGRATION_REPORT.md` for detailed step-by-step instructions.
 
 ### 1. Dockerfile
 
-Update your Dockerfile to install NPM and Bower packages and copy the assets-replaced directory.
+Update your Dockerfile to install Yarn and Bower packages and copy the assets-replaced directory.
 
 ```dockerfile
 # Copy assets-replaced directory for Composer path repository
 COPY project/assets-replaced /app/project/assets-replaced
 
-# NPM and Bower packages for frontend assets
-COPY project/package.json project/bower.json project/.bowerrc /app/project/
+# Yarn and Bower packages for frontend assets
+COPY project/package.json project/yarn.lock project/.yarnrc project/bower.json project/.bowerrc /app/project/
 RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/project/package.json ]; then \
         cd /app/project && \
-        npm --prefix=/app install --omit=dev /app/project/ && \
+        yarn install --production && \
         npx bower install --allow-root --force && \
-        npm cache clean --force; \
+        yarn cache clean; \
     fi
 ```
 
 **Important notes:**
-- `npm --prefix=/app` installs to `/app/node_modules`
-- `postinstall` hook runs automatically after npm install
+- `.yarnrc` configures `--modules-folder /app/node_modules` so yarn installs to `/app/node_modules` while `package.json` stays in `/app/project`
+- `postinstall` hook runs automatically after yarn install
 - Bower uses `.bowerrc` to install to `/app/vendor/bower-asset` (for compatibility with Yii asset aliases)
 
 ### 2. .bowerrc
@@ -212,12 +217,12 @@ composer config --unset repositories.asset-packagist
 
 ### 4. Makefile
 
-Update your `make install` target to include NPM and Bower installation:
+Update your `make install` target to include Yarn and Bower installation:
 
 ```makefile
 install:
 	$(DOCKER_COMPOSE) run --rm $(PHP_SERVICE) composer install
-	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app install --omit=dev /app/project/
+	$(DOCKER_COMPOSE) run --rm -w /app/project php yarn install --production
 	$(DOCKER_COMPOSE) run --rm -w /app/project php npx bower install --allow-root --force
 ```
 

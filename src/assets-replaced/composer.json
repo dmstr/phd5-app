@@ -13,7 +13,6 @@
         "bower-asset/jquery-cookie": "*",
         "bower-asset/jquery-growl": "*",
         "bower-asset/jquery-ui": "*",
-        "bower-asset/mermaid": "*",
         "bower-asset/microplugin": "*",
         "bower-asset/moment": "*",
         "bower-asset/noty": "*",

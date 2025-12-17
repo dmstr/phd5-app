@@ -1,10 +1,10 @@
 # Asset Migration Report
 
-Generated: 2025-12-15 18:47:08
+Generated: 2025-12-17 13:03:23
 
 ## Summary
 
-- **Bower Assets**: 19
+- **Bower Assets**: 18
 - **NPM Assets**: 19
 
 ## Migration Strategy
@@ -117,7 +117,6 @@ These packages are managed via bower.json:
 | bower-asset/jquery-cookie | v1.4.1 |
 | bower-asset/jquery-growl | v1.3.5 |
 | bower-asset/jquery-ui | 1.12.1 |
-| bower-asset/mermaid | 8.14.0 |
 | bower-asset/microplugin | v0.0.3 |
 | bower-asset/moment | 2.30.1 |
 | bower-asset/noty | v2.4.1 |

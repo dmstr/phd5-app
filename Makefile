@@ -80,6 +80,8 @@ upgrade: ##@base update application package, pull, rebuild
 	# Note: If you have performance with this operation issues, please check the documentation under http://phd.dmstr.io/docs
 	#
 	$(DOCKER_COMPOSE) run --rm php composer -dsrc update -v -W
+	$(DOCKER_COMPOSE) run --rm -w /app/src php yarn upgrade
+	$(DOCKER_COMPOSE) run --rm -w /app/src php npx bower update --allow-root
 
 dist-upgrade: ##@base update application package, pull, rebuild
 	$(DOCKER_COMPOSE) build --pull --build-arg BUILD_NO_INSTALL=1
@@ -88,7 +90,7 @@ dist-upgrade: ##@base update application package, pull, rebuild
 
 install: ##@base install PHP packages
 	$(DOCKER_COMPOSE) run --rm php composer -dsrc  install
-	$(DOCKER_COMPOSE) run --rm php npm --prefix=/app i /app/src/
+	$(DOCKER_COMPOSE) run --rm -w /app/src php yarn install --production
 	$(DOCKER_COMPOSE) run --rm -w /app/src php npx bower install --allow-root
 
 bash:	 ##@development execute application bash in php container

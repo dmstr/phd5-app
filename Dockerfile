@@ -1,9 +1,10 @@
 FROM yiisoftware/yii2-php:8.4-fpm-nginx
 ARG BUILD_NO_INSTALL
 
-# Install Node.js and NPM
+# Install Node.js, NPM and Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
- && apt-get install -y nodejs
+ && apt-get install -y nodejs \
+ && npm install -g yarn
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
@@ -43,13 +44,13 @@ RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         ln -s npm-asset /app/vendor/npm; \
     fi
 
-# NPM and Bower packages for frontend assets
-COPY src/package.json src/bower.json src/.bowerrc /app/src/
+# Yarn and Bower packages for frontend assets
+COPY src/package.json src/yarn.lock src/.yarnrc src/bower.json src/.bowerrc /app/src/
 RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
         cd /app/src && \
-        npm --prefix=/app install --omit=dev /app/src/ && \
+        yarn install --production && \
         npx bower install --allow-root --force && \
-        npm cache clean --force; \
+        yarn cache clean; \
     fi
 
 # Application source-code
