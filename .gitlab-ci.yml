@@ -6,9 +6,6 @@ stages:
   - deploy
   - cleanup
 
-services:
-  - docker:24-dind
-
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}${CI_PROJECT_NAME}"
   COMPOSE_FILE: "./docker-compose.yml:./docker/docker-compose.dev.yml:./docker/docker-compose.test.yml:./docker/docker-compose.selenium.yml"
