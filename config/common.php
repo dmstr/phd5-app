@@ -159,7 +159,8 @@ $common = [
             'Opera' => false,
             'Vivaldi' => false,
             'IE' => false
-        ]
+        ],
+        'backend.disableConfigView' => getenv('APP_DISABLE_CONFIG_VIEW') ?: false,
     ],
     'container' => [
         'definitions' => [
