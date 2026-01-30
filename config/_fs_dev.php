@@ -22,6 +22,7 @@
  *   ```
  */
 
+use eluhr\flysystemRestApi\plugins\AvPlugin;
 use eluhr\flysystemRestApi\plugins\ClipBoardValuesPlugin;
 use eluhr\flysystemRestApi\plugins\FileExtensionPlugin;
 use eluhr\flysystemRestApi\plugins\FilePreviewPlugin;
@@ -114,7 +115,8 @@ return [
                         }
                         return null;
                     }
-                ]
+                ],
+                'class' => AvPlugin::class,
             ],
         ],
         'urlManager' => [
@@ -132,7 +134,7 @@ return [
     ],
     'modules' => [
         // this is the rest-api module, which requires a valid flysystemRestApi\components\FileStorage id
-        // for dev we have a simple backend controller inside this module, but this should be slitted...
+        // for dev we have a simple backend controller inside this module, but this should be splitted...
         'filemanager' => [
             'class' => eluhr\flysystemRestApi\Module::class,
             'fileStorage' => 'fsLocal',
