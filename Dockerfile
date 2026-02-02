@@ -1,10 +1,15 @@
 FROM yiisoftware/yii2-php:8.4-fpm-nginx
 ARG BUILD_NO_INSTALL
 
-# Install Node.js, NPM and Yarn
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
- && apt-get install -y nodejs \
- && npm install -g yarn
+# Install Node.js from official binaries (avoiding NodeSource GPG/SHA1 issues)
+ENV NODE_VERSION=20.18.1
+RUN ARCH=$(dpkg --print-architecture) && \
+    if [ "$ARCH" = "amd64" ]; then NODE_ARCH="x64"; \
+    elif [ "$ARCH" = "arm64" ]; then NODE_ARCH="arm64"; \
+    else echo "Unsupported architecture: $ARCH" && exit 1; fi && \
+    curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${NODE_ARCH}.tar.xz" \
+        | tar -xJf - -C /usr/local --strip-components=1 && \
+    npm install -g yarn
 
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
