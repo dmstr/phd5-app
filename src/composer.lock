@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "478d3d14e356aeb6a69ffd12ec2bcba0",
+    "content-hash": "78d4edf05052de8ee8eb1ae0e2ddee4e",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -399,6 +399,59 @@
             "time": "2019-08-29T08:20:20+00:00"
         },
         {
+            "name": "app/local-replaced-assets",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./assets-replaced",
+                "reference": "d08ff46ce1417bdc72717ac2303252351852a4d4"
+            },
+            "replace": {
+                "bower-asset/ace-builds": "*",
+                "bower-asset/bootstrap": "*",
+                "bower-asset/bootstrap-datepicker": "*",
+                "bower-asset/bootstrap-daterangepicker": "*",
+                "bower-asset/chartjs": "*",
+                "bower-asset/inputmask": "*",
+                "bower-asset/jquery": "*",
+                "bower-asset/jquery-cookie": "*",
+                "bower-asset/jquery-growl": "*",
+                "bower-asset/jquery-ui": "*",
+                "bower-asset/microplugin": "*",
+                "bower-asset/moment": "*",
+                "bower-asset/noty": "*",
+                "bower-asset/punycode": "*",
+                "bower-asset/selectize": "*",
+                "bower-asset/sifter": "*",
+                "bower-asset/smalot-bootstrap-datetimepicker": "*",
+                "bower-asset/yii2-pjax": "*",
+                "npm-asset/ace-builds": "*",
+                "npm-asset/ajv": "*",
+                "npm-asset/core-js": "*",
+                "npm-asset/dmstr--cookie-consent": "*",
+                "npm-asset/fast-deep-equal": "*",
+                "npm-asset/fast-json-stable-stringify": "*",
+                "npm-asset/javascript-natural-sort": "*",
+                "npm-asset/jmespath": "*",
+                "npm-asset/json-editor--json-editor": "*",
+                "npm-asset/json-schema-traverse": "*",
+                "npm-asset/json-source-map": "*",
+                "npm-asset/jsoneditor": "*",
+                "npm-asset/jsonrepair": "*",
+                "npm-asset/mobius1-selectr": "*",
+                "npm-asset/picomodal": "*",
+                "npm-asset/punycode": "*",
+                "npm-asset/sphinxxxx--color-conversion": "*",
+                "npm-asset/uri-js": "*",
+                "npm-asset/vanilla-picker": "*"
+            },
+            "type": "library",
+            "description": "Asset package replacements for phd5-app (native bower approach)",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "bedezign/yii2-audit",
             "version": "1.2.8",
             "source": {
@@ -533,353 +586,17 @@
             "time": "2024-10-11T10:33:12+00:00"
         },
         {
-            "name": "bower-asset/ace-builds",
-            "version": "v1.15.3",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ajaxorg/ace-builds.git",
-                "reference": "a6f05db4a359a66152afc29b6382caeb09a84cbd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ajaxorg/ace-builds/zipball/a6f05db4a359a66152afc29b6382caeb09a84cbd",
-                "reference": "a6f05db4a359a66152afc29b6382caeb09a84cbd"
-            },
-            "type": "bower-asset",
-            "license": [
-                "BSD"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap",
-            "version": "v3.4.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:twbs/bootstrap.git",
-                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
-                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.9.1,<4.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap-datepicker",
-            "version": "1.10.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:eternicode/bootstrap-datepicker.git",
-                "reference": "722dc29432e89e048e5677b51fb4cfd8bbdab13c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/722dc29432e89e048e5677b51fb4cfd8bbdab13c",
-                "reference": "722dc29432e89e048e5677b51fb4cfd8bbdab13c"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7.1,<4.0.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/bootstrap-daterangepicker",
-            "version": "v3.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:dangrossman/bootstrap-daterangepicker.git",
-                "reference": "5d9eb2cce58434baeeb82db39928c695420739a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dangrossman/bootstrap-daterangepicker/zipball/5d9eb2cce58434baeeb82db39928c695420739a2",
-                "reference": "5d9eb2cce58434baeeb82db39928c695420739a2"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.9.1,<4.0",
-                "bower-asset/moment": ">=2.9.0"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/chartjs",
-            "version": "v2.9.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:nnnick/Chart.js.git",
-                "reference": "9bd4cf82fda9f50a5fb50b72843e06ab88124278"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nnnick/Chart.js/zipball/9bd4cf82fda9f50a5fb50b72843e06ab88124278",
-                "reference": "9bd4cf82fda9f50a5fb50b72843e06ab88124278"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/inputmask",
-            "version": "5.0.9",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7"
-            },
-            "type": "bower-asset",
-            "license": [
-                "http://opensource.org/licenses/mit-license.php"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery",
-            "version": "3.7.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/fde1f76e2799dd877c176abde0ec836553246991",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-cookie",
-            "version": "v1.4.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:carhartl/jquery-cookie.git",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/carhartl/jquery-cookie/zipball/7f88a4e631aba8a8c688fd8999ce6b9bcfd50718",
-                "reference": "7f88a4e631aba8a8c688fd8999ce6b9bcfd50718"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.2"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/jquery-growl",
-            "version": "v1.3.5",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ksylvest/jquery-growl.git",
-                "reference": "b26d47cacb316ec291a6d12a77b18aef26a42fcd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ksylvest/jquery-growl/zipball/b26d47cacb316ec291a6d12a77b18aef26a42fcd",
-                "reference": "b26d47cacb316ec291a6d12a77b18aef26a42fcd"
-            },
-            "require": {
-                "bower-asset/jquery": "dev-default|*"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/jquery-ui",
-            "version": "1.12.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:components/jqueryui.git",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/microplugin",
-            "version": "v0.0.3",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:brianreavis/microplugin.js.git",
-                "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brianreavis/microplugin.js/zipball/d8671e6cc769938648f8735610534427cdeeaf67",
-                "reference": "d8671e6cc769938648f8735610534427cdeeaf67"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/moment",
-            "version": "2.30.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:moment/moment.git",
-                "reference": "485d9a7d709bd5f3869a7ad24630cf0746d072dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/moment/moment/zipball/485d9a7d709bd5f3869a7ad24630cf0746d072dc",
-                "reference": "485d9a7d709bd5f3869a7ad24630cf0746d072dc"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/noty",
-            "version": "v2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/needim/noty.git",
-                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/needim/noty/zipball/ebb543ef0a3c039cdb7cdae887197ffa43433d52",
-                "reference": "ebb543ef0a3c039cdb7cdae887197ffa43433d52"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/punycode",
-            "version": "v2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mathiasbynens/punycode.js.git",
-                "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/9e1b2cda98d215d3a73fcbfe93c62e021f4ba768",
-                "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/selectize",
-            "version": "0.12.6-patch1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:selectize/selectize.js.git",
-                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/selectize/selectize.js/zipball/b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9",
-                "reference": "b8df29c9d4733857a4df4ddbf40d72abfd7c3ae9"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7.0",
-                "bower-asset/microplugin": "dev-0.0.x|0.0.x",
-                "bower-asset/sifter": "dev-0.5.x|0.5.x"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/sifter",
-            "version": "v0.5.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:brianreavis/sifter.js.git",
-                "reference": "2009705c24ba9bb0fbe71fa3c60b1dfa682538d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brianreavis/sifter.js/zipball/2009705c24ba9bb0fbe71fa3c60b1dfa682538d2",
-                "reference": "2009705c24ba9bb0fbe71fa3c60b1dfa682538d2"
-            },
-            "type": "bower-asset",
-            "license": [
-                "Apache License, Version 2.0"
-            ]
-        },
-        {
-            "name": "bower-asset/smalot-bootstrap-datetimepicker",
-            "version": "2.4.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:smalot/bootstrap-datetimepicker.git",
-                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/smalot/bootstrap-datetimepicker/zipball/32143c8b45575e51c92a8e29997cbe556d1bbba3",
-                "reference": "32143c8b45575e51c92a8e29997cbe556d1bbba3"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/yii2-pjax",
-            "version": "2.0.9",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:yiisoft/jquery-pjax.git",
-                "reference": "452b56b7124326487fd0d3be6b205fcaa66598a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/452b56b7124326487fd0d3be6b205fcaa66598a0",
-                "reference": "452b56b7124326487fd0d3be6b205fcaa66598a0"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.8"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
             "name": "brick/math",
-            "version": "0.14.1",
+            "version": "0.14.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0"
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/f05858549e5f9d7bb45875a75583240a38a281d0",
-                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0",
+                "url": "https://api.github.com/repos/brick/math/zipball/63422359a44b7f06cae63c3b429b59e8efcc0629",
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629",
                 "shasum": ""
             },
             "require": {
@@ -918,7 +635,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.1"
+                "source": "https://github.com/brick/math/tree/0.14.8"
             },
             "funding": [
                 {
@@ -926,7 +643,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-24T14:40:29+00:00"
+            "time": "2026-02-10T14:33:43+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -1900,16 +1617,16 @@
         },
         {
             "name": "dmstr/yii2-json-editor",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmstr/yii2-json-editor.git",
-                "reference": "e7d4a11651f5308564f5cd9bd15dfa4c495fad39"
+                "reference": "50a10cb126d4fef7eaf9022e1dfbb819e6eb0b8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/e7d4a11651f5308564f5cd9bd15dfa4c495fad39",
-                "reference": "e7d4a11651f5308564f5cd9bd15dfa4c495fad39",
+                "url": "https://api.github.com/repos/dmstr/yii2-json-editor/zipball/50a10cb126d4fef7eaf9022e1dfbb819e6eb0b8b",
+                "reference": "50a10cb126d4fef7eaf9022e1dfbb819e6eb0b8b",
                 "shasum": ""
             },
             "require": {
@@ -1946,9 +1663,49 @@
             ],
             "support": {
                 "issues": "https://github.com/dmstr/yii2-json-editor/issues",
-                "source": "https://github.com/dmstr/yii2-json-editor/tree/1.5.1"
+                "source": "https://github.com/dmstr/yii2-json-editor/tree/1.5.2"
             },
-            "time": "2025-10-06T13:24:46+00:00"
+            "time": "2026-02-09T10:24:42+00:00"
+        },
+        {
+            "name": "dmstr/yii2-mermaid-asset",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmstr/yii2-mermaid-asset.git",
+                "reference": "d03778d069c6a918cb9694fd52ef1be1a07b54c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmstr/yii2-mermaid-asset/zipball/d03778d069c6a918cb9694fd52ef1be1a07b54c5",
+                "reference": "d03778d069c6a918cb9694fd52ef1be1a07b54c5",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "dmstr\\web\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Munk",
+                    "email": "tobias@diemeisterei.de"
+                }
+            ],
+            "description": "Mermaid asset bundle for Yii 2.0 Framework",
+            "support": {
+                "issues": "https://github.com/dmstr/yii2-mermaid-asset/issues",
+                "source": "https://github.com/dmstr/yii2-mermaid-asset/tree/2.0.0"
+            },
+            "time": "2025-12-16T14:21:32+00:00"
         },
         {
             "name": "dmstr/yii2-pages-module",
@@ -4689,107 +4446,19 @@
             "time": "2025-08-01T08:46:24+00:00"
         },
         {
-            "name": "npm-asset/ace-builds",
-            "version": "1.43.6",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/ace-builds/-/ace-builds-1.43.6.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "BSD-3-Clause"
-            ]
-        },
-        {
-            "name": "npm-asset/ajv",
-            "version": "6.12.6",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
-            },
-            "require": {
-                "npm-asset/fast-deep-equal": ">=3.1.1,<4.0.0",
-                "npm-asset/fast-json-stable-stringify": ">=2.0.0,<3.0.0",
-                "npm-asset/json-schema-traverse": ">=0.4.1,<0.5.0",
-                "npm-asset/uri-js": ">=4.2.2,<5.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/babel--helper-string-parser",
-            "version": "v7.28.6",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:babel/babel.git",
-                "reference": "d7f400889567ae18ef9ac41b024b5120f6060e17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/babel/babel/zipball/d7f400889567ae18ef9ac41b024b5120f6060e17",
-                "reference": "d7f400889567ae18ef9ac41b024b5120f6060e17"
-            },
-            "type": "npm-asset"
-        },
-        {
-            "name": "npm-asset/babel--helper-validator-identifier",
-            "version": "v7.28.6",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:babel/babel.git",
-                "reference": "d7f400889567ae18ef9ac41b024b5120f6060e17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/babel/babel/zipball/d7f400889567ae18ef9ac41b024b5120f6060e17",
-                "reference": "d7f400889567ae18ef9ac41b024b5120f6060e17"
-            },
-            "type": "npm-asset"
-        },
-        {
             "name": "npm-asset/babel--parser",
-            "version": "7.28.5",
+            "version": "v7.29.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:babel/babel.git",
+                "reference": "713d478674cd9f29ff84568f50df43393d6e3068"
+            },
             "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.28.5.tgz"
+                "type": "zip",
+                "url": "https://api.github.com/repos/babel/babel/zipball/713d478674cd9f29ff84568f50df43393d6e3068",
+                "reference": "713d478674cd9f29ff84568f50df43393d6e3068"
             },
-            "require": {
-                "npm-asset/babel--types": ">=7.28.5,<8.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/babel--types",
-            "version": "7.28.5",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@babel/types/-/types-7.28.5.tgz"
-            },
-            "require": {
-                "npm-asset/babel--helper-string-parser": ">=7.27.1,<8.0.0",
-                "npm-asset/babel--helper-validator-identifier": ">=7.28.5,<8.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/core-js",
-            "version": "3.48.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/core-js/-/core-js-3.48.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
+            "type": "npm-asset"
         },
         {
             "name": "npm-asset/csstype",
@@ -4797,18 +4466,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/dmstr--cookie-consent",
-            "version": "0.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@dmstr/cookie-consent/-/cookie-consent-0.4.1.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -4840,54 +4497,6 @@
             ]
         },
         {
-            "name": "npm-asset/fast-deep-equal",
-            "version": "3.1.3",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/fast-json-stable-stringify",
-            "version": "2.1.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/javascript-natural-sort",
-            "version": "0.7.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/javascript-natural-sort/-/javascript-natural-sort-0.7.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jmespath",
-            "version": "0.16.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jmespath/-/jmespath-0.16.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
             "name": "npm-asset/jridgewell--sourcemap-codec",
             "version": "1.5.5",
             "dist": {
@@ -4900,80 +4509,6 @@
             ]
         },
         {
-            "name": "npm-asset/json-editor--json-editor",
-            "version": "2.15.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@json-editor/json-editor/-/json-editor-2.15.2.tgz"
-            },
-            "require": {
-                "npm-asset/core-js": ">=3.27.2,<4.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/json-schema-traverse",
-            "version": "0.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/json-source-map",
-            "version": "0.6.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/json-source-map/-/json-source-map-0.6.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jsoneditor",
-            "version": "9.10.5",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jsoneditor/-/jsoneditor-9.10.5.tgz"
-            },
-            "require": {
-                "npm-asset/ace-builds": ">=1.31.1,<2.0.0",
-                "npm-asset/ajv": ">=6.12.6,<7.0.0",
-                "npm-asset/javascript-natural-sort": ">=0.7.1,<0.8.0",
-                "npm-asset/jmespath": ">=0.16.0,<0.17.0",
-                "npm-asset/json-source-map": ">=0.6.1,<0.7.0",
-                "npm-asset/jsonrepair": "3.1.0",
-                "npm-asset/mobius1-selectr": ">=2.4.13,<3.0.0",
-                "npm-asset/picomodal": ">=3.0.0,<4.0.0",
-                "npm-asset/vanilla-picker": ">=2.12.2,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "Apache-2.0"
-            ]
-        },
-        {
-            "name": "npm-asset/jsonrepair",
-            "version": "3.1.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jsonrepair/-/jsonrepair-3.1.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
-            ]
-        },
-        {
             "name": "npm-asset/magic-string",
             "version": "0.30.21",
             "dist": {
@@ -4982,18 +4517,6 @@
             },
             "require": {
                 "npm-asset/jridgewell--sourcemap-codec": ">=1.5.5,<2.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/mobius1-selectr",
-            "version": "2.4.13",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/mobius1-selectr/-/mobius1-selectr-2.4.13.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -5022,18 +4545,6 @@
             "type": "npm-asset",
             "license": [
                 "ISC"
-            ]
-        },
-        {
-            "name": "npm-asset/picomodal",
-            "version": "3.0.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/picomodal/-/picomodal-3.0.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
             ]
         },
         {
@@ -5070,18 +4581,6 @@
             ]
         },
         {
-            "name": "npm-asset/punycode",
-            "version": "2.3.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
             "name": "npm-asset/source-map-js",
             "version": "1.2.1",
             "dist": {
@@ -5091,48 +4590,6 @@
             "type": "npm-asset",
             "license": [
                 "BSD-3-Clause"
-            ]
-        },
-        {
-            "name": "npm-asset/sphinxxxx--color-conversion",
-            "version": "2.2.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/@sphinxxxx/color-conversion/-/color-conversion-2.2.2.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
-            ]
-        },
-        {
-            "name": "npm-asset/uri-js",
-            "version": "4.4.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"
-            },
-            "require": {
-                "npm-asset/punycode": ">=2.1.0,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "BSD-2-Clause"
-            ]
-        },
-        {
-            "name": "npm-asset/vanilla-picker",
-            "version": "2.12.3",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/vanilla-picker/-/vanilla-picker-2.12.3.tgz"
-            },
-            "require": {
-                "npm-asset/sphinxxxx--color-conversion": ">=2.2.2,<3.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "ISC"
             ]
         },
         {
@@ -5839,16 +5296,16 @@
         },
         {
             "name": "predis/predis",
-            "version": "v3.3.0",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "153097374b39a2f737fe700ebcd725642526cdec"
+                "reference": "1183f5732e6b10efd33f64984a96726eaecb59aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/153097374b39a2f737fe700ebcd725642526cdec",
-                "reference": "153097374b39a2f737fe700ebcd725642526cdec",
+                "url": "https://api.github.com/repos/predis/predis/zipball/1183f5732e6b10efd33f64984a96726eaecb59aa",
+                "reference": "1183f5732e6b10efd33f64984a96726eaecb59aa",
                 "shasum": ""
             },
             "require": {
@@ -5890,7 +5347,7 @@
             ],
             "support": {
                 "issues": "https://github.com/predis/predis/issues",
-                "source": "https://github.com/predis/predis/tree/v3.3.0"
+                "source": "https://github.com/predis/predis/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -5898,7 +5355,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-24T17:48:50+00:00"
+            "time": "2026-02-11T17:30:28+00:00"
         },
         {
             "name": "psr/clock",
@@ -6421,12 +5878,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "c4162b6092bc6170cc6d0758ba6ee7d29d0dfbb8"
+                "reference": "0827484199a3d7d67a4f0f72637f235ca29b48d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c4162b6092bc6170cc6d0758ba6ee7d29d0dfbb8",
-                "reference": "c4162b6092bc6170cc6d0758ba6ee7d29d0dfbb8",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0827484199a3d7d67a4f0f72637f235ca29b48d6",
+                "reference": "0827484199a3d7d67a4f0f72637f235ca29b48d6",
                 "shasum": ""
             },
             "conflict": {
@@ -6457,6 +5914,7 @@
                 "amphp/artax": "<1.0.6|>=2,<2.0.6",
                 "amphp/http": "<=1.7.2|>=2,<=2.1",
                 "amphp/http-client": ">=4,<4.4",
+                "amphp/http-server": ">=2.0.0.0-RC1-dev,<2.1.10|>=3.0.0.0-beta1,<3.4.4",
                 "anchorcms/anchor-cms": "<=0.12.7",
                 "andreapollastri/cipi": "<=3.1.15",
                 "andrewhaine/silverstripe-form-capture": ">=0.2,<=0.2.3|>=1,<1.0.2|>=2,<2.2.5",
@@ -6536,6 +5994,7 @@
                 "cesnet/simplesamlphp-module-proxystatistics": "<3.1",
                 "chriskacerguis/codeigniter-restserver": "<=2.7.1",
                 "chrome-php/chrome": "<1.14",
+                "ci4-cms-erp/ci4ms": "<0.28.5",
                 "civicrm/civicrm-core": ">=4.2,<4.2.9|>=4.3,<4.3.3",
                 "ckeditor/ckeditor": "<4.25",
                 "clickstorm/cs-seo": ">=6,<6.8|>=7,<7.5|>=8,<8.4|>=9,<9.3",
@@ -6566,7 +6025,10 @@
                 "cosenary/instagram": "<=2.3",
                 "couleurcitron/tarteaucitron-wp": "<0.3",
                 "cpsit/typo3-mailqueue": "<0.4.3|>=0.5,<0.5.1",
-                "craftcms/cms": "<=4.16.16|>=5,<=5.8.20",
+                "craftcms/cms": "<4.17.0.0-beta1|>=5,<5.9.0.0-beta1",
+                "craftcms/commerce": ">=4.0.0.0-RC1-dev,<=4.10|>=5,<=5.5.1",
+                "craftcms/composer": ">=4.0.0.0-RC1-dev,<=4.10|>=5.0.0.0-RC1-dev,<=5.5.1",
+                "craftcms/craft": ">=3.5,<=4.16.17|>=5.0.0.0-RC1-dev,<=5.8.21",
                 "croogo/croogo": "<=4.0.7",
                 "cuyz/valinor": "<0.12",
                 "czim/file-handling": "<1.5|>=2,<2.3",
@@ -6584,7 +6046,7 @@
                 "derhansen/sf_event_mgt": "<4.3.1|>=5,<5.1.1|>=7,<7.4",
                 "desperado/xml-bundle": "<=0.1.7",
                 "dev-lancer/minecraft-motd-parser": "<=1.0.5",
-                "devcode-it/openstamanager": "<=2.9.4",
+                "devcode-it/openstamanager": "<=2.9.8",
                 "devgroup/dotplant": "<2020.09.14-dev",
                 "digimix/wp-svg-upload": "<=1",
                 "directmailteam/direct-mail": "<6.0.3|>=7,<7.0.3|>=8,<9.5.2",
@@ -6667,18 +6129,18 @@
                 "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2.1|>=5,<5.0.1|>=5.1,<5.1.1|>=5.3.0.0-beta1,<5.3.5",
                 "ezsystems/ezplatform-graphql": ">=1.0.0.0-RC1-dev,<1.0.13|>=2.0.0.0-beta1,<2.3.12",
                 "ezsystems/ezplatform-http-cache": "<2.3.16",
-                "ezsystems/ezplatform-kernel": "<1.2.5.1-dev|>=1.3,<1.3.35",
+                "ezsystems/ezplatform-kernel": "<=1.2.5|>=1.3,<1.3.35",
                 "ezsystems/ezplatform-rest": ">=1.2,<=1.2.2|>=1.3,<1.3.8",
                 "ezsystems/ezplatform-richtext": ">=2.3,<2.3.26|>=3.3,<3.3.40",
                 "ezsystems/ezplatform-solr-search-engine": ">=1.7,<1.7.12|>=2,<2.0.2|>=3.3,<3.3.15",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
-                "ezsystems/ezpublish-kernel": "<6.13.8.2-dev|>=7,<7.5.31",
+                "ezsystems/ezpublish-kernel": "<=6.13.8.1|>=7,<7.5.31",
                 "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.03.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1-dev|>=2.5,<2.5.15",
                 "ezyang/htmlpurifier": "<=4.2",
                 "facade/ignition": "<1.16.15|>=2,<2.4.2|>=2.5,<2.5.2",
-                "facturascripts/facturascripts": "<=2025.4|==2025.11|==2025.41|==2025.43",
+                "facturascripts/facturascripts": "<2025.81",
                 "fastly/magento2": "<1.2.26",
                 "feehi/cms": "<=2.1.1",
                 "feehi/feehicms": "<=2.1.1",
@@ -6719,6 +6181,7 @@
                 "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "friendsoftypo3/openid": ">=4.5,<4.5.31|>=4.7,<4.7.16|>=6,<6.0.11|>=6.1,<6.1.6",
                 "froala/wysiwyg-editor": "<=4.3",
+                "frosh/adminer-platform": "<2.2.1",
                 "froxlor/froxlor": "<=2.2.5",
                 "frozennode/administrator": "<=5.0.12",
                 "fuel/core": "<1.8.1",
@@ -6903,7 +6366,7 @@
                 "microsoft/microsoft-graph": ">=1.16,<1.109.1|>=2,<2.0.1",
                 "microsoft/microsoft-graph-beta": "<2.0.1",
                 "microsoft/microsoft-graph-core": "<2.0.2",
-                "microweber/microweber": "<=2.0.19",
+                "microweber/microweber": "<2.0.20",
                 "mikehaertl/php-shellcommand": "<1.6.1",
                 "mineadmin/mineadmin": "<=3.0.9",
                 "miniorange/miniorange-saml": "<1.4.3",
@@ -6967,7 +6430,7 @@
                 "open-web-analytics/open-web-analytics": "<1.8.1",
                 "opencart/opencart": ">=0",
                 "openid/php-openid": "<2.3",
-                "openmage/magento-lts": "<20.16",
+                "openmage/magento-lts": "<20.16.1",
                 "opensolutions/vimbadmin": "<=3.0.15",
                 "opensource-workshop/connect-cms": "<1.8.7|>=2,<2.4.7",
                 "orchid/platform": ">=8,<14.43",
@@ -7023,6 +6486,7 @@
                 "phpwhois/phpwhois": "<=4.2.5",
                 "phpxmlrpc/extras": "<0.6.1",
                 "phpxmlrpc/phpxmlrpc": "<4.9.2",
+                "phraseanet/phraseanet": "==4.0.3",
                 "pi/pi": "<=2.5",
                 "pimcore/admin-ui-classic-bundle": "<=1.7.15|>=2.0.0.0-RC1-dev,<=2.2.2",
                 "pimcore/customer-management-framework-bundle": "<4.2.1",
@@ -7045,7 +6509,7 @@
                 "prestashop/blockwishlist": ">=2,<2.1.1",
                 "prestashop/contactform": ">=1.0.1,<4.3",
                 "prestashop/gamification": "<2.3.2",
-                "prestashop/prestashop": "<8.2.3",
+                "prestashop/prestashop": "<8.2.4|>=9.0.0.0-alpha1,<9.0.3",
                 "prestashop/productcomments": "<5.0.2",
                 "prestashop/ps_checkout": "<4.4.1|>=5,<5.0.5",
                 "prestashop/ps_contactinfo": "<=3.3.2",
@@ -7056,6 +6520,7 @@
                 "processwire/processwire": "<=3.0.246",
                 "propel/propel": ">=2.0.0.0-alpha1,<=2.0.0.0-alpha7",
                 "propel/propel1": ">=1,<=1.7.1",
+                "psy/psysh": "<=0.11.22|>=0.12,<=0.12.18",
                 "pterodactyl/panel": "<1.12",
                 "ptheofan/yii2-statemachine": ">=2.0.0.0-RC1-dev,<=2",
                 "ptrofimov/beanstalk_console": "<1.7.14",
@@ -7159,7 +6624,7 @@
                 "starcitizentools/short-description": ">=4,<4.0.1",
                 "starcitizentools/tabber-neue": ">=1.9.1,<2.7.2|>=3,<3.1.1",
                 "starcitizenwiki/embedvideo": "<=4",
-                "statamic/cms": "<=5.22",
+                "statamic/cms": "<5.73.6|>=6,<6.2.5",
                 "stormpath/sdk": "<9.9.99",
                 "studio-42/elfinder": "<=2.1.64",
                 "studiomitte/friendlycaptcha": "<0.1.4",
@@ -7298,7 +6763,7 @@
                 "vertexvaar/falsftp": "<0.2.6",
                 "villagedefrance/opencart-overclocked": "<=1.11.1",
                 "vova07/yii2-fileapi-widget": "<0.1.9",
-                "vrana/adminer": "<=4.8.1",
+                "vrana/adminer": "<5.4.2",
                 "vufind/vufind": ">=2,<9.1.1",
                 "waldhacker/hcaptcha": "<2.1.2",
                 "wallabag/tcpdf": "<6.2.22",
@@ -7319,7 +6784,7 @@
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "winter/wn-backend-module": "<1.2.4",
-                "winter/wn-cms-module": "<1.0.476|>=1.1,<1.1.11|>=1.2,<1.2.7",
+                "winter/wn-cms-module": "<=1.2.9",
                 "winter/wn-dusk-plugin": "<2.1",
                 "winter/wn-system-module": "<1.2.4",
                 "wintercms/winter": "<=1.2.3",
@@ -7427,7 +6892,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-28T22:08:32+00:00"
+            "time": "2026-02-11T19:25:13+00:00"
         },
         {
             "name": "schmunk42/retry",
@@ -10549,23 +10014,23 @@
         },
         {
             "name": "codeception/lib-web",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/lib-web.git",
-                "reference": "bbec12e789c3b810ec8cb86e5f46b5bfd673c441"
+                "reference": "a030a3a22fc8e856b5957086794ed5403c7992d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/lib-web/zipball/bbec12e789c3b810ec8cb86e5f46b5bfd673c441",
-                "reference": "bbec12e789c3b810ec8cb86e5f46b5bfd673c441",
+                "url": "https://api.github.com/repos/Codeception/lib-web/zipball/a030a3a22fc8e856b5957086794ed5403c7992d9",
+                "reference": "a030a3a22fc8e856b5957086794ed5403c7992d9",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "guzzlehttp/psr7": "^2.0",
                 "php": "^8.2",
-                "phpunit/phpunit": "^11.5 | ^12",
+                "phpunit/phpunit": "^11.5 | ^12 | ^13",
                 "symfony/css-selector": ">=4.4.24 <9.0"
             },
             "conflict": {
@@ -10596,9 +10061,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Codeception/lib-web/issues",
-                "source": "https://github.com/Codeception/lib-web/tree/2.0.1"
+                "source": "https://github.com/Codeception/lib-web/tree/2.1.0"
             },
-            "time": "2025-11-27T21:09:09+00:00"
+            "time": "2026-02-06T15:22:13+00:00"
         },
         {
             "name": "codeception/lib-xml",
@@ -11057,27 +10522,27 @@
         },
         {
             "name": "codeception/stub",
-            "version": "4.2.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Stub.git",
-                "reference": "0c573cd5c62a828dadadc41bc56f8434860bb7bb"
+                "reference": "6305b97eaf6ea9bdaed29a5bd4d6f2948f577d8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Stub/zipball/0c573cd5c62a828dadadc41bc56f8434860bb7bb",
-                "reference": "0c573cd5c62a828dadadc41bc56f8434860bb7bb",
+                "url": "https://api.github.com/repos/Codeception/Stub/zipball/6305b97eaf6ea9bdaed29a5bd4d6f2948f577d8f",
+                "reference": "6305b97eaf6ea9bdaed29a5bd4d6f2948f577d8f",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.1",
-                "phpunit/phpunit": "^8.4 | ^9.0 | ^10.0 | ^11 | ^12"
+                "phpunit/phpunit": "^8.4 | ^9.0 | ^10.0 | ^11 | ^12 | ^13"
             },
             "conflict": {
                 "codeception/codeception": "<5.0.6"
             },
             "require-dev": {
-                "consolidation/robo": "^3.0"
+                "consolidation/robo": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -11092,9 +10557,9 @@
             "description": "Flexible Stub wrapper for PHPUnit's Mock Builder",
             "support": {
                 "issues": "https://github.com/Codeception/Stub/issues",
-                "source": "https://github.com/Codeception/Stub/tree/4.2.1"
+                "source": "https://github.com/Codeception/Stub/tree/4.3.0"
             },
-            "time": "2025-12-05T13:37:14+00:00"
+            "time": "2026-02-06T15:19:04+00:00"
         },
         {
             "name": "composer/semver",
@@ -11412,16 +10877,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.93.1",
+            "version": "v3.94.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "b3546ab487c0762c39f308dc1ec0ea2c461fc21a"
+                "reference": "883b20fb38c7866de9844ab6d0a205c423bde2d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/b3546ab487c0762c39f308dc1ec0ea2c461fc21a",
-                "reference": "b3546ab487c0762c39f308dc1ec0ea2c461fc21a",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/883b20fb38c7866de9844ab6d0a205c423bde2d4",
+                "reference": "883b20fb38c7866de9844ab6d0a205c423bde2d4",
                 "shasum": ""
             },
             "require": {
@@ -11438,7 +10903,7 @@
                 "react/event-loop": "^1.5",
                 "react/socket": "^1.16",
                 "react/stream": "^1.4",
-                "sebastian/diff": "^4.0.6 || ^5.1.1 || ^6.0.2 || ^7.0",
+                "sebastian/diff": "^4.0.6 || ^5.1.1 || ^6.0.2 || ^7.0 || ^8.0",
                 "symfony/console": "^5.4.47 || ^6.4.24 || ^7.0 || ^8.0",
                 "symfony/event-dispatcher": "^5.4.45 || ^6.4.24 || ^7.0 || ^8.0",
                 "symfony/filesystem": "^5.4.45 || ^6.4.24 || ^7.0 || ^8.0",
@@ -11452,18 +10917,18 @@
                 "symfony/stopwatch": "^5.4.45 || ^6.4.24 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "facile-it/paraunit": "^1.3.1 || ^2.7",
-                "infection/infection": "^0.32",
-                "justinrainbow/json-schema": "^6.6",
+                "facile-it/paraunit": "^1.3.1 || ^2.7.1",
+                "infection/infection": "^0.32.3",
+                "justinrainbow/json-schema": "^6.6.4",
                 "keradus/cli-executor": "^2.3",
                 "mikey179/vfsstream": "^1.6.12",
-                "php-coveralls/php-coveralls": "^2.9",
-                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.6",
-                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.6",
-                "phpunit/phpunit": "^9.6.31 || ^10.5.60 || ^11.5.48",
+                "php-coveralls/php-coveralls": "^2.9.1",
+                "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.7",
+                "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.7",
+                "phpunit/phpunit": "^9.6.34 || ^10.5.63 || ^11.5.51",
                 "symfony/polyfill-php85": "^1.33",
-                "symfony/var-dumper": "^5.4.48 || ^6.4.26 || ^7.4.0 || ^8.0",
-                "symfony/yaml": "^5.4.45 || ^6.4.30 || ^7.4.1 || ^8.0"
+                "symfony/var-dumper": "^5.4.48 || ^6.4.32 || ^7.4.4 || ^8.0.4",
+                "symfony/yaml": "^5.4.45 || ^6.4.30 || ^7.4.1 || ^8.0.1"
             },
             "suggest": {
                 "ext-dom": "For handling output formats in XML",
@@ -11504,7 +10969,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.93.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.94.0"
             },
             "funding": [
                 {
@@ -11512,7 +10977,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-28T23:50:50+00:00"
+            "time": "2026-02-11T16:44:33+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -12713,16 +12178,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "12.5.2",
+            "version": "12.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "4a9739b51cbcb355f6e95659612f92e282a7077b"
+                "reference": "b015312f28dd75b75d3422ca37dff2cd1a565e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4a9739b51cbcb355f6e95659612f92e282a7077b",
-                "reference": "4a9739b51cbcb355f6e95659612f92e282a7077b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/b015312f28dd75b75d3422ca37dff2cd1a565e8d",
+                "reference": "b015312f28dd75b75d3422ca37dff2cd1a565e8d",
                 "shasum": ""
             },
             "require": {
@@ -12778,7 +12243,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.5.2"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.5.3"
             },
             "funding": [
                 {
@@ -12798,20 +12263,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-24T07:03:04+00:00"
+            "time": "2026-02-06T06:01:44+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "961bc913d42fe24a257bfff826a5068079ac7782"
+                "reference": "3d1cd096ef6bea4bf2762ba586e35dbd317cbfd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/961bc913d42fe24a257bfff826a5068079ac7782",
-                "reference": "961bc913d42fe24a257bfff826a5068079ac7782",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/3d1cd096ef6bea4bf2762ba586e35dbd317cbfd5",
+                "reference": "3d1cd096ef6bea4bf2762ba586e35dbd317cbfd5",
                 "shasum": ""
             },
             "require": {
@@ -12851,15 +12316,27 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
                 "security": "https://github.com/sebastianbergmann/php-file-iterator/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/6.0.0"
+                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/6.0.1"
             },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpunit/php-file-iterator",
+                    "type": "tidelift"
                 }
             ],
-            "time": "2025-02-07T04:58:37+00:00"
+            "time": "2026-02-02T14:04:18+00:00"
         },
         {
             "name": "phpunit/php-invoker",
@@ -13047,16 +12524,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.5.8",
+            "version": "12.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "37ddb96c14bfee10304825edbb7e66d341ec6889"
+                "reference": "9b518cb40f9474572c9f0178e96ff3dc1cf02bf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/37ddb96c14bfee10304825edbb7e66d341ec6889",
-                "reference": "37ddb96c14bfee10304825edbb7e66d341ec6889",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b518cb40f9474572c9f0178e96ff3dc1cf02bf1",
+                "reference": "9b518cb40f9474572c9f0178e96ff3dc1cf02bf1",
                 "shasum": ""
             },
             "require": {
@@ -13070,8 +12547,8 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.3",
-                "phpunit/php-code-coverage": "^12.5.2",
-                "phpunit/php-file-iterator": "^6.0.0",
+                "phpunit/php-code-coverage": "^12.5.3",
+                "phpunit/php-file-iterator": "^6.0.1",
                 "phpunit/php-invoker": "^6.0.0",
                 "phpunit/php-text-template": "^5.0.0",
                 "phpunit/php-timer": "^8.0.0",
@@ -13082,6 +12559,7 @@
                 "sebastian/exporter": "^7.0.2",
                 "sebastian/global-state": "^8.0.2",
                 "sebastian/object-enumerator": "^7.0.0",
+                "sebastian/recursion-context": "^7.0.1",
                 "sebastian/type": "^6.0.3",
                 "sebastian/version": "^6.0.0",
                 "staabm/side-effects-detector": "^1.0.5"
@@ -13124,7 +12602,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.8"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.11"
             },
             "funding": [
                 {
@@ -13148,7 +12626,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-27T06:12:29+00:00"
+            "time": "2026-02-10T12:32:02+00:00"
         },
         {
             "name": "psr/http-client",
@@ -13259,16 +12737,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.18",
+            "version": "v0.12.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "ddff0ac01beddc251786fe70367cd8bbdb258196"
+                "reference": "19678eb6b952a03b8a1d96ecee9edba518bb0373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/ddff0ac01beddc251786fe70367cd8bbdb258196",
-                "reference": "ddff0ac01beddc251786fe70367cd8bbdb258196",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/19678eb6b952a03b8a1d96ecee9edba518bb0373",
+                "reference": "19678eb6b952a03b8a1d96ecee9edba518bb0373",
                 "shasum": ""
             },
             "require": {
@@ -13332,9 +12810,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.18"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.20"
             },
-            "time": "2025-12-17T14:35:46+00:00"
+            "time": "2026-02-11T15:05:28+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -16751,6 +16229,7 @@
     ],
     "minimum-stability": "beta",
     "stability-flags": {
+        "app/local-replaced-assets": 20,
         "ckeditor/ckeditor": 20,
         "eluhr/yii2-flysystem-rest-api": 20,
         "eluhr/yii2-flysystem-widgets": 20,

@@ -4,6 +4,7 @@ _host-volumes
 .env
 src/app.env
 src/version
+settings.local.json
 
 vendor
 vendor-dev
@@ -21,5 +22,8 @@ tests/codeception/_support/_generated
 tests/_log
 
 .php_cs.cache
+.php-cs-fixer.cache
+*/.php-cs-fixer.cache
 
 storage
+node_modules
