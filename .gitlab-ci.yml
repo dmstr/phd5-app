@@ -11,20 +11,6 @@ variables:
   COMPOSE_FILE: "./docker-compose.yml:./docker/docker-compose.dev.yml:./docker/docker-compose.test.yml:./docker/docker-compose.selenium.yml"
   STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
 
-.dind:
-  image: dmstr/docker:27
-  services:
-    - name: dmstr/dind:27
-      alias: docker
-  tags:
-    - dind
-
-# Auth Template für registry-v2.hrzg.de
-.dind_docker_auth_registry_v2: &dind_docker_auth_registry_v2 |
-  if [ -n "$DOCKER_AUTH_CONFIG" ]; then
-    mkdir -p ~/.docker
-    echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
-  fi
 # ----------------------------------------------------------
 # before/after scripts, these will be used in every job within the job-scope
 # ----------------------------------------------------------
@@ -39,8 +25,6 @@ before_script:
   - echo $(git describe --always --dirty --tags)
   - export APP_VERSION=$(git describe --always --dirty --tags)
   - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
-  - *dind_docker_auth_registry_v2
-
 
 after_script:
   # set docker-compose isolation
@@ -115,20 +99,16 @@ after_script:
 # job definitions, they should use the defined job and flavour templates
 # ----------------------------------------------------------
 codeception-debian:
-  extends: .dind
   <<: *codeception_tmpl_ref
 
 # ----------------------------------------------------------
 coverage-debian:
-  extends: .dind
   <<: *coverage_tmpl_ref
 
 # ----------------------------------------------------------
 lint-debian:
-  extends: .dind
   <<: *lint_tmpl_ref
 
 # ----------------------------------------------------------
 release-debian:
-  extends: .dind
   <<: *release_tmpl_ref
