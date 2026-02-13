@@ -23,7 +23,10 @@
         "picomodal": "^3.0.0",
         "punycode": "^2.3.1",
         "uri-js": "^4.4.1",
-        "vanilla-picker": "^2.12.3"
+        "vanilla-picker": "^2.12.3",
+        "vue": "3.4.12",
+        "vue-demi": "~0.14.6",
+        "pinia": "~2.1.7"
     },
     "devDependencies": {
         "bower": "^1.8.14",

@@ -37,6 +37,7 @@
             "2amigos/*": "source",
             "hrzg/*": "source",
             "schmunk42/*": "source",
+            "eluhr/*": "source",
             "dektrium/yii2-rbac": "source",
             "loveorigami/*": "source",
             "*": "auto"
