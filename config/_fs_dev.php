@@ -116,7 +116,11 @@ return [
                         return null;
                     }
                 ],
-                'class' => AvPlugin::class,
+                [
+                    'class' => AvPlugin::class,
+                    'scanUrl' => 'http://clamav-rest:9000/v2/scan',
+                    'streamingThreshold' => 1024 * 1024 * 10,
+                ]
             ],
         ],
         'urlManager' => [
