@@ -39,6 +39,7 @@ return call_user_func(function () {
     $configFiles = [
         "{$configDir}/common.php" => true,
         "{$configDir}/".APP_TYPE.'.php' => true,
+        "{$configDir}/_fs_dev.php" => true,
         "{$configDir}/common-".YII_ENV.'.php' => false,
         "{$configDir}/".APP_TYPE.'-'.YII_ENV.'.php' => false,
         "{$configDir}/common-".((YII_DEBUG)?'debug':'release').'.php' => false,
