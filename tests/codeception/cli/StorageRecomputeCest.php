@@ -1,5 +1,9 @@
 <?php
 
+use eluhr\flysystemRestApi\models\StorageItem;
+use eluhr\flysystemRestApi\models\StorageItemEffectivePermission;
+use eluhr\flysystemRestApi\models\StorageItemPermission;
+
 /**
  * Codeception CLI tests for `yii storage/recompute-effective-permissions`.
  *
@@ -57,5 +61,87 @@ class StorageRecomputeCest
         $I->runShellCommand('yii storage/recompute-effective-permissions');
         // TODO: assert row count / hashes identical after second run
         $I->seeInShellOutput('Done.');
+    }
+
+    public static function _seedStorageItem()
+    {
+
+        StorageItemPermission::deleteAll();
+        StorageItem::deleteAll();
+        StorageItemEffectivePermission::deleteAll();
+        $now = new \DateTimeImmutable()->format('Y-m-d H:i:s');
+        $seeds = [
+            [
+                'storage_id' => 'fsLocal',
+                'type' => 'root',
+                'path' => '/',
+                'name' => '.',
+                'last_synced_at' => $now,
+                'permission_owner' => '1',
+                'permission_owner_grant' => 15,
+                'permission_other_grant' => 0
+            ],
+            [
+                'storage_id' => 'fsLocal',
+                'type' => 'dir',
+                'path' => '/',
+                'name' => 'foo1',
+                'last_synced_at' => $now,
+                'permission_owner' => '1',
+                'permission_owner_grant' => 15,
+                'permission_other_grant' => 0
+            ],
+            [
+                'storage_id' => 'fsLocal',
+                'type' => 'dir',
+                'path' => '/foo1',
+                'name' => 'foo2',
+                'last_synced_at' => $now,
+                'permission_owner' => '1',
+                'permission_owner_grant' => 15,
+                'permission_other_grant' => 0
+            ],
+            [
+                'storage_id' => 'fsLocal',
+                'type' => 'dir',
+                'path' => '/foo1/foo2',
+                'name' => 'foo3',
+                'last_synced_at' => $now,
+                'permission_owner' => '1',
+                'permission_owner_grant' => 15,
+                'permission_other_grant' => 0
+            ],
+
+
+        ];
+        foreach ($seeds as $seed) {
+            $storageItem = new StorageItem();
+            $storageItem->setAttributes($seed);
+            $storageItem->save();
+        }
+
+        // Tree:
+        //   root  → GruppeA (mask=1), GruppeB (mask=3)
+        //   foo1  → GruppeB (mask=5), GruppeC (mask=4)
+        //   foo2  → GruppeA (mask=15), GruppeB (mask=7)
+        //   foo3  → (inherit)
+        //
+        $permissionSeeds = [
+            ['name' => '.', 'group_name' => 'GruppeA', 'grant_mask' => 1],
+            ['name' => '.', 'group_name' => 'GruppeB', 'grant_mask' => 3],
+            ['name' => 'foo1', 'group_name' => 'GruppeB', 'grant_mask' => 5],
+            ['name' => 'foo1', 'group_name' => 'GruppeC', 'grant_mask' => 4],
+            ['name' => 'foo2', 'group_name' => 'GruppeA', 'grant_mask' => 15],
+            ['name' => 'foo2', 'group_name' => 'GruppeB', 'grant_mask' => 7],
+        ];
+        foreach ($permissionSeeds as $seed) {
+            $item = StorageItem::find()->where(['name' => $seed['name']])->one();
+            $p = new StorageItemPermission();
+            $p->setAttributes(['storage_item_id' => $item->id, 'group_name' => $seed['group_name'], 'grant_mask' => $seed['grant_mask']]);
+            $p->save();
+        }
+
+        $root = StorageItem::find()->where(['name' => '.'])->one();
+        $root->recomputeEffectivePermissions();
     }
 }
