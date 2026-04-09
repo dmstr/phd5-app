@@ -58,7 +58,8 @@ return [
                     '@vendor/lajax/yii2-translate-manager/migrations',
                     '@vendor/pheme/yii2-settings/migrations',
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
-                    '@vendor/dmstr/yii2-resque-module/src/migrations/2.0-to-3.0'
+                    '@vendor/dmstr/yii2-resque-module/src/migrations/2.0-to-3.0',
+                    '@vendor/eluhr/yii2-flysystem-rest-api/src/migrations',
                 ]
             ),
             'migrationNamespaces' => [
@@ -66,6 +67,7 @@ return [
                 'yii\queue\db\migrations'
             ],
         ],
+        'storage' => \eluhr\flysystemRestApi\commands\StorageController::class,
         'rbac' => \dmstr\helpers\RbacController::class,
         'translate' => \lajax\translatemanager\commands\TranslatemanagerController::class
     ],
