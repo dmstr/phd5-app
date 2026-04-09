@@ -2414,23 +2414,26 @@
         },
         {
             "name": "eluhr/yii2-flysystem-rest-api",
-            "version": "dev-dev/refactoring",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git",
-                "reference": "2d79b6428d92596905c4052cef340c7f4d7794aa"
+                "reference": "3e662061357826ae3c52be5e823731967a9bf705"
             },
             "require": {
                 "dmstr/yii2-web": "^1.1",
+                "justinrainbow/json-schema": "^5.2",
                 "league/flysystem": "^3.0",
                 "php": "^8.0",
                 "ramsey/uuid": "^4.7",
-                "yiisoft/yii2-dev": "2.0.*"
+                "yiisoft/yii2-dev": "2.0.*",
+                "yiisoft/yii2-queue": "^2.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.6",
                 "roave/security-advisories": "dev-latest"
             },
+            "default-branch": true,
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
@@ -2443,15 +2446,15 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2026-02-17T11:02:47+00:00"
+            "time": "2026-04-02T13:23:36+00:00"
         },
         {
             "name": "eluhr/yii2-flysystem-widgets",
-            "version": "dev-dev/refactoring",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets.git",
-                "reference": "381316769d18bf644dae2b1d9f7d040d7ac92b96"
+                "reference": "b3b689574fd89c08ebc0ef1916a9da1b5a7d0180"
             },
             "require": {
                 "eluhr/yii2-flysystem-rest-api": "*",
@@ -2463,6 +2466,7 @@
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
             },
+            "default-branch": true,
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
@@ -2475,7 +2479,7 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2026-02-12T11:49:54+00:00"
+            "time": "2026-04-02T13:23:26+00:00"
         },
         {
             "name": "eluhr/yii2-rest-api-utils",
@@ -16217,13 +16221,13 @@
         },
         {
             "package": "eluhr/yii2-flysystem-rest-api",
-            "version": "dev-dev/refactoring",
+            "version": "9999999-dev",
             "alias": "0.1.1-p99",
             "alias_normalized": "0.1.1.0-patch99"
         },
         {
             "package": "eluhr/yii2-flysystem-widgets",
-            "version": "dev-dev/refactoring",
+            "version": "9999999-dev",
             "alias": "0.0.1-p99",
             "alias_normalized": "0.0.1.0-patch99"
         }
