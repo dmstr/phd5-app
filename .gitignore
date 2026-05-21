@@ -11,9 +11,11 @@ runtime
 web/bundles
 web/assets
 tests/codeception/_output
+node_modules
 
 docker-compose.override.yml
 docker-compose.local.yml
+settings.local.json
 
 local.php
 local.env
