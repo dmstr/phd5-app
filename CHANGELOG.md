@@ -1,5 +1,29 @@
 # Changelog
 
+### 5.12.0
+
+- **BREAKING CHANGE**: new asset management via `cramer` (asset migration tool)
+  - replaced `asset-packagist` based `bower-asset/*` and `npm-asset/*` dependencies
+    with native Bower and Yarn (NPM) package management
+  - bower packages are now installed via `bower install` into `src/vendor/bower`
+  - npm packages are now installed via `yarn install` into `src/node_modules`
+  - added local Composer replacement package `app/local-replaced-assets`
+    (`src/assets-replaced/`) to satisfy former asset package requirements
+  - added `package.json`, `yarn.lock`, `.yarnrc`, `bower.json` and `.bowerrc` in `src/`
+  - added `image-files/usr/local/bin/create-npm-asset-symlinks` to keep existing
+    `AssetBundle` paths working (e.g. `json-editor--json-editor` →
+    `@json-editor/json-editor`) via NPM postinstall hook
+  - added `dmstr/cramer` asset migration tool (`src/extensions/dmstr/cramer/`)
+    providing `yii asset-migration/analyze` and `yii asset-migration/generate`
+  - see [`cramer/README.md`](https://git.hrzg.de/dmstr/phd5-app/-/blob/release/5.12.x/src/extensions/dmstr/cramer/README.md)
+    for details and migration guide
+- Docker image: install Node.js 20.18.1 from official binaries (replaces
+  NodeSource sources, avoids GPG/SHA1 issues) and install `yarn` globally
+- Dockerfile: install Yarn and Bower assets during image build
+- updated `dmstr/yii2-backend-module` to `^2.3.0`
+- added `dmstr/yii2-mermaid-asset` `^2.0.0`
+- removed `bower-asset/*` entries from `conflict` section in `composer.phd5.json`
+
 ### 5.11.0
 
 - updated base image to `yiisoftware/yii2-php:8.4-fpm-nginx`

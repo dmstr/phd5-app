@@ -1,0 +1,95 @@
+#!/usr/bin/env node
+
+/**
+ * Creates symlinks from npm-asset naming convention to real NPM package names
+ *
+ * This allows AssetBundles using old npm-asset paths to work with real NPM packages:
+ * - json-editor--json-editor -> @json-editor/json-editor
+ * - dmstr--cookie-consent -> @dmstr/cookie-consent
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const nodeModulesDir = process.argv[2] || '/app/node_modules';
+
+// Ensure node_modules directory exists
+if (!fs.existsSync(nodeModulesDir)) {
+    console.log('node_modules directory does not exist, skipping symlink creation');
+    process.exit(0);
+}
+
+let symlinkCount = 0;
+
+// Read all directories in node_modules
+const entries = fs.readdirSync(nodeModulesDir, { withFileTypes: true });
+
+entries.forEach(entry => {
+    if (!entry.isDirectory()) {
+        return;
+    }
+
+    // Check if it's a scoped package (starts with @)
+    if (entry.name.startsWith('@')) {
+        const scopeDir = path.join(nodeModulesDir, entry.name);
+        const scopedPackages = fs.readdirSync(scopeDir, { withFileTypes: true });
+
+        scopedPackages.forEach(scopedEntry => {
+            if (!scopedEntry.isDirectory()) {
+                return;
+            }
+
+            // Create npm-asset style symlink
+            // @json-editor/json-editor -> json-editor--json-editor
+            const npmAssetName = `${entry.name.substring(1)}--${scopedEntry.name}`;
+            const symlinkPath = path.join(nodeModulesDir, npmAssetName);
+            const targetPath = path.join(nodeModulesDir, entry.name, scopedEntry.name);
+
+            createSymlink(symlinkPath, targetPath);
+        });
+    }
+});
+
+function createSymlink(symlinkPath, targetPath) {
+    // Check if symlink already exists
+    if (fs.existsSync(symlinkPath)) {
+        // Check if it's a symlink pointing to the correct target
+        try {
+            const currentTarget = fs.readlinkSync(symlinkPath);
+            const resolvedCurrent = path.resolve(path.dirname(symlinkPath), currentTarget);
+            const resolvedTarget = path.resolve(targetPath);
+
+            if (resolvedCurrent === resolvedTarget) {
+                // Already correct
+                return;
+            }
+
+            // Remove incorrect symlink
+            fs.unlinkSync(symlinkPath);
+        } catch (e) {
+            // Not a symlink, remove it
+            if (fs.lstatSync(symlinkPath).isDirectory()) {
+                console.warn(`Warning: ${symlinkPath} is a directory, skipping`);
+                return;
+            }
+            fs.unlinkSync(symlinkPath);
+        }
+    }
+
+    // Create relative symlink
+    const relativePath = path.relative(path.dirname(symlinkPath), targetPath);
+
+    try {
+        fs.symlinkSync(relativePath, symlinkPath, 'dir');
+        symlinkCount++;
+        console.log(`Created symlink: ${path.basename(symlinkPath)} -> ${relativePath}`);
+    } catch (error) {
+        console.error(`Failed to create symlink ${symlinkPath}:`, error.message);
+    }
+}
+
+if (symlinkCount > 0) {
+    console.log(`\n✓ Created ${symlinkCount} npm-asset symlinks in ${nodeModulesDir}`);
+} else {
+    console.log(`No npm-asset symlinks needed in ${nodeModulesDir}`);
+}

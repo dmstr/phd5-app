@@ -139,7 +139,8 @@ $common = [
         'backend' => '@vendor/dmstr/yii2-backend-module/src',
         'storage' => '/mnt/storage',
         'bower' => '@vendor/bower-asset',
-        'npm' => '@vendor/npm-asset'
+        'npm' => '@root/node_modules',
+        'dmstr/cramer' => '@app/extensions/dmstr/cramer'
     ],
     'params' => [
         'adminEmail' => getenv('APP_ADMIN_EMAIL'),

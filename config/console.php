@@ -12,6 +12,7 @@
 return [
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
+        'asset-migration' => \dmstr\cramer\commands\AssetMigrationController::class,
         'audit' => \bedezign\yii2\audit\commands\AuditController::class,
         'db' => [
             'class' => \dmstr\console\controllers\MysqlController::class,

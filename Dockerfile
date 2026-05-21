@@ -1,6 +1,16 @@
 FROM yiisoftware/yii2-php:8.4-fpm-nginx
 ARG BUILD_NO_INSTALL
 
+# Install Node.js from official binaries (avoiding NodeSource GPG/SHA1 issues)
+ENV NODE_VERSION=20.18.1
+RUN ARCH=$(dpkg --print-architecture) && \
+    if [ "$ARCH" = "amd64" ]; then NODE_ARCH="x64"; \
+    elif [ "$ARCH" = "arm64" ]; then NODE_ARCH="arm64"; \
+    else echo "Unsupported architecture: $ARCH" && exit 1; fi && \
+    curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${NODE_ARCH}.tar.xz" \
+        | tar -xJf - -C /usr/local --strip-components=1 && \
+    npm install -g yarn
+
 RUN apt-get update \
  && apt-get install -y $PHPIZE_DEPS \
         ssh \
@@ -22,18 +32,30 @@ ENV SUPERVISOR_START_CRON=true \
 
 # System files
 COPY ./image-files /
+RUN chmod +x /usr/local/bin/create-npm-asset-symlinks
 
 # Application packages
 WORKDIR /app
 COPY src/composer.* /app/src/
+COPY src/assets-replaced /app/src/assets-replaced
 
 # Composer installation (skipped on first build in dist-upgrade)
+# First install merge-plugin, then install with plugins enabled
 # create bc link if not exists
 RUN if [ -z "$BUILD_NO_INSTALL" ]; then \
         composer -dsrc install --no-dev --prefer-dist --optimize-autoloader && \
         composer -dsrc clear-cache && \
         ln -s bower-asset /app/vendor/bower && \
         ln -s npm-asset /app/vendor/npm; \
+    fi
+
+# Yarn and Bower packages for frontend assets
+COPY src/package.json src/yarn.lock src/.yarnrc src/bower.json src/.bowerrc /app/src/
+RUN if [ -z "$BUILD_NO_INSTALL" ] && [ -f /app/src/package.json ]; then \
+        cd /app/src && \
+        yarn install --production && \
+        npx bower install --allow-root --force && \
+        yarn cache clean; \
     fi
 
 # Application source-code
