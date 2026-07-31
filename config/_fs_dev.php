@@ -127,7 +127,9 @@ return [
             'rules' => [
                 'img/stream' => 'filemanager/api/stream',
                 'img/download' => 'filemanager/api/download',
+                // map /filemanager/backend[/<action>] onto the eluhr\flysystemBackend module
                 'filemanager/backend' => 'filemanager-backend',
+                'filemanager/backend/<action:[\w-]+>' => 'filemanager-backend/filemanager-backend/<action>',
             ],
             'ignoreLanguageUrlPatterns' => [
                 '#^img/stream#' => '#^img/stream#',
@@ -138,11 +140,16 @@ return [
     ],
     'modules' => [
         // this is the rest-api module, which requires a valid flysystemRestApi\components\FileStorage id
-        // for dev we have a simple backend controller inside this module, but this should be splitted...
         'filemanager' => [
             'class' => eluhr\flysystemRestApi\Module::class,
             'fileStorage' => 'fsLocal',
             'jwtComponent' => 'jwtSystem'
+        ],
+        // backend UI for the rest-api module above, access via RBAC permission
+        // FlysystemBackendAccess (route permission filemanager-backend_filemanager-backend_index)
+        'filemanager-backend' => [
+            'class' => eluhr\flysystemBackend\Module::class,
+            'layout' => '@backend/views/layouts/box',
         ],
     ],
 ];

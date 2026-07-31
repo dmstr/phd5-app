@@ -35,8 +35,9 @@
         "yiisoft/yii2-symfonymailer": "^3.0",
         "dmstr/yii2-rbac-migration": "^2.0",
         "ckeditor/ckeditor": "dev-full/4.21.x as 4.999",
-        "eluhr/yii2-flysystem-rest-api": "dev-master as 0.1.1-p99",
-        "eluhr/yii2-flysystem-widgets": "dev-master as 0.0.1-p99",
+        "eluhr/yii2-flysystem-rest-api": "~0.0.2",
+        "eluhr/yii2-flysystem-widgets": "~0.0.1",
+        "eluhr/yii2-flysystem-backend": "~0.0.1",
         "ext-pdo": "*",
         "eluhr/yii2-rest-api-utils": "^1.1",
         "bizley/jwt": "^4.0",
@@ -86,6 +87,11 @@
             "type": "vcs",
             "no-api": true,
             "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets.git"
+        },
+        "flysystem-backend": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend.git"
         },
         "thephpleague/flysystem": {
             "name": "dmstr-forks/flysystem",

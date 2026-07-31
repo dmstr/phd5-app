@@ -400,7 +400,7 @@
         },
         {
             "name": "app/local-replaced-assets",
-            "version": "dev-main",
+            "version": "dev-release/6.0.x",
             "dist": {
                 "type": "path",
                 "url": "./assets-replaced",
@@ -587,23 +587,22 @@
         },
         {
             "name": "brick/math",
-            "version": "0.14.8",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629"
+                "reference": "82944324d1c1bdb2c2618e89978d4e2ad78d69ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/63422359a44b7f06cae63c3b429b59e8efcc0629",
-                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629",
+                "url": "https://api.github.com/repos/brick/math/zipball/82944324d1c1bdb2c2618e89978d4e2ad78d69ad",
+                "reference": "82944324d1c1bdb2c2618e89978d4e2ad78d69ad",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "^2.2",
                 "phpstan/phpstan": "2.1.22",
                 "phpunit/phpunit": "^11.5"
             },
@@ -635,7 +634,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.8"
+                "source": "https://github.com/brick/math/tree/0.18.0"
             },
             "funding": [
                 {
@@ -643,7 +642,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-10T14:33:43+00:00"
+            "time": "2026-06-14T18:21:03+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -2413,12 +2412,77 @@
             "time": "2019-03-29T07:52:21+00:00"
         },
         {
+            "name": "eluhr/yii2-flysystem-backend",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@git.hrzg.de:e.luhr/yii2-flysystem-backend.git",
+                "reference": "bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-backend/repository/archive.zip?sha=bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a",
+                "reference": "bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a",
+                "shasum": ""
+            },
+            "require": {
+                "dmstr/yii2-rbac-migration": "^2.0",
+                "dmstr/yii2-web": "^1.1",
+                "eluhr/yii2-flysystem-rest-api": "~0.0.2",
+                "eluhr/yii2-flysystem-widgets": "~0.0.1",
+                "php": "^8.0",
+                "yiisoft/yii2": "~2.0"
+            },
+            "require-dev": {
+                "roave/security-advisories": "dev-latest"
+            },
+            "suggest": {
+                "yiisoft/yii2-authclient": "Resolve the JWT from the access token of the auth client the user logged in with (e.g. Keycloak)"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "eluhr\\flysystemBackend\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "src/migrations/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Elias Luhr",
+                    "email": "e.luhr@herzogkommunikation.de"
+                }
+            ],
+            "description": "Generic Yii2 backend controller rendering the eluhr/yii2-flysystem-widgets Filemanager for an eluhr/yii2-flysystem-rest-api module",
+            "keywords": [
+                "backend",
+                "filemanager",
+                "flysystem",
+                "yii2"
+            ],
+            "support": {
+                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend/-/tree/0.0.1",
+                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend/-/issues"
+            },
+            "time": "2026-07-31T19:15:29+02:00"
+        },
+        {
             "name": "eluhr/yii2-flysystem-rest-api",
-            "version": "dev-master",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git",
-                "reference": "3e662061357826ae3c52be5e823731967a9bf705"
+                "reference": "c795d0f67ce49b00dd1be1c514f1e40e21e208cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-rest-api/repository/archive.zip?sha=c795d0f67ce49b00dd1be1c514f1e40e21e208cc",
+                "reference": "c795d0f67ce49b00dd1be1c514f1e40e21e208cc",
+                "shasum": ""
             },
             "require": {
                 "dmstr/yii2-web": "^1.1",
@@ -2433,7 +2497,6 @@
                 "phpunit/phpunit": "^9.6",
                 "roave/security-advisories": "dev-latest"
             },
-            "default-branch": true,
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
@@ -2446,15 +2509,25 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2026-04-02T13:23:36+00:00"
+            "support": {
+                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api/-/tree/0.0.2",
+                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api/-/issues"
+            },
+            "time": "2026-07-14T11:50:36+02:00"
         },
         {
             "name": "eluhr/yii2-flysystem-widgets",
-            "version": "dev-master",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets.git",
-                "reference": "b3b689574fd89c08ebc0ef1916a9da1b5a7d0180"
+                "reference": "5b624ad32ef7ef39362f98904abc340bb44f3901"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-widgets/repository/archive.zip?sha=5b624ad32ef7ef39362f98904abc340bb44f3901",
+                "reference": "5b624ad32ef7ef39362f98904abc340bb44f3901",
+                "shasum": ""
             },
             "require": {
                 "eluhr/yii2-flysystem-rest-api": "*",
@@ -2466,7 +2539,6 @@
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
             },
-            "default-branch": true,
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
@@ -2479,7 +2551,11 @@
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "time": "2026-04-02T13:23:26+00:00"
+            "support": {
+                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets/-/tree/0.0.1",
+                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets/-/issues"
+            },
+            "time": "2026-07-23T11:42:23+02:00"
         },
         {
             "name": "eluhr/yii2-rest-api-utils",
@@ -2805,16 +2881,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.3.1",
+            "version": "5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
-                "reference": "b5a44b6391a3bbb75c9f2b73e1ef03d6045e1e20"
+                "reference": "7df70ffaf31d98726801b4bc099e1fbdbe2e5e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/b5a44b6391a3bbb75c9f2b73e1ef03d6045e1e20",
-                "reference": "b5a44b6391a3bbb75c9f2b73e1ef03d6045e1e20",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/7df70ffaf31d98726801b4bc099e1fbdbe2e5e54",
+                "reference": "7df70ffaf31d98726801b4bc099e1fbdbe2e5e54",
                 "shasum": ""
             },
             "require": {
@@ -2864,9 +2940,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jsonrainbow/json-schema/issues",
-                "source": "https://github.com/jsonrainbow/json-schema/tree/5.3.1"
+                "source": "https://github.com/jsonrainbow/json-schema/tree/5.3.4"
             },
-            "time": "2025-12-12T08:56:22+00:00"
+            "time": "2026-05-04T18:54:58+00:00"
         },
         {
             "name": "kartik-v/yii2-dialog",
@@ -3738,7 +3814,7 @@
             "version": "3.29.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmstr-forks/flysystem.git",
+                "url": "git@github.com:dmstr-forks/flysystem.git",
                 "reference": "edc1bb7c86fab0776c3287dbd19b5fa278347319"
             },
             "dist": {
@@ -3814,9 +3890,6 @@
                 "storage",
                 "webdav"
             ],
-            "support": {
-                "source": "https://github.com/dmstr-forks/flysystem/tree/3.29.1"
-            },
             "time": "2024-10-08T08:58:34+00:00"
         },
         {
@@ -3870,16 +3943,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "2d6702ff215bf922936ccc1ad31007edc76451b9"
+                "reference": "f5f47eff7c48ed1003069a2ca67f316fb4021c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/2d6702ff215bf922936ccc1ad31007edc76451b9",
-                "reference": "2d6702ff215bf922936ccc1ad31007edc76451b9",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/f5f47eff7c48ed1003069a2ca67f316fb4021c76",
+                "reference": "f5f47eff7c48ed1003069a2ca67f316fb4021c76",
                 "shasum": ""
             },
             "require": {
@@ -3889,7 +3962,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.2",
                 "phpstan/phpstan": "^0.12.68",
-                "phpunit/phpunit": "^8.5.8 || ^9.3 || ^10.0"
+                "phpunit/phpunit": "^8.5.8 || ^9.3 || ^10.0 || ^11.0 || ^12.0"
             },
             "type": "library",
             "autoload": {
@@ -3910,7 +3983,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.16.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.17.0"
             },
             "funding": [
                 {
@@ -3922,7 +3995,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-21T08:32:55+00:00"
+            "time": "2026-07-09T11:49:27+00:00"
         },
         {
             "name": "loveorigami/yii2-notification-wrapper",
@@ -4450,19 +4523,59 @@
             "time": "2025-08-01T08:46:24+00:00"
         },
         {
-            "name": "npm-asset/babel--parser",
-            "version": "v7.29.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:babel/babel.git",
-                "reference": "713d478674cd9f29ff84568f50df43393d6e3068"
-            },
+            "name": "npm-asset/babel--helper-string-parser",
+            "version": "7.29.7",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/babel/babel/zipball/713d478674cd9f29ff84568f50df43393d6e3068",
-                "reference": "713d478674cd9f29ff84568f50df43393d6e3068"
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz"
             },
-            "type": "npm-asset"
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/babel--helper-validator-identifier",
+            "version": "7.29.7",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/babel--parser",
+            "version": "7.29.7",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.29.7.tgz"
+            },
+            "require": {
+                "npm-asset/babel--types": ">=7.29.7,<8.0.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/babel--types",
+            "version": "7.29.7",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@babel/types/-/types-7.29.7.tgz"
+            },
+            "require": {
+                "npm-asset/babel--helper-string-parser": ">=7.29.7,<8.0.0",
+                "npm-asset/babel--helper-validator-identifier": ">=7.29.7,<8.0.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "npm-asset/csstype",
@@ -4529,10 +4642,10 @@
         },
         {
             "name": "npm-asset/nanoid",
-            "version": "3.3.11",
+            "version": "3.3.16",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz"
+                "url": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -4569,13 +4682,13 @@
         },
         {
             "name": "npm-asset/postcss",
-            "version": "8.5.6",
+            "version": "8.5.19",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz"
+                "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.19.tgz"
             },
             "require": {
-                "npm-asset/nanoid": ">=3.3.11,<4.0.0",
+                "npm-asset/nanoid": ">=3.3.12,<4.0.0",
                 "npm-asset/picocolors": ">=1.1.1,<2.0.0",
                 "npm-asset/source-map-js": ">=1.2.1,<2.0.0"
             },
@@ -5744,20 +5857,20 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "4.9.2",
+            "version": "4.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "8429c78ca35a09f27565311b98101e2826affde0"
+                "reference": "1df15849d00943a67d677dc9cfd80795f038c9f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8429c78ca35a09f27565311b98101e2826affde0",
-                "reference": "8429c78ca35a09f27565311b98101e2826affde0",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/1df15849d00943a67d677dc9cfd80795f038c9f8",
+                "reference": "1df15849d00943a67d677dc9cfd80795f038c9f8",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.8.16 || ^0.9 || ^0.10 || ^0.11 || ^0.12 || ^0.13 || ^0.14",
+                "brick/math": ">=0.8.16 <=0.18",
                 "php": "^8.0",
                 "ramsey/collection": "^1.2 || ^2.0"
             },
@@ -5816,9 +5929,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/uuid/issues",
-                "source": "https://github.com/ramsey/uuid/tree/4.9.2"
+                "source": "https://github.com/ramsey/uuid/tree/4.9.3"
             },
-            "time": "2025-12-14T04:43:48+00:00"
+            "time": "2026-06-18T03:57:49+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -7587,16 +7700,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/141046a8f9477948ff284fa65be2095baafb94f2",
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2",
                 "shasum": ""
             },
             "require": {
@@ -7646,7 +7759,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -7666,7 +7779,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -7927,16 +8040,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
                 "shasum": ""
             },
             "require": {
@@ -7987,7 +8100,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -8007,7 +8120,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-02T08:10:11+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/process",
@@ -15236,16 +15349,16 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.33.0",
+            "version": "v1.38.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
-                "reference": "4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c"
+                "reference": "6bfb9c766cacffbc8e118cb87217d08ed84e5cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c",
-                "reference": "4a4cfc2d253c21a5ad0e53071df248ed48c6ce5c",
+                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/6bfb9c766cacffbc8e118cb87217d08ed84e5cd7",
+                "reference": "6bfb9c766cacffbc8e118cb87217d08ed84e5cd7",
                 "shasum": ""
             },
             "require": {
@@ -15292,7 +15405,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.38.1"
             },
             "funding": [
                 {
@@ -15312,7 +15425,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-05-26T12:45:58+00:00"
         },
         {
             "name": "symfony/polyfill-php84",
@@ -16218,26 +16331,12 @@
             "version": "dev-full/4.21.x",
             "alias": "4.999",
             "alias_normalized": "4.999.0.0"
-        },
-        {
-            "package": "eluhr/yii2-flysystem-rest-api",
-            "version": "9999999-dev",
-            "alias": "0.1.1-p99",
-            "alias_normalized": "0.1.1.0-patch99"
-        },
-        {
-            "package": "eluhr/yii2-flysystem-widgets",
-            "version": "9999999-dev",
-            "alias": "0.0.1-p99",
-            "alias_normalized": "0.0.1.0-patch99"
         }
     ],
     "minimum-stability": "beta",
     "stability-flags": {
         "app/local-replaced-assets": 20,
         "ckeditor/ckeditor": 20,
-        "eluhr/yii2-flysystem-rest-api": 20,
-        "eluhr/yii2-flysystem-widgets": 20,
         "roave/security-advisories": 20,
         "schmunk42/yii2-giiant": 10,
         "wikimedia/composer-merge-plugin": 20

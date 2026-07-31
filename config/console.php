@@ -60,6 +60,7 @@ return [
                     '@vendor/dmstr/yii2-prototype-module/src/migrations',
                     '@vendor/dmstr/yii2-resque-module/src/migrations/2.0-to-3.0',
                     '@vendor/eluhr/yii2-flysystem-rest-api/src/migrations',
+                    '@vendor/eluhr/yii2-flysystem-backend/src/migrations',
                 ]
             ),
             'migrationNamespaces' => [
