@@ -2416,14 +2416,8 @@
             "version": "0.0.1",
             "source": {
                 "type": "git",
-                "url": "git@git.hrzg.de:e.luhr/yii2-flysystem-backend.git",
+                "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend.git",
                 "reference": "bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-backend/repository/archive.zip?sha=bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a",
-                "reference": "bc0e9d7ac51ba3c0ca342191cc45ae049bf2554a",
-                "shasum": ""
             },
             "require": {
                 "dmstr/yii2-rbac-migration": "^2.0",
@@ -2464,25 +2458,15 @@
                 "flysystem",
                 "yii2"
             ],
-            "support": {
-                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend/-/tree/0.0.1",
-                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-backend/-/issues"
-            },
-            "time": "2026-07-31T19:15:29+02:00"
+            "time": "2026-07-31T17:15:29+00:00"
         },
         {
             "name": "eluhr/yii2-flysystem-rest-api",
-            "version": "0.0.2",
+            "version": "0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api.git",
-                "reference": "c795d0f67ce49b00dd1be1c514f1e40e21e208cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-rest-api/repository/archive.zip?sha=c795d0f67ce49b00dd1be1c514f1e40e21e208cc",
-                "reference": "c795d0f67ce49b00dd1be1c514f1e40e21e208cc",
-                "shasum": ""
+                "reference": "8bc18f78e9f3416e4021d5d746523c9c1e5ecd61"
             },
             "require": {
                 "dmstr/yii2-web": "^1.1",
@@ -2490,7 +2474,7 @@
                 "league/flysystem": "^3.0",
                 "php": "^8.0",
                 "ramsey/uuid": "^4.7",
-                "yiisoft/yii2-dev": "2.0.*",
+                "yiisoft/yii2": "~2.0",
                 "yiisoft/yii2-queue": "^2.3"
             },
             "require-dev": {
@@ -2503,38 +2487,33 @@
                     "eluhr\\flysystemRestApi\\": "src/"
                 }
             },
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
                     "name": "Elias Luhr",
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "support": {
-                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api/-/tree/0.0.2",
-                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-rest-api/-/issues"
-            },
-            "time": "2026-07-14T11:50:36+02:00"
+            "description": "Yii2 REST API for Flysystem based file storages",
+            "time": "2026-07-31T17:34:41+00:00"
         },
         {
             "name": "eluhr/yii2-flysystem-widgets",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets.git",
-                "reference": "5b624ad32ef7ef39362f98904abc340bb44f3901"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://git.hrzg.de/api/v4/projects/e%2Eluhr%2Fyii2-flysystem-widgets/repository/archive.zip?sha=5b624ad32ef7ef39362f98904abc340bb44f3901",
-                "reference": "5b624ad32ef7ef39362f98904abc340bb44f3901",
-                "shasum": ""
+                "reference": "feb75367b33e91b360d079194e3498b30f493715"
             },
             "require": {
-                "eluhr/yii2-flysystem-rest-api": "*",
+                "eluhr/yii2-flysystem-rest-api": "~0.0.2",
                 "npm-asset/pinia": "~2.1.7",
                 "npm-asset/vue": "3.4.12",
                 "npm-asset/vue-demi": "~0.14.6",
-                "yiisoft/yii2-dev": "2.0.*"
+                "php": "^8.0",
+                "yiisoft/yii2": "~2.0"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
@@ -2545,17 +2524,17 @@
                     "eluhr\\flysystemWidgets\\": "src/"
                 }
             },
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
                     "name": "Elias Luhr",
                     "email": "e.luhr@herzogkommunikation.de"
                 }
             ],
-            "support": {
-                "source": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets/-/tree/0.0.1",
-                "issues": "https://git.hrzg.de/e.luhr/yii2-flysystem-widgets/-/issues"
-            },
-            "time": "2026-07-23T11:42:23+02:00"
+            "description": "Yii2 GUI widgets for the eluhr/yii2-flysystem-rest-api file storage API",
+            "time": "2026-07-31T17:34:48+00:00"
         },
         {
             "name": "eluhr/yii2-rest-api-utils",
