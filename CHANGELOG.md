@@ -1,5 +1,16 @@
 # Changelog
 
+### 5.12.1
+
+- fixed Docker image: preserve the request port in `HTTP_HOST` for PHP by overriding
+  `/etc/nginx/conf.d/default.conf` with an additional `fastcgi_param HTTP_HOST $http_host;`
+  (Debian's nginx security update sends port-less `$host`, which broke absolute
+  redirect URLs like `http://localhost:11280/` → `http://localhost/en`), see #6
+  - **Note**: projects with their own prod stage built directly `FROM yiisoftware/yii2-php:*`
+    (instead of the phd5 image) are not covered by this fix and need the same
+    `default.conf` override themselves
+- updated `dompurify` to `3.4.12`
+
 ### 5.12.0
 
 - **BREAKING CHANGE**: new asset management via `cramer` (asset migration tool)
