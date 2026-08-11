@@ -559,7 +559,18 @@ $common = [
             'frontendRouteMap' => [
                 'app/site/index' => '/',
                 'pages/default/page' => 'pages/default/page',
-            ]
+            ],
+            'jsonEditorConfig' => [
+                'registerJoditAsset' => true,
+                'registerDomPurifyAsset' => true,
+                // nur HTML zulassen, kein SVG/MathML. USE_PROFILES setzt
+                // ALLOWED_TAGS/ALLOWED_ATTR auf die HTML-Profile von DOMPurify
+                // und überschreibt dabei explizit gesetzte Listen.
+                'domPurifyOptions' => [
+                    'USE_PROFILES' => ['html' => true],
+                ]
+            ],
+
         ]
     ]
 ];
