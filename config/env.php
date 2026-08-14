@@ -21,7 +21,19 @@ if (getenv('ENV_LOCAL_FILE')) {
         $dotenvLocal = Dotenv::createUnsafeImmutable($configPath, getenv('ENV_LOCAL_FILE'));
         $dotenvLocal->load();
     } else {
-        exit("Error: ENV_LOCAL_FILE '{$localEnv}' not found" . PHP_EOL);
+        $message = "Error: ENV_LOCAL_FILE '{$localEnv}' not found";
+        if (PHP_SAPI === 'cli') {
+            // STDERR is only defined in the CLI SAPI
+            fwrite(STDERR, $message . PHP_EOL);
+        } else {
+            // Do not expose the configured path to the client
+            error_log($message);
+            http_response_code(500);
+        }
+        // exit() with a string argument prints the message but terminates with
+        // status 0, so callers (make, CI, healthchecks) treat the aborted
+        // bootstrap as a success
+        exit(1);
     }
 }
 
