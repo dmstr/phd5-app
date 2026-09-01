@@ -2,7 +2,6 @@
 #
 # Variables are populated with values from `.env`
 #
-version: '3.2'
 services:
   php:
     build:
