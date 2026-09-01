@@ -9,26 +9,63 @@ stages:
 variables:
   ISOLATION: "buildpipeline${CI_PIPELINE_ID}${CI_PROJECT_NAME}"
   COMPOSE_FILE: "./docker-compose.yml:./docker/docker-compose.dev.yml:./docker/docker-compose.test.yml:./docker/docker-compose.selenium.yml"
-  STACK_PHP_IMAGE: "${PHP_IMAGE_NAME}:${CI_BUILD_REF}"
+  # Push target is the legacy registry. GitLab provides no automatic variables
+  # for it, so host and path are spelled out; ${CI_PROJECT_PATH} is dmstr/phd5-app.
+  REGISTRY_IMAGE: "registry-v2.hrzg.de/${CI_PROJECT_PATH}"
+  # spelled out again instead of reusing ${REGISTRY_IMAGE} so the value does not
+  # depend on variable-in-variable expansion inside this block. compose reads it
+  # from the job environment, after_script's separate shell included.
+  STACK_PHP_IMAGE: "registry-v2.hrzg.de/${CI_PROJECT_PATH}:${CI_BUILD_REF}"
+
+# ----------------------------------------------------------
+# dind runner setup
+# see https://wiki.hrzg.de/entwicklung/how-tos/gitlab-ci-dind-runner
+#
+# The dind pool is pickup-tag-only, every job needs the `dind` tag or it stays
+# pending forever. `dmstr/docker:27` already ships DOCKER_HOST=tcp://docker:2375
+# and an empty DOCKER_TLS_CERTDIR, so no extra docker host/TLS variables here.
+# ----------------------------------------------------------
+.dind:
+  image: dmstr/docker:27
+  services:
+    - name: dmstr/dind:27
+      alias: docker
+  tags:
+    - dind
+
+# Auth for registry-v2.hrzg.de. This registry has no automatic CI variables, the
+# credentials come from the masked DOCKER_AUTH_CONFIG variable. Kept as an anchor
+# because GitLab overwrites before_script/script arrays instead of merging them.
+.dind_docker_auth_registry_v2: &dind_docker_auth_registry_v2 |
+  if [ -n "$DOCKER_AUTH_CONFIG" ]; then
+    mkdir -p ~/.docker
+    echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
+  fi
+
+# `docker-compose` in dmstr/docker:27 is compose v2, which only accepts project
+# names matching [a-z0-9][a-z0-9_-]*. after_script runs in a separate shell, so
+# the export has to be repeated there to hit the same stack on teardown.
+.compose_project_name: &compose_project_name
+  - export COMPOSE_PROJECT_NAME=$(echo "${ISOLATION}${CI_BUILD_NAME}" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
 
 # ----------------------------------------------------------
 # before/after scripts, these will be used in every job within the job-scope
 # ----------------------------------------------------------
 before_script:
   # set docker-compose isolation
-  - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+  - *compose_project_name
   - pwd
   - docker version
   - docker-compose version
   - docker-compose config
-  - echo ${ISOLATION}
+  - echo ${COMPOSE_PROJECT_NAME}
   - echo $(git describe --always --dirty --tags)
   - export APP_VERSION=$(git describe --always --dirty --tags)
-  - export REGISTRY_PHP_IMAGE=${PHP_IMAGE_NAME}:${APP_VERSION}
+  - export REGISTRY_PHP_IMAGE=${REGISTRY_IMAGE}:${APP_VERSION}
 
 after_script:
   # set docker-compose isolation
-  - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+  - *compose_project_name
   # run all commands from test environment
   - make clean
 
@@ -55,7 +92,7 @@ after_script:
 .lint_tmpl: &lint_tmpl_ref
   stage: test
   script:
-    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - *compose_project_name
     - make help
     - make lint
   artifacts:
@@ -69,7 +106,7 @@ after_script:
 .coverage_tmpl: &coverage_tmpl_ref
   stage: test
   script:
-    - export COMPOSE_PROJECT_NAME=${ISOLATION}${CI_BUILD_NAME}
+    - *compose_project_name
     - make test-init
     - make test-coverage
   when: manual
@@ -86,7 +123,10 @@ after_script:
   environment:
     name: image
   script:
-    - docker login --username ${REGISTRY_USER} --password ${REGISTRY_PASS} ${REGISTRY_HOST}
+    # the auth anchor below does nothing when the variable is unset, which would
+    # only surface later as "no basic auth credentials" on push - fail here
+    - test -n "${DOCKER_AUTH_CONFIG}" || { echo "DOCKER_AUTH_CONFIG is empty, add it as a masked CI/CD variable holding the registry-v2.hrzg.de credentials"; exit 1; }
+    - *dind_docker_auth_registry_v2
     - make version build
     - docker tag ${STACK_PHP_IMAGE} ${REGISTRY_PHP_IMAGE}
     - docker push ${REGISTRY_PHP_IMAGE}
@@ -99,16 +139,20 @@ after_script:
 # job definitions, they should use the defined job and flavour templates
 # ----------------------------------------------------------
 codeception-debian:
+  extends: .dind
   <<: *codeception_tmpl_ref
 
 # ----------------------------------------------------------
 coverage-debian:
+  extends: .dind
   <<: *coverage_tmpl_ref
 
 # ----------------------------------------------------------
 lint-debian:
+  extends: .dind
   <<: *lint_tmpl_ref
 
 # ----------------------------------------------------------
 release-debian:
+  extends: .dind
   <<: *release_tmpl_ref
