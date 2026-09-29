@@ -52,7 +52,7 @@
         "codeception/module-webdriver": "^4.0.2",
         "codeception/module-asserts": "^2.0.1",
         "codeception/module-yii2": "^1.1.0",
-        "captbaritone/mailcatcher-codeception-module": "^3.0.0",
+        "captbaritone/mailcatcher-codeception-module": "^3.0.2",
         "hoa/console": "^3.17"
     },
     "conflict": {
@@ -81,6 +81,11 @@
             "name": "dmstr-forks/yii2-usuario",
             "type": "vcs",
             "url": "https://github.com/dmstr-forks/2amigos-yii2-usuario.git"
+        },
+        "captbaritone/mailcatcher-codeception-module": {
+            "name": "dmstr-forks/captbaritone-codeception-mailcatcher-module",
+            "type": "vcs",
+            "url": "https://github.com/dmstr-forks/captbaritone-codeception-mailcatcher-module.git"
         }
     }
 }
