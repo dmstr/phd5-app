@@ -57,7 +57,8 @@
         },
         "allow-plugins": {
             "yiisoft/yii2-composer": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "php-http/discovery": true
         }
     }
 }

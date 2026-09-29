@@ -25,6 +25,7 @@
         "npm-asset/ajv": "*",
         "npm-asset/core-js": "*",
         "npm-asset/dmstr--cookie-consent": "*",
+        "npm-asset/dompurify": "*",
         "npm-asset/fast-deep-equal": "*",
         "npm-asset/fast-json-stable-stringify": "*",
         "npm-asset/javascript-natural-sort": "*",

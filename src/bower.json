@@ -2,10 +2,10 @@
     "name": "phd5-app-bower",
     "private": true,
     "dependencies": {
-        "ace-builds": "^1.15.3",
+        "ace-builds": "^1.44.0",
         "bootstrap": "^3.4.1",
-        "bootstrap-datepicker": "^1.9.0",
-        "bootstrap-daterangepicker": "^3.0",
+        "bootstrap-datepicker": "^1.10.1",
+        "bootstrap-daterangepicker": "^3.0.5",
         "chartjs": "^2.9.4",
         "inputmask": "^5.0.9",
         "jquery": "^3.7.1",

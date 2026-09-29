@@ -3,7 +3,6 @@
 #
 # Paths in this file are relative to the project root
 
-version: '3.2'
 services:
 
   test-php:
